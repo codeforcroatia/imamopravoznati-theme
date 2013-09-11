@@ -1,0 +1,31 @@
+<div id="footer">
+    <div id="footer-inner">
+        <div class="footer-column">
+            <h4><%= site_name %></h4>
+            <ul>
+                <li><%= link_to _("Contact us"), help_contact_path %></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h4><%= _("Help") %></h4>
+            <ul>
+                <li><%= link_to _("Making requests"), help_requesting_path %></li>
+                <li><%= link_to _("Your privacy"), help_privacy_path %></li>
+                <li><%= link_to _("FOI officers"), help_officers_path %></li>
+                <li><%= link_to _("About the software"), help_alaveteli_path %></li>
+                <li><%= link_to _("API"), help_api_path %></li>
+            </ul>
+            <a class="footer-logo" href="http://creativecommons.org/licenses/by-sa/3.0/">
+            <%= _("Theme licensed under CC BY SA 3.0<br/>Creative Commons Attribution Share-Alike") %>
+            </a>
+            <br/><%= _('Original theme from {{link}}', :link => link_to('http://tuderechoasaber.es', 'http://tuderechoasaber.es')) %>
+        </div>
+
+        <div class="footer-column">
+            <h4><%= _("A project by") %></h4>
+        </div>
+
+        <div style="clear:both"></div>
+    </div>
+</div>
