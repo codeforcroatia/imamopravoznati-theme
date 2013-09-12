@@ -11,7 +11,6 @@ body {
     }
 
 #content {
-    width: 840px;
     padding: 0px 60px;
     margin: auto;
 }
@@ -19,31 +18,19 @@ body {
 #wrapper {
     padding-top: 10px;
     margin-bottom: 50px;
-    width: 960px;
 }
 
-#header_right {
-    width: 180px;
-    float: left;
-    margin-top: 30px;
+.feed_link a,
+.act_link a,
+#header_right > a {
+    color: #E94E00;
+    font-size: 12px;
+    text-decoration: none;
 }
-    .feed_link a,
-    .act_link a,
-    #header_right > a {
-        color: #E94E00;
-        font-size: 12px;
-        text-decoration: none;
-    }
-    #header_right a:hover {
-        text-decoration: underline;
-    }
+#header_right a:hover {
+    text-decoration: underline;
+}
 
-#header_left,
-.header_left {
-    width: 600px;
-    float: right;
-    padding: 20px 30px;
-}
 
 #everypage {
     background-color: #666;
@@ -69,7 +56,6 @@ body {
 }
 
 #banner_inner {
-    width: 960px;
     height: 120px;
 }
     #banner_inner a:hover {
@@ -406,25 +392,6 @@ a,
         text-decoration: underline !important;
     }
 
-#header_left p,
-#header_left ul,
-#header_left ol {
-    padding-right: 120px;
-}
-
-.request_left {
-    width: 600px;
-    padding-right: 0px;
-}
-
-.request_right {
-    width: 240px;
-}
-
-    .request_right span.desc {
-        padding-left: 20px;
-    }
-
 form input[type="submit"], a.link_button_green, a.link_button_green_large {
     font-family: 'Open Sans', 'Helvetica Neue', Arial;
     font-weight: 600;
@@ -504,36 +471,6 @@ p.public-body-name-prefix {
     #stepwise_make_request strong {
         color: #E94E00;
     }
-
-h2.foi_results {
-    width: 480px;
-    padding-bottom: 0px;
-}
-
-#foi_results_section,
-.results_section {
-    float: right;
-    padding-left: 0px;
-    padding-right: 150px;
-    width: 480px;
-}
-
-.request_listing {
-    margin-right: -210px;
-}
-    .request_left {
-        width: 480px;
-    }
-    .request_right {
-        width: 210px;
-    }
-    .request_listing span.desc {
-        background: none;
-    }
-
-span.desc {
-    float: left;
-}
 
 .date_added {
     display: none;
