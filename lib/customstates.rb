@@ -20,6 +20,14 @@ module InfoRequestCustomStates
 
     # Mixin methods for InfoRequest
     module ClassMethods
+
+        def theme_display_status(status)
+            raise _("unknown status ") + status
+        end
+
+       def theme_extra_states
+           return []
+       end
     end
 end
 
