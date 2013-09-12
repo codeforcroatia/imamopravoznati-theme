@@ -1,3 +1,8 @@
+# Chiediamo-theme
+# Copyright (C) 2013 mySociety
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <louise@mysociety.org>, 2013.
+#
 msgid "A project by"
 msgstr ""
 
