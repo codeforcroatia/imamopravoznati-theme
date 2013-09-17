@@ -1,15 +1,16 @@
 # Chiediamo-theme
 # Copyright (C) 2013 mySociety
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
+# marcogiustini <info@marcogiustini.info>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: chiediamo-theme\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-09-12 17:01+0100\n"
-"PO-Revision-Date: 2013-09-12 14:57+0000\n"
-"Last-Translator: louisecrow <louise@mysociety.org>\n"
+"PO-Revision-Date: 2013-09-16 04:56+0000\n"
+"Last-Translator: marcogiustini <info@marcogiustini.info>\n"
 "Language-Team: Italian (http://www.transifex.com/projects/p/chiediamo-theme/language/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,58 +19,60 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "A project by"
-msgstr ""
+msgstr "Un progetto di"
 
 msgid "API"
-msgstr ""
+msgstr "API"
 
 msgid "About the software"
-msgstr ""
+msgstr "Sul software"
 
 msgid "Ask"
-msgstr ""
+msgstr "Chiedi"
 
 msgid "Contact us"
-msgstr ""
+msgstr "Contattaci"
 
 msgid "Exercise your right to know."
-msgstr ""
+msgstr "Esercitiamo il diritto di sapere."
 
 msgid "FOI officers"
-msgstr ""
+msgstr "Per le autorità pubbliche"
 
 msgid "Help"
-msgstr ""
+msgstr "Aiuto"
 
 msgid "Making requests"
-msgstr ""
+msgstr "Fare richieste"
 
 msgid "Original theme from {{link}}"
-msgstr ""
+msgstr "Tema originale di {{link}}"
 
 msgid "Search"
-msgstr ""
+msgstr "Cerca"
 
-msgid "Theme licensed under CC BY SA 3.0<br/>Creative Commons Attribution Share-Alike"
-msgstr ""
+msgid ""
+"Theme licensed under CC BY SA 3.0<br/>Creative Commons Attribution Share-"
+"Alike"
+msgstr "Tema rilasciato sotto licenza Creative Commons<br/>Attribution Share-Alike CC BY SA 3.0"
 
 msgid "Think of a question for a public authority."
-msgstr ""
+msgstr "Scrivi una domanda ad una autorità pubblica."
 
 msgid "To get information from public authorities:"
-msgstr ""
+msgstr "Chiediamo informazioni ad una autorità pubblica"
 
 msgid "We send the question for you"
-msgstr ""
+msgstr "Noi inviamo la domanda per te"
 
 msgid "We'll notify you when there is an answer."
-msgstr ""
+msgstr "Noi ti avvertiamo quando c'è una risposta."
 
 msgid "Will they answer?"
-msgstr ""
+msgstr "Risponderanno?"
 
 msgid "Your privacy"
-msgstr ""
+msgstr "La tua privacy"
 
 msgid "unknown status "
-msgstr ""
+msgstr "Status sconosciuto"
