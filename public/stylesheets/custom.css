@@ -23,7 +23,7 @@ body {
 .feed_link a,
 .act_link a,
 #header_right > a {
-    color: #E94E00;
+    color: #69952f;
     font-size: 12px;
     text-decoration: none;
 }
@@ -74,7 +74,7 @@ body {
 
 div.lang {
     top: 23px;
-    color: #E94E00;
+    color: #69952f;
     font-size: 12px;
     text-transform: capitalize;
 }
@@ -120,7 +120,7 @@ div.lang {
         border-top-right-radius: 5px;
     }
     #topnav ul li a {
-        color: #E94E00 !important;
+        color: #69952f !important;
     }
 
 
@@ -136,7 +136,7 @@ h1, h1 a {
 
 h2, h2 a {
     font-family: 'Open Sans', 'Helvetica Neue', Arial;
-    color: #F05A29;
+    color: #414141;
     font-size: 18px;
     font-weight: 700;
 }
@@ -185,7 +185,7 @@ h3, h3 a {
         margin-left: 10px;
     }
     .controller_help h3 {
-        color: #E94E00;
+        color: #69952f;
         text-decoration: none;
         margin-top: 20px !important;
         font-weight: normal;
@@ -239,7 +239,7 @@ h3, h3 a {
         margin-top: -30px;
     }
     #frontpage-intro-lead h2 {
-        color: #E84E00;
+        color: #69952F;
         font-size: 22px;
         font-weight: 600;
         margin-top: 35px;
@@ -266,7 +266,7 @@ h3, h3 a {
         margin-left: -10px;
         padding: 7px 10px 7px 10px;
 
-        background-color: #E84E00;
+        background-color: #69952f;
         border-radius: 5px;
         border-bottom: 2px solid #C6C6C5;
     }
@@ -291,7 +291,7 @@ h3, h3 a {
     }
 
 #frontpage-lead-ad {
-    background-color: #E84E00;
+    background-color: #69952f;
     float: left;
     border-radius: 5px;
     padding: 0px 12px 0px 12px;
@@ -374,21 +374,21 @@ h3, h3 a {
 .body_listing span.head a {
     font-family: 'Open Sans', 'Helvetica Neue', Arial;
     font-size: 16px;
-    color: #E94E00;
+    color: #69952f;
 }
 
 a,
 .request_listing a,
 .body_listing a,
 .user_listing a {
-    color: #E94E00;
+    color: #69952f;
     text-decoration: none !important;
 }
     a:hover,
     .request_listing a:hover,
     .body_listing a:hover,
     .user_listing a:hover {
-        color: #E94E00;
+        color: #69952f;
         text-decoration: underline !important;
     }
 
@@ -469,7 +469,7 @@ p.public-body-name-prefix {
     color: #444444; /* XXX */
 }
     #stepwise_make_request strong {
-        color: #E94E00;
+        color: #69952f;
     }
 
 .date_added {
@@ -544,7 +544,7 @@ div[id|="incoming"] p {
 }
 
 #follow_count {
-    color: #F05A29;
+    color: #69952f;
 }
 
 
@@ -556,7 +556,7 @@ div[id|="incoming"] p {
 
 #request_form label,
 label.form_label {
-    color: #E94E00;
+    color: #69952f;
     font-family: Verdana, 'Helvetica Neue', Arial;
     font-size: 14px;
     font-weight: bold;
@@ -625,7 +625,7 @@ label.form_label {
 #signin-successful,
 #signin-successful a {
     font-family: 'Helvetica Neue', Arial;
-    color: #E94E00;
+    color: #69952f;
     font-size: 14px;
     font-weight: bold;
     padding-top: 50px;
