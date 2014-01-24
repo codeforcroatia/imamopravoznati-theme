@@ -11,6 +11,16 @@ class ActionController::Base
     end
 end
 
+# Prepend the asset directories in this theme to the asset path:
+['stylesheets', 'images', 'javascripts'].each do |asset_type|
+    theme_asset_path = File.join(File.dirname(__FILE__),
+                                 '..',
+                                 'assets',
+                                 asset_type)
+    Rails.application.config.assets.paths.unshift theme_asset_path
+end
+
+
 # In order to have the theme lib/ folder ahead of the main app one,
 # inspired in Ruby Guides explanation: http://guides.rubyonrails.org/plugins.html
 %w{ . }.each do |dir|
