@@ -25,7 +25,7 @@ msgid "API"
 msgstr "API"
 
 msgid "About the software"
-msgstr "Sul software"
+msgstr "Informazioni sul software"
 
 msgid "Ask"
 msgstr "Chiedi"
@@ -34,10 +34,10 @@ msgid "Contact us"
 msgstr "Contattaci"
 
 msgid "Exercise your right to know."
-msgstr "Esercitiamo il diritto di sapere."
+msgstr "Usa il tuo diritto di accesso all'informazione."
 
 msgid "FOI officers"
-msgstr "Per le autorità pubbliche"
+msgstr "Per l'amministrazione"
 
 msgid "Help"
 msgstr "Aiuto"
@@ -57,16 +57,16 @@ msgid ""
 msgstr "Tema rilasciato sotto licenza Creative Commons<br/>Attribution Share-Alike CC BY SA 3.0"
 
 msgid "Think of a question for a public authority."
-msgstr "Scrivi una domanda ad una autorità pubblica."
+msgstr "Scrivi una domanda ad un'amministrazione."
 
 msgid "To get information from public authorities:"
-msgstr "Chiediamo informazioni ad una autorità pubblica"
+msgstr "Chiediamo informazioni ad un'amministrazione"
 
 msgid "We send the question for you"
 msgstr "Noi inviamo la domanda per te"
 
 msgid "We'll notify you when there is an answer."
-msgstr "Noi ti avvertiamo quando c'è una risposta."
+msgstr "Ti avvertiamo quando c'è una risposta."
 
 msgid "Will they answer?"
 msgstr "Risponderanno?"
