@@ -44,10 +44,11 @@
 <div id="frontpage-content">
     <div id="frontpage-inner-content">
         <div id="frontpage-search-box">
-            <h4><%=  _("Search over<br/>
-            <strong>{{number_of_requests}} requests</strong> <span>and</span><br/>
-            <strong>{{number_of_authorities}} authorities</strong>",
-            :number_of_requests => InfoRequest.visible.count, :number_of_authorities => PublicBody.visible.count) %></h4>
+            <h4>
+  <%=  _("Search over<br/>
+  <strong>{{number_of_requests}} requests</strong> <span>and</span><br/>
+  <strong>{{number_of_authorities}} authorities</strong>",
+  :number_of_requests => InfoRequest.visible.count, :number_of_authorities => PublicBody.visible.count) %></h4>
 
             <div id="frontpage-search-form">
               <%= form_tag({:action => "search_redirect"}, {:id => "search_form"}) do %>
