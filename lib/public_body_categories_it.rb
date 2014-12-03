@@ -1,6 +1,5 @@
 PublicBodyCategories.add(:it, [
         "Miscellaneous",
-            [ "", "", "" ],
             [ "ministeri", "Ministeri", "ministeri" ],
             [ "regioni", "Regioni", "regioni" ],
             [ "province", "Province", "province" ],
