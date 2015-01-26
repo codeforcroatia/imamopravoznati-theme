@@ -1,0 +1,32 @@
+<div class="footer" id="footer">
+  <div class="footer-inner">
+    <div id="footer-nav">
+        <ul>
+           <li> <h4><%= site_name %></h4>
+            <ul>
+                <li><%= link_to _("Contact us"), help_contact_path %></li>
+            </ul>
+          </li>
+          <li>
+            <h4><%= _("Help") %></h4>
+            <ul>
+                <li><%= link_to _("Making requests"), help_requesting_path %></li>
+                <li><%= link_to _("Your privacy"), help_privacy_path %></li>
+                <li><%= link_to _("FOI officers"), help_officers_path %></li>
+                <li><%= link_to _("About the software"), help_alaveteli_path %></li>
+                <li><%= link_to _("API"), help_api_path %></li>
+            </ul>
+
+            <a class="footer-logo" href="http://creativecommons.org/licenses/by-sa/3.0/">
+            <%= _("Theme licensed under CC BY SA 3.0<br/>Creative Commons Attribution Share-Alike") %>
+            </a>
+            <br/><%= _('Original theme from {{link}}', :link =>   link_to('http://tuderechoasaber.es', 'http://tuderechoasaber.es')) %>
+          </li>
+          <li>
+            <h4><%= _("A project by") %></h4>
+            <%= link_to image_tag('dds-logo.jpg', :alt => "Diritto di Sapere logo"), "http://www.dirittodisapere.it/", :class => 'footer-logo' %>
+          </li>
+        </ul>
+    </div>
+  </div>
+</div>
