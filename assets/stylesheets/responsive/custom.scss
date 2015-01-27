@@ -71,19 +71,18 @@ $action-border: #d69457;
   text-decoration: none;
   color: $white;
   background-color: $main_menu-link_text;
-  @include respond-min( $main_menu-mobile_menu_cutoff ){
+
+  @include respond-min($main_menu-mobile_menu_cutoff) {
     background-color: $white;
-    color: transparentize($main_menu-link_text, 0.2);
+    color: transparentize($dds-red, 0.2);
     @include ie8 {
-      color: $main_menu-link_text;
+      color: $dds-red;
     }
-    &:hover{
-       text-decoration: underline;
-        color: transparentize($main_menu-link_text, 0);
+    &:hover {
+      text-decoration: underline;
+      color: $dds-red;
     }
   }
-  transition: background-color 0.5s ease-out;
-
 }
 
 /* Selected menu item */
@@ -91,31 +90,34 @@ $action-border: #d69457;
   font-weight: bold;
   color: $main_menu-active_link_text;
   background-color: $main_menu-active_link_bg;
-  &:hover{
-      background-color: $main_menu-active_link_bg;
+  transition: background-color 0.5s ease-out;
+
+  &:hover {
+    background-color: $main_menu-active_link_bg;
   }
-  @include respond-min( $main_menu-mobile_menu_cutoff ){
+
+  @include respond-min ($main_menu-mobile_menu_cutoff) {
     background-color: $white;
     &:hover{
-        background-color: $white;
+      background-color: $white;
     }
-
   }
 }
 
 /* Styling if not part of the main menu on larger screens */
 %sub-menu-item {
-  @include respond-min( $main_menu-mobile_menu_cutoff ){
-    color: transparentize($main_menu-link_text, 0.2);
-    &:hover{
-        background-color: $banner_bg;
-        color: transparentize($main_menu-link_text, 0);
+  @include respond-min($main_menu-mobile_menu_cutoff) {
+    color: transparentize($dds-red, 0.2);
+
+    &:hover {
+      background-color: $banner_bg;
+      color: $dds-red;
     }
   }
 }
 
 /* General styles */
-body{
+body {
   background-color: $body-bg;
   color: $body-font-color;
 }
@@ -148,19 +150,17 @@ form input[type="email"],
 form input[type="url"],
 form input[type="tel"],
 form input[type="number"] {
-    border-radius: 0;
-    transition: all 0.3s ease-out;
-     &:focus{
-          background-color: $lightest-blue;
-      }
-    /* Set a fixed height for text inputs in older IE 8 */
-    @include ie8{
-        height: 2.3125em;
-    }
-    /* Do the same in px for IE < 7 */
-    @include lte-ie7{
-        height: 22px;
-    }
+  border-radius: 0;
+  transition: all 0.3s ease-out;
+
+  /* Set a fixed height for text inputs in older IE 8 */
+  @include ie8 {
+    height: 2.3125em;
+  }
+  /* Do the same in px for IE < 7 */
+  @include lte-ie7 {
+    height: 22px;
+  }
 }
 
 input.use-datepicker[type=text] {
@@ -195,8 +195,7 @@ form input[type=submit], a.link_button_green, a.link_button_green_large {
   }
 }
 
-@include lte-ie7{
-
+@include lte-ie7 {
   a.link_button_green, a.link_button_green_large {
     padding: 0 7px;
     height: 31px;
@@ -232,7 +231,6 @@ a.link_button_green_large {
 
 /* Header */
 
-
 #banner_inner {
   background-color: $banner-bg;
 }
@@ -241,21 +239,21 @@ a.link_button_green_large {
   background-color: $main_menu-bg;
 }
 
-#navigation{
+#navigation {
   border-bottom: none;
   a {
     @extend %menu-item;
   }
   /* Show which section is currently selected */
-  li.selected a{
+  li.selected a {
     @extend %selected-menu-item;
   }
 
   /* Vertically align the search box */
-  #navigation_search{
-    input{
-      margin-top:0.313em;
-      margin-bottom:0.313em;
+  #navigation_search {
+    input {
+      margin-top: 0.313em;
+      margin-bottom: 0.313em;
       height: 1.875em;
       @include ie8 {
         height: 33px;
@@ -272,15 +270,12 @@ a.link_button_green_large {
     }
   }
 
-  #navigation_search_button{
+  #navigation_search_button {
     background-color: mix($main_menu-search_bg, $main_menu-bg, 50%);
     transition: all 0.3s ease-out;
     color: $main_menu-search_text;
     border-radius: 0;
     font-size: inherit;
-    &:focus{
-        background-color: $lightest-blue;
-    }
   }
 }
 
@@ -291,7 +286,7 @@ a.link_button_green_large {
   border-top: 10px solid;
   font-size: 1.2em;
   border-radius: 0;
-  margin:1em 0;
+  margin: 1em 0;
   padding: 1.5em;
 
   p:first-child {
@@ -315,7 +310,6 @@ a.link_button_green_large {
 #error, .errorExplanation, #hidden_request {
   background-color: $error-bg;
   border-color: $error-border;
-
 }
 
 .undescribed_requests {
@@ -324,7 +318,7 @@ a.link_button_green_large {
 }
 
 /* Logged and local options act like submenus */
-#logged_in_bar{
+#logged_in_bar {
   a {
     @extend %menu-item;
     @extend %sub-menu-item;
@@ -339,7 +333,7 @@ a.link_button_green_large {
 }
 
 #user_locale_switcher {
-  @include respond-min( $main_menu-mobile_menu_cutoff ){
+  @include respond-min($main_menu-mobile_menu_cutoff) {
     background-image: image-url('locale-switcher.png');
     background-repeat: no-repeat;
     background-position: 0.5em 0.5em;
@@ -351,14 +345,14 @@ a.link_button_green_large {
   a {
     @extend %menu-item;
     font-family: $sans-serif-font-family;
-    @include respond-min( $main_menu-mobile_menu_cutoff ){
+    @include respond-min($main_menu-mobile_menu_cutoff) {
       padding: 0.5em 0.2em;
       background-color: $locale-bg;
       border-radius: 0 0 1.25em 1.25em;
       color: $locale-color;
-      &:hover{
-          background-color: $locale-bg;
-          color: $locale-hover-color;
+      &:hover {
+        background-color: $locale-bg;
+        color: $locale-hover-color;
       }
     }
   }
@@ -366,13 +360,12 @@ a.link_button_green_large {
 
 
 #banner {
-
   /* Hide the greeting on smaller devices */
   .greeting {
     display: none;
   }
 
-  .rsp_menu_button{
+  .rsp_menu_button {
     position: absolute;
     top: 0;
     /* 15px for margin minus 9 for background offset*/
@@ -393,14 +386,13 @@ a.link_button_green_large {
   }
 
   /* Pad evenly top and bottom on smaller devices */
-  #logo_wrapper{
-
-    @include respond-min( $main_menu-mobile_menu_cutoff ){
+  #logo_wrapper {
+    @include respond-min($main_menu-mobile_menu_cutoff) {
       @include lte-ie7 {
         padding-bottom: 2em;
       }
     }
-    @media(max-width: $main_menu-mobile_menu_cutoff ){
+    @media(max-width: $main_menu-mobile_menu_cutoff) {
       padding: 0.5em 0 0.5em 0.9375em;
       img {
         height: 30px;
@@ -464,7 +456,7 @@ div.correspondence {
 a.link_to_this {
   background-image: image-url('link-icon.png');
   @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
-     background-image:image-url('link-icon@2.png');
+    background-image:image-url('link-icon@2.png');
   }
   background-position: center center;
   background-repeat: no-repeat;
@@ -487,7 +479,7 @@ a.link_to_this {
 .describe_state_form {
   padding: 0;
 
-  form{
+  form {
     background-color: $action-bg;
     border-color: $action-border;
     h2 {
@@ -559,7 +551,7 @@ a.link_to_this {
 dt {
   color: $heading-color;
   font-weight: 700;
-  @include respond-min( $main_menu-mobile_menu_cutoff ){
+  @include respond-min($main_menu-mobile_menu_cutoff) {
     font-size: 2em;
     line-height: 1.1em;
   }
@@ -574,8 +566,8 @@ dt {
 /* Front page */
 /* Drop the extract indentation on small screens */
 #frontpage_examples .excerpt {
-    padding: 0.2em 0 0 0;
-    @include respond-min( $main_menu-mobile_menu_cutoff ){
-      padding: 0 0 0 2em;
-    }
+  padding: 0.2em 0 0 0;
+  @include respond-min($main_menu-mobile_menu_cutoff) {
+    padding: 0 0 0 2em;
+  }
 }
