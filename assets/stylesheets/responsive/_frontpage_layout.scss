@@ -1,3 +1,4 @@
+$dds-red: #d3232d;
 $light-grey: #ececec;
 $dark-grey: #3c3c3b;
 $darkest-blue: #132555;
@@ -5,7 +6,7 @@ $dark-blue: #475e90;
 
 #frontpage-intro {
   @include grid-row($behavior: nest);
-  @include respond-min( $main_menu-mobile_menu_cutoff ){
+  @include respond-min($main_menu-mobile_menu_cutoff) {
     min-height: 375px;
   }
 
@@ -13,28 +14,29 @@ $dark-blue: #475e90;
     @include grid-column(12);
     background-color: $light-grey;
 
-    @include respond-min( $main_menu-mobile_menu_cutoff ){
+    @include respond-min($main_menu-mobile_menu_cutoff) {
       @include grid-column(8);
       background: image-url("frontpage-lead-background.png") no-repeat scroll 15px 0 transparent;
       margin-top: 50px;
       height: 320px;
       line-height: 1.1;
 
-      @include ie8{
+      @include ie8 {
         padding-right: 0.9375em;
         background: image-url("frontpage-lead-background-ie.png") no-repeat scroll 0 0 transparent;
       }
+
       @include lte-ie7 {
         width: 36.813em;
       }
-
     }
+
     .frontpage-lead-cell {
       padding-bottom: 20px;
-      @include respond-min( $main_menu-mobile_menu_cutoff ){
+      @include respond-min($main_menu-mobile_menu_cutoff) {
         width: 154px;
         /* We're constraining older IE to a smaller width */
-        @include ie8{
+        @include ie8 {
           width: 145px;
         }
         /* No older IE support for border-box */
@@ -46,19 +48,19 @@ $dark-blue: #475e90;
         float: left;
       }
       a {
-         text-decoration: none;
-         &:hover{
-           text-decoration: underline;
-         }
-       }
+        text-decoration: none;
+          &:hover {
+          text-decoration: underline;
+        }
+      }
       h2 {
-        color: $darkest-blue;
+        color: $dds-red;
         font-size: 1.1rem;
-        @include ie8{
+        @include ie8 {
           font-size: 1.1em;
         }
         font-weight: bold;
-        @include respond-min( $main_menu-mobile_menu_cutoff ){
+        @include respond-min($main_menu-mobile_menu_cutoff) {
           margin-top: 35px;
         }
       }
@@ -66,11 +68,11 @@ $dark-blue: #475e90;
         color: $dark-grey;
         display: inline;
         font-weight: bold;
-        @include respond-min( $main_menu-mobile_menu_cutoff ){
+        @include respond-min($main_menu-mobile_menu_cutoff) {
           display: block;
           font-size: 7.5rem;
           line-height: 7.5rem;
-          @include ie8{
+          @include ie8 {
             font-size: 7.5em;
           }
           margin-top: 20px;
@@ -92,7 +94,7 @@ $dark-blue: #475e90;
 
        #frontpage-lead-button {
          padding: 7px 10px 7px 10px;
-         background-color: $dark-blue;
+         background-color: $dds-red;
          border-radius: 5px;
          border-bottom: 2px solid #C6C6C5;
          a {
