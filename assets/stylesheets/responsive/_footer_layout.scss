@@ -8,25 +8,24 @@
 
 
 
-#footer-nav{
-
+#footer-nav {
   @include grid-column(12);
 
-  ul{
+  ul {
     padding: 0;
     list-style: none outside none;
   }
 
   /* Three elements in footer - so a 3 element block grid */
-  @include respond-min( $main_menu-mobile_menu_cutoff ){
-    >ul {
+  @include respond-min($main_menu-mobile_menu_cutoff) {
+    > ul {
       @include block-grid(3);
       font-size:0.85em;
       li {
         text-align: left;
       }
     }
-    @include ie8{
+    @include ie8 {
        footer-nav > ul > li:nth-child(3n+1) {
            padding-left: 0em;
            padding-right: 1.25em;
@@ -39,12 +38,12 @@
            padding-left: 1.25em;
            padding-right: 0em;
          }
-     }
+    }
 
-
-    img {
+    .footer-logo img {
       display: inherit;
-      padding: 5px;
+      width: 60%;
+      padding: 0;
     }
   }
 }
