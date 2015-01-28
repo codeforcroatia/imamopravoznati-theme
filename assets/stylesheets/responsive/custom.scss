@@ -203,6 +203,10 @@ a.link_button_green_large {
   a {
     @extend %menu-item;
   }
+
+  li + li:not(#navigation_search) {
+    border-left: 1px solid $creamy-grey;
+  }
   /* Show which section is currently selected */
   li.selected a {
     @extend %selected-menu-item;
@@ -292,6 +296,12 @@ a.link_button_green_large {
     top: 4em;
     .greeting, a {
       font-weight: normal;
+    }
+    a {
+      padding: 5px;
+    }
+    a + a {
+      margin-left: 1em;
     }
   }
 }
