@@ -1,63 +1,12 @@
-$dark-blue: #071339;
-$medium-blue: #2a4072;
-$lighter-blue: #475e90;
-$even-lighter-blue: #7e92bf;
-$lightest-blue: #cfd7e4;
+// ==================
+// VARIABLES
+// ==================
 
-$dds-red: #d3232d;
-$dds-beige: #fbfbd7;
+@import "partials/variables";
 
-$charcoal: #333;
-$medium-grey: #999;
-$lighter-gray: #d9d9d9;
-$white: #fff;
-
-
-$locale-bg: $charcoal;
-$locale-color: $medium-grey;
-$locale-hover-color: $white;
-$link-color: $medium-blue;
-$body-font-color: $charcoal;
-$body-bg: $white;
-$button-bg: $lighter-blue;
-$button-color: $white;
-$heading-color: $charcoal;
-
-$font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-$sans-serif-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-
-$main_menu-bg: $white;
-$main_menu-search_text: $charcoal;
-$main_menu-link_text: $dark-blue;
-$main_menu-search_bg: $white;
-$banner_bg: $white;
-
-$main_menu-link_bg: $white;
-$main_menu-active_link_text: $dark-blue;
-$main_menu-active_link_bg: $even-lighter-blue;
-$footer-bg: $lighter-gray;
-$footer-color: $main_menu-link_text;
-$footer-link-color: $lighter-blue;
-
-$incoming-correspondence-color: #0a9fc0;
-$outgoing-correspondence-color: #0b6298;
-$correspondence-bg: $white;
-$correspondence-shadow: #d3d3d3;
-
-$status-success: #aab26e;
-$status-failure: #ff7959;
-$status-pending: #e69e5d;
-
-$notice-bg: #D7DABD;
-$notice-border: #839310;
-
-$error-bg: #ebc3a9;
-$error-border: #a1432c;
-
-$action-bg: #edd3b8;
-$action-border: #d69457;
-
-/* Mixin styles */
+// ==================
+// MIXIN STYLES
+// ==================
 
 /* Hide text when it's replaced by an image */
 .image-replacement {
@@ -116,7 +65,10 @@ $action-border: #d69457;
   }
 }
 
-/* General styles */
+// ==================
+// GENERAL STYLES
+// ==================
+
 body {
   background-color: $body-bg;
   color: $body-font-color;
@@ -221,15 +173,18 @@ a.link_button_green_large {
    }
 }
 
-/* Popups */
+// ==================
+// POPUPS
+// ==================
 
 .popup {
   background-color: $notice-bg;
   border: 3px solid $notice-border;
 }
 
-
-/* Header */
+// ==================
+// HEADER
+// ==================
 
 #banner_inner {
   background-color: $banner-bg;
@@ -280,7 +235,9 @@ a.link_button_green_large {
 }
 
 
-/* Notices, errors */
+// ==================
+// ERRORS, NOTICES
+// ==================
 
 #notice, #error, .errorExplanation, #request_header_text, #hidden_request, .describe_state_form form, .undescribed_requests {
   border-top: 10px solid;
@@ -317,7 +274,10 @@ a.link_button_green_large {
   border-color: $action-border;
 }
 
-/* Logged and local options act like submenus */
+// ==================
+// LOGGED-IN SUBMENUS
+// ==================
+
 #logged_in_bar {
   a {
     @extend %menu-item;
@@ -357,7 +317,6 @@ a.link_button_green_large {
     }
   }
 }
-
 
 #banner {
   /* Hide the greeting on smaller devices */
@@ -402,8 +361,10 @@ a.link_button_green_large {
 
 }
 
+// ==================
+// FOOTER
+// ==================
 
-/* Footer */
 #footer {
   color: $footer-color;
   font-family: $sans-serif-font-family;
@@ -417,7 +378,10 @@ a.link_button_green_large {
   }
 }
 
-/* Request page */
+// ==================
+// REQUEST PAGE
+// ==================
+
 div.correspondence {
   background-color: $correspondence-bg;
   padding-bottom: 0.5em;
@@ -444,19 +408,20 @@ div.correspondence {
   border: none;
   border-top: 8px solid $outgoing-correspondence-color;
   box-shadow: 0 3px 3px $correspondence-shadow;
+
   a.link_to_this {
     background-color: $outgoing-correspondence-color;
   }
 }
 
 .describe_state_form input[type="radio"] + label {
-  display:inline;
+  display: inline;
 }
 
 a.link_to_this {
   background-image: image-url('link-icon.png');
   @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
-    background-image:image-url('link-icon@2.png');
+    background-image: image-url('link-icon@2.png');
   }
   background-position: center center;
   background-repeat: no-repeat;
@@ -470,6 +435,7 @@ a.link_to_this {
   font-family: $font-family;
   border-radius: 0;
   border: 1px solid $heading-color;
+
   .close-button {
     background-color: $correspondence-bg;
     float: right;
@@ -517,7 +483,9 @@ a.link_to_this {
   color: $status-success;
 }
 
-/* Attachments*/
+// ==================
+// ATTACHMENTS
+// ==================
 
 .view_html_prefix {
   font-family: $font-family;
@@ -534,19 +502,23 @@ a.link_to_this {
   }
 }
 
-/* User page */
+// ==================
+// USER PAGE
+// ==================
+
 #user_photo_on_profile {
   img, #set_photo {
     margin-top:0.5em;
   }
 }
 
-/* Help pages */
+// ==================
+// HELP PAGES
+// ==================
 
 .controller_help {
   text-align: justify;
 }
-
 
 dt {
   color: $heading-color;
@@ -563,7 +535,10 @@ dt {
   }
 }
 
-/* Front page */
+// ==================
+// FRONT PAGE
+// ==================
+
 /* Drop the extract indentation on small screens */
 #frontpage_examples .excerpt {
   padding: 0.2em 0 0 0;

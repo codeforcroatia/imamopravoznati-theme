@@ -1,8 +1,12 @@
-$dds-red: #d3232d;
-$light-grey: #ececec;
-$dark-grey: #3c3c3b;
-$darkest-blue: #132555;
-$dark-blue: #475e90;
+// ==================
+// VARIABLES
+// ==================
+
+@import "partials/variables";
+
+// ==================
+// FRONTPAGE
+// ==================
 
 #frontpage-intro {
   @include grid-row($behavior: nest);
