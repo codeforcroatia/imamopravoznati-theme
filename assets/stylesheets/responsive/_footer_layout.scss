@@ -1,16 +1,22 @@
-/* Footer layout */
+// ==================
+// VARIABLES
+// ==================
+
+@import "partials/variables";
+
+// ==================
+// FOOTER LAYOUT
+// ==================
+
 #footer {
   @include grid-row;
-  border-top: 1px solid #c6c6c5;
+  border-top: 1px solid $creamy-grey;
   padding-top: 10px;
   margin-top: 50px;
 }
 
-
-
 #footer-nav {
   @include grid-column(12);
-
   ul {
     padding: 0;
     list-style: none outside none;
@@ -20,24 +26,24 @@
   @include respond-min($main_menu-mobile_menu_cutoff) {
     > ul {
       @include block-grid(3);
-      font-size:0.85em;
+      font-size: 0.85em;
       li {
         text-align: left;
       }
     }
     @include ie8 {
-       footer-nav > ul > li:nth-child(3n+1) {
-           padding-left: 0em;
-           padding-right: 1.25em;
-         }
-         #footer-nav > ul > li:nth-child(3n+2) {
-           padding-left: 0.625em;
-           padding-right: 0.625em;
-         }
-         #footer-nav > ul > li:nth-child(3n) {
-           padding-left: 1.25em;
-           padding-right: 0em;
-         }
+      #footer-nav > ul > li:nth-child(3n+1) {
+        padding-left: 0em;
+        padding-right: 1.25em;
+      }
+      #footer-nav > ul > li:nth-child(3n+2) {
+        padding-left: 0.625em;
+        padding-right: 0.625em; 
+      }
+      #footer-nav > ul > li:nth-child(3n) {
+        padding-left: 1.25em;
+        padding-right: 0em;
+      }
     }
 
     .footer-logo img {

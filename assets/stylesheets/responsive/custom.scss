@@ -81,7 +81,9 @@ body {
 a {
   color: $link-color;
 
-  &:hover {
+  &:hover,
+  &:active,
+  &:visited {
     color: $link-color;
   }
 }
