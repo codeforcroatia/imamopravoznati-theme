@@ -1,4 +1,4 @@
-Chiediamo Alaveteli theme
+DirittodiSapere Alaveteli theme
 =========================
 
 This is a theme package for Alaveteli.
