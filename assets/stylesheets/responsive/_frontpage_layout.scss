@@ -37,6 +37,7 @@
 
     .frontpage-lead-cell {
       padding-bottom: 20px;
+
       @include respond-min($main_menu-mobile_menu_cutoff) {
         width: 154px;
         /* We're constraining older IE to a smaller width */
@@ -57,6 +58,7 @@
           text-decoration: underline;
         }
       }
+
       h2 {
         color: $dds-red;
         font-size: 1.1rem;
@@ -68,6 +70,7 @@
           margin-top: 35px;
         }
       }
+
       .frontpage-lead-enum {
         color: $dark-grey;
         display: inline;
@@ -83,39 +86,38 @@
           margin-bottom: 0;
         }
       }
+
       .frontpage-lead-text {
-         display: inline;
-         color: $dark-grey;
-         font-weight: bold;
-         font-size: 0.9rem;
+        display: inline;
+        color: $dark-grey;
+        font-weight: bold;
+        font-size: 0.9rem;
 
-         @include respond-min( $main_menu-mobile_menu_cutoff ){
-           margin-bottom: 30px;
-           display: block;
-         }
+        @include respond-min($main_menu-mobile_menu_cutoff) {
+          margin-bottom: 30px;
+          display: block;
+        }
+      }
 
-       }
+      #frontpage-lead-button {
+        padding: 7px 10px 7px 10px;
+        background-color: $dds-red;
+        border-radius: 5px;
+        border-bottom: 2px solid #C6C6C5;
 
-       #frontpage-lead-button {
-         padding: 7px 10px 7px 10px;
-         background-color: $dds-red;
-         border-radius: 5px;
-         border-bottom: 2px solid #C6C6C5;
-         a {
-            color: #FFFFFF;
-            font-weight: bold;
-         }
-       }
+        a {
+          color: #FFFFFF;
+          font-weight: bold;
+        }
+      }
     }
 
     .frontpage-lead-cell.banner{
-      @include respond-min( $main_menu-mobile_menu_cutoff ){
-
-        padding-left: 10px;
-
-        h2{
+      @include respond-min($main_menu-mobile_menu_cutoff) {
+        padding: 15px;
+        h2 {
           margin-bottom: 3rem;
-          @include ie8{
+          @include ie8 {
             margin-bottom: 3em;
           }
         }
@@ -124,47 +126,52 @@
   }
 
   .frontpage-lead-text.long {
-    @include respond-min( $main_menu-mobile_menu_cutoff ){
+    @include respond-min($main_menu-mobile_menu_cutoff) {
       margin-left: -10px;
     }
-   }
+  }
 
-   .frontpage-lead-text.short {
-     @include respond-min( $main_menu-mobile_menu_cutoff ){
-       margin-left: 5px;
-     }
+  .frontpage-lead-text.short {
+    @include respond-min($main_menu-mobile_menu_cutoff) {
+      margin-left: 5px;
     }
-
+  }
 
   #frontpage-intro-sidebar {
     @include grid-column(12);
-    @include respond-min( $main_menu-mobile_menu_cutoff ){
+    @include respond-min($main_menu-mobile_menu_cutoff) {
       @include grid-column(4);
       margin-top: 50px;
-      @include ie8{
+      @include ie8 {
         padding-left: 0.9375em;
       }
-      @include lte-ie7{
+      @include lte-ie7 {
         width: 17.438em;
       }
     }
 
-
     #frontpage-lead-ad {
-      background-color: $darkest-blue;
+      background-color: $dds-red;
       text-align: center;
-      color: $light-grey;
+      color: lighten($dds-red, 40%);
+      border-radius: 5px;
+      padding: 12px;
+      margin-bottom: 12px;
+      box-shadow: 0 2px 0 darken($dds-red, 10%);
+
       h4 {
-        color: $light-grey;
+        color: $white;
         margin: 0;
+        font-size: 1.1rem;
         padding: 0.5em 0;
+      }
+      p {
+        font-size: 0.8rem;
+        line-height: 1.1rem;
       }
       a {
         color: #fff;
       }
-      border-radius: 5px;
-      padding: 0px 12px 12px 12px;
-      margin-bottom: 12px;
     }
   }
 
@@ -178,27 +185,26 @@
 
   #frontpage-search-label {
     display: none;
-    @include respond-min( $main_menu-mobile_menu_cutoff ){
+    @include respond-min($main_menu-mobile_menu_cutoff) {
       margin-top: 10px;
       @include grid-column(4);
       display: block;
-      @include ie8{
+      @include ie8 {
         padding-right: 0.9375em;
       }
-      @include lte-ie7{
+      @include lte-ie7 {
         width: 17.438em;
       }
-
     }
-
   }
+
   h4 {
     font-weight: bold;
     font-size: 1em;
-    @include respond-min( $main_menu-mobile_menu_cutoff ){
+    @include respond-min($main_menu-mobile_menu_cutoff) {
       font-size: 1.2rem;
     }
-    @include ie8{
+    @include ie8 {
       font-size: 1.2em;
     }
 
@@ -210,21 +216,20 @@
 
   #frontpage-search-form {
     @include grid-column(12);
-    @include respond-min( $main_menu-mobile_menu_cutoff ){
+    @include respond-min($main_menu-mobile_menu_cutoff) {
       @include grid-column(8);
       form {
         margin: 0;
       }
-
-      @include ie8{
+      @include ie8 {
         padding-left: 0.9375em;
       }
       @include lte-ie7 {
         width: 36.813em;
       }
-
     }
   }
+
   input {
     margin: 30px 0;
   }
