@@ -324,11 +324,13 @@ a.link_button_green_large {
     .greeting, a {
       font-weight: normal;
     }
-    a {
-      padding: 5px;
-    }
-    a + a {
-      margin-left: 1em;
+    @include respond-min($main_menu-mobile_menu_cutoff) {
+      a {
+        padding: 5px;
+      }
+      a + a {
+        margin-left: 1em;
+      }
     }
   }
 }
