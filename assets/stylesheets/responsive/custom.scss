@@ -19,7 +19,7 @@
 %menu-item {
   text-decoration: none;
   color: $white;
-  background-color: $main_menu-link_text;
+  background-color: $dds-red;
 
   @include respond-min($main_menu-mobile_menu_cutoff) {
     background-color: $white;
