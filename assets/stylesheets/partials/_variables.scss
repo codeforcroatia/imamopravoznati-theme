@@ -1,0 +1,75 @@
+// ==================
+// VARIABLES
+// ==================
+
+// Color palettes
+// ------------------
+
+// Old palette
+$dark-blue: #071339;
+$medium-blue: #2a4072;
+$lighter-blue: #475e90;
+$even-lighter-blue: #7e92bf;
+$lightest-blue: #cfd7e4;
+$darkest-blue: #132555;
+
+// DdS palette
+$dds-red: #d3232d;
+$dds-beige: #fbfbd7;
+$creamy-grey: #f5f5f2;
+
+// Generic colors
+$charcoal: #333;
+$dark-grey: #3c3c3b;
+$medium-grey: #999;
+$light-grey: #ececec;
+$lighter-grey: #d9d9d9;
+$white: #fff;
+
+// Components color
+$locale-bg: $charcoal;
+$locale-color: $medium-grey;
+$locale-hover-color: $white;
+$link-color: $dds-red;
+$body-font-color: $charcoal;
+$body-bg: $white;
+$button-bg: $lighter-blue;
+$button-color: $white;
+$heading-color: $charcoal;
+
+$main_menu-bg: $white;
+$main_menu-search_text: $charcoal;
+$main_menu-link_text: $dark-blue;
+$main_menu-search_bg: $white;
+$banner_bg: $creamy-grey;
+
+$main_menu-link_bg: $white;
+$main_menu-active_link_text: $dark-blue;
+$main_menu-active_link_bg: $even-lighter-blue;
+$footer-bg: $lighter-grey;
+$footer-color: $main_menu-link_text;
+$footer-link-color: $lighter-blue;
+
+$incoming-correspondence-color: #0a9fc0;
+$outgoing-correspondence-color: #0b6298;
+$correspondence-bg: $white;
+$correspondence-shadow: #d3d3d3;
+
+$status-success: #aab26e;
+$status-failure: #ff7959;
+$status-pending: #e69e5d;
+
+$notice-bg: #D7DABD;
+$notice-border: #839310;
+
+$error-bg: #ebc3a9;
+$error-border: #a1432c;
+
+$action-bg: #edd3b8;
+$action-border: #d69457;
+
+// Fonts
+// ------------------
+
+$font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$sans-serif-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;

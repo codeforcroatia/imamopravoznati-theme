@@ -1,11 +1,16 @@
-$light-grey: #ececec;
-$dark-grey: #3c3c3b;
-$darkest-blue: #132555;
-$dark-blue: #475e90;
+// ==================
+// VARIABLES
+// ==================
+
+@import "partials/variables";
+
+// ==================
+// FRONTPAGE
+// ==================
 
 #frontpage-intro {
   @include grid-row($behavior: nest);
-  @include respond-min( $main_menu-mobile_menu_cutoff ){
+  @include respond-min($main_menu-mobile_menu_cutoff) {
     min-height: 375px;
   }
 
@@ -13,28 +18,30 @@ $dark-blue: #475e90;
     @include grid-column(12);
     background-color: $light-grey;
 
-    @include respond-min( $main_menu-mobile_menu_cutoff ){
+    @include respond-min($main_menu-mobile_menu_cutoff) {
       @include grid-column(8);
       background: image-url("frontpage-lead-background.png") no-repeat scroll 15px 0 transparent;
       margin-top: 50px;
       height: 320px;
       line-height: 1.1;
 
-      @include ie8{
+      @include ie8 {
         padding-right: 0.9375em;
         background: image-url("frontpage-lead-background-ie.png") no-repeat scroll 0 0 transparent;
       }
+
       @include lte-ie7 {
         width: 36.813em;
       }
-
     }
+
     .frontpage-lead-cell {
       padding-bottom: 20px;
-      @include respond-min( $main_menu-mobile_menu_cutoff ){
+
+      @include respond-min($main_menu-mobile_menu_cutoff) {
         width: 154px;
         /* We're constraining older IE to a smaller width */
-        @include ie8{
+        @include ie8 {
           width: 145px;
         }
         /* No older IE support for border-box */
@@ -46,70 +53,71 @@ $dark-blue: #475e90;
         float: left;
       }
       a {
-         text-decoration: none;
-         &:hover{
-           text-decoration: underline;
-         }
-       }
+        text-decoration: none;
+          &:hover {
+          text-decoration: underline;
+        }
+      }
+
       h2 {
-        color: $darkest-blue;
+        color: $dds-red;
         font-size: 1.1rem;
-        @include ie8{
+        @include ie8 {
           font-size: 1.1em;
         }
         font-weight: bold;
-        @include respond-min( $main_menu-mobile_menu_cutoff ){
+        @include respond-min($main_menu-mobile_menu_cutoff) {
           margin-top: 35px;
         }
       }
+
       .frontpage-lead-enum {
         color: $dark-grey;
         display: inline;
         font-weight: bold;
-        @include respond-min( $main_menu-mobile_menu_cutoff ){
+        @include respond-min($main_menu-mobile_menu_cutoff) {
           display: block;
           font-size: 7.5rem;
           line-height: 7.5rem;
-          @include ie8{
+          @include ie8 {
             font-size: 7.5em;
           }
           margin-top: 20px;
           margin-bottom: 0;
         }
       }
+
       .frontpage-lead-text {
-         display: inline;
-         color: $dark-grey;
-         font-weight: bold;
-         font-size: 0.9rem;
+        display: inline;
+        color: $dark-grey;
+        font-weight: bold;
+        font-size: 0.9rem;
 
-         @include respond-min( $main_menu-mobile_menu_cutoff ){
-           margin-bottom: 30px;
-           display: block;
-         }
+        @include respond-min($main_menu-mobile_menu_cutoff) {
+          margin-bottom: 30px;
+          display: block;
+        }
+      }
 
-       }
+      #frontpage-lead-button {
+        padding: 7px 10px 7px 10px;
+        background-color: $dds-red;
+        border-radius: 5px;
+        border-bottom: 2px solid #C6C6C5;
 
-       #frontpage-lead-button {
-         padding: 7px 10px 7px 10px;
-         background-color: $dark-blue;
-         border-radius: 5px;
-         border-bottom: 2px solid #C6C6C5;
-         a {
-            color: #FFFFFF;
-            font-weight: bold;
-         }
-       }
+        a {
+          color: #FFFFFF;
+          font-weight: bold;
+        }
+      }
     }
 
     .frontpage-lead-cell.banner{
-      @include respond-min( $main_menu-mobile_menu_cutoff ){
-
-        padding-left: 10px;
-
-        h2{
+      @include respond-min($main_menu-mobile_menu_cutoff) {
+        padding: 15px;
+        h2 {
           margin-bottom: 3rem;
-          @include ie8{
+          @include ie8 {
             margin-bottom: 3em;
           }
         }
@@ -118,47 +126,52 @@ $dark-blue: #475e90;
   }
 
   .frontpage-lead-text.long {
-    @include respond-min( $main_menu-mobile_menu_cutoff ){
+    @include respond-min($main_menu-mobile_menu_cutoff) {
       margin-left: -10px;
     }
-   }
+  }
 
-   .frontpage-lead-text.short {
-     @include respond-min( $main_menu-mobile_menu_cutoff ){
-       margin-left: 5px;
-     }
+  .frontpage-lead-text.short {
+    @include respond-min($main_menu-mobile_menu_cutoff) {
+      margin-left: 5px;
     }
-
+  }
 
   #frontpage-intro-sidebar {
     @include grid-column(12);
-    @include respond-min( $main_menu-mobile_menu_cutoff ){
+    @include respond-min($main_menu-mobile_menu_cutoff) {
       @include grid-column(4);
       margin-top: 50px;
-      @include ie8{
+      @include ie8 {
         padding-left: 0.9375em;
       }
-      @include lte-ie7{
+      @include lte-ie7 {
         width: 17.438em;
       }
     }
 
-
     #frontpage-lead-ad {
-      background-color: $darkest-blue;
+      background-color: $dds-red;
       text-align: center;
-      color: $light-grey;
+      color: lighten($dds-red, 40%);
+      border-radius: 5px;
+      padding: 12px;
+      margin-bottom: 12px;
+      box-shadow: 0 2px 0 darken($dds-red, 5%);
+
       h4 {
-        color: $light-grey;
+        color: $white;
         margin: 0;
+        font-size: 1.1rem;
         padding: 0.5em 0;
+      }
+      p {
+        font-size: 0.8rem;
+        line-height: 1.1rem;
       }
       a {
         color: #fff;
       }
-      border-radius: 5px;
-      padding: 0px 12px 12px 12px;
-      margin-bottom: 12px;
     }
   }
 
@@ -167,32 +180,31 @@ $dark-blue: #475e90;
 
 #frontpage-search-box {
   @include grid-row();
-  background-color: #D9D9D9;
+  background-color: $creamy-grey;
   border-radius: 5px;
 
   #frontpage-search-label {
     display: none;
-    @include respond-min( $main_menu-mobile_menu_cutoff ){
-      margin-top: 10px;
+    @include respond-min($main_menu-mobile_menu_cutoff) {
+      margin-top: 0;
       @include grid-column(4);
       display: block;
-      @include ie8{
+      @include ie8 {
         padding-right: 0.9375em;
       }
-      @include lte-ie7{
+      @include lte-ie7 {
         width: 17.438em;
       }
-
     }
-
   }
+
   h4 {
     font-weight: bold;
     font-size: 1em;
-    @include respond-min( $main_menu-mobile_menu_cutoff ){
+    @include respond-min($main_menu-mobile_menu_cutoff) {
       font-size: 1.2rem;
     }
-    @include ie8{
+    @include ie8 {
       font-size: 1.2em;
     }
 
@@ -204,27 +216,26 @@ $dark-blue: #475e90;
 
   #frontpage-search-form {
     @include grid-column(12);
-    @include respond-min( $main_menu-mobile_menu_cutoff ){
+    @include respond-min($main_menu-mobile_menu_cutoff) {
       @include grid-column(8);
       form {
         margin: 0;
       }
-
-      @include ie8{
+      @include ie8 {
         padding-left: 0.9375em;
       }
       @include lte-ie7 {
         width: 36.813em;
       }
-
     }
   }
+
   input {
     margin: 30px 0;
   }
   input[type="text"] {
     width: 70%;
-    margin-right:5px;
+    margin-right: 5px;
   }
   input[type="submit"] {
     width: 25%;
