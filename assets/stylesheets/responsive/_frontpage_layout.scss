@@ -39,18 +39,18 @@
       padding-bottom: 20px;
 
       @include respond-min($main_menu-mobile_menu_cutoff) {
-        width: 154px;
-        /* We're constraining older IE to a smaller width */
-        @include ie8 {
-          width: 145px;
-        }
-        /* No older IE support for border-box */
-        @include lte-ie7 {
-          width: 111px;
-        }
+        width: 25%;
         padding-left: 20px;
         padding-right: 10px;
         float: left;
+        /* We're constraining older IE to a smaller width */
+        @include ie8 {
+          width: 158px;
+        }
+        /* No older IE support for border-box */
+        @include lte-ie7 {
+          width: 150px;
+        }
       }
       a {
         text-decoration: none;
