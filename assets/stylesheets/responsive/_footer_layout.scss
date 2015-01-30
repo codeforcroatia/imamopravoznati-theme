@@ -9,14 +9,21 @@
 // ==================
 
 #footer {
-  @include grid-row;
-  border-top: 1px solid $creamy-grey;
+  border-top: 1px solid darken($creamy-grey, 10%);
+  background-color: $creamy-grey;
   padding-top: 10px;
   margin-top: 50px;
+  max-width: none;
+}
+
+.footer-inner {
+  @include grid-row;
 }
 
 #footer-nav {
   @include grid-column(12);
+  float: none;
+
   ul {
     padding: 0;
     list-style: none outside none;
