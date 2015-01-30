@@ -19,7 +19,7 @@
 %menu-item {
   text-decoration: none;
   color: $white;
-  background-color: $main_menu-link_text;
+  background-color: $dds-red;
 
   @include respond-min($main_menu-mobile_menu_cutoff) {
     background-color: $white;
@@ -324,11 +324,13 @@ a.link_button_green_large {
     .greeting, a {
       font-weight: normal;
     }
-    a {
-      padding: 5px;
-    }
-    a + a {
-      margin-left: 1em;
+    @include respond-min($main_menu-mobile_menu_cutoff) {
+      a {
+        padding: 5px;
+      }
+      a + a {
+        margin-left: 1em;
+      }
     }
   }
 }
