@@ -57,6 +57,7 @@
     </div>
   </div>
 </div>
+<!-- /frontpage-intro -->
 
 <div id="frontpage-content">
   <div id="frontpage-search-box">
@@ -76,6 +77,30 @@
       <% end %>
     </div>
   </div>
+  <!-- /frontpage-search-box -->
+
+  <div id="frontpage-updates">
+    <div id="frontpage-updates-news">
+      <h2><a href="http://dirittodisapere.it/blog" target="_blank">News</a></h2>
+      <% 0.upto(3).each do |position|
+          item = @blog_items[position];
+          break if item.nil? %>
+
+        <div class="frontpage-blog-post <%= position.even? ? 'left' : 'right' %>">
+          <img src="<%= item['thumbnail'] ? item['thumbnail'][0] : '' %>" width="278" height="128"/>
+          <h4>
+            <a href='<%= item['link'][0] %>' target="_blank"><%= h item['title'][0] %></a>
+          </h4>
+          <p><a href="<%= item['link'][0] %>" target="_blank"><%= _("Leggi tutto »") %></a></p>
+        </div>
+
+        <% if position.odd? %>
+        <div style="clear:both"></div>
+        <% end %>
+      <% end %>
+
+      <div class="link-arrow"><a href="http://dirittodisapere.it/blog" target="_blank"><%= _("Altre notizie »") %></a></div>
+    </div>
+  </div>
+  <!-- /frontpage-updates -->
 </div>
-
-
