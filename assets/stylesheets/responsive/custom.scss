@@ -206,6 +206,11 @@ a.link_button_green_large {
 
 #topnav {
   background-color: $main_menu-bg;
+  padding-bottom: 0;
+
+  @include respond-min($main_menu-mobile_menu_cutoff) {
+    padding: 0 0 1em 0;
+  }
 }
 
 #navigation {
@@ -215,7 +220,10 @@ a.link_button_green_large {
   }
 
   li + li:not(#navigation_search) {
-    border-left: 1px solid $creamy-grey;
+    border-left: 0;
+    @include respond-min($main_menu-mobile_menu_cutoff) {
+      border-left: 1px solid $creamy-grey;
+    }
   }
   /* Show which section is currently selected */
   li.selected a {
