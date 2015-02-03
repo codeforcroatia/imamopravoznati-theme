@@ -29,6 +29,12 @@
     list-style: none outside none;
   }
 
+  .footer-logo img {
+    display: inherit;
+    width: 60%;
+    padding: 0;
+  }
+
   /* Three elements in footer - so a 3 element block grid */
   @include respond-min($main_menu-mobile_menu_cutoff) {
     > ul {
@@ -51,12 +57,6 @@
         padding-left: 1.25em;
         padding-right: 0em;
       }
-    }
-
-    .footer-logo img {
-      display: inherit;
-      width: 60%;
-      padding: 0;
     }
   }
 }
