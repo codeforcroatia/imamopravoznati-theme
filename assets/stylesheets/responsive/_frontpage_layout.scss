@@ -176,6 +176,13 @@
         color: #fff;
       }
     }
+
+    #frontpage-lead-subscribe {
+      @extend #frontpage-lead-ad;
+
+      background-color: $creamy-grey;
+      box-shadow: 0 2px 0 darken($creamy-grey, 5%);
+    }
   }
 
 }
