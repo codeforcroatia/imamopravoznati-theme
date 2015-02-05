@@ -207,6 +207,7 @@ a.link_button_green_large {
 
 #topnav {
   background-color: $main_menu-bg;
+  border-top: 1px solid darken($creamy-grey, 10%);
   padding-bottom: 0;
 
   @include respond-min($main_menu-mobile_menu_cutoff) {
