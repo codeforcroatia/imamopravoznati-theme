@@ -22,7 +22,7 @@
   background-color: $dds-red;
 
   @include respond-min($main_menu-mobile_menu_cutoff) {
-    background-color: $white;
+    background-color: transparent;
     color: transparentize($dds-red, 0.2);
     @include ie8 {
       color: $dds-red;
@@ -332,13 +332,15 @@ a.link_button_green_large {
     top: 4em;
     .greeting, a {
       font-weight: normal;
+      display: inline-block;
     }
     @include respond-min($main_menu-mobile_menu_cutoff) {
       a {
         padding: 5px;
+        color: $dds-red;
       }
       a + a {
-        margin-left: 1em;
+        margin-left: 0;
       }
     }
   }
