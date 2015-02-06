@@ -257,10 +257,16 @@
 
 // News
 // ------------------
-#frontpage-updates { }
+#frontpage-updates {
+  @include grid-row;
+}
 
 #frontpage-updates-news {
-  @include grid-row;
+  @include grid-column(12);
+  @include respond-min($main_menu-mobile_menu_cutoff) {
+    @include grid-column(8);
+    padding-left: 0;
+  }
   margin-top: 3em;
 }
 
@@ -316,6 +322,7 @@
     background-color: $creamy-grey;
     background-size: cover;
     border: 1px solid darken($creamy-grey, 10%);
+    border-radius: 5px;
     transition: opacity 0.2s ease-out;
   }
 
@@ -323,3 +330,15 @@
     text-decoration: none;
     transition: color 0.2s ease-out;
   }
+
+// Twitter timeline sidebar
+// ------------------
+#tweets-timeline {
+  @include grid-column(12);
+  @include respond-min($main_menu-mobile_menu_cutoff) {
+    @include grid-column(4);
+    padding-left: 0;
+    padding-right: 0;
+  }
+  margin-top: 3em;
+}
