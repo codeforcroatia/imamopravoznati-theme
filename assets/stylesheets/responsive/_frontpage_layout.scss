@@ -115,7 +115,7 @@
       }
     }
 
-    .frontpage-lead-cell.banner{
+    .frontpage-lead-cell.banner {
       @include respond-min($main_menu-mobile_menu_cutoff) {
         padding: 15px;
         h2 {
@@ -187,6 +187,11 @@
     }
   }
 
+  #frontpage-share-buttons {
+    .twitter-share-button {
+      vertical-align: top;
+    }
+  }
 }
 
 // Search box
