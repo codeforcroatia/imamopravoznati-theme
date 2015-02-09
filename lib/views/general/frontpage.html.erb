@@ -98,7 +98,7 @@
 
         <div class="frontpage-blog-post <%= position.even? ? 'left' : 'right' %>">
           <a href="<%= item['link'][0] %>" class="frontpage-blog-post--link"></a>
-          <div class="frontpage-blog-post--image <%= if item['thumbnail'][0].blank? then 'placeholder-image' end %>" style="background-image: url(<%= item['thumbnail'][0].blank? ? image_path('dds-logo.png') : item['thumbnail'][0] %>);">
+          <div class="frontpage-blog-post--image <%= 'placeholder-image' if item['thumbnail'][0].blank? %>" style="background-image: url(<%= item['thumbnail'][0].blank? ? image_path('dds-logo.png') : item['thumbnail'][0] %>);">
           </div>
           <h4 class="frontpage-blog-post--title">
             <a href="<%= item['link'][0] %>" class="frontpage-blog-post--article-link" target="_blank"><%= h item['title'][0] %></a>
