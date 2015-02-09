@@ -304,7 +304,7 @@
     }
 
     .frontpage-blog-post--image {
-      opacity: .5;
+      opacity: .7;
     }
   }
 }
@@ -331,6 +331,12 @@
     border: 1px solid darken($creamy-grey, 10%);
     border-radius: 5px;
     transition: opacity 0.2s ease-out;
+
+    &.placeholder-image {
+      background-size: 50%;
+      background-position: 50%;
+      background-repeat: no-repeat;
+    }
   }
 
   .frontpage-blog-post--article-link {
