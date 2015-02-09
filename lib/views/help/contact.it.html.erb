@@ -1,4 +1,4 @@
-<% @title = "Contact us" %>
+<% @title = "Contatti" %>
 
 <%= foi_error_messages_for :contact %>
 
@@ -7,9 +7,9 @@
 <div id="contact_preamble">
 
     <% if !flash[:notice] %>
-        <h2>Contatta un'istituzione per ricevere le informazioni che ti servono</h2>
+        <h2>Contatta un'amministrazione per ricevere le informazioni che ti servono</h2>
         <ul>
-            <li><a href="<%= new_request_path %>">Vai qui</a> per fare una richiesta pubblica alla P.A.</li>
+            <li><a href="<%= new_request_path %>">Vai qui</a> per fare una richiesta all'amministrazione pubblica (sarà visibile sul sito)</li>
 
         </ul>
 
@@ -27,7 +27,7 @@
                href="mailto:<%=@contact_email%>"><%=@contact_email%></a>
             </li>
 
-            <li>Siamo una <strong>ONG</strong> e non facciamo parte della P.A.</li>
+            <li>Siamo una <strong>ONG</strong> e non abbiamo legami con la Pubblica Amministrazione.</li>
             </ul>
     <% end %>
 </div>
@@ -71,7 +71,7 @@
     <% end %>
     <% if !@last_body.nil? %>
         <p>
-            <label class="form_label" for="contact_message">Includi link alla P.A.:</label>
+            <label class="form_label" for="contact_message">Includi link all'amministrazione:</label>
             <%=public_body_link(@last_body) %>
             <%= submit_tag "remove", :name => 'remove' %>
         </p>
@@ -84,8 +84,8 @@
 
     <div class="form_button">
         <%= hidden_field_tag(:submitted_contact_form, 1) %>
-        <%= submit_tag "Send message to the charity", :disable_with => "Sending..." %>
-        &lt;-- we run this site, not the Government!
+        <%= submit_tag "Invia messaggio a Diritto Di Sapere", :disable_with => "Sending..." %>
+        &lt;-- il sito è gestito da noi, non dal Governo italiano!
     </div>
 
 <% end %>
