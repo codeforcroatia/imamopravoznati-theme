@@ -3,15 +3,17 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# marcogiustini <info@marcogiustini.info>, 2013
+# louisecrow <louise@mysociety.org>, 2015
+# Marco Giustini <info@marcogiustini.info>, 2013
+# Marco Giustini <info@marcogiustini.info>, 2013
 msgid ""
 msgstr ""
-"Project-Id-Version: chiediamo-theme\n"
+"Project-Id-Version: dirittodisapere-theme\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-09-12 17:01+0100\n"
-"PO-Revision-Date: 2013-09-16 04:56+0000\n"
-"Last-Translator: marcogiustini <info@marcogiustini.info>\n"
-"Language-Team: Italian (http://www.transifex.com/projects/p/chiediamo-theme/language/it/)\n"
+"PO-Revision-Date: 2015-02-09 17:22+0000\n"
+"Last-Translator: louisecrow <louise@mysociety.org>\n"
+"Language-Team: Italian (http://www.transifex.com/projects/p/dirittodisapere-theme/language/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -43,7 +45,7 @@ msgid "Help"
 msgstr "Aiuto"
 
 msgid "Making requests"
-msgstr "Fare richieste"
+msgstr "Per fare una richiesta"
 
 msgid "Original theme from {{link}}"
 msgstr "Tema originale di {{link}}"
@@ -60,7 +62,7 @@ msgid "Think of a question for a public authority."
 msgstr "Scrivi una domanda ad un'amministrazione."
 
 msgid "To get information from public authorities:"
-msgstr "Chiediamo informazioni ad un'amministrazione"
+msgstr "Chiedi informazioni a un'amministrazione"
 
 msgid "We send the question for you"
 msgstr "Noi inviamo la domanda per te"
