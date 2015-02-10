@@ -126,7 +126,10 @@ input.use-datepicker[type=text] {
   background:image-url('calendar.png') no-repeat 100px 5px #fff;
 }
 
-form input[type=submit], a.link_button_green, a.link_button_green_large {
+form input[type=submit],
+a.link_button_green,
+a.link_button_green_large,
+#frontpage-lead-button {
   text-decoration: none;
   color: $white;
   background-color: darken($dds-red, 5%);
