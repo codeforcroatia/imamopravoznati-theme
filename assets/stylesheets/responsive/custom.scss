@@ -220,8 +220,10 @@ a.link_button_green_large {
 
 #navigation {
   border-bottom: none;
+
   a {
     @extend %menu-item;
+    font-weight: bold;
   }
 
   li + li:not(#navigation_search) {
