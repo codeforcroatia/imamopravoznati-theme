@@ -94,7 +94,6 @@
       <h2><a class="frontpage-updates-title" href="http://dirittodisapere.it/blog" target="_blank">News</a></h2>
       <% 0.upto(3).each do |position|
           item = @blog_items[position];
-          puts item.inspect;
           break if item.nil? %>
 
         <div class="frontpage-blog-post <%= position.even? ? 'left' : 'right' %>">
