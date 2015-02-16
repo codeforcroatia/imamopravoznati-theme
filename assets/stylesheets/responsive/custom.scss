@@ -579,11 +579,37 @@ a.link_to_this {
 
 .controller_help {
   text-align: justify;
+
+  h1,
+  dt {
+    font-size: 2em;
+
+    a {
+      display: none;
+      text-decoration: none !important;
+      font-size: 0.9em;
+      line-height: 0.9em;
+    }
+
+    &:hover {
+      a {
+        color: $dds-red !important;
+        display: inline;
+      }
+    }
+  }
+
+  dl {
+    dd {
+      margin-left: 0;
+    }
+  }
 }
 
 dt {
   color: $heading-color;
   font-weight: 700;
+
   @include respond-min($main_menu-mobile_menu_cutoff) {
     font-size: 2em;
     line-height: 1.1em;
