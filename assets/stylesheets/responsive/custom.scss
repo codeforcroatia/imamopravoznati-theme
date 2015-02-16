@@ -579,11 +579,41 @@ a.link_to_this {
 
 .controller_help {
   text-align: justify;
+
+  h1,
+  dt {
+    font-size: 1.5em;
+
+    a {
+      display: none;
+      text-decoration: none !important;
+      font-size: 0.9em;
+      line-height: 0.9em;
+    }
+
+    &:hover {
+      a {
+        color: $dds-red !important;
+        display: inline;
+      }
+    }
+  }
+
+  dl {
+    dd {
+      margin-left: 0;
+    }
+  }
 }
 
 dt {
   color: $heading-color;
   font-weight: 700;
+  
+  & + dd {
+    margin-bottom: 20px;
+  }
+
   @include respond-min($main_menu-mobile_menu_cutoff) {
     font-size: 2em;
     line-height: 1.1em;
@@ -593,6 +623,12 @@ dt {
 #left_column_flip {
   li {
     padding: 0.8em 0;
+  }
+}
+
+#right_column_flip {
+  h2 {
+    font-size: 1.5em;
   }
 }
 
