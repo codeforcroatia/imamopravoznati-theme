@@ -46,6 +46,9 @@ msgstr ""
 msgid "Original theme from {{link}}"
 msgstr ""
 
+msgid "Remember: your request and any response will be published on the site!"
+msgstr ""
+
 msgid "Search"
 msgstr ""
 
