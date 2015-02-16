@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: dirittodisapere-theme\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-09-12 17:01+0100\n"
-"PO-Revision-Date: 2015-02-09 17:22+0000\n"
+"PO-Revision-Date: 2015-02-16 12:25+0000\n"
 "Last-Translator: louisecrow <louise@mysociety.org>\n"
 "Language-Team: Italian (http://www.transifex.com/projects/p/dirittodisapere-theme/language/it/)\n"
 "MIME-Version: 1.0\n"
@@ -49,6 +49,9 @@ msgstr "Per fare una richiesta"
 
 msgid "Original theme from {{link}}"
 msgstr "Tema originale di {{link}}"
+
+msgid "Remember: your request and any response will be published on the site!"
+msgstr "Ricorda: la tua richiesta e l'eventuale risposta saranno pubblicate sul sito!"
 
 msgid "Search"
 msgstr "Cerca"
