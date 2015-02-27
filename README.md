@@ -24,4 +24,5 @@ Note that the `install.rb` plugin point sets up a symlink to include
 local resource files within the Rails `public/` directory.
 
 Based on [tuderechoasaber-theme](https://github.com/civio/tuderechoasaber-theme) for Alaveteli v0.12 - Copyright (c) 2011 David Cabo
+
 Based on [dirittodisapere-theme](https://github.com/mysociety/dirittodisapere-theme) for Alaveteli v0.20 - Copyright (c) 2011 mySociety, released under the MIT license
