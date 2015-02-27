@@ -1,4 +1,4 @@
-DirittodiSapere Alaveteli theme
+ImamoPravoZnati Alaveteli theme
 =========================
 
 This is a theme package for Alaveteli.
@@ -16,11 +16,12 @@ Typical usage should be limited to:
 
 To install::
 
-  ./script/plugin install git://github.com/mysociety/chiediamo-theme.git
+  ./script/plugin install git://github.com/codeforcroatia/imamopravoznati-theme.git
 
 Look in the lib/ folder of the plugin to see how the overrides happen.
 
 Note that the `install.rb` plugin point sets up a symlink to include
 local resource files within the Rails `public/` directory.
 
-Copyright (c) 2011 mySociety, released under the MIT license
+Based on [tuderechoasaber-theme](https://github.com/civio/tuderechoasaber-theme) for Alaveteli v0.12 - Copyright (c) 2011 David Cabo
+Based on [dirittodisapere-theme](https://github.com/mysociety/dirittodisapere-theme) for Alaveteli v0.20 - Copyright (c) 2011 mySociety, released under the MIT license
