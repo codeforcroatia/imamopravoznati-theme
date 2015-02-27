@@ -1,0 +1,74 @@
+msgid "A project by"
+msgstr ""
+
+msgid "API"
+msgstr ""
+
+msgid "About the software"
+msgstr ""
+
+msgid "Ask"
+msgstr ""
+
+msgid "Contact us"
+msgstr ""
+
+msgid "Every citizen or foreign has the right to access information held by public bodies. By law, they have to respond."
+msgstr "Bilo koja domaća ili strana fizička ili pravna osoba ima pravo pristupu informacijama sukladno načelu slobodnog pristupa. Informacija koju pruža tijelo javne vlasti mora biti pravovremena, potpuna i točna."
+
+msgid "Exercise your right to know."
+msgstr ""
+
+msgid "FOI officers"
+msgstr ""
+
+msgid "Help"
+msgstr ""
+
+msgid "Making requests"
+msgstr ""
+
+msgid "Original theme from {{link}}"
+msgstr ""
+
+msgid "Search"
+msgstr ""
+
+msgid "Subscribe"
+msgstr "Pretplata"
+
+msgid "Subscribe to our newsletter:"
+msgstr "Prijavite se na naš newsletter:"
+
+msgid "Theme licensed under CC BY SA 3.0<br/>Creative Commons Attribution Share-Alike"
+msgstr ""
+
+msgid "Think of a question for a public authority."
+msgstr ""
+
+msgid "To get information from public authorities:"
+msgstr ""
+
+msgid "We send the question for you"
+msgstr ""
+
+msgid "We'll notify you when there is an answer."
+msgstr ""
+
+msgid "Will they answer?"
+msgstr ""
+
+msgid "Want to stay informed and receive all the updates on Freedom of Information?"
+msgstr "Želite li biti informirani i primati obavijesti o pravu na pristup informacijama?"
+
+msgid "your email address"
+msgstr "vaša e-mail adresa"
+
+msgid "Your privacy"
+msgstr ""
+
+msgid "Your right to know""
+msgstr "Imate pravo znati"
+
+msgid "unknown status "
+msgstr ""
