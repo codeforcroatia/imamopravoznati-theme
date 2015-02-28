@@ -123,7 +123,7 @@
       @include respond-min($main_menu-mobile_menu_cutoff) {
         padding: 15px;
         h2 {
-          margin-bottom: 3rem;
+          margin-bottom: 2rem;
           @include ie8 {
             margin-bottom: 3em;
           }
