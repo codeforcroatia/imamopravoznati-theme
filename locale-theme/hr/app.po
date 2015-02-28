@@ -1,5 +1,5 @@
 msgid "A project by"
-msgstr "Projekt vode"
+msgstr "Projekt provode"
 
 msgid "API"
 msgstr ""
@@ -23,7 +23,7 @@ msgid "Every citizen or foreign has the right to access information held by publ
 msgstr "Bilo koja domaća ili strana fizička ili pravna osoba ima pravo pristupu informacijama sukladno načelu slobodnog pristupa. Informacija koju pruža tijelo javne vlasti mora biti pravovremena, potpuna i točna."
 
 msgid "Exercise your right to know."
-msgstr ""
+msgstr "Koristite vaše pravo za informiranjem."
 
 msgid "FOI officers"
 msgstr "Službenici za informiranje"
@@ -49,9 +49,6 @@ msgstr "Pravila privatnosti"
 msgid "Read other news"
 msgstr "Pogledaj ostale novosti"
 
-msgid "Search"
-msgstr ""
-
 msgid "Search existing requests:"
 msgstr "Preražite postojeće zahtjeve:"
 
@@ -71,19 +68,19 @@ msgid "Content licensed under CC BY SA 3.0<br/>Creative Commons Attribution Shar
 msgstr "Dozvola sadržaja je CC BY SA 3.0<br/>Creative Commons Imenovanje-Dijeli pod istim uvjetima"
 
 msgid "Think of a question for a public authority."
-msgstr ""
+msgstr "Razmislite koju informaciju želite tražiti"
 
 msgid "To get information from public authorities:"
-msgstr ""
+msgstr "Da biste dobili informacije od tijela javne vlasti:"
 
 msgid "We send the question for you"
-msgstr ""
+msgstr "Mi ćemo poslati vaš zahtjev"
 
 msgid "We'll notify you when there is an answer."
-msgstr ""
+msgstr "Obavijestiti ćemo vas kada je odgovoreno"
 
 msgid "Will they answer?"
-msgstr ""
+msgstr "Budu li odgovorili?"
 
 msgid "With the help of"
 msgstr "Uz pomoć"

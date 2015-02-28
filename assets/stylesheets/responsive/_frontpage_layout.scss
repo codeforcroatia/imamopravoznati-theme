@@ -209,6 +209,7 @@
 
   #frontpage-search-label {
     display: none;
+    padding-top: 15px;
     padding-bottom: 15px;
     @include respond-min($main_menu-mobile_menu_cutoff) {
       margin-top: 0;

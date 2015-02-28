@@ -1,0 +1,74 @@
+<% @title = "Help us" %>
+
+<%= render :partial => 'sidebar' %>
+
+<div id="left_column_flip">
+
+<h1 id="helpus"><%= @title%> <a href="#helpus">#</a> </h1>
+
+<dl>
+
+<dt id="helpout">Can I help out? <a href="#helpout">#</a> </dt>
+<dd>
+    <p>Yes please! We're built out of our supporters and volunteers.</p>
+    <ul>
+    <li>You can <a href="https://secure.mysociety.org/donate/">make a donation</a>. We're a registered charity.</li>
+    <li>Help people find successful requests, and monitor performance of authorities, by 
+    <a href="/categorise/play">playing the categorisation game</a>. </li>
+    <li>Find out FOI email addresses of <a href="/help/requesting#missing_body">authorities that we're missing</a>.</li>
+    <li>Write a blog post about either <%= site_name %> or an interesting request that you've
+    found. Post about it on a forum that you frequent. Tell friends about it.</li> <li>If you're
+    a programmer, get the source code for our parent project, <a href="http://alaveteli.org">Alaveteli</a>
+    and tell us about patches we can pull. It's made in Ruby on Rails.
+    <li>Read more about <a href="http://www.mysociety.org/helpus/">volunteering with mySociety</a>.
+    </ul>
+</dd>
+
+
+    <h1>How can you help?/h1>
+    
+    <h2>Aportaciones económicas</h2>
+    <p>tuderechoasaber.es ha arrancado gracias al apoyo económico de <a href="http://www.goteo.org/project/tuderechoasaber.es/">más de 150 personas que nos han dado un total de 6.138€</a> a través de la plataforma de crowdfunding Goteo. Pero aún nos queda mucho por hacer y necesitamos tu ayuda.</p>
+    <p>Toda pequeña contribución, incluso de 5€ o 10€, nos ayudará a realizar mejor las tareas de mantenimiento diario. Tu donación servirá para garantizar el buen funcionamiento de la web, ampliar nuestra red de contactos de instituciones y hacer llegar el mensaje de la necesidad de una administración abierta a mucha más gente.</p>
+    <p>Además:
+      <ul>
+        <li>Si donas más de 10 euros te mencionaremos en los agradecimientos. (Somos muy transparentes con nuestra financiación, publicando quién dona y cómo gastamos el dinero. Pero también respetamos tu privacidad. Si prefieres que tu nombre no aparezca, háznoslo saber.)</li>
+        <li>Si donas más de 400 euros aparecerás como <%= link_to _("patrocinador"), help_about_path(:anchor => 'supporters') %> en la web.</li>
+      </ul>
+    </p>
+    <p>Puedes hacernos llegar tu donación de las siguientes maneras:
+      <ul>
+        <li><strong>Preferiblemente</strong>, por transferencia bancaria a la siguiente cuenta (gestionada por <a href="http://www.access-info.org/es/nuestra-mision-y-estrategia">Access Info Europe</a>, ONG registrada en España):<br/>
+          <blockquote>
+          Banco: La Caixa, Paseo de la Habana 5, 28036 Madrid<br/>
+          Número de cuenta: 2100 - 2133 - 99 - 0200291748<br/>
+          Por favor, usa la referencia "DON-TDAS"<br/>
+          </blockquote>
+        </li>
+        <li>Si quieres, puedes hacerlo a través de PayPal, aunque de este modo se pierde un porcentaje en comisiones por el camino:
+          
+          <blockquote>
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+          <input type="hidden" name="cmd" value="_s-xclick">
+          <input type="hidden" name="hosted_button_id" value="KATYF9NXGZRQA">
+          <input type="image" src="https://www.paypalobjects.com/en_US/ES/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal button">
+          <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+          </form>
+          </blockquote>
+          
+        </li>
+      </ul>
+    </p>
+
+    
+    <h2>Volunteer</h2>
+    <p>
+        <ul>
+            <li>Puedes ayudarnos a traducir el contenido de la web y las solicitudes al catalán, al euskera y al gallego.</li>
+            <li>Ayúdanos a difundir este proyecto, con un post en tu web o en tu blog, por ejemplo o con Twitter recomendando <a href="http://twitter.com/#!/tuderechoasaber">@tuderechoasaber</a>.</li>
+            <li>Si ves algún problema con la web, avísanos, aún estamos trabajando en ella.</li>
+            <li>Si quieres ayudarnos con el diseño y la programación de la web, o con la administración del servidor, eres más que bienvenido, <a href="mailto:contacto@tuderechoasaber.es">escríbenos a contacto@tuderechoasaber.es</a>.</li>
+        </ul>
+    </p>
+    
+</div>
