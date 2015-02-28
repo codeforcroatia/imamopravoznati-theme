@@ -1,17 +1,23 @@
 msgid "A project by"
-msgstr ""
+msgstr "Projekt vode"
 
 msgid "API"
 msgstr ""
 
+msgid "About us"
+msgstr "O nama"
+
 msgid "About the software"
-msgstr ""
+msgstr "O ovoj platformi"
 
 msgid "Ask"
-msgstr ""
+msgstr "Pitajte"
 
 msgid "Contact us"
-msgstr ""
+msgstr "Kontaktirajte nas"
+
+msgid "Credits"
+msgstr "Zahvale"
 
 msgid "Every citizen or foreign has the right to access information held by public bodies. By law, they have to respond."
 msgstr "Bilo koja domaća ili strana fizička ili pravna osoba ima pravo pristupu informacijama sukladno načelu slobodnog pristupa. Informacija koju pruža tijelo javne vlasti mora biti pravovremena, potpuna i točna."
@@ -20,19 +26,34 @@ msgid "Exercise your right to know."
 msgstr ""
 
 msgid "FOI officers"
-msgstr ""
+msgstr "Službenici za informiranje"
 
-msgid "Help"
-msgstr ""
+msgid "Guidelines"
+msgstr "Smjernice"
+
+msgid "How can you help?"
+msgstr "Kako i vi možete pomoći?"
 
 msgid "Making requests"
-msgstr ""
+msgstr "Pisanje zahtjeva"
+
+msgid "News"
+msgstr "Novosti"
 
 msgid "Original theme from {{link}}"
-msgstr ""
+msgstr "Izvorna tema je {{link}}"
+
+msgid "Privacy policy"
+msgstr "Pravila privatnosti"
+
+msgid "Read other news"
+msgstr "Pogledaj ostale novosti"
 
 msgid "Search"
 msgstr ""
+
+msgid "Search existing requests:"
+msgstr "Preražite postojeće zahtjeve:"
 
 msgid "Subscribe"
 msgstr "Pretplata"
@@ -40,8 +61,14 @@ msgstr "Pretplata"
 msgid "Subscribe to our newsletter:"
 msgstr "Prijavite se na naš newsletter:"
 
-msgid "Theme licensed under CC BY SA 3.0<br/>Creative Commons Attribution Share-Alike"
-msgstr ""
+msgid "Supporters"
+msgstr "Podržavaju"
+
+msgid "Terms of use"
+msgstr "Uvjeti korištenja"
+
+msgid "Content licensed under CC BY SA 3.0<br/>Creative Commons Attribution Share-Alike"
+msgstr "Dozvola sadržaja je CC BY SA 3.0<br/>Creative Commons Imenovanje-Dijeli pod istim uvjetima"
 
 msgid "Think of a question for a public authority."
 msgstr ""
@@ -58,6 +85,9 @@ msgstr ""
 msgid "Will they answer?"
 msgstr ""
 
+msgid "With the help of"
+msgstr "Uz pomoć"
+
 msgid "Want to stay informed and receive all the updates on Freedom of Information?"
 msgstr "Želite li biti informirani i primati obavijesti o pravu na pristup informacijama?"
 
@@ -65,9 +95,9 @@ msgid "your email address"
 msgstr "vaša e-mail adresa"
 
 msgid "Your privacy"
-msgstr ""
+msgstr "Vaša privatnost"
 
-msgid "Your right to know""
+msgid "Your right to know"
 msgstr "Imate pravo znati"
 
 msgid "unknown status "

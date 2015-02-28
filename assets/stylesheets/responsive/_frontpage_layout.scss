@@ -185,7 +185,7 @@
 
     #frontpage-lead-subscribe {
       @extend #frontpage-lead-ad;
-
+      padding-bottom: 1px;
       background-color: $creamy-grey;
       box-shadow: 0 2px 0 darken($creamy-grey, 5%);
     }
@@ -209,6 +209,7 @@
 
   #frontpage-search-label {
     display: none;
+    padding-bottom: 15px;
     @include respond-min($main_menu-mobile_menu_cutoff) {
       margin-top: 0;
       @include grid-column(4);
