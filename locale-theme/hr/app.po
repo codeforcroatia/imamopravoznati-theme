@@ -74,7 +74,7 @@ msgid "To get information from public authorities:"
 msgstr "Da biste dobili informacije od tijela javne vlasti:"
 
 msgid "We send the question for you"
-msgstr "Mi ćemo poslati vaš zahtjev"
+msgstr "Mi ćemo poslati vaš zahtjev odgovornim osobama"
 
 msgid "We'll notify you when there is an answer."
 msgstr "Obavijestiti ćemo vas kada je odgovoreno"
