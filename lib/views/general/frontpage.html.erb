@@ -39,28 +39,26 @@
   <div id="frontpage-intro-sidebar">
     <div id="frontpage-lead-ad">
       <h4>
-        Quanto è trasparente l'Italia?
+        <%= _("Your right to know") %>
       </h4>
       <p>
-        Nel 2013 abbiamo realizzato il primo studio di monitoraggio sull'accesso all'informazione della Pubblica Amministrazione in Italia.
-        Dall'analisi risulta che solo il 13% delle risposte è considerato pienamente soddisfacente.
-        <br>Maggiori informazioni nel nostro <a href="http://www.dirittodisapere.it/rapporto/">rapporto</a> (in italiano e inglese).</a>.
+        <%= _("Every citizen or foreign has the right to access information held by public bodies. By law, they have to respond.") %>/</a>.
       </p>
     </div>
 
     <div id="frontpage-lead-subscribe">
-      <form action="//dirittodisapere.us10.list-manage.com/subscribe/post?u=51cd6b512dea2829259abf647&amp;id=17caa8ef6a" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank">
-        <label for="mce-EMAIL"><p><%= _("Desideri rimanere informato e ricevere tutti gli aggiornamenti su Diritto di Sapere?") %></p>
-        <p><%= _("Iscriviti alla nostra newsletter:") %></p></label>
-        <p><input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="<%= _('Indirizzo email') %>" required="true"></p>
-        <p><input type="submit" value="<%= _('Iscriviti') %>" name="subscribe" id="mc-embedded-subscribe"></p>
+      <form action="//imamopravoznati.us10.list-manage.com/subscribe/post?u=e8d6c4d945f69af87919202e0&amp;id=82eeecd26d" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank">
+        <label for="mce-EMAIL"><p><%= _("Want to stay informed and receive all the updates on Freedom of Information?") %></p>
+        <p><%= _("Subscribe to our newsletter:") %></p></label>
+        <p><input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="<%= _('your email address') %>" required="true"></p>
+        <p><input type="submit" value="<%= _('Subscribe') %>" name="subscribe" id="mc-embedded-subscribe"></p>
       </form>
     </div>
 
     <div id="frontpage-share-buttons">
-      <iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2F<%= site_name %>&amp;send=false&amp;layout=button_count&amp;width=118&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:118px; height:21px;" allowTransparency="true"></iframe>
+      <iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fimamopravoznati&amp;send=false&amp;layout=button_count&amp;width=118&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:118px; height:21px;" allowTransparency="true"></iframe>
       <span>
-      <a href="https://twitter.com/share" class="twitter-share-button" data-url="" data-lang="it">Tweet</a>
+      <a href="https://twitter.com/share" class="twitter-share-button" data-url="" data-lang="hr">Tweet</a>
       <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
       </span>
 
@@ -73,10 +71,7 @@
   <div id="frontpage-search-box">
     <div id="frontpage-search-label">
       <h4>
-  <%=  _("Search over<br/>
-  <strong>{{number_of_requests}} requests</strong> <span>and</span><br/>
-  <strong>{{number_of_authorities}} authorities</strong>",
-        :number_of_requests => InfoRequest.visible.count, :number_of_authorities => PublicBody.visible.count) %></h4>
+      <%=  _("Search existing requests:") %></h4>
 
     </div>
     <div id="frontpage-search-form">
@@ -91,7 +86,7 @@
 
   <div id="frontpage-updates">
     <div id="frontpage-updates-news">
-      <h2><a class="frontpage-updates-title" href="http://dirittodisapere.it/blog" target="_blank">News</a></h2>
+      <h2><a class="frontpage-updates-title" href="http://gong.hr/hr/dobra-vladavina/pristup-informacijama/" target="_blank"><%= _("News") %></a></h2>
       <% 4.times do |position| %>
         <% item = @blog_items[position] %>
         <% break if item.nil? %>
@@ -110,12 +105,12 @@
         <% end %>
       <% end %>
 
-      <div class="link-arrow more-news-link"><a href="http://dirittodisapere.it/blog" target="_blank"><%= _("Altre notizie »") %></a></div>
+      <div class="link-arrow more-news-link"><a href="http://gong.hr/hr/dobra-vladavina/pristup-informacijama/" target="_blank"><%= _("Read other news »") %></a></div>
     </div>
 
     <div id="tweets-timeline">
-      <h2><a class="frontpage-updates-title" href="https://twitter.com/dirittodisapere" target="_blank">Tweets</a></h2>
-      <a class="twitter-timeline" href="https://twitter.com/dirittodisapere" data-chrome="noheader" data-widget-id="563622262138740736" width="100%">Tweets by @dirittodisapere</a>
+      <h2><a class="frontpage-updates-title" href="https://twitter.com/imamopravoznati" target="_blank">Tweets</a></h2>
+      <a class="twitter-timeline" href="https://twitter.com/ImamoPravoZnati" data-chrome="noheader" data-widget-id="571444435712765952" width="100%">Tweets by @ImamoPravoZnati</a>
       <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
     </div>
     <!-- /tweets-timeline -->
