@@ -1,72 +1,109 @@
-<% @title = "Non sei soddisfatto della risposta ricevuta?" %>
+<% @title = "Unhappy about a Freedom of Information request?" %>
 
 
 <% if !@info_request.nil? %>
-<h1>Se non sei soddisfatto della risposta ricevuta '<%=request_link(@info_request) %>'?
+<h1>Unhappy about the response you got
+to your request '<%=request_link(@info_request) %>'?
 </h1>
 <% else %>
-<h1>Non sei soddisfatto della risposta ricevuta?</h1>
+<h1>Unhappy about the response you got?</h1>
 <% end %>
 
-<p>Se ...</p>
+<p>If ...</p>
 
 <ul>
-<li>Non hai ricevuto risposta entro 30 giorni (solari)</li>
-<li>Non hai ricevuto tutte le informazioni che avevi chiesto <strong>o</strong></li>
-<li>La tua richiesta è stata rifiutata ma senza motivazioni adeguate alla normativa</li>
+<li>You didn't get a reply within 15 days</li>
+<li>You did not get all of the information that you requested <strong>or</strong></li>
+<li>Your request was refused, but without a reason valid under the law</li>
 </ul>
 
-<p>... a questo punto puoi</p>
+<p>... you can</p>
 
 <ol>
-<li>Chiedere all'amministrazione <strong>una revisione interna</strong>.</li>
-<li>Contattare <strong>il Difensore Civico o la Commissione per l'Accesso</strong>.</li>
-<li>A ogni modo prova a cercare le informazioni <strong>anche in altro modo</strong>.</li>
+<li>Ask for an <strong>internal review</strong> at the public authority.</li>
+<li>If that doesn't help, complain to the <strong>Information Commissioner</strong>.</li>
+<li>Either way, also <strong>use other means</strong> to answer your question.</li>
 </ol>
 
-<h1 id="internal_review">1. Chiedere una revisione interna <a class="hover_a" href="#internal_review">#</a> </h1>
+<h1 id="internal_review">1. Asking for an internal review <a class="hover_a" href="#internal_review">#</a> </h1>
 
 <p>
 <% if !@info_request.nil? %>
     <%= link_to "Request an internal review", show_response_no_followup_path(:id => @info_request.id, :incoming_message_id => nil) + "?internal_review=1#followup", :class => 'link_button_green' %> and then write a message asking the authority to review your request.
 <% else %>
-    Alla fine della pagina in questione su <%= site_name %> scegli 
-    "Richiedi revisione interna" e scrivi un messaggio di richiesta. 
-    Ricorda di includere un link alla tua richiesta originaria per facilitare il processo.
+    At the bottom of the relevant request page on <%= site_name %> choose
+    "request an internal review". Then write a message asking for an internal
+    review of your request. You may want to include a link to the
+    request page, to make it clear which request you are talking about.
 <% end %>
 </p>
 
-<h1 id="complaining">2. Contattare il Difensore Civico o la Commissione per l'Accesso <a class="hover_a" href="#complaining">#</a> </h1>
-
-<p>Se non sei soddisfatto, contatta il Difensore Civico regionale o la <a href="http://www.commissioneaccesso.it/">Commmissione per l'Accesso</a>.
+<p>Internal reviews should be quick. If one takes longer than 20 working days
+then the authority should write and let you know, and it should never take
+longer than 40 working days (see this
+<a href="http://www.ico.gov.uk/upload/documents/library/freedom_of_information/detailed_specialist_guides/foi_good_practice_guidance_5.pdf">good
+practice guide</a>).
+You will then either get the information that
+you originally requested, or you will be told that the review upholds the
+original decision.
 </p>
 
-<p>Per facilitare l'invio delle informazioni rilevanti
+<h1 id="complaining">2. Complaining to the Information Commissioner <a class="hover_a" href="#complaining">#</a> </h1>
+
+<p>If you are still unhappy after the public authority has done their internal review,
+then you can complain to the Information Commissioner. To do this read
+<a href="http://www.ico.gov.uk/complaints/freedom_of_information.aspx">Complaints about Freedom of Information</a>
+on the Information Commissioner's website. If you requested information from a Scottish
+authority, then  <a href="http://www.itspublicknowledge.info/YourRights/HowToAppeal/Appeal.asp">appeal
+to the Scottish Information Commissioner</a>.
+</p>
+
+<p>To make it easier to send the relevant information to the
+Information Commissioner, either
 <% if !@info_request.nil? %>
-    includi il link alla tua richiesta
+    include a link to your request
     <strong><%=h request_url(@info_request) %></strong>
 <% else %>
-    includi il link alla tua richiesta su <%= site_name %>
+    include a link to your request on <%= site_name %>
 <% end %>
-nel tuo ricorso o stampa la pagina della tua richiesta e i relativi allegati.
+in your complaint or print out the whole page of your request and all attachments.
 </p>
 
-<p><%= site_name %> non ha particolari facilitazioni per la gestione della richiesta, poiché sono i rispettivi uffici a gestire ed effettuare le comunicazioni. 
-Scrivi gli aggiornamenti nelle annotazioni.</p>
+<p><%= site_name %> has no special facilities for handling a request at this stage - it
+passes into the Information Commissioner's system. You can leave annotations on your
+request keeping people informed of progress.</p>
 
-<h1 id="other_means">3. Trovare le informazioni seguendo altre strade <a class="hover_a" href="#other_means">#</a> </h1>
+<p>A warning. There is a backlog of work at the Information Commissioner, and
+it can take literally years to get resolution from them. If you reach this point,
+you should accept that you won't get the information quickly by this means. Maybe
+you want to help the fight to improve Freedom of Information, or maybe
+getting the information slowly is still worthwhile. You can also try and
+get the information by <strong>other means...</strong></p>
 
-<p>Puoi cercare di risolvere la tua richiesta in altri modi o usando altre strade
+<h1 id="other_means">3. Using other means to answer your question <a class="hover_a" href="#other_means">#</a> </h1>
+
+<p>You can try persuing your problem or your research in other ways.
 
 <ul>
-<li>Invia una <strong>nuova richiesta di accesso</strong> per chiedere documenti più generali o indirettamente collegati alla tua richiesta.
-<a href="<%= help_contact_path %>">Chiedici consiglio</a> se non sai cosa fare.</li>
-<li>Se <strong>altre amministrazioni</strong> o aziende partecipate sono coinvolte, invia la richiesta a loro.</li>
-<li>Scrivi <strong>a un parlamentare locale o che senti ti possa rappresentare</strong> e prova a chiedere il suo aiuto. 
-I membri del Parlamento possono scrivere direttamente a Ministeri e dipartimenti e fare interrogazioni parlamentari.</li>
-<li>Chiedi <strong>a ricercatori e giornalisti</strong> interessati a temi analoghi a quello che ti sta a cuore.  
-Qualcuno di loro talvolta fa ricerche usando questo sito; contatta gli utenti registrati.
+<li>Make a <strong>new FOI request</strong> for summary information, or for
+documentation relating indirectly to matters in your refused request.
+<a href="<%= help_contact_path %>">Ask us for ideas</a> if you're stuck.</li>
+<li>If any <strong>other public authorities</strong> or publicly owned companies are involved,
+then make FOI requests to them.</li>
+<li>Write to <strong>your MP</strong> or other politician using <a
+href="http://www.writetothem.com">WriteToThem</a> and ask for their help
+finding the answer. MPs can write directly to ministers or departments, and
+can ask written questions in the House of Commons. Councillors in local authorities
+can talk directly to council officers.</li>
+<li>Ask <strong>other researchers</strong> who are interested in a similar
+issue to yours for ideas. You can sometimes find them by browsing this site;
+contact any registered user from their page. There may be an Internet
+forum or group that they hang out in. If it is a local matter, use <a
+href="http://www.groupsnearyou.com">GroupsNearYou</a> to find such a
+forum.</li>
+<li><strong>Start a pledge</strong> on <a href="http://www.pledgebank.com">PledgeBank</a> to get
+others to act together with you. For example, you could arrange a meeting with
+staff from the authority. Or you could form a small local campaigns group.
 </ul>
-
 
 
