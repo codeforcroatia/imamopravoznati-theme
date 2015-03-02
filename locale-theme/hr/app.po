@@ -55,8 +55,8 @@ msgstr "Preražite postojeće zahtjeve:"
 msgid "Subscribe"
 msgstr "Pretplata"
 
-msgid "Subscribe to our newsletter:"
-msgstr "Prijavite se na naš newsletter:"
+msgid "Subscribe to GONG newsletter:"
+msgstr "Prijavite se na GONG-ov newsletter:"
 
 msgid "Supporters"
 msgstr "Podržavaju"

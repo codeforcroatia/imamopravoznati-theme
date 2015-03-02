@@ -47,8 +47,8 @@
     </div>
 
     <div id="frontpage-lead-subscribe">
-      <form action="//imamopravoznati.us10.list-manage.com/subscribe/post?u=e8d6c4d945f69af87919202e0&amp;id=82eeecd26d" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank">
-        <label for="mce-EMAIL"><p><%= _("Subscribe to our newsletter:") %></p></label>
+      <form action="//gong.us2.list-manage.com/subscribe/post?u=96ef5b6d1dbe39953a3a1c215&amp;id=e0e27263df" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank">
+        <label for="mce-EMAIL"><p><%= _("Subscribe to GONG newsletter:") %></p></label>
         <p><input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="<%= _('your email address') %>" required="true"></p>
         <p><input type="submit" value="<%= _('Subscribe') %>" name="subscribe" id="mc-embedded-subscribe"></p>
       </form>
@@ -91,11 +91,11 @@
         <% break if item.nil? %>
 
         <div class="frontpage-blog-post <%= position.even? ? 'left' : 'right' %>">
-          <a href="<%= item['link'][0] %>" class="frontpage-blog-post--link"></a>
-          <div class="frontpage-blog-post--image <%= 'placeholder-image' if item['thumbnail'][0].blank? %>" style="background-image: url(<%= item['thumbnail'][0].blank? ? image_path('dds-logo.png') : item['thumbnail'][0] %>);">
+          <a href="<%= item['link'] %>" class="frontpage-blog-post--link"></a>
+          <div class="frontpage-blog-post--image <%= 'placeholder-image' if item['thumbnail'].blank? %>" style="background-image: url(<%= item['thumbnail'].blank? ? image_path('dds-logo.png') : item['thumbnail'] %>);">
           </div>
           <h4 class="frontpage-blog-post--title">
-            <a href="<%= item['link'][0] %>" class="frontpage-blog-post--article-link" target="_blank"><%= h item['title'][0] %></a>
+            <a href="<%= item['link'] %>" class="frontpage-blog-post--article-link" target="_blank"><%= h item['title'] %></a>
           </h4>
         </div>
 
