@@ -16,6 +16,9 @@ msgstr "Pitajte"
 msgid "Contact us"
 msgstr "Kontaktirajte nas"
 
+msgid "Content licensed under CC BY SA 3.0<br/>Creative Commons Attribution Share-Alike"
+msgstr "Dozvola sadržaja je CC BY SA 3.0<br/>Creative Commons Imenovanje-Dijeli pod istim uvjetima"
+
 msgid "Credits"
 msgstr "Zahvale"
 
@@ -63,9 +66,6 @@ msgstr "Podržavaju"
 
 msgid "Terms of use"
 msgstr "Uvjeti korištenja"
-
-msgid "Content licensed under CC BY SA 3.0<br/>Creative Commons Attribution Share-Alike"
-msgstr "Dozvola sadržaja je CC BY SA 3.0<br/>Creative Commons Imenovanje-Dijeli pod istim uvjetima"
 
 msgid "Think of a question for a public authority."
 msgstr "Razmislite koju informaciju želite tražiti"
