@@ -31,7 +31,14 @@
 
   .footer-logo img {
     display: inherit;
-    width: 60%;
+    width: 45%;
+    max-width: 280px;
+    padding: 0;
+  }
+
+  .footer-credits-logo img {
+    display: inherit;
+    width: 30%;
     max-width: 280px;
     padding: 0;
   }
