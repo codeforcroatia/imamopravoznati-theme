@@ -43,6 +43,11 @@
     padding: 0;
   }
 
+  .footer-small img {
+    display: block-inline;
+    margin: 5px 10px 5px 0px;
+  }
+
   /* Three elements in footer - so a 3 element block grid */
   @include respond-min($main_menu-mobile_menu_cutoff) {
     > ul {

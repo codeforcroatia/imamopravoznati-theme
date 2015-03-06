@@ -83,7 +83,7 @@ msgid "Will they answer?"
 msgstr "Budu li odgovorili?"
 
 msgid "With the help of"
-msgstr "Uz pomoć"
+msgstr "Uz podršku"
 
 msgid "Want to stay informed and receive all the updates on Freedom of Information?"
 msgstr "Želite li biti informirani i primati obavijesti o pravu na pristup informacijama?"
