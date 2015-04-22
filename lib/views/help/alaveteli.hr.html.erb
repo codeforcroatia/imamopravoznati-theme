@@ -1,0 +1,20 @@
+<% @title = "Softver za pristup informacijama" %>
+
+<%= render :partial => 'sidebar' %>
+<div id="left_column_flip">
+  <% if params[:country_name] %>  
+   <h1><%= _("Želite li ovakvu platformu i u vašoj zemlji?") %></h1>
+  <% else %>
+   <h1>Pokreće Alaveteli</h1>
+  <% end %>
+  <p>Ovu stranicu pokreće Alaveteli. Alaveteli je aplikacija slobodnog koda za izradu zahtjeva u sklopu prava za pristup informacijama. Lako se može prevesti na bilo koji jezik te se prilagoditi varijacijama prava na pristup informacijama.</p>
+
+  <p>Razvoj Alavetelija sponzoriran je i osnažen brojnim fondacijama i zakladama koje su zainteresirane za transparentnost diljem svijeta.</p>
+  
+  <p>Ako ste zainteresirani za stvaranje Alaveteli stranice u vašoj domovini, organizacija MySociety vam može pomoći. Trebat će vam nekoliko dana za konfiguriranje i pripremanje stranice za uporabu, nakon toga ćete trebati barem sat vremena tjedno kako biste moderirali te upravljali stranicom (za prometnije stranice, možda i dulje).</p>
+  
+  <p>Pročitajte više na <a href="http://alaveteli.org">Alaveteli
+  internetskoj stranici</a>, ili <a href="mailto:hello@alaveteli.org">nam pošaljite mail</a>.</p>
+
+  <div id="hash_link_padding"></div>
+</div>
