@@ -20,46 +20,41 @@ to your request '<%=request_link(@info_request) %>'?
 <p>... you can</p>
 
 <ol>
-<li>Ask for an <strong>internal review</strong> at the public authority.</li>
+<li>Ask for an <strong>rush note</strong> at the public authority.</li>
 <li>If that doesn't help, complain to the <strong>Information Commissioner</strong>.</li>
 <li>Either way, also <strong>use other means</strong> to answer your question.</li>
 </ol>
 
-<h1 id="internal_review">1. Asking for an internal review <a class="hover_a" href="#internal_review">#</a> </h1>
+<h1 id="internal_review">1. Asking for a rush procedure <a class="hover_a" href="#internal_review">#</a> </h1>
 
 <p>
 <% if !@info_request.nil? %>
-    <%= link_to "Request an internal review", show_response_no_followup_path(:id => @info_request.id, :incoming_message_id => nil) + "?internal_review=1#followup", :class => 'link_button_green' %> and then write a message asking the authority to review your request.
+    <%= link_to "Request a rush", show_response_no_followup_path(:id => @info_request.id, :incoming_message_id => nil) + "?internal_review=1#followup", :class => 'link_button_green' %> and then write a message asking the authority to rush your request.
 <% else %>
     At the bottom of the relevant request page on <%= site_name %> choose
-    "request an internal review". Then write a message asking for an internal
-    review of your request. You may want to include a link to the
+    "request an internal review". Then write a message asking for an rush
+    of your request. You may want to include a link to the
     request page, to make it clear which request you are talking about.
 <% end %>
 </p>
 
-<p>Internal reviews should be quick. If one takes longer than 20 working days
+<p>Rush procedure should be quick. If one takes longer than 15 days
 then the authority should write and let you know, and it should never take
-longer than 40 working days (see this
-<a href="http://www.ico.gov.uk/upload/documents/library/freedom_of_information/detailed_specialist_guides/foi_good_practice_guidance_5.pdf">good
-practice guide</a>).
+longer than 30 days.
 You will then either get the information that
-you originally requested, or you will be told that the review upholds the
+you originally requested, or you will be told that the answer upholds the
 original decision.
 </p>
 
 <h1 id="complaining">2. Complaining to the Information Commissioner <a class="hover_a" href="#complaining">#</a> </h1>
 
-<p>If you are still unhappy after the public authority has done their internal review,
+<p>If you are still unhappy after the public authority has answered,
 then you can complain to the Information Commissioner. To do this read
-<a href="http://www.ico.gov.uk/complaints/freedom_of_information.aspx">Complaints about Freedom of Information</a>
-on the Information Commissioner's website. If you requested information from a Scottish
-authority, then  <a href="http://www.itspublicknowledge.info/YourRights/HowToAppeal/Appeal.asp">appeal
-to the Scottish Information Commissioner</a>.
+<a href="http://www.pristupinfo.hr/en/podnosenje-predstavki/">Complaints about Freedom of Information</a>
+on the Information Commissioner's website.
 </p>
 
-<p>To make it easier to send the relevant information to the
-Information Commissioner, either
+<p>To make it easier to send the relevant information to the Information Commissioner, either
 <% if !@info_request.nil? %>
     include a link to your request
     <strong><%=h request_url(@info_request) %></strong>
