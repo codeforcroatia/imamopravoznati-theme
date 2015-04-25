@@ -19,7 +19,7 @@
 
 <p>Za poticanje korisnika na zahtijevanje od određenih javnih vlasti, koristite URL-ove u ovom obliku:
 <%= link_to new_request_to_body_url(:url_name => "grad_zagreb") , new_request_to_body_url(:url_name => "grad_zagreb") %>.
-Ovo su parametri koje možete dodati tim URL-ovima, bilo u URL-u ili iz oblika.
+Ovo su parametri koje možete dodati tim URL-ovima, bilo u URL-u ili iz oblika:
 
 <ul>
     <li> <strong>title</strong> (naslov) - zadani sažetak novog zahtjeva</li>
@@ -35,7 +35,7 @@ Ovo su parametri koje možete dodati tim URL-ovima, bilo u URL-u ili iz oblika.
 <p>Postoje Atom izvori na većini stranica koje popisuju zahtjeve prava na pristup informacija, koje možete koristiti kako biste dobili novosti i poveznice u XML formatu. Pronađite URL od Atom izvora na jedan od sljedećih načina:
 <ul>
     <li>Pronađite <%= image_tag "feed-16.png", :alt => "" %> RSS link.</li>
-    <li>Istražite <tt>&lt;link rel="alternate" type="application/atom+xml"&gt;</tt> oznaku u sadržaju HTML-a.</li>
+    <li>Potražite <tt>&lt;link rel="alternate" type="application/atom+xml"&gt;</tt> oznaku u sadržaju HTML-a.</li>
     <li>Dodajte <tt>/feed</tt> na početak novog URL-a.
 </ul>
 
@@ -64,10 +64,10 @@ Datoteka s popisom sadrži nazive svih tijela javne vlasti na <i><%= site_name %
 </p>
 
 <p>Zaglavlje popisa tijela javne vlasti sadrži nazive informacija dostupnih u datoteci:<br>
-Name,Short name,URL name,Tags,Home page,Publication scheme,Disclosure log,Notes,Created at,Updated at,Version</p>
+<i>Name, Short name, URL name, Tags, Home page, Publication scheme, Disclosure log, Notes, Created at, Updated at, Version</i></p>
 
 	<p class="form_note">
-    Glavni izvor informacija o tijelima javne vlasti na <i><%= site_name %></i> je <a href="http://data.gov.hr/dataset/azurirani-popis-tijela-javne-vlasti">ažurirani popis tijela javne vlasti</a> koje održava <strong>Povjerenik za informiranje</strong> a možete ga pronaći na portalu otvorenih podataka <a href="http://data.gov.hr">data.gov.hr</a>.
+    Glavni izvor informacija o tijelima javne vlasti koje imamo na <i><%= site_name %></i> je <a href="http://data.gov.hr/dataset/azurirani-popis-tijela-javne-vlasti">ažurirani popis tijela javne vlasti</a> koje održava <strong>Povjerenik za informiranje</strong> a možete ga pronaći na portalu otvorenih podataka <a href="http://data.gov.hr">data.gov.hr</a>.
     </p>
 
 <hr>
