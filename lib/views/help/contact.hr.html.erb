@@ -35,8 +35,105 @@
             </ul>
     <p class="form_note">
     Možemo vam pomoći oko <strong>tehničkih problema</strong>, ili pitanja o pravu na pristup informacijama.
-    </P>
+    </p>
     <% end %>
 </div>
+
+<% end %>
+
+<% @title = "Kontaktirajte nas" %>
+
+<%= foi_error_messages_for :contact %>
+
+<h1><%= @title %></h1>
+
+<div id="contact_preamble">
+
+    <% if !flash[:notice] %>
+        <h2>Za službene informacije kontaktirajte tijela javne vlasti</h2>
+        <ul>
+            <li><a href="<%= new_request_path %>">Idite ovdje</a> da pošaljete javni zahtjev za pristup informacijama od tijela tajve vlasti.</li>
+
+            <li>
+            Tražite li privatne informacije o sebi?
+            Pročitajte naše
+            <a href="<%= help_requesting_path(:anchor => 'data_protection') %>">stranice za pomoć</a>.
+            </li>
+        </ul>
+
+    <% end %>
+
+    <h2>Kontaktirajte <%= site_name %> tim</h2>
+    <% if !flash[:notice] %>
+            <ul>
+            <li>
+            Molimo vas da prvo pročitate  <a href="<%= help_about_path %>">stranice za pomoć</a> er ćete tamo možda brže dobiti odgovor na vaše pitanje.
+            </li>
+
+            <li>Voljeli bismo čuti kako vam se sviđa ova platforma.
+               Pišite nam na <a
+               href="http://diskurs.open.hr/c/imamo-pravo-znati">ImamoPravoZnati.org forumu</a>
+            </li>
+
+            <li>Mi smo <strong>neprofitne civilne organizacije</strong> i nismo dio vlasti -- mi pokrećemo ovu platformu!</li>
+            </ul>
+    <% end %>
+</div>
+
+<%= form_for :contact do |f| %>
+
+    <% if not @user %>
+        <p>
+            <label class="form_label" for="contact_name">Your name:</label>
+            <%= f.text_field :name, :size => 20 %>
+            (or <%= link_to "sign in", signin_path(:r => request.fullpath) %>)
+        </p>
+
+        <p>
+            <label class="form_label" for="contact_email">Your email:</label>
+            <%= f.text_field :email, :size => 20 %>
+        </p>
+    <% end %>
+
+    <p>
+        <label class="form_label" for="contact_subject">Subject:</label>
+        <%= f.text_field :subject, :size => 50 %>
+    </p>
+
+    <p>
+        <label class="form_label" for="contact_message">Message to website:</label>
+        <%= f.text_area :message, :rows => 10, :cols => 60 %>
+    </p>
+
+    <p style="display:none;">
+        <%= f.label :comment, 'Do not fill in this field' %>
+        <%= f.text_field :comment %>
+    </p>
+
+    <% if !@last_request.nil? %>
+        <p>
+            <label class="form_label" for="contact_message">Include link to request:</label>
+            <%=request_link(@last_request) %>
+            <%= submit_tag "remove", :name => 'remove' %>
+        </p>
+    <% end %>
+    <% if !@last_body.nil? %>
+        <p>
+            <label class="form_label" for="contact_message">Include link to authority:</label>
+            <%=public_body_link(@last_body) %>
+            <%= submit_tag "remove", :name => 'remove' %>
+        </p>
+    <% end %>
+
+    <p class="form_note">
+    Možemo vam pomoći oko <strong>tehničkih problema</strong>, ili pitanja o pravu na pristup informacijama.
+    </p>
+
+
+    <div class="form_button">
+        <%= hidden_field_tag(:submitted_contact_form, 1) %>
+        <%= submit_tag "Send message to the charity", :disable_with => "Sending..." %>
+        &lt;-- mi pokrećemo ovu platformu, ne tijela javne vlasti!
+    </div>
 
 <% end %>
