@@ -1,0 +1,79 @@
+<% @title = "Aplikacijsko programsko sučelje - API" %>
+
+<%= render :partial => 'sidebar' %>
+
+<div id="left_column_flip">
+<h1><%=@title %></h1>
+
+<h2> Uvod </h2>
+
+<p>Ova stranica objašnjava kako programeri mogu napraviti interakciju internetskih stranica i programa s <i><%= site_name %></i> putem API-ja.
+</p>
+
+<p><i><%= site_name %></i> još nema potpuni API, ali postepeno dodajemo mnoge stvari koje su slične po uporabi na API, nakon što su zatražene.
+</p>
+
+<hr>
+
+<h2> 1. Povezivanje s novim zahtjevima </h2>
+
+<p>Za poticanje korisnika na zahtijevanje od određenih javnih vlasti, koristite URL-ove u ovom obliku:
+<%= link_to new_request_to_body_url(:url_name => "grad_zagreb") , new_request_to_body_url(:url_name => "grad_zagreb") %>.
+Ovo su parametri koje možete dodati tim URL-ovima, bilo u URL-u ili iz oblika.
+
+<ul>
+    <li> <strong>title</strong> (naslov) - zadani sažetak novog zahtjeva</li>
+    <li> <strong>default_letter</strong> (zadano pismo) - zadani tekst u pismu. Pozdravni tekst (Poštovani...) i potpis (Lijep pozdrav...) su postavljeni oko ovog teksta</li>
+    <li> <strong>body</strong> (tijelo) - kao alternativa default_letter, ovo postavlja cjelokupni tekst zahtjeva, tako da možete prilagoditi pozdravni tekst i potpis</li>
+    <li> <strong>tags</strong> (oznake) - prostorom odvojen popis oznaka, tako da možete pronaći i povezati kasnije napravljene zahtjeve, npr. otvorenlokalni potrošački_kod:12345. Dvotočka predstavlja računalnu oznaku. Vrijednosti računalne oznake mogu uključivati dvotočke, korisne za URL-ove., e.g. <em>openlylocal spending_id:12345</em>; Dvotočka predstavlja računalnu oznaku; vrijednosti računalne oznake mogu uključivati dvotočke, te korisne URI</li>
+</ul>
+
+<hr>
+
+<h2> 2. RSS (zapravo Atom) </h2>
+
+<p>Postoje Atom izvori na većini stranica koje popisuju zahtjeve prava na pristup informacija, koje možete koristiti kako biste dobili novosti i poveznice u XML formatu. Pronađite URL od Atom izvora na jedan od sljedećih načina:
+<ul>
+    <li>Pronađite <%= image_tag "feed-16.png", :alt => "" %> RSS link.</li>
+    <li>Istražite <tt>&lt;link rel="alternate" type="application/atom+xml"&gt;</tt> oznaku u sadržaju HTML-a.</li>
+    <li>Dodajte <tt>/feed</tt> na početak novog URL-a.
+</ul>
+
+<p>Preciznije rečeno, čak i kompliciraniji upiti za pretraživanje sadrže Atom izvore. S njima možete raditi mnoge stvari, kao što je pretraživanje prema vrsti tijela javne vlasti, prema vrsti datoteke, prema rasponu podataka, ili prema statusu. Pogledajte <a href="/search">savjete za napredno pretraživanje</a> za detalje.
+
+<hr>
+
+<h2> 3. JSON strukturirani podaci </h2>
+
+<p>Dosta internetskih stranica ima JSON verzije, koje omogućavaju preuzimanje podataka o objektima u strukturiranom obliku. Pronađite ih pomoću:
+<ul>
+    <li>Dodajući <tt>.json</tt> na kraj URL-a.</li>
+    <li>Potražite <tt>&lt;link rel="alternate" type="application/json"&gt;</tt> oznaku u sadržaju HTML-a.</li>
+</ul>
+</p>
+
+<p>Zahtjevi, korisnici i tijela javne vlasti - svi su JSON verzije koje sadrže osnovne informacije o njima. Svaki Atom izvor ima svoj JSON ekvivalent, koji sadrži informacije s popisom događanja unutar izvora.
+</p>
+
+<hr>
+<h2> 4. Popis tijela javne vlasti </h2>
+
+<p>
+Datoteka s popisom sadrži nazive svih tijela javne vlasti na <i><%= site_name %></i> te je dostupan na poveznici:
+<%= link_to "all-authorities.csv", all_public_bodies_csv_url() %>
+</p>
+
+<p>Zaglavlje popisa tijela javne vlasti sadrži nazive informacija dostupnih u datoteci:<br>
+Name,Short name,URL name,Tags,Home page,Publication scheme,Disclosure log,Notes,Created at,Updated at,Version</p>
+
+	<p class="form_note">
+    Glavni izvor informacija o tijelima javne vlasti na <i><%= site_name %></i> je <a href="http://data.gov.hr/dataset/azurirani-popis-tijela-javne-vlasti">ažurirani popis tijela javne vlasti</a> koje održava <strong>Povjerenik za informiranje</strong> a možete ga pronaći na portalu otvorenih podataka <a href="http://data.gov.hr">data.gov.hr</a>.
+    </p>
+
+<hr>
+
+<p>Molimo, <a href="/help/contact">kontaktirajte nas</a> ukoliko vam je potreban API dodatak kojeg trenutno nema. Ovo je zaista posao u tijeku i mi dodajmo stvari kad nas to ljudi <strong>zatraže</strong>.</p>
+
+<div id="hash_link_padding"></div>
+
+</div>
