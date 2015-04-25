@@ -32,7 +32,7 @@ Ako odgovor na zahtjev traje duže od 15 dana onda bi tijelo javne vlasti trebal
 <% if !@info_request.nil? %>
     <%= link_to "Tražite požurnicu", show_response_no_followup_path(:id => @info_request.id, :incoming_message_id => nil) + "?internal_review=1#followup", :class => 'link_button_green' %> i tražite rješavanje vašeg zahtjeva čim je prije moguće.
 <% else %>
-    Ispod zahtjeva na stranici <%= site_name %>, pronađite i odaberite "tražite požurnicu".
+    Ispod zahtjeva na stranici <i><%= site_name %></i>, pronađite i odaberite "tražite požurnicu".
     Zatim napišite poruku tražeći rješavanje vašeg zahtjeva čim je prije moguće. Bilo bi dobro staviti i poveznicu na stranicu zahtjeva kako bi bilo jasno o kojem se točno zahtjevu radi.
 <% end %>
 </p>
@@ -51,20 +51,18 @@ na internetskoj stranici povjerenika za informiranje.
     poveznicu na Vaš zahtjev
     <strong><%=h request_url(@info_request) %></strong>
 <% else %>
-    poveznicu na Vaš zahtjev na stranici <%= site_name %>
+    poveznicu na Vaš zahtjev na stranici <i><%= site_name %></i>
 <% end %>
 ili ispišite cijelu stranicu sa zahtjevom i sve priloge.
 </p>
 
-<p><%= site_name %> nema posebnih sredstava za rukovanje sa zahtjevima u ovoj fazi — zahtjevi se nalaze u sustavu povjerenika za informiranje. Međutim, možete ostavljati napomene na Vaš zahtjev kako bi informirali ostale o napretku procesa.</p>
+<p><i><%= site_name %></i> nema posebnih sredstava za rukovanje sa zahtjevima u ovoj fazi — zahtjevi se nalaze u sustavu povjerenika za informiranje. Međutim, možete ostavljati napomene na Vaš zahtjev kako bi informirali ostale o napretku procesa.</p>
 
 <p>Upozorenje. Radni zaostatak povjerenika za informiranje je povelik te može potrajati doslovno godinama dok ne dobijete rješenje. Ako dođe do ovoga, trebali biste se pomiriti s tim da na ovaj način nećete ubrzo dobiti informaciju. Možda ćete se htjeti pridružiti borbi za poboljšanje Zakona o pravu na pristup informacijama, ili je možda i takvo dugotrajno čekanje informacija vrijedno truda. Informacije možete pokušati dobiti i na jedan od <strong>idućih načina...</strong></p>
 
 <h1 id="other_means">3. Korištenje drugih sredstava kako bi došli do odgovora na Vaše pitanje <a class="hover_a" href="#other_means">#</a> </h1>
 
-<p>Potragu za rješenjem Vašeg problema ili Vašu istragu možete nastaviti i na druge načine.
-
-Sukladno Zakonu o pravu na pristup informacijama    (link na forum)
+<p>Potragu za rješenjem Vašeg problema ili Vašu istragu možete nastaviti i na druge načine.</p>
 
 <ul>
 <li>Sukladno <strong>Zakonu o pravu na pristup informacijama</strong> možete zatražiti novi pregled informacija ili dodatnu dokumentaciju neizravno povezanu s predmetom u Vašem odbijenom zahtjevu.
