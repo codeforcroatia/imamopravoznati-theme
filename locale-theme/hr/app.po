@@ -7,6 +7,9 @@ msgstr ""
 msgid "About us"
 msgstr "O nama"
 
+msgid "About project"
+msgstr "O projektu"
+
 msgid "About the software"
 msgstr "O ovoj platformi"
 
@@ -38,7 +41,7 @@ msgid "How can you help?"
 msgstr "Kako i vi možete pomoći?"
 
 msgid "Making requests"
-msgstr "Pisanje zahtjeva"
+msgstr "Podnošenje zahtjeva"
 
 msgid "News"
 msgstr "Novosti"
