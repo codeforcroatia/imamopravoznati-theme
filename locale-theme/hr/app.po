@@ -46,8 +46,8 @@ msgstr "Podnošenje zahtjeva"
 msgid "News"
 msgstr "Novosti"
 
-msgid "Original theme from {{link}}"
-msgstr "Izvorna tema je {{link}}"
+msgid "Based on theme from tuderechoasaber.es, other original content was developed by Code for Croatia and is made public under a Creative Commons Attribution, Share Alike licence."
+msgstr "Temeljeno na temi tuderechoasaber.es a ostali sadržaj je izradila ekspertna skupina Programiraj za Hrvatsku i objavljeno je pod licencom Creative Commons Imenovanje-Dijeli pod istim uvjetima."
 
 msgid "Privacy policy"
 msgstr "Pravila privatnosti"
