@@ -23,9 +23,7 @@
                 <li><%= link_to _("About the software"), help_alaveteli_path %></li>
                 <li><%= link_to _("API"), help_api_path %></li>
             </ul>
-            <a class="footer-logo" href="http://creativecommons.org/licenses/by-sa/3.0/">
-            <%= _("Content licensed under CC BY SA 3.0<br/>Creative Commons Attribution Share-Alike") %>
-            </a>
+            <%= link_to image_tag('cc-by-sa-banner.jpg', :alt => _("Content licensed under CC BY SA 3.0<br/>Creative Commons Attribution Share-Alike")), "http://creativecommons.org/licenses/by-sa/3.0/", :class => 'footer-logo' %>
             <br/><%= _('Based on theme from {{link}}, other original content was developed by Code for Croatia and is made public under a Creative Commons Attribution, Share Alike licence.', :link => link_to('tuderechoasaber.es', 'http://tuderechoasaber.es')) %>
         </div>
 
