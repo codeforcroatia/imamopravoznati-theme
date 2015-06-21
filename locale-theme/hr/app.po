@@ -53,7 +53,7 @@ msgid "Privacy policy"
 msgstr "Pravila privatnosti"
 
 msgid "Read other news"
-msgstr "Pogledaj ostale novosti"
+msgstr "Pogledajte ostale novosti"
 
 msgid "Search existing requests:"
 msgstr "Pretražite postojeće zahtjeve:"
@@ -80,10 +80,10 @@ msgid "We send the question for you"
 msgstr "Mi ćemo poslati vaš zahtjev odgovornim osobama"
 
 msgid "We'll notify you when there is an answer."
-msgstr "Obavijestiti ćemo vas kada je odgovoreno"
+msgstr "Obavijestit ćemo vas kada je odgovoreno"
 
 msgid "Will they answer?"
-msgstr "Budu li odgovorili?"
+msgstr "Hoće li odgovoriti?"
 
 msgid "With the help of"
 msgstr "Uz podršku"
