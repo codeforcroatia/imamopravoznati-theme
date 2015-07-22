@@ -5,7 +5,7 @@
 <h3>Nezadovoljni ste odgovorom koji ste dobili za '<%=request_link(@info_request) %>'?
 </h3>
 <% else %>
-<h1>Nezadovoljni ste dobivenim odgovorom?</h1>
+<h3>Nezadovoljni ste dobivenim odgovorom?</h3>
 <% end %>
 
 <p>Ako...</p>
@@ -28,14 +28,14 @@
 
 <p>
 Ako odgovor na zahtjev traje duže od 15 dana onda bi tijelo javne vlasti trebalo zatražiti produžetak roka za 15 dana i to unutar 8 dana od dana kada su zaprimili Vaš zahtjev, a rješavanje zahtjeva ne bi nikada trebalo trajati duže od 30 dana od dana zaprimanja Vašeg zahtjeva.
+</p>
 
 <% if !@info_request.nil? %>
-    <%= link_to "Tražite požurnicu", show_response_no_followup_path(:id => @info_request.id, :incoming_message_id => nil) + "?internal_review=1#followup", :class => 'link_button_green' %> i tražite rješavanje vašeg zahtjeva čim je prije moguće.
+    <p><%= link_to "Tražite požurnicu", show_response_no_followup_path(:id => @info_request.id, :incoming_message_id => nil) + "?internal_review=1#followup", :class => 'link_button_green' %> i tražite rješavanje vašeg zahtjeva čim je prije moguće.</p>
 <% else %>
-    Ispod zahtjeva na stranici <i><%= site_name %></i>, pronađite i odaberite "tražite požurnicu".
-    Zatim napišite poruku tražeći rješavanje vašeg zahtjeva čim je prije moguće. Bilo bi dobro staviti i poveznicu na stranicu zahtjeva kako bi bilo jasno o kojem se točno zahtjevu radi.
+    <p>Ispod zahtjeva na stranici <i><%= site_name %></i>, pronađite i odaberite "tražite požurnicu".
+    Zatim napišite poruku tražeći rješavanje vašeg zahtjeva čim je prije moguće. Bilo bi dobro staviti i poveznicu na stranicu zahtjeva kako bi bilo jasno o kojem se točno zahtjevu radi.</p>
 <% end %>
-</p>
 
 <p>Tada ćete primiti rješenje s odlukom tijela javne vlasti o rješavanju Vašeg zahtjeva za pristup informacijama.</p>
 
@@ -58,7 +58,7 @@ ili ispišite cijelu stranicu sa zahtjevom i sve priloge.
 
 <p><i><%= site_name %></i> nema posebnih sredstava za rukovanje sa zahtjevima u ovoj fazi — zahtjevi se nalaze u sustavu povjerenika za informiranje. Međutim, možete ostavljati napomene na Vaš zahtjev kako bi informirali ostale o napretku procesa.</p>
 
-<p>Upozorenje. Radni zaostatak povjerenika za informiranje je povelik te može potrajati doslovno godinama dok ne dobijete rješenje. Ako dođe do ovoga, trebali biste se pomiriti s tim da na ovaj način nećete ubrzo dobiti informaciju. Možda ćete se htjeti pridružiti borbi za poboljšanje Zakona o pravu na pristup informacijama, ili je možda i takvo dugotrajno čekanje informacija vrijedno truda. Informacije možete pokušati dobiti i na jedan od <strong>idućih načina...</strong></p>
+<p>Upozorenje! Radni zaostatak povjerenika za informiranje je povelik te može potrajati doslovno godinama dok ne dobijete rješenje. Ako dođe do ovoga, trebali biste se pomiriti s tim da na ovaj način nećete ubrzo dobiti informaciju. Možda ćete se htjeti pridružiti borbi za poboljšanje Zakona o pravu na pristup informacijama, ili je možda i takvo dugotrajno čekanje informacija vrijedno truda. Informacije možete pokušati dobiti i na jedan od <strong>idućih načina...</strong></p>
 
 <h1 id="other_means">3. Korištenje drugih sredstava kako bi došli do odgovora na Vaše pitanje <a class="hover_a" href="#other_means">#</a> </h1>
 
