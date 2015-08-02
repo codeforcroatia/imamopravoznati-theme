@@ -1,10 +1,9 @@
 ImamoPravoZnati Alaveteli theme
 =========================
 
-This is a theme package for Alaveteli.
+This is a theme package for [Alaveteli](https://github.com/codeforcroatia/alaveteli).
 
-The intention is to support simple overlaying of templates and
-resources without the need to touch the core Alaveteli software.
+The intention is to support simple overlaying of templates and resources without the need to touch the core Alaveteli software.
 
 Typical usage should be limited to:
 
