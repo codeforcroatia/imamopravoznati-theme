@@ -1,75 +1,43 @@
-// ==================
-// VARIABLES
-// ==================
-
-@import "partials/variables";
-
-// ==================
-// FOOTER LAYOUT
-// ==================
-
+/* Footer layout */
 #footer {
-  border-top: 1px solid darken($creamy-grey, 10%);
-  background-color: $creamy-grey;
-  padding-top: 10px;
-  margin-top: 50px;
-  max-width: none;
+  width:100%;
+  margin:5em 0 0;
+  padding: 2em 4em;
 }
 
-.footer-inner {
-  @include grid-row;
-}
+#footer-nav{
 
-#footer-nav {
-  @include grid-column(12);
-  float: none;
-
-  ul {
+  ul{
     padding: 0;
     list-style: none outside none;
   }
 
-  .footer-logo img {
-    display: inherit;
-    width: 45%;
-    max-width: 280px;
-    padding: 0;
-  }
-
-  .footer-credits-logo img {
-    display: inherit;
-    width: 30%;
-    max-width: 280px;
-    padding: 0;
-  }
-
-  .footer-small {
-    font-size: 0.85em;
-    line-height: 1em;
-  }
-
-  /* Three elements in footer - so a 3 element block grid */
-  @include respond-min($main_menu-mobile_menu_cutoff) {
-    > ul {
-      @include block-grid(3);
-      font-size: 0.85em;
-      li {
-        text-align: left;
-      }
+  /* Five elements in footer - so a 5 element block grid */
+  @include respond-min( $main_menu-mobile_menu_cutoff ){
+    ul {
+      @include block-grid(5);
     }
-    @include ie8 {
-      #footer-nav > ul > li:nth-child(3n+1) {
+    @include ie8{
+      #footer-nav ul > li:nth-child(5n+1) {
         padding-left: 0em;
-        padding-right: 1.25em;
+        padding-right: 1.40625em;
       }
-      #footer-nav > ul > li:nth-child(3n+2) {
-        padding-left: 0.625em;
-        padding-right: 0.625em; 
+      #footer-nav ul > li:nth-child(5n+2) {
+        padding-left: 0.46875rem;
+        padding-right: 0.9375rem;
       }
-      #footer-nav > ul > li:nth-child(3n) {
-        padding-left: 1.25em;
+      #footer-nav ul > li:nth-child(5n+3) {
+        padding-left: 0.9375em;
+        padding-right: 0.46875em;
+      }
+      #footer-nav ul > li:nth-child(5n) {
+        padding-left: 1.40625em;
         padding-right: 0em;
       }
+    }
+
+    img {
+      display: inherit;
     }
   }
 }

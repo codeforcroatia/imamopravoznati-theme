@@ -3,8 +3,6 @@
 # See http://stackoverflow.com/questions/7072758/plugin-not-reloading-in-development-mode
 #
 Rails.configuration.to_prepare do
-    # Override mailer templates with theme ones. Note doing this in a before_filter,
-    # as we do with the controller paths, doesn't seem to have any effect when
-    # running in production
+    # Add theme templates to the mailer templates (not overriding the defaults).
     ActionMailer::Base.prepend_view_path File.join(File.dirname(__FILE__), "views")
 end
