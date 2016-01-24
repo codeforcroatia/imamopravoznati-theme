@@ -1,4 +1,7 @@
-THEME_NAME = File.split(File.expand_path("../..", __FILE__))[1].split('-')[0]
+theme_name = File.split(File.expand_path("../..", __FILE__))[1]
+theme_name.gsub!('-', '_')
+THEME_NAME = theme_name
+
 class ActionController::Base
     # The following prepends the path of the current theme's views to
     # the "filter_path" that Rails searches when deciding which
@@ -10,16 +13,6 @@ class ActionController::Base
         self.prepend_view_path File.join(File.dirname(__FILE__), "views")
     end
 end
-
-# Prepend the asset directories in this theme to the asset path:
-['stylesheets', 'images', 'javascripts'].each do |asset_type|
-    theme_asset_path = File.join(File.dirname(__FILE__),
-                                 '..',
-                                 'assets',
-                                 asset_type)
-    Rails.application.config.assets.paths.unshift theme_asset_path
-end
-
 
 # In order to have the theme lib/ folder ahead of the main app one,
 # inspired in Ruby Guides explanation: http://guides.rubyonrails.org/plugins.html
@@ -40,6 +33,15 @@ end
 # Note you should rename the file at "config/custom-routes.rb" to
 # something unique (e.g. yourtheme-custom-routes.rb":
 $alaveteli_route_extensions << 'custom-routes.rb'
+
+# Prepend the asset directories in this theme to the asset path:
+['stylesheets', 'images', 'javascripts'].each do |asset_type|
+    theme_asset_path = File.join(File.dirname(__FILE__),
+                                 '..',
+                                 'assets',
+                                 asset_type)
+    Rails.application.config.assets.paths.unshift theme_asset_path
+end
 
 # Tell FastGettext about the theme's translations: look in the theme's
 # locale-theme directory for a translation in the first place, and if

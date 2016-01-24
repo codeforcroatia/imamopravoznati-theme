@@ -5,16 +5,14 @@
 # See http://stackoverflow.com/questions/7072758/plugin-not-reloading-in-development-mode
 #
 Rails.configuration.to_prepare do
-  # Front page needs some additional info
-  GeneralController.class_eval do
-      # Make sure it doesn't break if blog is not available
-      def frontpage
-          begin
-              blog
-          rescue
-              @blog_items = []
-              @twitter_user = MySociety::Config.get('TWITTER_USERNAME', '')
-          end
-      end
-  end
+    # Example adding an instance variable to the frontpage controller
+    GeneralController.class_eval do
+        def mycontroller
+            @say_something = "Greetings friend"
+        end
+    end
+    HelpController.class_eval do
+        def help_out
+        end
+    end
 end

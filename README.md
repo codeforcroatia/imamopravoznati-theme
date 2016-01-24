@@ -1,28 +1,30 @@
-ImamoPravoZnati Alaveteli theme
-=========================
+Alavetelitheme
+==============
 
-This is a theme package for [Alaveteli](https://github.com/codeforcroatia/alaveteli).
+This is a "hello world" type theme package for Alaveteli.
 
-The intention is to support simple overlaying of templates and resources without the need to touch the core Alaveteli software.
+The intention is to support simple overlaying of templates and
+resources without the need to touch the core Alaveteli software.
 
-Typical usage should be limited to:
-
- * Putting CSS-based customisations in `public/stylesheets/custom.css`
-
- * Creating your own versions of non-functional pages (like "about
-   us", at `lib/views/help/about.rhtml` -- and/or localised versions at
-   lib/views/help/about.es.rhtml)
-
-To install::
-
-  ./script/plugin install git://github.com/codeforcroatia/imamopravoznati-theme.git
-
-Look in the lib/ folder of the plugin to see how the overrides happen.
-
-Note that the `install.rb` plugin point sets up a symlink to include
-local resource files within the Rails `public/` directory.
+Typical usage should be limited to that described in the [documentation](http://alaveteli.org/docs/customising/themes/):
 
 
-Based on [tuderechoasaber-theme](https://github.com/civio/tuderechoasaber-theme) for Alaveteli v0.12 - Copyright (c) 2011 David Cabo, MIT license
+## To install:
 
-Based on [dirittodisapere-theme](https://github.com/mysociety/dirittodisapere-theme) for Alaveteli v0.20 - Copyright (c) 2011 mySociety, released under the MIT license
+In the Alaveteli `general.yml` configuration file change the default mysociety  theme repository to your theme repository in the [`THEME_URLS`](http://alaveteli.org/docs/customising/config/#theme_urls) setting:
+
+    THEME_URLS:
+      - 'git://github.com/YOUR_GITHUB_USERNAME/YOUR_THEME_NAME.git'
+
+You can then switch the theme the application is using:
+
+    bundle exec rake themes:install
+
+## To run tests:
+
+To run tests, in the Alaveteli Rails.root (with this theme installed):
+
+        bundle exec rspec lib/themes/alavetelitheme/spec
+
+
+Copyright (c) 2011 mySociety, released under the MIT license

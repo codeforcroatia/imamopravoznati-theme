@@ -1,8 +1,0 @@
-<% @title = _("Missing contact details for '") + h(@info_request.public_body.name) + "'" %>
-
-<h1><%=@title%></h1>
-
-<p><%= _('Unfortunately, we do not have a working {{info_request_law_used_full}}
-address for', :info_request_law_used_full => @info_request.law_used_full) %> <%=h @info_request.public_body.name %>. <%= _('You may be able to find
-one on their website. If you manage
-to find one, then please <a href="{{new_change_request_url}}">send it to us</a>.', :new_change_request_url => new_change_request_url(:body => @info_request.public_body.url_name)) %></p>

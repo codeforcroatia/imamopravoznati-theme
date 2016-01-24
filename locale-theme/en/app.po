@@ -1,56 +1,7 @@
-msgid "A project by"
-msgstr ""
+# Your theme's locale files will override the core locale files.  This
+# is a good place to put both translations specific to your theme, and
+# "translations" of the core English words (e.g. you might want to
+# call FOI "RTI" throughougout, like this:
 
-msgid "API"
-msgstr ""
-
-msgid "About the software"
-msgstr ""
-
-msgid "Ask"
-msgstr ""
-
-msgid "Contact us"
-msgstr ""
-
-msgid "Exercise your right to know."
-msgstr ""
-
-msgid "FOI officers"
-msgstr ""
-
-msgid "Help"
-msgstr ""
-
-msgid "Making requests"
-msgstr ""
-
-msgid "Original theme from {{link}}"
-msgstr ""
-
-msgid "Search"
-msgstr ""
-
-msgid "Theme licensed under CC BY SA 3.0<br/>Creative Commons Attribution Share-Alike"
-msgstr ""
-
-msgid "Think of a question for a public authority."
-msgstr ""
-
-msgid "To get information from public authorities:"
-msgstr ""
-
-msgid "We send the question for you"
-msgstr ""
-
-msgid "We'll notify you when there is an answer."
-msgstr ""
-
-msgid "Will they answer?"
-msgstr ""
-
-msgid "Your privacy"
-msgstr ""
-
-msgid "unknown status "
-msgstr ""
+msgid "Make and browse Freedom of Information (FOI) requests"
+msgstr "Make and browse Right to Know (RTI) requests"
