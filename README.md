@@ -1,28 +1,15 @@
-ImamoPravoZnati Alaveteli theme
-=========================
+# Alaveteli theme for WhatDoTheyKnow
 
-This is a theme package for [Alaveteli](https://github.com/codeforcroatia/alaveteli).
+This is the Alaveteli theme that is used on whatdotheyknow.com
 
-The intention is to support simple overlaying of templates and resources without the need to touch the core Alaveteli software.
+To install:
 
-Typical usage should be limited to:
-
- * Putting CSS-based customisations in `public/stylesheets/custom.css`
-
- * Creating your own versions of non-functional pages (like "about
-   us", at `lib/views/help/about.rhtml` -- and/or localised versions at
-   lib/views/help/about.es.rhtml)
-
-To install::
-
-  ./script/plugin install git://github.com/codeforcroatia/imamopravoznati-theme.git
+    ./script/plugin install git://github.com/mysociety/whatdotheyknow-theme.git
 
 Look in the lib/ folder of the plugin to see how the overrides happen.
 
-Note that the `install.rb` plugin point sets up a symlink to include
-local resource files within the Rails `public/` directory.
+To run tests, in the Alaveteli Rails.root (with this theme installed):
 
+    bundle exec rspec lib/themes/whatdotheyknow-theme/spec
 
-Based on [tuderechoasaber-theme](https://github.com/civio/tuderechoasaber-theme) for Alaveteli v0.12 - Copyright (c) 2011 David Cabo, MIT license
-
-Based on [dirittodisapere-theme](https://github.com/mysociety/dirittodisapere-theme) for Alaveteli v0.20 - Copyright (c) 2011 mySociety, released under the MIT license
+Copyright (c) 2013 mySociety, released under the MIT license
