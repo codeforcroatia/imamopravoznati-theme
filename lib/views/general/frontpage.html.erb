@@ -91,11 +91,11 @@
         <% break if item.nil? %>
 
         <div class="frontpage-blog-post <%= position.even? ? 'left' : 'right' %>">
-          <a href="<%= item['link'] %>" class="frontpage-blog-post--link"></a>
-          <div class="frontpage-blog-post--image <%= 'placeholder-image' if item['thumbnail'].blank? %>" style="background-image: url(<%= item['thumbnail'].blank? ? image_path('gong-logo-gray.png') : item['thumbnail'] %>);">
+          <a href="<%= item['link'][0] %>" class="frontpage-blog-post--link"></a>
+          <div class="frontpage-blog-post--image <%= 'placeholder-image' if item['thumbnail'][0].blank? %>" style="background-image: url(<%= item['thumbnail'][0].blank? ? image_path('gong-logo-gray.png') : item['thumbnail'][0] %>);">
           </div>
           <h4 class="frontpage-blog-post--title">
-            <a href="<%= item['link'] %>" class="frontpage-blog-post--article-link" target="_blank"><%= h item['title'][0] %></a>
+            <a href="<%= item['link'][0] %>" class="frontpage-blog-post--article-link" target="_blank"><%= h item['title'][0] %></a>
           </h4>
         </div>
 
