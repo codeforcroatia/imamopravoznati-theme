@@ -445,6 +445,11 @@ a.link_button_green_large {
   }
 }
 
+.fixed {
+  position: fixed;
+  top:0; left:0;
+  width: 100%; }
+
 .greeting {
   //Truncate really long names
   max-width: 19em;

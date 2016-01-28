@@ -17,3 +17,15 @@
 <meta name="theme-color" content="#ffffff">
 
 <meta name="google-site-verification" content="DbAHEzh0igI0rZziSexQh5fTrbRfNPSw8BdmrmNY_70" />
+
+<script type="text/javascript">
+	$(function() {
+	  $(window).scroll(function(){
+	  var sticky = $('.sticky'),
+	      scroll = $(window).scrollTop();
+
+	  if (scroll >= 100) sticky.addClass('fixed');
+	  else sticky.removeClass('fixed');
+	});
+</script>
+<!-- <%= Rails.application.assets["javascripts/jquery-fixed-header-0.0.1.js"].to_s %> -->
