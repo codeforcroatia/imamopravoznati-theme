@@ -1,6 +1,8 @@
 ImamoPravoZnati Alaveteli theme
 =========================
 
+[![Slack Status](http://slackin.codeforcroatia.org/badge.svg)](http://codeforcroatia.org/slackin)
+
 This is a theme package for [Alaveteli](https://github.com/codeforcroatia/alaveteli).
 
 The intention is to support simple overlaying of templates and resources without the need to touch the core Alaveteli software.
