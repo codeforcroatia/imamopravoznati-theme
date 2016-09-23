@@ -504,9 +504,9 @@ a.link_button_green_large {
   a{
     background-color: $mysociety-banner;
     @extend .image-replacement;
-    background-image: image-url("mysociety-header_logo.png");
+    background-image: image-url("codeforcroatia-header_logo.png");
     @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
-      background-image: image-url("mysociety-header_logo@2.png");
+      background-image: image-url("codeforcroatia-header_logo@2.png");
     }
     background-position: 0 0;
     background-repeat: no-repeat;
