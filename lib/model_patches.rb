@@ -24,12 +24,12 @@ Rails.configuration.to_prepare do
         def email_subject_request(opts = {})
             html = opts.fetch(:html, true)
             subject_title = html ? self.title : self.title.html_safe
-            if (!is_batch_request_template?) && (public_body.url_name == 'general_register_office')
+            if (!is_batch_request_template?) # && (public_body.url_name == 'general_register_office')
                 # without GQ in the subject, you just get an auto response
-                _('{{law_used_full}} request GQ - {{title}}', :law_used_full => law_used_human(:full),
+                _('{{title}}', :law_used_full => law_used_human(:full), # {{law_used_full}} request GQ - 
                                                               :title => subject_title)
             else
-                _('{{law_used_full}} request - {{title}}', :law_used_full => law_used_human(:full),
+                _('{{title}}', :law_used_full => law_used_human(:full), # {{law_used_full}} request - 
                                                            :title => subject_title)
             end
         end
@@ -51,7 +51,7 @@ Rails.configuration.to_prepare do
 
         # remove special email domains for UK Government addresses
         %w(gsi x pnn).each do |subdomain|
-          if ret =~ /.*\.*#{ subdomain }\.*.*\.gov\.uk$/
+          if ret =~ /.*\.*#{ subdomain }\.*.*\.gov\.hr$/
             ret.sub!(".#{ subdomain }.", '.')
           end
         end

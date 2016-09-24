@@ -7,7 +7,7 @@ Rails.application.routes.draw do
         match '/reset' => 'user#survey_reset', :as => :survey_reset
     end
 
-    match "/help/ico-guidance-for-authorities" => redirect("https://ico.org.uk/media/for-organisations/documents/how-to-disclose-information-safely-removing-personal-data-from-information-requests-and-datasets/1432979/how-to-disclose-information-safely.pdf
+    match "/help/ico-guidance-for-authorities" => redirect("http://www.pristupinfo.hr
 "),
     	:as => :ico_guidance
 end
