@@ -43,7 +43,7 @@ end
 
 # Note you should rename the file at "config/custom-routes.rb" to
 # something unique (e.g. yourtheme-custom-routes.rb":
-$alaveteli_route_extensions << 'ipz-routes.rb'
+$alaveteli_route_extensions << 'wdtk-routes.rb'
 
 # Tell FastGettext about the theme's translations: look in the theme's
 # locale-theme directory for a translation in the first place, and if
