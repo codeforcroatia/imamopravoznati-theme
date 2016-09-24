@@ -51,7 +51,7 @@ Rails.configuration.to_prepare do
 
         # remove special email domains for UK Government addresses
         %w(gsi x pnn).each do |subdomain|
-          if ret =~ /.*\.*#{ subdomain }\.*.*\.gov\.hr$/
+          if ret =~ /.*\.*#{ subdomain }\.*.*\.gov\.uk$/
             ret.sub!(".#{ subdomain }.", '.')
           end
         end
@@ -77,7 +77,7 @@ Rails.configuration.to_prepare do
             @info_request = info_request
             mail(:to => user.name_and_email,
                  :from => contact_from_name_and_email,
-                 :subject => "Can you help us improve ImamoPravoZnati?")
+                 :subject => "Can you help us improve WhatDoTheyKnow?")
         end
 
         class << self
