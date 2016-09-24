@@ -66,25 +66,25 @@ describe PublicBody do
     end
 
     it 'replaces various uk-specific government domains' do
-      emails = ['person@example.gsi.gov.uk',
-                'person@example.x.gov.uk',
-                'person@example.pnn.gov.uk']
+      emails = ['person@example.gsi.gov.hr',
+                'person@example.x.gov.hr',
+                'person@example.pnn.gov.hr']
 
       emails.each do |email|
         result = PublicBody.extract_domain_from_email(email)
-        expect(result).to eq('example.gov.uk')
+        expect(result).to eq('example.gov.hr')
       end
     end
 
     it 'does not replace addresses similar to uk-specific government domains' do
-      emails = ['attacker@example.gov.gsi.uk',
-                'attacker@example.gov.x.uk',
-                'attacker@example.gov.pnn.uk',
-                'attacker@example.gsi.gov.uk.example.com']
+      emails = ['attacker@example.gov.gsi.hr',
+                'attacker@example.gov.x.hr',
+                'attacker@example.gov.pnn.hr',
+                'attacker@example.gsi.gov.hr.example.com']
 
       emails.each do |email|
         result = PublicBody.extract_domain_from_email(email)
-        expect(result).to_not eq('example.gov.uk')
+        expect(result).to_not eq('example.gov.hr')
       end
     end
 

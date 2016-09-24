@@ -41,6 +41,8 @@ for patch in ['patch_mailer_paths.rb',
     require File.expand_path "../#{patch}", __FILE__
 end
 
+# Note you should rename the file at "config/custom-routes.rb" to
+# something unique (e.g. yourtheme-custom-routes.rb":
 $alaveteli_route_extensions << 'ipz-routes.rb'
 
 # Tell FastGettext about the theme's translations: look in the theme's
