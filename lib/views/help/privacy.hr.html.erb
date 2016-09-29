@@ -1,0 +1,124 @@
+<% @title = "Vaša privatnost" %>
+
+<%= render :partial => 'sidebar' %>
+
+<h1 id="privacy"><%= @title %> <a href="#privacy">#</a> </h1>
+
+<dl>
+
+<dt id="email_address">Tko može vidjeti moju e-mail adresu? <a href="#email_address">#</a> </dt>
+
+<dd><p>Nećemo otkriti vašu e-mail adresu nikome, osim ako nas na to obvezuje zakon ili ako nas vi to zatražite. Navedeno se odnosi i na tijelo javne vlasti kojemu upućujete zahtjev. Oni mogu samo vidjeti adresu oblika
+@<%= AlaveteliConfiguration::incoming_email_domain %> koja je jedinstvena za taj zahtjev.</p>
+<p>Ako pošaljete poruku drugom registriranom korisniku na stranici, tada će im se prikazati vaša osobna e-mail adresa. Bit ćete upozoreni o tome prilikom slanja poruke.</p>
+</dd>
+
+<dt id="nasty_spam">Hoćete li mi slati neugodne i neprimjerene <i>spamove</i>? <a href="#nasty_spam">#</a> </dt>
+<dd>Nećemo. Kada se registrirate na <i><%= site_name %></i>, slat ćemo vam samo poruke u vezi s vašim podnesenim zahtjevom, obavijest o tome da ste se uspješno registrirali, ili pak one poruke koje ste sami odabrali i na njih se pretplatili. Nikada nećemo odati ili prodati vašu e-mail adresu, osim ako nas na to ne obveže zakon ili nas vi navedeno sami zatražite.
+</dd>
+
+<dt id="public_request">Hoće li moje ime i moj zahtjev biti javno prikazani na stranici? <a href="#public_request">#</a> </dt>
+
+<dd>
+<p>Mi objavljujemo vaš zahtjev na internetu tako da ga svatko može pročitati i poslužiti se informacijom koju ste vi pronašli. Uobičajeno je da ne brišemo zahtjeve (<a href="#delete_requests">više detalja</a>).
+</p>
+<p>
+Vaše je ime vezano uz vaš zahtjev, pa mora biti i objavljeno. To je jedini ispravan i pravedan način s obzirom da ćemo objaviti i ime službenika koji odgovara na vaš zahtjev. Korištenje vašeg pravog imena također pomaže drugima da stupe u kontakt s vama i pomognu vam u potrazi ili da se udruže s vama u daljnjoj borbi za transparentnost i dostupnost informacija.
+</p>
+<p>Po zakonu morate koristiti vaše pravo ime kada podnosite zahtjev za pristup informacijama kako bi on bio pravno važeći i kako biste mogli podnijeti žalbu. Pogledajte sljedeće pitanje za alternativna rješenja ukoliko ne želite objaviti svoje puno ime i prezime.
+</p>
+</dd>
+
+<dt id="real_name">Mogu li podnijeti zahtjev za pristup informacijama koristeći pseudonim? <a href="#real_name">#</a> </dt>
+
+
+<dd>
+<p>Morate koristiti <strong>vaše pravo ime</strong> kada podnosite zahtjev za pristup informacijama kako bi on bio zakonski važeći. Više o pravu na pristup informacijama možete saznati na internet stranicama Povjerenika za informiranje <a href="http://www.pristupinfo.hr">pristupinfo.hr</a>.
+</p>
+
+<p>Uzmite u obzir da, čak i ako tijelo javne vlasti odgovori na vaš zahtjev, zbog pseudonima će vam kasnije vjerojatno biti otežano podnijeti žalbu Povjereniku za informiranje oko rješavanja vašeg zahtjeva.</p>
+
+<p>Postoji nekoliko alternativa korištenju pseudonima, koristite ih na vlastitu odgovornost:</p>
+
+<ul>
+<li>Koristite drugačiji oblik vašeg imena. Na primjer „Gđa. Ivana Jurić Horvat“ može podnijeti zahtjev kao „Ivana Jurić“, „I. J. Horvat“, ili „Gđa. Horvat“, ali <strong>ne</strong> i kao „Ivana“ ili „I.J.H.“.
+</li>
+<li>Žene mogu koristiti svoje djevojačko prezime.</li>
+<li>Možete koristiti bilo koje ime pod kojim ste „poznati i/ili ga redovito koristite.“
+<li>Koristite naziv organizacije, tvrtke, poduzeća ili obrta.
+<li>Zamolite nekoga drugoga da podnese zahtjev umjesto vas.
+<li>Ako ste zaista nesigurni, možete kontaktirati nas da podnesemo zahtjev umjesto i za vas. Molimo da nas <a href="/help/contact">kontaktirate</a> samo u slučaju da imate opravdan razlog zbog kojeg to ne možete učiniti sami ili ne možete zamoliti prijatelja da to učini umjesto vas. Mi nažalost nemamo dovoljno osoblja koje bi to moglo činiti za sve.
+</ul>
+
+<p>Molimo da se ne pokušavate predstavljati kao netko tko niste.</p>
+
+</dd>
+
+<dt id="full_address">Tražili su moju poštansku adresu! <a href="#full_address">#</a> </dt>
+
+<dd>
+<p>Ako vas tijelo javne vlasti traži punu, fizičku adresu, odgovorite im da želite dostavu informacije elektroničkom poštom, koja predstavlja <strong>adresu za odgovor</strong>. 
+Tijelo javne vlasti će odgovoriti na vaš zahtjev kada daju pristup traženoj informaciji elektroničkim putem bez potrebe da im dostavite kućnu adresu.
+</p>
+
+<p>Iznimno, tijelo javne vlasti može tražiti kućnu adresu ako treba dostaviti odgovor papirnato i to samo kada rješenjem odbija ili odbacuje zahtjev. U tim slučajevima molimo vas da ne šaljete vašu kućnu adresu putem <i><%= site_name %></i>, te vam predlažemo da na stranici tijela javne vlasti na <i><%= site_name %></i> potražite e-mail adresu službenika za informiranje s desne strane pod "Više o ovom tijelu javne vlasti" te odvojeno putem vaše privatne email adrese dostavite kućnu adresu. U zahtjevu postavite status da su tražili poštanski odgovor, a kada dobijete odgovor u komentar pod zahtjev umetnite informacije o zaprimljenom odgovoru.</p>
+
+</dd>
+
+<dt id="postal_answer">Ne, nije im potrebna poštanska adresa da vam pošalju pismeni odgovor! <a href="#postal_answer">#</a> </dt>
+
+<dd>
+<p>Ako ustanova ima samo papirnatu kopiju informacije koju tražite, možete tražiti način dostave elektronskim putem. Za početak ih pokušajte nagovoriti da skeniraju dokumente i tada ih pošalju. Možete im ponuditi kako ćete im darovati skener, što će u tom slučaju biti zaista sramotno za jednu ustanovu jer ga već imaju.</p>
+
+<p>Prema Zakonu o pravu na pristup informacijama možete tražiti način dostave informacije. Stoga ako naznačite da želite dostavu e-mailom, to za tijelo javne vlasti ujedno znači da dokument mora skenirati. Tijela javne vlasti mogu vam naplatiti troškove kopiranja i skeniranja koji po stranici iznose 0,25 odnosno 0,80 kn, prema Kriterijima koje je objavio Povjerenik za informiranje. Iako to nije uobičajena praksa kada se radi o manjem broju stranica, tijela će to vjerojatno učiniti ukoliko nemaju skener.</p>
+
+<p>Ako to ne uspije, a vi ste spremni poslati im svoju poštansku adresu za dostavu odgovora uz uvjet poštivanja privatnosti kako biste dobili dokumente, označite svoj zahtjev statusom „Odgovorit će putem pošte“.</p>
+</dd>
+
+<dt id="delete_requests">Možete li izbrisati moj zahtjev ili izmijeniti moje ime? <a href="#delete_requests">#</a> </dt>
+
+<dd>
+
+<p><i><%= site_name %></i> je trajni, javni arhiv svih zahtjeva za pravo na pristup informacijama. Čak i ako više ne smatrate vaš zahtjev korisnim, on može biti koristan drugima. Upravo iz tog razloga ne brišemo zahtjeve.
+</p>
+
+<p>U iznimnim, određenim okolnostima možemo ukloniti ili promijeniti vaše ime na web stranici (<a href="#takedown">pogledajte sljedeće pitanje</a>).
+Slično, možemo ukloniti druge osobne informacije.
+</p>
+
+<p>Ako ste zabrinuti oko navedenog, prije nego što podnesete zahtjev, pročitajte poglavlje o <a href="#real_name">pseudonimima</a>.</p>
+
+</dd>
+
+<dt id="takedown">Možete li ukloniti osobne informacije o meni? <a href="#takedown">#</a> </dt>
+
+<dd>
+
+<p>Izbjegavajte slati osobne informacije i o vlastitim se predmetima informirajte kao stranka, traženjem uvida u spis od tijela javne vlasti, što vam omogućuju drugi zahtjevi.</p>
+
+<p>Ako naiđete na bilo kakve osobne informacije o sebi za koje biste htjeli da ih ne prikažemo ili da ih izmijenimo, molimo vas <a href="/help/contact">da nas kontaktirate</a>.
+Naznačite koje informacije smatrate problematičnima i zašto, te gdje se one pojavljuju na stranici.</p>
+
+<p>Ukoliko su osjetljive osobne informacije slučajno objavljene, uklonit ćemo ih u najbržem mogućem roku. Obično uzimamo u obzir samo one zahtjeve za uklanjanjem osobnih informacija koje dolaze od pojedinaca kojih se tiču, ali u slučaju osjetljivih informacija cijenimo svaku naznaku pogreške.</p>
+
+<p>Smatramo da postoji veliki interes javnosti kada je riječ o objavljivanju imena zaposlenika i službenika u tijelima javne vlasti. Njihova imena nećemo objaviti samo u iznimnim slučajevima, npr. kada bi odavanje naziva i položaja zaposlenja ugrozilo sigurnost pojedinca koji navedenu dužnost obnaša. Ako ste vi takav službenik i želite da se vaše ime ukloni zbog sličnog hitnog razloga, morate nam poslati zahtjev vašeg nadređenoga u kojem se to izričito traži. U navedenom se zahtjevu mora dokazati kako postoji rizik koji nadmašuje javni interes.</p>
+
+<p>Za sve ostale zahtjeve trudimo se ukloniti osobne podatke gdje god je to moguće. No ne možemo s lakoćom prikazati i ukloniti podatke iz različitih vrsta privitaka  (kao što su PDF, Microsoft Word ili Excel), i zato obično molimo tijela javne vlasti da nam ponovno pošalju iste, ali s uklonjenim privatnim informacijama.</p>
+
+</dd>
+
+<dt id="disclaimer">Statistika posjeta <a href="#disclaimer">#</a> </dt>
+
+<dd>
+<p>Ove web stranice koriste Google Analytics, usluge web analize koje isporučuje Google, Inc. („Google“). 
+Google Analytics koristi „kolačiće“, tekstualne datoteke pohranjene na vašem računalu, pomoću kojih analizira web stranice i načine na koje korisnici koriste stranice. 
+Informacije o vašem korištenju web stranica koje generiraju kolačići (uključujući i vašu IP adresu) prosljeđuju se i pohranjuju na Googleovim poslužiteljima u Sjedinjenim Američkim Državama. 
+U ime operatera ove web stranice, Google će ove informacije koristiti za svrhe evaluacije korištenja web stranica, izradu izvještaja o aktivnostima na web stranicama te pružanju drugih usluga operateru web stranice, a koje se odnose na aktivnosti na web stranicama i korištenju Interneta. 
+IP adresa koju isporučuje vaš preglednik u skladu s Google Analytics neće biti povezan s bilo kojim drugim Googleovim podacima. Korištenje kolačića možete izbjeći odabirom odgovarajućih postavki na vašem pregledniku, no imajte na umu da u tom slučaju možda nećete moći koristiti web stranice u punoj funkcionalnosti. Uz to, obradu podataka i stvaranje dokumentacije o vašem korištenju web stranica (uključujući i IP adresu) od strane Googlea možete izbjeći preuzimanjem i instalacijom dodatka za preglednik dostupnog na: https://tools.google.com/dlpage/gaoptout.</p>
+</dd>
+
+</dl>
+
+<p><strong>Saznajte više</strong> iz odgovora za <a href="/help/officers">službenike za informiranje</a> --&gt;
+
+<div id="hash_link_padding"></div>

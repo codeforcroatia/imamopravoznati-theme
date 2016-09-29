@@ -1,0 +1,79 @@
+<% @title = "Nezadovoljni ste dobivenim odgovorom?" %>
+
+
+<% if !@info_request.nil? %>
+<h3>Nezadovoljni ste odgovorom koji ste dobili za '<%=request_link(@info_request) %>'?
+</h3>
+<% else %>
+<h3>Nezadovoljni ste dobivenim odgovorom?</h3>
+<% end %>
+
+<p>Ako...</p>
+
+<ul>
+<li>niste primili odgovor u roku od 15 dana</li>
+<li>niste primili sve informacije koje ste tražili <strong>ili</strong></li>
+<li>Vaš zahtjev je odbijen bez valjanog zakonskog razloga</li>
+</ul>
+
+<p>...možete</p>
+
+<ol>
+<li>Poslati <strong>požurnicu</strong> ili zahtjev za ispravak ili dopunu informacija.</li>
+<li>Ako to ne pomogne, podnijeti žalbu <strong>povjereniku za informiranje</strong>.</li>
+<li>U svakom slučaju koristiti i <strong>druga sredstva</strong> kako bi došli do odgovora.</li>
+</ol>
+
+<h1 id="internal_review">1. Traženje požurnice <a class="hover_a" href="#internal_review">#</a> </h1>
+
+<p>
+Ako odgovor na zahtjev traje duže od 15 dana onda bi tijelo javne vlasti trebalo zatražiti produžetak roka za 15 dana i to unutar 8 dana od dana kada su zaprimili Vaš zahtjev, a rješavanje zahtjeva ne bi nikada trebalo trajati duže od 30 dana od dana zaprimanja Vašeg zahtjeva.
+</p>
+
+<% if !@info_request.nil? %>
+    <p><%= link_to "Tražite požurnicu", show_response_no_followup_path(:id => @info_request.id, :incoming_message_id => nil) + "?internal_review=1#followup", :class => 'link_button_green' %> i tražite rješavanje vašeg zahtjeva čim je prije moguće.</p>
+<% else %>
+    <p>Ispod zahtjeva na stranici <i><%= site_name %></i>, pronađite i odaberite "tražite požurnicu".
+    Zatim napišite poruku tražeći rješavanje vašeg zahtjeva čim je prije moguće. Bilo bi dobro staviti i poveznicu na stranicu zahtjeva kako bi bilo jasno o kojem se točno zahtjevu radi.</p>
+<% end %>
+
+<p>Tada ćete primiti rješenje s odlukom tijela javne vlasti o rješavanju Vašeg zahtjeva za pristup informacijama.</p>
+
+<h1 id="complaining">2. Slanje žalbe povjereniku za informiranje <a class="hover_a" href="#complaining">#</a> </h1>
+
+<p>Ako ste još uvijek nezadovoljni i nakon što je tijelo javne vlasti donijelo rješenje možete se žaliti povjereniku za informiranje. ako bi to učinili, 
+<a href="http://www.pristupinfo.hr/postupak-i-obrasci/">prvo pročitajte upute za podnošenje žalbe</a>
+na internetskoj stranici povjerenika za informiranje.
+</p>
+
+<p>Kako biste olakšali slanje relevantne informacije povjereniku za informiranje, priložite uz Vašu žalbu i
+<% if !@info_request.nil? %>
+    poveznicu na Vaš zahtjev
+    <strong><%=h request_url(@info_request) %></strong>
+<% else %>
+    poveznicu na Vaš zahtjev na stranici <i><%= site_name %></i>
+<% end %>
+ili ispišite cijelu stranicu sa zahtjevom i sve priloge.
+</p>
+
+<p><i><%= site_name %></i> nema posebnih sredstava za rukovanje sa zahtjevima u ovoj fazi — zahtjevi se nalaze u sustavu povjerenika za informiranje. Međutim, možete ostavljati napomene na Vaš zahtjev kako bi informirali ostale o napretku procesa.</p>
+
+<p>Upozorenje! Radni zaostatak povjerenika za informiranje je povelik te može potrajati doslovno godinama dok ne dobijete rješenje. Ako dođe do ovoga, trebali biste se pomiriti s tim da na ovaj način nećete ubrzo dobiti informaciju. Možda ćete se htjeti pridružiti borbi za poboljšanje Zakona o pravu na pristup informacijama, ili je možda i takvo dugotrajno čekanje informacija vrijedno truda. Informacije možete pokušati dobiti i na jedan od <strong>idućih načina...</strong></p>
+
+<h1 id="other_means">3. Korištenje drugih sredstava kako bi došli do odgovora na Vaše pitanje <a class="hover_a" href="#other_means">#</a> </h1>
+
+<p>Potragu za rješenjem Vašeg problema ili Vašu istragu možete nastaviti i na druge načine.</p>
+
+<ul>
+<li>Sukladno <strong>Zakonu o pravu na pristup informacijama</strong> možete zatražiti novi pregled informacija ili dodatnu dokumentaciju neizravno povezanu s predmetom u Vašem odbijenom zahtjevu.
+Ako zapnete, <a href="http://diskurs.open.hr/c/imamo-pravo-znati">pitajte za savjet</a>.</li>
+<li>Ako su uključene <strong>neke druge javne institucije</strong> ili javne tvrtke, zatražite pristup informacijama i od njih.
+</li>
+<!-- TO BE UPDATED or NEW CITIZEN SERVICES ACTIVATED
+<li>Pišite <strong>članu sabora</strong> ili drugim političarima putem stranice <a
+href="http://www.writetothem.com">WriteToThem</a> ai tražite ih pomoć u traženju odgovora. Članovi sabora mogu se direktno obratiti ministrima ili ministarstvima, ili pak slati pitanja u sabor pismeno. Vijećnici lokalnih vlasti mogu direktno razgovarati s članovima vijeća.</li> 
+<li>Zatražite <strong>ideje od drugih</strong> koji su zainteresirani za probleme slične Vašemu. Možete ih ponekad naći i na ovoj stranici (Demo Alaveteli), te kontaktirati registrirane korisnike. Možda postoje i forumi ili grupe na internetu u kojima su okupljeni, pogledajte Open Diskurs forum za otvorena pitanja. Ako je problem lokalne naravi, možete koristiti <a
+href="http://www.groupsnearyou.com">GroupsNearYou</a> kako biste pronašli takav forum.</li>
+<li><strong>Pokrenite molbu</strong> na <a href="http://www.pledgebank.com">PledgeBank</a> stranici kako biste potaknuli druge da djeluju zajedno s Vama. Možete, na primjer, dogovoriti sastanak s članovima državnih tijela. Ili možda formirati manju lokalnu kampanju.</li> -->
+</ul>
+
