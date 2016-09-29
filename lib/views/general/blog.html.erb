@@ -6,22 +6,15 @@
   <div id="blog" class="blog">
     <% @blog_items.each do |item| %>
       <div class="blog_post">
-        <h2 id="<%= Time.parse(item['pubDate']).to_i %>"><a href="<%=item['link']%>"><%=h item['title'] %></a></h2>
-        <p class="subtitle"><%= _("Posted on {{date}} by {{author}}", :date=>simple_date(Time.parse(item['pubDate'])), :author=> item['creator'] ? item['creator'] : item['author']) %></p>
+        <h2 id="<%= Time.parse(item['pubDate'][0]).to_i %>"><a href="<%=item['link'][0] %>"><%=h item['title'][0] %></a></h2>
+        <p class="subtitle"><%= _("Posted on {{date}} by {{author}}", :date=>simple_date(Time.parse(item['pubDate'][0])), :author=> item['creator'] ? item['creator'][0] : item['author'][0]) %></p>
         <div>
           <% if item['encoded'] %>
-            <%= sanitize(raw item['encoded']) %>
+            <%= sanitize(raw item['encoded'][0]) %>
           <% elsif item['description'] %>
-            <%= sanitize(raw item['description']) %>
+            <%= sanitize(raw item['description'][0]) %>
           <% end %>
         </div>
-        <p>
-          <em>
-            <% if item['comments'] %>
-              <a href="<%=item['comments']%>"><%= _("{{number_of_comments}} comments", :number_of_comments=>item['comments']) %></a>
-            <% end %>
-          </em>
-        </p>
       </div>
     <% end %>
   </div>
