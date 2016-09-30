@@ -7,7 +7,7 @@ Rails.application.routes.draw do
         match '/reset' => 'user#survey_reset', :as => :survey_reset
     end
 
-    match "/help/ico-guidance-for-authorities" => redirect("http://www.pristupinfo.hr
+    match "/help/ico-guidance-for-authorities" => redirect("https://app.box.com/s/r7yr13jvinnbisc18ebk40fpmtv9eigw
 "),
     	:as => :ico_guidance
 end

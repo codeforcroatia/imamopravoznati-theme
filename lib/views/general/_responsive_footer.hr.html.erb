@@ -1,0 +1,41 @@
+<div class="footer" id="footer">
+    <div class="row">
+        <div class="footer__about">
+            <h2><%= site_name %></h2>
+            <p><%= site_name %> je projekt HrOpen ekspertne skupine <%= link_to 'Code for Croatia', "http://codeforcroatia.org" %> i <%= link_to 'GONG-a', "http://www.gong.hr" %>, <%= link_to 'održavaju volonteri', help_credits_path(:anchor => 'helpus') %> a pokreće <%= link_to 'Alaveteli',  help_alaveteli_path %></p>
+            <ul class="about__contact-links">
+                <li>
+                    <%= link_to 'Kontaktirajte nas', help_contact_path %>
+                </li>
+                <li>
+                     <%= link_to 'Pomoć', help_path %>
+                </li>
+                <li>
+                     <%= link_to 'Privatnost i kolačići', help_privacy_path %>
+                </li>
+                <li>
+                     <%= link_to 'API', help_api_path %>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer__final">
+        <div class="row">
+            <div class="final__dedication">
+                <p>Posvećeno svima vama koji želite znati.</p>
+            </div>
+            <div class="final__social-links">
+                <ul>
+                    <% unless AlaveteliConfiguration::twitter_username.blank? %>
+                    <li>
+                        <a href="https://twitter.com/<%= AlaveteliConfiguration::twitter_username %>" class="social-link social-link--twitter">@<%= AlaveteliConfiguration::twitter_username %></a>
+                    </li>
+                    <% end %>
+                    <li>
+                        <a href="https://facebook.com/<%= AlaveteliConfiguration::facebook_username %>" class="social-link social-link--facebook">/<%= AlaveteliConfiguration::facebook_username %></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

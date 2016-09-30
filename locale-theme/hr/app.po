@@ -7,5 +7,8 @@ msgstr "Tražite dokumente od vlade i javnog sektora"
 msgid "Make a request for information to a UK public authority: by law, they have to respond"
 msgstr "Napravite zahtjev za pravo na pristup informacijama: po zakonu, moraju odgovoriti"
 
+msgid "Learn more"
+msgstr "Saznajte više"
+
 msgid "Learn more about the Freedom of Information act &rarr;"
 msgstr "Saznajte više o Zakonu o pravu na pristup informacijama &rarr;"
