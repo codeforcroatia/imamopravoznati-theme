@@ -1,0 +1,16 @@
+<div class="outgoing correspondence box" id="outgoing-<%=outgoing_message.id.to_s%>">
+  <h2>
+    <%= simple_date(info_request_event.created_at) %>
+  </h2>
+
+  <p class="event_plain">
+    <% if outgoing_message.message_type == 'initial_request' %>
+      Zahtjev
+    <% elsif outgoing_message.message_type == 'followup' %>
+      Odgovor
+    <% else %>
+      <% raise "unknown message_type" %>
+    <% end %>
+    je ponovno poslan tijelu <%= public_body_link(@info_request.public_body) %><% if not info_request_event.same_email_as_previous_send? %>, koristeći novu kontakt adresu<% end %>.
+  </p>
+</div>
