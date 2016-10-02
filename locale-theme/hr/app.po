@@ -8,7 +8,7 @@ msgid "For more detailed guidance on safely disclosing information, read the lat
 msgstr "Za detaljnije smjernice o sigurnoj objavi informacija, pročitajte posljednje savjete Povjerenika za informiranje:"
 
 msgid "Make a request for information to a UK public authority: by law, they have to respond"
-msgstr "Napravite zahtjev za pravo na pristup informacijama: po zakonu, moraju odgovoriti"
+msgstr "Napravite zahtjev za pristup informacijama: po zakonu, moraju odgovoriti"
 
 msgid "Learn more"
 msgstr "Saznajte više"
