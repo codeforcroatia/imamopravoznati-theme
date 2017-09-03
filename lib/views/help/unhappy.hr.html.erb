@@ -31,7 +31,7 @@ Ako odgovor na zahtjev traje duže od 15 dana onda bi tijelo javne vlasti trebal
 </p>
 
 <% if !@info_request.nil? %>
-    <p><%= link_to "Tražite požurnicu", show_response_no_followup_path(:id => @info_request.id, :incoming_message_id => nil) + "?internal_review=1#followup", :class => 'link_button_green' %> i tražite rješavanje vašeg zahtjeva čim je prije moguće.</p>
+    <p><%= link_to "Pošaljite odgovor", show_response_no_followup_path(:id => @info_request.id, :incoming_message_id => nil) + "#followup", :class => 'link_button_green' %> i tražite rješavanje vašeg zahtjeva čim je prije moguće.</p>
 <% else %>
     <p>Ispod zahtjeva na stranici <i><%= site_name %></i>, pronađite i odaberite "tražite požurnicu".
     Zatim napišite poruku tražeći rješavanje vašeg zahtjeva čim je prije moguće. Bilo bi dobro staviti i poveznicu na stranicu zahtjeva kako bi bilo jasno o kojem se točno zahtjevu radi.</p>
