@@ -1,20 +1,17 @@
-# Add a callback - to be executed before each request in development,
-# and at startup in production - to patch existing app classes.
-# Doing so in init/environment.rb wouldn't work in development, since
-# classes are reloaded, but initialization is not run each time.
-# See http://stackoverflow.com/questions/7072758/plugin-not-reloading-in-development-mode
-#
 Rails.configuration.to_prepare do
-  # Front page needs some additional info
-  GeneralController.class_eval do
-      # Make sure it doesn't break if blog is not available
-      def frontpage
-          begin
-              blog
-          rescue
-              @blog_items = []
-              @twitter_user = MySociety::Config.get('TWITTER_USERNAME', '')
-          end
-      end
-  end
+    UserController.class_eval do
+        require 'survey'
+
+        def survey
+        end
+
+        # Reset the state of the survey so it can be answered again.
+        # Handy for testing; not allowed in production.
+        def survey_reset
+            raise "Not allowed in production" if ENV["RAILS_ENV"] == "production"
+            raise "Not logged in" if !@user
+            @user.survey.allow_new_survey
+            return redirect_to survey_url
+        end
+    end
 end

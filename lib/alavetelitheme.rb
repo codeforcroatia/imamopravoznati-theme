@@ -1,25 +1,43 @@
-THEME_NAME = File.split(File.expand_path("../..", __FILE__))[1].split('-')[0]
+require 'routingfilter'
+
 class ActionController::Base
-    # The following prepends the path of the current theme's views to
-    # the "filter_path" that Rails searches when deciding which
-    # template to use for a view.  It does so by creating a method
-    # uniquely named for this theme.
-    path_function_name = "set_view_paths_for_#{THEME_NAME}"
-    before_filter path_function_name.to_sym
-    send :define_method, path_function_name do
+    before_filter :set_whatdotheyknow_view_paths
+
+    def set_whatdotheyknow_view_paths
         self.prepend_view_path File.join(File.dirname(__FILE__), "views")
     end
+
+    # Note that set_view_paths is called by Alaveteli from the
+    # rescue_action_in_public method, in order that error pages
+    # may be themed correctly. Since whatdotheyknow-theme is a
+    # primary theme that ought to style error pages, we define
+    # this as an alias
+    alias :set_view_paths :set_whatdotheyknow_view_paths
 end
 
 # Prepend the asset directories in this theme to the asset path:
 ['stylesheets', 'images', 'javascripts'].each do |asset_type|
     theme_asset_path = File.join(File.dirname(__FILE__),
                                  '..',
+                                 'app',
                                  'assets',
                                  asset_type)
     Rails.application.config.assets.paths.unshift theme_asset_path
 end
 
+# Append individual theme assets to the asset path
+theme_asset_path = File.join(File.dirname(__FILE__),
+                             '..',
+                             'app',
+                             'assets')
+theme_asset_path = Pathname.new(theme_asset_path).cleanpath.to_s
+
+LOOSE_THEME_ASSETS = lambda do |logical_path, filename|
+  filename.start_with?(theme_asset_path) &&
+  !['.js', '.css', ''].include?(File.extname(logical_path))
+end
+
+Rails.application.config.assets.precompile.unshift(LOOSE_THEME_ASSETS)
 
 # In order to have the theme lib/ folder ahead of the main app one,
 # inspired in Ruby Guides explanation: http://guides.rubyonrails.org/plugins.html
@@ -31,15 +49,15 @@ end
 end
 
 # Monkey patch app code
-for patch in ['controller_patches.rb',
+for patch in ['patch_mailer_paths.rb',
+              'controller_patches.rb',
               'model_patches.rb',
-              'patch_mailer_paths.rb']
+              'helper_patches.rb',
+              'analytics_event.rb']
     require File.expand_path "../#{patch}", __FILE__
 end
 
-# Note you should rename the file at "config/custom-routes.rb" to
-# something unique (e.g. yourtheme-custom-routes.rb":
-$alaveteli_route_extensions << 'custom-routes.rb'
+$alaveteli_route_extensions << 'wdtk-routes.rb'
 
 # Tell FastGettext about the theme's translations: look in the theme's
 # locale-theme directory for a translation in the first place, and if

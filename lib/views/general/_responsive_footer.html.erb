@@ -1,45 +1,68 @@
-<div id="footer">
-  <div class="footer-inner">
-    <div id="footer-nav">
-      <ul>
-         <li><h4><%= site_name %></h4>
-          <ul>
-              <li><%= link_to _("Contact us"), help_contact_path %></li>
-              <li><%= link_to _("About us"), help_about_path %></li>
-              <li><%= link_to _("How can you help?"), help_credits_path(:anchor => 'helpus') %></li>
-              <li><%= link_to _("Supporters"), help_about_path(:anchor => 'supporters') %></li>
-              <li><%= link_to _("Credits"), help_credits_path %></li>
-          </ul>
-        </li>
-        <li>
-          <h4><%= _("Guidelines") %></h4>
-          <ul>
-              <li><%= link_to _("Making requests"), help_requesting_path %></li>
-              <li><%= link_to _("Your privacy"), help_privacy_path %></li>
-              <li><%= link_to _("FOI officers"), help_officers_path %></li>
-              <li><%= link_to _("About the software"), help_alaveteli_path %></li>
-              <li><%= link_to _("API"), help_api_path %></li>
-              <li>&nbsp;</li>
-              <li class="footer-small"><a href="http://creativecommons.org/licenses/by-sa/3.0/">
-          <%= _("Content licensed under CC BY SA 3.0 Creative Commons Attribution Share-Alike") %>
-          </a></li>
-          <li class="footer-small">&nbsp;</li>
-          <li class="footer-small"><%= _('Original theme from {{link}}', :link =>   link_to('tuderechoasaber.es', 'http://tuderechoasaber.es')) %></li>
-          </ul>
-          
-        </li>
-        <li>
-          <h4><%= _("A project by") %></h4>
-          <ul>
-              <li><%= link_to image_tag('cfc-logo.png', :alt => "Code for Croatia logo"), "http://codeforcroatia.org/", :class => 'footer-logo' %>
-                  <%= link_to image_tag('gong-logo.png', :alt => "GONG logo"), "http://www.gong.hr/", :class => 'footer-logo' %></li>
-              <li><h4><%= _("With the help of") %></h4></li>
-              <li><%= link_to image_tag('credits/pristupinfo-logo.png', :alt => "Povjerenik za informiranje logo"), "http://www.pristupinfo.hr/", :class => 'footer-credits-logo' %>&nbsp;
-                  <%= link_to image_tag('credits/ogp-logo.png', :alt => "Open Government Partnership logo"), "http://www.opengovpartnership.org", :class => 'footer-credits-logo' %>&nbsp;
-                  <%= link_to image_tag('credits/mysociety-logo.png', :alt => "MySociety logo"), "http://mysociety.org/", :class => 'footer-credits-logo' %></li>
-          </ul>
-        </li>
-      </ul>
+<div class="mysoc-footer" role="contentinfo">
+    <div class="row">
+
+        <div class="col-sm-5">
+            <h2 class="mysoc-footer__site-name"><%= site_name %></h2>
+            <div class="mysoc-footer__site-description">
+                <p>A site to help anyone submit a Freedom of Information request. WhatDoTheyKnow also publishes and archives requests and responses, building a massive archive of information.</p>
+                <p><%= link_to 'Run by Volunteers', help_credits_path(:anchor => 'helpus') %> and powered by <%= link_to 'Alaveteli',  help_alaveteli_path %>.</p>
+                <p>Dedicated to <%= link_to 'Chris Lightfoot', "http://mk.ucant.org/archives/000129.html" %>.</p>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <nav class="mysoc-footer__links">
+                <ul>
+                    <li role="presentation"><%= link_to 'Make a request', select_authority_path %></li>
+                    <li role="presentation"><%= link_to 'Browse requests', request_list_successful_path %></li>
+                    <li role="presentation"><%= link_to 'View authorities', list_public_bodies_default_path %></li>
+                </ul>
+                <ul>
+                    <li role="presentation"><%= link_to 'Help', help_path %></li>
+                    <li role="presentation"><%= link_to 'Contact us', help_contact_path %></li>
+                    <li role="presentation"><%= link_to 'Privacy and cookies', help_privacy_path %></li>
+                    <li role="presentation"><%= link_to 'API', help_api_path %></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="col-sm-3">
+            <div class="mysoc-footer__donate">
+                <p>Your donations keep this site and others like it running</p>
+                <a href="https://mysociety.org/donate?utm_source=whatdotheyknow.com&utm_content=footer+donate+now&utm_medium=link&utm_campaign=mysoc_footer" class="mysoc-footer__donate__button">Donate now</a>
+            </div>
+        </div>
     </div>
-  </div>
+    <hr class="mysoc-footer__divider" role="presentation">
+    <div class="row">
+        <div class="col-sm-5">
+            <div class="mysoc-footer__orgs">
+                <p class="mysoc-footer__org">
+                    Built by
+                    <a href="https://mysociety.org?utm_source=whatdotheyknow.com&utm_content=footer+logo&utm_medium=link&utm_campaign=mysoc_footer" class="mysoc-footer__org__logo mysoc-footer__org__logo--mysociety">mySociety</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="mysoc-footer__legal">
+                <p>mySociety Limited is a project of UK Citizens Online Democracy, a registered charity in England and Wales. For full details visit <a href="https://www.mysociety.org?utm_source=whatdotheyknow.com&utm_content=footer+full+legal+details&utm_medium=link&utm_campaign=mysoc_footer">mysociety.org</a>.</p>
+            </div>
+        </div>
+
+        <div class="col-sm-3">
+            <ul class="mysoc-footer__badges">
+                <li role="presentation"><a href="https://github.com/mysociety/whatdotheyknow-theme" class="mysoc-footer__badge mysoc-footer__badge--github">Github</a></li>
+              <% unless AlaveteliConfiguration::twitter_username.blank? %>
+                <li role="presentation">
+                  <a href="https://twitter.com/<%= AlaveteliConfiguration::twitter_username %>" class="mysoc-footer__badge mysoc-footer__badge--twitter" onclick="<%= track_analytics_event(AnalyticsEvent::Category::OUTBOUND, AnalyticsEvent::Action::TWITTER_EXIT, :label => 'Footer link')%>">@<%= AlaveteliConfiguration::twitter_username %></a>
+                </li>
+              <% end %>
+              <% unless AlaveteliConfiguration::facebook_username.blank? %>
+                <li role="presentation"><a href="https://facebook.com/whatdotheyknowcom" class="mysoc-footer__badge mysoc-footer__badge--facebook" onclick="<%= track_analytics_event(AnalyticsEvent::Category::OUTBOUND, AnalyticsEvent::Action::FACEBOOK_EXIT, :label => 'Footer link')%>">Facebook</a></li>
+              <% end %>
+            </ul>
+        </div>
+
+    </div>
 </div>
