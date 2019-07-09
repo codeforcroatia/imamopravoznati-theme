@@ -19,6 +19,7 @@ end
 ['stylesheets', 'images', 'javascripts'].each do |asset_type|
     theme_asset_path = File.join(File.dirname(__FILE__),
                                  '..',
+                                 'app',
                                  'assets',
                                  asset_type)
     Rails.application.config.assets.paths.unshift theme_asset_path
@@ -37,7 +38,8 @@ end
 for patch in ['patch_mailer_paths.rb',
               'controller_patches.rb',
               'model_patches.rb',
-              'helper_patches.rb']
+              'helper_patches.rb',
+              'analytics_event.rb']
     require File.expand_path "../#{patch}", __FILE__
 end
 
