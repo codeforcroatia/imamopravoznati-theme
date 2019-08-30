@@ -4,23 +4,23 @@
         <div class="col-sm-5">
             <h2 class="mysoc-footer__site-name"><%= site_name %></h2>
             <div class="mysoc-footer__site-description">
-                <p>A site to help anyone submit a Freedom of Information request. WhatDoTheyKnow also publishes and archives requests and responses, building a massive archive of information.</p>
-                <p><%= link_to 'Run by Volunteers', help_credits_path(:anchor => 'helpus') %> and powered by <%= link_to 'Alaveteli',  help_alaveteli_path %>.</p>
-                <p>Dedicated to <%= link_to 'Chris Lightfoot', "http://mk.ucant.org/archives/000129.html" %>.</p>
+                <p>Ovo je internetska stranica gdje bilo tko može podnijeti zahtjev za pristup javnim dokumentima. <%= site_name %> ujedno objavljuje i arhivira zahtjeve i odgovore kreirajući ogromnu arhivu znanja.</p>
+                <p><%= link_to 'Održavaju volonteri', help_credits_path(:anchor => 'helpus') %> a pokreće <%= link_to 'Alaveteli',  help_alaveteli_path %>.</p>
+                <p>Uz podršku <%= link_to 'Code for Croatia', "http://codeforcroatia.org" %> i <%= link_to 'Gonga', "http://www.gong.hr" %>.</p>
             </div>
         </div>
 
         <div class="col-sm-4">
             <nav class="mysoc-footer__links">
                 <ul>
-                    <li role="presentation"><%= link_to 'Make a request', select_authority_path %></li>
-                    <li role="presentation"><%= link_to 'Browse requests', request_list_successful_path %></li>
-                    <li role="presentation"><%= link_to 'View authorities', list_public_bodies_default_path %></li>
+                    <li role="presentation"><%= link_to 'Podnesite zahtjev', select_authority_path %></li>
+                    <li role="presentation"><%= link_to 'Pretražite zahtjeve', request_list_successful_path %></li>
+                    <li role="presentation"><%= link_to 'Popis tijela javne vlasti', list_public_bodies_default_path %></li>
                 </ul>
                 <ul>
-                    <li role="presentation"><%= link_to 'Help', help_path %></li>
-                    <li role="presentation"><%= link_to 'Contact us', help_contact_path %></li>
-                    <li role="presentation"><%= link_to 'Privacy and cookies', help_privacy_path %></li>
+                    <li role="presentation"><%= link_to 'Pomoć', help_path %></li>
+                    <li role="presentation"><%= link_to 'Kontaktirajte nas', help_contact_path %></li>
+                    <li role="presentation"><%= link_to 'Privatnost i kolačići', help_privacy_path %></li>
                     <li role="presentation"><%= link_to 'API', help_api_path %></li>
                 </ul>
             </nav>
@@ -28,8 +28,8 @@
 
         <div class="col-sm-3">
             <div class="mysoc-footer__donate">
-                <p>Your donations keep this site and others like it running</p>
-                <a href="https://mysociety.org/donate?utm_source=whatdotheyknow.com&utm_content=footer+donate+now&utm_medium=link&utm_campaign=mysoc_footer" class="mysoc-footer__donate__button">Donate now</a>
+                <p>Vaše donacije pomažu da ovaj portal i projekti sličnim ovome budu mogući</p>
+                <a href="https://www.gong.hr/hr/o-gong-u/kako-se-gong-financira?utm_source=imamopravoznati.org&utm_content=footer+donate+now&utm_medium=link&utm_campaign=ipz_footer" class="mysoc-footer__donate__button">Donate now</a>
             </div>
         </div>
     </div>
@@ -38,15 +38,15 @@
         <div class="col-sm-5">
             <div class="mysoc-footer__orgs">
                 <p class="mysoc-footer__org">
-                    Built by
-                    <a href="https://mysociety.org?utm_source=whatdotheyknow.com&utm_content=footer+logo&utm_medium=link&utm_campaign=mysoc_footer" class="mysoc-footer__org__logo mysoc-footer__org__logo--mysociety">mySociety</a>
+                    S ljubavlju
+                    <a href="https://codeforcroatia.org?utm_source=imamopravoznati.org&utm_content=footer+logo&utm_medium=link&utm_campaign=ipz_footer" class="mysoc-footer__org__logo mysoc-footer__org__logo--mysociety">Code for Croatia</a>
                 </p>
             </div>
         </div>
 
         <div class="col-sm-4">
             <div class="mysoc-footer__legal">
-                <p>mySociety Limited is a project of UK Citizens Online Democracy, a registered charity in England and Wales. For full details visit <a href="https://www.mysociety.org?utm_source=whatdotheyknow.com&utm_content=footer+full+legal+details&utm_medium=link&utm_campaign=mysoc_footer">mysociety.org</a>.</p>
+                <p>Programiraj za Hrvatsku je nacionalna mreža koja udružuje građane, dizajnere, developere i mlade poduzetnike da grade stvari koje doprinose poboljšavanje javnih platformi za građane. Za više detalja posjetite <a href="https://codeforcroatia.org?utm_source=imamopravoznati.org&utm_content=footer+full+legal+details&utm_medium=link&utm_campaign=ipz_footer">codeforcroatia.org</a>.</p>
             </div>
         </div>
 

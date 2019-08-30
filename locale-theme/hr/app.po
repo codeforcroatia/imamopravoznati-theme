@@ -1,0 +1,17 @@
+msgid "simple_date_format"
+msgstr "%e.%m.%Y"
+
+msgid "Get answers from the government and public sector"
+msgstr "Tražite dokumente od vlade i javnog sektora"
+
+msgid "For more detailed guidance on safely disclosing information, read the latest advice from the Information Commissioner:"
+msgstr "Za detaljnije smjernice o sigurnoj objavi informacija, pročitajte posljednje savjete Povjerenika za informiranje:"
+
+msgid "Make a request for information to a UK public authority: by law, they have to respond"
+msgstr "Napravite zahtjev za pristup informacijama: po zakonu, moraju odgovoriti"
+
+msgid "Learn more"
+msgstr "Saznajte više"
+
+msgid "Learn more about the Freedom of Information act &rarr;"
+msgstr "Saznajte više o Zakonu o pravu na pristup informacijama &rarr;"
