@@ -164,7 +164,7 @@ $high-dpi-screen: '-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi
 .mysoc-footer__org__logo--mysociety {
   width: 152px;
   background: transparent image-url('cfc-footer/logo-codeforcroatia.png') 0 0 no-repeat;
-  background-size: 152px 32px;
+  background-size: 152px 106px;
   @media ($high-dpi-screen) {
     background-image: image-url('cfc-footer/logo-codeforcroatia@2x.png');
   }

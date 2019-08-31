@@ -64,3 +64,12 @@ msgstr "Možete zahtijevati <em>dokumente</em> direktno od EU institucija putem"
 
 msgid "Find out more"
 msgstr "Saznajte više"
+
+msgid "Browse <a href=\"{{requests_url}}\">"
+"{{number_of_requests}} requests</a> to "
+"<a href=\"{{authorities_url}}\">"
+"{{number_of_authorities}} authorities</a>"
+msgstr "Pretražite <a href=\"{{requests_url}}\">"
+"{{number_of_requests}} zahtjeva</a> poslanih "
+"<a href=\"{{authorities_url}}\">"
+"{{number_of_authorities}} tijelima</a>"
