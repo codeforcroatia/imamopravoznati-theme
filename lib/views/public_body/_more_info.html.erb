@@ -27,7 +27,7 @@
     <% if tag_value.match(/(?<=slug).*?(?=\s)/) %>
       <%= link_to _('Pogledaj na MozaikVeza.hr'), "https://www.mozaikveza.hr/entity/#{ tag_value }" %><br>
     <% else %>
-      <%= link_to _('Pretraži na MozaikVeza.hr'), "https://www.mozaikveza.hr/entity/#{ tag_value }" %><br>
+      <%= link_to _('Pogledaj na MozaikVeza.hr'), "https://www.mozaikveza.hr/entity/#{ tag_value }" %><br>
     <% end %>
   <% end %>
 <% end %>

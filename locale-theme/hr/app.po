@@ -15,3 +15,52 @@ msgstr "Saznajte više"
 
 msgid "Learn more about the Freedom of Information act &rarr;"
 msgstr "Saznajte više o Zakonu o pravu na pristup informacijama &rarr;"
+
+msgid "Want to know something?"
+msgstr "Želite znati nešto?"
+
+msgid "Start your own request"
+msgstr "Započnite vlastiti zahtjev za pristup informacijama ili ponovnu uporabu informacija"
+
+msgid "Learn more"
+msgstr "Saznajte više"
+
+msgid "How it works"
+msgstr "Kako ovo radi"
+
+msgid "You have the <strong>right</strong> to request information "
+"from any publicly-funded body, and get answers. "
+"{{site_name}} helps you make a Freedom of Information "
+"request. It also publishes all requests online."
+msgstr "Vaše je <strong>pravo</strong> da tražite rješenja, pravilnike, ugovore, "
+"izvješća, planove, odluke, statute i druge dokumente. "
+"<i>{{site_name}}</i> efikasno ukazuje na probleme koji nas okružuju "
+"i doprinosi njihovom pozitivnom rješavanju. "
+"Također sve objavljuje na internetu javno."
+
+msgid "Use this site to make your request for information – we'll show you how."
+msgstr "Koristite ovaj portal da pošaljete vaš zahtjev za pristup informacijama – mi ćemo vam pokazati kako."
+
+msgid "We'll drop you an email as soon as your request gets a response."
+msgstr "Poslati ćemo vam e-mail čim stigne odgovor."
+
+msgid "We publish it all online. Great! Now you have your answer, and everybody else can access it too."
+msgstr "Sve ćemo objaviti na internetu. Sada imate informacije koje ste tražili i svako im može pristupiti."
+
+msgid "{{site_name}} covers requests to {{number_of_authorities}} authority, including:"
+msgid_plural "{{site_name}} covers requests to {{number_of_authorities}} authorities, including:"
+msgstr[0] "{{site_name}} obuhvaća zahtjeve prema {{number_of_authorities}} tijelo javne vlasti, uključujući:"
+msgstr[1] "{{site_name}} obuhvaća zahtjeve prema {{number_of_authorities}} tijela javne vlasti, uključujući:"
+msgstr[2] "{{site_name}} obuhvaća zahtjeve prema {{number_of_authorities}} tijela javne vlasti, uključujući:"
+
+msgid "Browse all authorities &rarr;"
+msgstr "Pretražite sva tijela &rarr;"
+
+msgid "Looking for an EU Authority?"
+msgstr "Tražite EU tijelo javne vlasti?"
+
+msgid "You can request <em>documents</em> directly from EU Institutions at our sister site"
+msgstr "Možete zahtijevati <em>dokumente</em> direktno od EU institucija putem"
+
+msgid "Find out more"
+msgstr "Saznajte više"
