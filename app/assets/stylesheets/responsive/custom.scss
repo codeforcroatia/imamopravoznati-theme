@@ -47,6 +47,9 @@ $error-bg: lighten($color_red, 25%);
 $error-border: $color_red;
 $action-bg: lighten($color_yellow, 25%);
 $action-border: $color_yellow;
+$popup-bg: #32b353;
+
+@import "mixins";
 
 /* General styles */
 body{
@@ -55,6 +58,10 @@ body{
 
 .entirebody {
   font-family: $font-family;
+}
+
+.skip-to-link {
+  color: white !important;
 }
 
 a,
@@ -70,6 +77,17 @@ a:visited {
 .alaveteli-pro {
   a {
     color: $color_pro_blue;
+    &:hover,
+    &:active,
+    &:focus {
+      color: $color_black;
+    }
+  }
+
+  details {
+    summary {
+      color: $color_pro_blue;
+    }
   }
 }
 
@@ -92,103 +110,63 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Mixin styles */
 
+/* THe combined 'follow' button with follower count is built with the two following mixins */
+@mixin follow-button {
+  line-height: 1.5em;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  margin-bottom: 0;
+}
+
+@mixin follow-count {
+  color: $color_dark_grey;
+  padding: 0.56em 1.25em;
+  border: 1px solid $color_light_grey;
+  position: relative;
+  left: -3px;
+  line-height: 1.6em;
+  border-left: 0;
+  border-radius: 3px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
 /* Hide text when it's replaced by an image */
 .image-replacement {
-  overflow: hidden;
-  text-indent: 150%;
-  white-space: nowrap;
+  @include image-replacement;
 }
 
 /* Button styles */
 .button-base {
-    padding: 0.5em 1.25em;
-    border-radius: 3px;
-    display: inline-block;
-    font-weight: 600;
-    text-decoration: none;
-    transition: background-color 300ms ease-out;
-    margin-bottom: 0;
-    font-family: $font-family;
-    &:hover,
-    &:active,
-    &:focus {
-        text-decoration: none;
-        transition: background-color 300ms ease-out;
-    }
+  @include button-base;
 }
 
 a.button,
 .button,
 .button:visited {
-    @extend .button-base;
-    color: $color_white;
-    background-color: $button-bg;
-    border: none;
-    &:hover,
-    &:active,
-    &:focus,
-    &:visited:hover,
-    &:visited:active,
-    &:visited:focus {
-        background-color: darken($button-bg, 10%);
-        color: $color_white;
-    }
+  @include button;
     .alaveteli-pro & {
-      background-image: linear-gradient(-180deg, #4C858D 0%, #3E6D75 100%);
-      box-shadow: inset 0 1px 0 0 rgba(255,255,255,0.22);
-      &:hover,
-      &:active,
-      &:focus,
-      &:visited:hover,
-      &:visited:active,
-      &:visited:focus {
-        box-shadow: 0 1px 0 0 rgba(0,0,0,0.22);
-      }
+      @include button-pro;
     }
 }
 
 a.button-secondary,
 .button-secondary,
 .button-secondary:visited {
-    @extend .button-base;
-    background-color: $color_light_grey;
-    color: $color_black;
-    font-weight: normal;
-    &:hover,
-    &:active,
-    &:focus {
-        color: $color_black;
-        background-color: darken($color_light_grey, 7.5%);
-        color: $color_black;
-    }
+    @include button-secondary;
 }
 
 .button-tertiary {
-    @extend .button-base;
-    background-color: transparent;
-    color: $color_black;
-    font-weight: normal;
-    border: 1px solid $color_light_grey;
-    &:hover,
-    &:active,
-    &:focus {
-        background-color: darken($color_light_grey, 7.5%);
-        border: 1px solid darken($color_light_grey, 12.5%);
-    }
+  @include button-tertiary;
 }
 
 .button-disabled {
-  opacity: 0.333;
-  &:hover,
-  &:active,
-  &:focus {
-    background-color: inherit;
-    color: inherit;
-  }
+  @include button-disabled;
 }
 
-.cplink__button {
-  @extend .button-tertiary;
+.cplink__button,
+.cplink__button.button {
+  @include button-tertiary;
   border-bottom-left-radius: 0;
   border-left: 0;
   border-top-left-radius: 0;
@@ -196,40 +174,13 @@ a.button-secondary,
 
 /* General styling of nav menu items */
 .menu-item {
-  text-decoration: none;
-  color: transparentize($main_menu-link_text, 0.2);
-  @include ie8 {
-    color: $main_menu-link_text;
-  }
-  transition: background-color 0.5s ease-out;
-  &:hover,
-  &:active,
-  &:focus {
-    background-color: darken($main_menu-bg, 10%);
-    color: transparentize($main_menu-link_text, 0);
-  }
+  @include menu-item;
 }
 
 /* Selected menu item */
-
 .selected-menu-item {
-  font-weight: 600;
-  color: $main_menu-active_link_text;
-  background-color: $main_menu-active_link_bg;
-  &:hover,
-  &:active,
-  &:focus {
-      background-color: $main_menu-active_link_bg;
-  }
+  @include selected-menu-item;
 }
-
-.topnav--pro {
-  // change this for alaveteli pro
-  .selected-menu-item {
-    color: $color_pro_blue;
-  }
-}
-
 
 /* Styling if not part of the main menu on larger screens */
 .sub-menu-item {
@@ -277,8 +228,12 @@ input.use-datepicker[type=text] {
 }
 
 form input[type=submit], a.link_button_green, a.link_button_green_large {
-  @extend .button;
+  @include button;
   text-decoration: none;
+  .alaveteli-pro & {
+    @include button-pro;
+  }
+
 }
 
 @include lte-ie7{
@@ -315,8 +270,20 @@ a.link_button_green_large {
 /* Popups */
 
 .popup {
-  background-color: $notice-bg;
-  border: 3px solid $notice-border;
+  background-color: $color_green;
+  border: 0;
+  color: #fff;
+  a, a:hover, a:active, a:focus, a:visited,
+  a:visited:hover,
+  a:visited:active,
+  a:visited:focus {
+    color: #fff;
+  }
+}
+
+.popup + .popup {
+  /* Sometimes there is more than one message */
+  border-top: 1px solid darken($color_green, 10%);
 }
 
 
@@ -344,23 +311,30 @@ a.link_button_green_large {
 .navigation{
   border-bottom: none;
   a {
-    @extend .menu-item;
+    @include menu-item;
     @media( min-width: $main_menu-mobile_menu_cutoff ) {
       padding: 0.875em 1em;
     }
   }
   /* Show which section is currently selected */
   li.selected a{
-    @extend .selected-menu-item;
+    @include selected-menu-item;
+  }
+}
+
+.topnav--pro {
+  // change this for alaveteli pro
+  .navigation li.selected a {
+    color: $color_pro_blue;
   }
 }
 
 #navigation_search {
-  padding: 0 0.935rem;
   @include respond-min( $main_menu-mobile_menu_cutoff ){
-    top: 1.5em;
+    padding-top: 1.2em;
   }
 }
+
 #navigation_search_form {
   position: relative;
   button {
@@ -387,23 +361,81 @@ a.link_button_green_large {
 
 .js-loaded {
   .account-link {
-    padding-right: 2em;
-    @include respond-min( $main_menu-mobile_menu_cutoff ){
-      //make it appear like it's aligned with the grid, even though it isn't
-      margin-right: 0.935em;
-      &:after {
-        top: 2em;
-        right: 3em;
-      }
+    &:after {
+      border-top-color: rgba(255,255,255,0.4);
     }
   }
+  .account-link--with-pro-pill {
+    padding-right: 3em;
+  }
+}
 
+.logged_in_bar {
+  @include respond-min( $main_menu-mobile_menu_cutoff ){
+    padding-top: 1.1em;
+  }
 }
 
 .logged-in-menu {
   @include respond-min( $main_menu-mobile_menu_cutoff ){
     color: black;
     box-shadow: 0 3px 15px 0 rgba(0, 0, 0, 0.1);
+  }
+  li {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  a,
+  a:visited {
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+    &:hover,
+    &:active,
+    &:focus {
+      color: #fff;
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+    @include respond-min( $main_menu-mobile_menu_cutoff ){
+      color: $link-color;
+      &:hover,
+      &:active,
+      &:focus {
+        color: $color_black;
+        background-color: transparent;
+        text-decoration: underline;
+      }
+    }
+    .alaveteli-pro & {
+      @include respond-min( $main_menu-mobile_menu_cutoff ){
+        color: $color_pro_blue;
+        &:hover,
+        &:active,
+        &:focus {
+          color: $color_black;
+        }
+      }
+    }
+  }
+  .js-loaded & {
+    @include respond-min( $main_menu-mobile_menu_cutoff ){
+      //positioned alongside the button
+      top: 3.5em;
+    }
+  }
+}
+
+.alaveteli-pro .account-link,
+.alaveteli-pro .account-link:visited,
+.account-link,
+.account-link:visited,
+.sign_in_link,
+.sign_in_link:visited {
+  color: #fff;
+  text-decoration: none;
+  &:hover,
+  &:active,
+  &:focus {
+    color: #fff;
   }
 }
 
@@ -421,25 +453,9 @@ a.link_button_green_large {
   }
 }
 
-.navigation .logged-in-menu a,
-.navigation .logged-in-menu__signout-link a {
-  @include respond-min( $main_menu-mobile_menu_cutoff ){
-    color: $link-color;
-    text-decoration: none;
-    transition: none;
-    &:hover,
-    &:active,
-    &:focus {
-      color: $color_black;
-      background-color: transparent;
-      text-decoration: underline;
-    }
-  }
-}
-
-.navigation .logged-in-menu a,
-.navigation .logged-in-menu__signout-link a {
-  .topnav--pro & {
+.logged-in-menu a,
+.logged-in-menu__signout-link a {
+  .alaveteli-pro & {
     .no-js & {
       &:hover,
       &:active,
@@ -449,31 +465,11 @@ a.link_button_green_large {
     }
   }
   .no-js & {
-    @extend .menu-item;
+    @include menu-item;
     &:hover,
     &:active,
     &:focus {
       text-decoration: none;
-    }
-  }
-}
-
-
-.js-loaded {
-    .navigation .logged-in-menu a {
-      .alaveteli-pro & {
-        color: $color_pro_blue;
-      }
-    }
-    .navigation .logged-in-menu__signout-link a {
-    @include respond-min( $main_menu-mobile_menu_cutoff ){
-      text-transform: uppercase;
-      font-weight: bold;
-      font-size: 0.8em;
-      color: #888;
-      &:hover {
-        color: #888;
-      }
     }
   }
 }
@@ -483,7 +479,6 @@ a.link_button_green_large {
   font-weight: 600;
   background-color: #FFFF00;
 }
-
 
 /* Notices, errors */
 
@@ -577,7 +572,7 @@ a.link_button_green_large {
     position: absolute;
     top: 0.66em;
     right: 0.9375rem; //same as foundation's screen-edge gutter
-    @extend .image-replacement;
+    @include image-replacement;
     background-image: image-url('hamburger.png');
     background-repeat: no-repeat;
     background-position: center;
@@ -594,15 +589,6 @@ a.link_button_green_large {
   }
 
   .banner_site-title {
-    @include grid-column(12);
-    padding-top: 1.125em; //18px
-    padding-bottom: 1.125em;
-    @include respond-min( $main_menu-mobile_menu_cutoff ){
-      @include grid-column(5);
-      padding-top: 1.6875em; //27px
-      padding-bottom: 1.6875em;
-    }
-    text-align: left;
     h1 {
       font-size: 1.5em;
       margin: 0;
@@ -625,73 +611,78 @@ a.link_button_green_large {
 }
 
 .site-title__logo {
-  @extend .image-replacement;
-  width: 159px;
+  @include image-replacement;
+  width: 165px;
   height: 18px;
-  background-size: 159px 18px;
+  background-size: 165px 18px;
   background-image: image-url("wdtk-logo-white.png");
+  // https://css-tricks.com/a-complete-guide-to-svg-fallbacks/
+  background-image: image-url("wdtk-logo-white.svg"),
+  linear-gradient(transparent, transparent);
   background-repeat: no-repeat;
   background-position: 0 0;
   display: block;
   @include respond-min( 18.75em ){
-    width: 212px;
+    width: 220px;
     height: 24px;
-    background-size: 212px 24px;
-  }
-  @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
-    background-image: image-url("wdtk-logo-white@2.png");
+    background-size: 220px 24px;
   }
 }
 
 .banner--pro .site-title__logo {
   background-image: image-url("alaveteli-pro/wdtk-logo-white.png");
-  width: 198px;
+  // https://css-tricks.com/a-complete-guide-to-svg-fallbacks/
+  background-image: image-url("alaveteli-pro/wdtk-logo-white.svg"),
+  linear-gradient(transparent, transparent);
+  width: 177px;
   height: 18px;
-  background-size: 198px 18px;
+  background-size: 177px 18px;
   @include respond-min( 18.75em ){
-    width: 231px;
-    height: 21px;
-    background-size: 231px 21px;
-  }
-  @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
-    background-image: image-url("alaveteli-pro/wdtk-logo-white@2.png");
+    width: 236px;
+    height: 24px;
+    background-size: 236px 24px;
   }
 }
 
-.ms-header {
-  background-color: $mysociety-banner;
-  @extend .clearfix;
+/*
+ * 10th birthday logo
+ */
+
+.birthday-logo {
+  @include image-replacement;
+  width: 187px;
+  height: 18px;
+  background-size: 186.5px 18px;
+  background-image: image-url("wdtk-logo-white-bday.png");
+  // https://css-tricks.com/a-complete-guide-to-svg-fallbacks/
+  background-image: image-url("wdtk-logo-white-bday.svg"),
+  linear-gradient(transparent, transparent);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  display: block;
+  @include respond-min( 18.75em ){
+    width: 249px;
+    height: 24px;
+    background-size: 249px 24px;
+  }
 }
 
-.ms-header__container {
-  @include grid-row();
-}
-
-.ms-header__logo {
-  @include grid-column(12);
-  text-align: center;
-  @include respond-min(15em){
-    @include grid-column(6,$offset:6);
-    text-align: right;
-  }
-  @include respond-min( $main_menu-mobile_menu_cutoff ){
-    @include grid-column(2,$offset:10);
-  }
-  line-height: 0;
-  a{
-    background-color: $mysociety-banner;
-    @extend .image-replacement;
-    background-image: image-url("mysociety-header_logo.png");
-    @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
-      background-image: image-url("mysociety-header_logo@2.png");
-    }
-    background-position: 0 0;
-    background-repeat: no-repeat;
-    background-size: 101px 21px;
-    display: inline-block;
-    width: 101px;
-    height: 21px;
-    margin: 10px 0;
+.banner--pro .birthday-logo {
+  @include image-replacement;
+  width: 201px;
+  height: 18px;
+  background-size: 201px 18px;
+  background-image: image-url("alaveteli-pro/wdtk-logo-bday.png");
+  // https://css-tricks.com/a-complete-guide-to-svg-fallbacks/
+  background-image: image-url("alaveteli-pro/wdtk-logo-bday.svg"),
+  linear-gradient(transparent, transparent);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  display: block;
+  @include respond-min( 18.75em ){
+    width: 249px;
+    height: 24px;
+    background-size: 249px 24px;
   }
 }
 
@@ -748,7 +739,7 @@ $mysoc-footer-breakpoint-sm: 42em;
 
 .request-header__action-bar {
   .action-menu__button {
-    @extend .button-secondary;
+    @include button-secondary;
     &:after {
       border-color: #a5a5a5 transparent transparent transparent;
       right: 7%;
@@ -757,23 +748,11 @@ $mysoc-footer-breakpoint-sm: 42em;
 
     a.link_button_green,
     a.track_action {
-      line-height: 1.5em;
-      border-top-right-radius: 0;
-      border-bottom-right-radius: 0;
-      margin-bottom: 0;
+      @include follow-button();
     }
 
   .action-bar__follower-count {
-    color: $color_dark_grey;
-    padding: 0.56em 1.25em;
-    border: 1px solid $color_light_grey;
-    position: relative;
-    left: -3px;
-    line-height: 1.6em;
-    border-left: 0;
-    border-radius: 3px;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
+    @include follow-count();
   }
 }
 
@@ -786,6 +765,12 @@ div.correspondence {
   box-shadow: 0 1px 2px rgba(0,0,0,0.25);
   border-radius: 5px;
   margin-bottom: 2.5em;
+
+  &.collapsed {
+    .correspondence__header {
+      border-radius: 0 0 5px 5px;
+    }
+  }
 }
 
 .incoming.correspondence {
@@ -804,6 +789,18 @@ div.correspondence {
   a.link_to_this {
     background-color: $outgoing-correspondence-color;
   }
+}
+
+.js-loaded .js-collapsable {
+  .correspondence__header {
+    &.hover {
+      background-color: #eee;
+    }
+  }
+}
+
+.correspondence__footer {
+  border-radius: 0 0 5px 5px;
 }
 
 .preview-pane {
@@ -896,7 +893,7 @@ input#reedit_button {
 
 .request-footer__action-bar__actions {
   .action-menu__button {
-    @extend .button-secondary;
+    @include button-secondary;
     padding-right: 2em;
     &:after {
       border-color: #a5a5a5 transparent transparent transparent;
@@ -906,23 +903,11 @@ input#reedit_button {
 
   a.link_button_green,
   a.track_action {
-    line-height: 1.5em;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    margin-bottom: 0;
+    @include follow-button();
   }
 
   .action-bar__follower-count {
-    color: $color_dark_grey;
-    padding: 0.56em 1.25em;
-    border: 1px solid $color_light_grey;
-    position: relative;
-    left: -3px;
-    line-height: 1.6em;
-    border-left: 0;
-    border-radius: 3px;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
+    @include follow-count();
   }
 }
 
@@ -938,57 +923,35 @@ input#reedit_button {
   .action-bar__follow-button,
   .feed_link_sidebar {
     .link_button_green {
-      @extend .button-secondary;
+      @include button-secondary;
     }
   }
 
   .authority__body__sidebar .list-filter-item input[type=submit] {
-    @extend .button-secondary;
+    @include button-secondary;
   }
+
 
   .action-bar__follow-button {
     a.link_button_green {
-      line-height: 1.5em;
-      border-top-right-radius: 0;
-      border-bottom-right-radius: 0;
-      margin-bottom: 0;
+      @include follow-button();
     }
   }
 
   .action-bar__follower-count {
-    color: $color_dark_grey;
-    font-size: 1em; //16px
-    padding: 0.56em 1.25em;
-    border: 1px solid $color_light_grey;
-    position: relative;
-    left: -3px;
-    line-height: 1.6em;
-    border-left: 0;
-    border-radius: 3px;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
+    @include follow-count();
   }
 }
 
 /* LANGUAGE SWITCHER */
-#user_locale_switcher {
-  @include respond-min($main_menu-mobile_menu_cutoff) {
-    background-color: transparent;
-    right: auto;
-    left: 260px;
-    top: 1.5em;
-  }
-}
 
 /* locale-list */
 .locale-list {
-  padding: 0 0.935em;
-  border-bottom: 0;
+  border-color: rgba(0, 0, 0, 0.15);
   @include respond-min($main_menu-mobile_menu_cutoff) {
-    position: absolute;
-    left: 160px;
-    top: 0.8em;
-    padding: 0;
+    position: relative;
+    background-color: transparent;
+    left: -80px;
   }
 }
 
@@ -996,7 +959,6 @@ p.locale-list-trigger {
   margin-bottom: 0;
   color: $color_white;
   color: rgba(255, 255, 255, 0.8);
-  padding: 0.5em 1em;
   @include respond-min($main_menu-mobile_menu_cutoff) {
     margin-top: 0;
     border: 1px solid desaturate(lighten($main_menu-bg, 3%), 5%);
@@ -1014,22 +976,21 @@ p.locale-list-trigger {
   @include respond-min($main_menu-mobile_menu_cutoff) {
     padding: 0.66em 2em 0.66em 0.66em;
   }
-}
-
-.locale-list-trigger .current-locale:after {
-  display: block;
-  position: absolute;
-  content: '';
-  right: 10px;
-  top: 12px;
-  width: 0;
-  height: 0;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  @include ie8 {
-    border-top: 5px solid $color_white;
+  &:after {
+    display: block;
+    position: absolute;
+    content: '';
+    right: 10px;
+    top: 12px;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    @include ie8 {
+      border-top: 5px solid $color_white;
+    }
+    border-top: 5px solid rgba(255,255,255,0.4);
   }
-  border-top: 5px solid rgba(255,255,255,0.4);
 }
 
 .locale-list-trigger .current-locale,
@@ -1045,27 +1006,25 @@ p.locale-list-trigger {
 
 .locale-list .available-languages {
   display: none;
-  padding: 0;
-  margin-bottom: 0;
-  margin-top: 0;
-  font-size: 0.8125em;
   @include respond-min($main_menu-mobile_menu_cutoff) {
     position: absolute;
-    top: 30px;
-    left: 0;
+    top: 3.4375em;
+    left: 0.9375em;
     z-index: 1000;
     border-radius: 3px;
     font-size: 1em;
     width: 100%;
+    max-width: 10em;
   }
 
 }
 
 .locale-list li {
   list-style-type: none;
-  border-bottom: 1px solid rgba(255,255,255,0.2);
+  border-top: 1px solid rgba(255,255,255,0.2);
   @include respond-min($main_menu-mobile_menu_cutoff) {
-    border-bottom-color: $color_dark_grey;
+    border-color: $color_dark_grey;
+    display: block;
   }
   &:last-child {
     @include respond-min($main_menu-mobile_menu_cutoff) {
@@ -1081,18 +1040,15 @@ p.locale-list-trigger {
 .locale-list .available-languages a,
 .locale-list .available-languages a:link,
 .locale-list .available-languages a:visited {
-  display: block;
-  padding: 0.66em 1em;
-  width: 100%;
   text-decoration: none;
-  color: transparentize($main_menu-link_text, 0.2);
-  @include ie8 {
-    color: $main_menu-link_text;
-  }
+  transition: background-color 0.5s ease-out;
+  color: #fff;
   @include respond-min($main_menu-mobile_menu_cutoff) {
     background-color: darken($color_dark_grey, 10%);
+    display: block;
+    padding: 0.5em 1em;
+    width: 100%;
   }
-  transition: background-color 0.5s ease-out;
 }
 
 .locale-list .available-languages a:hover,
@@ -1130,17 +1086,14 @@ p.locale-list-trigger {
   border-top-color: rgba(255,255,255,0.4);
 }
 
-.locale-list .locale-list-trigger,
-.locale-list.active .locale-list-trigger {
-  border: 0;
-  padding: 0;
-}
+  .locale-list .locale-list-trigger,
+  .locale-list.active .locale-list-trigger {
+    @include respond-min($main_menu-mobile_menu_cutoff) {
+      border: 0;
+      padding: 0;
+    }
+  }
 
-.icon-standalone {
-  display: block;
-  width: 22px;
-  height: 22px;
-}
 .bodies-list,
 .latest-requests {
   h4 {
@@ -1602,7 +1555,7 @@ dd {
     // We aren't overriding the sidebar so can't get hold of this
     // link easily, the selector above nest within #right_column
     // should be enough
-    @extend .button-secondary;
+    @include button-secondary;
     text-align: center;
     width: 100%;
   }
@@ -1641,30 +1594,67 @@ dd {
   }
 }
 
-.act_link--writetothem a {
-  background-image: image-url('writetothem.png');
-}
-
 .sidebar__section {
-    background-color: $color_light_grey;
-    padding: 2em 1.5em 1em;
-    border-radius: 3px;
-    margin-bottom: 2em;
+    border-bottom: 1px solid darken($color_light_grey, 7%);
+    margin-bottom: 1.5em;
+    padding-bottom: 1.5em;
     h2 {
       margin-top: 0 !important;
     }
+}
+
+/* Sidebar request navigation */
+.request-navigation {
+  margin-bottom: 1.5em;
+}
+.request-navigation__button {
+  font-family: $font-family;
+  background-color: $color_light_grey;
+  padding-top: 0.6em;
+  padding-bottom: 0.6em;
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: darken($color_light_grey, 10%);
+  }
+  &:disabled {
+    background-color: $color_light_grey;
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: $color_light_grey;
+    }
+  }
+}
+
+.request-navigation__button--prev {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  width: 3.25em;
+}
+
+.request-navigation__button--next {
+  width: 3.2em;
+}
+
+.request-navigation__button--current {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  font-size: 1em;
 }
 
 /* Donate cta in request sidebar
  * (having to use some aggressive selectors here to override existing sidebar styles)
  */
 
+.sidebar__donate-cta,
 #right_column .sidebar__donate-cta {
   padding: 1em 1.5em 1.5em;
   background-color: lighten($color_red, 25%);
   margin-top: 1em;
 }
 
+h2.sidebar__donate-cta__header,
 #right_column h2.sidebar__donate-cta__header {
   text-transform: none;
   line-height: 1.3em;
@@ -1673,16 +1663,30 @@ dd {
   font-size: 1.125em;
 }
 
+.sidebar__donate-cta__para,
 #right_column .sidebar__donate-cta__para {
   line-height: 1.4em;
 }
 
+// `#left_column` here avoids weird background flash on :hover
+#left_column a.sidebar__donate-cta__button,
 #right_column a.sidebar__donate-cta__button {
   background-color: $color_red;
   &:hover,
   &:active,
   &:focus {
     background-color: darken($color_red, 10%);
+  }
+}
+
+// Part of our A/B experiment - needs to look a bit more polished
+// when no longer in #right_column.
+#left_column .sidebar__donate-cta {
+  border-radius: 0.3em;
+  margin-top: 2em;
+
+  @include respond-min($main_menu-mobile_menu_cutoff) {
+    padding: 2em;
   }
 }
 
@@ -1789,13 +1793,15 @@ div.pagination a:visited,
 .pagination .previous_page,
 .pagination .next_page,
 .pagination .current {
-  @extend .button-secondary;
+  @include button-secondary;
   margin: 0 0.2em 0.5em;
 }
 
-.pagination .current {
+div.pagination .current {
   background-color: $main_menu-bg;
   color: $color_white;
+  font-style: none;
+  padding: 0.5em 1.25em;
   &:hover,
   &:active,
   &:focus {
@@ -1803,10 +1809,16 @@ div.pagination a:visited,
     background-color: $main_menu-bg;
   }
 }
+.alaveteli-pro {
+  /* Change the colour of pagination for pro */
+  div.pagination .current {
+    background-color: #447785;
+  }
+}
 
 div.pagination span.disabled {
-  @extend .button-tertiary;
-  @extend .button-disabled;
+  @include button-tertiary;
+  @include button-disabled;
   margin: 0 0.2em;
 }
 
@@ -1891,8 +1903,19 @@ $color_asktheeu_dark_green: #C4DDB9;
  .houdini-label {
    color: $color_pro_blue;
    text-decoration: underline;
+   &:hover,
+   &:active,
+   &:focus {
+     color: $color_black;
+   }
  }
 
  .houdini-target {
    margin-top: 1.5em;
+ }
+
+ .unhappy-info {
+   margin-bottom: 3em;
+   padding-bottom: 1.5em;
+   border-bottom: 1px solid $color_light_grey;
  }

@@ -39,6 +39,8 @@ end
 
 Rails.application.config.assets.precompile.unshift(LOOSE_THEME_ASSETS)
 
+Rails.application.config.assets.precompile << ["tests.js"]
+
 # In order to have the theme lib/ folder ahead of the main app one,
 # inspired in Ruby Guides explanation: http://guides.rubyonrails.org/plugins.html
 %w{ . }.each do |dir|
@@ -53,7 +55,8 @@ for patch in ['patch_mailer_paths.rb',
               'controller_patches.rb',
               'model_patches.rb',
               'helper_patches.rb',
-              'analytics_event.rb']
+              'analytics_event.rb',
+              'public_body_questions.rb']
     require File.expand_path "../#{patch}", __FILE__
 end
 

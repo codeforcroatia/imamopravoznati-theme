@@ -6,6 +6,10 @@
 # See http://stackoverflow.com/questions/7072758/plugin-not-reloading-in-development-mode
 #
 Rails.configuration.to_prepare do
+    ReplyToAddressValidator.invalid_reply_addresses = %w(
+      FOIResponses@homeoffice.gsi.gov.uk
+      FOIResponses@homeoffice.gov.uk
+    )
 
     User.class_eval do
         # Return this user’s survey
@@ -36,7 +40,7 @@ Rails.configuration.to_prepare do
         def email_subject_request(opts = {})
             html = opts.fetch(:html, true)
             subject_title = html ? self.title : self.title.html_safe
-            if (!is_batch_request_template?) && (public_body.url_name == 'general_register_office')
+            if (!is_batch_request_template?) && (public_body && public_body.url_name == 'general_register_office')
                 # without GQ in the subject, you just get an auto response
                 _('{{law_used_full}} request GQ - {{title}}', :law_used_full => law_used_human(:full),
                                                               :title => subject_title)
@@ -131,7 +135,7 @@ Rails.configuration.to_prepare do
                     # Exclude users who have already completed the survey or
                     # have already been sent a survey email in this run
                     logger.debug "[alert_survey] Considering #{info_request.user.url_name}"
-                    next if info_request.user.survey.already_done? || sent_to.include?(info_request.user_id)
+                    next if !info_request.user.can_send_survey? || sent_to.include?(info_request.user_id)
 
                     store_sent = UserInfoRequestSentAlert.new
                     store_sent.info_request = info_request
@@ -141,7 +145,7 @@ Rails.configuration.to_prepare do
 
                     sent_to << info_request.user_id
 
-                    RequestMailer.survey_alert(info_request).deliver
+                    RequestMailer.survey_alert(info_request).deliver_now
                     store_sent.save!
                 end
             end
@@ -153,6 +157,14 @@ Rails.configuration.to_prepare do
 
             alias_method_chain :alert_new_response_reminders, :alert_survey
         end
+    end
+
+    User.class_eval do
+
+      def can_send_survey?
+        active? && !survey.already_done?
+      end
+
     end
 
     ContactValidator.class_eval do

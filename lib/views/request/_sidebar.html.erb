@@ -1,11 +1,21 @@
 <div id="right_column" class="sidebar right_column" role="complementary">
-  <% unless flash[:request_sent] || \
-            (feature_enabled?(:alaveteli_pro) && current_user && current_user.is_pro?) %>
+  <% if show_donation_button? && !flash[:request_sent] %>
   <div class="sidebar__donate-cta">
     <h2 class="sidebar__donate-cta__header"><%= _('We work to defend the right to FOI for everyone') %></h2>
     <p class="sidebar__donate-cta__para"><%= _('Help us protect your right to hold public authorities to account. Donate and support our work.') %></p>
-    <a href="https://www.mysociety.org/donate?utm_source=whatdotheyknow.com&utm_content=request+sidebar+donate+now&utm_medium=link&utm_campaign=donation_drive_2016" class="button sidebar__donate-cta__button">Donate now</a>
+    <% utm_params_donate = { :utm_source => 'whatdotheyknow.com',
+                        :utm_medium => 'link',
+                        :utm_content => 'experiment_no_0',
+                        :utm_campaign => 'foi_request_page' } %>
+    <%= donate_now_link 'request sidebar donate now', :class => 'button sidebar__donate-cta__button', :utm_params => utm_params_donate %>
+
   </div>
+  <% end %>
+
+  <% if (feature_enabled?(:alaveteli_pro) &&
+         can?(:create_embargo, @info_request)) %>
+    <%= render partial: "alaveteli_pro/info_requests/embargo_form",
+               locals: { info_request: @info_request } %>
   <% end %>
 
   <div class="request__special-status">
@@ -37,6 +47,8 @@
 
   <%= render :partial => 'request/act' %>
   <%= render :partial => 'request/next_actions' %>
+  <%= render :partial => 'request/batch',
+             :locals => { :info_request => @info_request } %>
 
   <% similar_requests, similar_more = @info_request.similar_requests %>
   <% unless similar_requests.empty? %>

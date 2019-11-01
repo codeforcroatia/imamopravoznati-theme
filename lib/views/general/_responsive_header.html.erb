@@ -1,13 +1,3 @@
-<% unless @user and @user.is_pro? %>
-  <div class="ms-header">
-    <div class="ms-header__container">
-      <div class="ms-header__logo">
-        <a href="http://mysociety.org">mySociety</a>
-      </div>
-    </div>
-  </div>
-<% end %>
-
 <div id="banner" class="banner <%= @in_pro_area ? 'banner--pro' : '' %>" role="banner">
   <div id="banner_inner" class="banner_inner">
     <div id="banner_content" class="banner_content">
@@ -15,7 +5,7 @@
         <p class="print-information">Printed from <%= request.original_url %> on <%= Time.zone.now.to_formatted_s(:long)  %></p>
       </div>
       <div class="banner_site-title">
-        <h1><%= link_to site_name, frontpage_path, :id => 'logo', :class => 'site-title__logo' %></h1>
+        <h1><%= link_to site_name, frontpage_path, :id => 'logo', :class => 'site-title__logo birthday-logo', :title => 'WhatDoTheyKnow 10th birthday' %></h1>
       </div>
 
       <div class="rsp_menu_button">
@@ -24,7 +14,9 @@
       </div>
 
       <%= render :partial => 'general/locale_switcher' %>
-
+      <% if ! (controller.action_name == 'signin' or controller.action_name == 'signup' or controller.action_name == 'login') %>
+        <%= render partial: 'general/log_in_bar' %>
+      <% end %>
       <div id="navigation_search" class="navigation_search">
         <form id="navigation_search_form" class="navigation_search_form" method="get" action="<%= search_redirect_path %>" role="search">
           <label class="visually-hidden" for="navigation_search_button">
