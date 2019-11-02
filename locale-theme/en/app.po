@@ -1,2 +1,0 @@
-msgid "simple_date_format"
-msgstr "%e %B %Y"

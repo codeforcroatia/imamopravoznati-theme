@@ -1,9 +1,0 @@
-<div class="act_link">
-  <i class="act-link-icon act-link-icon--write"></i>
-  <%= link_to 'Write to your politician',
-              'http://www.writetothem.com',
-              :onclick => track_analytics_event(
-                AnalyticsEvent::Category::OUTBOUND,
-                AnalyticsEvent::Action::WRITE_TO_THEM_EXIT,
-                :label => 'Request sidebar') %>
-</div>
