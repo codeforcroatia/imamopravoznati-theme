@@ -166,9 +166,9 @@ $high-dpi-screen: '-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi
   background: transparent image-url('cfc-footer/logo-codeforcroatia.png') 0 0 no-repeat;
   background-size: 152px 32px;
   @media ($high-dpi-screen) {
-    background-image: image-url('cfc-footer/logo-logo-codeforcroatia@2x.png');
+    background-image: image-url('cfc-footer/logo-codeforcroatia@2x.png');
   }
-  background-image: image-url('cfc-footer/logo-logo-codeforcroatia.svg'), none;
+  background-image: image-url('cfc-footer/logo-codeforcroatia.svg'), none;
 }
 
 .mysoc-footer__legal {
