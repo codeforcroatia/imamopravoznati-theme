@@ -12,10 +12,6 @@ Rails.application.routes.draw do
   get "/help/ico-guidance-for-authorities" => redirect("http://0.codeforcroatia.org/ppi-smjernice-za-sluzbenike/"),
   :as => :ico_guidance
 
-  get '/help/about'  => 'about#whybother_them',
-    :via => 'get',
-    :as => 'help_whybother_them'
-
   get '/help/principles'  => 'help#principles',
     :via => 'get',
     :as => 'help_principles'
