@@ -3,7 +3,7 @@ module AnalyticsEvent
 
   # Custom analytics events
   module Action
-    WRITE_TO_THEM_EXIT = 'Write To Them Exit'
+    MOZAIK_VEZA_EXIT = 'MozaikVeza.hr Exit'
   end
 
 end
