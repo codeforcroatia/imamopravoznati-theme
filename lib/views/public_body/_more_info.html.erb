@@ -24,16 +24,6 @@
   <% end %>
 <% end %>
 
-<% if public_body.has_tag?('mozaikveza') %>
-  <% public_body.get_tag_values('mozaikveza').each do |tag_value| %>
-    <% if tag_value.match(/(?<=slug:).*?(?=\s)/) %>
-      <%= link_to _('Pogledaj na MozaikVeza.hr'), "https://www.mozaikveza.hr/entity/#{ tag_value }" %><br>
-    <% else %>
-      <%= link_to _('Pretraži na MozaikVeza.hr'), "https://www.mozaikveza.hr" %><br>
-    <% end %>
-  <% end %>
-<% end %>
-
 <%= link_to _('View FOI email address'), view_public_body_email_path(public_body.url_name) %><br>
 
 <%= link_to _("Ask us to update FOI email"), new_change_request_body_path(:body => public_body.url_name) %><br>

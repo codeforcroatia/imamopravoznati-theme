@@ -1,7 +1,7 @@
 # Here you can override or add to the pages in the core website
 
 Rails.application.routes.draw do
-  get '/zagreb' => redirect('/body?tag=zagreb', status: 302)
+  get '/london' => redirect('/body?tag=london', status: 302)
 
   # Add a route for the survey
   scope '/profile/survey' do
@@ -9,12 +9,8 @@ Rails.application.routes.draw do
     get '/reset' => 'user#survey_reset', :as => :survey_reset
   end
 
-  get "/help/ico-guidance-for-authorities" => redirect("http://0.codeforcroatia.org/ppi-smjernice-za-sluzbenike/"),
+  get "/help/ico-guidance-for-authorities" => redirect("https://ico.org.uk/media/for-organisations/documents/how-to-disclose-information-safely-removing-personal-data-from-information-requests-and-datasets/2013958/how-to-disclose-information-safely.pdf"),
   :as => :ico_guidance
-
-  get '/help/about'  => 'about#whybother_them',
-    :via => 'get',
-    :as => 'help_whybother_them'
 
   get '/help/principles'  => 'help#principles',
     :via => 'get',
