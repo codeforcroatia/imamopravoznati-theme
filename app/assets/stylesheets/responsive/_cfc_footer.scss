@@ -158,17 +158,17 @@ $high-dpi-screen: '-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi
   margin-top: 0.5em;
   height: 0;
   overflow: hidden;
-  padding-top: 32px;
+  padding-top: 92px;
 }
 
 .mysoc-footer__org__logo--mysociety {
-  width: 152px;
+  width: 92px;
   background: transparent image-url('cfc-footer/logo-codeforcroatia.png') 0 0 no-repeat;
-  background-size: 152px 32px;
+  background-size: 92px 64px;
   @media ($high-dpi-screen) {
     background-image: image-url('cfc-footer/logo-codeforcroatia@2x.png');
   }
-  background-image: image-url('cfc-footer/logo-codeforcroatia.svg'), none;
+  /* background-image: image-url('cfc-footer/logo-codeforcroatia.svg'), none; */
 }
 
 .mysoc-footer__legal {
