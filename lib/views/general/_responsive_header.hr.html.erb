@@ -12,7 +12,7 @@
   <div id="banner_inner" class="banner_inner">
     <div id="banner_content" class="banner_content">
       <div class="only-show-for-print">
-        <p class="print-information">Printed from <%= request.original_url %> on <%= Time.zone.now.to_formatted_s(:long)  %></p>
+        <p class="print-information">Ispisano iz <%= request.original_url %> on <%= Time.zone.now.to_formatted_s(:long)  %></p>
       </div>
       <div class="banner_site-title">
         <!-- <h1><%= link_to site_name, frontpage_path, :id => 'logo', :class => 'site-title__logo birthday-logo', :title => 'WhatDoTheyKnow 10th birthday' %></h1> -->
@@ -20,8 +20,8 @@
       </div>
 
       <div class="rsp_menu_button">
-        <a href="#banner" class="open"> <i class="icon-menu"></i> Menu </a>
-        <a href="#" class="close"> <i class="icon-menu"></i> Close </a>
+        <a href="#banner" class="open"> <i class="icon-menu"></i> Izbornik </a>
+        <a href="#" class="close"> <i class="icon-menu"></i> Zatvori </a>
       </div>
 
       <%= render :partial => 'general/locale_switcher' %>

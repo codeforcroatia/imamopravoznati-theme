@@ -615,10 +615,10 @@ a.link_button_green_large {
   width: 165px;
   height: 18px;
   background-size: 165px 18px;
-  background-image: image-url("wdtk-logo-white.png");
+  background-image: image-url("ipz-logo-white.png");
   // https://css-tricks.com/a-complete-guide-to-svg-fallbacks/
-  background-image: image-url("wdtk-logo-white.svg"),
-  linear-gradient(transparent, transparent);
+  //background-image: image-url("ipz-logo-white.svg"),
+  //linear-gradient(transparent, transparent);
   background-repeat: no-repeat;
   background-position: 0 0;
   display: block;
@@ -699,10 +699,10 @@ $mysoc-footer-donate-background-color: #434343;
 $mysoc-footer-donate-text-color: #fff;
 $mysoc-footer-donate-button-background-color: $button-bg;
 $mysoc-footer-legal-text-color: $mysoc-footer-text-color;
-$mysoc-footer-image-path: '/assets/mysoc-footer/';
+$mysoc-footer-image-path: '/assets/cfc-footer/';
 $mysoc-footer-breakpoint-sm: 42em;
 
-@import "responsive/mysoc_footer";
+@import "responsive/cfc_footer";
 
 .mysoc-footer {
   margin-top: 5em;
