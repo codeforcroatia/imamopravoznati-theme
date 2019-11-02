@@ -27,9 +27,11 @@
 <% if public_body.has_tag?('mozaikveza') %>
   <% public_body.get_tag_values('mozaikveza').each do |tag_value| %>
     <% if tag_value.match(/(?<=slug:).*?(?=\s)/) %>
-      <%= link_to _('Pogledaj na MozaikVeza.hr'), "https://www.mozaikveza.hr/entity/#{ tag_value }" %><br>
+      <%= link_to _('Pogledaj na MozaikVeza.hr'),
+                    "https://www.mozaikveza.hr/entity/#{ tag_value }" %><br>
     <% else %>
-      <%= link_to _('Pretraži na MozaikVeza.hr'), "https://www.mozaikveza.hr" %><br>
+      <%= link_to _('Pretraži na MozaikVeza.hr'),
+                    "https://www.mozaikveza.hr" %><br>
     <% end %>
   <% end %>
 <% end %>

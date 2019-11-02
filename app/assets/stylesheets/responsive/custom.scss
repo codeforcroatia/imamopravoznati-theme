@@ -480,6 +480,45 @@ a.link_button_green_large {
   background-color: #FFFF00;
 }
 
+/* Custom header bar - Code for Croatia */
+
+.ms-header {
+  background-color: $mysociety-banner;
+  @extend .clearfix;
+}
+
+.ms-header__container {
+  @include grid-row();
+}
+
+.ms-header__logo {
+  @include grid-column(12);
+  text-align: center;
+  @include respond-min(15em){
+    @include grid-column(6,$offset:6);
+    text-align: right;
+  }
+  @include respond-min( $main_menu-mobile_menu_cutoff ){
+    @include grid-column(2,$offset:10);
+  }
+  line-height: 0;
+  a{
+    background-color: $mysociety-banner;
+    @extend .image-replacement;
+    background-image: image-url("codeforcroatia-header_logo.png");
+    @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+      background-image: image-url("codeforcroatia-header_logo@2.png");
+    }
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: 101px 21px;
+    display: inline-block;
+    width: 101px;
+    height: 21px;
+    margin: 10px 0;
+  }
+}
+
 /* Notices, errors */
 
 #notice, #error, .errorExplanation, #request_header_text, #hidden_request, .undescribed_requests, .describe_state_form form {
