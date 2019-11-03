@@ -34,8 +34,8 @@
                       AnalyticsEvent::Action::MOZAIK_VEZA_EXIT,
                       :label => 'Authority sidebar') %> %><br>
     <% else %>
-      <%= link_to _('Pretraži na MozaikVeza.hr (#{ tag_value })'),
-                    "https://www.mozaikveza.hr",
+      <%= link_to _('Pretraži na MozaikVeza.hr'),
+                    "https://www.mozaikveza.hr/#{ tag_value }",
                     :onclick => track_analytics_event(
                       AnalyticsEvent::Category::OUTBOUND,
                       AnalyticsEvent::Action::MOZAIK_VEZA_EXIT,
