@@ -1,6 +1,6 @@
 <div id="right_column_flip" class="right_column_flip help-sidebar">
   <div id="about_sidebar">
-    <h2>Help pages</h2>
+    <h2><%= _("Help pages") %></h2>
     <ul>
       <li>
         <%= link_to_unless_current "Introduction", help_about_path %>
@@ -47,7 +47,7 @@
       </li>
     </ul>
     <% unless is_contact_page? %>
-    <h2 id="contact">Contact us</h2>
+    <h2 id="contact"><%= _("Contact us") %></h2>
     <p>If your question isn't answered here, or you just wanted to let us know
       something about the site, <a href="<%= help_contact_path %>">contact&nbsp;us</a>.
     </p>

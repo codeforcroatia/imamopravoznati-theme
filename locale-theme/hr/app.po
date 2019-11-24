@@ -1,71 +1,153 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
 # Translators:
-# Kristina Kalanj <kristina.kalanj@gmail.com>, 2019
+# Kristina Kalanj, 2019
+# Katica Badovinac <kbadovinac@vip.hr>, 2019
 # Miroslav Schlossberg CfC, 2019
-# Lana Podgoršek <lana@codeforcroatia.org>, 2019
 # 
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: version 0.0.1\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-16 21:30+0000\n"
-"PO-Revision-Date: 2019-10-16 21:49+0000\n"
-"Last-Translator: Lana Podgoršek <lana@codeforcroatia.org>, 2019\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2019-11-09 16:30+0000\n"
+"Last-Translator: Miroslav Schlossberg CfC, 2019\n"
 "Language-Team: Croatian (https://www.transifex.com/code-for-croatia/teams/104012/hr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: hr\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Poedit 2.2.4\n"
 
-#: lib/themes/imamopravoznati-theme/lib/model_patches.rb:41
-msgid "{{law_used_full}} request GQ - {{title}}"
-msgstr "Zahtjev za {{law_used_full}} GQ - {{title}}"
-
-#: lib/themes/imamopravoznati-theme/lib/model_patches.rb:44
-msgid "{{law_used_full}} request - {{title}}"
-msgstr "Zahtjev za {{law_used_full}} - {{title}}"
-
-#: lib/themes/imamopravoznati-theme/lib/model_patches.rb:162
 msgid ""
-"Please confirm that you understand that ImamoPravoZnati is not run by the "
-"government, and the Imamopravoznati volunteers cannot help you with personal"
-" matters relating to government services."
+"      <p>\\n        We understand that it can be difficult to get a response"
+" from the Home\\n        Office to personal immigration queries. We suggest "
+"writing to the Home\\n        Office via a local Member of Parliament, if "
+"you <a\\n        href=\"http://www.writetothem.com/\">send your "
+"correspondence to your MP\\n        </a>, they or their office, can pass it "
+"on to the Home Office and ensure\\n        you get a response. This has the "
+"benefit of highlighting difficulties\\n        communicating with the Home "
+"Office to MPs.\\n      </p>\\n\\n      <p>\\n        Misusing our service, "
+"which makes all correspondence public, won't help\\n        you pursue your "
+"individual case as the Home Office will not enter into\\n        "
+"correspondence about individual cases via our service.\\n      </p>\\n"
 msgstr ""
-"Molimo vas potvrdite da razumijete da ImamoPravoZnati nije vladin portal i "
-"ImamoPravoZnati volonteri ne mogu Vam pomoći oko osobnih pitanja koja se "
-"odnose na vladine službe."
+"<p>\\      Razumijemo da može biti vrlo teško dobiti odgovor od strane "
+"Ministarstva\\n unutarnjih poslova za osobne imigracijske upite. Predlažemo "
+"vam da pišete Ministarstvu\\n unutarnjih poslova putem svog lokalnog  "
+"zastupnika <a\\n  href=\"http://www.writetothem.com/\">,  pošaljite svoju "
+"korespodenciju vašem  MP\\n    </a>, oni ili njihov ured, mogu ga "
+"proslijediti dalje Ministarstva unutarnjih poslova i osigurati\\n da "
+"dobijete odgovor. To ima prednost pri isticanju poteškoća\\n u komuniciranju"
+" s predstavnicima Ministarstva unutarnjih poslova od MPs.\\n</p>  \\n\\n "
+"<p>\\n    Zloupotreba naše usluge, zbog koje je sva korespondencija javna, "
+"neće vam pomoći \\ n da nastavite sa svojim pojedinačnim slučajem jer "
+"Ministarstvo unutrašnjih poslova neće ući u \\ n prepisku o pojedinačnim "
+"slučajevima putem naše usluge.\\n </p> \\n"
 
-#: lib/themes/imamopravoznati-theme/lib/public_body_categories_hr.rb:12
-msgid "Founder"
-msgstr "Osnivač"
+msgid "(You will be asked to sign in as {{user_name}})"
+msgstr "(Trebat ćete se prijaviti kao {{user_name}})"
 
-#: lib/themes/imamopravoznati-theme/lib/public_body_categories_hr.rb:17
-msgid "Legal status"
-msgstr "Pravni status"
+msgid "(or <a href=\"{{url}}\">sign in</a>)"
+msgstr "(ili se <a href=\"{{url}}\">prijavi</a>)"
 
-#: lib/themes/imamopravoznati-theme/lib/views/request_mailer/very_overdue_alert.text.erb:1
-msgid "are long overdue."
-msgstr "jako kasne s odgovorom"
-
-#: lib/themes/imamopravoznati-theme/lib/views/request_mailer/very_overdue_alert.text.erb:3
 msgid ""
-"They have not replied to your {{law_used_short}} request {{title}}, as "
-"required by law"
+"<a href=\"{{browse_url}}\">Browse all</a> or <a href=\"{{add_url}}\">ask us "
+"to add one</a>."
 msgstr ""
-"Nisu odgovorili na Vaš {{law_used_short}} zahtjev {{title}}, kao što je "
-"predviđeno zakonom"
+"<a href=\"{{browse_url}}\">Pretražite sve</a> ili <a "
+"href=\"{{add_url}}\">zamolite nas da dodamo</a>."
 
-#: lib/themes/imamopravoznati-theme/lib/views/request_mailer/very_overdue_alert.text.erb:6
-msgid "even during holidays"
-msgstr "i za vrijeme praznika"
+msgid ""
+"<strong>Anything else</strong>, such as clarifying, prompting, thanking"
+msgstr "<strong>Nešto drugo</strong>, poput objašnjenja, napomena, zahvala"
 
-#: lib/themes/imamopravoznati-theme/lib/views/request_mailer/very_overdue_alert.text.erb:8
+msgid ""
+"<strong>Can I request information about myself?</strong> <a "
+"href=\"{{url}}\">No!</a>"
+msgstr ""
+"<strong>Mogu li zahtijevati informacije o sebi?</strong> <a "
+"href=\"{{url}}\">Ne!</a>"
+
+msgid ""
+"<strong>We will email you</strong> when there is a response, or after "
+"{{late_number_of_days}} working days if the authority still hasn't replied "
+"by then."
+msgstr ""
+"<strong>Poslat ćemo Vam e-mail</strong> ako stigne odgovor ili nakon "
+"{{late_number_of_days}} radnih dana ukoliko tijelo javne vlasti nije "
+"odgovorilo do tada."
+
+msgid "An all-in-one FOI toolkit for journalists, activists and campaigners"
+msgstr ""
+"Sveobuhvatni PPI programski alat za novinare, aktiviste i organizatore"
+
+msgid "Are you sure the information youre after isnt available elsewhere?"
+msgstr ""
+"Jeste li sigurni da informacije koje tražite nisu dostupne negdje drugdje?"
+
+msgid "Are you the owner of any commercial copyright on this page?"
+msgstr "Jeste li vlasnik nekog autorskog prava na ovoj stranici?"
+
+msgid "Ask us to update FOI email"
+msgstr "Tražite nas da ažuriramo adresu službenika za informiranje"
+
+msgid "Asking about Biometric Residence Permit (BRP) replacements or refunds?"
+msgstr ""
+" Pitate li za zamjenu Biometrijsku boravišnu dozvolu (BRP) ili povrate?"
+
+msgid "Asking about your Visa?"
+msgstr "Pitate li za vašu vizu?"
+
+msgid ""
+"Asking for for recorded information held by a public body that anyone could "
+"reasonably request and expect to receive?"
+msgstr ""
+"Tražite li zabilježene podatke koje posjeduje tijelo javne vlasti, koje bi "
+"svatko mogao opravdano zahtjevati i očekivati da će ih dobiti?"
+
+msgid "Authority email:"
+msgstr "E-pošta službenika za informiranje:"
+
+msgid "Authority:"
+msgstr "Tijelo javne vlasti:"
+
+msgid "Batch"
+msgstr "Skupni zahtjev"
+
+msgid "Batch requests allow multiple recipients of a single request"
+msgstr "Skupni zahtjevi omogućuju više primatelja jednog zahtjeva"
+
+msgid "Batch requests are part of a new workflow"
+msgstr "Skupni zahtjevi su dio novog radnog procesa"
+
+msgid ""
+"Browse <a href=\"{{requests_url}}\">{{number_of_requests}} requests</a> to "
+"<a href=\"{{authorities_url}}\">{{number_of_authorities}} authorities</a>"
+msgstr ""
+"Pretražite <a href=\"{{requests_url}}\">{{number_of_requests}} zahtjeva</a> "
+"prema <a href=\"{{authorities_url}}\">{{number_of_authorities}} tijela</a>"
+
+msgid "Browse all authorities &rarr;"
+msgstr "Pretražite sva tijela javne vlasti &rarr;"
+
+msgid "Browse requests"
+msgstr "Pregledajte zahtjeve"
+
+msgid "Can't find the one you want?"
+msgstr "Ne možete naći onaj koji želite?"
+
+msgid "Change privacy"
+msgstr "Promijenite postavke privatnosti"
+
+msgid "Charity registration"
+msgstr "Registracija nevladine organizacije"
+
+msgid ""
+"Check the authoritys disclosure logs, their responses on {{site_name}} or "
+"conduct a quick Internet search."
+msgstr ""
+"Provjerite evidencije objave podataka tijela javnih vlasti, njihove odgovore"
+" na {{site_name}} ili obavite brzu internetsku pretragu."
+
 msgid ""
 "Click on the link below to send a message to {{public_body_name}} telling "
 "them to reply to your request. You might like to ask for an internal review,"
@@ -76,28 +158,6 @@ msgstr ""
 "tražiti požurnicu ili podnijeti žalbu radi šutnje tijela javne vlasti "
 "povjereniku za informiranje."
 
-#: lib/themes/imamopravoznati-theme/lib/views/request_mailer/very_overdue_alert.text.erb:16
-#: lib/themes/imamopravoznati-theme/lib/views/request_mailer/overdue_alert.text.erb:15
-msgid "the {{site_name}} team"
-msgstr "{{site_name}} tim"
-
-#: lib/themes/imamopravoznati-theme/lib/views/request_mailer/overdue_alert.text.erb:1
-msgid "have delayed."
-msgstr "kasni s odgovorom."
-
-#: lib/themes/imamopravoznati-theme/lib/views/request_mailer/overdue_alert.text.erb:3
-msgid ""
-"They have not replied to your {{law_used_short}} request {{title}} promptly,"
-" as normally required by law"
-msgstr ""
-"Nisu odgovorili na Vaš {{law_used_short}} zahtjev s naslovom '{{title}}' u "
-"roku kao što je predviđeno zakonom"
-
-#: lib/themes/imamopravoznati-theme/lib/views/request_mailer/overdue_alert.text.erb:6
-msgid "during term time"
-msgstr "tijekom trajanja perioda"
-
-#: lib/themes/imamopravoznati-theme/lib/views/request_mailer/overdue_alert.text.erb:8
 msgid ""
 "Click on the link below to send a message to {{public_body}} reminding them "
 "to reply to your request."
@@ -105,26 +165,676 @@ msgstr ""
 "Kliknite na poveznicu ispod da biste poslali poruku {{public_body}} koja će "
 "ih podsjetiti da odgovore na Vaš zahtjev. "
 
-#: lib/themes/imamopravoznati-theme/lib/views/general/_responsive_header.html.erb:31
-#: lib/themes/imamopravoznati-theme/lib/views/general/_responsive_header.html.erb:33
-#: lib/themes/imamopravoznati-theme/lib/views/request/select_authority.html.erb:42
+msgid "Contact us"
+msgstr "Kontaktirajte nas"
+
+msgid ""
+"Disclaimer: This message and any reply that you make will be published on "
+"the internet. Our privacy and copyright policies:"
+msgstr ""
+"Izjava o odricanju odgovornosti: Ova poruka i svaki odgovor bit će objavljen"
+" na internetu. Naša politika zaštite privatnosti i autorskih prava:"
+
+msgid "Disclosure log"
+msgstr "Zapisnik objave"
+
+msgid "Do not fill in this field"
+msgstr "Ne popunjavajte ovo polje"
+
+msgid "Donate Now"
+msgstr "Donirajte"
+
+msgid ""
+"Edit and add <strong>more details</strong> to the message above, explaining "
+"why you are dissatisfied with their response."
+msgstr ""
+"Uredite i dodajte <strong>više detalja</strong> na poruku iznad, "
+"objašnjavajući zašto niste zadovoljni njihovim odgovorom."
+
+msgid "Email address"
+msgstr "Adresa e-pošte"
+
+msgid "Find contact details at FOI Authorities Registry"
+msgstr "Pronađite kontakt podatke na Registru tijela javne vlasti"
+
+#. "Follow ups" in this context means further
+#. messages sent by the requester to the authority after
+#. the initial request
+msgid ""
+"Follow ups and new responses to this request have been stopped to prevent "
+"spam. Please <a href=\"{{url}}\">contact us</a> if you are {{user_link}} and"
+" need to send a follow up."
+msgstr ""
+"Dodatne poruke i novi odgovori na ovaj zahtjev zaustavljeni su kako bi "
+"spriječili neželjenu poštu. Molimo, <a href=\"{{url}}\">kontaktirajte "
+"nas</a> ako ste {{user_link}} i želite poslati odgovor tijelu javne vlasti."
+
+msgid ""
+"For further information, see the ICOs <a href=\"{{url}}\" "
+"target=\"_blank\">guidelines</a>."
+msgstr ""
+"Za dodatne informacije pogledajte <a href=\"{{url}}\" "
+"target=\"_blank\">smjernice</a>povjerenika za informiranje."
+
+msgid ""
+"For more detailed guidance on safely disclosing information, read the latest"
+" advice from the ICO:"
+msgstr ""
+"Za detaljnije upute o sigurnom rukovanju podacima pročitajte najnovije "
+"savjete Povjerenika za informiranje:"
+
+msgid ""
+"For more information on how public authorities must provide datasets in a "
+"re-usable form so far as reasonably practicable, see the ICO <a "
+"href=\"{{url}}\" target=\"_blank\">guidelines</a> for more detail."
+msgstr ""
+"Za više informacija o tome kako tijela javne vlasti moraju osigurati skupove"
+" podataka u ponovno upotrebljivom obliku, u mjeri u kojoj je to izvedivo, "
+"pogledajte <a href=\"{{url}}\" target=\"_blank\">smjernice</a> povjerenika "
+"za informiranje."
+
+msgid "Get access to the beta"
+msgstr "Tražite pristup beta verziji"
+
+msgid "Get answers from the government and public sector"
+msgstr "Dobijte odgovore od Vlade i javnog sektora"
+
+msgid "Great result!"
+msgstr "Odličan rezultat!"
+
+msgid "Help"
+msgstr "Pomoć"
+
+msgid "Help keep this site running"
+msgstr "Pomozite da ova stranica nastavi s radom"
+
+msgid ""
+"Help us protect your right to hold public authorities to account. Donate and"
+" support our work."
+msgstr ""
+"Pomozite nam da zaštitimo vaše pravo pozivanja tijela javne vlasti na "
+"odgovornost. Donirajte i podržite naš rad."
+
+msgid ""
+"Help us protect your right to hold public authorities to account. Donate and"
+" support our work.\\n"
+msgstr ""
+"Pomozite nam da zaštitimo vaše pravo pozivanja tijela javne vlasti na "
+"odgovornost. Donirajte i podržite naš rad.\\n"
+
+msgid "Home page of authority"
+msgstr "Službena stranica tijela javne vlasti"
+
+msgid "How it works"
+msgstr "Kako ovo radi"
+
+msgid "I am asking for <strong>new information</strong>"
+msgstr "Molim <strong>nove informacije</strong>"
+
+msgid "I am requesting an <strong>internal review</strong>"
+msgstr "Tražim <strong>požurnicu</strong>"
+
+msgid ""
+"If you are dissatisfied by the response you got from the public authority, "
+"you have the right to complain (<a href=\"{{url}}\">details</a>)."
+msgstr ""
+"Ako niste zadovoljni odgovorom koji ste dobili od tijela javne vlasti, imate"
+" pravo na žalbu (<a href=\"{{url}}\">više informacija</a>)."
+
+msgid ""
+"If you are requesting datasets, state how you would like to receive the "
+"information e.g. in an Excel or CSV format."
+msgstr ""
+"Ukoliko zahtijevate skupove podataka, navedite kako želite primati "
+"informacije, npr. u Excel ili CSV formatu."
+
+msgid ""
+"If you find this service useful as an FOI officer, please ask your web "
+"manager to link to us from your organisation's FOI page."
+msgstr ""
+"Ukoliko Vam je, kao službeniku za pravo na pristup informacijama, ova usluga"
+" korisna, molimo Vas da na stranicama Vašeg tijela javne vlasti posvećenim "
+"pravu na pristup informacijama postavite poveznicu do nas. "
+
+msgid "If you have an <strong>offer code</strong>, please enter it here:"
+msgstr "Ako imate <strong>promotivni kod</strong>, unesite ga ovdje:"
+
+msgid ""
+"If you would like to know what information a public authority holds about "
+"you, you should make a Subject Access Request in private. The Information "
+"Commissioners website provides advice on accessing your own personal "
+"information: https://ico.org.uk/your-data-matters/your-right-of-access"
+msgstr ""
+"Ako želite znati koje informacije javne vlasti imaju o vama, trebali biste "
+"podnijeti zahtjev za pristup osobnim podacima privatnim putem u skladu s "
+"Općom uredbom o zaštiti podataka. Internetske stranice Agencije za zaštitu "
+"osobnih podataka (AZOP) pruža savjete o pristupu vašim osobnim podacima: "
+"https://azop.hr/"
+
+msgid ""
+"If you write about this request (for example in a forum or a blog) please "
+"link to this page, and <a href=\"{{url}}\">add an annotation</a> below "
+"telling people about your writing."
+msgstr ""
+"Ukoliko pišete o ovom zahtjevu (primjerice, na forumu ili blogu), molimo "
+"stavite poveznicu do ove stranice i <a href=\"{{url}}\">dodajte bilješku</a>"
+" ispod da biste druge obavijestili o Vašem pisanju."
+
+msgid ""
+"If you write about this request (for example in a forum or a blog) please "
+"link to this page."
+msgstr ""
+"Ukoliko pišete o ovom zahtjevu (primjerice, na forumu ili blogu), molimo "
+"stavite poveznicu do ove stranice."
+
+msgid "Keep private for a further:"
+msgstr "Nadalje držite privatnost:"
+
+msgid "Keep your request up to date"
+msgstr "Održavajte svoj zahtjev ažurnim"
+
+msgid "Learn more about the Freedom of Information act &rarr;"
+msgstr "Saznajte više o Zakonu o pravu na pristup informacijama &rarr;"
+
+msgid "Looking for an EU Authority?"
+msgstr "Tražite tijelo Europske unije?"
+
+msgid "Make a request"
+msgstr "Podnesite zahtjev"
+
+msgid "Make a request &raquo;"
+msgstr "Podnesite zahtjev &raquo;"
+
+msgid ""
+"Make a request for information to a UK public authority: by law, they have "
+"to respond"
+msgstr ""
+"Podnesite zahtjev za pristup informacijama tijelu javne vlasti u Ujedinjenom"
+" Kraljevstvu: prema zakonu, dužni su odgovoriti"
+
+msgid "More about this authority"
+msgstr "Više o ovom tijelu javne vlasti"
+
+msgid "More information"
+msgstr "Više informacija"
+
+msgid "More similar requests"
+msgstr "Više sličnih zahtjeva"
+
+msgid "No"
+msgstr "Ne"
+
+msgid "Notes:"
+msgstr "Poruka:"
+
+msgid "Offensive? Unsuitable?"
+msgstr "Uvredljivo? Neprikladno?"
+
+msgid ""
+"Once the privacy period ends, everything that you enter on this page, "
+"including <strong>your name</strong>, will be <strong><a "
+"href=\"{{url}}\">displayed publicly</a></strong> on this website."
+msgstr ""
+"Jednom kada istekne razdoblje o privatnosti, sve što ste unosili na ovoj "
+"stranici, uključujući <strong>vaše ime</strong>, bit će <strong><a "
+"href=\"{{url}}\">objavljeno javno</a></strong>na ovoj internetskoj stranici."
+
+msgid "Once youre happy with your request, click preview and send."
+msgstr ""
+"Nakon što ste zadovoljni svojim zahtjevom, kliknite pretpregled pa slanje."
+
+msgid "Osniva"
+msgstr "Osniva"
+
+msgid "Plans and pricing"
+msgstr "Paketi i cijene"
+
+msgid ""
+"Please <strong>only</strong> write messages directly relating to your "
+"request {{request_link}}. If you would like to ask for information that was "
+"not in your original request, then <a href=\"{{new_request_link}}\">file a "
+"new request</a>."
+msgstr ""
+"Molimo <strong>samo</strong> pišite poruke izravno povezane s Vašim "
+"zahtjevom {{request_link}}. Ako želite tražiti informacije koje nisu u Vašem"
+" originalnom zahtjevu, tada <a href=\"{{new_request_link}}\">podnesite novi "
+"zahtjev</a>."
+
+msgid ""
+"Please come back and add annotations to update this page with any further "
+"news or links"
+msgstr ""
+"Molimo Vas vratite se i dodajte bilješke kako biste ažurirali ovu stranicu s"
+" novostima ili poveznicama"
+
+msgid ""
+"Please confirm that you understand that WhatDoTheyKnow is not run by the "
+"government, and the WhatDoTheyKnow volunteers cannot help you with personal "
+"matters relating to government services."
+msgstr ""
+"Molimo vas potvrdite da razumijete da {{site_name}} nije vladin portal i "
+"{{site_name}} volonteri vam ne mogu pomoći oko osobnih pitanja koja se "
+"odnose na vladine službe."
+
+msgid "Please contact us"
+msgstr "Molimo kontaktirajte nas"
+
+msgid ""
+"Please include links to some examples of your journalism or blogging if you "
+"can."
+msgstr ""
+"Molimo uključite linkove na neke primjere vaših novinskih izvještaja ili "
+"bloga, ako možete."
+
+msgid ""
+"Please note that in some cases publication of requests and responses will be"
+" delayed."
+msgstr ""
+"Molimo Vas imajte na umu da će u nekim slučajevima objavljivanje zahtjeva i "
+"odgovora biti odgođeno."
+
+msgid "Pogledaj na MozaikVeza.hr"
+msgstr "Pogledaj na MozaikVeza.hr"
+
+msgid "Pravni status"
+msgstr "Pravni status"
+
+msgid "Preview your message"
+msgstr "Pregledajte Vašu poruku"
+
+msgid "Privacy"
+msgstr "Privatnost"
+
+msgid "Pro brings a new dashboard view"
+msgstr "Pro donosi novi prikaz kontrolne ploče"
+
+msgid "Pro features a new request list view"
+msgstr "Pro sadrži novi prikaz popisa zahtjeva"
+
+msgid ""
+"Public authorities have a duty to provide advice and assistance to "
+"requesters."
+msgstr ""
+"Tijela javne vlasti dužna su pružiti savjet i pomoć podnositeljima zahtjeva."
+
+msgid "Publication scheme"
+msgstr "Nacrt publikacije"
+
+msgid "Publish requests"
+msgstr "Objavite zahtjeve"
+
+msgid "Read blog"
+msgstr "Čitajte blog"
+
+msgid ""
+"Remember, public authorities have {{late_number_of_days}} calendar days to "
+"respond to FOI requests."
+msgstr ""
+"Zapamtite, tijela javne vlasti imaju {{late_number_of_days}} kalendarskih "
+"dana za odgovor na zahtjeve za pristup informacijama."
+
+msgid ""
+"Remember, public authorities have {{late_number_of_days}} working days to "
+"respond to FOI requests."
+msgstr ""
+"Zapamtite, tijela javne vlasti imaju {{late_number_of_days}} radnih dana za "
+"odgovor na zahtjeve za pristup informacijama."
+
+msgid "Request hidden"
+msgstr "Zahtjev skriven"
+
+msgid "Requests like this"
+msgstr "Zahtjevi poput ovog"
+
 msgid "Search"
 msgstr "Pretražite"
 
-#: lib/themes/imamopravoznati-theme/lib/views/general/_responsive_header.html.erb:33
-#: lib/themes/imamopravoznati-theme/lib/views/request/select_authority.html.erb:38
-msgid "type your search term here"
-msgstr "ovdje upišite izraz za pretraživanje"
+msgid ""
+"Section 12 of the FOI Act allows public authorities to refuse requests if "
+"they cost too much to comply with."
+msgstr ""
+"U članku 27 Zakona o pravu na pristup informacijama stoji kako tijela javne "
+"vlasti u svrhu ponovne uporabe informacija nemaju obvezu izraditi "
+"informaciju, prilagođavati ili izdvajati dijelove informacija ako to "
+"zahtijeva nerazmjeran utrošak vremena ili sredstava."
 
-#: lib/themes/imamopravoznati-theme/lib/views/general/_responsive_header.html.erb:36
+msgid "Share on Facebook"
+msgstr "Podijeli na Facebooku"
+
+msgid "Share your request"
+msgstr "Podijelite svoj zahtjev"
+
+msgid "Source URL:"
+msgstr "URL izvora:"
+
+msgid "Start your own request"
+msgstr "Pokrenite vlastiti zahtjev"
+
 msgid "Submit Search"
 msgstr "Pošaljite upit"
 
-#: lib/themes/imamopravoznati-theme/lib/views/general/_frontpage_bodies_list.html.erb:4
+msgid "Submit request"
+msgstr "Predajte zahtjev"
+
+msgid "The Home Office also offer a range of contact forms via:"
+msgstr ""
+"Ministarstvo unutarnjih poslova također nudi niz obrazaca za kontakt putem:"
+
+msgid ""
+"The URL where you found the email address. This field is optional, but it "
+"would help us a lot if you can provide a link to a specific page on the "
+"authority's website that gives this address, as it will make it much easier "
+"for us to check."
+msgstr ""
+"URL na kojem ste pronašli adresu e-pošte. Polje nije obavezno, ali pomoglo "
+"bi nam ukoliko nam možete dati poveznicu na određenu stranicu tijela javne "
+"vlasti na kojoj je ova adresa, jer tako biste nam puno olakšali provjeru. "
+
+msgid "The contact email address for FOI requests to the authority."
+msgstr "Kontakt adresa e-pošte za PPI zahtjeve za tijelo javne vlasti. "
+
+msgid ""
+"The cost limit, calculated at 25 per hour, is 600 for government departments"
+" and 450 for other public bodies. For further information, see the "
+"Information Commissioners Office <a href=\"{{url}}\" "
+"target=\"_blank\">guidelines</a>."
+msgstr ""
+"Naplata troškova sukladno ZPPI u Republici Hrvatskoj: u području naknade "
+"troškova za ponovnu uporabu informacija uspostavljeno je <a "
+"href=\"http://0.codeforcroatia.org/prirucnik-naplata-troskova\">nekoliko "
+"različitih pravila</a>. Za dodatne informacije pogledajte <a "
+"href=\"{{url}}\" target=\"_blank\">smjernice</a> Povjerenika za "
+"informiranje."
+
+msgid ""
+"The response to your request has been <strong>delayed</strong>. Although the"
+" authority has no legal obligation to reply, they should normally have "
+"responded by <strong>{{date}}</strong>"
+msgstr ""
+"Odgovor na vaš zahtjev <strong>kasni</strong>. Iako ovo tijelo nema zakonsku"
+" obvezu to učiniti, trebali bi obično odgovoriti do <strong> "
+"{{date}}</strong>"
+
+msgid ""
+"The response to your request has been <strong>delayed</strong>. You can say "
+"that, by law, the authority should normally have responded "
+"<strong>promptly</strong> and by <strong>{{date}}</strong>"
+msgstr ""
+"Odgovor na Vaš zahtjev <strong>kasni</strong>. Možete reći da je, po zakonu,"
+" tijelo javne vlasti trebalo odgovoriti <strong>brzo</strong> i do "
+"<strong>{{date}}</strong>"
+
+msgid ""
+"The response to your request has been <strong>delayed</strong>. You can say "
+"that, by law, the authority should normally have responded "
+"<strong>promptly</strong> and in term time by <strong>{{date}}</strong>"
+msgstr ""
+"Odgovor na Vaš zahtjev <strong>kasni</strong>. Možete reći da je, po zakonu,"
+" tijelo javne vlasti trebalo odgovoriti <strong>brzo</strong> i to tijekom "
+"trajanja perioda do <strong>{{date}}</strong>"
+
+msgid ""
+"The response to your request is <strong>long overdue</strong>. Although the "
+"authority has no legal obligation to reply, they should have responded by "
+"now"
+msgstr ""
+"Odgovor na vaš zahtjev je <strong>u velikom kašnjenju</strong>. Iako ovo "
+"tijelo nema zakonsku obvezu, trebali su do sada odgovoriti"
+
+msgid ""
+"The response to your request is <strong>long overdue</strong>. You can say "
+"that, by law, under all circumstances, the authority should have responded "
+"by now"
+msgstr ""
+"Odgovor na Vaš zahtjev <strong>kasni</strong>. Možete reći da je po zakonu, "
+"u svakom slučaju, tijelo javne vlasti trebalo odgovoriti do sada"
+
+msgid ""
+"They have not replied to your {{law_used_short}} request {{title}} promptly,"
+" as normally required by law"
+msgstr ""
+"Nisu odgovorili na Vaš {{law_used_short}} zahtjev s naslovom '{{title}}' u "
+"roku kao što je predviđeno zakonom"
+
+msgid ""
+"They have not replied to your {{law_used_short}} request {{title}}, as "
+"normally required by law"
+msgstr ""
+"Nisu odgovorili na vaš {{law_used_short}} zahtjev s naslovom {{title}}, kao "
+"što je predviđeno zakonom"
+
+msgid ""
+"This request has been marked for review by the site administrators, who have"
+" not hidden it at this time. If you believe it should be hidden, please <a "
+"href=\"{{url}}\">contact us</a>."
+msgstr ""
+"Ovaj zahtjev su administratori označili za pregled, ali trenutno ga nisu "
+"sakrili. Ukoliko mislite da bi trebao biti skriven, molimo <a "
+"href=\"{{url}}\">kontaktirajte nas</a>."
+
+msgid ""
+"This request has prominence 'hidden'. You can only see it because you are "
+"logged in as a super user."
+msgstr ""
+"Ovaj je zahtjev inače skriven. Možete ga vidjeti jer ste prijavljeni kao "
+"super korisnik."
+
+msgid ""
+"This request is hidden, so that only you the requester can see it. Please <a"
+" href=\"{{url}}\">contact us</a> if you are not sure why."
+msgstr ""
+"Ovaj je zahtjev skriven tako da ga samo Vi, kao podnositelj, možete vidjeti."
+" Molimo<a href=\"{{url}}\">kontaktirajte nas</a> ako niste sigurni zašto."
+
+msgid "This will publish all of the requests in this batch. Are you sure?"
+msgstr "Tako ćete objaviti sve zahtjeve u ovoj skupini. Jeste li sigurni?"
+
+msgid ""
+"This will update the privacy for all of the requests in this batch. Are you "
+"sure?"
+msgstr ""
+"Ovo će ažurirati postavke privatnosti za sve zahtjeve iz ove skupine. Jeste "
+"li sigurni?"
+
+msgid "Tweet it"
+msgstr "Podijelite na Twitteru"
+
+msgid "Unsure who to ask, or what to ask for?"
+msgstr "Niste sigurni koga pitati ili što tražiti?"
+
+msgid "Update"
+msgstr "Ažuriraj"
+
+msgid ""
+"Use this site to make your request for information  we'll show you how."
+msgstr ""
+"Koristite ovaj portal da pošaljete vaš zahtjev za pristup informacijama – mi"
+" ćemo vam pokazati kako."
+
+msgid "View FOI email address"
+msgstr "E-mail adresa službenika za informiranje"
+
+msgid "View authorities"
+msgstr "Tijela javne vlasti"
+
+msgid "Volunteer"
+msgstr "Volontirajte"
+
+msgid "Want to add several authorities?"
+msgstr "Želite li dodati nekoliko tijela javne vlasti?"
+
+msgid "Want to know something?"
+msgstr "Želite znati nešto?"
+
+msgid ""
+"We consider it is not a valid FOI request as it was correspondence about "
+"your personal circumstances, and we have therefore hidden it from other "
+"users."
+msgstr ""
+"Smatramo da ovo nije valjan PPI zahtjev, s obzirom na to da se radilo o "
+"prepisci o vašim osobnim okolnostima, stoga smo ga sakrili od ostalih "
+"korisnika."
+
+msgid ""
+"We publish it all online. Great! Now you have your answer, and everybody "
+"else can access it too."
+msgstr ""
+"Sve ćemo objaviti na internetu. Odlično! Sada imate informacije koje ste "
+"tražili i svatko im može pristupiti."
+
+msgid ""
+"We understand that it can be very difficult to get a response from the Home "
+"Office to personal immigration queries. If you are in the UK we suggest "
+"writing to the Home Office via your local Member of Parliament (MP), if you "
+"send your correspondence to your MP, they or their office, can pass it on to"
+" the Home Office and ensure you get a response. This has the benefit of "
+"highlighting difficulties communicating with the Home Office to MPs - who "
+"are in a position to address the systemic problems."
+msgstr ""
+"Razumijemo da može biti vrlo teško dobiti odgovor od strane Ministarstva "
+"unutarnjih poslova na osobne imigracijske upite. Ako ste u Velikoj "
+"Britaniji, predlažemo da pišete Ministarstva unutarnjih poslova putem svog "
+"lokalnog zastupnika (MP), ako svoj dopis pošaljete svom zastupniku, oni ili "
+"njihov ured, mogu ga proslijediti Ministarstva unutarnjih poslova i "
+"osigurati da dobijete odgovor. To ima prednost pri isticanju poteškoća u "
+"komuniciranju sa predstavnicima Ministarstva unutarnjih poslova koji su u "
+"stanju riješiti sustavne probleme."
+
+msgid "We work to defend the right to FOI for everyone"
+msgstr "Radimo kako bi obranili pravo na pristup informacijama za sve."
+
+msgid "We'll drop you an email as soon as your request gets a response."
+msgstr "Poslati ćemo vam e-mail čim stigne odgovor."
+
+msgid "We're glad you got all the information that you wanted."
+msgstr "Drago nam je da ste dobili željene informacije."
+
+msgid "What are you doing?"
+msgstr "Što radite?"
+
+msgid ""
+"When adding lots of authorities its often easier for us to deal with a "
+"spreadsheet or CSV."
+msgstr ""
+"Pri dodavanju više tijela javne vlasti često nam je lakše raditi sa "
+"tablicama ili CSV datotekama."
+
 msgid "Who can I request information from?"
 msgstr "Od koga mogu tražiti informacije?"
 
-#: lib/themes/imamopravoznati-theme/lib/views/general/_frontpage_bodies_list.html.erb:6
+msgid "Why do you want access?"
+msgstr "Zašto želite pristup?"
+
+msgid "Would you like to see a website like this in your country?"
+msgstr "Želite li vidjeti web stranicu poput ove u Vašoj zemlji?"
+
+msgid "Yes"
+msgstr "Da"
+
+msgid "You can find and write to your MP via:"
+msgstr "Možete pronaći svog zastupnika i pisati mu putem:"
+
+msgid ""
+"You can request documents directly from EU Institutions at our sister site "
+"{{ask_the_eu_link}}."
+msgstr ""
+"Možete zatražiti dokumente izravno od EU institucija na našoj sestrinskoj "
+"stranici {{ask_the_eu_link}}."
+
+msgid ""
+"You have the <strong>right</strong> to request information from any "
+"publicly-funded body, and get answers. {{site_name}} helps you make a "
+"Freedom of Information request. It also publishes all requests online."
+msgstr ""
+"Imate<strong>pravo</strong> zahtijevati informacije od bilo kojeg tijela "
+"financiranog javnim sredstvima i dobiti odgovore. {{site_name}} vam pomaže "
+"podnijeti zahtjev za pristup informacijama. Također sve zahtjeve objavljuje "
+"javno na internetu."
+
+msgid ""
+"You should contact the Home Office directly if you want to write to them in "
+"relation to your, or others', individual circumstances. The Home Office's "
+"direct email address is:"
+msgstr ""
+"Trebali biste kontaktirati Ministarstvo unutarnjih poslova izravno vezano za"
+" vaše ili tuđe, pojedinačne okolnosti. Direktna adresa e-pošte Ministarstva "
+"unutarnjih poslova je:"
+
+msgid ""
+"You will be able to extend this privacy period from {{embargo_extend_from}}."
+msgstr ""
+"Bit ćete u mogućnosti produžiti ovo razdoblje privatnosti iz "
+"{{embargo_extend_from}}."
+
+msgid ""
+"Your donations help us make Freedom of Information more accessible, for "
+"everyone."
+msgstr ""
+"Vaše donacije pomažu nam da slobodan pristup informacijama učinimo "
+"dostupnijim svima."
+
+msgid "Your email:"
+msgstr "Vaš e-mail:"
+
+msgid "Your name:"
+msgstr "Vaše ime i prezime:"
+
+msgid "Your {{law_used_full}} request has been sent"
+msgstr "Vaš zahtjev prema {{law_used_full}} je poslan"
+
+msgid "are long overdue."
+msgstr "jako kasne s odgovorom"
+
+msgid "details"
+msgstr "detalji"
+
+msgid "during term time"
+msgstr "tijekom trajanja perioda"
+
+msgid "even during holidays"
+msgstr "i za vrijeme praznika"
+
+msgid "have delayed."
+msgstr "kasni s odgovorom."
+
+msgid ""
+"mySociety:Helping people set up sites like {{site_name}} all over the world"
+msgstr ""
+"Code for Croatia: Pomaže {{site_name}} korisnicima u slanju PPI zahtjeva "
+"tijelima javne vlasti"
+
+#. This phrase completes the following sentences:
+#. Request an internal review from...
+#. Send a public follow up message to...
+#. Send a public reply to...
+#. Don't want to address your message to... ?
+msgid "the main FOI contact at {{public_body}}"
+msgstr "službeniku za informiranje u {{public_body}}"
+
+msgid "the {{site_name}} team"
+msgstr "{{site_name}} tim"
+
+msgid "type your search term here"
+msgstr "ovdje upišite izraz za pretraživanje"
+
+msgid "what's that?"
+msgstr "što je to?"
+
+msgid "{{count}} request"
+msgid_plural "{{count}} requests"
+msgstr[0] "{{count}} zahtjeva"
+msgstr[1] "{{count}} zahtjeva"
+msgstr[2] "{{count}} zahtjeva"
+
+msgid "{{get_help_link}} or {{beginners_guide_link}}"
+msgstr "{{get_help_link}} ili {{beginners_guide_link}}"
+
+msgid "{{law_used_full}} request - {{title}}"
+msgstr "Zahtjev za {{law_used_full}} - {{title}}"
+
+msgid "{{law_used_full}} request GQ - {{title}}"
+msgstr "Zahtjev za {{law_used_full}} GQ - {{title}}"
+
 msgid ""
 "{{site_name}} covers requests to {{number_of_authorities}} authority, "
 "including:"
@@ -141,605 +851,16 @@ msgstr[2] ""
 "{{site_name}} pokriva zahtjeve prema {{number_of_authorities}} tijela javne "
 "vlasti, uključujući:"
 
-#: lib/themes/imamopravoznati-theme/lib/views/general/_frontpage_bodies_list.html.erb:15
-msgid "{{count}} request"
-msgid_plural "{{count}} requests"
-msgstr[0] "{{count}} zahtjeva"
-msgstr[1] "{{count}} zahtjeva"
-msgstr[2] "{{count}} zahtjeva"
-
-#: lib/themes/imamopravoznati-theme/lib/views/general/_frontpage_bodies_list.html.erb:24
-msgid "Browse all authorities &rarr;"
-msgstr "Pretražite sva tijela javne vlasti &rarr;"
-
-#: lib/themes/imamopravoznati-theme/lib/views/general/_frontpage_bodies_list.html.erb:29
-msgid "Looking for an EU Authority?"
-msgstr "Tražite tijelo Europske unije?"
-
-#: lib/themes/imamopravoznati-theme/lib/views/general/_frontpage_bodies_list.html.erb:30
 msgid ""
-"You can request <em>documents</em> directly from EU Institutions at our "
-"sister site"
+"{{site_name}} is an independent website which helps people make Freedom of "
+"Information requests in public. We are not part of the Government."
 msgstr ""
-"Možete zatražiti <em>dokumente</em> izravno od institucija EU na našoj "
-"sestrinskoj stranici"
+"{{site_name}} je neovisna internetska stranica koja pomaže u procesu "
+"podnošenja zahtjeva za pristup informacija i sve objavljuje javno. Mi nismo "
+"dio Vlade."
 
-#: lib/themes/imamopravoznati-theme/lib/views/general/_frontpage_bodies_list.html.erb:35
-msgid "Find out more"
-msgstr "Saznaj više"
-
-#: lib/themes/imamopravoznati-theme/lib/views/general/_frontpage_hero.html.erb:4
-msgid "Get answers from the government and public sector"
-msgstr "Dobijte odgovore od Vlade i javnog sektora"
-
-#: lib/themes/imamopravoznati-theme/lib/views/general/_frontpage_hero.html.erb:5
-msgid ""
-"Make a request for information to a UK public authority: by law, they have "
-"to respond"
-msgstr ""
-"Podnesite zahtjev za pristup informacijama tijelu javne vlasti u Ujedinjenom"
-" Kraljevstvu: prema zakonu, dužni su odgovoriti"
-
-#: lib/themes/imamopravoznati-theme/lib/views/general/_frontpage_hero.html.erb:7
-msgid ""
-"Browse <a href=\"{{requests_url}}\">{{number_of_requests}} requests</a> to "
-"<a href=\"{{authorities_url}}\">{{number_of_authorities}} authorities</a>"
-msgstr ""
-"Pretražite <a href=\"{{requests_url}}\">{{number_of_requests}} zahtjeva</a> "
-"prema <a href=\"{{authorities_url}}\">{{number_of_authorities}} tijela</a>"
-
-#: lib/themes/imamopravoznati-theme/lib/views/general/_frontpage_hero.html.erb:20
-msgid "Want to know something?"
-msgstr "Želite znati nešto?"
-
-#: lib/themes/imamopravoznati-theme/lib/views/general/_frontpage_hero.html.erb:21
-msgid "Start your own request"
-msgstr "Pokrenite vlastiti zahtjev"
-
-#: lib/themes/imamopravoznati-theme/lib/views/general/_frontpage_hero.html.erb:22
-msgid "Make a request &raquo;"
-msgstr "Podnesite zahtjev &raquo;"
-
-#: lib/themes/imamopravoznati-theme/lib/views/general/_frontpage_hero.html.erb:29
-msgid "Learn more"
-msgstr "Saznajte više"
-
-#: lib/themes/imamopravoznati-theme/lib/views/general/_frontpage_how_it_works.html.erb:5
-msgid "How it works"
-msgstr "Kako ovo radi"
-
-#: lib/themes/imamopravoznati-theme/lib/views/general/_frontpage_how_it_works.html.erb:7
-msgid ""
-"You have the <strong>right</strong> to request information from any "
-"publicly-funded body, and get answers. {{site_name}} helps you make a "
-"Freedom of Information request. It also publishes all requests online."
-msgstr ""
-"Imate<strong>pravo</strong> zahtijevati informacije od bilo kojeg tijela "
-"financiranog javnim sredstvima i dobiti odgovore. {{site_name}} vam pomaže "
-"podnijeti zahtjev za pristup informacijama. Također sve zahtjeve objavljuje "
-"javno na internetu."
-
-#: lib/themes/imamopravoznati-theme/lib/views/general/_frontpage_how_it_works.html.erb:18
-msgid ""
-"Use this site to make your request for information – we'll show you how."
-msgstr ""
-"Koristite ovaj portal da pošaljete vaš zahtjev za pristup informacijama – mi"
-" ćemo vam pokazati kako."
-
-#: lib/themes/imamopravoznati-theme/lib/views/general/_frontpage_how_it_works.html.erb:26
-msgid "We'll drop you an email as soon as your request gets a response."
-msgstr "Poslati ćemo vam e-mail čim stigne odgovor."
-
-#: lib/themes/imamopravoznati-theme/lib/views/general/_frontpage_how_it_works.html.erb:34
-msgid ""
-"We publish it all online. Great! Now you have your answer, and everybody "
-"else can access it too."
-msgstr ""
-"Sve ćemo objaviti na internetu. Odlično! Sada imate informacije koje ste "
-"tražili i svatko im može pristupiti."
-
-#: lib/themes/imamopravoznati-theme/lib/views/general/_frontpage_how_it_works.html.erb:42
-msgid "Learn more about the Freedom of Information act &rarr;"
-msgstr "Saznajte više o Zakonu o pravu na pristup informacijama &rarr;"
-
-#: lib/themes/imamopravoznati-theme/lib/views/outgoing_mailer/_followup_footer.text.erb:1
-msgid ""
-"Disclaimer: This message and any reply that you make will be published on "
-"the internet. Our privacy and copyright policies:"
-msgstr ""
-"Izjava o odricanju odgovornosti: Ova poruka i svaki odgovor bit će objavljen"
-" na internetu. Naša politika zaštite privatnosti i autorskih prava:"
-
-#: lib/themes/imamopravoznati-theme/lib/views/outgoing_mailer/_followup_footer.text.erb:5
-msgid ""
-"For more detailed guidance on safely disclosing information, read the latest"
-" advice from the ICO:"
-msgstr ""
-"Za detaljnije upute o sigurnom rukovanju podacima pročitajte najnovije "
-"savjete Povjerenika za informiranje:"
-
-#: lib/themes/imamopravoznati-theme/lib/views/outgoing_mailer/_followup_footer.text.erb:10
-msgid ""
-"Please note that in some cases publication of requests and responses will be"
-" delayed."
-msgstr ""
-"Molimo Vas imajte na umu da će u nekim slučajevima objavljivanje zahtjeva i "
-"odgovora biti odgođeno."
-
-#: lib/themes/imamopravoznati-theme/lib/views/outgoing_mailer/_followup_footer.text.erb:14
-msgid ""
-"If you find this service useful as an FOI officer, please ask your web "
-"manager to link to us from your organisation's FOI page."
-msgstr ""
-"Ukoliko Vam je, kao službeniku za pravo na pristup informacijama, ova usluga"
-" korisna, molimo Vas da na stranicama Vašeg tijela javne vlasti posvećenim "
-"pravu na pristup informacijama postavite poveznicu do nas. "
-
-#: lib/themes/imamopravoznati-theme/lib/views/help/alaveteli.html.erb:5
-msgid "Would you like to see a website like this in your country?"
-msgstr "Želite li vidjeti web stranicu poput ove u Vašoj zemlji?"
-
-#. This phrase completes the following sentences:
-#. Request an internal review from...
-#. Send a public follow up message to...
-#. Send a public reply to...
-#. Don't want to address your message to... ?
-#: lib/themes/imamopravoznati-theme/lib/views/followups/_followup.html.erb:8
-msgid "the main FOI contact at {{public_body}}"
-msgstr "službeniku za informiranje u {{public_body}}"
-
-#: lib/themes/imamopravoznati-theme/lib/views/followups/_followup.html.erb:25
-msgid ""
-"Don't want to address your message to {{person_or_body}}?  You can also "
-"write to:"
-msgstr ""
-"Ne želite poruku poslati na adresu {{person_or_body}}? Možete pisati i:"
-
-#: lib/themes/imamopravoznati-theme/lib/views/followups/_followup.html.erb:30
-#: lib/themes/imamopravoznati-theme/lib/views/followups/_followup.html.erb:35
-#: lib/themes/imamopravoznati-theme/lib/views/followups/_followup.html.erb:41
-msgid "the main FOI contact address for {{public_body}}"
-msgstr "adresa službenika za informiranje u {{public_body}}"
-
-#. "Follow ups" in this context means further
-#. messages sent by the requester to the authority after
-#. the initial request
-#: lib/themes/imamopravoznati-theme/lib/views/followups/_followup.html.erb:54
-msgid ""
-"Follow ups and new responses to this request have been stopped to prevent "
-"spam. Please <a href=\"{{url}}\">contact us</a> if you are {{user_link}} and"
-" need to send a follow up."
-msgstr ""
-"Dodatne poruke i novi odgovori na ovaj zahtjev zaustavljeni su kako bi "
-"spriječili neželjenu poštu. Molimo, <a href=\"{{url}}\">kontaktirajte "
-"nas</a> ako ste {{user_link}} i želite poslati odgovor tijelu javne vlasti."
-
-#: lib/themes/imamopravoznati-theme/lib/views/followups/_followup.html.erb:63
-msgid ""
-"If you are dissatisfied by the response you got from the public authority, "
-"you have the right to complain (<a href=\"{{url}}\">details</a>)."
-msgstr ""
-"Ako niste zadovoljni odgovorom koji ste dobili od tijela javne vlasti, imate"
-" pravo na žalbu (<a href=\"{{url}}\">više informacija</a>)."
-
-#: lib/themes/imamopravoznati-theme/lib/views/followups/_followup.html.erb:71
-msgid ""
-"Please <strong>only</strong> write messages directly relating to your "
-"request {{request_link}}. If you would like to ask for information that was "
-"not in your original request, then <a href=\"{{new_request_link}}\">file a "
-"new request</a>."
-msgstr ""
-"Molimo <strong>samo</strong> pišite poruke izravno povezane s Vašim "
-"zahtjevom {{request_link}}. Ako želite tražiti informacije koje nisu u Vašem"
-" originalnom zahtjevu, tada <a href=\"{{new_request_link}}\">podnesite novi "
-"zahtjev</a>."
-
-#: lib/themes/imamopravoznati-theme/lib/views/followups/_followup.html.erb:80
-msgid ""
-"The response to your request has been <strong>delayed</strong>. You can say "
-"that, by law, the authority should normally have responded "
-"<strong>promptly</strong> and in term time by <strong>{{date}}</strong>"
-msgstr ""
-"Odgovor na Vaš zahtjev <strong>kasni</strong>. Možete reći da je, po zakonu,"
-" tijelo javne vlasti trebalo odgovoriti <strong>brzo</strong> i to tijekom "
-"trajanja perioda do <strong>{{date}}</strong>"
-
-#: lib/themes/imamopravoznati-theme/lib/views/followups/_followup.html.erb:86
-msgid ""
-"The response to your request has been <strong>delayed</strong>. You can say "
-"that, by law, the authority should normally have responded "
-"<strong>promptly</strong> and by <strong>{{date}}</strong>"
-msgstr ""
-"Odgovor na Vaš zahtjev <strong>kasni</strong>. Možete reći da je, po zakonu,"
-" tijelo javne vlasti trebalo odgovoriti <strong>brzo</strong> i do "
-"<strong>{{date}}</strong>"
-
-#: lib/themes/imamopravoznati-theme/lib/views/followups/_followup.html.erb:93
-#: lib/themes/imamopravoznati-theme/lib/views/followups/_followup.html.erb:100
-msgid "details"
-msgstr "detalji"
-
-#: lib/themes/imamopravoznati-theme/lib/views/followups/_followup.html.erb:97
-msgid ""
-"The response to your request is <strong>long overdue</strong>. You can say "
-"that, by law, under all circumstances, the authority should have responded "
-"by now"
-msgstr ""
-"Odgovor na Vaš zahtjev <strong>kasni</strong>. Možete reći da je po zakonu, "
-"u svakom slučaju, tijelo javne vlasti trebalo odgovoriti do sada"
-
-#: lib/themes/imamopravoznati-theme/lib/views/followups/_followup.html.erb:112
-msgid "What are you doing?"
-msgstr "Što radite?"
-
-#: lib/themes/imamopravoznati-theme/lib/views/followups/_followup.html.erb:123
-msgid "I am asking for <strong>new information</strong>"
-msgstr "Molim <strong>nove informacije</strong>"
-
-#: lib/themes/imamopravoznati-theme/lib/views/followups/_followup.html.erb:130
-msgid "I am requesting an <strong>internal review</strong>"
-msgstr "Tražim <strong>požurnicu</strong>"
-
-#: lib/themes/imamopravoznati-theme/lib/views/followups/_followup.html.erb:131
-msgid "what's that?"
-msgstr "što je to?"
-
-#: lib/themes/imamopravoznati-theme/lib/views/followups/_followup.html.erb:138
-msgid ""
-"<strong>Anything else</strong>, such as clarifying, prompting, thanking"
-msgstr "<strong>Nešto drugo</strong>, poput objašnjenja, napomena, zahvala"
-
-#: lib/themes/imamopravoznati-theme/lib/views/followups/_followup.html.erb:147
-msgid ""
-"Edit and add <strong>more details</strong> to the message above, explaining "
-"why you are dissatisfied with their response."
-msgstr ""
-"Uredite i dodajte <strong>više detalja</strong> na poruku iznad, "
-"objašnjavajući zašto niste zadovoljni njihovim odgovorom."
-
-#: lib/themes/imamopravoznati-theme/lib/views/followups/_followup.html.erb:158
-msgid "Preview your message"
-msgstr "Pregledajte Vašu poruku"
-
-#: lib/themes/imamopravoznati-theme/lib/views/followups/_followup.html.erb:164
-msgid "(You will be asked to sign in as {{user_name}})"
-msgstr "(Trebat ćete se prijaviti kao {{user_name}})"
-
-#: lib/themes/imamopravoznati-theme/lib/views/request/show.html.erb:1
 msgid "{{title}} - a Freedom of Information request to {{public_body}}"
 msgstr "{{title}} - zahtjev za pristup informacijama prema {{public_body}}"
 
-#: lib/themes/imamopravoznati-theme/lib/views/request/_sidebar.html.erb:5
-#: lib/themes/imamopravoznati-theme/lib/views/request/_request_sent.html.erb:73
-msgid "We work to defend the right to FOI for everyone"
-msgstr "Radimo kako bi obranili pravo na pristup informacijama za sve."
-
-#: lib/themes/imamopravoznati-theme/lib/views/request/_sidebar.html.erb:6
-msgid ""
-"Help us protect your right to hold public authorities to account. Donate and"
-" support our work."
-msgstr ""
-"Pomozite nam da zaštitimo vaše pravo pozivanja tijela javne vlasti na "
-"odgovornost. Donirajte i podržite naš rad."
-
-#: lib/themes/imamopravoznati-theme/lib/views/request/_sidebar.html.erb:14
-#: lib/themes/imamopravoznati-theme/lib/views/request/_sidebar.html.erb:20
-msgid "Request hidden"
-msgstr "Zahtjev skriven"
-
-#: lib/themes/imamopravoznati-theme/lib/views/request/_sidebar.html.erb:16
-msgid ""
-"This request has prominence 'hidden'. You can only see it because you are "
-"logged in as a super user."
-msgstr ""
-"Ovaj je zahtjev inače skriven. Možete ga vidjeti jer ste prijavljeni kao "
-"super korisnik."
-
-#: lib/themes/imamopravoznati-theme/lib/views/request/_sidebar.html.erb:22
-msgid ""
-"This request is hidden, so that only you the requester can see it. Please <a"
-" href=\"{{url}}\">contact us</a> if you are not sure why."
-msgstr ""
-"Ovaj je zahtjev skriven tako da ga samo Vi, kao podnositelj, možete vidjeti."
-" Molimo<a href=\"{{url}}\">kontaktirajte nas</a> ako niste sigurni zašto."
-
-#: lib/themes/imamopravoznati-theme/lib/views/request/_sidebar.html.erb:27
-msgid "Offensive? Unsuitable?"
-msgstr "Uvredljivo? Neprikladno?"
-
-#: lib/themes/imamopravoznati-theme/lib/views/request/_sidebar.html.erb:28
-msgid ""
-"This request has been marked for review by the site administrators, who have"
-" not hidden it at this time. If you believe it should be hidden, please <a "
-"href=\"{{url}}\">contact us</a>."
-msgstr ""
-"Ovaj zahtjev su administratori označili za pregled, ali trenutno ga nisu "
-"sakrili. Ukoliko mislite da bi trebao biti skriven, molimo <a "
-"href=\"{{url}}\">kontaktirajte nas</a>."
-
-#: lib/themes/imamopravoznati-theme/lib/views/request/_sidebar.html.erb:43
-msgid "Requests like this"
-msgstr "Zahtjevi poput ovog"
-
-#: lib/themes/imamopravoznati-theme/lib/views/request/_sidebar.html.erb:59
-msgid "More similar requests"
-msgstr "Više sličnih zahtjeva"
-
-#: lib/themes/imamopravoznati-theme/lib/views/request/_sidebar.html.erb:68
-msgid "Are you the owner of any commercial copyright on this page?"
-msgstr "Jeste li vlasnik nekog autorskog prava na ovoj stranici?"
-
-#: lib/themes/imamopravoznati-theme/lib/views/request/describe_notices/_successful.html.erb:3
-msgid "Great result!"
-msgstr "Odličan rezultat!"
-
-#: lib/themes/imamopravoznati-theme/lib/views/request/describe_notices/_successful.html.erb:9
-msgid ""
-"Please come back and add annotations to update this page with any further "
-"news or links"
-msgstr ""
-"Molimo Vas vratite se i dodajte bilješke kako biste ažurirali ovu stranicu s"
-" novostima ili poveznicama"
-
-#: lib/themes/imamopravoznati-theme/lib/views/request/describe_notices/_successful.html.erb:13
-msgid "We're glad you got all the information that you wanted."
-msgstr "Drago nam je da ste dobili željene informacije."
-
-#: lib/themes/imamopravoznati-theme/lib/views/request/describe_notices/_successful.html.erb:17
-#: lib/themes/imamopravoznati-theme/lib/views/request/_request_sent.html.erb:20
-msgid "Tweet it"
-msgstr "Podijelite na Twitteru"
-
-#: lib/themes/imamopravoznati-theme/lib/views/request/describe_notices/_successful.html.erb:24
-#: lib/themes/imamopravoznati-theme/lib/views/request/_request_sent.html.erb:27
-msgid ""
-"Code for Croatia: Helping people set up sites like {{site_name}} all over "
-"the world"
-msgstr ""
-"Programiraj za Hrvatsku: Pomaže drugima postaviti stranice kao {{site_name}}"
-" širom svijeta"
-
-#: lib/themes/imamopravoznati-theme/lib/views/request/describe_notices/_successful.html.erb:36
-#: lib/themes/imamopravoznati-theme/lib/views/request/_request_sent.html.erb:39
-msgid "Share on Facebook"
-msgstr "Podijeli na Facebooku"
-
-#: lib/themes/imamopravoznati-theme/lib/views/request/describe_notices/_successful.html.erb:51
-msgid "Help keep this site running"
-msgstr "Pomozite da ova stranica nastavi s radom"
-
-#: lib/themes/imamopravoznati-theme/lib/views/request/describe_notices/_successful.html.erb:52
-msgid ""
-"Your donations help us make Freedom of Information more accessible, for "
-"everyone."
-msgstr ""
-"Vaše donacije pomažu nam da slobodan pristup informacijama učinimo "
-"dostupnijim svima."
-
-#: lib/themes/imamopravoznati-theme/lib/views/request/describe_notices/_successful.html.erb:60
-#: lib/themes/imamopravoznati-theme/lib/views/request/_request_sent.html.erb:82
-msgid "<a class=\"button what-next__button\" href=\"{{donation_url}}\">Donate now</a>"
-msgstr ""
-"<a class=\"button what-next__button\" href=\"{{donation_url}}\">Donirajte "
-"sada</a>"
-
-#: lib/themes/imamopravoznati-theme/lib/views/request/_request_sent.html.erb:4
-msgid "Your {{law_used_full}} request has been sent"
-msgstr "Vaš zahtjev prema {{law_used_full}} je poslan"
-
-#: lib/themes/imamopravoznati-theme/lib/views/request/_request_sent.html.erb:11
-msgid ""
-"<strong>We will email you</strong> when there is a response, or after "
-"{{late_number_of_days}} working days if the authority still hasn't replied "
-"by then."
-msgstr ""
-"<strong>Poslat ćemo Vam e-mail</strong> ako stigne odgovor ili nakon "
-"{{late_number_of_days}} radnih dana ukoliko tijelo javne vlasti nije "
-"odgovorilo do tada."
-
-#: lib/themes/imamopravoznati-theme/lib/views/request/_request_sent.html.erb:17
-msgid "Share your request"
-msgstr "Podijelite svoj zahtjev"
-
-#: lib/themes/imamopravoznati-theme/lib/views/request/_request_sent.html.erb:50
-msgid "Keep your request up to date"
-msgstr "Održavajte svoj zahtjev ažurnim"
-
-#: lib/themes/imamopravoznati-theme/lib/views/request/_request_sent.html.erb:54
-msgid ""
-"If you write about this request (for example in a forum or a blog) please "
-"link to this page, and <a href=\"{{url}}\">add an annotation</a> below "
-"telling people about your writing."
-msgstr ""
-"Ukoliko pišete o ovom zahtjevu (primjerice, na forumu ili blogu), molimo "
-"stavite poveznicu do ove stranice i <a href=\"{{url}}\">dodajte bilješku</a>"
-" ispod da biste druge obavijestili o Vašem pisanju."
-
-#: lib/themes/imamopravoznati-theme/lib/views/request/_request_sent.html.erb:63
-msgid ""
-"If you write about this request (for example in a forum or a blog) please "
-"link to this page."
-msgstr ""
-"Ukoliko pišete o ovom zahtjevu (primjerice, na forumu ili blogu), molimo "
-"stavite poveznicu do ove stranice."
-
-#: lib/themes/imamopravoznati-theme/lib/views/request/_request_sent.html.erb:74
-msgid ""
-"Help us protect your right to hold public authorities to account. Donate and"
-" support our work.\\n"
-msgstr ""
-"Pomozite nam da zaštitimo vaše pravo pozivanja tijela javne vlasti na "
-"odgovornost. Donirajte i podržite naš rad.\\n"
-
-#: lib/themes/imamopravoznati-theme/lib/views/request/select_authority.html.erb:19
-#: lib/themes/imamopravoznati-theme/lib/views/request/select_authority.html.erb:21
-msgid "Find an authority"
-msgstr "Pronađi tijelo javne vlasti"
-
-#: lib/themes/imamopravoznati-theme/lib/views/request/select_authority.html.erb:28
-msgid ""
-"First, type in the <strong>name of the public authority</strong> you'd like "
-"information from."
-msgstr ""
-"Prvo, upišite <strong>ime tijela javne vlasti</strong> od kojeg biste "
-"željeli dobiti informaciju."
-
-#: lib/themes/imamopravoznati-theme/lib/views/request/select_authority.html.erb:31
-msgid ""
-"<strong>By law, they have to respond</strong> (<a "
-"href=\"{{url}}\">why?</a>)."
-msgstr ""
-"<strong>Prema zakonu, dužni su odgovoriti</strong> (<a "
-"href=\"{{url}}\">zašto?</a>)."
-
-#: lib/themes/imamopravoznati-theme/lib/views/request/select_authority.html.erb:36
-msgid "Authority name"
-msgstr "Naziv tijela javne vlasti"
-
-#: lib/themes/imamopravoznati-theme/lib/views/request/select_authority.html.erb:40
-msgid "e.g. Ministry of Defence"
-msgstr "npr. Ministarstvo obrane"
-
-#: lib/themes/imamopravoznati-theme/lib/views/request/select_authority.html.erb:48
-msgid ""
-"Or make a <a href=\"{{url}}\">batch request</a> to <strong>multiple "
-"authorities</strong> at once."
-msgstr ""
-"Ili napravite <a href=\"{{url}}\">skupni zahtjev</a> na <strong>više tijela "
-"javne vlasti</strong> istovremeno."
-
-#: lib/themes/imamopravoznati-theme/lib/views/request/select_authority.html.erb:78
-msgid "Can't find the one you want?"
-msgstr "Ne možete naći onaj koji želite?"
-
-#: lib/themes/imamopravoznati-theme/lib/views/request/select_authority.html.erb:80
-msgid ""
-"<a href=\"{{browse_url}}\">Browse all</a> or <a href=\"{{add_url}}\">ask us "
-"to add one</a>."
-msgstr ""
-"<a href=\"{{browse_url}}\">Pretražite sve</a> ili <a "
-"href=\"{{add_url}}\">zamolite nas da dodamo</a>."
-
-#: lib/themes/imamopravoznati-theme/lib/views/public_body/_more_info.html.erb:1
-msgid "More about this authority"
-msgstr "Više o ovom tijelu javne vlasti"
-
-#: lib/themes/imamopravoznati-theme/lib/views/public_body/_more_info.html.erb:4
-msgid "Home page of authority"
-msgstr "Službena stranica tijela javne vlasti"
-
-#: lib/themes/imamopravoznati-theme/lib/views/public_body/_more_info.html.erb:8
-msgid "Publication scheme"
-msgstr "Nacrt publikacije"
-
-#: lib/themes/imamopravoznati-theme/lib/views/public_body/_more_info.html.erb:12
-msgid "Disclosure log"
-msgstr "Zapisnik objave"
-
-#: lib/themes/imamopravoznati-theme/lib/views/public_body/_more_info.html.erb:18
-#: lib/themes/imamopravoznati-theme/lib/views/public_body/_more_info.html.erb:20
-msgid "Charity registration"
-msgstr "Registracija nevladine organizacije"
-
-#: lib/themes/imamopravoznati-theme/lib/views/public_body/_more_info.html.erb:28
-#: lib/themes/imamopravoznati-theme/lib/views/public_body/_more_info.html.erb:30
-msgid "Check them out at MozaikVeza.hr"
-msgstr "Pogledaj na MozaikVeza.hr"
-
-#: lib/themes/imamopravoznati-theme/lib/views/public_body/_more_info.html.erb:35
-msgid "View FOI email address"
-msgstr "E-mail adresa službenika za informiranje"
-
-#: lib/themes/imamopravoznati-theme/lib/views/public_body/_more_info.html.erb:37
-msgid "Ask us to update FOI email"
-msgstr "Tražite nas da ažuriramo adresu službenika za informiranje"
-
-#: lib/themes/imamopravoznati-theme/lib/views/alaveteli_pro/info_requests/_new_request_advice.html.erb:3
-msgid "Are you sure the information you’re after isn’t available elsewhere?"
-msgstr ""
-"Jeste li sigurni da informacije koje tražite nisu dostupne negdje drugdje?"
-
-#: lib/themes/imamopravoznati-theme/lib/views/alaveteli_pro/info_requests/_new_request_advice.html.erb:6
-msgid ""
-"Check the authority’s disclosure logs, their responses on {{site_name}} or "
-"conduct a quick Internet search."
-msgstr ""
-"Provjerite evidencije objave podataka tijela javnih vlasti, njihove odgovore"
-" na {{site_name}} ili obavite brzu internetsku pretragu."
-
-#: lib/themes/imamopravoznati-theme/lib/views/alaveteli_pro/info_requests/_new_request_advice.html.erb:12
-msgid ""
-"Section 12 of the FOI Act allows public authorities to refuse requests if "
-"they cost too much to comply with."
-msgstr ""
-"U članku 27 Zakona o pravu na pristup informacijama stoji kako tijela javne "
-"vlasti u svrhu ponovne uporabe informacija nemaju obvezu izraditi "
-"informaciju, prilagođavati ili izdvajati dijelove informacija ako to "
-"zahtijeva nerazmjeran utrošak vremena ili sredstava."
-
-#: lib/themes/imamopravoznati-theme/lib/views/alaveteli_pro/info_requests/_new_request_advice.html.erb:18
-msgid ""
-"The cost limit, calculated at £25 per hour, is £600 for government "
-"departments and £450 for other public bodies. For further information, see "
-"the Information Commissioner’s Office <a href=\"{{url}}\" "
-"target=\"_blank\">guidelines</a>."
-msgstr ""
-"U području naknade troškova za ponovnu uporabu informacija uspostavljeno je "
-"nekoliko različitih pravila. Za više informacija, pogledajte <a "
-"href=\"{{url}}\" target=\"_blank\">smjernice</a> Povjerenika za "
-"informiranje."
-
-#: lib/themes/imamopravoznati-theme/lib/views/alaveteli_pro/info_requests/_new_request_advice.html.erb:26
-msgid ""
-"Public authorities have a duty to provide advice and assistance to "
-"requesters."
-msgstr ""
-"Tijela javne vlasti dužna su pružiti savjet i pomoć podnositeljima zahtjeva."
-
-#: lib/themes/imamopravoznati-theme/lib/views/alaveteli_pro/info_requests/_new_request_advice.html.erb:30
-msgid ""
-"For further information, see the ICO’s <a href=\"{{url}}\" "
-"target=\"_blank\">guidelines</a>."
-msgstr ""
-"Za dodatne informacije pogledajte <a href=\"{{url}}\" "
-"target=\"_blank\">smjernice</a>povjerenika za informiranje."
-
-#: lib/themes/imamopravoznati-theme/lib/views/alaveteli_pro/info_requests/_new_request_advice.html.erb:36
-msgid ""
-"If you are requesting datasets, state how you would like to receive the "
-"information e.g. in an Excel or CSV format."
-msgstr ""
-"Ukoliko zahtijevate skupove podataka, navedite kako želite primati "
-"informacije, npr. u Excel ili CSV formatu."
-
-#: lib/themes/imamopravoznati-theme/lib/views/alaveteli_pro/info_requests/_new_request_advice.html.erb:40
-msgid ""
-"For more information on how public authorities must provide datasets in a "
-"re-usable form so far as reasonably practicable, see the ICO <a "
-"href=\"{{url}}\" target=\"_blank\">guidelines</a> for more detail."
-msgstr ""
-"Za više informacija o tome kako tijela javne vlasti moraju osigurati skupove"
-" podataka u ponovno upotrebljivom obliku, u mjeri u kojoj je to izvedivo, "
-"pogledajte <a href=\"{{url}}\" target=\"_blank\">smjernice</a> povjerenika "
-"za informiranje."
-
-#: lib/themes/imamopravoznati-theme/lib/views/alaveteli_pro/info_requests/_new_request_advice.html.erb:46
-msgid "Once you’re happy with your request, click preview and send."
-msgstr ""
-"Nakon što ste zadovoljni svojim zahtjevom, kliknite pretpregled i slanje."
-
-#: lib/themes/imamopravoznati-theme/lib/views/alaveteli_pro/info_requests/_new_request_advice.html.erb:49
-msgid ""
-"Remember, public authorities have {{late_number_of_days}} working days to "
-"respond to FOI requests."
-msgstr ""
-"Zapamtite, tijela javne vlasti imaju {{late_number_of_days}} radnih dana za "
-"odgovor na zahtjeve za pristup informacijama."
-
-#: lib/themes/imamopravoznati-theme/lib/views/alaveteli_pro/info_requests/_new_request_advice.html.erb:54
-msgid ""
-"Remember, public authorities have {{late_number_of_days}} calendar days to "
-"respond to FOI requests."
-msgstr ""
-"Zapamtite, tijela javne vlasti imaju {{late_number_of_days}} kalendarskih "
-"dana za odgovor na zahtjeve za pristup informacijama."
+#~ msgid "simple_date_format"
+#~ msgstr "%e %B %Y"
