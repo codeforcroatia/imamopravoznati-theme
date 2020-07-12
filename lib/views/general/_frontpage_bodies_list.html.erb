@@ -45,3 +45,36 @@
     </div>
   </div>
 <% end %>
+
+
+<% content_for :javascript do %>
+  <script type="text/javascript">
+    var graphs_data = <%= @public_bodies.to_json.html_safe %>;
+  </script>
+  <!--[if lte IE 8]><%= javascript_include_tag "excanvas.min.js" %><![endif]-->
+  <%= javascript_include_tag "stats" %>
+
+  <%= javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.12/d3.min.js" %>
+  <%= javascript_include_tag "time_series" %>
+  <script type="text/javascript">
+    if (typeof d3TimeSeries == 'function') {
+      d3.json("<%= statistics_url(:format => 'json') %>", function(data) {
+        d3TimeSeries(
+          "#request-hide-events-data",
+          data["requests"]["hides_by_week"],
+          "<%= _("Number of request hide events over time") %>",
+          "<%= _("request hide events") %>"
+        );
+      });
+
+      // Make the table only visible to screen readers
+      var table = document.querySelectorAll('#request-hide-events-data table')[0]
+
+      if (table.classList) {
+        table.classList.add('visually-hidden');
+      } else {
+        table.className += ' visually-hidden';
+      }
+    }
+  </script>
+<% end %>
