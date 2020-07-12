@@ -6,20 +6,7 @@
           PublicBody.visible.count,
           :number_of_authorities => number_with_delimiter(PublicBody.visible.count)) %></h4>
 
-    <ul>
-    <% @public_bodies.each do |graph_data| %>
-      <strong><%= graph_data['title']%></strong>
-      <% if graph_data['x_values'] %>
-        <li><%= link_to pb['name'], pb['url'] %>
-          <%= n_('{{count}} request', '{{count}} requests',
-                 graph_data['y_values'][i].round,
-                 :count => graph_data['y_values'][i].round) %>
-        </li>
-      <% else %>
-        <%= _("There was no data for this statistics yet.") %>
-      <% end %>
-    <% end %>
-    </ul>
+
 
     <p>
       <strong>
