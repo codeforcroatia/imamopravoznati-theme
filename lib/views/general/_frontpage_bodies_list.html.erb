@@ -1,12 +1,11 @@
 <%- popular_bodies = PublicBody.popular_bodies(@locale) %>
 <% if popular_bodies.size > 0 %>
   <div id="examples_0" class="examples_0 bodies-list">
-    <h3><%= _("Who can I request information from?") %></h3>
+    <h3><%= _("Freedom of information statistics") %></h3>
 
-    <h4><%= n_("{{site_name}} covers requests to {{number_of_authorities}} authority, including:",
-          "{{site_name}} covers requests to {{number_of_authorities}} authorities, including:",
+    <h4><%= n_("Among {{number_of_authorities}} authority, this is highlighted:",
+          "Among {{number_of_authorities}} authority, these are highlighted:",
           PublicBody.visible.count,
-          :site_name => site_name,
           :number_of_authorities => number_with_delimiter(PublicBody.visible.count)) %></h4>
 
     <ul>
@@ -18,6 +17,21 @@
         </li>
       <% end %>
     </ul>
+
+    <ul>
+    <% @public_bodies.each do |graph_data| %>
+      <strong><%= graph_data['title']%></strong>
+      <% if graph_data['x_values'] %>
+        <li><%= link_to pb['name'], pb['url'] %>
+          <%= n_('{{count}} request', '{{count}} requests',
+                 graph_data['y_values'][i].round,
+                 :count => graph_data['y_values'][i].round) %>
+        </li>
+          <% else %>
+            <%= _("There was no data for this statistics yet.") %>
+          <% end %>
+      <% end %>
+      </ul>
 
     <p>
       <strong>
