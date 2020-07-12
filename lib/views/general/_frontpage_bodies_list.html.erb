@@ -1,5 +1,3 @@
-<%- popular_bodies = PublicBody.popular_bodies(@locale) %>
-<% if popular_bodies.size > 0 %>
   <div id="examples_0" class="examples_0 bodies-list">
     <h3><%= _("Freedom of information statistics") %></h3>
 
@@ -17,11 +15,11 @@
                  graph_data['y_values'][i].round,
                  :count => graph_data['y_values'][i].round) %>
         </li>
-          <% else %>
-            <%= _("There was no data for this statistics yet.") %>
-          <% end %>
+      <% else %>
+        <%= _("There was no data for this statistics yet.") %>
       <% end %>
-      </ul>
+    <% end %>
+    </ul>
 
     <p>
       <strong>
@@ -44,7 +42,6 @@
       </a>
     </div>
   </div>
-<% end %>
 
 
 <% content_for :javascript do %>
