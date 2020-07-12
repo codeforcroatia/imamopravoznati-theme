@@ -7,6 +7,33 @@
           :number_of_authorities => number_with_delimiter(PublicBody.visible.count)) %></h4>
 
 
+          <% @public_bodies.each do |graph_data| %>
+              <h3 class="public-body-ranking-title"><%= graph_data['title']%></h3>
+              <div class="public-body-ranking" id="<%= graph_data['id'] %>">
+                <% if graph_data['x_values'] %>
+                  <table border=0>
+                    <thead>
+                      <tr>
+                        <th><%= _('Public Body') %></th>
+                        <th><%= graph_data['y_axis'] %></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <% graph_data['public_bodies'].each_with_index do |pb, i| %>
+                        <tr>
+                          <td><%= link_to pb['name'], pb['url'] %></td>
+                          <td class="statistic"><%= graph_data['y_values'][i].round %></td>
+                        </tr>
+                      <% end %>
+                    </tbody>
+                  </table>
+                <% else %>
+                  <%= _("There was no data calculated for this graph yet.") %>
+                <% end %>
+              </div>
+            <% end %>
+
+
 
     <p>
       <strong>
