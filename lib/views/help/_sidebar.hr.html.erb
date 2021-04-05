@@ -1,0 +1,57 @@
+<div id="right_column_flip" class="right_column_flip help-sidebar">
+  <div id="about_sidebar">
+    <h2>Stranice za pomoć</h2>
+    <ul>
+      <li>
+        <%= link_to_unless_current "O projektu", help_about_path %>
+      </li>
+      <li>
+        <%= link_to_unless_current "Podnošenje zahtjeva", help_requesting_path %>
+      </li>
+      <li>
+        <%= link_to_unless_current "Vaša privatnost", help_privacy_path %>
+      </li>
+      <li>
+        <%= link_to_unless_current "Službenici za informiranje", help_officers_path %>
+      </li>
+      <li>
+        <%= link_to_unless_current "Zahvale", help_credits_path %>
+      </li>
+      <li>
+        <%= link_to_unless_current "API",
+                                   help_api_path %>
+      </li>
+      <li>
+        <%= link_to_unless_current "Napredna pretraga", advanced_search_path %>
+      </li>
+      <li>
+        <%= link_to_unless_current "O ovoj platformi", help_alaveteli_path %>
+      </li>
+      <li>
+        <%= link_to_unless_current "Naša načela", help_principles_path %>
+      </li>
+      <li>
+        <%= link_to_unless_current "Upravljanje portalom", help_how_path %>
+      </li>
+      <li>
+        <%= link_to_unless_current "Pravila ponašanja", help_house_rules_path %>
+      </li>
+      <li>
+        <%= link_to_unless_current "Uključite se", help_volunteers_path %>
+      </li>
+      <li>
+        <%= link_to_unless_current "Vodič za početnike", help_beginners_path %>
+      </li>
+      <% if feature_enabled?(:alaveteli_pro) %>
+        <li><%= link_to_unless_current "Pro", help_pro_path %></li>
+      <% end %>
+    </ul>
+    <% unless is_contact_page? %>
+    <h2 id="contact">Kontaktirajte nas</h2>
+    <p>Ako imate postoje koja nisu odgovorena na ovim stranicama za pomoć <a href="https://diskurs.codeforcroatia.org/c/imamo-pravo-znati/?utm_source=imamopravoznati&utm_medium=link">pišete nam</a>
+      na našu <i>Imamo pravo znati</i> diskurs zajednicu i netko će vam odgovoriti.
+      Za razgovor s <%= site_name %> ekipom volontera, <a href="<%= help_contact_path %>">kontaktirajte&nbsp;nas</a>.
+    </p>
+    <% end %>
+  </div>
+</div>

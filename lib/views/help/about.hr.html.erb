@@ -1,0 +1,172 @@
+<% @title = "O projektu" %>
+<%= render :partial => 'sidebar' %>
+<div id="left_column_flip" class="left_column_flip">
+  <h1 id="introduction">O projektu <%= site_name %> <a href="#introduction">#</a> </h1>
+  <dl>
+    <dt id="purpose">
+      Čemu služi <%= site_name %>?
+      <a href="#purpose">#</a>
+    </dt>
+    <dd>
+      <p>
+        Pravo na pristup informacijama je temeljno ljudsko pravo, zaštićeno
+        brojnim međunarodnim konvencijama te samim Ustavom Republike Hrvatske
+        (članak 38., stavak 4.) i Zakonom o pravu na pristup informacijama (ZPPI).
+      </p>
+      <p>
+        <%= site_name %> omogućuje pristup informacijama od tijela javne vlasti
+        poput vlade, parlamenta, državne uprave, agencija, zavoda, fondova,
+        javnih ustanova, javne lokalne i područne samouprave.
+      </p>
+      <p>
+        Možete koristiti <%= site_name %> da pronađete kojim informacijama
+        regulatori raspolažu o tvrtkama, organizacijama civilnog društva te
+        ostalim pravnim oblicima.
+      </p>
+    </dd>
+    <dt id="premise">Kako ova stranica radi? <a href="#premise">#</a> </dt>
+    <dd>
+      Odaberite tijelo javne vlasti od kojeg želite informaciju, a zatim
+      opišite koju već postojeću informaciju želite dobiti. Zatim vaš zahtjev
+      šaljemo službeniku za informiranje kod izabranog tijela javne vlasti.
+      Vaš zahtjev i svaki primljeni odgovor automatski se objavljuju na
+      internetskim stranicama kako biste ih vi i svi ostali mogli pronaći i
+      pročitati.
+    </dd>
+    <dt id="whybother_me">
+      Zašto da se trudim poslati zahtjev?
+      <a href="#whybother_me">#</a>
+    </dt>
+    <dd>
+      <p>
+        Tijela javne vlasti financiraju se iz javnih novčanika: plaćate porez,
+        a zatim država financira svoje aktivnosti vašim novcem: sve stvari koje
+        utječu na vaš život, od zdravstvene zaštite do nacionalne obrane.
+        Nekim tijelima upravljanje javnim novcem ide dobro, nekima loše.
+      </p>
+      <p>
+        Budući da novac koji troše tijela javne vlasti je vaš novac, imate
+        pravo provjeriti rade li učinkovito, donose li dobre odluke i rade li
+        posao koji bi trebali raditi.
+      </p>
+      <p>
+        Što više saznajemo o tome kako vlada funkcionira, to smo sposobniji
+        procijeniti koje stvari su dobro učinjene a gdje treba poboljšanje za
+        stvari koje su učinjene loše. Neki ljudi i organizacije koriste ove
+        internetske stranice za istraživanje; drugi zbog novinarstva, kampanja
+        ili podizanja svijesti. Neki su jednostavno znatiželjni.
+      </p>
+    </dd>
+    <dt id="whybother_them">
+      Zašto bi se tijela javne vlasti trudila odgovoriti?
+      <a href="#whybother_them">#</a>
+    </dt>
+    <dd>
+      Prema Zakonu o pravu na pristup infromacijama (ZPPI), ili ponekad drugim
+      zakonima o pristupu informacijama, tijela javne vlasti moraju odgovoriti.
+      Odgovor će sadržavati informacije koje želite ili će vam dati pravni razlog
+      zašto nisu dostavljeni.
+    </dd>
+    <dt id="useful">
+      Jesu li korisne informacije dobivene putem <%= site_name %>?
+      <a href="#useful">#</a>
+    </dt>
+    <dd>
+      Da. Tisuće službenih dokumenata su već zaprimljeni i objavljeni putem ovih
+      internetskih stranica.
+      <!-- See also: <a href="http://www.guardian.co.uk/news/datablog/2012/mar/20/freedom-of-information-foi">366
+      Interesting things that we know because of WhatDoTheyKnow</a>. -->
+    </dd>
+    <dt id="reporting">
+      Što ako vidim predmet koji smatram neprikladnim?
+      <a href="#reporting">#</a></dt>
+    <dd>
+      <p>
+        Zahtjevi za osobnim podacima i zloupotreba zahtjeva ne smatraju se
+        valjanim predmetima za pravo na pristup informacijama. Pogledajte naša
+        <a href="<%= help_house_rules_path %>">pravila ponašanja</a> za više informacija o
+        pravilnom korištenju ovih internetskih stranica.
+      </p>
+      <p>
+        Ako smatrate da zahtjev nije prikladan, možete ga prijaviti
+        administratorima ove internetske stranice.
+      </p>
+    </dd>
+    <dt id="reporting_unavailable">
+      Zašto neke predmete ne mogu prijaviti?
+      <a href="#reporting_unavailable">#</a>
+    </dt>
+    <dd>
+      <p>
+        Ako je zahtjev već prijavljen administratorima internetske stranice,
+        ne možete ga prijaviti drugi put - kako administratori ne bi zaprimili
+        više puta obavijesti o istom problemu prije nego što su imali priliku
+        obaviti pregled.
+      </p>
+      <p>
+        Ako je zahtjev za koji smatrate da ga treba ukloniti prethodno prijavljen,
+        ali je donesena odluka da ga se ne uklanja iz javnog dijela internetske
+        stranice, možete koristiti obrazac na bočnoj traci stranice zahtjeva
+        za kontaktiranje s administratorima.
+      </p>
+    </dd>
+    <dt id="how_many">
+      Koliko ljudi koristi <%= site_name %>?
+      <a href="#how_many">#</a>
+    </dt>
+    <dd>
+      <p>
+        Imamo preko <%= number_with_delimiter(User.count.round(-4), :locale => @locale) %>
+        korisničkih računa te oko 5% svih zahtjeva tijelima javne vlasti šalje
+        se putem <%= site_name %>.
+      </p>
+      <p>
+        Ali to su samo ljudi koji traže informacije. Većina posjetitelja naše
+        internetske stranice ne podnose zahtjeve sami, ali imaju koristi od
+        mogućnosti pristupa informacijama koje se nalaze u zahtjevima i
+        odgovorima drugih. Godišnje stranicu posjeti oko sto tisuća ljudi.
+      </p>
+    </dd>
+    <dt id="who">Tko čini <%= site_name %>? <a href="#who">#</a> </dt>
+    <dd>
+      <p>
+        <%= site_name %> vodi i održava
+        <a href="https://codeforcroatia.org/?utm_source=imamopravoznati&utm_medium=link">Code for Croatia</a>.
+        Code for Croatia je neformalna grupa haktivista u Hrvatskoj.
+        Code for Croatia također usko surađuje i savjetuje se s organizacijom
+        civilnog društva <a href="https://www.gong.hr/?utm_source=imamopravoznati&utm_medium=link">Gong</a>.
+      </p>
+      <p>
+        Code for Croatia i Gong nisu tijela javne vlasti.
+      </p>
+      <p>
+        Mišljenja, nalazi, zaključci ili preporuke u predmetima prava na pristup
+        informacijama putem ovih internetskih stranica pripadaju autorima poruka
+        i ne odražavaju stavove Code for Croatia i Gonga.
+      </p>
+      <!-- <p>
+        The site was initially
+        <a href="http://www.mysociety.org/2006/12/06/funding-for-freedom-of-information/?utm_source=whatdotheyknow.com&utm_medium=link">
+        funded by the JRSST Charitable Trust</a>.
+      </p> -->
+      <p>
+        Ako vam se sviđa što radimo, možete nam
+        <a href="<%= donation_url %>">dati donaciju</a>.
+      </p>
+    </dd>
+    <dt id="updates">
+      Kako mogu pratiti novosti o <%= site_name %>
+      <a href="#updates">#</a>
+    </dt>
+    <dd>
+      Imamo <a href="<%= blog_path %>">blog</a>, a nalazimo se i na društvenim mrežama
+      <a href="https://www.facebook.com/imamopravoznati/">Facebooku</a> i
+      <a href="https://www.twitter.com/imamopravoznati/">Twitteru</a>.
+    </dd>
+  </dl>
+  <p>
+    <strong>Sljedeće</strong>, pročitajte
+    <a href="<%= help_requesting_path %>">kako napisati zahtjev</a> --&gt;
+  </p>
+  <div id="hash_link_padding"></div>
+</div>

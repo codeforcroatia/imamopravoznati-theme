@@ -1,0 +1,135 @@
+<% @title = "Alati za napredne korisnike i programere" %>
+<%= render :partial => 'sidebar' %>
+<div id="left_column_flip" class="left_column_flip">
+  <h1><%=@title %></h1>
+  <h2>Aplikacijsko programsko sučelje - API</h2>
+  <p>
+    Ova stranica objašnjava kako programeri mogu napraviti interakciju
+    internetskih stranica i drugih aplikacija s <%= site_name %> putem “API”
+    sučelja.
+  </p>
+  <p>
+    <%= site_name %> još nema potpuni API, ali naša zajednica programera
+    postupno dodaje značajke koje će vam pomoći da postignete iste rezultate
+    kao i API. Ako postoji nešto posebno što biste željeli, vaš zahtjev će nam
+    pomoći da mu damo veći razvojni prioritet.
+  </p>
+  <hr>
+  <h2>1. Povezivanje s novim zahtjevima</h2>
+  <p>
+    Za poticanje korisnika na zahtjevanje od određenih tijela javne vlasti,
+    koristite URL-ove u ovom obliku:
+    <%= link_to new_request_to_body_url(:url_name =>
+    "grad_zagreb") , new_request_to_body_url(:url_name =>
+    "grad_zagreb") %>. U ovom <a
+    href="https://www.mysociety.org/2016/12/19/alaveteli-for-campaigners-how-to-create-pre-written-requests-for-your-supporters/?utm_source=imamopravoznati&utm_medium=link">
+    blogu</a> možete saznati detaljnije o parametrima koje možete dodati tim
+    URL-ovima, bilo u URL-u ili iz oblika:
+  </p>
+  <ul>
+    <li>
+      <strong>title</strong> (naslov) - zadani sažetak novog zahtjeva.
+    </li>
+    <li>
+      <strong>default_letter</strong> (zadano pismo) - zadani tekst u pismu. On
+      sadrži uvodni pozdravni tekst (Poštovani...) i potpis (Lijep pozdrav...).
+    </li>
+    <li>
+      <strong>body</strong> (tijelo) - kao alternativa za default_letter, ovo
+      sadrži cjelokupni tekst zahtjeva, tako da u njemu možete uključiti
+      prilagođeni pozdravni tekst i potpis.
+    </li>
+    <li>
+      <strong>tags</strong> (oznake) - razmakom odvojen popis oznaka, tako da
+      kasnije možete pronaći i povezati napravljene zahtjeve, npr.
+      <em>otvorenipodaci proracun_id:12345</em>. Dvotočka predstavlja računalnu
+      oznaku. Vrijednosti računalne oznake mogu uključivati dvotočke, korisne
+      za URL-ove.
+    </li>
+  </ul>
+  <hr>
+  <h2>2. RSS (koji je zapravo Atom)</h2>
+  <p>Postoje Atom izvori na većini stranica koje popisuju zahtjeve prava na
+    pristup informacijama, koje možete koristiti kako biste dobili novosti i
+    poveznice u XML formatu. Pronađite URL od Atom izvora na jedan od sljedećih
+    načina:
+  </p>
+  <ul>
+    <li>
+      Pronađite <%= image_tag "feed-16.png", :alt => "RSS icon" %> RSS feed
+      poveznicu.
+    </li>
+    <li>
+      Potražite <tt>&lt;link rel="alternate" type="application/atom+xml"&gt;
+      </tt> oznaku u zaglavlju HTML koda.
+    </li>
+    <li>
+      Dodajte <tt>/feed</tt> na početak novog URL-a.
+    </li>
+  </ul>
+  <p>Čak i kompliciraniji upiti za pretraživanje sadrže Atom izvore. S njima
+    možete raditi mnoge stvari, kao što je pretraživanje prema vrsti tijela
+    javne vlasti, prema vrsti datoteke, prema rasponu datuma, ili prema statusu.
+    Za detalje, pogledajte <a href="<%= advanced_search_path %>">savjete za napredno
+    pretraživanje</a>.
+  </p>
+  <hr>
+  <h2>3. JSON strukturirani podaci</h2>
+  <p>
+    Dosta internetskih stranica ima JSON verzije, koje omogućavaju preuzimanje
+    podataka o objektima u strukturiranom obliku. Pronađite ih tako da:
+  </p>
+  <ul>
+    <li>
+      Dodajte <tt>.json</tt> na kraj URL-a.
+    </li>
+    <li>
+      Tražite <tt>&lt;link rel="alternate" type="application/json"&gt;</tt>
+      oznaku u zaglavlju HTML koda.
+    </li>
+  </ul>
+  <p>Zahtjevi, korisnici i tijela javne vlasti - svi su JSON verzije koje sadrže
+    osnovne informacije o njima. Svaki Atom izvor ima svoj JSON ekvivalent, koji
+    sadrži informacije s popisom događanja unutar izvora.
+  </p>
+  <hr>
+  <h2>4. Popis tijela javne vlasti</h2>
+  <p>
+    Datoteka s popisom naziva svih tijela javne vlasti koja su uključena u
+    konfiguraciju na <%= site_name %> dostupna je za preuzimanje na poveznici:
+    <%= link_to "all-authorities.csv", all_public_bodies_csv_url() %>.
+  </p>
+  <p>
+    Zaglavlje datoteke s popisom tijela javne vlasti sadrži: <i>Name, Short name,
+    URL name, Tags, Home page, Publication scheme, Disclosure log, Notes,
+    Created at, Updated at, Version</i>.
+  </p>
+  <p class="form_note">
+    <b>Napomena:</b> Imajte na umu da je glavni izvor informacija o tijelima
+    javne vlasti koje <%= site_name %> koristi dolazi iz <a
+    href="http://data.gov.hr/dataset/azurirani-popis-tijela-javne-vlasti">
+    ažuriranog popisa tijela javne vlasti</a> koji predstavlja službeni registar
+    kojeg održava <strong>Povjerenik za informiranje</strong> a možete ga
+    pronaći i preuzeti na Portalu otvorenih podataka RH <a
+    href="https://data.gov.hr">data.gov.hr</a>.
+  </p>
+  <h2>5. API za unos</h2>
+  <p>
+    API za unos dizajniran je da ga tijela javne vlasti koriste za unos
+    novih zahtjeva u sustav kao centralizirano mjesto za sve zahtjeve.
+    API je koristio mySocietyev softver 'FOI Register' koji je služio kao
+    podrška za korištenje Alavetelija kao dnevnika svih aktivnosti prava na
+    pristup informacijama pri određenom tijelu javne vlasti u Velikoj Britaniji.
+    Više tehničkih informacija o API-ju za unos dostupno je na <a
+    href="https://alaveteli.org/docs/developers/api/">Alaveteli.org</a>.
+  </p>
+  <hr>
+  <p>
+    Molimo, <a href="<%= help_contact_path %>">kontaktirajte nas</a> ukoliko vam
+    je potrebna funkcionalnost koju trenutno nemamo. Zajednica ovu aplikaciju
+    stalno unaprijeđuje, a možete nam <a
+    href="<%= help_general_path(:template => 'volunteers') %>">
+    pomoći i vi</a>.
+  </p>
+  <div id="hash_link_padding"></div>
+</div>

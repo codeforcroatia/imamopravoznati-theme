@@ -1,0 +1,437 @@
+<% @title = "Službenici za informiranje" %>
+<%= render :partial => 'sidebar' %>
+<div id="left_column_flip" class="left_column_flip">
+  <h1 id="officers"><%= @title %> <a href="#officers">#</a> </h1>
+  <dl>
+    <dt id="top">Upravo ste stigli ovdje s dna zahtjeva, te se pitate što se događa?
+      <a href="#top">#</a>
+    </dt>
+    <dd>
+      <p>
+        Dobrodošli! <%= site_name %> je besplatna usluga koja pomaže ljudima
+        da podnose predmete za pravo na pristup informacijama, putem koje mogu
+        lako pratiti i vidjeti odgovore hrvatskih tijela javne vlasti poput vas.
+        Ovom stranicom upravljaju neformalna grupa građana Code for Croatia i
+        organizacija civilnog društva Gong.
+      </p>
+      <p>
+        Korisnici su putem <%= site_name %> poslali nekoliko tisuća zahtjeva za
+        pristup informacijama od pokretanja 2015. godine i najpoznatija je usluga
+        za ostvarivanje prava na pristup informacijama u Republici Hrvatskoj.
+        Također se zalažemo za prava građana na informiranje i za jačanje zakona
+        o pravu na pristup informacijama.
+      </p>
+      <p>
+        Zahtjev za pristup informacijama koji vas je doveo ovdje je poslao
+        netko tko je koristio <%= site_name %>. Na zahtjev možete jednostavno
+        odgovoriti kao i na bilo koji drugi zahtjev pojedinca. <strong>Jedina je
+        razlika što će se vaš odgovor automatski objaviti na internetu.</strong>
+      </p>
+      <p>
+        Ako se brinete oko privatnosti ili ako imate druga pitanja, pročitajte
+        odgovore u nastavku. Možda biste željeli pročitati <a href="/help/about">
+        uvod u <%= site_name %></a> kako biste saznali više o tome što ova
+        internetsk stranica radi sa stajališta korisnika. Također možete
+        pretražiti internetsku stranicu kako biste pronašli tijelo javne vlasti
+        gdje radite i pregledati status svih zahtjeva upućenih tom tijelu pomoću
+        ove stranice.
+      </p>
+      <p>
+        Na kraju, pozdravljamo komentare i razmišljanja službenika za informiranje,
+        te vas molimo da se ne ustručavate <a href="<%= help_contact_path %>">
+        kontatirati nas</a>.
+      </p>
+    </dd>
+    <dt id="responses">
+      Zašto objavljujete odgovore na zahtjeve?
+      <a href="#responses">#</a>
+    </dt>
+    <dd>
+      <p>
+        Smatramo da javno objavljivanje zahtjeva za pristup informacijama ima
+        puno prednosti.
+      </p>
+      <ul>
+        <li>
+          Ono što je važnije je to što će potaknuti javnost da bude više
+          zainteresirana i uključena u rad tijela javne vlasti.
+        </li>
+        <li>
+          Također se nadamo da će se smanjiti broj ponovljenih zahtjeva na bilo
+          koju temu koju bi tijelo javne vlasti zaprimilo.
+        </li>
+        <li>
+          Oni koji rade nešto s javno objavljenim informacijama, poput
+          lobiranja kod izabranih predstavnika ili pisanja članaka, mogu navesti
+          izvor informacija na koje se pozivaju.
+        </li>
+        <li>
+          Kako odgovori na zahtjeve za pristup informirmacijama sadrže javne
+          informacije, koje svatko može lako ponovno zatražiti od tijela javne
+          vlasti, ne vidimo razlog zašto odgovori ne bi bili javno objavljeni.
+        </li>
+      </ul>
+    </dd>
+    <dt id="realpeople">
+      Jesu li ljudi koji šalju zahtjeve stvarni ljudi?
+      <a href="#realpeople">#</a>
+    </dt>
+    <dd>
+      <p>
+        Da. U svrhu praćenja odgovora koristimo računalno generirane adrese
+        e-pošte za svaki zahtjev. Međutim, prije nego što mogu poslati zahtjev,
+        svaki se korisnik mora registrirati na internetskoj stranici s
+        jedinstvenom adresom e-pošte koju mi ​​zatim provjeravamo. Ovdje možete
+        pronaći stranicu s popisom svih zahtjeva koje je svaka osoba uputila.
+      </p>
+    </dd>
+    <dt id="email_only">
+      Adresa e-pošte nije dovoljna za odgovor na zahtjev!
+      <a href="#email_only">#</a>
+    </dt>
+    <dd>
+      <p>
+        Ustvari je, dovoljna je za odgovor jer e-mail adresa može predstavljati
+        adresu za odgovor, kao što ćete vidjeti u tekstu ispod.
+      </p>
+      <ul>
+        <li>
+          Sukladno Zakonu o pravu na pristup informacijama (ZPPI), zahtjev
+          predan elektroničkim putem smatra se zahtjevom podnesenim pisanim
+          putem.
+        </li>
+        <li>
+          Publikacija Povjerenika za informiranje <a
+          href="https://web.archive.org/web/20210405144746/https://pristupinfo.hr/wp-content/uploads/2018/10/Vodic_za_korisnike-_e_book.pdf">
+          Ostvari svoje pravo na informaciju: Vodič za korisnike Zakona o pravu 
+          na pristup informacijama (2016. godina)</a> kaže: <i>"U zahtjevu možete
+          i naznačiti način na koji želite ostvariti pristup informaciji.
+          Možete tražiti da Vam se informacija pošalje poštom ili <strong>elektroničkom
+          poštom</strong>, ili najaviti da ćete preslike informacija podići sami u tijelu
+          javne vlasti i time uštedjeti moguće poštanske troškove, a možete
+          osobito ako niste sigurni što točno tražite, zahtijevati i uvid u
+          dokumente i naznačiti da ćete pri tome odabrati za koje ćete sve
+          dokumente tražiti presliku. Ako ne naznačite na koji način želite
+          primiti tražene informacije, tijelo javne vlasti dostavit će
+          informaciju <strong>na isti način na koji ste podnijeli zahtjev</strong> odnosno na
+          drugi ekonomičniji način koji stvara manje troškova, a ostvaruje
+          svrhu."</i>
+        </li>
+        <li>
+          Iako adresa e-pošte po ZPPI ne predstavlja adresu korisnika,
+          Povjerenik za informiranje u publikaciji <a
+          href="https://web.archive.org/web/20210405150123/https://www.pristupinfo.hr/wp-content/uploads/2018/10/Prirucnik_za_sluzbenike_e_book.pdf">
+          Primjena Zakona o pravu na pristup informacijama – Priručnik za 
+          službenike za informiranje u tijelima javne vlasti (2016. godina)</a>
+          potvrđuje da je e-mail adresa
+          dovoljna za dostavu traženih informacija:
+          <i>"Putem elektroničke pošte službenik za informiranje <strong>može korisniku
+          dostaviti zatražene informacije</strong> i ostvariti bržu komunikaciju s njim,
+          s obzirom na kratkoću rokova za postupanje. ...uzmite u obzir da je
+          inzistiranje na adresi u slučaju zahtjeva podnesenog elektroničkom
+          poštom, a već sa sigurnošću možete utvrditi da ćete informaciju
+          pružiti korisniku, <strong>protivno načelima ekonomičnosti u postupanju te
+          načelu suradnje i pružanja pomoći</strong>."</i>
+        </li>
+        <li>
+          Poštujte želje podnositelja te im odgovorite na jednak način na koji
+          ste zaprimili zahtjev - elektronički, jer ipak to je ujedno i
+          najekonomičniji način za odgovor.
+        </li>
+        <li>
+          Iznimno, sukladno publikaciji Povjerenika za informiranje u <a
+          href="https://web.archive.org/web/20210405150123/https://www.pristupinfo.hr/wp-content/uploads/2018/10/Prirucnik_za_sluzbenike_e_book.pdf">
+          Primjena Zakona o pravu na pristup informacijama – Priručnik za 
+          službenike za informiranje u tijelima javne vlasti (2016. godina)</a>
+          postoji slučaj kada službenici trebaju poštansku adresu:
+          <i>"...službenik za informiranje ima obvezu donijeti rješenje, a
+          adresa korisnika je neophodni sastavni dio rješenja. Osim toga dostava
+          rješenja je važna zbog određivanja urednosti dostave i određivanja
+          pravovremenosti izjavljene žalbe Povjereniku za informiranje ili
+          pokretanja upravnog spora pred Visokim upravnim sudom Republike
+          Hrvatske."</i> U takvim slučajevima, zamolite od podnositelja
+          zahtjeva da vam dostave adresu nekim drugim putem - na primjer da vas
+          direktno kontaktiraju radi zaštite njihovih osobnih podataka kada se
+          radi o fizičkoj osobi. Ne preporučujemo objavljivanje osobne
+          poštanske adrese na ovim stranicama. U vašem odgovoru poslanom na
+          <%= site_name %> elektronsku adresu nemojte navoditi poštansku
+          adresu fizičkih osoba.
+        </li>
+      </ul>
+    </dd>
+    <dt id="vexatious">
+      Ne podnosite li puno zahtjeva i zloupotrebljavate pravo na informiranje?
+      <a href="#vexatious">#</a>
+    </dt>
+    <dd>
+      <p>
+        <%= site_name %> ne kreira samostalno zahtjeve. Ovaj alat pruža uslugu
+        slanja zahtjeva koje su kreirali naši korisnici, oni su autori zahtjeva.
+      </p>
+      <p>
+        Gledajte na to ovako - ako je puno različitih ljudi uputilo zahtjeve s
+        različitih Gmail ili Hotmail adresa e-pošte, onda ne biste pomislili da
+        Google ili Microsoft radi zloupotrebu prava na informiranje. Potpuno je
+        isto kada korisnici putem <%= site_name %> upute puno zahtjeva. Štoviše,
+        budući da su svi zahtjevi javni, puno vam je lakše vidjeti da li jedan
+        od naših korisnika zloupotrebljava pravo na informiranje.
+      </p>
+    </dd>
+    <dt id="spam_problems">
+      Zahtjev je vidljiv na <%= site_name %>, no nismo ga primili putem e-maila!
+      <a href="#spam_problems">#</a>
+    </dt>
+    <dd>
+      <p>
+        Ako zahtjev postoji na stranici, to znači da smo ga pokušali poslati
+        tijelu javne vlasti putem e-maila. Prilikom svakog neuspjelog
+        slanja, poruka će se automatski pojaviti na stranici. Adresu na koju
+        šaljemo zahtjeve možete provjeriti putem poveznice "E-mail adresa
+        službenika za informiranje" koja se nalazi na profilnoj stranici tijela
+        javne vlasti. <a href="/help/contact">Obratite nam se</a> ako postoji
+        bolja adresa na koju možemo slati nove zahtjeve.
+      </p>
+      <p>
+        Zahtjevi se ponekad ne mogu isporučiti jer ih "spam filter" automatski
+        blokira. Službenici za infirmiranje to mogu spriječiti tako da dojave
+        njihovom informatičkim tehničarima da podese postavke tako da svi
+        e-mailovi od <strong>@imamopravoznati.org</strong> budu stavljeni na whitelistu.
+        Ako <a href="<%= help_contact_path %>">nam pošaljete upit</a>, ili
+        predočite tehničke detalje isporuke, naša ekipa će istražiti što se
+        dogodilo s vašom porukom.
+      </p>
+      <p>
+        Naposljetku, odgovor na svaki zahtjev možete dati direktno iz vašeg
+        internetskog preglednika, bez potrebe za slanje e-maila, koristeći
+        poveznicu "Odgovorite na zahtjev" u izborniku Akcije ispod ili iznad
+        svakog zahtjeva.
+      </p>
+    </dd>
+    <dt id="days">
+      Kako određujete krajnji rok za odgovor na zahtjev?
+      <a href="#days">#</a>
+    </dt>
+    <dd>
+      <p>
+        Zakon o pravu na pristup informacijama (ZPPI) kaže:
+      </p>
+      <blockquote>
+        <p>
+          Na temelju zahtjeva za pristup informaciji tijelo javne vlasti će
+          odlučiti najkasnije u roku od <strong>15 dana</strong> od dana
+          zaprimanja zahtjeva.
+        </p>
+      </blockquote>
+      <p>
+        In our opinion, what matters most here is that the law says authorities
+        must respond <strong>promptly</strong>.
+      </p>
+      <p>
+        Ako imate valjan razlog o tome zašto će obrada zahtjeva potrajati,
+        podnositelji zahtjeva uvijek su vam zahvalni kada im pošaljete kratki
+        e-mail koji u par rečenica objašnjava zašto to sve toliko dugo traje.
+        Isto tako ako odgovor potraje duže od 15 dana i potreban je produžetak
+        roka dužni ste o tome obavijestiti podnositelja zahtjeva što je prije
+        moguće.
+      </p>
+      <p>
+        Službenici za informiranje često moraju učiniti puno teškog posla kako
+        bi odgovorili na zahtjeve, a to je skriveno od javnosti. Mislimo da bi
+        svima pomoglo da što više tog procesa bude vidljivo korisnicima.
+      </p>
+      <p>
+        Unatoč tome, naša internetska stranica omogućuje automatsko odbrojavanje
+        do istjeka roka od 15 kalendarskih dana. Evo kako ga izračunavamo.
+      </p>
+
+      <ul>
+        <li>
+          Dan na koji je zahtjev poslan putem e-maila uzimamo kao "nulti dan",
+          čak i ako je poslan kasno navečer. Dani završavaju u ponoć. Sljedeći
+          dan se onda uzima kao "prvi dan", i tako sve do <strong>15
+          kalendarskih dana</strong>.
+        </li>
+        <li>
+          Ako je dan na koji je zahtjev poslan putem e-maila blagdan, sljedeći
+          dan se tada uzima kao "prvi dan". Slanje je slanje, čak i ako se
+          dogodilo tijekom vikenda.
+        </li>
+        <li>
+          Podnositelje zahtjeva se savjetuje da naznače kada su <strong>razjasnili</strong>
+          otvorena pitanja na zahtjev kako bi odbrojavanje roka počelo ispočetka,
+          no katkada oni to pogrešno koriste. Ako utvrdite problem s određenim
+          zahtjevom, javite nam i mi ćemo ga riješiti.
+        </li>
+      </ul>
+      <p>
+        Izračunati rok prikazan je na zahtjevima zajedno s tekstom
+        "Trenutno čeka odgovor Grad Zagreb, moraju odgovoriti brzo i uobičajeno
+        ne kasnije od ..." Postoji samo jedan slučaj u kojem se to pravilo ne
+        primjenjuje, vidite sljedeće pitanje o produljenju roka.
+      </p>
+      <p>
+        Ukoliko želite znati više, pročitajte <a
+        href="https://web.archive.org/web/20210405150123/https://www.pristupinfo.hr/wp-content/uploads/2018/10/Prirucnik_za_sluzbenike_e_book.pdf">
+        smjernice za službenike za informiranje</a> koje je sastavio Povjerenik
+        za informiranje. U međuvremenu, imajte na umu da tijela javne vlasti
+        <strong>moraju odgovoriti u zakonskom roku</strong>. To je ono što je
+        važno, bez obzira na sve.
+      </p>
+    </dd>
+    <dt id="public_interest_test">
+      Kako prikazujete produženje rokova?
+      <a href="#public_interest_test">#</a>
+    </dt>
+    <dd>
+      <p>
+        Ako tijelo javne vlasti treba provesti <strong>test razmjernosti i
+        javnog interesa</strong>, postoje zakonski razlozi za ograničenje
+        pristupa informacijama, ali treba procijeniti njihovu snagu u odnosu na
+        javni interes da se informacija pruži korisniku. U takvom slučaju
+        službenik za informiranje treba u roku od 8 dana od zaprimanja zahtjeva
+        obavijestiti podnositelja da produžuje rok za dodatnih 15 dana u odnosu
+        na dan kada je trebalo odlučiti po zahtjevu. Dakle, ukupno ima 30 dana
+        za odlučivanje i odgovor.
+      </p>
+      <p>
+        <%= site_name %> se konkretno ne bavi takvim slučajem produženja rokova,
+        pa stoga koristimo izraz "uobičajeno, ne kasnije od" kada je prekoračen
+        rok za odgovor od 15 dana. Jako zakašnjele odgovore prikazujemo na poseban
+        način kako bi sugerirali da su definitivno premašili svaki rok za odgovor.
+      </p>
+    </dd>
+
+    <dt id="classifications">
+      Zašto se na zahtjevima na koje smo odgovorili pojavljuje "Čeka
+      klasifikaciju" ili "Kasni"?
+      <a href="#classifications">#</a>
+    </dt>
+    <dd>
+      <p>
+        Oslanjamo se na naše korisnike da samostalno klasificiraju odgovore na
+        njihove zahtjeve, ali rado ćemo ispraviti sve pogreške na koje nam netko
+        skrene pažnju.
+      </p>
+      <p>
+        Zahtjevi koji nisu klasificirani nakon nekoliko mjeseci mogu ažurirati
+        bilo koji drugi korisnici. Klasifikacija zahtjeva može se promijeniti
+        putem izbornika "Akcije" > "Ažuriraj status ovog zahtjeva".
+      </p>
+    </dd>
+
+    <dt id="large_file">
+      Kako mogu poslati datoteku koja je prevelika za e-mail?
+      <a href="#large_file">#</a>
+    </dt>
+    <dd>
+      <ul>
+        <li>
+          Razmislite je li razumno podijeliti podatke u više datoteka, na
+          primjer možda podijeliti podatke u jednu datoteku po godini, a zatim
+          poslati niz e-poruka s po jednim privitkom uz svaku poruku.
+        </li>
+        <li>
+          Informacije spremljene u datoteku običnog teksta (.txt) može stvoriti manju
+          veličinu datoteke i ljudima će biti lakše raditi s takvim formatom
+          umjesto nekih datoteka specifičnih proizvođača softvera (.pdf, .doc i slično).
+        </li>
+        <li>
+          Sažimanje datoteka (.zip) prije slanja može smanjiti veličinu datoteke.
+        </li>
+        <li>
+          Umjesto e-poštom, na zahtjev možete odgovoriti izravno iz svog
+          internetskog preglednika, a na isti način možete i poslati datoteku u
+          prilogu. Da biste to učinili, odaberite iz izbornika "Akcije" >
+          "Odgovorite na zahtjev" ispod ili iznad zahtjeva. <a href="<%=
+          help_contact_path %>">Obratite nam se</a> ako
+          je prilog prevelik i za takav način prijenosa podataka (više od 50 Mb).
+        </li>
+      </ul>
+    </dd>
+    <dt id="names">
+      Zašto objavljujete imena službenika i sadržaj e-mailova?
+      <a href="#names">#</a>
+    </dt>
+    <dd>
+      <p>
+        Smatramo da je rad javnih službenika zapravo od javnog interesa te
+        predstavlja javnu informacija. Takav ćemo sadržaj ukloniti samo u
+        iznimnim slučajevima, za to pogledajte naša <a href="<%=
+        help_privacy_path(:anchor => 'takedown') %>">pravila o uklanjanju sadržaja</a>.
+      </p>
+    </dd>
+
+    <dt id="mobiles">
+      Objavljujete li e-mail adrese ili brojeve mobitela?
+      <a href="#mobiles">#</a>
+    </dt>
+    <dd>
+      <p>
+        Kako bismo zaštitili službenike od neželjenih poruka, automatski
+        uklanjamo većinu e-mailova i brojeva mobitela iz odgovora na zahtjeve.
+        Ako smo kojeg previdjeli, molimo vas da nas <a href="<%=
+        help_contact_path %>">kontaktirate</a>. Zbog tehničkih razloga, ne
+        uklanjamo ih uvijek, kao na primjer iz privitaka kao što su određeni
+        PDF dokumenti.
+      </p>
+      <p>
+        Uklanjanje adresa e-pošte također pomaže u zadržavanju korespondencije
+        na internetskoj stranici. Da biste odgovorili na poruku tijela javne
+        vlasti ili zatražili požurnicu, ne trebate znati adresu koju su naveli,
+        ali možete upotrijebiti dostupne opcije u izborniku pod "Akcije".
+      </p>
+      <p>
+        Ako vas zanima koju smo točno adresu uklonili, molimo da nas <a
+        href="/help/contact">kontaktirate</a>. E-mail adrese su ponekad bitan
+        dio odgovora pa ćemo ga u tom slučaju objaviti podatak u obliku
+        komentara. Naša volonterska ekipa nije u mogućnosti riješavati velik
+        broj takvih zahtjeva za otkrivanje adresa e-pošte, tako da trenutno naša
+        usluga nije prilagođena zahtjevima gdje tražite e-mail kontakt podatke.
+      </p>
+    </dd>
+    <dt id="copyright">
+      Kakva je vaša politika o autorskim pravima dokumenata?
+      <a href="#copyright">#</a>
+    </dt>
+    <dd>
+      <p>
+        Zakon o pravu na pristup informacijama omogućuje da svatko u svijetu
+        može zatražiti isti dokument i dobiti njegovu kopiju. Ukoliko smatrate
+        da dokumenti koje objavljujemo na internetu krše vaša autorska prava,
+        možete nas <a href="<%= help_contact_path %>">kontaktirati</a> i
+        zatražiti da ih uklonimo.
+      </p>
+      <p>
+        Ipak, kako bi uštedjeli novac poreznih obveznika sprječavanjem
+        dupliciranja zahtjeva, te radi stvaranja pozitivne slike javnosti o
+        vašoj transparentnosti, savjetujemo vam da ih odlučite zadržati na
+        internetu. Za više informacija pogledajte paragraf o autorskim pravima
+        na stranici <a href="<%= help_how_path %>">‘Upravljanje portalom
+        <%= site_name %>’</a>.
+      </p>
+    </dd>
+
+    <dt id="allowed_responses">
+      Odbijen je naš odgovor na stari zahtjev na <%= site_name %>!
+      <a href="#allowed_responses">#</a>
+    </dt>
+    <dd>
+      <p>
+        Nakon 18 mjeseca neaktivnosti, <%= site_name %> ograničava tko može
+        odgovoriti na zahtjev kako bismo spriječili slanje neželjene pošte na
+        stare zahtjeve. Nakon tog perioda na zahtjev može odgovoriti samo netko
+        putem službene adrese tijela javne vlasti. Nekoliko mjeseci nakon toga
+        zahtjev je zatvoren za odgovore bilo koga. Ako trebate ponovo otvoriti
+        stari zahtjev kako biste mogli na njega odgovoriti, molimo
+        <a href="<%= help_contact_path %>">kontaktirajte nas</a>.
+      </p>
+    </dd>
+  </dl>
+  <p>
+    <strong>Ako već niste</strong>, pročitajte <a
+    href="<%= help_about_path %>">više o <%= site_name %>, njegovim ciljevima i povijesti</a> --&gt;
+    <br><strong>Ili pak</strong>, pogledajte kome idu <a href="<%= help_credits_path %>">
+    zasluge</a> i <a href="<%= help_api_path %>">dokumentaciju API-ja</a> --&gt;
+  </p>
+  <div id="hash_link_padding"></div>
+</div>

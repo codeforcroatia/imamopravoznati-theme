@@ -10,6 +10,10 @@
                             state: 'not_foi',
                             message: 'subject_access_request' %>
 
+<%= hidden_user_explanation label: 'General inquiry - Opći upit',
+                            state: 'not_foi',
+                            message: 'general_inquiry' %>
+
 <% if @info_request.public_body_id == 7 %>
     <%= hidden_user_explanation label: 'Immigration correspondence',
                                 state: 'not_foi',

@@ -1,0 +1,39 @@
+<div class="columns_header">
+  <h1>Uvjeti korištenja</h1>
+</div>
+<div id="right_column_flip" class="right_column_flip">
+  <div>
+    <ul>
+      <li>
+        <%= link_to "Uvod", '#introduction' %>
+      </li>
+      <li>
+        <%= link_to "Korištenje", "#usage" %>
+      </li>
+      <li>
+        <%= link_to "Računi", "#accounts" %>
+      </li>
+      <li>
+        <%= link_to "Otkaz", "#termination" %>
+      </li>
+      <li>
+        <%= link_to "Imenovanje", "#attribution" %>
+      </li>
+      <li>
+        <%= link_to "Plaćanje", "#payment" %>
+      </li>
+      <li>
+        <%= link_to "Podrška", "#support" %>
+      </li>
+      <li>
+        <%= link_to "Sitni tisak", "#small-print" %>
+      </li>
+            <li>
+        <%= link_to "Privatnost", "#privacy" %>
+      </li>
+    </ul>
+  </div>
+</div>
+<div id="left_column_flip" class="left_column_flip">
+  <%= render partial: 'legal' %>
+</div>

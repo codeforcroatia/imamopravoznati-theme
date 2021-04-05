@@ -1,5 +1,5 @@
 <div class="only-show-for-print">
-  <p class="print-information">Ispisano s <%= request.original_url.force_encoding('utf-8') %> on <%= Time.zone.now.to_formatted_s(:long)  %></p>
+  <p class="print-information">Printed from <%= request.original_url.force_encoding('utf-8') %> on <%= Time.zone.now.to_formatted_s(:long)  %></p>
 </div>
 <div id="banner" class="banner <%= @in_pro_area ? 'banner--pro' : '' %>" role="banner">
   <div id="banner_inner" class="banner_inner">
@@ -9,8 +9,8 @@
       </div>
 
       <div class="rsp_menu_button">
-        <a href="#banner" class="open"> <i class="icon-menu"></i> Izbornik </a>
-        <a href="#" class="close"> <i class="icon-menu"></i> Zatvorite </a>
+        <a href="#banner" class="open"> <i class="icon-menu"></i> Menu </a>
+        <a href="#" class="close"> <i class="icon-menu"></i> Close </a>
       </div>
 
       <%= render :partial => 'general/locale_switcher' %>

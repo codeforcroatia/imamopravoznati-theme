@@ -1,0 +1,136 @@
+<% @title = "Kontaktirajte nas" %>
+
+<%= render :partial => 'sidebar' %>
+<div id="left_column_flip" class="left_column_flip">
+  <h1>
+    <%= @title %>
+  </h1>
+<p>Kome se trebate obratiti?</p>
+
+<div class="contact-page">
+
+    <h2 class="contact-page__goal" id="government">
+        <label class="houdini-label" for="goal1">
+            Želim kontaktirati <strong>vladin ured</strong> - na primjer
+            Vladu Republike Hrvatske, Ministarstvo unutarnjih poslova,
+            Ministarstvo poljoprivrede ili Ministarstvo rada, mirovinskog
+            sustava, obitelji i socijalne politike.
+        </label>
+    </h2>
+
+    <input class="houdini-input" type="radio" name="goals" id="goal1">
+    <div class="houdini-target contact-page__options">
+        <ul>
+            <li>
+                Ako želite podnijeti javni zahtjev za pristup informacijama
+                vladi u Republici Hrvatskoj, možete
+                <a href="<%= select_authority_path %>">započeti ovdje</a>.
+            </li>
+            <li>
+                Ako želite razgovarati o osobnim stvarima s nekim vladinim
+                uredom, trebali biste
+                <a href="https://www.gov.hr/">ih potražiti na GOV.HR</a>.
+            </li>
+            <li>
+                Ako imate problema s pružanjem usluge koja vam je potrebna od
+                nekog državnog tijela, ured vašeg saborskog zastupnika često
+                vam može pomoći. Pronađite kontakt i <a
+                href="https://www.sabor.hr/">pišite vašem saborskom zastupniku</a>.
+                <!-- You can <a href="https://www.writetothem.com/">write
+                to your MP on WriteToThem.com</a>.-->
+            </li>
+        </ul>
+    </div>
+
+    <h2 class="contact-page__goal" id="authority">
+        <label class="houdini-label" for="goal2">
+            Želim kontaktirati tijelo javne vlasti, poput
+            <strong>lokalne samouprave, bolnice ili škole</strong>.
+        </label>
+    </h2>
+
+    <input class="houdini-input" type="radio" name="goals" id="goal2">
+    <div class="houdini-target contact-page__options">
+        <ul>
+            <li>
+              Ako želite podnijeti javni zahtjev za pristup informacijama
+              lokalnoj samoupravi ili tijelu javne vlasti u Republici
+              Hrvatskoj, možete
+              <a href="<%= select_authority_path %>">početi ovdje</a>.
+            </li>
+            <li>
+              Ako želite razgovarati o osobnim stvarima s nekim lokalnim
+              tijelom javne vlasti, trebali biste potražiti njihov
+              <a href="https://www.gov.hr/">kontakt na GOV.HR</a>.
+            </li>
+            <!-- <li>
+                If you want to write to your MP, local councillor, or
+                other representative, you can
+                <a href="https://www.writetothem.com/">write to your MP
+                on WriteToThem.com</a>.
+            </li>-->
+        </ul>
+    </div>
+
+
+    <h2 class="contact-page__goal" id="writing-help">
+        <label class="houdini-label" for="goal4">
+            Trebam pomoć pri <strong>pisanju zahtjeva za pravo na pristup
+            informacija</strong>.
+        </label>
+    </h2>
+
+    <input class="houdini-input" type="radio" name="goals" id="goal4"
+        <% if params["contact"] && params[:current_form] == 'writing-help' %>checked<% end %>>
+    <div class="houdini-target contact-page__options">
+        <ul>
+            <li>
+                Izravno kontaktirajte volontere koji administriraju <%= site_name %>:
+
+                <%= foi_error_messages_for :contact %>
+
+                <%= render :partial => "help/contact_form",
+                           :locals => { :form_id => 'writing-help' } %>
+            </li>
+        </ul>
+    </div>
+
+
+    <h2 class="contact-page__goal" id="wdtk">
+        <label class="houdini-label" for="goal3">
+            Imam neki drugi problem ili povratnu informaciju vezanu uz
+            internetsku stranicu <%= site_name %> koje <strong>želim dati na
+            znanje ekipi koja administrira <%= site_name %></strong>.
+        </label>
+    </h2>
+
+    <input class="houdini-input" type="radio" name="goals" id="goal3"
+        <% if params["contact"] && params[:current_form] == 'wdtk' %>checked<% end %>>
+    <div class="houdini-target contact-page__options">
+        <ul>
+            <li>
+                Prvo pokušajte provjeriti <a href="<%= help_about_path %>">naše
+                opsežne stranice pomoći</a>, koje sadrže rješenje za većinu
+                problema i pitanja koja biste mogli imati.
+            </li>
+            <li>
+                <% if @user && @user.is_pro? %>
+                    Ako vaš problem nije pokriven našim stranicama pomoći,
+                    možete se izravno obratiti volonterima koji administriraju
+                    <%= site_name %> Pro:
+                <% else %>
+                    Ako vaš problem nije pokriven našim stranicama pomoći,
+                    možete se izravno obratiti volonterima koji administriraju
+                    <%= site_name %>:
+                <% end %>
+
+                <%= foi_error_messages_for :contact %>
+
+                <%= render :partial => "help/contact_form",
+                           :locals => { :form_id => 'wdtk' } %>
+            </li>
+        </ul>
+    </div>
+
+</div>
+</div>

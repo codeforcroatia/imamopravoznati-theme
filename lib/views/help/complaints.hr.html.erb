@@ -1,0 +1,54 @@
+<% @title = "Prigovori korisnika" %>
+<%= render :partial => 'sidebar' %>
+<div id="left_column_flip" class="left_column_flip">
+  <h1>
+    <%= @title %>
+  </h1>
+  <dl>
+    <dt id="complaints">
+      Kako rješavamo vaše prigovore?
+      <a href="#complaints">#</a>
+    </dt>
+    <dd>
+      <p>
+        Ako imate prigovor na način na koji upravljamo <%= site_name %>
+        uslugom, molimo <a href="<%= help_contact_path %>">kontaktirajte
+        administrativnu ekipu</a>. Oni koji pokušaju podnijeti prigovor drugim
+        putem biti će upućeni na administrativnu ekipu.
+      </p>
+      <p>
+        Ako ste nezadovoljni načinom na koji je jedan član ekipe riješio predmet,
+        možete zatražiti da drugi član ekipe pregleda što se dogodilo i pokuša
+        riješiti predmet.
+      </p>
+      <p>
+        <%= site_name %> ekipa nastojat će primijeniti postojeća pravila i
+        protokole stranice ili razgovarati o prilagodbi naših protokola kako bi
+        odgovorili na bilo kakve nove okolnosti koje se pojave.
+      </p>
+      <p>
+        Nastojimo odmah riješiti prigovore; povremeno odlučimo pričekati jedan
+        od naših redovitih mjesečnih sastanaka kako bismo razgovarali o slučaju,
+        u tom slučaju obavijestit ćemo vas o tome.
+      </p>
+      <p>
+        Nakon što ste prošli ove korake, i ako ste nezadovoljni odlukom koju je
+        donijela <%= site_name %> ekipa, možete zatražiti da se o tom pitanju
+        interno razgovara sa skupinom, uključujući ekipu za upravljanje
+        Code for Croatia i savjetnicima iz Gonga. Gong je nadležna krovna
+        organizacija za Code for Croatia i <%= site_name %>.
+      </p>
+      <p>
+        Ako je potrebno, izvršno direktorstvo Gonga dat će preporuku
+        savjetnicima koji će donijeti konačnu odluku o tom pitanju.
+        Naposlijetku, ekipa savjetnika je odgovorna za rad internetske stranice
+        <%= site_name %>.
+      </p>
+      <p>
+        Djelatnost internetskih stranica <%= site_name %> je podložna
+        nacionalnoj zakonskoj regulativi. Oni koji ostaju nezadovoljni, mogu
+        koristiti ove i druge vanjske načine prigovora i žalbi koje su im dostupne.
+      </p>
+    </dd>
+  </dl>
+</div>

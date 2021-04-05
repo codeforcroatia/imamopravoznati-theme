@@ -1,0 +1,25 @@
+<% @title = "O ovoj platformi" %>
+<%= render :partial => 'sidebar' %>
+<div id="left_column_flip" class="left_column_flip">
+  <% if params[:country_name] %>
+  <h1><%= _("Želite li koristiti ovakvu internetsku stranicu u drugoj zemlji?") %></h1>
+  <% else %>
+  <h1>Pokreće Alaveteli</h1>
+  <% end %>
+  <p>Ovu internetsku stranicu pokreće Alaveteli. Alaveteli je besplatni softver
+    za podnošenje zahtjeva za pristup informacijama. Jednostavno se može
+    prevesti na bilo koji jezik i prilagoditi varijacijama zakona za pravo
+    na pristup informacijama.</p>
+  <p>Razvoj Alavetelija sponzoriraju i podržavaju brojne zaklade i dobrotvorne
+    organizacije koje zanima transparentnost informacija širom svijeta.</p>
+  <p>Ako želite postaviti ovakvu internetsku stranicu Alaveteli u drugoj zemlji,
+    <a href="https://www.mysociety.org/?utm_source=imamopravoznati&utm_medium=link">mySociety</a>
+    vam može pomoći. Trebat će vam nekoliko dana da internetska
+    stranica bude konfigurirana i spremna za upotrebu, a zatim ćete morati
+    provesti najmanje sat vremena tjedno na moderiranje i upravljanje
+    internetskom stranicom (više za posjećenije internetske stranice).</p>
+  <p>Pročitajte više na <a href="http://alaveteli.org">Alaveteli stranici</a>,
+    ili <a href="mailto:hello@alaveteli.org">pošaljite e-mail</a> Alaveteli
+    ekipi.</p>
+<div id="hash_link_padding"></div>
+</div>
