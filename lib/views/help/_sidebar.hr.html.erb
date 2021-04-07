@@ -18,8 +18,7 @@
         <%= link_to_unless_current "Zahvale", help_credits_path %>
       </li>
       <li>
-        <%= link_to_unless_current "API",
-                                   help_api_path %>
+        <%= link_to_unless_current "API", help_api_path %>
       </li>
       <li>
         <%= link_to_unless_current "Napredna pretraga", advanced_search_path %>
@@ -48,9 +47,10 @@
     </ul>
     <% unless is_contact_page? %>
     <h2 id="contact">Kontaktirajte nas</h2>
-    <p>Ako imate postoje koja nisu odgovorena na ovim stranicama za pomoć <a href="https://diskurs.codeforcroatia.org/c/imamo-pravo-znati/?utm_source=imamopravoznati&utm_medium=link">pišete nam</a>
-      na našu <i>Imamo pravo znati</i> diskurs zajednicu i netko će vam odgovoriti.
-      Za razgovor s <%= site_name %> ekipom volontera, <a href="<%= help_contact_path %>">kontaktirajte&nbsp;nas</a>.
+    <p>Ako imate postoje koja nisu odgovorena na ovim stranicama za pomoć
+      <a href="https://diskurs.codeforcroatia.org/c/imamo-pravo-znati/?utm_source=imamopravoznati&utm_medium=link">
+      pišete</a> na našu diskurs zajednicu, a za razgovor s <%= site_name %>
+      ekipom volontera, <a href="<%= help_contact_path %>">kontaktirajte&nbsp;nas</a>.
     </p>
     <% end %>
   </div>

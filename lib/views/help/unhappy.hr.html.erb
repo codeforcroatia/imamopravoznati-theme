@@ -1,0 +1,414 @@
+<% @title = "Nezadovoljni ste zahtjevom za pristup informacijama?" %>
+
+<div id="left_column" class="left_column">
+<div class="unhappy-info">
+  <% if !@info_request.nil? %>
+    <h1>
+      Nezadovoljni ste dobivenim odgovorom na &mdash;
+      <%= request_link(@info_request) %>?
+    </h1>
+  <% else %>
+    <h1>Nezadovoljni ste postupcima tijela u vašem predmetu prava na pristup
+      informacijama?</h1>
+  <% end %>
+
+  <p>
+    Ako <strong>niste dobili odgovor u roku 15 dana</strong> možete:
+  </p>
+
+  <ul>
+    <li>
+      a) Poslati <a href="#internal_review">odgovor</a> tijelu javne vlasti kojim
+      ih požurujete da odgovore, a istodobno možete pokrenuti postupak i kod
+      Povjerenika za informiranje (pogledajte ispod točke (b) ili (c)).
+    </li>
+    <li>
+      b) U roku 15 dana od dana istjeka roka za odgovor možete poslati
+      <a href="#refer-to-pi">žalbu</a> Povjereniku za informiranje.
+    </li>
+    <li>
+      c) Bilo kada možete poslati <a href="#refer-to-pi-notice">predstavku</a>
+      Povjereniku za informiranje.
+    </li>
+  </ul>
+
+  <p>
+    Ako <strong>niste dobili sve informacije</strong> koje ste tražili možete:
+  </p>
+
+  <ul>
+    <li>
+      Poslati <a href="#internal_review">odgovor</a> tijelu javne vlasti i tražiti
+      dopunu dostavljenih informacija. Tada tijelo ima novi rok 15 dana da odgovore.
+    </li>
+  </ul>
+
+  <p>
+    Ako je vaš zahtjev <strong>odbijen bez valjanog razloga</strong> možete:
+  </p>
+
+  <ul>
+    <li>
+      a) U roku 15 dana od isteka roka za odgovor možete pokrenuti postupak
+      <a href="#refer-to-pi">žalbe</a> kod Povjerenika za informiranje.
+    </li>
+    <li>
+      b) Bilo kada pa čak i izvan isteka roka za žalbu korisnika možete poslati
+      <a href="#refer-to-pi-notice">predstavku</a> Povjereniku za informiranje.
+    </li>
+    <li>
+      c) <a href="<%= select_authority_path %>">Podnesite novi zahtjev</a>
+      tražeći specifične informacije od tog tijela ili izaberite neko drugo tijelo
+      javne vlasti koje je nadležno za informaciju koju tražite.
+    </li>
+    <li>
+      d) Ili upotrijebite <a href="#other_means">neki drugi način</a> traženja
+      informacija.
+    </li>
+  </ul>
+
+  <p>
+    Za više informacija o rokovima pročitajte
+    <%= link_to help_requesting_path(anchor: 'quickly_response') do -%>
+      u kojem roku će vaš zahtjev biti riješen?
+    <% end %>
+  </p>
+
+</div>
+
+<h2 id="internal_review">Požurivanje tijela javne vlasti <a
+  class="hover_a" href="#internal_review">#</a> </h2>
+<p>
+  <% if !@info_request.nil? %>
+    <% path = new_request_followup_url(request_id: @info_request.id) +
+              "?internal_review=1#followup" %>
+
+    Pošaljite odgovor kojim <%= link_to "tražite požurnicu", path %> i rješavanje
+    vašeg zahtjeva čim je prije moguće.
+  <% else %>
+    Ispod zahtjeva na stranici <%= site_name %>, pronađite i odaberite "tražite
+    požurnicu". Zatim napišite poruku tražeći rješavanje vašeg zahtjeva čim je
+    prije moguće. Bilo bi dobro staviti i poveznicu na stranicu zahtjeva kako bi
+    službeniku bilo jasno o kojem se točno zahtjevu radi.
+  <% end %>
+</p>
+<p>
+  Usprkos poslanoj požurnici, kada tijelo nije odgovorilo u zakonskom roku,
+  možete paralelno izjaviti žalbu Povjereniku za informiranje odnosno poslati
+  predstavku jer tijelo nije ispoštovalo rok za odgovor. Pogledajte niže za
+  detalje.
+</p>
+
+<a name="complaining"></a>
+<h2 id="refer-to-pi">Zaštita prava na pristup informacijama <a class="hover_a"
+  href="#refer-to-pi">#</a></h2>
+<p>
+  Zadaća Povjerenika za informiranje jest da štiti vaše pravo na pristup
+  informacijama, prati provedbu Zakona o pravu na pristup informacijama,
+  promiče Ustavom Republike Hrvatske zajamčeno pravo na pristup informacijama te
+  ponovnu uporabu informacija i njegovo ostvarivanje u javnosti.
+</p>
+<p>
+  Iako Povjerenik za informiranje traži da uz žalbu priložite vaš zahtjev,
+  oni će uredno zaprimiti žalbe zaprimljene elektronskim putem gdje se umjesto
+  priloga navodi poveznica na zahtjev na <%= site_name %>.org kako bi imali
+  dokaze o cijeloj povijesti prepiske vezane uz zahtjev. Ako ipak želite preuzeti
+  cijelu korespondenciju i datoteke, koristite opciju preuzimanja iz izbornika
+  "Akcije" na stranici zahtjeva koja će pokrenuti preuzimanje <code>.zip</code>
+  datoteke.
+</p>
+<p>
+  <%= site_name %> trenutno mogućnost za slanje žalbe Povjereniku za informiranje.
+  Savjetujemo vam da ostavite komnetar na vašem zahtjevu kojim ćete informirati
+  ljude o napretku vašeg predmeta. Ujedno će biti od velike pomoći i vama da na
+  jednom mjestu imate sve datume i cijelu povijest rješavanja vašeg predmeta.
+  Odluku Povjerenika za informiranje možete sačuvati na jednom od postojećih servisa
+  za dijeljenje datoteka poput Google Drive ili One Drive te poveznicu na datoteku
+  odluke možete podijeliti putem komentara na zahtjevu.
+</p>
+<p>
+  Iako Povjerenik za informiranje naporno radi na smanjenju broja neriješenih
+  predmeta, u mnogim slučajevima rješavanje žalbe može potrajati nekoliko mjeseci
+  pa i duže.
+</p>
+<p>
+  Ako dođete do toga da trebate pokrenuti drugostupanjski postupak kod Povjerenika
+  za informiranje, pomirite se s činjenicom da tim putem nećete brzo doći do
+  tražene informacije. Možda želite pomoći u borbi za poboljšanje prava na
+  pristup informiranja ili se možda ipak isplati dobiti informaicju polako ali
+  sigurno. Informacije možete pokušati dobiti i drugim načinima...
+</p>
+
+<h3 id="refer-to-pi-complaints">Kako mogu zaštiti svoje pravo ako je tijelo javne
+  vlasti odbilo ili odbacilo moj zahtjev? Mogu li se nekome žaliti?
+  <a class="hover_a" href="#refer-to-pi-complaints">#</a></h3>
+<p>
+  Kao i svako pravo, vaše pravo na pristup informacijama štiti se u
+  odgovarajućem postupku.
+</p>
+<p>
+  Protiv rješenja tijela javne vlasti kojim se odbija ili odbacuje zahtjev za
+  pristup informacijama možete podnijeti žalbu Povjereniku za informiranje.
+</p>
+<p>
+  Rok za podnošenje žalbe je <strong>15 dana od dana primitka rješenja</strong>.
+  Ako posljednji dan rok pada u nedjelju ili neradni dan, kao posljednji dan roka
+  se računa idući radni dan.
+</p>
+<p>
+  Ukoliko vas je tijelo obavijestilo da je informacija javno objavljena, da ste
+  informaciju već dobili, a nije prošlo 90 dana od prethodnog zahtjeva, da se na
+  vaš podnesak ne primjenjuje Zakon o pravu na pristup informacijama ili da se ne
+  smatra zahtjevom, a smatrate da u navedenim slučajevima to nije točno, možete
+  podnijeti <i>prigovor čelniku tijela javne vlasti</i>, na koji ćete potom imati
+  pravo žalbe Povjereniku za informiranje.
+</p>
+
+<h3 id="refer-to-pi-silence">Što ako tijelo javne vlasti ne reagira na moj
+  zahtjev? <a class="hover_a" href="#refer-to-pi-silence">#</a></h3>
+<p>
+  Žalbu Povjereniku za informiranje možete podnijeti i kada tijelo javne vlasti
+  ne odluči o vašem zahtjevu <strong>u roku od 15 dana</strong>, odnosno u roku
+  od ukupno 30 dana ako je produžilo rok za odlučivanje. Situacija u kojoj tijelo
+  javne vlasti nije uopće reagiralo na vaš zahtjev ili odugovlači postupak,
+  naziva se <i>šutnjom uprave</i>.
+</p>
+<p>
+  Preporučamo da prije podnošenja žalbe pričekate dan ili dva nakon isteka roka,
+  zbog mogućnosti da vam tijelo dostavi rješenje ili informaciju poštom.
+</p>
+<p>
+  U slučaju da tijelo javne vlasti nije donijelo propisano rješenje kojim odbija
+  ili odbacuje vaš zahtjev već vas je samo neformalno obavijestilo o tome da vam
+  iz nekog razloga uskraćuje informaciju, inzistirajte na donošenju rješenja.
+</p>
+
+<h3 id="refer-to-pi-forms">Što treba sadržavati žalba i kako se podnosi? <a
+  class="hover_a" href="#refer-to-pi-forms">#</a></h3>
+<p>
+  Žalba treba sadržavati vaše podatke (ime, prezime i adresu odnosno naziv pravne
+  osobe i sjedište) i mora biti potpisana (osobno, odnosno od ovlaštene osobe,
+  ako se radi o pravnoj osobi). Ukoliko je podnosite elektroničkim putem, a
+  nemate elektronički potpis, možete skenirati potpisanu žalbu i poslati je
+  elektroničkim putem. Vaša adresa odnosno sjedište pravne osobe nužna je kako
+  bi vam Povjerenik mogao dostaviti svoju odluku.
+</p>
+<p>
+  U žalbi trebate navesti rješenje koje pobijate, naziv tijela javne vlasti koje
+  je to rješenje donijelo i iz kojih ste razloga nezadovoljni rješenjem.
+</p>
+<p>
+  Iako Povjerenik za informiranje traži da uz žalbu priložite vaš zahtjev,
+  oni će uredno zaprimiti žalbe zaprimljene elektronskim putem gdje se umjesto
+  priloga navodi poveznica na zahtjev na <%= site_name %>.org kako bi imali
+  dokaze o cijeloj povijesti prepiske vezane uz zahtjev. Ako ipak želite preuzeti
+  cijelu korespondenciju i datoteke, koristite opciju preuzimanja iz izbornika
+  "Akcije" na stranici zahtjeva koja će pokrenuti preuzimanje <code>.zip</code>
+  datoteke.
+</p>
+<p>
+  Obrazac za podnošenje žalbe neka tijela objavljuju na svojim internetskim
+  stranicama, a možete ga uvijek pronaći na <a href="https://www.pristupinfo.hr/"
+  target="_blank">službenim stranicama Povjerenika za informiranje</a>.
+</p>
+<p>
+  Žalba se u pravilu podnosi putem tijela javne vlasti kojem ste se prvotno
+  obratili sa zahtjevom za pristup informacijama. Ako žalbu podnesete neposredno
+  Povjereniku za informiranje, uzmite u obzir da se žalba prvo vraća tijelu javne
+  vlasti na razmatranje, čime se produljuje postupak.
+</p>
+<p>
+  Preporučamo da tražite potvrdu o primitku žalbe.
+</p>
+
+<h3 id="refer-to-pi-response">Kada mogu očekivati odluku Povjerenika za informiranje? <a
+  class="hover_a" href="#refer-to-pi-response">#</a></h3>
+<p>
+  Povjerenik za informiranje provodi postupak po žalbi (drugostupanjski postupak)
+  utvrđujući sve okolnosti slučaja, tražeći pojašnjenja i informacije od tijela
+  javne vlasti, a može tražiti i dodatna pojašnjenja od vas kao korisnika.
+</p>
+<p>
+  Osnovni rok za rješavanje o žalbi je 30 dana.
+</p>
+<p>
+  Rokovi su duži u dva slučaja: ako je za rješavanje potrebno ispitati ili
+  provesti test razmjernosti i javnog interesa, tada je rok 60 dana; ako je
+  potrebno tražiti mišljenje Ureda Vijeća za nacionalnu sigurnost i radi se o
+  klasificiranim informacijama, rok za rješavanje je 90 dana.
+</p>
+<p>
+  Povjerenik dostavlja svoju odluku putem tijela javne vlasti od kojega je
+  informacija zatražena.
+</p>
+
+<h3 id="refer-to-pi-decision">Kakvu odluku Povjerenika za informiranje mogu
+  očekivati? <a class="hover_a" href="#refer-to-pi-decision">#</a></h3>
+<p>
+  Povjerenik za informiranje može usvojiti vašu žalbu, u cijelosti ili
+  djelomično.
+</p>
+<p>
+  Ako Povjerenik nakon provedenog postupka koji uključuje i uvid u traženu
+  informaciju, ocijeni da je žalba osnovana, naložit će tijelu javne vlasti da
+  vam omogući pristup traženoj informaciji te će odrediti za to primjeren rok.
+  Može zaključiti da je vaša žalba osnovana u jednom dijelu, dok je u drugom
+  dijelu u pravu tijelo javne vlasti. U tom slučaju potvrdit će one dijelove
+  rješenja tijela javne vlasti koji su zakoniti, dok će ga u preostalom dijelu
+  poništiti i naložiti tijelu da vam omogući pristup informaciji. Povjerenik za
+  informiranje može i naložiti tijelu da ponovno provede postupak.
+</p>
+<p>
+  Povjerenik može donijeti i odluku da je vaša žalba u cijelosti neosnovana. U
+  tom slučaju će rješenjem potvrditi odluku tijela javne vlasti. Ako smatrate da
+  Povjerenik nije u pravu preostaje vam mogućnost pokretanja upravnog spora pred
+  Visokim upravnim sudom, kao i u slučaju kada Povjerenik samo djelomično uvaži
+  vašu žalbu.
+</p>
+<p>
+  U slučaju žalbe zbog šutnje uprave Povjerenik za informiranje štiti vaše pravo
+  na pristup informacijama na način da će od tijela koje nije postupilo u
+  zakonskom roku zatražiti očitovanje o razlozima nepostupanja te ga požuriti da
+  to učini. Ako tijelo i dalje ne postupi prema podnesenom zahtjevu, Povjerenik za
+  informiranje će tijelu javne vlasti naložiti da riješi vaš zahtjev sukladno
+  odredbama Zakona o pravu na pristup informacijama.
+</p>
+<p>
+  U slučaju kada je tijelo u međuvremenu dostavilo traženu informaciju, molimo da
+  o tome obavijestite Povjerenika za informiranje kako bi se postupak mogao
+  okončati (e-mailom, telefonski ili pisanim putem).
+</p>
+<p>
+  U slučaju da niste pravovremeno izjavili žalbu Povjerenik za informiranje će
+  rješenjem odbaciti žalbu.
+</p>
+
+<h3 id="refer-to-pi-appeal">Što mogu učiniti ako sam nezadovoljan odlukom
+  Povjerenika ili o mojoj žalbi nije odlučeno na vrijeme? <a
+  class="hover_a" href="#refer-to-pi-appeal">#</a></h3>
+<p>
+  Protiv rješenja Povjerenika za informiranje ili u slučaju njegove šutnje,
+  dakle ako ne odluči o vašoj žalbi u navedenim rokovima, možete pokrenuti
+  upravni spor pred Visokim upravnim sudom Republike Hrvatske. Na upravni spor
+  građana pred Visokim upravnim sudom ne plaćaju se upravne i sudske pristojbe.
+</p>
+<p>
+  I tijelo javne vlasti može pokrenuti upravni spor protiv rješenja Povjerenika.
+  Visoki upravni sud mora odlučiti o tužbi u roku od 90 dana.
+</p>
+
+<h3 id="refer-to-pi-notice">Predstavka <a class="hover_a"
+  href="#refer-to-pi-notice">#</a></h3>
+<p>
+  Povjereniku se možete obratiti i predstavkom te tako upozoriti da tijela javne
+  vlasti nisu transparentna u mjeri ili na način koji propisuje Zakon o pravu na
+  pristup informacijama (primjerice, ne objavljuju na svojim internetskim
+  stranicama informacije koje Zakon propisuje, često zahtjeve rješavaju izvan
+  propisanih rokova, ne osiguravaju javnost sjednica formalnih radnih tijela ili
+  ne provode savjetovanja s javnošću). Povodom navoda iz vaše predstavke
+  Povjerenik nad tijelom javne vlasti može provesti i inspekcijski nadzor,
+  prilikom kojeg će utvrditi propuste u ispunjavanju obveza iz Zakona te naložiti
+  mjere za njihovo ispravljanje.
+</p>
+
+<a name="complaining2"></a>
+<h2 id="refer-to-pi-reuse">Zaštita prava za ponovnu uporabu informacija <a
+  class="hover_a" href="#refer-to-pi-reuse">#</a></h2>
+<p>
+  Ponovna uporaba informacija je korištenje informacija nekog tijela javne vlasti
+  od strane fizičkih ili pravnih osoba (građana, udruga, akademske zajednice,
+  privatnog sektora) u komercijalne ili nekomercijalne svrhe koje su različite
+  od izvorne svrhe za koju se informacije prikupljaju u okviru javnog posla.
+</p>
+
+<h3 id="refer-to-pi-reuse-appeal">Mogu li zaštiti svoje pravo na ponovnu uporabu
+  informacija? <a class="hover_a" href="#refer-to-pi-reuse-appeal">#</a></h3>
+<p>
+  U slučaju da tijelo javne vlasti odbije vaš zahtjev za ponovnu uporabu
+  informacija ili ga odbaci, možete podnijeti žalbu Povjereniku za informiranje.
+  Također, ako tijelo javne vlasti ne odluči o vašem zahtjevu možete podnijeti
+  žalbu zbog šutnje uprave.
+</p>
+<p>
+  Na žalbeni postupak primjenjuju se pravila koja vrijede i za postupak po žalbi
+  radi uskrate prava na pristup informacijama. Protiv rješenja Povjerenika žalba
+  nije dopuštena, ali se može pokrenuti upravni spor pred Visokim upravnim sudom
+  Republike Hrvatske.
+</p>
+<p>
+  Obrasce za podnošenje žalbe vezano uz ponovnu uporabu informacija možete
+  pronaći na <a href="https://www.pristupinfo.hr/"
+  target="_blank">službenim stranicama Povjerenika za informiranje</a>.
+</p>
+
+<a name="complaining3"></a>
+<h2 id="refer-to-pi-zzo">Zaštita pristupa informacijama prema posebnim propisima <a
+  class="hover_a" href="#refer-to-pi-zzo">#</a></h2>
+<p>
+  Povjerenik za informiranje, pored opće nadležnosti, predstavlja žalbeno tijelo
+  i u slučaju uskraćivanja informacija o okolišu, sukladno Zakonu o zaštiti
+  okoliša (NN 80/13, 153/13, 78/15, 12/18). Informacije o okolišu od iznimnog su
+  javnog interesa, neposredno vezane uz zaštitu zdravlja ljudi, održivi razvoj i
+  kvalitetu života budućih generacija. Stoga mogućnost pristupa okolišnim
+  informacijama neposredno utječe na pravo javnosti da sudjeluje u odlučivanju
+  o određenim djelatnostima vezano za pitanja zaštite okoliša, što predstavlja
+  značajan alat koji građanima daje legitimaciju da budu aktivni sudionici u
+  kreiranju javnih politika koje se odnose na zaštitu okoliša.
+</p>
+<p>
+  Povjerenik je Zakonom o arhivskom gradivu i arhivima (NN 61/18) određen i kao
+  nadležno tijelo u pitanju dostupnosti javnog arhivskog gradiva. Naime,
+  Povjerenik predstavlja drugostupanjsko tijelo u postupku odobravanja pristupa
+  gradivu koje nije javno dostupno u smislu navedenog Zakona, stoga protiv
+  rješenja državnog arhiva i arhiva JLP(R)S, možete podnijeti žalbu Povjereniku
+  u roku od 15 dana od dostave rješenja.
+</p>
+
+<h2 id="other_means">Upotrijebite drugi način za traženja informacija <a
+  class="hover_a" href="#other_means">#</a> </h2>
+<p>
+  Problem pristupu informacijama ili istrživanju možete pokušati riješiti na
+  druge načine.
+</p>
+<ul>
+  <li>
+    Podnesite <strong>novi zahtjev</strong> u kojem tražite popis dokumenata
+    ili informacija koje su direktno ili indirektno vezane uz materijal koje vam
+    je tijelo odbilo dati. Ili <a href="https://diskurs.codeforcroatia.org/c/imamo-pravo-znati/?utm_source=imamopravoznati&utm_medium=link"
+    title="Imamo pravo znati diskurs zajednica" target="_blank">pitajte ovdje</a>
+    za ideje.
+  </li>
+  <li>
+    Ako je <strong>neko drugo tijelo</strong> povezano možete pokušati njima
+    poslati zahtjev za pristup informacijama.
+  </li>
+  <li>
+    Pišite <strong>zastupnicima</strong> u Saboru ili drugim političarima i
+    zamolite ih za pomoć u traženju informacije. Saborski zastupnici mogu službeno
+    zatražiti informacije od tijela javne vlasti a njih tijela ne mogu odbiti!
+    Zastupnici u lokalnim skupštinama i vjećima jednako tako imaju moć dobivanja
+    informacija službenim putem od lokalne samouprave u kojoj zastupaju vas,
+    građane.
+  </li>
+  <% if can_ask_the_eu?(@country_code) %>
+  <li>
+    Pokušajte <%= link_to 'tražiti informacije od Europske unije',
+    'https://www.asktheeu.org' %>. Svaki građanin i stanovnik Europske unije
+    ima zakonski zajamčeno pravo tražiti informacije od vlasti EU-a.
+    <%= link_to 'AskTheEU.org', 'https://www.asktheeu.org' %> je inačica ovakve
+    stranice za traženje informacija od institucija Europske unije.
+  </li>
+  <% end %>
+  <li>
+    Zamolite <strong>druge istraživače</strong> koji su zainteresirani za sličnu
+    temu vašoj za pomoć. Ponekad ih možete pronaći pregledavanjem ove stranice;
+    kontaktirajte bilo kojeg registriranog korisnika s njihove profilne stranice.
+    Možda postoji internetski forum ili grupa gdje ćete pronači istoumne
+    istraživače.
+  </li>
+  <li>
+    Možete osnovati malu lokalnu kampanjsku skupinu i ugovoriti sastanak s
+    djelatnicima iz tijela javne vlasti. Tako će vas ozbiljnije shvatiti.
+  </li>
+</ul>
+</div>

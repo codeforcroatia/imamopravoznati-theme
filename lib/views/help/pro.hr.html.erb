@@ -1,0 +1,195 @@
+<% @title = 'Pro korisnici' %>
+
+<%= render partial: 'sidebar' %>
+
+<div id="left_column_flip" class="left_column_flip">
+  <h1 id="pro">
+    <%= @title %>
+  </h1>
+
+  <ul>
+    <li><%= link_to 'Private requests', '#private-requests' %></li>
+    <li><%= link_to 'Batch', '#batch' %></li>
+  </ul>
+
+  <h2 id="private-requests">
+    Privatni zahtjevi
+   <a href="#private-requests">#</a>
+  </h2>
+
+  <p>
+    Pro korisnici mogu postaviti razdoblje privatnosti na zahtjevu (<i>embargo</i>)
+    kako bi odgodili objavljivanje dok rade na svojoj priči ili istrazi.
+  </p>
+
+  <p>
+    Kada je zahtjev privatni, jamčimo da će biti vidljiv na
+    <%= AlaveteliConfiguration.site_name %> samo nakon razdoblja koje ste
+    odabrali. Osim vas, samo osoblje portala <%= AlaveteliConfiguration.pro_site_name %>
+    moći će vidjeti vaš zahtjev, ali njemu će pristupiti samo u slučaju ako
+    trebaju riješiti neki problem s predmetom (npr. neuspjela dostava tijelu).
+    Oni neće otkriti sadržaj vašeg zahtjeva niti bilo kakav odgovor koji ćete
+    dobiti bilo kome drugom. Tijelo javne vlasti će zabilježiti zahtjev u
+    upisniku prava na pristup infromacijama, kao i obično.
+  </p>
+
+  <h3 id="how-long-can-i-keep-requests-private">
+    Koliko dugo mogu zahtjeve držati privatnima?
+   <a href="#how-long-can-i-keep-requests-private">#</a>
+  </h3>
+
+  <p>
+    Razdoblje privatnosti može se postaviti na period od 3, 6 ili 12 mjeseci.
+  </p>
+
+  <p>
+    <%= image_tag 'alaveteli-pro/screenshot-embargo.jpg',
+                  alt: 'Dodavanje privatnosti' %>
+  </p>
+
+  <p>
+    Bit ćete automatski obaviješteni tjedan dana prije isteka razdoblja
+    privatnosti i na datum isteka.
+  </p>
+
+  <p>
+    Po završetku isteka razdoblja privatnosti, vaš zahtjev i korespondencija,
+    uključujući <strong>vaše ime</strong>, bit će <strong><%= link_to 'javno prikazani',
+    help_privacy_path(anchor: 'public_request') %></strong> na ovim
+    internetskim stranicama.
+  </p>
+
+  <h3 id="i-need-more-time-can-i-extend-a-privacy-period">
+    Trebam više vremena. Mogu li produljiti razdoblje privatnosti?
+   <a href="#i-need-more-time-can-i-extend-a-privacy-period">#</a>
+  </h3>
+
+  <p>
+    Razdoblja privatnosti mogu se produžiti, ali samo u tjednu prije isteka roka.
+  </p>
+
+  <p>
+    <%= image_tag 'alaveteli-pro/screenshot-embargo-extension.jpg',
+                  alt: 'Produživanje privatnosti' %>
+  </p>
+
+  <p>
+    Ne postoji ograničenje koliko se puta može produljiti razdoblje privatnosti,
+    ali svako produženje zahtijeva ručnu potvrdu.
+  </p>
+
+  <h3 id="how-do-i-publish-a-request">
+    Kako mogu objaviti zahtjev?
+   <a href="#how-do-i-publish-a-request">#</a>
+  </h3>
+
+  <p>
+    Zahtjevi se mogu objaviti u bilo kojem trenutku.
+  </p>
+
+  <p>
+    <%= image_tag 'alaveteli-pro/screenshot-embargo-publish.jpg',
+                  alt: 'Objavljivanje zahtjeva' %>
+  </p>
+
+  <h3 id="can-i-make-private-batch-requests">
+    Mogu li napraviti privatne skupne zahtjeve?
+   <a href="#can-i-make-private-batch-requests">#</a>
+  </h3>
+
+  <p>
+    Razdoblja privatnosti mogu se postaviti i za skupne zahtjeve, a njihov rad
+    slijedi iste principe kao i pojedinačni zahtjevi. Promjene razdoblja
+    privatnosti na jednom zahtjevu koji pripada skupini zahtjeva preslikavaju
+    se na sve zahtjeve u skupini.
+  </p>
+
+  <h2 id="batch">
+    Skupni zahtjevi
+   <a href="#batch">#</a>
+  </h2>
+
+  <p>
+    Skupni zahtjevi olakšavaju slanje i upravljanje zahtjevima većem broju tijela.
+  </p>
+
+  <h3 id="how-do-i-make-a-batch-request">
+    Kako mogu podnijeti skupne zahtjeve?
+   <a href="#how-do-i-make-a-batch-request">#</a>
+  </h3>
+
+  <p>
+    Skupni zahtjev omogućuje vam da iz popisa tijela javne vlasti odaberete više
+    tijela te da napišete predložak zahtjeva. Zahtjev se tada korištenjem
+    predloška pojedinačno kreira i automatski šalje svakom tijelu javne vlasti.
+  </p>
+
+  <p>
+    <%= image_tag 'alaveteli-pro/screenshot-batch-selection.jpg',
+                  alt: 'Izbor više tijela za skupni zahtjev' %>
+  </p>
+
+  <p>
+    <%= image_tag 'alaveteli-pro/screenshot-batch-write.jpg',
+                  alt: 'Pisanje predloška za skupni zahtjev' %>
+  </p>
+
+  <h3 id="how-do-i-manage-a-batch-request">
+    Kako mogu upravljati skupnim zahtjevom?
+   <a href="#how-do-i-manage-a-batch-request">#</a>
+  </h3>
+
+  <p>
+    Napredak vašeg skupnog zahtjeva možete pratiti pomoću prikladne vizualizacije
+    kako biste mogli pratiti koliko ste blizu dobivanju odgovora od svih nadležnih
+    tijela javne vlasti što vam olakšava odluku o sljedećim koracima.
+  </p>
+
+  <p>
+    <%= image_tag 'alaveteli-pro/screenshot-batch-list.jpg',
+                  alt: 'Upravljanje skupnim zahtjevima' %>
+  </p>
+
+  <h3 id="how-do-i-manage-batch-privacy-periods">
+    Kako mogu upravljati razdobljima privatnosti za skupne zahtjeve?
+   <a href="#how-do-i-manage-batch-privacy-periods">#</a>
+  </h3>
+
+  <p>
+    Skupni zahtjevi mogu se učiniti privatnim, a razdobljima privatnosti
+    jednostavno se primjenjuje za cijelu seriju zahtjeva.
+  </p>
+
+  <p>
+    <%= image_tag 'alaveteli-pro/screenshot-batch-privacy.jpg',
+                  alt: 'Upravljanje privatnostima za skupne zahtjeve' %>
+  </p>
+
+  <h3 id="how-many-authorities-can-i-add-to-a-batch">
+    Koliko tijela mogu dodati u skupni zahtjev?
+   <a href="#how-many-authorities-can-i-add-to-a-batch">#</a>
+  </h3>
+
+  <p>
+    Maksimalni broj tijela javne vlasti koja se mogu dodati u skupni zahtjev je
+    <%= AlaveteliConfiguration.pro_batch_authority_limit %>.
+  </p>
+
+  <h3 id="how-many-batch-requests-can-i-make">
+    Koliko skupnih zahtjeva mogu podnijeti?
+   <a href="#how-many-batch-requests-can-i-make">#</a>
+  </h3>
+
+  <p>
+    Preporučujemo vam da napravite pilot slanjem serije zahtjeva nekom uzorku
+    tijela javne vlasti radi utvrđivanja validnosti procesa. Jednom kada saznate
+    da tijela drže vrstu podataka koje trebate, možete zatražiti i od preostalih
+    tijela javne vlasti.
+  </p>
+
+  <p>
+    Ne postoji ograničenje broja skupnih zahtjeva koji se mogu poslati, ali
+    Pro korisnici moraju se pridržavati naših smjernica o pisanju <%= link_to 'odgovornih zahtjeva',
+      help_requesting_path(anchor: 'responsible') %>.
+  </p>
+</div>

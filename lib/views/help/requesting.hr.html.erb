@@ -1,0 +1,858 @@
+<% @title = "Podnošenje zahtjeva" %>
+<%= render :partial => 'sidebar' %>
+<div id="left_column_flip" class="left_column_flip">
+  <h1 id="making_requests"><%= @title %> <a href="#making_requests">#</a></h1>
+  <strong>Nikad prije niste podnijeli zahtjev?</strong> Slijedite naš
+  <a href="<%= help_beginners_path %>">vodič za početnike</a>.
+  <dl>
+    <dt id="which_authority">
+      Niste sigurni kojem tijelu javne vlasti trebate podnijeti zahtjev i kako
+      to možete saznati?
+      <a href="#which_authority">#</a>
+    </dt>
+    <dd>
+    <p>
+      Tijela javne vlasti od kojih možete tražiti informacije su državna tijela
+      (primjerice Vlada Republike Hrvatske, Hrvatski sabor, Predsjednik Republike
+      Hrvatske), tijela državne uprave (npr. ministarstva, uredi državne uprave),
+      pravosudna tijela (sudovi, državna odvjetništva), lokalna samouprava (općine,
+      gradovi, županije), tijela s javnim ovlastima i tijela koja obavljaju javnu
+      službu (primjerice škole i fakulteti, zdravstvene ustanove, centri za
+      socijalnu skrb, agencije i zavodi, komore), trgovačka društva u većinskom
+      javnom vlasništvu i druge pravne osobe koje se financiraju iz državnog
+      proračuna ili iz proračuna jedinica lokalne i područne (regionalne)
+      samouprave, odnosno iz javnih sredstava (nameta, davanja i sl.).
+    </p>
+    <p>Ponekad može biti teško shvatiti kompliciranu strukturu vlasti i doznati
+      tko posjeduje informacije koje vam trebaju. Evo nekoliko savjeta:
+    </p>
+    <ul>
+      <li>
+        Pregledajte ili <a href="<%= search_redirect_path %>">pretražite</a>
+        <%= site_name %> da biste vidjeli zahtjeve slične onom kojeg vi planirate
+        poslati: kojem su tijelu poslani i jesu li bili uspješni? Ako je tako,
+        vjerojatno i vi želite napraviti prema tom pozitivnom uzoru.
+      </li>
+
+      <li>
+        Kad pronađete tijelo javne vlasti za koje smatrate da bi moglo posjedovati
+        informacije koje trebate, dobro je provjeriti putem poveznice "Službena
+        stranica tijela javne vlasti" koja se nalazi na profilnoj stranici tijela
+        javne vlasti kako bi na njihovoj stranici provjerili koji je njihov
+        djelokrug rada i jesu li odgovorni za ono što vama treba.
+      </li>
+
+      <li>
+        Možete kontaktirati tijelo javne vlasti putem telefona ili e-maila kako
+        bi saznali imaju li informacije koje tražite.
+      </li>
+
+      <li>
+        Ne zabrinjavajte se previše oko toga hoćete li doći do odgovarajućih
+        tijela javne vlasti. Ako pošaljete zahtjev pogrešnom tijelu javne vlasti
+        ukoliko su upoznati s time kod kojeg drugog tijela se nalazi informacija
+        dužni su ustupiti (pravna spika za 'proslijediti') vaš zahtjev onom
+        tijelu koje ima traženu informaciju.
+      </li>
+
+      <li>
+        Ako imate poseban slučaj, možete se s vašim pitanjem obratiti
+        <a href="https://diskurs.codeforcroatia.org/c/imamo-pravo-znati/?utm_source=imamopravoznati&utm_medium=link"
+        title="Imamo pravo znati diskurs zajednica" target="_blank"> <%= site_name %>
+        zajednici za pomoć</a>, a osim toga imamo sjajnu ekipu volontera koji
+        su uvijek voljni pomoći.
+      </li>
+
+    </ul>
+    </dd>
+    <dt id="missing_body">
+      Nedostaje nam tijelo javne vlasti kojem želite podnijeti zahtjev?
+      <a href="#missing_body">#</a>
+    </dt>
+    <dd>
+      <p>
+        Popis tijela javne vlasti nije stalan i podložan je promjenama. Uvijek
+        postoji mogućnost da neko tijelo nije navedeno u popisu uslijed promjena
+        zakonskog okvira, neka se tijela javne vlasti mogu ukinuti ili nova
+        osnovati, a također se određena trgovačka društva mogu privatizirati ili
+        im se mogu ukinuti javne ovlasti ili takve ovlasti tek mogu dobiti. Stoga
+        je naš popis temeljen na službenom <a href="https://tjv.pristupinfo.hr" target="_blank">
+        popisu tijela javne vlasti</a> kojeg održava Povjerenik za informiranje,
+        a ustupljeno je pod Otvorenom dozvolom.
+      </p>
+      <p>
+        Molimo <a href="<%= new_change_request_path %>">javite nam</a> naziv
+        tijela javne vlasti i, ako možete pronaći njihovu adresu e-pošte za
+        slanje zahtjeva za pristup informacijama.
+      </p>
+      <p>
+        Ako nam želite pomoći dodati cijelu novu kategoriju tijela javne vlasti
+        na ovu internetsku stranicu, voljeli bismo da stupite u <a
+        href="<%= help_volunteers_path %>">kontakt s nama</a>.
+      </p>
+    </dd>
+    <dt id="authorities">
+      Zašto imate neka tijela koja formalno ne podliježu zakonu?
+      <a href="#authorities">#</a> </dt>
+    <dd>
+      <p>
+        Osim što pruža jednostavan način za podnošenje zahtjeva za pristup
+        informacija, <%= site_name %> aktivno zagovara širenje opsega zakona o
+        pravu na pristup informacijama kako bi se obuhvatio što veći broj
+        tijela s javnim ovlastima.
+      </p>
+      <p>
+        Putem ove stranice možete podnijeti zahtjev za pristup informacijama
+        različitim tijelima:
+      </p>
+      <ul>
+        <li>
+          One koje obuhvaća Zakon o pravu na pristup informacijama (ZPPI).
+        </li>
+        <li>
+          One koje obuhvaća Zakon o zaštiti okoliša (ZZO).
+        </li>
+        <li>
+          Javna tijela koja su dobrovoljno odlučila postupati u skladu sa Zakonom
+          o pravu na pristup informacijama (ZPPI) iako zakonski nisu obvezna.
+        </li>
+        <li>
+          Ona koja ne podliježu zakonu
+          <a href="https://imamopravoznati.org/body/list/foi_no">ali za koje mi
+          smatramo</a> da bi trebala na temelju toga što imaju značajne javne
+          ovlasti i odgovornosti. To uključuje tijela koja djeluju kao regulatori,
+          obavljaju javne pozicije ili raspolažu sa značajnim iznosima javnih
+          sredstava.
+        </li>
+      </ul>
+    </dd>
+    <dt id="focused">
+      Zašto morate specificirati vaš zahtjev?
+      <a href="#focused">#</a>
+    </dt>
+    <dd>
+    <p>
+      Zahtjev za pristup informacijama samo je ono što naziv implicira: zahtjev
+      za <strong>javnim informacijama ili podacima</strong>. Ako tijelo drži
+      podatke, u većini slučajeva zakon ih obvezuje da ih dostave na vaš zahtjev.
+    <p>
+      Radi se o informacijama o radu tijela javne vlasti, njihovom odlučivanju i
+      odlukama, financijskim pitanjima, odnosno svemu što je u vezi s njihovim
+      radom ili organizacijom, osim u slučajevima kada su informacija ili njezini
+      dijelovi zaštićeni zakonom radi očuvanja drugih važnih interesa (npr.
+      privatnosti ili nacionalne sigurnosti). Informacija pri tome obuhvaća sve
+      već postojeće informacije u obliku dokumenata, zapisa ili u bilo kojem
+      obliku zabilježenih informacija (pisanih, vizualnih ili slušnih).
+    </p>
+    <p>
+      Možete ubrzati postupak pristupa informacijama tako da vaš zahtjev
+      bude jasan i potpun, da ne sadrži više od onoga što je potrebno,
+      te koristite prikladan jezik i suzdržite se od nepotrebnih dodataka,
+      uključujući vaše poimanje kvalitete rada tijela javne vlasti ili konkretnih
+      službenika. Imajte na umu i načelo suradnje i pružanja pomoći te potrebu da
+      u komunikaciji s tijelom javne vlasti i vi kao korisnik i samo tijelo
+      uvažavate ljudsko dostojanstvo i integritet osobe.
+    </p>
+    <p>
+      Molimo vas da u vašem zahtjevu <strong>ne pišete</strong>:
+    </p>
+    <ul>
+      <li>
+        argumente ili pojašnjenja koji idu u prilog vašem djelovanju
+      </li>
+      <li>
+        izjave koje bi mogle naštetiti ugledu ili vrijeđati druge
+      </li>
+      <li>
+        traženje pojašnjenja, obrazloženja, očitovanja, tumačenja, potvrđivanje ili demantiranje navoda.
+      </li>
+    </ul>
+    <p>
+      Misli i ideje nisu informacija u smislu Zakona pa pristup informacijama,
+      a to nisu ni podaci koji nisu vezani uz rad i djelokrug tijela. Ako tijelo
+      javne vlasti utvrdi da ono što tražite ne predstavlja informaciju u smislu
+      Zakona, odbiti će vaš zahtjev, uz obrazloženje i uputu o pravu na žalbu.
+      Dakle, ako tražite objašnjenje kada gradonačelnik planira razmotriti
+      izgradnju dječjeg vrtića, slaba je vjerojatnost da će se raditi o
+      informaciji u smislu Zakona, osim ako već ne postoji pisani dokument o tom
+      pitanju (npr. dnevni red sjednice na kojoj je jedna od točaka razmatranje
+      pitanje izgradnje vrtića ili zaključak kolegija da će se isto razmatrati
+      na nekoj sjednici). Isto tako, informacija o tome kojim se sportom bavi
+      ministar u slobodno vrijeme, iako može biti interesantna javnosti, nije
+      načelno informacija javnog karaktera pa se samim time neće se raditi o
+      informaciji u smislu Zakona.
+    </p>
+    <p>
+      U nekim slučajevima vaše traženje se može odnositi na neki drugi oblik
+      informiranja javnosti i korisnika o njihovim pravima ili radu tijela, kao
+      što su tumačenja i objašnjenja propisa radi ostvarivanja prava, objašnjenja
+      i upute u vezi nekog konkretnog postupanja i slično. U tim slučajevima
+      tijelo javne vlasti će vas obavijestiti da se ne radi o zahtjevu za pristup
+      informacijama i uputiti vas na koji način možete dobiti odgovor odnosno
+      pomoć tijela.
+    </p>
+    <dt id="responsible">
+      Kako možete podnijeti odgovorne i učinkovite zahtjeve?
+      <a href="#responsible">#</a>
+    </dt>
+    <dd>
+      <p>
+        Na <%= site_name %> želimo osigurati da zahtjevi korisnika budu što
+        učinkovitiji, jer je to dobro za očuvanje transparentnosti i kulture
+        pristupa javnim informacijama.
+      </p>
+      <ul>
+        <li>
+          Bolje je za vas jer postižete brže i kvalitetnije rezultate.
+        </li>
+        <li>
+          Bolje je za često preopterećeno osoblje koje zaprima vaše zahtjeve
+          jer im to olakšava posao.
+        </li>
+        <li>
+          Bolje je za nas, jer se oslanjamo na dobru volju naših korisnika i
+          tijela javne vlasti da nastave s transprentnim radom.
+        </li>
+        <li>
+          Bolje je za naša prava na pristup informacijama u cjelini, jer ako
+          zahtjevi postanu prevelik teret, veća je šansa za donošenje zakona
+          koji u budućnosti ograničavaju pristup informacijama.
+        </li>
+      </ul>
+      <p>
+        Nekoliko načina kojima možete optimizirati svoj zahtjev:
+      </p>
+      <ul>
+        <li>
+          <strong>Pošaljite na pravo mjesto:</strong> Potrudite se da vaš
+          zahtjev bude usmjeren na odgovarajuće tijelo. Razumijemo da to nije
+          uvijek lako, a ako niti nakon istraživanja niste sigurni, svakako
+          podnesite zahtjev tijelu za koje mislite da je najvjerojatnije da
+          sadrži informacije koje tražite. Možete očekivati ​​da će vam pružiti
+          savjete i pomoć kako bi vas usmjerili na pravo mjesto ako pogriješite;
+          ili ako zapnete, slobodno <a
+          href="https://diskurs.codeforcroatia.org/c/imamo-pravo-znati/?utm_source=imamopravoznati&utm_medium=link"
+          title="Imamo pravo znati diskurs zajednica" target="_blank">zamolite
+          za pomoć od naše široke zajednice i <%= site_name %> volonterske ekipe</a>.
+        </li>
+        <li>
+          <p>
+            <strong>Nemojte masovno slati:</strong> Možda planirate podnijeti
+            zahtjev, na primjer svim lokalnim samoupravama ili čak svim tijelima
+            javne vlasti u zemlji, ali stanite i dobro razmislite. Takvi skupni
+            zahtjevi rezultiraju s puno povratnih odgovora, a tijelu stvaraju
+            troškove za obradu takvih zahtjeva.
+          </p>
+          <p>
+            Hoćete li zapravo moći obraditi samostalno ​​svu tu količinu podataka?
+            Razmislite možete li zadovoljiti svoje potrebe tako što ćete zatražiti
+            informacije od reprezentativnog uzorka tijela ili zatražiti
+            informacije od svoje lokalne samouprave i drugih samouprava koja
+            pokrivaju područja sa sličnim karakteristikama.
+          </p>
+          <p>
+            Također razmotrite jesu li informacije dostupne negdje centralizirano,
+            na primjer kod nekog tijela državne uprave (kao što je ministarstvo),
+            i tako dobiti sve potrebne informacije putem jednog zahtjeva.
+          </p>
+        </li>
+        <li>
+          <strong>Pažljivo oblikujte vaše traženje:</strong> Može biti korisno
+          da navedete u kojem formatu želite zaprimiti tražene informacije
+          posebno kada podnosite zahtjev za ponovnu uporabu informacija te se
+          uvjerite da tražite točno one podatke koji su vam potrebni. U suprotnome
+          ćete prilikom podnošenja zahtjeva raznim tijelima otkriti da
+          odgovaraju u toliko različitih formata da ne možete uspoređivati ​​
+          isto s istim.
+        </li>
+        <li>
+          <strong>Izbjegavajte kratice i dvosmislene izraze:</strong> Službenici
+          koji zaprimaju vaš zahtjev možda neće razumjeti vaš žargon čija bi
+          značenja mogla biti očigledna za vas. Razmislite o proširivanju
+          kratica i objašnjavanju striktno tehničkih pojmova kako biste
+          preduhitrili potencijalne zahtjeve za dopunu informacija i pojašnjenja.
+        </li>
+        <li>
+          <strong>Fino prilagodite svoje traženje:</strong> Pošaljite iz prve
+          potpuni zahtjev i nećete se morati kasnije vraćati da biste ga
+          dopunili dodatnim informacijama. Dakle, razmislite što želite učiniti
+          s informacijama kad ih primite i hoće li vam trebati dodatne
+          informacije da biste sadržaj stavili u kontekst. Na primjer,
+          statistički podaci o broju rupa na cesti koje je lokalna samouprava
+          zaprimila ove godine mogli bi biti korisniji ako se dobivaju s
+          kontekstom kao što su podaci za prethodnu godinu.
+        </li>
+        <li>
+          <strong>Ali nemojte tražiti previše:</strong> S druge strane, jedan od
+          razloga zbog kojih tijela javne vlasti mogu odbiti zahtjev jest taj
+          što bi odgovor tražio preveliko administrativno i financijsko
+          opterećenje na tijelo kada bi na njega u potpunosti odgovorili - zato
+          tražite samo ono što trebate. Ograničavanje vašeg zahtjeva na materijale
+          iz određenog vremenskog razdoblja odgovoran je pristup i može spriječiti
+          odbijanje vašeg zahtjeva zbog prevelikog opsega za rješavanje.
+        </li>
+        <li>
+          <strong>Budite ljubazni:</strong> Službenici za informiranje u pravilu
+          su zaštitnici javnosti u postupcima prava na informiranje unutar tijela
+          javne vlasti. Oni možda djeluju kao vaš zagovornik u tijelu, a vidjeti
+          ćete da vam ponekada žele pomoći. Ostat će tako ako se prema njima
+          ponašate pristojno.
+        </li>
+        <li>
+          <strong>Imajte na umu da je sve javno na internetu:</strong> Zato
+          pripazite da u svoj zahtjev ne pišete klevetnički sadržaj, poput
+          navoda o nezakonitom ili nasilnom ponašanju. Takav sadržaj ne samo
+          da može uzrokovati ozbiljne probleme za nas, već i vas može dovesti u
+          situaciju da budete kažnjeni, a vaš zahtjev biti će označen kao
+          nedopušten - u tom slučaju nećete dobiti informacije koje tražite.
+        </li>
+        <li>
+          <strong>Zatražite proaktivnu objavu:</strong> Kako biste izbjegli da u
+          budućnosti ponovno podnosite sličan zahtjev, možda biste trebali
+          zatražiti od tijela javne vlasti da razmotre i počnu proaktivno
+          objavljivati podataka na njihovoj internetskoj stranici. U nekim
+          slučajevima, gdje se primjenjuju odredbe zakona za pristup informacijama
+          u dijelu o registrima ili sličnim skupovima podataka, tijela javne
+          vlasti dužna su proaktivno objaviti takve podatke na internetu.
+        </li>
+      </ul>
+      <p>
+        Dodatne poveznice s pojedinostima o tome kako podnijeti učinkovite
+        zahtjeve za pristup informacijama:
+      </p>
+      <ul>
+        <li>
+          <a href="https://publikacije.imamopravoznati.org/vodic/hr/pravo-na-pristup-informacijama/#trebam-informaciju--odakle-početi?utm_source=imamopravoznati&utm_medium=link" target="_blank">
+            Trebam informaciju - odakle početi</a>
+        </li>
+        <li>
+          <a href="https://publikacije.imamopravoznati.org/vodic/hr/korak-po-korak/?utm_source=imamopravoznati&utm_medium=link" target="_blank">
+            Ostvarivanje prava na pristup informacijama - korak po korak</a>
+        </li>
+        <li>
+          <a href="https://publikacije.imamopravoznati.org/vodic/hr/pristup-informacijama-za-novinare/?utm_source=imamopravoznati&utm_medium=link" target="_blank">
+            Pristup informacijama za novinare</a>
+        </li>
+        <li>
+          <a href="https://codeforcroatia.org/blog/kako_ce_350_ppi_zahtjeva_povecati_sanse_uspjeha_startupova?utm_source=imamopravoznati&utm_medium=link" target="_blank">
+            Vodič za pomoć malim i srednjim tvrtkama u procesu pristupa
+            informacijama</a>
+        </li>
+        <li>
+          <a href="https://www.foiman.com/foiguide1" target="_blank">
+            FOI Man - deset glavnih savjeta</a>
+        </li>
+      </ul>
+    </dd>
+    <dt id="campaigning">
+      Možete li koristiti <%= site_name %> za kampanje?
+      <a href="#campaigning">#</a>
+    </dt>
+    <dd>
+    <p>
+      Ako želite da informacije od tijela javne vlasti podrže vaše argumente ili
+      kampanju, pravo na informiranje je snažan alat.
+    </p>
+    <ul>
+      <li>
+        Iako vam ne možemo pomoći u vođenju kampanje, potičemo vas da koristite
+        <%= site_name %> kako biste dobili potrebne informacije. Dobrodošli ste
+        da vašu kampanju povežete na ove internetske stranice ili da u komentaru
+        ispod vašeg zahtjeva navedete poveznicu na stranicu s detaljima vaše
+        kampanje (bilješku možete napraviti nakon podnošenja zahtjeva).
+      </li>
+      <li>
+        Neki aktivisti su upućivali svoje podržavatelje da postavljanju zahtjeve
+        za pristup informacijama putem <%= site_name %> kako bi podržali ciljeve
+        njihovih akcija, koristeći <a href="https://codeforcroatia.org/blog/proaktivna_objava_troskova_putovanja_clanova_vlade_rh-2?utm_source=imamopravoznati&utm_medium=link" target="_blank">
+        unaprijed napisane zahtjeve za slanje putem brze poveznice</a>. Imamo
+        smjernice o tome kako napraviti predloške za
+        <a href="https://www.mysociety.org/2016/12/19/alaveteli-for-campaigners-how-to-create-pre-written-requests-for-your-supporters/?utm_source=imamopravoznati&utm_medium=link" target="_blank">
+        slanje novih zahtjeva korištenem poveznice</a> a na API stranici
+        imamo i <a href="https://imamopravoznati.org/help/api#creating-requests">
+        tehničke detalje</a>. Komentare ispod zahtjeva možete koristiti da
+        opišete vaše argumente oko podnošenja zahtjeva koji će zanimati druge
+        korisnike, za dodavanje poveznica na druge vezane zahtjeve ili
+        druge stranice. Povezivanje s drugim zahtjevima je korisno ako se vaš
+        zahtjev temelji na odgovoru zahtjeva koji je netko drugi podnio ili je
+        novija verzija istih informacija.
+      </li>
+      <li>
+        Možda će vam biti korisno stupiti u kontakt s drugima koji vode kampanje
+        o istom pitanju kao i vi. Korisnici internetske stranice mogu međusobno
+        slati poruke: kliknite na korisničko ime da biste vidjeli njihov profil
+        i tamo ćete pronaći poveznicu putem koje ih možete kontaktirati.
+      </li>
+
+    </dd>
+    <dt id="fees">
+      Hoće li vas podnošenje zahtjeva nešto koštati?
+      <a href="#fees">#</a>
+    </dt>
+    <dd>
+      <p>
+        <strong>Na pristup informacijama u postupcima pred tijelima javne vlasti
+          ne plaćaju se upravne i sudske pristojbe.</strong>
+      </p>
+      <p>
+        Tijela javne vlasti mogu naplatiti samo stvarne materijalne troškove
+        (kopiranje, skeniranje, slanje poštom), ali vas na to moraju upozoriti
+        slanjem izračuna i vi na to možete pristati ili ne.
+      </p>
+      <p>
+        Kriterije za naplatu troškova je propisao Povjerenik za informiranje i u
+        osnovi obuhvaćaju 0,25 kn po stranici kopije ili 0,80 kn po skeniranoj
+        stranici odnosno troškove nosača informacija (npr. CD, DVD, USB).
+      </p>
+      <p>
+        Kriteriji ujedno preporučuju da tijela javne vlasti, ovisno o vlastitim
+        mogućnostima, ne naplaćuju dostavu informacija ako je iznos manji od
+        50,00 kn, što iznosi 200 kopiranih stranica ili 62 skenirane stranice.
+      </p>
+      <p>
+        Ako se radi o većem broju dokumenata te bi troškovi bili veći od 150,00
+        kn, tijelo vas može pozvati da položite iznos prije dostave informacija.
+      </p>
+      <p>
+        Naplata troškova ne bi smjela odstupati od Kriterija za određivanje
+        visine naknade stvarnih materijalnih troškova i troškova dostave
+        informacije koji bi trebali biti objavljeni na stranici tijela javne
+        vlasti. Kriterije možete naći i na internetskim stranicama Povjerenika
+        za informiranje, a objavljeni su u <a href="http://narodne-novine.nn.hr/clanci/sluzbeni/2014_01_12_231.html" target="_blank">
+          Narodnim novinama (NN 12/2014)</a>.
+      </p>
+    </dd>
+    <dt id="format">
+      Hoćete li dobiti podatke u željenom formatu?
+      <a href="#format">#</a>
+    </dt>
+    <dd>
+      <p>
+        Zakon nalaže da ako tražite da se podaci dostave u određenom formatu,
+        posebno u otvorenom obliku tijelo to treba učiniti, sve dok je to
+        razumno izvedivo.
+      </p>
+      <p>
+        Možda ćete htjeti izričito tražiti podatke u formatu za ponovnu
+        upotrebu, kao što je .csv datoteka (koju možete uvesti u vaš program za
+        rad s tabličnim podacima); to pomaže u sprječavanju davanja odgovora u
+        obliku slika ili u datoteka određenog proizvođača softverskih aplikacija
+        iz kojih je mnogo teže raditi s podacima.
+      </p>
+      <p>
+        Ipak, nema potrebe izričito tražiti da odgovore elektronski ili "putem
+        e-pošte": smatramo da im svojim zahtjevom poslanim putem <%= site_name %>
+        to već jasno dajete do znanja.
+      </p>
+    </dd>
+    <dt id="quickly_response">
+      U kojem roku će vaš zahtjev biti riješen?
+      <a href="#quickly_response">#</a>
+    </dt>
+    <dd>
+      <p>
+        Osnovno je pravilo da je tijelo javne vlasti dužno riješiti vaš zahtjev
+        u roku od <strong>15 dana</strong> od zaprimanja urednog zahtjeva.
+      </p>
+      <p>
+        Tijelo javne vlasti može produžiti rok za rješavanje zahtjeva za <strong>
+        dodatnih 15 dana</strong>, ako ocijeni da je za to potrebno više vremena,
+        i to ako je riječ o informacijama koje se moraju tražiti izvan sjedišta
+        tijela javne vlasti, ako se mora prikupiti veći broj različitih
+        informacija, ako je to nužno radi pružanja potpune i točne informacije
+        odnosno ako mora provesti test razmjernosti i javnog interesa jer tražene
+        informacije ulaze u krug ograničenja propisanih Zakonom. Tijelo javne
+        vlasti mora vas bez odgode, a najkasnije u roku od 8 dana obavijestiti o
+        produljenju roka za rješavanje vašeg zahtjeva za dodatnih 15 dana.
+      </p>
+      <p>
+        Do modifikacije općeg roka može doći i ako ste zahtjev uputili tijelu
+        javne vlasti koje ne posjeduje informaciju. U tom slučaju tijelo javne
+        vlasti kojem ste uputili zahtjev dužno je u roku od 8 dana ustupiti vaš
+        zahtjev tijelu koje posjeduje informaciju i o tome vas obavijestiti. Rok
+        se tada računa od dana od kada je nadležno tijelo zaprimilo ustupljeni
+        zahtjev. Uzmite u obzir da je tijelo javne vlasti dužno ustupiti zahtjev
+        tijelu za koje smatra da posjeduje informaciju – ono se ne može
+        jednostavno proglasiti nenadležnim i tražiti od vas da zahtjev podnesete
+        drugom tijelu, već mora samo ustupiti zahtjev.
+      </p>
+      <p>
+        <%= site_name %> automatski će vam poslati obavijest e-poštom ako ne
+        dobijete odgovor u roku. Tada tijelu javne vlasti možete poslati poruku
+        da požure vaš zahtjev i reći im da su u prekršaju odgovorom izvan roka.
+        Više o rokovim za odgovor možete pročitati <a href="https://imamopravoznati.org/help/officers#days">
+        ovdje</a>.
+      </p>
+    </dd>
+    <dt id="no_response">
+      Što ako uopće ne dobijete odgovor?
+      <a href="#no_response">#</a>
+    </dt>
+    <dd>
+    <p>
+      Postoji nekoliko stvari koje možete učiniti ako ne zaprimite odgovor.
+    </p>
+    <ul>
+      <li>
+        <strong>Prvo provjerite je li zahtjev uspješno poslan.</strong> Ako
+        vidite  <a href="https://www.mysociety.org/2016/07/29/the-small-symbol-that-tells-you-all-is-well/?utm_source=imamopravoznati&utm_medium=link" target="_blank">
+        malu zelenu oznaku</a> na stranici zahtjeva, možete biti sigurni da je
+        vaš zahtjev poslan uspješno s naše strane. Vrlo su male šanse da ga
+        odredišni e-mail poslužitelj tijela javne vlasti nije zaprimio. Bez
+        obzira na to, ponekad može doći do drugih problema na njihovoj strani, pa
+        može biti korisno nazvati tijelo javne vlasti i pristojno provjeriti
+        jesu li zaprimili vaš zahtjev. Oni također mogu pitati u kojem je obliku
+        poslan vaš zahtjev: svi zahtjevi na <%= site_name %> šalju se e-poštom.
+      </li>
+      <li>
+        <strong>Ako je uspješno poslan, pošaljite im dodatnu poruku.</strong>
+        Upotrijebite opciju "Napišite odgovor" iz izbornika "Akcije" na svom
+        zahtjevu da biste zatražili potvrdu svog zahtjeva ako nikada nisu
+        odgovorili i potvrdili da je poruka zaprimljena i uvrštena u službeni
+        upisnik.
+      </li>
+      <li>
+        <strong>Ako ga nisu zaprimili,</strong> problem je najvjerojatnije zbog
+        filtera za neželjenu poštu. Uputite tijelo javne vlasti na mjere koje smo
+        naveli u &lsquo;<a href="<%= help_officers_path(:anchor =>
+        'spam_problems') %>">Zahtjev je vidljiv na <%= site_name %>, no nismo ga
+        primili putem e-maila!</a>&rsquo; na stranici pomoći za službenike za
+        informiranje. Ako ne vidite malu zelenu kvačicu na stranici zahtjeva,
+        trebali biste upotrijebiti opciju "Prijavi ovaj zahtjev" iz izbornika
+        "Akcije" kako biste obavijestili o tom probelu našu ekipu za podršku
+        korisnika.
+      </li>
+      <li>
+        <strong>Ako i dalje nema odgovora,</strong> prvo možete zatražiti
+        požurnicu, a zatim se žaliti Povjereniku za informiranje zbog šutnje
+        administracije. Ako uopće ne dobijete odgovor, možete zatražiti pomoć
+        od Povjerenika za informiranje bez čekanja na ishod požurnice. Pročitajte
+        našu stranicu &lsquo;<a href="<%= help_general_path(:template => 'unhappy')
+        %>">Nezadovoljni ste odgovorom koji ste dobili</a>&rsquo;.
+      </li>
+    </ul>
+    </dd>
+    <dt id="not_satifised">
+      Što ako niste zadovoljni odgovorom?
+      <a href="#not_satifised">#</a>
+    </dt>
+    <dd>
+      Ako niste dobili informacije koje ste tražili ili ih niste dobili na
+      vrijeme, pročitajte našu stranicu &lsquo;<a
+      href="<%= help_general_path(:template => 'unhappy') %>">Nezadovoljni ste
+      odgovorom koji ste dobili</a>&rsquo;.
+    </dd>
+    <dt id="reuse">
+      Piše da ne mogu ponovno iskoristiti dobivenu informaciju!
+      <a href="#reuse">#</a>
+    </dt>
+    <dd>
+    <p>
+      Tijela javne vlasti često informacijama dodaju copyright napomenu ili
+      napomenu o poslovnoj tajni koja na prvi pogled implicira da nećete biti u
+      mogućnosti iskoristiti dobivene informacije.
+    </p>
+    <p>
+      Međutim, pažljivo analiziranje zakona je pokazalo da možete pisati članke
+      o informacijama, sažeti ih ili citirati njihove dijelove. Mišljenje je
+      <%= site_name %> da biste trebali moći slobodno objaviti informacije u
+      cijelosti, baš kao što to činimo i mi, iako u teoriji to možda nećete
+      smjeti učiniti: naša <a href="<%= help_officers_path(:anchor => 'copyright') %>">
+      politika o autorskim pravima</a> objašnjava zašto.
+    </p>
+    <p>
+      Ako nije navedeno drukčije, sadržaji javnih skupova podataka regulirani su
+      <a href="https://narodne-novine.nn.hr/clanci/sluzbeni/2017_07_67_1577.html" target="_blank">
+      Pravilnikom o vrstama i sadržaju dozvola kojima se utvrđuju uvjeti ponovne
+      uporabe informacija ("Narodne novine", broj 67/2017.)</a>. Njime je definirano
+      da su informacije za ponovnu uporabu tijela javne vlasti dostupne
+      korisnicima bez ograničenja i za slobodnu uporabu uz otvorenu dozvolu.
+      Otvorena dozvola omogućava korisnicima slobodnu uporabu informacija, u
+      komercijalnu ili nekomercijalnu svrhu, koja uključuje umnožavanje
+      (reproduciranje), distribuiranje, stavljanje na raspolaganje trećima te
+      izmjene uz obavezno navođenje izvora informacije. Dakle, mogu se kopirati,
+      objavljivati, distribuirati, priopćavati javnosti, prerađivati, iskoristiti
+      informacije u komercijalne i nekomercijalne svrhe, kombinirajući ih s drugim
+      informacijama i uvrštavajući ih u svoj proizvod te prenositi bez posebne
+      dozvole uz navođenje izvora (osim u slučaju kada je izričito navedeno da
+      je sadržaj prenesen iz drugog izvora). Ponovna uporaba dopuštena je uz uvjet
+      da bude naveden izvor podataka. Korisnik nema pravo koristiti informacije
+      na način kojim sugerira njihov službeni status niti smije navesti da autor
+      podataka odobrava obrađene informacije od strane građana ili poduzetnika
+      koji je preuzeo informacije. Preuzimanjem informacija za daljnju uporabu,
+      korisnik prihvaća navedene uvjete korištenja. Bez obzira na svrhu ponovne
+      uporabe informacija, korisnik će s njima postupati u dobroj vjeri te nije
+      dozvoljena zlouporaba preuzetih informacija. Nije dozvoljeno korištenje
+      informacija za primjenu ili objavu u svrhu kriminalnih, ilegalnih, rasističkih,
+      diskriminirajućih, klevetničkih, pornografskih, seksističkih ili homofobnih
+      aktivnosti. Međutim, korisnicima se savjetuje da provjere obavijesti o
+      autorskim pravima pojedinih dokumenata i mrežnih stranica na kojima se nalaze.
+    </p>
+    <p>
+      Ukratko, ako su podaci koje ste dobili pod otvorenom dozvolom ili ona nije
+      navedena, možete ih reproducirati pod licencom <strong>Otvorena dozvola</strong>,
+      ali postoje neki uvjeti - provjerite ih na <a href="https://narodne-novine.nn.hr/clanci/sluzbeni/2017_07_67_1577.html" target="_blank">
+      poveznici</a>.
+    </p>
+    </dd>
+    <dt id="ico_help">
+      Možete li mi reći više o samoj srži procesa podnošenja zahtjeva?
+      <a href="#ico_help">#</a>
+    </dt>
+    <dd>
+    <p>
+      Pogledajte o
+      <a href="https://pristupinfo.hr/" target="_blank">pravu na pristup
+      informacijama</a> na službenim internetskim stranicama Povjerenika za
+      informiranje.
+    </p>
+    </dd>
+    <dt id="data_protection">
+      Što ako želim pristupiti informacijama o samome sebi?
+      <a href="#data_protection">#</a>
+    </dt>
+    <dd>
+    <p>
+      Žao nam je, takvu vrstu zahtjeva nije moguće učiniti na ovim stranicama.
+    </p>
+    <p>
+      U slučaju traženja tzv. vlastitih informacija, kao što su primjerice uvid
+      u vlastiti zdravstveni karton, morate znati da se takav zahtjev ostvaruje
+      prema odredbama Zakona o zaštiti prava pacijenata, pa i relevantnih zakona
+      o zaštiti osobnih podataka kao što je Opća uredba o zaštiti podataka -
+      GDPR, a ne temeljem Zakona o pravu na pristup informacijama (ZPPI).
+    </p>
+    <p>
+      Ova internetska stranica ne dopušta takve zahtjeve za osobne informacije,
+      zato što objavljujemo korespondenciju na internetu pa bi svatko mogao
+      vidjeti potencijalno osjetljive i osobne podatke o vama koji mogu biti
+      dostavljeni u osobnim zahtjevima. Službena internetska stranica <a
+      href="https://www.azop.hr/" target="_blank">Agencije za zaštitu osobnih
+      podataka</a> daje savjete o tome kako možete ostvariti svoje pravo ispitanika.
+    </p>
+    <p>
+      Ako primijetite da je netko, možda i nehotice, u zahtjev uključio osobne
+      podatke, <a href="<%= help_contact_path %>">kontaktirajte nas</a> odmah
+      kako bismo ih mogli ukloniti. Pročitajte više u našoj <a
+      href="<%= help_privacy_path(:anchor => 'personal-data-removal') %>">politici privatnosti</a>.
+    </p>
+    </dd>
+    <dt id="private_requests">
+      Želim da moj zahtjev bude tajan! Bar dok ne objavim svoju priču.
+      <a href="#private_requests">#</a>
+    </dt>
+    <dd>
+      <p>
+        <%= site_name %> je dizajniran samo za zahtjeve za pristup javnim
+        informacijama. Svi odgovori koje zaprimimo automatski se objavljuju na
+        internetu kako bi ih svi mogli pročitati.
+      </p>
+      <% if feature_enabled?(:alaveteli_pro) %>
+        <p>
+          Međutim, <%= site_name %><sup>Pro</sup> usluga namjenjena je za novinare,
+          istraživače i aktiviste koja daje mogućnost odgađanja objavljivanja vaših
+          zahtjeva i odgovora. Ako ste novinar, istraživač, aktivist ili netko
+          tko treba podnijeti zahtjev za pristup informacijama koji je barem u
+          početku privatan, <a href="<%= account_request_index_path %>">
+          saznajte više o tome</a>.
+        </p>
+      <% end %>
+    </dd>
+    <dt id="eir">
+      Je li dozvoljeno tražiti informacije o okolišu?
+      <a href="#eir">#</a>
+    </dt>
+    <dd>
+    <p>
+      Informacije o okolišu od iznimnog su javnog interesa, neposredno vezane uz
+      zaštitu zdravlja ljudi, održivi razvoj i kvalitetu života budućih generacija.
+      Stoga mogućnost pristupa okolišnim informacijama neposredno utječe na pravo
+      javnosti da sudjeluje u odlučivanju o određenim djelatnostima vezano za
+      pitanja zaštite okoliša, što predstavlja značajan alat koji građanima daje
+      legitimaciju da budu aktivni sudionici u kreiranju javnih politika koje se
+      odnose na zaštitu okoliša.
+    </p>
+    <p>
+      Zakonom o zaštiti okoliša (NN 80/13, 153/13) (ZZO) posebno je utvrđena obveza
+      tijela javne vlasti glede dostupnosti informacija o okolišu. Tim je Zakonom
+      preuzeta Direktiva 2003/4/EZ o javnom pristupu informacijama o okolišu te
+      je on usklađen s Konvencijom o pristupu informacijama, sudjelovanju
+      javnosti u odlučivanju i pristupu pravosuđu u pitanjima okoliša (Aarhuška
+      konvencija), koja je u Republici Hrvatskoj na snazi od 2007. godine.
+      Podzakonski akt kojim su uređena ta pitanja je Uredba o informiranju i
+      sudjelovanju javnosti i zainteresirane javnosti u pitanjima zaštite okoliša
+      (NN 64/08).
+    </p>
+    <p>
+      U slučaju kada neka tijela javne vlasti ne podliježu Zakonu o pravu na
+      pristup informacijama, ali podliježu pod Zakon o zaštiti okoliša, oni će
+      biti na <a href="https://imamopravoznati.org/body?tag=eir_only">ovom popisu</a>.
+    </p>
+    <p>
+      To je vrlo sličan zakon, pa im upućujete zahtjev koristeći <%= site_name %>
+      na isti način kao i zahtjev za pristup informacijama. Jedina razlika je u
+      tome što vas na stranici na kojoj pišete zahtjev podsjeća da možete tražiti
+      samo "informacije o okolišu" i govori vam što to znači. Prilično je širok.
+    </p>
+    <p>
+      Informacije o okolišu možete, naravno, zatražiti i od svih drugih tijela
+      javne vlasti. Samo podnesite zahtjev za pristup informacijama kao i obično.
+      Tijela su dužna utvrditi primjenjuje li se na vaš zahtjev ZPPI ili ZZO.
+    </p>
+    </dd>
+
+    <dt id="multiple">
+      Želite podnijeti isti zahtjev na više tijela javne vlasti, npr. svim gradovima?
+      <a href="#multiple">#</a>
+    </dt>
+    <dd>
+      <p>
+        To je moguće, pod određenim okolnostima. Pozivamo one koji razmatraju
+        podnošenje zahtjeva velikom broju tijela javen vlasti da pažljivo
+        razmotre je li to opravdano. Treba razmisliti o potencijalnim troškovima
+        koje će takvi zahtjevi stvoriti tijelima javne vlasti, reputaciji zakona
+        za pristup informacijama i <%= site_name %>.org, kao i potencijalnim
+        prednostima objavljivanja informacija.
+      </p>
+      <p>
+        Kada se uvjerite da su vaši skupni zahtjevi valjani i mogu se opravdati,
+        molimo vas da prvo pošaljete probni zahtjev nekolicini tijela. Njihovi
+        odgovori pomoći će vam da poboljšate tekst svog zahtjeva, tako da ćete
+        uvjerljivije dobiti najbolje informacije kad ih budete slali mnoštvu
+        preostalh tijela javne vlasti.
+      </p>
+      <p>
+        Omogućili smo <%= site_name %><sup>Pro</sup> uslugu namjenjenu novinarima,
+        istraživačima i aktivistima koja daje mogućnost slanja skupnih zahtjeva.
+        Ako ste novinar, istraživač, aktivist ili netko tko treba podnijeti mnogo
+        skupnih zahtjeva za pristup informacijama na više tijela istodobno,
+        saznajte više o tome <a href="<%= account_request_index_path %>">
+        u nastavku</a>.
+      </p>
+      <p>
+        Za sve ostale korisnike trenutno nismo u mogućnosti pružiti uslugu
+        automatiziranog slanja zahtjeva većem broju tijela te ga morate
+        pojedinačno kopirati i poslati svakom tijelu.
+      </p>
+      <p>
+        Imajte na umu da postoje automatizirana ograničenja broja zahtjeva koji
+        se u jednom danu mogu poslati putem <%= site_name %>. Oni služe za
+        sprečavanje neželjene pošte i mogu se premostiti
+        <a href="<%= help_contact_path %>">na vaš zahtjev</a>. Prije
+        uklanjanja ograničenja za vaš korisnički račun, naše osoblje dati će vam
+        prijedloge usmjerene na poboljšanje sadržaja zahtjeva, kao što je pravilo
+        da provjerite da li su podaci koje tražite već javno objavljeni ili da li
+        ih čuva centralizirano neko drugo tijelo te finalno da možete potvrditi
+        da podatke ne možete dobiti slanjem zahtjeva na samo jedno tijelo.
+      </p>
+    </dd>
+
+    <dt id="offsite">
+      Kako možete dodati zahtjeve poslane drugim načinima na ovu stranicu?
+      <a href="#offsite">#</a>
+    </dt>
+    <dd>
+      <p>
+        <%= site_name %> je arhiva zahtjeva koji su podneseni putem ove stranice
+        te nema za cilj sadržavati arhivu <i>svih</i> zahtjeva za pristup
+        informacijama.
+      </p>
+      <p>
+        Iz tog razloga ne omogućujemo dodavanje zahtjeva poslanih drugim kanalima
+        poglavito zato što ne bismo bili u mogućnosti provjeriti jesu li odgovori
+        na njih zaista došli od tijela javnih vlasti.
+      </p>
+      <p>
+        Ako vam važno da su vaši zahtjevi vidljivi na internetu, uvijek možete
+        ponoviti slanje istog zahtjeva putem stranice <%= site_name %>.
+      </p>
+    </dd>
+
+    <dt id="attachments">
+      Kako svojoj poruci možete priložiti dokument?
+      <a href="#attachments">#</a>
+    </dt>
+    <dd>
+      <p>
+        Izuzetno je rijetko da zahtjev za pristup informacijama traži da se
+        priloži dokument, pa ne nudimo ovu funkciju. Ako je potrebno, možete
+        prenijeti potreban materijal na druge usluge kao što su flickr.com, Google
+        Docs ili scribd.com, a zatim dodati poveznicu u tijelu zahtjeva. Tamo
+        gdje je mjesto na karti potrebno kao dio zahtjeva, mnoge internetske
+        usluge mapiranja, kao što su Google Maps, omogućuju vam dijeljenje
+        točnih koordinata putem poveznice.
+      </p>
+      <p>
+        Slično tome, ako želite uz svoj zahtjev na <%= site_name %> priložiti
+        komunikaciju s tijelom javne vlasti ili informacije koje ste zaprimili
+        mimo ove stranice, možete to učiniti tako da te materijale učitate
+        na neki od javno dostupnih servisa poput Dropbox, Google Docs, Box.com a
+        poveznicu na te materijale objavite u obliku komentara na stranici ispod
+        vašeg zahtjeva.
+      </p>
+    <dd>
+
+    <dt id="whistleblowers">
+      Imate li savjete za zviždače iz javnog sektora?
+      <a href="#whistleblowers">#</a>
+    </dt>
+    <dd>
+      <p>
+        Ako radite za tijelo javne vlasti i znate informacije kojima bi javnost
+        trebala imati pristup, podnošenje zahtjeva za pristup informacijama putem
+        <%= site_name %> može biti dobar način da takve infromacije donesu u
+        javnu domenu. Sretni smo što ljudi koriste našu uslugu ali ako ste
+        razmišljali o korištenju pseudonima prvo biste trebali <a
+        href="<%= help_privacy_path(:anchor => 'real_names') %>">
+        pročitati naš savjet o upotrebi pseudonima</a>.
+      </p>
+      <p>
+        Zviždači koji žele držati svoj identitet u tajnosti trebali bi poduzeti
+        mjere predostrožnosti te ne bi trebali podnositi zahtjeve sa svog radnog
+        mjesta i ne bi trebali koristiti poslovne adrese e-pošte (moguće je da
+        nam sud može naložiti da objavimo korisničke podatke koje posjedujemo).
+        Možda bi bilo vrijedno da razmotrite korištenje mobilnog interneta, a ne
+        kućnu internetsku vezu ili čak sastavljanje zahtjeva za slanje putem
+        neke druge osobe.
+      </p>
+      <p>
+        Možda biste trebali razmisliti o kreiranju novog korisničkog računa za
+        vaš zviždački zahtjev za pristup informacijama, jer vaša povijest
+        zahtjeva može pomoći ljudima da prate vaše aktivnosti zviždača. Također
+        pogledajte: <a
+        href="https://p10.secure.hostingprod.com/@spyblog.org.uk/ssl/ht4w/2011/06/table-of-contents.html">
+        Hints and Tips for Whistleblowing from Spy Blog</a> i <a href="https://hrdrelocation.eu/">
+        The EU Human Rights Defenders Relocation Platform</a>.
+      </p>
+    <dd>
+    <dt id="moderation">
+      Kako možete dodati komentar?
+      <a href="#moderation">#</a>
+    </dt>
+    <dd>
+      <p>
+        Komentare može dodati bilo tko na bilo koji zahtjev putem izbornika
+        "Akcije" na stranici zahtjeva.
+      </p>
+      <p>
+        Komentari na stranici <%= site_name %> služe kako bi pomogli korisnicima
+        da dođu do informacija koje žele ili im pruže smjernice kamo mogu krenuti
+        kako bi mogli djelovati u skladu s njima. Zadržavamo pravo <a
+        href="<%= help_how_path(:anchor => 'annotation-moderation') %>">ukloniti
+        sve </a>što ne ulazi u okvir navedenog.
+      </p>
+      <p>
+        Beskrajne rasprave o politici nisu dozvoljene. Pročitajte naša
+        <a href="<%= help_house_rules_path
+        %>">pravila ponašanja</a>.
+      </p>
+    </dd>
+  </dl>
+  <p>
+    Dijelovi teksta preuzeti su iz
+    <a href="http://publikacije.imamopravoznati.org?utm_source=imamopravoznati&utm_medium=link">publikacija</a>
+    Povjerenika za informiranje pod Otvorenom dozvolom (NN 67/17).
+  </p>
+  <p><strong>Sljedeće</strong>, pročitajte o <a href="<%= help_privacy_path %>">vašoj privatnosti</a> --&gt;
+  <div id="hash_link_padding"></div>
+</div>

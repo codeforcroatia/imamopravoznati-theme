@@ -1,0 +1,103 @@
+<% @title = "Uključite se" %>
+<%= render :partial => 'sidebar' %>
+<div id="left_column_flip" class="left_column_flip">
+  <h1>
+    <%= @title %>
+  </h1>
+  <dl>
+    <dt id="volunteering">
+      Postanite volonter
+      <a href="#volunteering">#</a>
+    </dt>
+    <dd>
+      <p>
+        Ako volite transparentnost javnih informacija, puno strpljenja i malo
+        slobodnog vremena, razmislite o tome da postanete jedan od <%= site_name %>
+        volontera koji čine osoblje portala. Posao uključuje korisničku podršku,
+        pomoć u rješavanju pravnih problema, oblikovanje pravila i načina
+        upravljanja ovom internetskom stranicom, a prvenstveno komuniciramo putem
+        interneta iz udobnosti doma.
+      </p>
+      <p>
+        Slobodno <a href="<%= help_contact_path %>">nas kontaktirajte</a>.
+      </p>
+    </dd>
+    <dt id="donation">
+      Donirajte nam
+      <a href="#donation">#</a>
+    </dt>
+    <dd>
+      <p>
+        Gong je organizacija civilnog društva koja je nadležna za upravljanje
+        <%= site_name %>. Troškovi ove stranice iznose tisuće kuna mjesečno a
+        oni uključuju trošak poslužitelja, održavanja i razvoj.
+      </p>
+      <p>
+        Vaši doprinosi, čak i za kavu, zaista nam pomažu.
+        <a href="<%= donation_url %>">Donirajte ovdje</a>.
+      </p>
+    </dd>
+    <dt id="tasks">
+      Ocjenite zahtjeve
+      <a href="#tasks">#</a>
+    </dt>
+    <dd>
+      <p>
+        Pomozite prepoznati uspješne zahtjeve i nadgledajte uspješnost tijela
+        javne vlasti kroz <a href="<%= categorise_play_path %>">igru ​​
+        kategorizacije</a>.
+      </p>
+      <p>
+        Ili saznajte adrese e-pošte službenika za informiranje u tijelima javne
+        vlasti <a href="<%=
+        help_requesting_path(:anchor => 'missing_body') %>">koje nam nedostaju</a>.
+      </p>
+    </dd>
+    <dt id="tellpeople">
+      Ispričajte ljudima o <%= site_name %>
+      <a href="#tellpeople">#</a>
+    </dt>
+    <dd>
+      <p>
+        Nemamo proračun za marketing, tako da nam usmena predaja zaista pomaže.
+      </p>
+      <ul>
+        <li>
+          Napišite članak na vašem blogu o <%= site_name %> ili zanimljivom
+          zahtjevu koji ste pronašli.
+        </li>
+        <li>
+          Pišite na forumu i društvenim mrežama koje često posjećujete o ovoj
+          stranici i o važnosti pristupa javnim informacijama.
+        </li>
+        <li>
+          Recite vašim prijateljima o ovoj stranici.
+        </li>
+        <li>
+          Javite svojim lokalnim novinama ili časopisu koliko je ova stranica
+          korisna.
+        </li>
+        <li>
+          Give a talk.
+        </li>
+        <li>
+          <a href="<%= help_contact_path %>">Zatražite od nas</a> letke i
+          ostavite ih u vašoj lokalnoj knjižnici ili kafiću.
+        </li>
+      </ul>
+    </dd>
+    <dt id="code">
+      Poboljšajte naš kod
+      <a href="#code">#</a>
+    </dt>
+    <dd>
+      <p>
+        Jeste li vidjeli nešto što bi moglo bolje raditi? Ako ste programer,
+        uzmite <a href="https://github.com/mysociety/alaveteli/">izvorni kod</a>
+        softvera <a href="http://alaveteli.org/">Alaveteli</a> koji pokreće ovu
+        stranicu i pošaljite pull request. <%= site_name %> je pisan u <a
+        href="http://rubyonrails.org/">Ruby on Rails</a>.
+      </p>
+    </dd>
+  </dl>
+</div>
