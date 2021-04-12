@@ -159,7 +159,10 @@
       <a href="#updates">#</a>
     </dt>
     <dd>
-      Imamo <a href="<%= blog_path %>">blog</a>, a nalazimo se i na društvenim mrežama
+      Imamo
+      <% unless AlaveteliConfiguration::blog_feed.empty? %>
+        <a href="<%= blog_path %>">blog</a>, a nalazimo se i na društvenim mrežama
+      <% end %>
       <a href="https://www.facebook.com/imamopravoznati/">Facebooku</a> i
       <a href="https://www.twitter.com/imamopravoznati/">Twitteru</a>.
     </dd>

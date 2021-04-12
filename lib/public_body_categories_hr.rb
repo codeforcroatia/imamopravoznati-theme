@@ -1,0 +1,57 @@
+# The PublicBodyCategories structure works like this:
+# [
+#   "Main category name",
+#       [ "tag_to_use_as_category", "Sub category title", "sentence that can describes things in this subcategory" ],
+#       [ "another_tag", "Second sub category title", "another descriptive sentence for things in this subcategory"],
+#   "Another main category name",
+#       [ "another_tag_2", "Another sub category title", "another descriptive sentence"]
+# ])
+
+
+PublicBodyCategories.add(:hr, [
+        _"Osnivač",
+            [ "rh", "Republika Hrvatska", "Republika Hrvatska osnivač tijela javne vlasti" ],
+            [ "samouprava", "Jedinica lokalne ili područne samouprave", "Jedinica lokalne ili područne (regionalne) samouprave je osnivač" ],
+            [ "javnopravno-tijelo", "Javnopravno tijelo", "Javnopravno tijelo ili tijelo s prenesenim javnim ovlastima je osnivač tijela javne vlasti" ],
+            [ "pravna-osoba", "Fizička ili privatna pravna osoba", "Fizička ili privatna pravna osoba je osnivač" ],
+        _("Pravni status"),
+            [ "drzavna-tijela", "Državna tijela", "Državna tijela" ],
+            [ "drzavna-uprava", "Tijela državne uprave", "Tijela državne uprave" ],
+            [ "jedinice-samouprave", "Jedinice lokalne ili područne samouprave", "Jedinice lokalne ili područne samouprave" ],
+            [ "sudovi", "Sudovi i pravosudna tijela", "Sudovi i pravosudna tijela" ],
+            [ "agencije", "Agencije, zavodi, fondovi, centri", "Agencije, zavodi, fondovi, centri i druge samostalne pravne osobe s javnim ovlastima" ],
+            [ "javne-ustanove", "Javne ustanove", "Javne ustanove" ],
+            [ "trgovacka-drustva", "Trgovačka društva", "Trgovačka društva" ],
+            [ "udruge", "Udruge", "Udruge i organizacije civilnog društva" ],
+            [ "ostale-pravne-osobe", "Ostale pravne i fizičke osobe", "Ostale pravne i fizičke osobe s prenesenim javnim ovlastima" ],
+        "Djelatnost",
+            [ "javna-uprava-politicki", "Javna uprava i politički sustav", "Javna uprava i politički sustav" ],
+            [ "obrana-sigurnost", "Obrana i nacionalna sigurnost", "Obrana i nacionalna sigurnost" ],
+            [ "javni-red", "Javni red i sigurnost", "Javni red i sigurnost" ],
+            [ "pravosudje", "Pravosuđe", "Pravosuđe" ],
+            [ "javne-financije", "Javne financije", "Javne financije" ],
+            [ "vanjski-poslovi", "Vanjski poslovi", "Vanjski poslovi" ],
+            [ "gospodarstvo", "Gospodarstvo", "Gospodarstvo" ],
+            [ "promet-komunikacije", "Promet i komunikacije", "Promet i komunikacije" ],
+            [ "obrazovanje", "Odgoj, obrazovanje, znanost i sport", "Odgoj, obrazovanje, znanost i sport" ],
+            [ "kultura-umjetnost", "Kultura i umjetnost", "Kultura i umjetnost" ],
+            [ "zaposljavanje", "Zapošljavanje, rad i radni odnosi", "Zapošljavanje, rad i radni odnosi" ],
+            [ "socijalna-zastita", "Socijalna zaštita", "Socijalna zaštita" ],
+            [ "zdravstvo", "Zdravstvo", "Zdravstvo" ],
+            [ "poljoprivreda", "Poljoprivreda, šumarstvo i veterinarstvo", "Poljoprivreda, šumarstvo i veterinarstvo" ],
+            [ "komunalne-usluge", "Komunalne usluge i vodno gospodarstvo", "Komunalne usluge i vodno gospodarstvo" ],
+            [ "okolis", "Zaštita okoliša i održivi razvoj", "Zaštita okoliša i održivi razvoj" ],
+            [ "regionalni-razvoj", "Regionalni razvoj", "Regionalni razvoj" ],
+            [ "turizam", "Turizam", "Turizam" ],
+            [ "statistika-informatika-dokumentacija", "Statistika i informacijsko-dokumentacijska djelatnost", "Statistika i informacijsko-dokumentacijska djelatnost" ],
+            [ "hidrometeorologija", "Hidrometeorološka djelatnost", "Hidrometeorološka djelatnost" ],
+            [ "ostalo", "Ostalo - neklasificirane djelatnosti", "Ostalo - neklasificirane djelatnosti" ],
+        "Ostalo",
+            [ "pravne-osobe-proracun", "Pravne osobe financirane iz proračuna", "Pravne osobe koje se temeljem posebnog propisa financiraju pretežito ili u cijelosti iz državnog proračuna ili iz proračuna jedinica lokalne i područne (regionalne) samouprave odnosno iz javnih sredstava (nameta, davanja, i sl.)" ],
+            [ "defunct", "Neaktivno", "tijelo javne vlasti više nije aktivno" ],
+            [ "internal", "Unutarnje ustrojstvo", "unutarnja ustrojstvena jedinica" ],
+            [ "pending", "Nedodijeljeno", "Pravne osobe koje čekaju potvrdu i uvrštenje ili kategorizaciju na službeni registar službenika za informiranje" ],
+            [ "todo", "To-do", "čeka interni pregled administratora" ],
+            [ "stecaj", "Stečaj", "u stečaju" ]
+    ]
+)

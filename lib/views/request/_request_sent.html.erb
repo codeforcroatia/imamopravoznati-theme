@@ -9,7 +9,7 @@
       <div class="request-sent-message__column-1">
         <p class="subtitle">
           <%= _("<strong>We will email you</strong> when there is a response, or after " \
-                "{{late_number_of_days}} working days if the authority still hasn't " \
+                "{{late_number_of_days}} days if the authority still hasn't " \
                 "replied by then.",
                 :late_number_of_days => AlaveteliConfiguration.reply_late_after_days) %>
         </p>
@@ -24,7 +24,7 @@
                                 :url => request.url,
                                 :via => AlaveteliConfiguration.twitter_username,
                                 :text => "'#{ @info_request.title }'",
-                                :related => _('mySociety:Helping people set ' \
+                                :related => _('Code for Croatia: Helping people set ' \
                                                 'up sites like {{site_name}} ' \
                                                 'all over the world',
                                               :site_name => site_name),
@@ -81,11 +81,11 @@
   </div>
 </div>
 
-<% if Rails.env.production? && AlaveteliConfiguration.domain == 'www.whatdotheyknow.com' %>
+<% if Rails.env.production? && AlaveteliConfiguration.domain == 'SITENAME.org' %>
 <!-- Google Code for WDTK Request Made Conversion Page -->
 <script type="text/javascript">
   /* <![CDATA[ */
-  var google_conversion_id = 1067468161;
+  var google_conversion_id = 100000000;
   var google_conversion_language = "en";
   var google_conversion_format = "3";
   var google_conversion_color = "ffffff";
@@ -97,8 +97,7 @@
 </script>
 <noscript>
   <div style="display:inline;">
-    <img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/1067468161/?label=M3mrCIGb9WQQgYuB_QM&amp;guid=ON&amp;script=0"/>
+    <img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/100000000/?label=M3mrCIGb9WQQgYuB_QM&amp;guid=ON&amp;script=0"/>
   </div>
 </noscript>
 <% end %>
-

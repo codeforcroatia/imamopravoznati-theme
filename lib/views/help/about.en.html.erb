@@ -151,7 +151,10 @@
       <a href="#updates">#</a>
     </dt>
     <dd>
-      We have a <a href="<%= blog_path %>">blog</a> and we’re on
+      We have a
+      <% unless AlaveteliConfiguration::blog_feed.empty? %>
+        <a href="<%= blog_path %>">blog</a> and we’re on
+      <% end %>
       <a href="https://www.facebook.com/imamopravoznati/">Facebook</a> and
       <a href="http://www.twitter.com/imamopravoznati">Twitter</a> too.
     </dd>
