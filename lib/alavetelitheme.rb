@@ -15,16 +15,6 @@ class ActionController::Base
     alias :set_view_paths :set_whatdotheyknow_view_paths
 end
 
-# Prepend the asset directories in this theme to the asset path:
-['stylesheets', 'images', 'javascripts'].each do |asset_type|
-    theme_asset_path = File.join(File.dirname(__FILE__),
-                                 '..',
-                                 'app',
-                                 'assets',
-                                 asset_type)
-    Rails.application.config.assets.paths.unshift theme_asset_path
-end
-
 # Append individual theme assets to the asset path
 theme_asset_path = File.join(File.dirname(__FILE__),
                              '..',
@@ -61,6 +51,23 @@ for patch in ['patch_mailer_paths.rb',
 end
 
 $alaveteli_route_extensions << 'wdtk-routes.rb'
+
+def prepend_theme_assets
+  # Prepend the asset directories in this theme to the asset path:
+  ['stylesheets', 'images', 'javascripts'].each do |asset_type|
+    theme_asset_path = File.join(File.dirname(__FILE__),
+                                 '..',
+                                 'app',
+                                 'assets',
+                                 asset_type)
+
+    Rails.application.config.assets.paths.unshift theme_asset_path
+  end
+end
+
+Rails.application.config.to_prepare do
+  prepend_theme_assets
+end
 
 # Tell FastGettext about the theme's translations: look in the theme's
 # locale-theme directory for a translation in the first place, and if
