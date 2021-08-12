@@ -57,7 +57,7 @@
 
       <li>
         Ako imate poseban slučaj, možete se s vašim pitanjem obratiti
-        <a href="https://diskurs.codeforcroatia.org/c/imamo-pravo-znati/?utm_source=imamopravoznati&utm_medium=link"
+        <a href="https://diskurs.codeforcroatia.org/ipz/?utm_source=imamopravoznati&utm_medium=link"
         title="Imamo pravo znati diskurs zajednica" target="_blank"> <%= site_name %>
         zajednici za pomoć</a>, a osim toga imamo sjajnu ekipu volontera koji
         su uvijek voljni pomoći.
@@ -231,7 +231,7 @@
           sadrži informacije koje tražite. Možete očekivati ​​da će vam pružiti
           savjete i pomoć kako bi vas usmjerili na pravo mjesto ako pogriješite;
           ili ako zapnete, slobodno <a
-          href="https://diskurs.codeforcroatia.org/c/imamo-pravo-znati/?utm_source=imamopravoznati&utm_medium=link"
+          href="https://diskurs.codeforcroatia.org/ipz/?utm_source=imamopravoznati&utm_medium=link"
           title="Imamo pravo znati diskurs zajednica" target="_blank">zamolite
           za pomoć od naše široke zajednice i <%= site_name %> volonterske ekipe</a>.
         </li>
@@ -301,7 +301,7 @@
         <li>
           <strong>Imajte na umu da je sve javno na internetu:</strong> Zato
           pripazite da u svoj zahtjev ne pišete klevetnički sadržaj, poput
-          navoda o nezakonitom ili nasilnom ponašanju. Takav sadržaj ne samo
+          poruka s nezakonitim ili nasilnim sadržajem. Takav sadržaj ne samo
           da može uzrokovati ozbiljne probleme za nas, već i vas može dovesti u
           situaciju da budete kažnjeni, a vaš zahtjev biti će označen kao
           nedopušten - u tom slučaju nećete dobiti informacije koje tražite.
@@ -310,7 +310,7 @@
           <strong>Zatražite proaktivnu objavu:</strong> Kako biste izbjegli da u
           budućnosti ponovno podnosite sličan zahtjev, možda biste trebali
           zatražiti od tijela javne vlasti da razmotre i počnu proaktivno
-          objavljivati podataka na njihovoj internetskoj stranici. U nekim
+          objavljivati podatake na njihovoj internetskoj stranici. U nekim
           slučajevima, gdje se primjenjuju odredbe zakona za pristup informacijama
           u dijelu o registrima ili sličnim skupovima podataka, tijela javne
           vlasti dužna su proaktivno objaviti takve podatke na internetu.
@@ -519,7 +519,7 @@
         primili putem e-maila!</a>&rsquo; na stranici pomoći za službenike za
         informiranje. Ako ne vidite malu zelenu kvačicu na stranici zahtjeva,
         trebali biste upotrijebiti opciju "Prijavi ovaj zahtjev" iz izbornika
-        "Akcije" kako biste obavijestili o tom probelu našu ekipu za podršku
+        "Akcije" kako biste obavijestili o tom problemu našu ekipu za podršku
         korisnika.
       </li>
       <li>
@@ -708,7 +708,7 @@
     <dd>
       <p>
         To je moguće, pod određenim okolnostima. Pozivamo one koji razmatraju
-        podnošenje zahtjeva velikom broju tijela javen vlasti da pažljivo
+        podnošenje zahtjeva velikom broju tijela javne vlasti da pažljivo
         razmotre je li to opravdano. Treba razmisliti o potencijalnim troškovima
         koje će takvi zahtjevi stvoriti tijelima javne vlasti, reputaciji zakona
         za pristup informacijama i <%= site_name %>.org, kao i potencijalnim
@@ -721,6 +721,7 @@
         uvjerljivije dobiti najbolje informacije kad ih budete slali mnoštvu
         preostalh tijela javne vlasti.
       </p>
+      <% if feature_enabled?(:alaveteli_pro) %>
       <p>
         Omogućili smo <%= site_name %><sup>Pro</sup> uslugu namjenjenu novinarima,
         istraživačima i aktivistima koja daje mogućnost slanja skupnih zahtjeva.
@@ -729,6 +730,7 @@
         saznajte više o tome <a href="<%= account_request_index_path %>">
         u nastavku</a>.
       </p>
+      <% end %>
       <p>
         Za sve ostale korisnike trenutno nismo u mogućnosti pružiti uslugu
         automatiziranog slanja zahtjeva većem broju tijela te ga morate
@@ -763,7 +765,7 @@
         na njih zaista došli od tijela javnih vlasti.
       </p>
       <p>
-        Ako vam važno da su vaši zahtjevi vidljivi na internetu, uvijek možete
+        Ako vam je važno da su vaši zahtjevi vidljivi na internetu, uvijek možete
         ponoviti slanje istog zahtjeva putem stranice <%= site_name %>.
       </p>
     </dd>
@@ -786,7 +788,7 @@
         Slično tome, ako želite uz svoj zahtjev na <%= site_name %> priložiti
         komunikaciju s tijelom javne vlasti ili informacije koje ste zaprimili
         mimo ove stranice, možete to učiniti tako da te materijale učitate
-        na neki od javno dostupnih servisa poput Dropbox, Google Docs, Box.com a
+        na neki od javno dostupnih servisa poput Dropbox, Google Drive, Box.com a
         poveznicu na te materijale objavite u obliku komentara na stranici ispod
         vašeg zahtjeva.
       </p>
@@ -803,7 +805,7 @@
         <%= site_name %> može biti dobar način da takve infromacije donesu u
         javnu domenu. Sretni smo što ljudi koriste našu uslugu ali ako ste
         razmišljali o korištenju pseudonima prvo biste trebali <a
-        href="<%= help_privacy_path(:anchor => 'real_names') %>">
+        href="<%= help_privacy_path(:anchor => 'real_name') %>">
         pročitati naš savjet o upotrebi pseudonima</a>.
       </p>
       <p>
@@ -839,7 +841,7 @@
         da dođu do informacija koje žele ili im pruže smjernice kamo mogu krenuti
         kako bi mogli djelovati u skladu s njima. Zadržavamo pravo <a
         href="<%= help_how_path(:anchor => 'annotation-moderation') %>">ukloniti
-        sve </a>što ne ulazi u okvir navedenog.
+        sve</a> što ne ulazi u okvir navedenog.
       </p>
       <p>
         Beskrajne rasprave o politici nisu dozvoljene. Pročitajte naša

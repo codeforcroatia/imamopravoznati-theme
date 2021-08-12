@@ -89,7 +89,7 @@
       </p>
       <p>
         Ako smatrate da zahtjev nije prikladan, možete ga prijaviti
-        administratorima ove internetske stranice.
+        administratorima.
       </p>
     </dd>
     <dt id="reporting_unavailable">
@@ -159,12 +159,13 @@
       <a href="#updates">#</a>
     </dt>
     <dd>
-      Imamo
-      <% unless AlaveteliConfiguration::blog_feed.empty? %>
-        <a href="<%= blog_path %>">blog</a>, a nalazimo se i na društvenim mrežama
-      <% end %>
+      Nalazimo se na društvenim mrežama
       <a href="https://www.facebook.com/imamopravoznati/">Facebooku</a> i
-      <a href="https://www.twitter.com/imamopravoznati/">Twitteru</a>.
+      <a href="https://www.twitter.com/imamopravoznati/">Twitteru</a>
+      <% unless AlaveteliConfiguration::blog_feed.empty? %>
+        a imamo i <a href="<%= blog_path %>">blog</a>
+      <% end %>
+      .
     </dd>
   </dl>
   <p>
