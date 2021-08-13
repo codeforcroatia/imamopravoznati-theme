@@ -96,6 +96,37 @@
     </div>
 
 
+    <h2 class="contact-page__goal" id="writing-help">
+        <label class="houdini-label" for="goal4">
+            Želite da <strong>netko drugi pošalje vaš zahtjev za pravo na pristup
+            informacija</strong>.
+        </label>
+    </h2>
+
+    <input class="houdini-input" type="radio" name="goals" id="goal4"
+        <% if params["contact"] && params[:current_form] == 'writing-help' %>checked<% end %>>
+    <div class="houdini-target contact-page__options">
+        <ul>
+            <li>
+                Ukoliko posjedujete unutarnje informacije od važnosti a ne možete
+                ih sami objaviti, pročitajte naše
+                <a href="https://imamopravoznati.org/help/requesting#whistleblowers">
+                  savjete za zviždače iz javnog sektora</a>.
+            </li>
+            <li>
+                Pošaljite nam <a href="https://forms.gle/udwDqgPPfEVygzW6A" target="_blank">
+                  anonimnu prijavu putem obrasca</a> i netko drugi će poslati vaš zahtjev.
+            </li>
+            <!-- <li>
+                Ili izravno stupite u kontakt s volonterima koji administriraju <%= site_name %>:
+
+                ... contact form here ...
+
+            </li> -->
+        </ul>
+    </div>
+
+
     <h2 class="contact-page__goal" id="wdtk">
         <label class="houdini-label" for="goal3">
             Imam neki drugi problem ili povratnu informaciju vezanu uz
