@@ -46,7 +46,7 @@
             <div class="mysoc-footer__orgs">
                 <p class="mysoc-footer__org">
                     S ljubavlju
-                    <a href="https://codeforcroatia.org?utm_source=imamopravoznati&amp;utm_content=footer+logo&amp;utm_medium=link&amp;utm_campaign=cfc_footer" class="mysoc-footer__org__logo mysoc-footer__org__logo--mysociety">Code for Croatia</a>
+                    <a href="https://codeforcroatia.org?utm_source=imamopravoznati&amp;utm_content=footer+logo&amp;utm_medium=link&amp;utm_campaign=cfc_footer" target="_blank" class="mysoc-footer__org__logo mysoc-footer__org__logo--mysociety">Code for Croatia</a>
                 </p>
             </div>
         </div>
@@ -54,7 +54,7 @@
         <div class="col-sm-4">
             <div class="mysoc-footer__legal">
                 <p>
-                    <a href="https://codeforcroatia.org?utm_source=imamopravoznati&amp;utm_content=footer+full+legal+details&amp;utm_medium=link&amp;utm_campaign=cfc_footer">Code for Croatia</a>
+                    <a href="https://codeforcroatia.org?utm_source=imamopravoznati&amp;utm_content=footer+full+legal+details&amp;utm_medium=link&amp;utm_campaign=cfc_footer" target="_blank">Code for Croatia</a>
                     je nacionalna mreža koja udružuje građane, dizajnere,
                     developere i mlade poduzetnike da grade stvari koje
                     doprinose poboljšavanju javnih platformi za građane.
@@ -64,14 +64,14 @@
 
         <div class="col-sm-3">
             <ul class="mysoc-footer__badges">
-                <li role="presentation"><a href="https://github.com/codeforcroatia/imamopravoznati-theme" class="mysoc-footer__badge mysoc-footer__badge--github">Github</a></li>
+                <li role="presentation"><a href="https://github.com/codeforcroatia/imamopravoznati-theme" target="_blank" class="mysoc-footer__badge mysoc-footer__badge--github">Github</a></li>
               <% unless AlaveteliConfiguration::twitter_username.blank? %>
                 <li role="presentation">
-                  <a href="https://twitter.com/<%= AlaveteliConfiguration::twitter_username %>" class="mysoc-footer__badge mysoc-footer__badge--twitter" onclick="<%= track_analytics_event(AnalyticsEvent::Category::OUTBOUND, AnalyticsEvent::Action::TWITTER_EXIT, :label => 'Footer link')%>">@<%= AlaveteliConfiguration::twitter_username %></a>
+                  <a href="https://twitter.com/<%= AlaveteliConfiguration::twitter_username %>" target="_blank" class="mysoc-footer__badge mysoc-footer__badge--twitter" onclick="<%= track_analytics_event(AnalyticsEvent::Category::OUTBOUND, AnalyticsEvent::Action::TWITTER_EXIT, :label => 'Footer link')%>">@<%= AlaveteliConfiguration::twitter_username %></a>
                 </li>
               <% end %>
               <% unless AlaveteliConfiguration::facebook_username.blank? %>
-                <li role="presentation"><a href="https://facebook.com/programirajzahrvatsku" class="mysoc-footer__badge mysoc-footer__badge--facebook" onclick="<%= track_analytics_event(AnalyticsEvent::Category::OUTBOUND, AnalyticsEvent::Action::FACEBOOK_EXIT, :label => 'Footer link')%>">Facebook</a></li>
+                <li role="presentation"><a href="https://facebook.com/programirajzahrvatsku" target="_blank" class="mysoc-footer__badge mysoc-footer__badge--facebook" onclick="<%= track_analytics_event(AnalyticsEvent::Category::OUTBOUND, AnalyticsEvent::Action::FACEBOOK_EXIT, :label => 'Footer link')%>">Facebook</a></li>
               <% end %>
             </ul>
         </div>
