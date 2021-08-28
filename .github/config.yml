@@ -4,4 +4,4 @@ contact_links:
     about: Please use Transifex to fix text issues in the ImamoPravoZnati theme.
   - name: IPZ Middleware Issues
     url: https://github.com/codeforcroatia/imamopravoznati/issues
-    about: Any non-theme issue should be raised and tracked in 'imamopravoznati' middleware repository.
+    about: Any non-theme issue should be raised and tracked in ImamoPravoZnati middleware repository.
