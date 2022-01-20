@@ -31,7 +31,7 @@ Rails.configuration.to_prepare do
           :password => password,
           :password_confirmation => password,
           :address => 'Generated in User.internal_admin_user',
-          :dob => '12345678901'
+          :national_id_number => '12345678901'
         )
         user.save!
       end
