@@ -11,15 +11,11 @@
     <% end %>
   </div>
 <% end %>
-<% if !@show_about_me && @is_you && @display_user.active? %>
-  <div class="user_about_me">
-    <% if @is_you %>
+<% if @is_you %>
       <h4><%= _("Address") %><h4>
       <pre><%= @display_user.address if !@display_user.address.nil? %></pre>
       <h4><%= _("Personal identification number") %><h4>
       <pre><%=l @display_user.national_id_number if !@display_user.national_id_number.nil? %></pre>
-    <% end %>
-  </div>
 <% end %>
 <% if @is_you && @display_user.active? %>
   <p id="user_change_password_email" class="user_change_password_email">
