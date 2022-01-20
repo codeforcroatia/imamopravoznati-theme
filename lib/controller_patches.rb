@@ -122,6 +122,49 @@ Rails.configuration.to_prepare do
 
 
 
+  AdminRequestController.class_eval do
+
+    def generate_upload_url
+
+      if params[:incoming_message_id]
+        incoming_message = IncomingMessage.find(params[:incoming_message_id])
+        email = incoming_message.from_email
+        name = incoming_message.safe_mail_from || @info_request.public_body.name
+      else
+        email = @info_request.public_body.request_email
+        name = @info_request.public_body.name
+      end
+
+      user = User.find_user_by_email(email)
+      if not user
+        user = User.new(:name => name,
+                        :email => email,
+                        :password => PostRedirect.generate_random_token,
+                        :address => 'Generated in generate_upload_url',
+                        :national_id_number => '12345678901')
+        user.save!
+      end
+
+      if !@info_request.public_body.is_foi_officer?(user)
+        flash[:notice] = user.email + " is not an email at the domain @" + @info_request.public_body.foi_officer_domain_required + ", so won't be able to upload."
+        redirect_to admin_request_url(@info_request)
+        return
+      end
+
+      post_redirect = PostRedirect.new(
+        :uri => upload_response_url(:url_title => @info_request.url_title),
+        :user_id => user.id)
+      post_redirect.save!
+      url = confirm_url(:email_token => post_redirect.email_token)
+
+      flash[:notice] = ("Send \"#{CGI.escapeHTML(name)}\" &lt;<a href=\"mailto:#{email}\">#{email}</a>&gt; this URL: <a href=\"#{url}\">#{url}</a> - it will log them in and let them upload a response to this request.").html_safe
+      redirect_to admin_request_url(@info_request)
+    end
+
+  end
+
+
+
   RequestController.class_eval do
     before_action :check_spam_terms, only: [:new]
 
