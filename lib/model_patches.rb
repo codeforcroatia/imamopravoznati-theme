@@ -6,12 +6,37 @@
 # See http://stackoverflow.com/questions/7072758/plugin-not-reloading-in-development-mode
 #
 Rails.configuration.to_prepare do
-    ReplyToAddressValidator.invalid_reply_addresses = %w(
-      FOIResponses@homeoffice.gsi.gov.uk
-      FOIResponses@homeoffice.gov.uk
-      autoresponder@sevenoaks.gov.uk
-      H&FInTouch@lbhf.gov.uk
-    )
+    User.class_eval do
+    validates :address, :presence => {
+      :message => _('You must enter an address.')
+    }
+
+    validates :address, :length => {
+      :maximum => 255,
+      :message => _('255 characters is the maximum allowed address length.')
+    }
+
+    validate :validate_national_id_number
+
+    def self.internal_admin_user
+      user = User.find_by_email(AlaveteliConfiguration::contact_email)
+      if user.nil?
+        password = PostRedirect.generate_random_token
+        user = User.new(
+          :name => 'Internal admin user',
+          :email => AlaveteliConfiguration.contact_email,
+          :password => password,
+          :password_confirmation => password,
+          :address => 'Generated in User.internal_admin_user',
+          :national_id_number => '12345678901'
+        )
+        user.save!
+      end
+
+      user
+    end
+
+    private
 
     User.class_eval do
         # Return this user’s survey
