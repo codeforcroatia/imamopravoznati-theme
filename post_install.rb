@@ -1,8 +1,5 @@
 # This file is executed in the Rails environment by rails-post-install
 
-# Create any necessary global Censor rules
-require File.expand_path(File.dirname(__FILE__) + '/lib/censor_rules')
-
 # Create PIN and address for users db
 def column_exists?(table, column)
   # XXX ActiveRecord 3 includes "column_exists?" method on `connection`
@@ -11,5 +8,8 @@ end
 
 if !column_exists?(:users, :national_id_number) || !column_exists?(:users, :address)
   require File.expand_path '../db/migrate/ipz_add_address_and_pin_to_user', __FILE__
-  IpzAddAddressAndDobToUser.up
+  IpzAddAddressAndPinToUser.up
 end
+
+# Create any necessary global Censor rules
+require File.expand_path(File.dirname(__FILE__) + '/lib/censor_rules')

@@ -8,7 +8,7 @@ rule = CensorRule.find_by_text(regexp)
 if rule.nil?
   Rails.logger.info("Creating new censor rule: /#{regexp}/")
   CensorRule.create!(:text => regexp,
-                     :replacement => '[redacted]',
+                     :replacement => '[osobni podaci]',
                      :regexp => true,
                      :last_edit_editor => 'system',
                      :last_edit_comment => 'Created automatically by imamopravoznati-theme #21')
