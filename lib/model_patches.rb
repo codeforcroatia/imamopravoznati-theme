@@ -16,7 +16,10 @@ Rails.configuration.to_prepare do
       :message => _('255 characters is the maximum allowed address length.')
     }
 
-    validate :validate_national_id_number
+    validates :national_id_number, :length => {
+      :minimum => 11,
+      :message => _('PIN number should have 11 numbers.')
+    }
 
     def self.internal_admin_user
       user = User.find_by_email(AlaveteliConfiguration::contact_email)
@@ -38,10 +41,5 @@ Rails.configuration.to_prepare do
 
     private
 
-    def validate_national_id_number
-      if !national_id_number.is_a? Integer
-        errors.add(:national_id_number, _("You have not entered a valid identification number.")) if ((Integer.parse(national_id_number) rescue ArgumentError) == ArgumentError)
-      end
-    end
   end
 end
