@@ -55,6 +55,73 @@ Rails.configuration.to_prepare do
   end
 
 
+
+  # Adding an instance variable to the frontpage controller for Profile - personal data
+  UserController.class_eval do
+
+    def signchangeaddress
+      if not authenticated?(
+            :web => _("To change your address used on {{site_name}}",:site_name=>site_name),
+            :email => _("Then you can change your address used on {{site_name}}",:site_name=>site_name),
+            :email_subject => _("Change your address used on {{site_name}}",:site_name=>site_name)
+           )
+        # "authenticated?" has done the redirect to signin page for us
+        return
+      end
+
+      if !params[:submitted_signchangeaddress_do]
+        render :action => 'signchangeaddress'
+        return
+      else
+        logger.debug @user.address = params[:signchangeaddress][:new_address]
+        if not @user.valid?
+          @signchangeaddress = @user
+          render :action => 'signchangeaddress'
+        else
+          @user.save!
+          # Now clear the circumstance
+          flash[:notice] = _("You have now changed your address used on {{site_name}}",:site_name=>site_name)
+          redirect_to user_url(@user)
+        end
+      end
+    end
+
+    def signchangepin
+      if not authenticated?(
+            :web => _("To change your PIN used on {{site_name}}",:site_name=>site_name),
+            :email => _("Then you can change your PIN used on {{site_name}}",:site_name=>site_name),
+            :email_subject => _("Change your PIN used on {{site_name}}",:site_name=>site_name)
+           )
+        # "authenticated?" has done the redirect to signin page for us
+        return
+      end
+
+      if !params[:submitted_signchangepin_do]
+        render :action => 'signchangepin'
+        return
+      else
+        @user.national_id_number = params[:signchangepin][:national_id_number]
+        if not @user.valid?
+          @signchangepin = @user
+          render :action => 'signchangepin'
+        else
+          @user.save!
+          # Now clear the circumstance
+          flash[:notice] = _("You have now changed your PIN used on {{site_name}}",:site_name=>site_name)
+          redirect_to user_url(@user)
+        end
+      end
+    end
+
+    # Add our extra params to the sanitized list allowed at signup
+    def user_params(key = :user)
+      params.require(key).permit(:name, :email, :password, :password_confirmation, :national_id_number, :address)
+    end
+
+  end
+
+
+
   RequestController.class_eval do
     before_action :check_spam_terms, only: [:new]
 

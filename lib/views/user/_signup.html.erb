@@ -18,16 +18,19 @@
 
     <p>
       <label class="form_label" for="user_signup_address"><%= _('Your address:') %></label>
-      <%= text_area 'user_signup', 'address', { :cols => 20, :rows => 3, :tabindex => 20 } %>
+      <%= text_area 'user_signup', 'address', { :size => 20, :rows => 3, :tabindex => 20 } %>
     </p>
+
     <div class="form_item_note">
         <%= _('Your address will be sent to authorities when you make a request.  ' \
               'We will not reveal your address on the website.') %>
     </div>
+
     <p>
       <label class="form_label" for="user_signup_pin"><%= _('Your PIN:') %></label>
       <%= text_field 'user_signup', 'national_id_number', { :size => 20, :tabindex => 30 } %>
     </p>
+
     <div class="form_item_note">
       <%= _('Your PIN will also be sent to authorities when you make a request.  ' \
             'We will not reveal your PIN on the website.') %>
