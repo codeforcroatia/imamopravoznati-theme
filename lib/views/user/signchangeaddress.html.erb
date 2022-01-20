@@ -11,7 +11,7 @@
     </div>
 
     <label class="form_label" for="signchangeaddress_new_address"> <%= _('New address:')%></label>
-    <%= text_area 'signchangeaddress', 'new_address', { :cols => 20, :rows => 6, :value => @user.address } %>
+    <%= text_area 'signchangeaddress', 'new_address', { :cols => 40, :rows => 3, :value => @user.address } %>
 
     <div class="form_button">
     <%= hidden_field_tag 'submitted_signchangeaddress_do', 1 %>
