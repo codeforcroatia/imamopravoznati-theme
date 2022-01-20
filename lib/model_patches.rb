@@ -40,7 +40,7 @@ Rails.configuration.to_prepare do
 
     def validate_national_id_number
       if !national_id_number.is_a? Integer
-        errors.add(:national_id_number, _("You have not entered a valid identification number."))
+        errors.add(:national_id_number, _("You have not entered a valid identification number.")) if ((Integer.parse(national_id_number) rescue ArgumentError) == ArgumentError)
       end
     end
   end
