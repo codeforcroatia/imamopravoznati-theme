@@ -12,9 +12,7 @@
 
     <label class="form_label" for="signchangeaddress_new_address"> <%= _('New address:')%></label>
     <%= text_area 'signchangeaddress', 'new_address', { :cols => 20, :rows => 6, :value => @user.address } %>
-    </p>
 
-    <p>
     <div class="form_button">
     <%= hidden_field_tag 'submitted_signchangeaddress_do', 1 %>
     <%= submit_tag _("Change address on {{site_name}}", :site_name=>site_name) %>
