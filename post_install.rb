@@ -1,7 +1,8 @@
 # This file is executed in the Rails environment by rails-post-install
 
 # DB migration
-def column_exists?(table, coldes "column_exists?" method on `connection`
+def column_exists?(table, column)
+    # "column_exists?" method on `connection`
     return ActiveRecord::Base.connection.columns(table.to_sym).collect{|c| c.name.to_sym}.include? column
 end
 
