@@ -1,4 +1,4 @@
-class IpzThemeAddExtraFieldsToUser < ActiveRecord::Migration
+class IpzThemeAddExtraFieldsToUser < ActiveRecord::Migration[4.2]
   def self.up
     add_column :users, :user_type, :string
 
