@@ -86,11 +86,18 @@
         <ul>
             <li>
                 Izravno kontaktirajte volontere koji administriraju <%= site_name %>:
+                <% if !@user %>
+                  <%= link_to _("Sign in or sign up"), signin_path(:r => request.fullpath)  %>
+                  or <a href="https://codeforcroatia.org/ipz-forum" target="_blank">
+                  postavite vaše pitanje</a> na našu diskurs zajednicu.
+                <% end %>
 
-                <%= foi_error_messages_for :contact %>
+                <% if @user %>
+                  <%= foi_error_messages_for :contact %>
 
-                <%= render :partial => "help/contact_form",
-                           :locals => { :form_id => 'writing-help' } %>
+                  <%= render :partial => "help/contact_form",
+                             :locals => { :form_id => 'writing-help' } %>
+                <% end %>
             </li>
         </ul>
     </div>
@@ -153,12 +160,19 @@
                     Ako vaš problem nije pokriven našim stranicama pomoći,
                     možete se izravno obratiti volonterima koji administriraju
                     <%= site_name %>:
+                    <% if !@user %>
+                      <%= link_to _("Sign in or sign up"), signin_path(:r => request.fullpath)  %>
+                      or <a href="https://codeforcroatia.org/ipz-forum" target="_blank">
+                      postavite vaše pitanje</a> na našu diskurs zajednicu.
+                    <% end %>
                 <% end %>
 
-                <%= foi_error_messages_for :contact %>
+                <% if @user %>
+                  <%= foi_error_messages_for :contact %>
 
-                <%= render :partial => "help/contact_form",
-                           :locals => { :form_id => 'wdtk' } %>
+                  <%= render :partial => "help/contact_form",
+                             :locals => { :form_id => 'wdtk' } %>
+                <% end %>
             </li>
         </ul>
     </div>

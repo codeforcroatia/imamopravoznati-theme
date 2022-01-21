@@ -81,11 +81,18 @@
         <ul>
             <li>
                 Directly contact the volunteers who run <%= site_name %>:
+                <% if !@user %>
+                  <%= link_to _("Sign in or sign up"), signin_path(:r => request.fullpath)  %>
+                  or <a href="https://codeforcroatia.org/ipz-forum" target="_blank">
+                  post your question</a> to our discourse community.
+                <% end %>
 
-                <%= foi_error_messages_for :contact %>
+                <% if @user %>
+                  <%= foi_error_messages_for :contact %>
 
-                <%= render :partial => "help/contact_form",
-                           :locals => { :form_id => 'writing-help' } %>
+                  <%= render :partial => "help/contact_form",
+                             :locals => { :form_id => 'writing-help' } %>
+                <% end %>
             </li>
         </ul>
     </div>
@@ -149,7 +156,9 @@
                     If your issue isn’t covered by our help pages, you can
                     directly contact the volunteers who run <%= site_name %>:
                     <% if !@user %>
-                      <%= link_to _("Sign in or sign up"), signin_path(:r => request.fullpath), :class => "sign_in_link"  %>
+                      <%= link_to _("Sign in or sign up"), signin_path(:r => request.fullpath)  %>
+                      or <a href="https://codeforcroatia.org/ipz-forum" target="_blank">
+                      post your question</a> to our discourse community.
                     <% end %>
                 <% end %>
 
