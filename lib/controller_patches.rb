@@ -15,6 +15,128 @@ Rails.configuration.to_prepare do
     end
   end
 
+  # Custom fields requestor details
+  UserController.class_eval do
+      def signchangeaddress
+          if not authenticated?(
+                  :web => _("To change your address used on {{site_name}}",:site_name=>site_name),
+                  :email => _("Then you can change your address used on {{site_name}}",:site_name=>site_name),
+                  :email_subject => _("Change your address used on {{site_name}}",:site_name=>site_name)
+                 )
+              # "authenticated?" has done the redirect to signin page for us
+              return
+          end
+
+          if !params[:submitted_signchangeaddress_do]
+              render :action => 'signchangeaddress'
+              return
+          else
+              @user.address = params[:signchangeaddress][:new_address]
+              if not @user.valid?
+                  @signchangeaddress = @user
+                  render :action => 'signchangeaddress'
+              else
+                  @user.save!
+
+                  # Now clear the circumstance
+                  flash[:notice] = _("You have now changed your address used on {{site_name}}",:site_name=>site_name)
+                  redirect_to user_url(@user)
+              end
+          end
+      end
+
+      def signchangenationalid
+          if not authenticated?(
+                  :web => _("To change your national ID number used on {{site_name}}",:site_name=>site_name),
+                  :email => _("Then you can change your national ID number used on {{site_name}}",:site_name=>site_name),
+                  :email_subject => _("Change your national ID number used on {{site_name}}",:site_name=>site_name)
+                 )
+              # "authenticated?" has done the redirect to signin page for us
+              return
+          end
+
+          if !params[:submitted_signchangenationalid_do]
+              render :action => 'signchangenationalid'
+              return
+          else
+              @user.national_id_number = params[:signchangenationalid][:new_national_id]
+              if not @user.valid?
+                  @signchangenationalid = @user
+                  render :action => 'signchangenationalid'
+              else
+                  @user.save!
+
+                  # Now clear the circumstance
+                  flash[:notice] = _("You have now changed your national ID number used on {{site_name}}",:site_name=>site_name)
+                  redirect_to user_url(@user)
+              end
+          end
+      end
+
+      def signchangecompanyname
+          if not authenticated?(
+                  :web => _("To change your company name used on {{site_name}}",:site_name=>site_name),
+                  :email => _("Then you can change your company name used on {{site_name}}",:site_name=>site_name),
+                  :email_subject => _("Change your company name used on {{site_name}}",:site_name=>site_name)
+                 )
+              # "authenticated?" has done the redirect to signin page for us
+              return
+          end
+
+          if !params[:submitted_signchangecompanyname_do]
+              render :action => 'signchangecompanyname'
+              return
+          else
+              @user.company_name = params[:signchangecompanyname][:new_company_name]
+              if not @user.valid?
+                  @signchangecompanyname = @user
+                  render :action => 'signchangecompanyname'
+              else
+                  @user.save!
+                  # Now clear the circumstance
+                  flash[:notice] = _("You have now changed your company name used on {{site_name}}",:site_name=>site_name)
+                  redirect_to user_url(@user)
+              end
+          end
+      end
+
+      def signchangecompanynumber
+          if not authenticated?(
+                  :web => _("To change your company number used on {{site_name}}",:site_name=>site_name),
+                  :email => _("Then you can change your company number used on {{site_name}}",:site_name=>site_name),
+                  :email_subject => _("Change your company number used on {{site_name}}",:site_name=>site_name)
+                 )
+              # "authenticated?" has done the redirect to signin page for us
+              return
+          end
+
+          if !params[:submitted_signchangecompanynumber_do]
+              render :action => 'signchangecompanynumber'
+              return
+          else
+              @user.company_number = params[:signchangecompanynumber][:new_company_number]
+              if not @user.valid?
+                  @signchangecompanynumber = @user
+                  render :action => 'signchangecompanynumber'
+              else
+                  @user.save!
+                  # Now clear the circumstance
+                  flash[:notice] = _("You have now changed your company number used on {{site_name}}",:site_name=>site_name)
+                  redirect_to user_url(@user)
+              end
+          end
+      end
+
+      def user_params(key = :user)
+          # Override user_params whitelist to allow our additional fields
+          params[key].slice(:name, :email, :password, :password_confirmation,
+                            :user_type, :address, :national_id_number,
+                            :company_name, :company_number)
+      end
+  end
+
+
+
   Users::MessagesController.class_eval do
 
     private

@@ -1,0 +1,46 @@
+<% if !@display_user.get_about_me_for_html_display.empty? || @is_you %>
+    <div class="user_about_me">
+         <%= image_tag "navimg/quote-open.png", :class => "comment_quote" %>
+        <%= @display_user.get_about_me_for_html_display %>
+        <% if @is_you %>
+            (<%= link_to _("edit text about you"), set_profile_about_me_path %>)
+        <% end %>
+<% if @is_you %>
+        <h4><%= _("Contact Phone Number") %><h4>
+        <pre><%= @display_user.phone_number if !@display_user.phone_number.strip.empty? %></pre>
+        <% if @display_user.user_type == "individual" %>
+            <h4><%= _("National ID Number") %><h4>
+            <pre><%= @display_user.national_id_number if !@display_user.national_id_number.strip.empty? %></pre>
+
+            <h4><%= _("Address") %><h4>
+            <pre><%= @display_user.address if !@display_user.address.strip.empty? %></pre>
+        <% else %>
+            <h4><%= _("Company Name") %><h4>
+            <pre><%= @display_user.company_name if !@display_user.company_name.strip.empty? %></pre>
+
+            <h4><%= _("Company Number") %><h4>
+            <pre><%= @display_user.company_number if !@display_user.company_number.strip.empty? %></pre>
+
+            <h4><%= _("Incorporation Date") %><h4>
+            <pre><%=l @display_user.incorporation_date if !@display_user.incorporation_date.nil? %></pre>
+        <% end %>
+      <% end %>
+    </div>
+<% end %>
+<% if @is_you %>
+    <p id="user_change_password_email">
+        <% if @display_user.profile_photo %>
+            <%= link_to _('Change profile photo'), set_profile_photo_path %> |
+        <% end %>
+        <%= link_to _('Change your password'), new_password_change_path %> |
+        <%= link_to _('Change your email'), signchangeemail_path %> |
+
+        <% if @display_user.is_individual? %>
+            <%= link_to _('Change your national ID number'), signchangenationalid_path %> |
+            <%= link_to _('Change your address'), signchangeaddress_path %>
+        <% else %>
+            <%= link_to _('Change your company name'), signchangecompanyname_path %> |
+            <%= link_to _('Change your company number'), signchangecompanynumber_path %>
+        <% end %>
+    </p>
+<% end %>
