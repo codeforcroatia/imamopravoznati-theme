@@ -6,7 +6,7 @@ def column_exists?(table, column)
     return ActiveRecord::Base.connection.columns(table.to_sym).collect{|c| c.name.to_sym}.include? column
 end
 
-# add the Panama-specific fields to the User model
+# add the specific fields to the User model
 if !column_exists?(:users, :national_id_number)
     require File.expand_path '../db/migrate/ipz_add_extra_fields_to_user', __FILE__
     IpzThemeAddExtraFieldsToUser.up
