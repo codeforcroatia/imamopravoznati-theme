@@ -1,24 +1,42 @@
+Zahtjev za pristup informacijama u smislu Zakona o pravu na pristup informacijama NN 25/13, 85/15.
+
+Tijelo javne vlasti kojem se zahtjev podnosi:
+<%= @outgoing_message.info_request.public_body.name %>
+
+Podnositelj zahtjeva:
+<%-# !!!IF YOU CHANGE THE FORMAT OF THE BLOCK BELOW, ADD A NEW CENSOR RULE!!! -%>
+===================================================================
+# Ime i prezime: <%= @outgoing_message.info_request.user.name %>
+# OIB:  <%= @outgoing_message.info_request.user.national_id_number %>
+<%= @outgoing_message.info_request.user.address.gsub(/^/, "# Adresa: ") %>
+===================================================================
+
+Podaci koji su važni za prepoznavanje tražene informacije:
+
 <%= raw @outgoing_message.body.strip %>
+
+Odgovor dostavite elektroničkim putem na adresu: <%= @outgoing_message.info_request.incoming_email %>
+
+Ova elektronička adresa je prikladan način dobivanja informacije u smislu članka 17. stavka 2. Zakona o pravu na pristup informacijama. Također, na moj zahtjev svaku obavijest pismeno dostavite elektroničkim putem na ovu adresu u skladu s glavom VI. člankom 94. stavak 1. i stavak 2. Zakona o općem upravnom postupku NN 47/09, 110/21.
+
+Izjava o odricanju odgovornosti:
+
+Informacije koje ćete dati u odgovoru biti će automatski objavljene na internetskoj stranici imamopravoznati.org. Korištenjem ove usluge podnositelj zahtjeva je pristao na javnu objavu. Time će se također omogućiti drugim osobama da pristupaju tim istim informacijama, čime će se smanjiti ponavljajući zahtjevi za istim informacijama a time se ujedno smanjuje administrativni teret službenicima za informiranje.
+
+ImamoPravoZnati politika privatnosti:
+
+U svrhu zaštite osobnih podataka podnositelja zahtjeva NE DOSTAVLJAJTE NIKAKVE OSOBNE PODATKE U ODGOVORU NA ZAHTJEV I PRIVITCIMA. Za potpunu identifikaciju podnositelja zahtjeva u vašem odgovoru dovoljno je da navedete ime, prezime i jedinstvenu e-mail adresa koju je naš sustav generirao za ovaj zahtjev. Kada se vaš odgovor objavi na internetskim stranicama ImamoPravoZnati, objavljuje se na web stranici imamopravoznati.org. Ako tekst odgovora sadrži osobne podatke za čije objavljivanje ispitanik nije dao suglasnost, njihovo objavljivanje krši zakon za zaštitu osobnih podataka (GDPR). Vi ste, po zakonu, voditelj obrade osobnih podataka podnositelja zahtjeva, koje ste dužni obrađivati samo u svrhu obrade zahtjeva za pristup informacijama. Prilikom objave informacija zakon pretpostavlja objavu davanja informacije, a ne objavu osobnih podataka podnositelja zahtjeva.
+
+Datum podnošenja zahtjeva:
+<%= simple_date(Time.zone.now, :format => :text) %>
 
 -------------------------------------------------------------------
 
-<%= _('Please use this email address for all replies to this request:')%>
-<%= @info_request.incoming_email %>
-<%= _('Requestor') %>:
-<%-# !!!IF YOU CHANGE THE FORMAT OF THE BLOCK BELOW, ADD A NEW CENSOR RULE!!! -%>
-===================================================================
-# <%= _('Name') %>: <%= @outgoing_message.info_request.user.name %>
-<% if @outgoing_message.info_request.user.is_individual? %>
-# <%= _('National ID number')%>: <%= @outgoing_message.info_request.user.national_id_number %>
-<%= @outgoing_message.info_request.user.address.gsub(/^/, "# #{_('Address')}: ") %>
-<% else %>
-# <%= _('Company name')%>: <%= @outgoing_message.info_request.user.company_name %>
-# <%= _('Company number')%>: <%= @outgoing_message.info_request.user.company_number %>
-<% end %>
-===================================================================
-
-
-<%= _('Is {{email_address}} the wrong address for {{type_of_request}} requests to {{public_body_name}}? If so, please contact us using this form:', :email_address => @info_request.public_body.request_email, :type_of_request =>  @info_request.law_used_human(:full), :public_body_name => @info_request.public_body.name)%>
+<%= _('Is {{email_address}} the wrong address for {{law_used_full}} requests ' \
+      'to {{public_body_name}}? If so, please contact us using this form:',
+      email_address: @info_request.public_body.request_email.html_safe,
+      law_used_full: @info_request.legislation.to_s(:full).html_safe,
+      public_body_name: @info_request.public_body.name.html_safe) %>
 <%= new_change_request_url(:body => @info_request.public_body.url_name) %>
 <%= render :partial => 'followup_footer' %>
 

@@ -1,13 +1,18 @@
+# -*- encoding : utf-8 -*-
 # Here you can override or add to the pages in the core website
 
 Rails.application.routes.draw do
-  # Add a route for personal data in Profile
+  # Add a route for the personal data in profile
   scope '/profile' do
-      match '/change_address' => 'user#signchangeaddress', :as => :signchangeaddress
-      match '/change_national_id' => 'user#signchangenationalid', :as => :signchangenationalid
-      match '/change_company_name' => 'user#signchangecompanyname', :as => :signchangecompanyname
-      match '/change_company_number' => 'user#signchangecompanynumber', :as => :signchangecompanynumber
+    match '/change_address' => 'user#signchangeaddress',
+          :as => :signchangeaddress,
+          :via => [:get, :post]
+    match '/change_pin' => 'user#signchangepin',
+          :as => :signchangepin,
+          :via => [:get, :post]
   end
+
+  get '/london' => redirect('/body?tag=london', status: 302)
 
   # Add a route for the survey
   scope '/profile/survey' do

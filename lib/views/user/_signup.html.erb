@@ -1,123 +1,77 @@
-<%= render :partial => 'general/localised_datepicker'  %>
-
-<script type="text/javascript">
-(function() {
-  function show_correct_user_type_fields() {
-    if ($('#user_type_selection input:radio:checked').val() === "individual") {
-      $('#user_signup_individual_fields').show();
-      $('#user_signup_business_fields').hide();
-    } else {
-      $('#user_signup_individual_fields').hide();
-      $('#user_signup_business_fields').show();
-    }
-  }
- $(document).ready(function() {
-    show_correct_user_type_fields();
-    $('#user_type_selection input:radio').change(function() {
-      show_correct_user_type_fields();
-    });
- });
-})();
-</script>
-
-<div id="signup">
-
-<%= form_tag({:action => "signup"}, {:id => "signup_form"}) do %>
+<div id="signup" class="signup">
+  <%= form_tag(signup_path, {:id => "signup_form"}) do %>
     <%= foi_error_messages_for :user_signup %>
 
     <p>
-        <label class="form_label" for="user_signup_email"><%= _('Your e-mail:')%></label>
-        <%= text_field 'user_signup', 'email', { :size => 20 } %>
+      <label class="form_label" for="user_signup_name"> <%= _('Your name:') %></label>
+      <%= text_field 'user_signup', 'name', { :size => 20, :tabindex => 10, :autocomplete => "off" } %>
     </p>
+
     <div class="form_item_note">
-        <%= _('We will not reveal your email address to anybody unless you or
-        the law tell us to (<a href="{{url}}">details</a>). ', :url => help_privacy_path) %>
+      <%= _('Your <strong>name will appear publicly</strong> ' \
+            '(<a href="{{why_url}}">why?</a>) on this website and in search ' \
+            'engines. <a href="{{help_url}}">Thinking of using a ' \
+            'pseudonym?</a>',
+            :why_url => help_privacy_path(:anchor => "public_request").html_safe,
+            :help_url => help_privacy_path(:anchor => "real_name").html_safe) %>
     </div>
 
     <p>
-        <label class="form_label" for="user_signup_name"> <%= _('Your name:')%></label>
-        <%= text_field 'user_signup', 'name', { :size => 20 } %>
+      <label class="form_label" for="user_signup_address"><%= _('Your address:') %></label>
+      <%= text_area 'user_signup', 'address', { :size => 40, :rows => 3, :tabindex => 20 } %>
     </p>
-    <div class="form_item_note">
-         <%= _('Your <strong>name will appear publicly</strong>
-        (<a href="{{why_url}}">why?</a>)
-        on this website and in search engines. If you
-        are thinking of using a pseudonym, please
-        <a href="{{help_url}}">read this first</a>.', :why_url => (help_privacy_path+"#public_request").html_safe, :help_url => (help_privacy_path+"#real_name").html_safe) %>
-    </div>
 
     <div class="form_item_note">
-        <%= _('We will not reveal your phone number to anybody unless you or
-        the law tell us to (<a href="{{url}}">details</a>). ', :url => help_privacy_path) %>
+        <%= _('Your address will be sent to authorities when you make a request.  ' \
+              'We will not reveal your address on the website.') %>
     </div>
-
-    <hr>
-
-    <p id="user_type_selection">
-        <span class="form_label"><%= _('I am a…')%></span>
-        <%=  radio_button 'user_signup', 'user_type', 'individual', :checked => true %>
-        <label class="form_label" for="user_signup_user_type_individual"><%= _('Individual')%></label>
-
-        <%=  radio_button 'user_signup', 'user_type', 'business' %>
-        <label class="form_label" for="user_signup_user_type_business"><%= _('Legal person')%></label>
-    </p>
-
-    <div id="user_signup_individual_fields">
-        <div class="form_item_note">
-            <%= _('As a private citizen, you need you to tell us your national ID number and address as this information is required to make a valid ATI request under Panamanian law. This information will only be shared with the authority you are requesting information from.') %><br />
-            <%= link_to _('Read more about making a request.'), help_requesting_path %><br /><br />
-        </div>
-        <div class="form_item_fields">
-            <p>
-                <label class="form_label" for="user_signup_address"><%= _('Your address:')%></label>
-                <%= text_area 'user_signup', 'address', { :cols => 20, :rows => 6 } %>
-            </p>
-            <p>
-                <label class="form_label" for="user_signup_national_id_number"><%= _('National ID Number:')%></label>
-                <%= text_field 'user_signup', 'national_id_number', { :size => 20 } %>
-            </p>
-        </div>
-    </div>
-
-    <div id="user_signup_business_fields">
-        <div class="form_item_note">
-            <%= _('To request information on behalf of a company, you need you to tell us your company name, number and incorporation date as this information is required to make a valid ATI request under Panamanian law.') %><br />
-            <%= link_to _('Read more about making a request.'), help_requesting_path %><br /><br />
-        </div>
-        <div class="form_item_fields">
-            <p>
-                <label class="form_label" for="user_signup_company_name"><%= _('Company Name:')%></label>
-                <%= text_field 'user_signup', 'company_name', { :size => 20 } %>
-            </p>
-            <p>
-                <label class="form_label" for="user_signup_company_number"><%= _('Company number:')%></label>
-                <%= text_field 'user_signup', 'company_number', { :size => 20 } %>
-            </p>
-        </div>
-    </div>
-
-    <hr>
 
     <p>
-        <label class="form_label" for="user_signup_password"> <%= _('Choose a password:')%></label>
-        <%= password_field 'user_signup', 'password', { :size => 15 } %>
+      <label class="form_label" for="user_signup_pin"><%= _('Your PIN:') %></label>
+      <%= text_field 'user_signup', 'national_id_number', { :size => 20, :tabindex => 30 } %>
     </p>
 
+    <div class="form_item_note">
+      <%= _('Your PIN will also be sent to authorities when you make a request.  ' \
+            'We will not reveal your PIN on the website.') %>
+      </div>
     <p>
-        <label class="form_label" for="user_signup_password_confirmation"> <%= _('Confirm password:')%></label>
-        <%= password_field 'user_signup', 'password_confirmation', { :size => 15 } %>
+
+    <p>
+      <label class="form_label" for="user_signup_email"><%= _('Your e-mail:') %></label>
+      <%= text_field 'user_signup', 'email', { :size => 20, :tabindex => 40 } %>
+    </p>
+
+    <div class="form_item_note">
+      <%= _('We will not reveal your email address to anybody unless ' \
+            '<a href="{{url}}">you or the law tell us to</a>.',
+            :url => help_privacy_path) %>
+    </div>
+
+    <p>
+      <label class="form_label" for="user_signup_password"> <%= _('Password:') %></label>
+      <%= password_field 'user_signup', 'password', { :size => 15, :tabindex => 50, :autocomplete => "off" } %>
+    </p>
+
+    <div class="form_item_note">
+      <%= _('12 characters minimum. 72 characters maximum.') %>
+    </div>
+
+    <p>
+      <label class="form_label" for="user_signup_password_confirmation"> <%= _('Confirm password:') %></label>
+      <%= password_field 'user_signup', 'password_confirmation', { :size => 15, :tabindex => 60, :autocomplete => "off" } %>
     </p>
 
     <% if @request_from_foreign_country %>
-    <%= recaptcha_tags %>
+      <%= recaptcha_tags %>
     <% end %>
 
     <div class="form_button">
-        <%= hidden_field_tag 'token', params[:token], {:id => 'signup_token' } %>
-        <%= hidden_field_tag :modal, params[:modal], {:id => 'signup_modal' } %>
-        <%= submit_tag _('Sign up') %>
+      <%= hidden_field_tag 'token', params[:token], {:id => 'signup_token' } %>
+      <%= hidden_field_tag :modal, params[:modal], {:id => 'signup_modal' } %>
+      <%= submit_tag _('Sign up'),
+                     :tabindex => 70,
+                     :data => { :disable_with => _("Sending...") } %>
     </div>
-
-<% end %>
-
+  <% end %>
 </div>
