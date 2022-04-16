@@ -168,69 +168,70 @@
       <p>
         U ovom trenutku <%= site_name %> popis ima više od
         <%= number_with_delimiter(PublicBody.visible.count) %>
-         kontakta tijela javne vlasti. On se temelji na instruktovom Popisu tijela javne vlasti kojeg održava Povjerenik za informiranje. Međutim, Popis nije stalan i podložan je promjenama. Uvijek postoji mogućnost da neko tijelo nije navedeno u popisu uslijed promjena zakonskog okvira, neka se tijela javne vlasti mogu ukinuti ili nova osnovati, a također se određena trgovačka društva mogu privatizirati ili im se mogu ukinuti javne ovlasti ili takve ovlasti tek mogu dobiti. Stoga je uloga našeg popisa da korisnicima na jednom mjestu omogući lak i pretraživ pristup informacijama od tijela javne vlasti putem dostupnih kontakt podataka za lakše podnošenje zahtjeva ili traženja informacija na internetskoj stranici.
+        kontakta tijela javne vlasti. On se temelji na instruktovom Popisu tijela
+        javne vlasti kojeg održava Povjerenik za informiranje. Međutim, popis nije
+        stalan i podložan je promjenama. Uvijek postoji mogućnost da neko tijelo
+        nije navedeno u popisu uslijed promjena zakonskog okvira, neka se tijela
+        javne vlasti mogu ukinuti ili nova osnovati, a također se određena
+        trgovačka društva mogu privatizirati ili im se mogu ukinuti javne ovlasti
+        ili takve ovlasti tek mogu dobiti. Stoga je uloga našeg popisa da korisnicima
+        na jednom mjestu omogući lak i pretraživ pristup informacijama od tijela
+        javne vlasti putem dostupnih kontakt podataka za lakše podnošenje zahtjeva
+        ili traženja informacija na internetskoj stranici.
       </p>
     </dd>
-    <dt id="what">
-      Što je zabranjeno tražiti?
-      <a href="#what">#</a>
+    <dt id="goodtoknow">
+      Dobro je znati
+      <a href="#goodtoknow">#</a>
+    </dt>
+    <dd>
+      <ol>
+        <li><strong>Vaša kompletna korespondencija s tijelima javne vlasti putem <%= site_name %> je javna i pretraživa na internetu.</strong> Stoga radi zaštite svojih osobnih podataka nemojte u korespodenciju pisati podatke koje ne želite da se javno vide (npr. kućnu adresu).</li>
+        <li><strong>U korespodenciji s tijelom javne vlasti ne pišite o drugim osobama.</strong> Neslužbeno možete primjeniti načelo reciprociteta, ako ne želite javno dati neku informaciju o sebi, ne pišite to o drugim osobama. Pridržavajte se naših <a href="<%= help_house_rules_path %>">pravila ponašanja</a>.</li>
+        <li><strong>Budite ažurni te kada vas obavijestimo pregledajte zaprimljene poruke od tijela javne vlasti.</strong> Kvaliteta informacija na ovom portalu ovisi o vama, našim korisnicima. Oslanjamo se na to da svaki zaprimljeni odgovor od tijela javne vlasti pročitate i ocijenite promjenom statusa zahtjeva. Takva će informacija ujedno pomoći i drugima u pronalasu prave informacije. U našoj statistici moći ćemo lakše odrediti koja tijela pravilno postupaju po predmetima odnosno koja tijela ne primjenjuju pravilno zakonske odredbe.</li>
+        <li><strong>Vašu adresu e-pošte nećemo poslati tijelu javne vlasti.</strong> Generiramo jedinstvenu adresu @imamopravoznati.org za svaki zahtjev. Tijela javne vlasti će vidjeti samo ovakvu adresu. Vaša osobna adresa e-pošte je sigurna. Pročitajte više o tome kako postupamo s vašim osobnim podacima <a href="<%=
+        help_privacy_path(:anchor => 'personal_information_foi') %>">kada šaljete zahtjev</a>.</li>
+      </ol>
+    </dd>
+    <dt id="nextsteps">
+      A sada?
+      <a href="#nextsteps">#</a>
     </dt>
     <dd>
       <p>
-        ...
+        <strong><a href="<%= select_authority_path %>">Napišite novi zahtjev!</a></strong><br>
+        Jeste li spremni? Sada ovdje možete napraviti novi zahtjev za pravo na pristup informacijama.<br>
+        Detaljne informacije o tome kako podnijeti zahtjev za pristup informacijama
+        pomoću ove internetske stranice možete pronaći na ovom <a
+        href="https://web.archive.org/web/20210813053552/https://www.mysociety.org/2014/08/15/how-to-make-a-freedom-of-information-request-with-whatdotheyknow/" target="_blank">
+        blogu</a>.
       </p>
       <p>
-        ...
+        <strong><a href="https://publikacije.imamopravoznati.org/">O pravu na pristup informacijama</a></strong><br>
+        Ovdje možete pronaći sve o pravu na pristup informacijama u Republici Hrvatskoj.
       </p>
       <p>
-        ...
+        <strong><a href="https://gong.hr/category/otvoreni-podaci/">Naša istraživanja</a></strong><br>
+        Informacije o uzbudljivim istragama ili sudskim odlukama možete pronaći na Gongovim internetskim stranicama.<br><br>
+        Savjeti o tome kako na <%= site_name %> možete uključiti praćenje svih
+        zahtjeva za pristup informacijama upućenih vašoj lokalnoj samoupravi te
+        zaprimati obavijesti putem e-pošte možete pronaći u ovom
+        <a href="https://web.archive.org/web/20210812202720/https://www.mysociety.org/2014/09/19/how-to-keep-up-with-hot-topics-in-your-local-area/" target="_blank">
+        blogu</a>. A ovaj <a
+        href="https://web.archive.org/web/20201127093150/https://www.mysociety.org/2014/09/29/subscribe-to-foi-requests-on-any-topic/" target="_blank">
+        blog</a> objašnjava kako se možete pretplatiti na primanje obavijesti
+        e-poštom o zahtjevima za pravo na pristup informacijama o bilo kojoj temi.
+      </p>
+      <p>
+        Ako su vam potrebni dodatni savjeti, možete <a href="<%= help_contact_path
+        %>">kontaktirati</a> <%= site_name %> ekipu volontera.
       </p>
     </dd>
-    <dt id="what">
-      Što je zabranjeno tražiti?
-      <a href="#what">#</a>
-    </dt>
-    <dd>
-      <p>
-        ...
-      </p>
-      <p>
-        ...
-      </p>
-      <p>
-        ...
-      </p>
-    </dd>
-
-
   </dl>
-
 
   <p class="form_note"><b>Izjava o izvoru:</b> Dijelovi teksta preuzeti su iz
   <a href="http://publikacije.imamopravoznati.org?utm_source=imamopravoznati&utm_medium=link" target="_blank">publikacija</a>
   Povjerenika za informiranje pod Otvorenom dozvolom (NN 67/17).
   </p>
 
-
-
-  <p>
-    Detaljne informacije o tome kako podnijeti zahtjev za pristup informacijama
-    pomoću ove internetske stranice možete pronaći u ovom <a
-    href="https://web.archive.org/web/20210813053552/https://www.mysociety.org/2014/08/15/how-to-make-a-freedom-of-information-request-with-whatdotheyknow/" target="_blank">
-    blogu</a>.
-  </p>
-  <p>
-    Savjeti o tome kako na <%= site_name %> možete uključiti praćenje svih
-    zahtjeva za pristup informacijama upućenih vašoj lokalnoj samoupravi te
-    zaprimati obavijesti putem e-pošte možete pronaći u ovom
-    <a href="https://web.archive.org/web/20210812202720/https://www.mysociety.org/2014/09/19/how-to-keep-up-with-hot-topics-in-your-local-area/" target="_blank">
-    blogu</a>. A ovaj <a
-    href="https://web.archive.org/web/20201127093150/https://www.mysociety.org/2014/09/29/subscribe-to-foi-requests-on-any-topic/" target="_blank">
-    blog</a> objašnjava kako se možete pretplatiti na primanje obavijesti
-    e-poštom o zahtjevima za pravo na pristup informacijama o bilo kojoj temi.
-  </p>
-  <p>
-    Ako su vam potrebni dodatni savjeti, možete <a href="<%= help_contact_path
-    %>">kontaktirati</a> <%= site_name %> ekipu volontera.
-  </p>
 </div>
