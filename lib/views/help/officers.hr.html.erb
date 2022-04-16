@@ -27,6 +27,15 @@
         odgovoriti kao i na bilo koji drugi zahtjev pojedinca. <strong>Jedina je
         razlika što će se vaš odgovor automatski objaviti na internetu.</strong>
       </p>
+      <% if feature_enabled?(:alaveteli_pro) %>
+        <p>
+          Ponekada na <%= site_name %> portalu nećete moći pronaći zahtjev
+          koji ste zaprimili. Nisu svi zahtjevi odmah javno objavljeni.
+          <%= site_name %><sup>Pro</sup> usluga namjenjena je za novinare,
+          istraživače i aktiviste koja daje mogućnost odgađanja objavljivanja
+          predmeta.
+        </p>
+      <% end %>
       <p>
         Ako se brinete oko privatnosti ili ako imate druga pitanja, pročitajte
         odgovore u nastavku. Možda biste željeli pročitati <a href="/help/about">
@@ -194,7 +203,8 @@
         Zahtjevi se ponekad ne mogu isporučiti jer ih "spam filter" automatski
         blokira. Službenici za infirmiranje to mogu spriječiti tako da dojave
         njihovom informatičkim tehničarima da podese postavke tako da svi
-        e-mailovi od <strong>@imamopravoznati.org</strong> budu stavljeni na whitelistu.
+        e-mailovi od <strong>@imamopravoznati.org</strong> budu stavljeni na
+        listu dozvoljenih pošiljatelja (whitelistu).
         Ako <a href="<%= help_contact_path %>">nam pošaljete upit</a>, ili
         predočite tehničke detalje isporuke, naša ekipa će istražiti što se
         dogodilo s vašom porukom.
@@ -403,6 +413,42 @@
         internetu. Za više informacija pogledajte paragraf o autorskim pravima
         na stranici <a href="<%= help_how_path %>">‘Upravljanje portalom
         <%= site_name %>’</a>.
+      </p>
+    </dd>
+    <dt id="personal_data">
+      Kakva je vaša politika o osobnim podacima?
+      <a href="#personal_data">#</a>
+    </dt>
+    <dd>
+      <p>
+        <%= site_name %> javno objavljuje zahtjeve te djeluje kao javna arhiva
+        zaprimljenih informacija. Čak kada korisnici prava na pristup informacija
+        dostavljaju tijelu javne vlasti svoje osobne podatke, službenicima za
+        informiranje preporučamo da ne dostavljaju njihove osobne podatke u
+        odgovoru (npr. kućnu adresu korisnika). Svaki zahtjev poslan putem usluge
+        <%= site_name %> u podnožju e-mail poruke sadrži napomenu službeniku za
+        informiranje da će odgovor biti javno objavljen na internetu. Stoga
+        apeliramo službenike za informiranje da se pridržavaju načela zaštite
+        osobnih podataka korisnika. Upoznajte se također s
+        <a href="<%= help_privacy_path %>">pravilima privatnosti</a> naših korisnika.
+      </p>
+      <p>
+        Tijela javne vlasti mogu ograničiti pristup informaciji ako je informacija
+        zaštićena zakonom kojim se uređuje područje zaštite osobnih podataka tj.
+        sukladno Zakonu o Općoj uredbi o zaštiti podataka (GDPR).
+      </p>
+      <p>
+        Osobni podatak je svaka informacija koja se odnosi na identificiranu
+        fizičku osobu ili fizičku osobu koja se može identificirati izravno ili
+        neizravno, posebno na osnovi identifikacijskog broja ili jednog ili više
+        obilježja specifičnih za njezin fizički, psihološki, mentalni, gospodarski,
+        kulturni ili socijalni identitet. S obzirom da se osobni podaci odnose na
+        fizičke osobe, za pravne osobe nije moguće koristiti ovo zakonsko ograničenje.
+        Potrebno je također razlikovati osobne podatke o strankama odnosno građanima
+        koje tijela vode u okviru svoje nadležnosti te osobne podatke dužnosnika i
+        službenika odnosno osobama s kojima je tijelo u ugovornom odnosu, a u
+        odnosu na koje se ne može primijeniti isti opseg ograničenja (npr. Ime i
+        prezime, kvalifikacija i sl., u pravilu su javni podaci).
       </p>
     </dd>
 
