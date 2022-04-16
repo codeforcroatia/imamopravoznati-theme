@@ -118,7 +118,7 @@
         nadležna organizacijska jedinica.
       </p>
       <p>
-        Molimo vas da putem <%= site_name %> ne tražite sljedeće:
+        Molimo vas da putem <%= site_name %> <strong>ne tražite sljedeće</strong>:
         <ul>
           <li>traženje pojašnjenja, obrazloženja, očitovanja, tumačenja,
             potvrđivanje ili demantiranje navoda</li>
@@ -131,19 +131,42 @@
         vaš zahtjev radi kršenja <a href="<%= help_house_rules_path %>">pravila ponašanja</a>.
       </p>
     </dd>
-    <dt id="what">
-      Što je zabranjeno tražiti?
-      <a href="#what">#</a>
+    <dt id="authority">
+      Od koga mogu dobiti ili tražiti informacije?
+      <a href="#authority">#</a>
     </dt>
     <dd>
       <p>
-        ...
+        Obveznike primjene Zakona o pravu na pristup informacijama, odnosno
+        postupanja po zahtjevima korisnika Zakon naziva <strong>tijelima javne vlasti</strong>.
+        Kao što to sam naziv kaže, ključni element rada takvih tijela jest rad
+        u javnom interesu temeljem propisane ovlasti ili djelokruga javne službe,
+        financiranje javnim sredstvima ili činjenica da ih je osnovala država,
+        županija, grad ili općina odnosno njihove pravne osobe. Tijela javne
+        vlasti mogu imati i profitni karakter, ali to ih ne isključuje iz kruga
+        obveznika primjene Zakona, ukoliko su ispunjeni drugi uvjeti. Istovremeno,
+        nije svaka pravna osoba ujedno i obveznik Zakona o pravu na pristup
+        informacijama, pa tako privatna poduzeća u načelu nisu tijela javne vlasti.
       </p>
       <p>
-        ...
+        Tijela javne vlasti od kojih možete tražiti informacije su državna tijela
+        (primjerice Vlada Republike Hrvatske, Hrvatski sabor, Predsjednik Republike
+        Hrvatske), tijela državne uprave (npr. ministarstva, uredi državne uprave),
+        pravosudna tijela (sudovi, državna odvjetništva), lokalna samouprava (općine,
+        gradovi, županije), tijela s javnim ovlastima i tijela koja obavljaju javnu
+        službu (primjerice škole i fakulteti, zdravstvene ustanove, centri za
+        socijalnu skrb, agencije i zavodi, komore), trgovačka društva u većinskom
+        javnom vlasništvu i druge pravne osobe koje se financiraju iz državnog
+        proračuna ili iz proračuna jedinica lokalne i područne (regionalne)
+        samouprave, odnosno iz javnih sredstava (nameta, davanja i slično).
       </p>
       <p>
-        ...
+        Kako biste saznali od kojih tijela javne vlasti možete tražiti informacije,
+        njihov popis možete pronaći na
+        <a href="<%= list_public_bodies_default_path %>">popisu tijela javne vlasti</a>.
+      </p>
+      <p>
+        U ovom trenutku <%= site_name %> popis ima više od <%= number_with_delimiter(@number_of_authorities.count.round(-3), :locale => @locale) %> kontakta tijela javne vlasti. On se temelji na instruktovom Popisu tijela javne vlasti kojeg održava Povjerenik za informiranje. Međutim, Popis nije stalan i podložan je promjenama. Uvijek postoji mogućnost da neko tijelo nije navedeno u popisu uslijed promjena zakonskog okvira, neka se tijela javne vlasti mogu ukinuti ili nova osnovati, a također se određena trgovačka društva mogu privatizirati ili im se mogu ukinuti javne ovlasti ili takve ovlasti tek mogu dobiti. Stoga je uloga našeg popisa da korisnicima na jednom mjestu omogući lak i pretraživ pristup informacijama od tijela javne vlasti putem dostupnih kontakt podataka za lakše podnošenje zahtjeva ili traženja informacija na internetskoj stranici.
       </p>
     </dd>
     <dt id="what">
