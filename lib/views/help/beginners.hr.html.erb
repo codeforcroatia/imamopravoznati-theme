@@ -166,7 +166,13 @@
         <a href="<%= list_public_bodies_default_path %>">popisu tijela javne vlasti</a>.
       </p>
       <p>
-        U ovom trenutku <%= site_name %> popis ima više od <%= number_with_delimiter(@number_of_authorities.count.round(-3), :locale => @locale) %> kontakta tijela javne vlasti. On se temelji na instruktovom Popisu tijela javne vlasti kojeg održava Povjerenik za informiranje. Međutim, Popis nije stalan i podložan je promjenama. Uvijek postoji mogućnost da neko tijelo nije navedeno u popisu uslijed promjena zakonskog okvira, neka se tijela javne vlasti mogu ukinuti ili nova osnovati, a također se određena trgovačka društva mogu privatizirati ili im se mogu ukinuti javne ovlasti ili takve ovlasti tek mogu dobiti. Stoga je uloga našeg popisa da korisnicima na jednom mjestu omogući lak i pretraživ pristup informacijama od tijela javne vlasti putem dostupnih kontakt podataka za lakše podnošenje zahtjeva ili traženja informacija na internetskoj stranici.
+        U ovom trenutku <%= site_name %> popis ima više od
+         kontakta tijela javne vlasti. On se temelji na instruktovom Popisu tijela javne vlasti kojeg održava Povjerenik za informiranje. Međutim, Popis nije stalan i podložan je promjenama. Uvijek postoji mogućnost da neko tijelo nije navedeno u popisu uslijed promjena zakonskog okvira, neka se tijela javne vlasti mogu ukinuti ili nova osnovati, a također se određena trgovačka društva mogu privatizirati ili im se mogu ukinuti javne ovlasti ili takve ovlasti tek mogu dobiti. Stoga je uloga našeg popisa da korisnicima na jednom mjestu omogući lak i pretraživ pristup informacijama od tijela javne vlasti putem dostupnih kontakt podataka za lakše podnošenje zahtjeva ili traženja informacija na internetskoj stranici.
+         <%= n_("{{site_name}} covers requests to {{number_of_authorities}} authority, including:",
+          "{{site_name}} covers requests to {{number_of_authorities}} authorities, including:",
+          PublicBody.visible.count,
+          :site_name => site_name,
+          :number_of_authorities => number_with_delimiter(PublicBody.visible.count)) %>
       </p>
     </dd>
     <dt id="what">
