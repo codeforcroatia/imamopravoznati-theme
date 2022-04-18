@@ -12,6 +12,13 @@
         diskurs forum</a>, a za razgovor s <%= AlaveteliConfiguration.pro_site_name %>
         ekipom volontera <a href="<%= help_contact_path %>">pošaljite nam upit</a>.
       </p>
+      <% if @user && @user.is_pro? %>
+      <ul class="unstyled-list">
+        <li>
+          Kontakt email za Pro korisnike: <%= mail_to AlaveteliConfiguration.pro_contact_email %>
+        </li>
+      </ul>
+      <% end %>
     </div>
   </div>
 </div>

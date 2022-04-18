@@ -198,10 +198,12 @@
                 <% if @user && @user.is_pro? %>
                     Ako vaš problem nije pokriven našim stranicama pomoći,
                     možete se izravno obratiti volonterima koji administriraju
-                    <%= site_name %> Pro:
+                    <%= AlaveteliConfiguration.pro_site_name %>
+                    (<%= mail_to AlaveteliConfiguration.pro_contact_email %>):
                 <% else %>
-                    Ako imate pitanje koje nije pokriveno na našim stranicama pomoći za
-                    Pro korisnike, možete se izravno obratiti volonterima koji administriraju
+                    Ako imate pitanje koje nije pokriveno na našim stranicama veznao uz
+                    <%= AlaveteliConfiguration.pro_site_name %> uslugu, možete se
+                    izravno obratiti volonterima koji administriraju
                     <%= site_name %>:
                     <% if !@user %>
                       <%= link_to _("Sign in or sign up"), signin_path(:r => request.fullpath)  %>
@@ -216,6 +218,7 @@
                   <%= render :partial => "help/contact_form",
                              :locals => { :form_id => 'pro' } %>
                 <% end %>
+
             </li>
         </ul>
     </div>
