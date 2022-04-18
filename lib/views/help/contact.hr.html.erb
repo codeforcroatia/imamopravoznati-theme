@@ -177,5 +177,48 @@
         </ul>
     </div>
 
+
+    <h2 class="contact-page__goal" id="pro">
+        <label class="houdini-label" for="goal6">
+            Ja sam <strong>novinar, aktivist ili istraživač</strong> te imam
+            pitanja vezano uz <%= AlaveteliConfiguration.pro_site_name %>.
+        </label>
+    </h2>
+
+    <input class="houdini-input" type="radio" name="goals" id="goal6"
+        <% if params["contact"] && params[:current_form] == 'pro' %>checked<% end %>>
+    <div class="houdini-target contact-page__options">
+        <ul>
+            <li>
+                Prvo pokušajte provjeriti <a href="<%= help_pro_path %>">naše
+                opsežne stranice pomoći za Pro korisnike</a>, koje sadrže rješenje za većinu
+                problema i pitanja koja biste mogli imati.
+            </li>
+            <li>
+                <% if @user && @user.is_pro? %>
+                    Ako vaš problem nije pokriven našim stranicama pomoći,
+                    možete se izravno obratiti volonterima koji administriraju
+                    <%= site_name %> Pro:
+                <% else %>
+                    Ako imate pitanje koje nije pokriveno na našim stranicama pomoći za
+                    Pro korisnike, možete se izravno obratiti volonterima koji administriraju
+                    <%= site_name %>:
+                    <% if !@user %>
+                      <%= link_to _("Sign in or sign up"), signin_path(:r => request.fullpath)  %>
+                      ili <a href="https://codeforcroatia.org/ipz-forum" target="_blank">
+                      postavite vaše pitanje</a> na našu diskurs zajednicu.
+                    <% end %>
+                <% end %>
+
+                <% if @user %>
+                  <%= foi_error_messages_for :contact %>
+
+                  <%= render :partial => "help/contact_form",
+                             :locals => { :form_id => 'pro' } %>
+                <% end %>
+            </li>
+        </ul>
+    </div>
+
 </div>
 </div>
