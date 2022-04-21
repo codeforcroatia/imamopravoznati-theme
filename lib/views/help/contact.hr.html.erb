@@ -219,6 +219,13 @@
                              :locals => { :form_id => 'pro' } %>
                 <% end %>
 
+                <% if is_admin? %>
+                  <%= foi_error_messages_for :contact %>
+
+                  <%= render :partial => "help/contact_form_ppi_review",
+                             :locals => { :form_id => 'pro' } %>
+                <% end %>
+
             </li>
         </ul>
     </div>

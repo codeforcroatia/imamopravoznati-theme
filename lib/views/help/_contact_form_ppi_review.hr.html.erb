@@ -1,0 +1,83 @@
+<%= form_for :contact,
+             :url => help_contact_path + '#' +  form_id,
+             :html => {:class => 'contact-form'} do |f| %>
+
+    <p class="contact-form__understand">
+        <%= f.check_box :understand, :required => true %>
+        <label for="contact_understand" class="form_label">
+            I understand that WhatDoTheyKnow is <strong>not</strong> run by the
+            government, and the WhatDoTheyKnow volunteers <strong>cannot</strong>
+            help me with personal matters relating to government services.
+        </label>
+    </p>
+
+    <% if not @user %>
+        <p>
+            <label class="form_label" for="contact_name">My name:</label>
+            <%= f.text_field :name, :size => 20, :required => true %>
+            (or <%= link_to "sign in",
+                            signin_url(
+                              :r => request.fullpath + '#' + form_id) %>)
+        </p>
+
+        <p>
+            <label class="form_label" for="contact_email">My email:</label>
+            <%= f.text_field :email, :size => 20, :required => true %>
+        </p>
+    <% end %>
+
+    <p>
+        <label class="form_label" for="contact_subject">My message is about:</label>
+        <%= f.text_field :subject,
+                         :size => 50,
+                         :required => true,
+                         :class => "message-subject" %>
+    </p>
+
+    <p>
+        <label class="form_label" for="contact_message">
+            My message to the WhatDoTheyKnow volunteers:
+        </label>
+        <%= f.text_area :message, value: raw("Lokim ipsum dorsi"), :rows => 10, :cols => 60, :required => true %>
+    </p>
+
+    <p style="display:none;">
+        <%= f.label :comment, 'Do not fill in this field' %>
+        <%= f.text_field :comment %>
+    </p>
+
+    <% if !@last_request.nil? %>
+        <p>
+            <label class="form_label" for="contact_message">Include link to request:</label>
+            <%=request_link(@last_request) %>
+            <%= submit_tag "remove", :name => 'remove' %>
+        </p>
+    <% end %>
+    <% if !@last_body.nil? %>
+        <p>
+            <label class="form_label" for="contact_message">Include link to authority:</label>
+            <%=public_body_link(@last_body) %>
+            <%= submit_tag "remove", :name => 'remove' %>
+        </p>
+    <% end %>
+
+    <% if @recaptcha_required %>
+      <%= recaptcha_tags %><br />
+    <% end %>
+
+    <div class="form_button">
+        <script><!--
+            if (!!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/)) {
+                $('#contact_understand').removeAttr('required');
+                $('#contact_name').removeAttr('required');
+                $('#contact_email').removeAttr('required');
+                $('#contact_subject').removeAttr('required');
+                $('#contact_message').removeAttr('required');
+            }
+        //--></script>
+        <%= hidden_field_tag(:current_form, form_id) %>
+        <%= hidden_field_tag(:submitted_contact_form, 1) %>
+        <%= submit_tag "Send message to WhatDoTheyKnow volunteers", :data => { :disable_with => "Sending..." } %>
+    </div>
+
+<% end %>
