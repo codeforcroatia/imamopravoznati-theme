@@ -39,6 +39,7 @@ Rails.configuration.to_prepare do
     def complaints; end
     def volunteers; end
     def beginners; end
+    def foi_motion; end
 
     private
 
