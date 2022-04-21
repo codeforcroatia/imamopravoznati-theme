@@ -1,129 +1,54 @@
-<% @title = "Contact us" %>
+<% @title = "Prigovor na primjenu Zakona o pravu na pristup informacijama" %>
 
 <%= render :partial => 'sidebar' %>
 <div id="left_column_flip" class="left_column_flip">
-<h1>FOI motion</h1>
-<p>File a Freedom of Information motion to Information Commissioner if you're unsatisfied with the public authority handling of right to access public information.</p>
+<h1>Predstavke</h1>
+<p>Bilo tko može podijeti predstavku. Radi se o slučajevima kada građanin uoči da
+  tijelo javne vlasti nepravilno primjenjuje ili uopće ne primjenjuje neku odredbu
+  zakona. Kada ispunite ovaj obrazac, dostaviti ćemo vašu predstavku Povjereniku
+  za informiranje.</p>
 
 <div class="contact-page">
 
-    <h2 class="contact-page__goal" id="government">
+    <!-- START -->
+    <h2 class="contact-page__goal" id="zppi-5-20-1">
         <label class="houdini-label" for="goal1">
-            I want to contact a <strong>government department</strong>
-            – for example, Visas and Immigration, the Home Office, HMRC,
-            or the Department for Work and Pensions.
-        </label>
-    </h2>
-
-    <input class="houdini-input" type="radio" name="goals" id="goal1">
-    <div class="houdini-target contact-page__options">
-        <ul>
-            <li>
-                If you want to make a public Freedom Of Information
-                request to a UK government department, you can
-                <a href="<%= select_authority_path %>">start here</a>.
-            </li>
-            <li>
-                If you need to discuss personal matters with a
-                UK government department, you should
-                <a href="https://www.gov.hr/" target="_blank">find them on GOV.HR</a>.
-            </li>
-            <li>
-                If you’re having trouble getting the service you require
-                from a government body then your MP’s office can often
-                help. You can <a href="https://www.writetothem.com/" target="_blank">write
-                to your MP on WriteToThem.com</a>.
-            </li>
-        </ul>
-    </div>
-
-    <h2 class="contact-page__goal" id="authority">
-        <label class="houdini-label" for="goal2">
-            I want to contact a public authority, like my
-            <strong>local council, hospital, or school</strong>.
-        </label>
-    </h2>
-
-    <input class="houdini-input" type="radio" name="goals" id="goal2">
-    <div class="houdini-target contact-page__options">
-        <ul>
-            <li>
-                If you want to make a public Freedom Of Information
-                request to a UK council or public authority, you can
-                <a href="<%= select_authority_path %>">start here</a>.
-            </li>
-            <li>
-                If you need to discuss personal matters with a
-                UK council, you should <a href="https://www.gov.hr/" target="_blank">find
-                them on GOV.HR</a>.
-            </li>
-            <li>
-                If you want to write to your MP, local councillor, or
-                other representative, you can
-                <a href="https://www.writetothem.com/" target="_blank">write to your MP
-                on WriteToThem.com</a>.
-            </li>
-        </ul>
-    </div>
-
-
-    <h2 class="contact-page__goal" id="writing-help">
-        <label class="houdini-label" for="goal4">
-            I need <strong>help writing a freedom of information request</strong>.
-        </label>
-    </h2>
-
-    <input class="houdini-input" type="radio" name="goals" id="goal4"
-        <% if params["contact"] && params[:current_form] == 'writing-help' %>checked<% end %>>
-    <div class="houdini-target contact-page__options">
-        <ul>
-            <li>
-                Directly contact the volunteers who run WhatDoTheyKnow:
-
-                <%= foi_error_messages_for :contact %>
-
-                <%= render :partial => "help/contact_form",
-                           :locals => { :form_id => 'writing-help' } %>
-            </li>
-        </ul>
-    </div>
-
-
-    <h2 class="contact-page__goal" id="wdtk">
-        <label class="houdini-label" for="goal3">
-            I have another issue, or feedback relating to the
-            WhatDoTheyKnow.com website, that I want to raise with the
-            <strong>team that runs WhatDoTheyKnow</strong>.
+            V. ZPPI §20.(1) - nisu odgovorili na zahtjev za pristup informacijama
+            u propisanom roku.
         </label>
     </h2>
 
     <input class="houdini-input" type="radio" name="goals" id="goal3"
-        <% if params["contact"] && params[:current_form] == 'wdtk' %>checked<% end %>>
+        <% if params["contact"] && params[:current_form] == 'zppi-5-20-1' %>checked<% end %>>
     <div class="houdini-target contact-page__options">
         <ul>
             <li>
-                First, try checking <a href="<%= help_about_path %>">our
-                extensive help pages</a>, which contain a solution for most
-                issues and questions you might have.
+                <strong>Zakonska odredba:</strong> V. ZPPI §20.(1) - Na temelju
+                zahtjeva za pristup informaciji tijelo javne vlasti će odluĉiti
+                najkasnije u roku od 15 dana od dana podnošenja urednog zahtjeva.
+                (<a href="<%= zppi_text_path %>">NN 25/13. i 85/15.</a>)
             </li>
+            <%= render :partial => 'help/foi_motion_privacy' %>
+
             <li>
-                <% if @user && @user.is_pro? %>
-                    If your issue isn’t covered by our help pages, you can
-                    directly contact the team who run WhatDoTheyKnow Pro:
-                <% else %>
-                    If your issue isn’t covered by our help pages, you can
-                    directly contact the volunteers who run WhatDoTheyKnow:
+                <% if !@user %>
+                  <%= link_to _("Sign in or sign up"), signin_path(:r => request.fullpath)  %>
                 <% end %>
 
-                <%= foi_error_messages_for :contact %>
+                <% if @user %>
+                  <%= foi_error_messages_for :contact %>
 
-                <% if is_admin? %>
-                  <%= render :partial => "help/foi_motion_form",
-                            :locals => { :form_id => 'wdtk' } %>
+                  <%= render :partial => "help/contact_form",
+                             :locals => { :form_id => 'zppi-5-20-1' } %>
                 <% end %>
             </li>
         </ul>
     </div>
+    <!-- END -->
+
+
+
+
 
 </div>
 </div>
