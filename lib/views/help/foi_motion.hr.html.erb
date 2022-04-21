@@ -11,15 +11,15 @@
 <div class="contact-page">
 
     <!-- START -->
-    <h2 class="contact-page__goal" id="zppi-5-20-1">
+    <h2 class="contact-page__goal" id="zppi_5_20_1">
         <label class="houdini-label" for="goal1">
-            V. ZPPI §20.(1) - nisu odgovorili na zahtjev za pristup informacijama
-            u propisanom roku.
+            V. ZPPI §20.(1) - <strong>nisu odgovorili na zahtjev za pristup
+            informacijama</strong> u propisanom roku.
         </label>
     </h2>
 
     <input class="houdini-input" type="radio" name="goals" id="goal3"
-        <% if params["contact"] && params[:current_form] == 'zppi-5-20-1' %>checked<% end %>>
+        <% if params["contact"] && params[:current_form] == 'zppi_5_20_1' %>checked<% end %>>
     <div class="houdini-target contact-page__options">
         <ul>
             <li>
@@ -39,7 +39,7 @@
                   <%= foi_error_messages_for :contact %>
 
                   <%= render :partial => "help/contact_form",
-                             :locals => { :form_id => 'zppi-5-20-1' } %>
+                             :locals => { :form_id => 'zppi_5_20_1' } %>
                 <% end %>
             </li>
         </ul>
