@@ -45,7 +45,7 @@ izjavljujem predstavku na rad tijela javne vlasti iz naslova.
 
 Tijelo javne vlasti nije odgovorilo na zahtjev za pristup informacijama (URL dajem ispod) u propisanom roku čime je povrijedilo odredbe članka 20. stavka 1. Zakona o pravu na pristup informacijama (Narodne novine, broj 25/13 i 85/15). Predlažem Povjereniku za informiranje da u postupku po ovoj predstavci napravi inspekcijiski nadzor tijela javne vlasti.
 
-Srdačan pozdrav")+"TEST",
+Srdačan pozdrav"),
                         :rows => 10,
                         :cols => 60,
                         :required => true %>
@@ -54,6 +54,13 @@ Srdačan pozdrav")+"TEST",
     <p style="display:none;">
         <%= f.label :comment, 'Do not fill in this field' %>
         <%= f.text_field :comment %>
+    </p>
+
+    <p>
+        <label class="form_label" for="contact_message">
+          Test:
+        </label>
+        TEST2
     </p>
 
     <% if !@last_request.nil? %>
