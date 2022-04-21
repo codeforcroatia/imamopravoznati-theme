@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     get '/reset' => 'user#survey_reset', :as => :survey_reset
   end
 
-  get "/help/ico-guidance-for-authorities" => redirect("https://0.codeforcroatia.org/ppi-smjernice-za-sluzbenike/"),
+  get "/help/ico-guidance-for-authorities" => redirect("https://publikacije.imamopravoznati.org"),
   :as => :ico_guidance
 
   get "/help/zppi" => redirect("https://codeforcroatia.org/zppi"),
