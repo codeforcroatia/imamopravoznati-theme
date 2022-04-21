@@ -38,6 +38,7 @@
         mogao dostaviti obavijest o provedenom nadzoru tijela.</li>
     </ul>
 
+
 <div class="contact-page">
 
     <!-- START -->
@@ -60,11 +61,12 @@
                 <strong>V. ZPPI §22.(1) i (2):</strong> Rokovi za ostvarivanje prava na
                 pristup informaciji mogu se produžiti za 15 dana, računajući od
                 dana kad je tijelo javne vlasti trebalo odlučiti o zahtjevu za pristup
-                informaciji. (<a href="<%= zppi_text_path %>">NN 25/13. i 85/15.</a>)<br>
+                informaciji. (<a href="<%= zppi_text_path %>">NN 25/13. i 85/15.</a>)
             </li>
             <li>
                 Više o tome pročitajte na stranicama pomoći: <a href="<%= help_requesting_path(:anchor =>
                 'quickly_response') %>">U kojem roku će vaš zahtjev biti riješen?</a>)
+
                 <% if !@user %>
                   <%= link_to _("Sign in or sign up"), signin_path(:r => request.fullpath)  %>
                   za slanje predstavke.
@@ -81,7 +83,126 @@
     <!-- END -->
 
 
+    <!-- START -->
+    <h2 class="contact-page__goal" id="zppi_5_21_123">
+        <label class="houdini-label" for="goal2">
+            V. ZPPI §21.(1), (2) i (3) - <strong>nisu ustupili zahtjev za pristup
+            informacijama</strong> drugom tijelu javne vlasti.
+        </label>
+    </h2>
 
+    <input class="houdini-input" type="radio" name="goals" id="goal2"
+        <% if params["contact"] && params[:current_form] == 'zppi_5_21_123' %>checked<% end %>>
+    <div class="houdini-target contact-page__options">
+        <ul>
+            <li>
+                <strong>Zakonska odredba V. ZPPI §21.(1):</strong>
+                Ako tijelo javne vlasti ne posjeduje informaciju, a ima saznanja
+                o tijelu koje je posjeduje, dužno je, bez odgode, a najkasnije u roku
+                od osam dana od zaprimanja zahtjeva, ustupiti zahtjev tome tijelu, a
+                o čemu će obavijestiti podnositelja.
+                (<a href="<%= zppi_text_path %>">NN 25/13. i 85/15.</a>)<br>
+                <strong>Zakonska odredba V. ZPPI §21.(2):</strong>
+                Ako tijelo javne vlasti zaprimi zahtjev za pristup informaciji
+                iz članka 15. stavka 2. točke 1. ovog Zakona, a nije njezin vlasnik,
+                dužno je bez odgode, a najkasnije u roku od osam dana od zaprimanja
+                zahtjeva, ustupiti zahtjev vlasniku informacije, o čemu će obavijestiti
+                podnositelja. (<a href="<%= zppi_text_path %>">NN 25/13. i 85/15.</a>)<br>
+                <strong>Zakonska odredba V. ZPPI §21.(3):</strong>
+                Ako tijelo javne vlasti zaprimi zahtjev za pristup međunarodnoj
+                informaciji, dužno je bez odgode, a najkasnije u roku od osam dana od
+                zaprimanja zahtjeva, ustupiti isti vlasniku informacije, o čemu će
+                obavijestiti podnositelja.
+                (<a href="<%= zppi_text_path %>">NN 25/13. i 85/15.</a>)
+            </li>
+            <li>
+                Više o ustupanju pročitajte na stranicama pomoći: <a href="<%= help_requesting_path(:anchor =>
+                'quickly_response') %>">U kojem roku će vaš zahtjev biti riješen?</a>)
+
+                <% if !@user %>
+                  <%= link_to _("Sign in or sign up"), signin_path(:r => request.fullpath)  %>
+                  za slanje predstavke.
+                <% end %>
+
+                <% if @user %>
+                  <%= foi_error_messages_for :contact %>
+                  <%= render :partial => "help/zppi_5_21_123",
+                             :locals => { :form_id => 'zppi_5_21_123' } %>
+                <% end %>
+            </li>
+        </ul>
+    </div>
+    <!-- END -->
+
+
+    <!-- START -->
+    <h2 class="contact-page__goal" id="zppi_5_24_2">
+        <label class="houdini-label" for="goal3">
+            V. ZPPI §24.(2) - <strong>nisu odgovorili na zahtjev za dopunu
+            informacija</strong> u propisanom roku.
+        </label>
+    </h2>
+
+    <input class="houdini-input" type="radio" name="goals" id="goal3"
+        <% if params["contact"] && params[:current_form] == 'zppi_5_24_2' %>checked<% end %>>
+    <div class="houdini-target contact-page__options">
+        <ul>
+            <li>
+                <strong>Zakonska odredba V. ZPPI §24.(2):</strong>
+                Tijelo javne vlasti obvezno je odlučiti o zahtjevu za dopunu,
+                odnosno ispravak informacije u roku od 15 dana od dana zaprimanja
+                zahtjeva. (<a href="<%= zppi_text_path %>">NN 25/13. i 85/15.</a>)
+
+                <% if !@user %>
+                  <%= link_to _("Sign in or sign up"), signin_path(:r => request.fullpath)  %>
+                  za slanje predstavke.
+                <% end %>
+
+                <% if @user %>
+                  <%= foi_error_messages_for :contact %>
+                  <%= render :partial => "help/zppi_5_24_2",
+                             :locals => { :form_id => 'zppi_5_24_2' } %>
+                <% end %>
+            </li>
+        </ul>
+    </div>
+    <!-- END -->
+
+
+    <!-- START -->
+    <h2 class="contact-page__goal" id="zppi_5_17_2">
+        <label class="houdini-label" for="goal4">
+            V. ZPPI §17.(2) - <strong>nisu dostavili informaciju na
+            prikladan način</strong> naznačen u zahtjevu.
+        </label>
+    </h2>
+
+    <input class="houdini-input" type="radio" name="goals" id="goal4"
+        <% if params["contact"] && params[:current_form] == 'zppi_5_17_2' %>checked<% end %>>
+    <div class="houdini-target contact-page__options">
+        <ul>
+            <li>
+                <strong>Zakonska odredba V. ZPPI §17.(2):</strong>
+                Korisnik može u zahtjevu za pristup informaciji naznačiti prikladan
+                način dobivanja informacije, a ako ne naznači, informacija će se
+                dostaviti na način na koji je podnesen zahtjev, odnosno na
+                najekonomičniji način.
+                (<a href="<%= zppi_text_path %>">NN 25/13. i 85/15.</a>)
+
+                <% if !@user %>
+                  <%= link_to _("Sign in or sign up"), signin_path(:r => request.fullpath)  %>
+                  za slanje predstavke.
+                <% end %>
+
+                <% if @user %>
+                  <%= foi_error_messages_for :contact %>
+                  <%= render :partial => "help/zppi_5_17_2",
+                             :locals => { :form_id => 'zppi_5_17_2' } %>
+                <% end %>
+            </li>
+        </ul>
+    </div>
+    <!-- END -->
 
 
 </div>
