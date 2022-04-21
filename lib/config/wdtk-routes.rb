@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   get "/help/ico-guidance-for-authorities" => redirect("https://0.codeforcroatia.org/ppi-smjernice-za-sluzbenike/"),
   :as => :ico_guidance
 
+  get "/help/zppi" => redirect("https://codeforcroatia.org/zppi"),
+  :as => :zppi_text
+
   get '/help/principles'  => 'help#principles',
     :via => 'get',
     :as => 'help_principles'
