@@ -3,10 +3,11 @@
 <%= render :partial => 'sidebar' %>
 <div id="left_column_flip" class="left_column_flip">
 <h1>Predstavke</h1>
-<p>Bilo tko može podijeti predstavku. Radi se o slučajevima kada građanin uoči da
+<p>Svatko može podnijeti predstavku na rad tijela javne vlasti vezano uz primjenu
+  Zakona o pravu na pristup informacijama. Radi se o slučajevima kada uočite da
   tijelo javne vlasti nepravilno primjenjuje ili uopće ne primjenjuje neku odredbu
   zakona. Kada ispunite ovaj obrazac, dostaviti ćemo vašu predstavku Povjereniku
-  za informiranje.</p>
+  za informiranje koja može poslužiti kao osnova za inspekcijski nadzor.</p>
 
 <div class="contact-page">
 
@@ -22,23 +23,20 @@
         <% if params["contact"] && params[:current_form] == 'zppi_5_20_1' %>checked<% end %>>
     <div class="houdini-target contact-page__options">
         <ul>
+            <%= render :partial => 'help/foi_motion_privacy' %>
             <li>
-                <strong>Zakonska odredba:</strong> V. ZPPI §20.(1) - Na temelju
+                <strong>Zakonska odredba V. ZPPI §20.(1):</strong> Na temelju
                 zahtjeva za pristup informaciji tijelo javne vlasti će odluĉiti
                 najkasnije u roku od 15 dana od dana podnošenja urednog zahtjeva.
                 (<a href="<%= zppi_text_path %>">NN 25/13. i 85/15.</a>)
-            </li>
-            <%= render :partial => 'help/foi_motion_privacy' %>
-
-            <li>
                 <% if !@user %>
                   <%= link_to _("Sign in or sign up"), signin_path(:r => request.fullpath)  %>
+                  za slanje predstavke.
                 <% end %>
 
                 <% if @user %>
                   <%= foi_error_messages_for :contact %>
-
-                  <%= render :partial => "help/contact_form",
+                  <%= render :partial => "help/foi_motion_form",
                              :locals => { :form_id => 'zppi_5_20_1' } %>
                 <% end %>
             </li>
