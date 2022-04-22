@@ -85,14 +85,18 @@
     <div class="houdini-target contact-page__options">
         <ul>
             <li>
-                Izravno kontaktirajte volontere koji administriraju <%= site_name %>:
+              <a href="https://codeforcroatia.org/ipz-forum" target="_blank">
+              Postavite vaše pitanje</a> na naš forum.
+            </li>
+            <li>
                 <% if !@user %>
                   <%= link_to _("Sign in or sign up"), signin_path(:r => request.fullpath)  %>
                   ili <a href="https://codeforcroatia.org/ipz-forum" target="_blank">
-                  postavite vaše pitanje</a> na našu diskurs zajednicu.
+                  Pitajte</a> našu diskurs zajednicu.
                 <% end %>
 
                 <% if @user %>
+                  Izravno kontaktirajte volontere koji administriraju <%= site_name %>:
                   <%= foi_error_messages_for :contact %>
 
                   <%= render :partial => "help/contact_form",
@@ -152,19 +156,19 @@
                 problema i pitanja koja biste mogli imati.
             </li>
             <li>
-                <% if @user && @user.is_pro? %>
-                    Ako vaš problem nije pokriven našim stranicama pomoći,
+              <a href="https://codeforcroatia.org/ipz-forum" target="_blank">
+              Postavite vaše pitanje</a> na naš forum.
+            </li>
+            <li>
+                <% if @user %>
+                    Ako vaš problem nije pokriven našim stranicama pomoći
+                    <% if !@user.is_pro? %>te niste uspjeli dobiti odgovor putem foruma<% end %>
                     možete se izravno obratiti volonterima koji administriraju
-                    <%= site_name %> Pro:
+                    <%= site_name %><% if @user.is_pro? %> Pro<% end %>:
                 <% else %>
-                    Ako vaš problem nije pokriven našim stranicama pomoći,
-                    možete se izravno obratiti volonterima koji administriraju
-                    <%= site_name %>:
-                    <% if !@user %>
-                      <%= link_to _("Sign in or sign up"), signin_path(:r => request.fullpath)  %>
-                      ili <a href="https://codeforcroatia.org/ipz-forum" target="_blank">
-                      postavite vaše pitanje</a> na našu diskurs zajednicu.
-                    <% end %>
+                    <%= link_to _("Sign in or sign up"), signin_path(:r => request.fullpath)  %>
+                    ili <a href="https://codeforcroatia.org/ipz-forum" target="_blank">
+                    pitajte</a> našu diskurs zajednicu.
                 <% end %>
 
                 <% if @user %>
@@ -193,6 +197,11 @@
                 Prvo pokušajte provjeriti <a href="<%= help_pro_path %>">naše
                 opsežne stranice pomoći za Pro korisnike</a>, koje sadrže rješenje za većinu
                 problema i pitanja koja biste mogli imati.
+            </li>
+            <li>
+              Zatim možete pokušati
+              <a href="https://codeforcroatia.org/ipz-forum" target="_blank">
+              postaviti vaše pitanje</a> na naš forum.
             </li>
             <li>
                 <% if @user && @user.is_pro? %>
