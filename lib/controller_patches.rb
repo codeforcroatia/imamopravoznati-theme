@@ -85,6 +85,7 @@ Rails.configuration.to_prepare do
             @foi_motion.errors.clear
         end
       end
+    end
 
     def principles; end
     def house_rules; end
