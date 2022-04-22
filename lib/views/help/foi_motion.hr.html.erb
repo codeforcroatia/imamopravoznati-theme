@@ -216,7 +216,51 @@
     <input class="houdini-input" type="radio" name="goals" id="part_2_goal"
         <% if params["contact"] && params[:current_form] == 'part_2' %>checked<% end %>>
     <div class="houdini-target contact-page__options">
-        <p>Content goes here</p>
+        <!-- START CONTENT PART-2 -->
+
+
+        <!-- START -->
+        <h2 class="contact-page__goal" id="zppi_3_10_1_13">
+            <label class="houdini-label" for="goal1">
+                III. ZPPI §10.(1)13) - <strong>nisu objavili obavijest o načinu i
+                  uvjetima</strong> ostvarivanja prava na pristup informacijama i
+                  ponovnu uporabu informacija.
+            </label>
+        </h2>
+
+        <input class="houdini-input" type="radio" name="goals" id="goal1"
+            <% if params["contact"] && params[:current_form] == 'zppi_3_10_1_13' %>checked<% end %>>
+        <div class="houdini-target contact-page__options">
+            <ul>
+                <li>
+                    <strong>Zakonska odredba III. ZPPI §10.(1):</strong> Tijela javne
+                    vlasti obvezna su na internetskim stranicama na lako pretraživ
+                    način i u strojno čitljivom obliku objavljivati:
+                    <br>
+                    <strong>13)</strong> obavijest o načinu i uvjetima ostvarivanja
+                    prava na pristup informacijama i ponovnu uporabu informacija na
+                    vidljivu mjestu, s podacima za kontakt službenika za informiranje,
+                    potrebnim obrascima ili poveznicama na obrasce te visinom naknade
+                    za pristup informacijama i ponovnu uporabu informacija.
+                    (<a href="<%= zppi_text_path %>">NN 25/13. i 85/15.</a>)
+
+                    <% if !@user %>
+                      </li><li><%= link_to _("Sign in or sign up"), signin_path(:r => request.fullpath) %>
+                        za slanje predstavke.
+                    <% end %>
+
+                    <% if @user %>
+                      <%= foi_error_messages_for :contact %>
+                      <%= render :partial => "help/zppi_3_10_1_13",
+                                 :locals => { :form_id => 'zppi_3_10_1_13' } %>
+                    <% end %>
+                </li>
+            </ul>
+        </div>
+        <!-- END -->
+
+        
+        <!-- END CONTENT PART-2 -->
     </div>
     <!-- END PART-2 -->
 
