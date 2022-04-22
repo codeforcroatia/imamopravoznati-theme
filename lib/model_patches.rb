@@ -199,7 +199,7 @@ Rails.configuration.to_prepare do
 
     InfoRequest::TitleValidation.module_eval do
       def generic_foi_title?
-        title =~ /(PPI|ZPPI|pravo na pristup informacijama|pristup informacijama|pristup informaciji|ponovna uporaba|ponovnu uporabu)?$/i
+        title =~ /(PPI|ZPPI|pravo na pristup informacijama|pristup informacijama|pristup informaciji|ponovna uporaba|ponovnu uporabu)/i
       end
     end
 
