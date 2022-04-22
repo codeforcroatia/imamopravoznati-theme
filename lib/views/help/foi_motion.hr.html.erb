@@ -2,7 +2,7 @@
 
 <%= render :partial => 'sidebar' %>
 <div id="left_column_flip" class="left_column_flip">
-<h1>Predstavke</h1>
+<h1>Predstavka</h1>
 <p>Svatko može podnijeti predstavku na rad tijela javne vlasti vezano uz primjenu
   Zakona o pravu na pristup informacijama. Radi se o slučajevima kada uočite da
   tijelo javne vlasti nepravilno primjenjuje ili uopće ne primjenjuje neku odredbu
@@ -39,6 +39,8 @@
     </ul>
 
 
+<% if @user %>
+
 <div class="contact-page">
 
     <!-- START -->
@@ -68,8 +70,8 @@
                 'quickly_response') %>">U kojem roku će vaš zahtjev biti riješen?</a>
 
                 <% if !@user %>
-                  <%= link_to _("Sign in or sign up"), signin_path(:r => request.fullpath)  %>
-                  za slanje predstavke.
+                  </li><li><%= link_to _("Sign in or sign up"), signin_path(:r => request.fullpath) %>
+                    za slanje predstavke.
                 <% end %>
 
                 <% if @user %>
@@ -120,8 +122,8 @@
                 'quickly_response') %>">U kojem roku će vaš zahtjev biti riješen?</a>
 
                 <% if !@user %>
-                  <%= link_to _("Sign in or sign up"), signin_path(:r => request.fullpath)  %>
-                  za slanje predstavke.
+                  </li><li><%= link_to _("Sign in or sign up"), signin_path(:r => request.fullpath) %>
+                    za slanje predstavke.
                 <% end %>
 
                 <% if @user %>
@@ -154,8 +156,8 @@
                 zahtjeva. (<a href="<%= zppi_text_path %>">NN 25/13. i 85/15.</a>)
 
                 <% if !@user %>
-                  <%= link_to _("Sign in or sign up"), signin_path(:r => request.fullpath)  %>
-                  za slanje predstavke.
+                  </li><li><%= link_to _("Sign in or sign up"), signin_path(:r => request.fullpath) %>
+                    za slanje predstavke.
                 <% end %>
 
                 <% if @user %>
@@ -190,8 +192,8 @@
                 (<a href="<%= zppi_text_path %>">NN 25/13. i 85/15.</a>)
 
                 <% if !@user %>
-                  <%= link_to _("Sign in or sign up"), signin_path(:r => request.fullpath)  %>
-                  za slanje predstavke.
+                  </li><li><%= link_to _("Sign in or sign up"), signin_path(:r => request.fullpath) %>
+                    za slanje predstavke.
                 <% end %>
 
                 <% if @user %>
@@ -206,4 +208,10 @@
 
 
 </div>
+
+<% else %>
+  <%= link_to _("Sign in or sign up"), signin_path(:r => request.fullpath), :class => "sign_in_link"  %>
+<% end %>
+
+
 </div>
