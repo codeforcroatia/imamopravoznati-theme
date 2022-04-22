@@ -210,7 +210,9 @@
 </div>
 
 <% else %>
-  <%= link_to _("Sign in or sign up"), signin_path(:r => request.fullpath), :class => "sign_in_link"  %>
+<div class="learn-more-foi">
+  <%= link_to _("Prijavite se za nastavak na predstavke"), signin_path(:r => request.fullpath), :class => "button-secondary"  %>
+</div>
 <% end %>
 
 
