@@ -36,9 +36,9 @@ Rails.configuration.to_prepare do
     before_action :set_recaptcha_required, :only => [:contact, :foi_motion]
 
     def foi_motion
-      @foi_motion_email = AlaveteliConfiguration::external_reviewer
+      @foi_motion_email = AlaveteliConfiguration::external_reviewers
       if feature_enabled?(:alaveteli_pro) && @user && @user.is_pro?
-        @foi_motion_email = AlaveteliConfiguration::external_reviewer
+        @foi_motion_email = AlaveteliConfiguration::external_reviewers
       end
 
       # if they clicked remove for link to request/body, remove it
