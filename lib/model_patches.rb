@@ -195,11 +195,12 @@ Rails.configuration.to_prepare do
                                              "volunteers cannot help you " \
                                              "with personal matters relating " \
                                              "to government services.")
-  end
-end
+    end
 
-InfoRequest::TitleValidation.module_eval do
-  def generic_foi_title?
-    title =~ /^(PPI|ZPPI|pravo na pristup informacijama|pristup informacijama|pristup informaciji|ponovna uporaba|ponovnu uporabu)?$/i
-  end
+    InfoRequest::TitleValidation.module_eval do
+      def generic_foi_title?
+        title =~ /^(PPI|ZPPI|pravo na pristup informacijama|pristup informacijama|pristup informaciji|ponovna uporaba|ponovnu uporabu)?$/i
+      end
+    end
+    
 end
