@@ -33,13 +33,66 @@ Rails.configuration.to_prepare do
 
   HelpController.class_eval do
 
+    before_action :set_recaptcha_required, :only => [:contact, :foi_motion]
+
+    def foi_motion
+      @foi_motion_email = AlaveteliConfiguration::external_reviewer
+      if feature_enabled?(:alaveteli_pro) && @user && @user.is_pro?
+        @foi_motion_email = AlaveteliConfiguration::external_reviewer
+      end
+
+      # if they clicked remove for link to request/body, remove it
+      if params[:remove]
+        @last_request = nil
+        cookies["last_request_id"] = nil
+        cookies["last_body_id"] = nil
+      end
+
+      # look up link to request/body
+      request = InfoRequest.find_by(id: cookies["last_request_id"].to_i)
+      @last_request = request if can?(:read, request)
+
+      @last_body = PublicBody.find_by(id: cookies["last_body_id"].to_i)
+
+      # submit form
+      if params[:submitted_contact_form]
+        if @user
+          params[:foi_motion][:email] = @user.email
+          params[:foi_motion][:name] = @user.name
+        end
+        @foi_motion = ContactValidator.new(params[:contact])
+
+        if (@recaptcha_required &&
+            !params[:remove] &&
+            !verify_recaptcha)
+          flash.now[:error] = _('There was an error with the reCAPTCHA. ' \
+                                'Please try again.')
+        elsif @foi_motion.valid? && !params[:remove]
+          ContactMailer.to_admin_message(
+            params[:foi_motion][:name],
+            params[:foi_motion][:email],
+            params[:foi_motion][:subject],
+            params[:foi_motion][:message],
+            @user,
+            @last_request, @last_body
+          ).deliver_now
+          flash[:notice] = _("Your message has been sent. Thank you for getting in touch! We'll get back to you soon.")
+          redirect_to frontpage_url
+          return
+        end
+
+        if params[:remove]
+            @foi_motion.errors.clear
+        end
+      end
+
     def principles; end
     def house_rules; end
     def how; end
     def complaints; end
     def volunteers; end
     def beginners; end
-    def foi_motion; end
+#    def foi_motion; end
 
     private
 
