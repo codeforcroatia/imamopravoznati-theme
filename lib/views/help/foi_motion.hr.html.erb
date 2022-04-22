@@ -206,12 +206,26 @@
     </div>
     <!-- END -->
 
+    <!-- START PART-2 -->
+    <h2 class="contact-page" id="part_2">
+        <label class="houdini-label" for="part_2_goal">
+            Part 2 - <strong>dodatne predstavke</strong> za pravo na pristup infromacijama.
+        </label>
+    </h2>
+
+    <input class="houdini-input" type="radio" name="goals" id="part_2_goal"
+        <% if params["contact"] && params[:current_form] == 'part_2' %>checked<% end %>>
+    <div class="houdini-target contact-page__options">
+        <p>Content goes here</p>
+    </div>
+    <!-- END PART-2 -->
+
 
 </div>
 
 <% else %>
 <div class="learn-more-foi">
-  <%= link_to _("Prijavite se za nastavak na predstavke"), signin_path(:r => request.fullpath), :class => "button-secondary"  %>
+  <%= link_to _("Prijavite se za rad s predstavkama"), signin_path(:r => request.fullpath), :class => "button-secondary"  %>
 </div>
 <% end %>
 
