@@ -206,9 +206,12 @@
             <li>
                 <% if @user && @user.is_pro? %>
                     Ako vaš problem nije pokriven našim stranicama pomoći,
-                    možete se izravno obratiti volonterima koji administriraju
+                    možete se izravno obratiti
+                    <a href="https://gong.hr/tko-smo/kontakt/" target="_blank">
+                    Gongu</a> ili volonterima koji administriraju
                     <%= AlaveteliConfiguration.pro_site_name %>
-                    (<%= mail_to AlaveteliConfiguration.pro_contact_email %>):
+                    (<%= mail_to AlaveteliConfiguration.pro_contact_email %>)
+                    putem kontakt obrasca:
                 <% else %>
                     Ako imate pitanje koje nije pokriveno na našim stranicama veznao uz
                     <%= AlaveteliConfiguration.pro_site_name %> uslugu, možete se
