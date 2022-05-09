@@ -32,13 +32,13 @@
         </label>
         <% if !@last_request.nil? %>
         <%= f.text_field :subject,
-                         :message, value: @last_request.public_body.name,
+                         :value => @last_request.public_body.name,
                          :size => 50,
                          :required => true,
                          :class => "message-subject" %>
         <% elsif !@last_body.nil? %>
         <%= f.text_field :subject,
-                         :message, value: raw( @last_body.name ),
+                         :value: raw( @last_body.name ),
                          :size => 50,
                          :required => true,
                          :class => "message-subject" %>
