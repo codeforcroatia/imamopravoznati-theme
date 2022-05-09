@@ -38,7 +38,7 @@
                          :class => "message-subject" %>
         <% elsif !@last_body.nil? %>
         <%= f.text_field :subject,
-                         :placeholder => @last_body.public_body.name,
+                         :placeholder => @last_body.name,
                          :size => 50,
                          :required => true,
                          :class => "message-subject" %>
