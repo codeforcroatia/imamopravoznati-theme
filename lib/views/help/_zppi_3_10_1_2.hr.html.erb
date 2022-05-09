@@ -30,11 +30,19 @@
         <label class="form_label" for="contact_subject">
           Naziv tijela javne vlasti:
         </label>
+        <% if !@last_request.nil? %>
         <%= f.text_field :subject,
-                         :placeholder => "<% if !@last_request.nil? %><%= @last_request.public_body.name %><% else %>Tijelo javne vlasti<% end %>",
+                         :placeholder => @last_request.public_body.name,
                          :size => 50,
                          :required => true,
                          :class => "message-subject" %>
+        <% else %>
+        <%= f.text_field :subject,
+                         :placeholder => "Tijelo javne vlasti",
+                         :size => 50,
+                         :required => true,
+                         :class => "message-subject" %>
+        <% end %>
     </p>
 
     <p>
