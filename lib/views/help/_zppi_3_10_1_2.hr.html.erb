@@ -32,7 +32,7 @@
         </label>
         <% if !@last_request.nil? %>
         <%= f.text_field :subject,
-                         :value => @last_request.public_body.name,
+                         :placeholder => @last_request.public_body.name,
                          :size => 50,
                          :required => true,
                          :class => "message-subject" %>
