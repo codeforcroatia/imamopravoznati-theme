@@ -312,6 +312,12 @@
   mjere za njihovo ispravljanje.
 </p>
 
+<% if @user %>
+<div class="learn-more-foi">
+  <%= link_to _("Podnesite predstavku Povjereniku za informiranje"), help_foi_motion_path, :class => "button"  %>
+</div>
+<% end %>
+
 <a name="complaining2"></a>
 <h2 id="refer-to-pi-reuse">Zaštita prava za ponovnu uporabu informacija <a
   class="hover_a" href="#refer-to-pi-reuse">#</a></h2>
