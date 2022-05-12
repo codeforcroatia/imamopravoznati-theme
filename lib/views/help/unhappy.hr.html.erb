@@ -318,6 +318,8 @@
   <%= link_to _("Podnesite predstavku Povjereniku za informiranje"), help_foi_motion_path, :class => "button"  %>
   </center>
 </div>
+<% elsif !@user %>
+<p><%= link_to _("Prijavite se za slanje predstavke"), signin_path(:r => request.fullpath), :class => "button-secondary" %> putem obrazaca koje smo pripremili.</p>
 <% end %>
 
 <a name="complaining2"></a>
