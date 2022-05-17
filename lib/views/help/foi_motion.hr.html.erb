@@ -626,6 +626,51 @@
 
         <!-- START CONTENT PART-3 -->
 
+        <!-- START -->
+        <h2 class="contact-page__goal" id="zppi_6_34_2_3">
+            <label class="houdini-label" for="part_3_goal1">
+                VI. ZPPI §34.(2) i (3) - <strong>nisu upisali isključivo pravo na ponovnu
+                uporabu u javno dostupnu evidenciju o svim odobrenim isključivim
+                pravima</strong> te nije obavljana redovna provjera Povjerenika
+                za informiranje.
+            </label>
+        </h2>
+
+        <input class="houdini-input" type="radio" name="goals" id="part_3_goal1"
+            <% if params["contact"] && params[:current_form] == 'zppi_6_34_2_3' %>checked<% end %>>
+        <div class="houdini-target contact-page__options">
+            <ul>
+                <li>
+                    <strong>Zakonska odredba VI. ZPPI §34.(2):</strong> tijelo
+                    javne vlasti može odobriti isključivo pravo na ponovnu uporabu
+                    informacija ako je to prijeko potrebno za pružanje javne usluge
+                    ili drugih usluga u javnom interesu. Opravdanost razloga za
+                    odobrenje takvog isključivog prava podliježe redovitoj provjeri
+                    Povjerenika i provjerava se najmanje svake tri godine, osim
+                    kad se radi o digitalizaciji informacija u području kulture.
+                    <br>
+                    <strong>VI. ZPPI §34.(3):</strong> Povjerenik vodi javno dostupnu
+                    evidenciju o svim odobrenim isključivim pravima. Odluke ili
+                    ugovori kojima se odobrava isključivo pravo na ponovnu uporabu
+                    informacija dostavljaju se Povjereniku u roku od 15 dana od dana
+                    donošenja, odnosno sklapanja ugovora.
+                    (<a href="<%= zppi_text_path %>">NN 25/13. i 85/15.</a>)
+
+                    <% if !@user %>
+                      </li><li><%= link_to _("Sign in or sign up"), signin_path(:r => request.fullpath) %>
+                        za slanje predstavke.
+                    <% end %>
+
+                    <% if @user %>
+                      <%= foi_error_messages_for :contact %>
+                      <%= render :partial => "help/zppi_6_34_2_3",
+                                 :locals => { :form_id => 'zppi_6_34_2_3' } %>
+                    <% end %>
+                </li>
+            </ul>
+        </div>
+        <!-- END -->
+
 
 
         <!-- END CONTENT PART-3 -->
