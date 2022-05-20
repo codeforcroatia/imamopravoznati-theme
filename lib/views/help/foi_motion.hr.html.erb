@@ -671,6 +671,44 @@
         </div>
         <!-- END -->
 
+        <!-- START -->
+        <h2 class="contact-page__goal" id="zppi_3_10_1_13_ii">
+            <label class="houdini-label" for="part_3_goal2">
+                III. ZPPI §10.(1)13) - <strong>nisu objavili isprave kontakt podatke</strong>
+                službenika za informiranje.
+            </label>
+        </h2>
+
+        <input class="houdini-input" type="radio" name="goals" id="part_3_goal2"
+            <% if params["contact"] && params[:current_form] == 'zppi_3_10_1_13_ii' %>checked<% end %>>
+        <div class="houdini-target contact-page__options">
+            <ul>
+                <li>
+                    <strong>Zakonska odredba III. ZPPI §10.(1):</strong> Tijela javne
+                    vlasti obvezna su na internetskim stranicama na lako pretraživ
+                    način i u strojno čitljivom obliku objavljivati:
+                    <br>
+                    <strong>13)</strong> obavijest o načinu i uvjetima ostvarivanja
+                    prava na pristup informacijama i ponovnu uporabu informacija na
+                    vidljivu mjestu, s podacima za kontakt službenika za informiranje,
+                    potrebnim obrascima ili poveznicama na obrasce te visinom naknade
+                    za pristup informacijama i ponovnu uporabu informacija.
+                    (<a href="<%= zppi_text_path %>">NN 25/13. i 85/15.</a>)
+
+                    <% if !@user %>
+                      </li><li><%= link_to _("Sign in or sign up"), signin_path(:r => request.fullpath) %>
+                        za slanje predstavke.
+                    <% end %>
+
+                    <% if @user %>
+                      <%= foi_error_messages_for :contact %>
+                      <%= render :partial => "help/zppi_3_10_1_13_ii",
+                                 :locals => { :form_id => 'zppi_3_10_1_13_ii' } %>
+                    <% end %>
+                </li>
+            </ul>
+        </div>
+        <!-- END -->
 
 
         <!-- END CONTENT PART-3 -->
