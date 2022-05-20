@@ -312,7 +312,7 @@
   mjere za njihovo ispravljanje.
 </p>
 
-<% if @user and !@last_request.nil? %>
+<% if @user %>
 <div>
   <center>
   <%= link_to _("Podnesite predstavku Povjereniku za informiranje"), help_foi_motion_path, :class => "button"  %>
