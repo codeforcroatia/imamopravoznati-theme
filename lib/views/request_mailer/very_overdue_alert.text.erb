@@ -5,12 +5,6 @@
       :law_used_short => @info_request.law_used_human(:short).html_safe,
       :title => @info_request.title.html_safe)%><% if @info_request.public_body.is_school? %> <%= _('even during holidays')%><% end %>.
 
-Kliknite na link ispod i pratite korake za slanje predstavke Povjereniku za
-informiranje jer nisu odgovorili na zahtjev za pristup informacijama u propisanom
-roku:
-
-https://imamopravoznati.org/help/unhappy/<%= @info_request.url_title.html_safe %>#refer-to-pi-notice
-
 <%= _('Click on the link below to send a message to {{public_body_name}} ' \
       'asking them to confirm that they have received your request and ' \
       'tell you when they are going to respond. You can also refer your ' \
@@ -18,5 +12,11 @@ https://imamopravoznati.org/help/unhappy/<%= @info_request.url_title.html_safe %
       :public_body_name => @info_request.public_body.name.html_safe) %>
 
 <%= @url %>
+
+Za više informacija o postupku slanja predstavke Povjereniku za informiranje jer
+nisu odgovorili na zahtjev za pristup informacijama u propisanom roku pogledajte
+sljedeću poveznicu:
+
+https://imamopravoznati.org/help/unhappy/<%= @info_request.url_title.html_safe %>#refer-to-pi-notice
 
 -- <%= _('the {{site_name}} team', :site_name => site_name.html_safe) %>
