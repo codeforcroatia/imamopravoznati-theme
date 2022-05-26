@@ -66,7 +66,7 @@ for patch in ['patch_mailer_paths.rb',
     require File.expand_path "../#{patch}", __FILE__
 end
 
-$alaveteli_route_extensions << 'ipz-routes.rb'
+$alaveteli_route_extensions << 'wdtk-routes.rb'
 
 # Tell FastGettext about the theme's translations: look in the theme's
 # locale-theme directory for a translation in the first place, and if
