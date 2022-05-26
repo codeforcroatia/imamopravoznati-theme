@@ -1,0 +1,29 @@
+<p>
+  <%= _("Thank you! Hope you don't have to wait much longer.") %>
+</p>
+<p>
+  <% info_request = InfoRequest.find(info_request_id) %>
+  <% if info_request.public_body.not_subject_to_law? %>
+    <%= _("Although the authority is not legally obliged to reply, " \
+          "you should have got a response, normally " \
+          "before the end of <strong>{{date_response_required_by}}</strong>.",
+          :date_response_required_by => simple_date(
+            info_request.date_response_required_by
+          )) %>
+  <% else %>
+    <%= _("By law, you should have got a response promptly, and normally " \
+          "before the end of <strong>{{date_response_required_by}}</strong>.",
+          :date_response_required_by => simple_date(
+          info_request.date_response_required_by
+        )) %>
+  <% end %>
+</p>
+<p>
+  Alternativno, možete se žaliti Povjereniku za informiranje jer nisu
+  odgovorili na zahtjev za pristup informacijama u propisanom roku. Detalje
+  možete saznati putem linka:
+
+  <center>
+  <%= link_to _("Pogledajte kako podnijeti žalbu"), help_unhappy_path(:anchor => 'refer-to-pi'), :class => "button"  %>
+  </center>
+</p>
