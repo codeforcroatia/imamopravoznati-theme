@@ -1,0 +1,112 @@
+<%= form_for :contact,
+             :url => help_contact_path + '#' +  form_id,
+             :html => {:class => 'contact-form'} do |f| %>
+
+    <p class="contact-form__understand">
+        <%= f.check_box :understand, :required => true %>
+        <label for="contact_understand" class="form_label">
+            Potvrđujem da šaljem legitiman prigovor na rad tijela javne vlasti
+            vezano uz primjenu Zakona o pravu na pristup informacijama.
+        </label>
+    </p>
+
+    <% if not @user %>
+        <p>
+            <label class="form_label" for="contact_name">Ime i prezime
+              podnositelja predstavke:</label>
+            <%= f.text_field :name, :size => 20, :required => true %>
+            (ili <%= link_to "sign in",
+                            signin_url(
+                              :r => request.fullpath + '#' + form_id) %>)
+        </p>
+
+        <p>
+            <label class="form_label" for="contact_email">Email:</label>
+            <%= f.text_field :email, :size => 20, :required => true %>
+        </p>
+    <% end %>
+
+    <p>
+        <label class="form_label" for="contact_subject">
+          Naziv tijela javne vlasti:
+        </label>
+        <% if !@last_request.nil? %>
+        <%= f.text_field :subject,
+                         value: @last_request.public_body.name,
+                         :size => 50,
+                         :required => true,
+                         :class => "message-subject" %>
+        <% elsif !@last_body.nil? %>
+        <%= f.text_field :subject,
+                         value: @last_body.name,
+                         :size => 50,
+                         :required => true,
+                         :class => "message-subject" %>
+        <% else %>
+        <%= f.text_field :subject,
+                         :placeholder => "Tijelo javne vlasti",
+                         :size => 50,
+                         :required => true,
+                         :class => "message-subject" %>
+        <% end %>
+    </p>
+
+    <p>
+        <label class="form_label" for="contact_message">
+            Razlog predstavke:
+        </label>
+        <%= f.text_area :message, value: raw("Poštovani,
+izjavljujem predstavku na rad tijela javne vlasti iz naslova.
+
+Tijelo javne vlasti nije na svojim internetskim stranicama objavilo na lako pretraživ način i u strojno čitljivom obliku informacije o postupcima javne nabave, dokumentaciju potrebnu za nadmetanje, informacije o izvršavanju ugovora i druge informacije za koje postoji obveza objavljivanja sukladno zakonu kojim se uređuje javna nabava čime je povrijedilo odredbe članka 10. stavka 1. točka 9. Zakona o pravu na pristup informacijama (Narodne novine, broj 25/13 i 85/15). Predlažem Povjereniku za informiranje da u postupku po ovoj predstavci napravi inspekcijiski nadzor tijela javne vlasti.
+
+Srdačan pozdrav"),
+                        :rows => 10,
+                        :cols => 60,
+                        :required => true %>
+    </p>
+
+    <p style="display:none;">
+        <%= f.label :comment, 'Do not fill in this field' %>
+        <%= f.text_field :comment %>
+    </p>
+
+    <% if !@last_request.nil? %>
+        <p>
+            <label class="form_label" for="contact_message">
+              Uključite link na zahtjev:
+            </label>
+            <%=request_link(@last_request) %>
+            <%= submit_tag "remove", :name => 'remove' %>
+        </p>
+    <% end %>
+    <% if !@last_body.nil? %>
+        <p>
+            <label class="form_label" for="contact_message">
+              Uključite link na tijelo javne vlasti:
+            </label>
+            <%=public_body_link(@last_body) %>
+            <%= submit_tag "remove", :name => 'remove' %>
+        </p>
+    <% end %>
+
+    <% if @recaptcha_required %>
+      <%= recaptcha_tags %><br />
+    <% end %>
+
+    <div class="form_button">
+        <script><!--
+            if (!!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/)) {
+                $('#contact_understand').removeAttr('required');
+                $('#contact_name').removeAttr('required');
+                $('#contact_email').removeAttr('required');
+                $('#contact_subject').removeAttr('required');
+                $('#contact_message').removeAttr('required');
+            }
+        //--></script>
+        <%= hidden_field_tag(:current_form, form_id) %>
+        <%= hidden_field_tag(:submitted_contact_form, 1) %>
+        <%= submit_tag "Pošaljite predstavku", :data => { :disable_with => "Slanje..." } %>
+    </div>
+
+<% end %>

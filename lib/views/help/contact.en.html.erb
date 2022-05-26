@@ -81,14 +81,54 @@
         <ul>
             <li>
                 Directly contact the volunteers who run <%= site_name %>:
+                <% if !@user %>
+                  <%= link_to _("Sign in or sign up"), signin_path(:r => request.fullpath)  %>
+                  or <a href="https://codeforcroatia.org/ipz-forum" target="_blank">
+                  post your question</a> to our discourse community.
+                <% end %>
 
-                <%= foi_error_messages_for :contact %>
+                <% if @user %>
+                  <%= foi_error_messages_for :contact %>
 
-                <%= render :partial => "help/contact_form",
-                           :locals => { :form_id => 'writing-help' } %>
+                  <%= render :partial => "help/contact_form",
+                             :locals => { :form_id => 'writing-help' } %>
+                <% end %>
             </li>
         </ul>
     </div>
+
+
+
+
+    <h2 class="contact-page__goal" id="whistleblowers-help">
+        <label class="houdini-label" for="goal5">
+            I want that <strong>somebody else sends my freedom of information request</strong>.
+        </label>
+    </h2>
+
+    <input class="houdini-input" type="radio" name="goals" id="goal5"
+        <% if params["contact"] && params[:current_form] == 'whistleblowers-help' %>checked<% end %>>
+    <div class="houdini-target contact-page__options">
+        <ul>
+            <li>
+                If you have important inside information and can't publish it yourself, read our
+                <a href="https://imamopravoznati.org/help/requesting#whistleblowers">
+                  tips for public sector whistleblowers</a>.
+            </li>
+            <li>
+                Send us <a href="https://forms.gle/udwDqgPPfEVygzW6A" target="_blank">
+                  anonymous application via the form</a> and someone else will send your request.
+            </li>
+            <!-- <li>
+                Ili izravno stupite u kontakt s volonterima koji administriraju <%= site_name %>:
+
+                ... contact form here ...
+
+            </li> -->
+        </ul>
+    </div>
+
+
 
 
     <h2 class="contact-page__goal" id="wdtk">
@@ -115,12 +155,19 @@
                 <% else %>
                     If your issue isn’t covered by our help pages, you can
                     directly contact the volunteers who run <%= site_name %>:
+                    <% if !@user %>
+                      <%= link_to _("Sign in or sign up"), signin_path(:r => request.fullpath)  %>
+                      or <a href="https://codeforcroatia.org/ipz-forum" target="_blank">
+                      post your question</a> to our discourse community.
+                    <% end %>
                 <% end %>
 
-                <%= foi_error_messages_for :contact %>
+                <% if @user %>
+                  <%= foi_error_messages_for :contact %>
 
-                <%= render :partial => "help/contact_form",
-                           :locals => { :form_id => 'wdtk' } %>
+                  <%= render :partial => "help/contact_form",
+                             :locals => { :form_id => 'wdtk' } %>
+                <% end %>
             </li>
         </ul>
     </div>

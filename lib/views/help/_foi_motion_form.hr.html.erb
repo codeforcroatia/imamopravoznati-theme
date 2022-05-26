@@ -1,0 +1,92 @@
+<%= form_for :contact,
+             :url => help_contact_path + '#' +  form_id,
+             :html => {:class => 'contact-form'} do |f| %>
+
+    <p class="contact-form__understand">
+        <%= f.check_box :understand, :required => true %>
+        <label for="contact_understand" class="form_label">
+            Potvrđujem da šaljem legitiman prigovor na rad tijela javne vlasti
+            vezano uz primjenu Zakona o pravu na pristup informacijama.
+        </label>
+    </p>
+
+    <% if not @user %>
+        <p>
+            <label class="form_label" for="contact_name">Ime i prezime
+              podnositelja predstavke:</label>
+            <%= f.text_field :name, :size => 20, :required => true %>
+            (ili <%= link_to "sign in",
+                            signin_url(
+                              :r => request.fullpath + '#' + form_id) %>)
+        </p>
+
+        <p>
+            <label class="form_label" for="contact_email">Email:</label>
+            <%= f.text_field :email, :size => 20, :required => true %>
+        </p>
+    <% end %>
+
+    <p>
+        <label class="form_label" for="contact_subject">
+          Naziv tijela javne vlasti:
+        </label>
+        <%= f.text_field :subject,
+                         :size => 50,
+                         :required => true,
+                         :class => "message-subject" %>
+    </p>
+
+    <p>
+        <label class="form_label" for="contact_message">
+            Razlog predstavke:
+        </label>
+        <%= f.text_area :message, value: raw("_Preddefinirani tekst predstavke_"),
+                        :rows => 10,
+                        :cols => 60,
+                        :required => true %>
+    </p>
+
+    <p style="display:none;">
+        <%= f.label :comment, 'Do not fill in this field' %>
+        <%= f.text_field :comment %>
+    </p>
+
+    <% if !@last_request.nil? %>
+        <p>
+            <label class="form_label" for="contact_message">
+              Uključite link na zahtjev:
+            </label>
+            <%=request_link(@last_request) %>
+            <%= submit_tag "remove", :name => 'remove' %>
+        </p>
+    <% end %>
+    <% if !@last_body.nil? %>
+        <p>
+            <label class="form_label" for="contact_message">
+              Uključite link na tijelo javne vlasti:
+            </label>
+            <%=public_body_link(@last_body) %>
+            <%= submit_tag "remove", :name => 'remove' %>
+        </p>
+    <% end %>
+
+    <% if @recaptcha_required %>
+      <%= recaptcha_tags %><br />
+    <% end %>
+
+    <div class="form_button">
+        <script><!--
+            if (!!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/)) {
+                $('#contact_understand').removeAttr('required');
+                $('#contact_name').removeAttr('required');
+                $('#contact_email').removeAttr('required');
+                $('#contact_subject').removeAttr('required');
+                $('#contact_message').removeAttr('required');
+            }
+        //--></script>
+        <%= hidden_field_tag(:current_form, form_id) %>
+        <%= hidden_field_tag(:submitted_contact_form, 1) %>
+        <%= submit_tag "Pošaljite predstavku", :data => { :disable_with => "Slanje..." } %>
+    </div>
+
+<% end %>

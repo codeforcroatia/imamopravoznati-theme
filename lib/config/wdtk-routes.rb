@@ -9,8 +9,11 @@ Rails.application.routes.draw do
     get '/reset' => 'user#survey_reset', :as => :survey_reset
   end
 
-  get "/help/ico-guidance-for-authorities" => redirect("https://0.codeforcroatia.org/ppi-smjernice-za-sluzbenike/"),
+  get "/help/ico-guidance-for-authorities" => redirect("https://publikacije.imamopravoznati.org"),
   :as => :ico_guidance
+
+  get "/help/zppi" => redirect("https://codeforcroatia.org/zppi"),
+  :as => :zppi_text
 
   get '/help/principles'  => 'help#principles',
     :via => 'get',
@@ -35,4 +38,8 @@ Rails.application.routes.draw do
   get '/help/beginners'  => 'help#beginners',
     :via => 'get',
     :as => 'help_beginners'
+
+  get '/help/foi_motion'  => 'help#foi_motion',
+    :via => 'get',
+    :as => 'help_foi_motion'
 end

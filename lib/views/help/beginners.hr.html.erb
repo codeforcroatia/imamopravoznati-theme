@@ -1,27 +1,242 @@
 <% @title = "Vodič za početnike" %>
 <%= render :partial => 'sidebar' %>
 <div id="left_column_flip" class="left_column_flip">
-  <h1>
-    <%= @title %>
+  <h1 id="guide">
+    <%= @title %> <a href="#guide">#</a>
   </h1>
   <p>
-    Detaljne informacije o tome kako podnijeti zahtjev za pristup informacijama
-    pomoću ove internetske stranice možete pronaći u ovom <a
-    href="https://web.archive.org/web/20210813053552/https://www.mysociety.org/2014/08/15/how-to-make-a-freedom-of-information-request-with-whatdotheyknow/" target="_blank">
-    blogu</a>.
+    Pravo na pristup informacijama je Ustavom Republike Hrvatske i Zakonom o
+    pravu na pristup informacijama zajamčeno pravo svakoga građanina ili pravne
+    osobe na pristup informacijama koje posjeduju tijela javne vlasti u Republici
+    Hrvatskoj, neovisno o svrsi u koju se informacija želi koristiti.
+    Treba vam nekoliko informacija da biste ostvarili ovo pravo. <%= site_name %>
+    vas želi opremiti potrebnim znanjem za ostvarivanje vaših prava!
   </p>
-  <p>
-    Savjeti o tome kako na <%= site_name %> možete uključiti praćenje svih
-    zahtjeva za pristup informacijama upućenih vašoj lokalnoj samoupravi te
-    zaprimati obavijesti putem e-pošte možete pronaći u ovom
-    <a href="https://web.archive.org/web/20210812202720/https://www.mysociety.org/2014/09/19/how-to-keep-up-with-hot-topics-in-your-local-area/" target="_blank">
-    blogu</a>. A ovaj <a
-    href="https://web.archive.org/web/20201127093150/https://www.mysociety.org/2014/09/29/subscribe-to-foi-requests-on-any-topic/" target="_blank">
-    blog</a> objašnjava kako se možete pretplatiti na primanje obavijesti
-    e-poštom o zahtjevima za pravo na pristup informacijama o bilo kojoj temi.
+  <dl>
+    <dt id="who">
+      Tko može tražiti informacije od tijela javne vlasti?
+      <a href="#who">#</a>
+    </dt>
+    <dd>
+      <p>
+        Svatko ima pravo na informacije koje su javnog karaktera, a u posjedu su
+        tijela javne vlasti.
+      </p>
+      <p>
+        To znači da svaki građanin (fizička osoba, u bilo kojem svojstvu) kao i
+        svaka pravna osoba (tvrtka, udruga civilnog društva, medij, ustanova, i
+        sl.) ima pravo na informaciju koja je javnog karaktera.
+      </p>
+      <p>
+        To je pravo neovisno o državljanstvu ili sjedištu pravne osobe – jednak
+        je tretman domaćih i stranih fizičkih i pravnih osoba. Drugim riječima,
+        pravo možete ostvariti bez obzira jeste li državljanin ili stranac odnosno
+        imate li kao pravna osoba sjedište u Republici Hrvatskoj ili u inozemstvu.
+      </p>
+    </dd>
+    <dt id="what">
+      Što mogu zatražiti?
+      <a href="#what">#</a>
+    </dt>
+    <dd>
+      <p>
+        Pravo na pristup informacijama pretpostavlja pristup već gotovoj i
+        postojećoj informaciji. U načelu se mogu tražiti sve informacije koje su
+        dostupne od tijela javne vlasti. Primjeri informacija koje možete
+        zatražiti uključuju:
+        <ul>
+          <li>ugovori grada s tvrtkom</li>
+          <li>bruto plaće gradonačelnika ili načelnika općine</li>
+          <li>pripremljena izvješća i studije</li>
+          <li>financijski proračun i izvršenje proračuna</li>
+          <li>računi koji je grad platio za neke usluge</li>
+          <li>zapisnik sastanaka s lobistima.</li>
+        </ul>
+      </p>
+      <p>
+        U smislu ponovne uporabe mogu se tražiti informacije koje ćete ponovno
+        koristiti za komercijalnu ili nekomercijalnu namjenu (npr. izradu mobilne
+        aplikacije). Primjeri informacija koje možete zatražiti uključuju:
+        <ul>
+          <li>planirani raspored iz voznog reda javnog prijevoza</li>
+          <li>registar financijskih potpora</li>
+          <li>upisnik zprimljenih zahtjeva</li>
+          <li>izvoz iz baze podataka o kaznenim djelima</li>
+          <li>informacije o manifestacijama i događanjima za kalendarsku godinu.</li>
+        </ul>
+      </p>
+      <p>
+        Radi se o informacijama o radu tijela javne vlasti, njihovom odlučivanju
+        i odlukama, financijskim pitanjima, registre i upisnike, odnosno svemu što je u
+        vezi s njihovim radom ili organizacijom, osim u slučajevima kada su informacija ili
+        njezini dijelovi zaštićeni zakonom radi očuvanja drugih važnih interesa
+        (npr. privatnosti ili nacionalne sigurnosti). Informacija pri tome obuhvaća
+        sve već postojeće informacije u obliku dokumenata, zapisa ili u bilo kojem
+        obliku zabilježenih informacija (pisanih, vizualnih, slušnih).
+      </p>
+      <p>
+        Pravo na pristup informacijama je snažan alat ako želite pronaći informacije
+        koje će ići u prilog vašem argumentu ili kampanji. Iako možda nećete koristiti
+        ovu internetsku stranicu kako bi pokrenuli svoju kampanju, ohrabrujemo vas
+        u tome da ju iskoristite za dobivanje informacija koje trebate. Također
+        vas ohrabrujemo u tome da svoje zagovaranje započnete drugdje – jedan od
+        učinkovitih i vrlo jednostavnih načina jest pokretanje vlastitog bloga.
+        Link na vaš članak, objavu na blogu ili objavu na društenim mrežama
+        vezanu uz vaš zahtjev možete dodati ispod vašeg zahtjeva obliku bilješke
+        ili korištenjem linka za dodavanje citata s desne strane uz sam zahtjev.
+      </p>
+      <p>
+        Kratke i sažete poruke tijelima vlasti pomažu u razumijevanju koje
+        informacije tražite, što znači da odgovor možete dobiti brže.
+      </p>
+    </dd>
+    <dt id="forbidden">
+      Postoji nekoliko izuzetaka
+      <a href="#forbidden">#</a>
+    </dt>
+    <dd>
+      <p>
+        U odnosu na sadržaj informacije, Zakon o pravu na pristup informacijama
+        se ne primjenjuje na informacije za koje postoji obveza čuvanja tajnosti,
+        sukladno zakonu koji uređuje sigurnosno-obavještajni sustav Republike Hrvatske
+        i na informacije koje predstavljaju klasificirane informacije čiji su
+        vlasnici međunarodne organizacije ili druge države, te klasificirane
+        informacije tijela javne vlasti koje nastaju ili se razmjenjuju u okviru
+        suradnje s međunarodnim organizacijama ili drugim državama.
+      </p>
+      <p>
+        Potrebno je razlikovati zahtjeve za pristup informacijama od odgovaranja
+        na upite, davanja mišljenja i izrade akata. Pravo na pristup informacijama
+        ne predstavlja dužnost tijela javne vlasti da ulaže dodatni trud, povezivanje,
+        tumačenje, odnosno stvaranje novih informacije. Stoga davanje pojašnjenja, očitovanja,
+        tumačenja koja u trenutku podnošenja zahtjeva za pristup informacijama nisu
+        bila izrađena nije "informacija" u smislu odredbi Zakona o pravu na pristup
+        informacijama. Kada korisnik postavlja pitanja na koja očekuje sastavljanje
+        odgovora npr. davanje mišljenja, obrazloženja, pojašnjavanja, potvrđivanje ili
+        demantiranje navoda i slično ne radi se o zahtjevima za pristup informacijama,
+        te na takve upite najčešće odgovara glasnogovornik tijela javne vlasti i
+        nadležna organizacijska jedinica.
+      </p>
+      <p>
+        Molimo vas da putem <%= site_name %> <strong>ne tražite sljedeće</strong>:
+        <ul>
+          <li>traženje pojašnjenja, obrazloženja, očitovanja, tumačenja,
+            potvrđivanje ili demantiranje navoda</li>
+          <li>argumente koji idu u prilog vašem djelovanju</li>
+          <li>izjave koje bi mogle naštetiti ugledu ili vrijeđati druge.</li>
+        </ul>
+      </p>
+      <p>
+        Ako to ipak pošaljete putem portala, možda ćemo biti prisiljeni ukloniti
+        vaš zahtjev radi kršenja <a href="<%= help_house_rules_path %>">pravila ponašanja</a>.
+      </p>
+    </dd>
+    <dt id="authority">
+      Od koga mogu dobiti ili tražiti informacije?
+      <a href="#authority">#</a>
+    </dt>
+    <dd>
+      <p>
+        Obveznike primjene Zakona o pravu na pristup informacijama, odnosno
+        postupanja po zahtjevima korisnika Zakon naziva <strong>tijelima javne vlasti</strong>.
+        Kao što to sam naziv kaže, ključni element rada takvih tijela jest rad
+        u javnom interesu temeljem propisane ovlasti ili djelokruga javne službe,
+        financiranje javnim sredstvima ili činjenica da ih je osnovala država,
+        županija, grad ili općina odnosno njihove pravne osobe. Tijela javne
+        vlasti mogu imati i profitni karakter, ali to ih ne isključuje iz kruga
+        obveznika primjene Zakona, ukoliko su ispunjeni drugi uvjeti. Istovremeno,
+        nije svaka pravna osoba ujedno i obveznik Zakona o pravu na pristup
+        informacijama, pa tako privatna poduzeća u načelu nisu tijela javne vlasti.
+      </p>
+      <p>
+        Tijela javne vlasti od kojih možete tražiti informacije su državna tijela
+        (primjerice Vlada Republike Hrvatske, Hrvatski sabor, Predsjednik Republike
+        Hrvatske), tijela državne uprave (npr. ministarstva, uredi državne uprave),
+        pravosudna tijela (sudovi, državna odvjetništva), lokalna samouprava (općine,
+        gradovi, županije), tijela s javnim ovlastima i tijela koja obavljaju javnu
+        službu (primjerice škole i fakulteti, zdravstvene ustanove, centri za
+        socijalnu skrb, agencije i zavodi, komore), trgovačka društva u većinskom
+        javnom vlasništvu i druge pravne osobe koje se financiraju iz državnog
+        proračuna ili iz proračuna jedinica lokalne i područne (regionalne)
+        samouprave, odnosno iz javnih sredstava (nameta, davanja i slično).
+      </p>
+      <p>
+        Kako biste saznali od kojih tijela javne vlasti možete tražiti informacije,
+        njihov popis možete pronaći na
+        <a href="<%= list_public_bodies_default_path %>">popisu tijela javne vlasti</a>.
+      </p>
+      <p>
+        U ovom trenutku <%= site_name %> popis ima više od
+        <%= number_with_delimiter(PublicBody.visible.count) %>
+        kontakta tijela javne vlasti. On se temelji na instruktovom Popisu tijela
+        javne vlasti kojeg održava Povjerenik za informiranje. Međutim, popis nije
+        stalan i podložan je promjenama. Uvijek postoji mogućnost da neko tijelo
+        nije navedeno u popisu uslijed promjena zakonskog okvira, neka se tijela
+        javne vlasti mogu ukinuti ili nova osnovati, a također se određena
+        trgovačka društva mogu privatizirati ili im se mogu ukinuti javne ovlasti
+        ili takve ovlasti tek mogu dobiti. Stoga je uloga našeg popisa da korisnicima
+        na jednom mjestu omogući lak i pretraživ pristup informacijama od tijela
+        javne vlasti putem dostupnih kontakt podataka za lakše podnošenje zahtjeva
+        ili traženja informacija na internetskoj stranici.
+      </p>
+    </dd>
+    <dt id="goodtoknow">
+      Dobro je znati
+      <a href="#goodtoknow">#</a>
+    </dt>
+    <dd>
+      <ol>
+        <li><strong>Vaša kompletna korespondencija s tijelima javne vlasti putem <%= site_name %> je javna i pretraživa na internetu.</strong> Stoga radi zaštite svojih osobnih podataka nemojte u korespodenciju pisati podatke koje ne želite da se javno vide (npr. kućnu adresu).</li>
+        <li><strong>U korespodenciji s tijelom javne vlasti ne pišite o drugim osobama.</strong> Neslužbeno možete primjeniti načelo reciprociteta, ako ne želite javno dati neku informaciju o sebi, ne pišite to o drugim osobama. Pridržavajte se naših <a href="<%= help_house_rules_path %>">pravila ponašanja</a>.</li>
+        <li><strong>Budite ažurni te kada vas obavijestimo pregledajte zaprimljene poruke od tijela javne vlasti.</strong> Kvaliteta informacija na ovom portalu ovisi o vama, našim korisnicima. Oslanjamo se na to da svaki zaprimljeni odgovor od tijela javne vlasti pročitate i ocijenite promjenom statusa zahtjeva. Takva će informacija ujedno pomoći i drugima u pronalasku prave informacije. U našoj statistici moći ćemo lakše odrediti koja tijela pravilno postupaju po predmetima odnosno koja tijela ne primjenjuju pravilno zakonske odredbe.</li>
+        <li><strong>Vašu adresu e-pošte nećemo poslati tijelu javne vlasti.</strong> Generiramo jedinstvenu adresu @imamopravoznati.org za svaki zahtjev. Tijela javne vlasti će vidjeti samo ovakvu adresu. Vaša osobna adresa e-pošte je sigurna. Pročitajte više o tome kako postupamo s vašim osobnim podacima <a href="<%=
+        help_privacy_path(:anchor => 'personal_information_foi') %>">kada šaljete zahtjev</a>.</li>
+      </ol>
+    </dd>
+    <dt id="nextsteps">
+      A sada?
+      <a href="#nextsteps">#</a>
+    </dt>
+    <dd>
+      <p>
+        <strong><a href="<%= select_authority_path %>">Napišite novi zahtjev!</a></strong><br>
+        Jeste li spremni? Sada ovdje možete napraviti novi zahtjev za pravo na pristup informacijama.<br>
+        Detaljne informacije o tome kako podnijeti zahtjev za pristup informacijama
+        pomoću ove internetske stranice možete pronaći na ovom <a
+        href="https://web.archive.org/web/20210813053552/https://www.mysociety.org/2014/08/15/how-to-make-a-freedom-of-information-request-with-whatdotheyknow/" target="_blank">
+        blogu</a>.
+      </p>
+      <p>
+        <strong><a href="https://publikacije.imamopravoznati.org/">O pravu na pristup informacijama</a></strong><br>
+        Ovdje možete pronaći sve o pravu na pristup informacijama u Republici Hrvatskoj.
+      </p>
+      <p>
+        <strong><a href="https://gong.hr/category/otvoreni-podaci/">Naša istraživanja</a></strong><br>
+        Informacije o uzbudljivim istragama ili sudskim odlukama možete pronaći na Gongovim internetskim stranicama.
+      </p>
+      <p>
+        Savjeti o tome kako na <%= site_name %> možete uključiti praćenje svih
+        zahtjeva za pristup informacijama upućenih vašoj lokalnoj samoupravi te
+        zaprimati obavijesti putem e-pošte možete pronaći u ovom
+        <a href="https://web.archive.org/web/20210812202720/https://www.mysociety.org/2014/09/19/how-to-keep-up-with-hot-topics-in-your-local-area/" target="_blank">
+        blogu</a>. A ovaj <a
+        href="https://web.archive.org/web/20201127093150/https://www.mysociety.org/2014/09/29/subscribe-to-foi-requests-on-any-topic/" target="_blank">
+        blog</a> objašnjava kako se možete pretplatiti na primanje obavijesti
+        e-poštom o zahtjevima za pravo na pristup informacijama o bilo kojoj temi.
+      </p>
+      <p>
+        Ako su vam potrebni dodatni savjeti, možete se s vašim pitanjem obratiti
+        <a href="https://codeforcroatia.org/ipz-forum?utm_source=imamopravoznati&utm_medium=link"
+        title="Imamo pravo znati diskurs zajednica" target="_blank"> <%= site_name %>
+        zajednici za pomoć</a>, a osim toga imamo sjajnu ekipu volontera koji
+        su uvijek voljni pomoći.
+      </p>
+    </dd>
+  </dl>
+
+  <p class="form_note"><b>Izjava o izvoru:</b> Dijelovi teksta preuzeti su iz
+  <a href="http://publikacije.imamopravoznati.org?utm_source=imamopravoznati&utm_medium=link" target="_blank">publikacija</a>
+  Povjerenika za informiranje pod Otvorenom dozvolom (NN 67/17).
   </p>
-  <p>
-    Ako su vam potrebni dodatni savjeti, možete <a href="<%= help_contact_path
-    %>">kontaktirati</a> <%= site_name %> ekipu volontera.
-  </p>
+
 </div>

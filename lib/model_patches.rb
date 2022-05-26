@@ -42,4 +42,24 @@ Rails.configuration.to_prepare do
     private
 
   end
+
+  ContactValidator.class_eval do
+      attr_accessor :understand
+
+      validates_acceptance_of :understand,
+                              :message => N_("Please confirm that you " \
+                                             "understand that WhatDoTheyKnow " \
+                                             "is not run by the government, " \
+                                             "and the WhatDoTheyKnow " \
+                                             "volunteers cannot help you " \
+                                             "with personal matters relating " \
+                                             "to government services.")
+  end
+
+  InfoRequest::TitleValidation.module_eval do
+      def generic_foi_title?
+        title =~ /(PPI|ZPPI|pravo na pristup informacijama|pristup informacijama|pristup informaciji|ponovna uporaba|ponovnu uporabu)/i
+      end
+  end
+
 end

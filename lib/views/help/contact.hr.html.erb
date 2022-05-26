@@ -85,12 +85,23 @@
     <div class="houdini-target contact-page__options">
         <ul>
             <li>
-                Izravno kontaktirajte volontere koji administriraju <%= site_name %>:
+              <a href="https://codeforcroatia.org/ipz-forum" target="_blank">
+              Postavite vaše pitanje</a> na naš forum.
+            </li>
+            <li>
+                <% if !@user %>
+                  <%= link_to _("Sign in or sign up"), signin_path(:r => request.fullpath)  %>
+                  ili <a href="https://codeforcroatia.org/ipz-forum" target="_blank">
+                  Pitajte</a> našu diskurs zajednicu.
+                <% end %>
 
-                <%= foi_error_messages_for :contact %>
+                <% if @user %>
+                  Izravno kontaktirajte volontere koji administriraju <%= site_name %>:
+                  <%= foi_error_messages_for :contact %>
 
-                <%= render :partial => "help/contact_form",
-                           :locals => { :form_id => 'writing-help' } %>
+                  <%= render :partial => "help/contact_form",
+                             :locals => { :form_id => 'writing-help' } %>
+                <% end %>
             </li>
         </ul>
     </div>
@@ -145,20 +156,81 @@
                 problema i pitanja koja biste mogli imati.
             </li>
             <li>
-                <% if @user && @user.is_pro? %>
-                    Ako vaš problem nije pokriven našim stranicama pomoći,
+              <a href="https://codeforcroatia.org/ipz-forum" target="_blank">
+              Postavite vaše pitanje</a> na naš forum.
+            </li>
+            <li>
+                <% if @user %>
+                    Ako vaš problem nije pokriven našim stranicama pomoći
+                    <% if !@user.is_pro? %>te niste uspjeli dobiti odgovor putem foruma<% end %>
                     možete se izravno obratiti volonterima koji administriraju
-                    <%= site_name %> Pro:
+                    <%= site_name %><% if @user.is_pro? %> Pro<% end %>:
                 <% else %>
-                    Ako vaš problem nije pokriven našim stranicama pomoći,
-                    možete se izravno obratiti volonterima koji administriraju
-                    <%= site_name %>:
+                    <%= link_to _("Sign in or sign up"), signin_path(:r => request.fullpath)  %>
+                    ili <a href="https://codeforcroatia.org/ipz-forum" target="_blank">
+                    pitajte</a> našu diskurs zajednicu.
                 <% end %>
 
-                <%= foi_error_messages_for :contact %>
+                <% if @user %>
+                  <%= foi_error_messages_for :contact %>
 
-                <%= render :partial => "help/contact_form",
-                           :locals => { :form_id => 'wdtk' } %>
+                  <%= render :partial => "help/contact_form",
+                             :locals => { :form_id => 'wdtk' } %>
+                <% end %>
+            </li>
+        </ul>
+    </div>
+
+
+    <h2 class="contact-page__goal" id="pro">
+        <label class="houdini-label" for="goal6">
+            Ja sam <strong>novinar, aktivist ili istraživač</strong> te imam
+            pitanja vezano uz <%= AlaveteliConfiguration.pro_site_name %>.
+        </label>
+    </h2>
+
+    <input class="houdini-input" type="radio" name="goals" id="goal6"
+        <% if params["contact"] && params[:current_form] == 'pro' %>checked<% end %>>
+    <div class="houdini-target contact-page__options">
+        <ul>
+            <li>
+                Prvo pokušajte provjeriti <a href="<%= help_pro_path %>">naše
+                opsežne stranice pomoći za Pro korisnike</a>, koje sadrže rješenje za većinu
+                problema i pitanja koja biste mogli imati.
+            </li>
+            <li>
+              Zatim možete pokušati
+              <a href="https://codeforcroatia.org/ipz-forum" target="_blank">
+              postaviti vaše pitanje</a> na naš forum.
+            </li>
+            <li>
+                <% if @user && @user.is_pro? %>
+                    Ako vaš problem nije pokriven našim stranicama pomoći,
+                    možete se izravno obratiti
+                    <a href="https://gong.hr/tko-smo/kontakt/" target="_blank">
+                    Gongu</a> ili volonterima koji administriraju
+                    <%= AlaveteliConfiguration.pro_site_name %>
+                    (<%= mail_to AlaveteliConfiguration.pro_contact_email %>)
+                    putem kontakt obrasca:
+                <% else %>
+                    Ako imate pitanje koje nije pokriveno na našim stranicama veznao uz
+                    <%= AlaveteliConfiguration.pro_site_name %> uslugu, možete se
+                    izravno obratiti volonterima koji administriraju
+                    <%= site_name %>:
+                    <% if !@user %>
+                      <%= link_to _("Sign in or sign up"), signin_path(:r => request.fullpath)  %>
+                      ili <a href="https://codeforcroatia.org/ipz-forum" target="_blank">
+                      postavite vaše pitanje</a> na našu diskurs zajednicu.
+                    <% end %>
+                <% end %>
+
+                <% if @user %>
+                  <%= foi_error_messages_for :contact %>
+
+                  <%= render :partial => "help/contact_form",
+                             :locals => { :form_id => 'pro' } %>
+                <% end %>
+
             </li>
         </ul>
     </div>
