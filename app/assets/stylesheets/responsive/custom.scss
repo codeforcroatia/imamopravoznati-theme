@@ -1104,7 +1104,7 @@ p.locale-list-trigger {
   margin-top: 0.25em;
 }
 
-.homepage-hero {
+.no-webp .homepage-hero {
   background-color: $color_black;
   background-image: image-url('homepage-background-small.jpg');
   background-repeat: no-repeat;
@@ -1116,6 +1116,45 @@ p.locale-list-trigger {
   @include respond-min($main_menu-mobile_menu_cutoff) {
     padding: 5em 0 8em;
     background-image: image-url('homepage-background.jpg');
+  }
+
+  a {
+    color: $color_yellow;
+    &:hover,
+    &:active,
+    &:focus {
+      color: $color_white;
+    }
+  }
+
+  a.button {
+    background-color: $color_yellow;
+    border-color: darken($color_yellow, 15%);
+    color: $color_black;
+    transition: color 300ms ease-out;
+    &:hover,
+    &:active,
+    &:focus {
+      color: $color_white;
+      background-color: $color_blue;
+      border-color: darken($color_blue, 15%);
+      transition: color 300ms ease-out;
+    }
+  }
+}
+
+.webp .homepage-hero {
+  background-color: $color_black;
+  background-image: image-url('homepage-background-small.webp');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: $color_white;
+  padding: 2em 0 5em;
+  position: relative;
+  @include respond-min($main_menu-mobile_menu_cutoff) {
+    padding: 5em 0 8em;
+    background-image: image-url('homepage-background.webp');
   }
 
   a {
