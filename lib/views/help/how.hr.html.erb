@@ -1,7 +1,7 @@
 <% @title = "Kako upravljamo internetskom stranicom" %>
 <%= render :partial => 'sidebar' %>
 <div id="left_column_flip" class="left_column_flip">
-  <h1><%= @title %></h1>
+  <h1 id="isRun"><%= @title %> <a href="#isRun">#</a></h1>
   <p>
     <%= site_name %> vodi mala skupina posvećenih <a
     href="<%= help_credits_path(:anchor => 'volunteers') %>">volontera</a>
@@ -10,8 +10,8 @@
     uz podršku <a href="<%= help_about_path(:anchor => 'who') %>">
     Code for Croatia vodeće ekipe i savjetnika</a>.
   </p>
-  <h2>
-    Načelo umjerenosti moderiranja
+  <h2 id="moderation">
+    Načelo umjerenosti moderiranja <a href="#moderation">#</a>
   </h2>
   <p>
     Bilo bi nemoguće da volonterska ekipa <%= site_name %> moderira sve zahtjeve
@@ -34,8 +34,8 @@
     ne preispitujemo je li to točno ili nije, zato jer nemamo resurse da to
     detaljno proispitujemo i istražujemo.
   </p>
-  <h2>
-    Što se događa kada je zahtjev prijavljen?
+  <h2 id="request-reported">
+    Što se događa kada je zahtjev prijavljen? <a href="#request-reported">#</a>
   </h2>
   <p>
     Korisnici prijavljuju sadržaj na <%= site_name %> za široki spektar problema.
@@ -58,8 +58,8 @@
       Nevažeći zahtjevi, odnosno zahtjevi koji nisu zahtjevi za pravo na pristup informacijama
     </li>
   </ul>
-  <h3>
-    Pravila kao smjernice
+  <h3 id="policy-as-a-guide">
+    Pravila kao smjernice <a href="#policy-as-a-guide">#</a>
   </h3>
   <p>
     Naša su pravila nastala na temelju razmatranja i rasprave slučajeva u
@@ -79,8 +79,8 @@
     skupinom tada dovodi do dogovorenog postupka koji će se primjeniti na
     specifičnu situaciju.
   </p>
-  <h3>
-    Uklanjanje informacija
+  <h3 id="removals">
+    Uklanjanje informacija <a href="#removals">#</a>
   </h3>
   <p>
     <strong>Naša je zadaća zadržati javne podatke na internetu.</strong>
@@ -115,9 +115,9 @@
     Ako se sporazum ne može postići iz bilo kojeg razloga, glavno vodstvo
     Code for Croatia i izvršno direktorstvo Gonga biti će konačni arbitrari.
   </p>
-  <p>
+  <p id="accidentally-released">
     <strong>
-      Slučajno objavljeni osobni podaci
+      Slučajno objavljeni osobni podaci <a href="#accidentally-released">#</a>
     </strong>
   </p>
   <p>
@@ -159,8 +159,8 @@
     njihovoj internetskoj stranici</a>.
   </p>
   <p>
-    <strong>
-      Potencijalno klevetnički ili uvredljivi sadržaj
+    <strong id="defamatory">
+      Potencijalno klevetnički ili uvredljivi sadržaj <a href="#defamatory">#</a>
     </strong>
   </p>
   <p>
@@ -192,8 +192,8 @@
   </p>
 
   <p>
-    <strong>
-      Zahtjevi za uklanjanje komercijalnih podataka
+    <strong id="commercial-material">
+      Zahtjevi za uklanjanje komercijalnih podataka <a href="#commercial-material">#</a>
     </strong>
   </p>
   <p>
@@ -206,8 +206,8 @@
     Zakon koji zabranjuje povredu povjerenja naša je glavna briga u takvim slučajevima.
   </p>
   <p>
-    <strong>
-      Autorska prava
+    <strong id="copyright">
+      Autorska prava <a href="#copyright">#</a>
     </strong>
   </p>
   <p>
@@ -231,8 +231,8 @@
     dupliciranih zahtjeva.
   </p>
   <p>
-    <strong>
-      Kako rješavamo zloupotrebu prava na pristup informacijama?
+    <strong id="vexatious">
+      Kako rješavamo zloupotrebu prava na pristup informacijama? <a href="#vexatious">#</a>
     </strong>
   </p>
   <p>
@@ -247,8 +247,8 @@
     smjernice Povjerenika za informiranje</a>.
   </p>
   <p>
-    <strong>
-      Kako postupamo sa zahtjevima koji nisu važeći?
+    <strong id="not-foi">
+      Kako postupamo sa zahtjevima koji nisu važeći? <a href="#not-foi">#</a>
     </strong>
   </p>
   <p>
@@ -270,8 +270,8 @@
     pronađu prikladniji način za kontaktiranje tijela javnih vlasti.
   </p>
   <p>
-    <strong>
-      Zašto iz odgovora uklanjamo adrese e-pošte i brojeve mobitela?
+    <strong id="email-phone-removals">
+      Zašto iz odgovora uklanjamo adrese e-pošte i brojeve mobitela? <a href="#email-phone-removals">#</a>
     </strong>
   </p>
   <p>
@@ -289,8 +289,8 @@
     možemo je objaviti u komentaru.
   </p>
   <p>
-    <strong>
-      Kako postupamo sa zahtjevima koji nisu uspješno poslani?
+    <strong id="resending">
+      Kako postupamo sa zahtjevima koji nisu uspješno poslani? <a href="#resending">#</a>
     </strong>
   </p>
   <ul>
@@ -312,8 +312,8 @@
     </li>
   </ul>
   <p>
- <strong>
-   Backpage - ograničeni predmeti
+ <strong id="backpage">
+   Backpage - ograničeni predmeti <a href="#backpage">#</a>
  </strong>
 </p>
  <p>
@@ -335,9 +335,9 @@
    osobni podaci uključeni.
  </p>
  <p id="annotation-moderation">
-<strong>
-  Kako moderirate komentare zahtjeva?
-</strong>
+  <strong>
+    Kako moderirate komentare zahtjeva? <a href="#annotation-moderation">#</a>
+  </strong>
 </p>
 <p>
   Komentari na <%= site_name %> imaju određenu svrhu: oni pružaju mogućnost da
@@ -363,9 +363,9 @@
   informacijama, i češće ćemo odlučiti jednostavno ukloniti komentare koji su
   sporni.
 </p>
-    <h2>
-      Osoblje portala
-    </h2>
+<h2 id="staff">
+  Osoblje portala <a href="#staff">#</a>
+</h2>
   <p>
     Osoblje portala <%= site_name %> čine volonteri koji su ujedno i aktivni
     korisnici portala.
@@ -391,16 +391,16 @@
     <%= site_name %> administrativnog sučelja. Ako se osjećaju samopouzdano,
     tek tada im se može omogućiti pristup administracijskom sučelju.
   </p>
-  <h2>
-      Korisnički računi
+  <h2 id="user-accounts">
+      Korisnički računi <a href="#user-accounts">#</a>
   </h2>
   <p>
     Ako se prijavite za korisnički račun na <%= site_name %>, profil s popisom
     svih zahtjeva i komentarima koje ste postavili bit će javno dostupan.
   </p>
   <p>
-    <strong>
-      Zahtjevi za uklanjanje ili anonimiziranje računa
+    <strong id="anonymization-removal">
+      Zahtjevi za uklanjanje ili anonimiziranje računa <a href="#anonymization-removal">#</a>
     </strong>
   </p>
   <p>
@@ -429,8 +429,8 @@
     anonimne korespodencije zahtjeva i odgovora korisnika.
   </p>
   <p>
-    <strong>
-      Zabrana korištenja - suspenzija
+    <strong id="banning">
+      Zabrana korištenja - suspenzija <a href="#banning">#</a>
     </strong>
   </p>
   <p>
