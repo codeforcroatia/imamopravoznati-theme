@@ -46,12 +46,14 @@
     </p>
   <% else %>
     <% if @internal_review %>
-      <p>
-        <%= _('If you are dissatisfied by the response you got from the ' \
-              'public authority, you have the right to complain ' \
-              '(<a href="{{url}}" target="_blank">details</a>).',
-              url: "https://www.whatdotheyknow.com/help/unhappy#refer-to-ico".html_safe) %>
-      </p>
+    <p>
+      <%= _('If you are dissatisfied by the response you got from the ' \
+            'public authority, you have the right to complain ' \
+            '(<a href="{{url}}">details</a>).',
+            url: help_unhappy_path(
+                   anchor: 'internal_review',
+                   url_title: @info_request.url_title)) %>
+    </p>
     <% end %>
 
     <p>
