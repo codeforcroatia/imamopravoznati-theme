@@ -32,7 +32,8 @@
         </label>
         <% if !@info_request.nil? %>
         <%= f.text_field :subject,
-                         value: @info_request.public_body.name,
+                         :value => _("Predstavka za {{body_name}",
+                               :body_name => @info_request.public_body.name),
                          :size => 50,
                          :required => true,
                          :class => "message-subject" %>
