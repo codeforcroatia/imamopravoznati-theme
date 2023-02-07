@@ -28,9 +28,21 @@
 
     <p>
         <label class="form_label" for="contact_subject">
+          <% if !@info_request.nil? %>
+          Predmet:
+          <% else %>
           Naziv tijela javne vlasti:
+          <% end %>
         </label>
-        <% if !@last_request.nil? %>
+        <% if !@info_request.nil? %>
+        <%= f.text_field :subject,
+                         :value => _("{{body_name}} - {{request_title}}",
+                               :body_name => @info_request.public_body.name,
+                               :request_title => @info_request.title),
+                         :size => 50,
+                         :required => true,
+                         :class => "message-subject" %>
+        <% elsif !@last_request.nil? %>
         <%= f.text_field :subject,
                          value: @last_request.public_body.name,
                          :size => 50,

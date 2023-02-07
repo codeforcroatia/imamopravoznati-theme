@@ -28,9 +28,21 @@
 
     <p>
         <label class="form_label" for="contact_subject">
+          <% if !@info_request.nil? %>
+          Predmet:
+          <% else %>
           Naziv tijela javne vlasti:
+          <% end %>
         </label>
-        <% if !@last_request.nil? %>
+        <% if !@info_request.nil? %>
+        <%= f.text_field :subject,
+                         :value => _("{{body_name}} - {{request_title}}",
+                               :body_name => @info_request.public_body.name,
+                               :request_title => @info_request.title),
+                         :size => 50,
+                         :required => true,
+                         :class => "message-subject" %>
+        <% elsif !@last_request.nil? %>
         <%= f.text_field :subject,
                          value: @last_request.public_body.name,
                          :size => 50,
@@ -61,7 +73,7 @@ izjavljujem predstavku na rad tijela javne vlasti iz naslova.
 Tijelo javne vlasti nije upisalo isključivo pravo na ponovnu uporabu u javno dostupnu evidenciju o svim odobrenim isključivim pravima te nije obavljana redovna provjera Povjerenika za informiranje čime je povrijedilo odredbe članka 34. stavka 2. i 3. Zakona o pravu na pristup informacijama (Narodne novine, broj 25/13, 85/15 i 69/22). Predlažem Povjereniku za informiranje da u postupku po ovoj predstavci napravi inspekcijiski nadzor tijela javne vlasti.
 
 Detalji isključivog prava za ponovnu uporabu
-Opis informacija: 
+Opis informacija:
 Naziv korisnika isključivog prava:
 
 Srdačan pozdrav"),

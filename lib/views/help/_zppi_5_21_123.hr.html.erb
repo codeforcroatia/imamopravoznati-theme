@@ -28,9 +28,21 @@
 
     <p>
         <label class="form_label" for="contact_subject">
+          <% if !@info_request.nil? %>
+          Predmet:
+          <% else %>
           Naziv tijela javne vlasti:
+          <% end %>
         </label>
-        <% if !@last_request.nil? %>
+        <% if !@info_request.nil? %>
+        <%= f.text_field :subject,
+                         :value => _("{{body_name}} - {{request_title}}",
+                               :body_name => @info_request.public_body.name,
+                               :request_title => @info_request.title),
+                         :size => 50,
+                         :required => true,
+                         :class => "message-subject" %>
+        <% elsif !@last_request.nil? %>
         <%= f.text_field :subject,
                          value: @last_request.public_body.name,
                          :size => 50,
@@ -55,6 +67,25 @@
         <label class="form_label" for="contact_message">
             Razlog predstavke:
         </label>
+        <% if !@info_request.nil? %>
+        <%= f.text_area :message,
+                        :value => _("Poštovani,
+izjavljujem predstavku na rad tijela javne vlasti {{body_name}}.
+
+Tijelo javne vlasti nije ustupilo zahtjev '{{request_title}}' kada ne posjeduju traženu informaciju ali imaju saznanja koje tijelo je posjeduje čime je povrijedilo odredbe članka 21. stavka 1., 2. i 3. Zakona o pravu na pristup informacijama (Narodne novine, broj 25/13, 85/15 i 69/22). Kao dokaz dostavljam link zahtjeva: https://imamopravoznati.org/request/{{request_slug}}
+
+Predlažem Povjereniku za informiranje da u postupku po ovoj predstavci napravi inspekcijiski nadzor tijela javne vlasti.
+
+Srdačan pozdrav,
+{{requester_name}}",
+                        :body_name => @info_request.public_body.name,
+                        :request_title => @info_request.title,
+                        :request_slug => @info_request.url_title,
+                        :requester_name => @info_request.user.name),
+                        :rows => 10,
+                        :cols => 60,
+                        :required => true %>
+        <% else %>
         <%= f.text_area :message, value: raw("Poštovani,
 izjavljujem predstavku na rad tijela javne vlasti iz naslova.
 
@@ -64,6 +95,7 @@ Srdačan pozdrav"),
                         :rows => 10,
                         :cols => 60,
                         :required => true %>
+        <% end %>
     </p>
 
     <p style="display:none;">
