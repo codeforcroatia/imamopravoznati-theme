@@ -1,6 +1,14 @@
+<% if !@info_request.embargo %>
+Ovaj zahtjev i svaki odgovor bit će objavljeni na internetu:
+https://imamopravoznati.org/request/<%= @info_request.url_title.html_safe %>
+
+Politika zaštite privatnosti i autorskih prava:
+<%= help_officers_url %>
+<% else %>
 <%= _('Disclaimer: This message and any reply that you make will be ' \
       'published on the internet. Our privacy and copyright policies:') %>
 <%= help_officers_url %>
+<% end %>
 
 <%= _('For more detailed guidance on safely disclosing information, read the ' \
       'latest advice from the ICO:') %>
