@@ -33,7 +33,7 @@ Rails.configuration.to_prepare do
 
   HelpController.class_eval do
 
-    before_action :set_recaptcha_required, :only => [:contact, :foi_motion]
+    before_action :set_recaptcha_required, :only => [:contact, :foi_motion, :unhappy]
 
     def foi_motion
       # if they clicked remove for link to request/body, remove it
