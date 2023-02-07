@@ -32,7 +32,7 @@
         </label>
         <% if !@info_request.nil? %>
         <%= f.text_field :subject,
-                         value: @info_request.public_body.url_name,
+                         value: @info_request.public_body.name,
                          :size => 50,
                          :required => true,
                          :class => "message-subject" %>
