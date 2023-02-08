@@ -355,6 +355,15 @@
           mogao dostaviti obavijest o provedenom nadzoru tijela.</li>
       </ul>
 
+      <% status = @info_request.calculate_status %>
+      <% if @info_request.prominence == 'hidden' %>
+      <p>Zahtjev je <strong>skriven</strong>. Za takvu vrstu zahtjeva još nemamo mogućnost slanja predstavki.</p>
+      <% elsif status == 'user_withdrawn' || status == 'gone_postal' || status == 'gone_postal' %>
+      <p>Status vašeg zahtjeva je "<%= InfoRequest::State.short_description(@info_request.calculate_status) %>." U ovom trenutku za takve zahtjeve nemamo predstavke.</p>
+      <% elsif status == 'vexatious' || status == 'not_foi' %>
+      <!-- Not offering FOI Motion to these requests -->
+      <% else %>
+
       <div class="contact-page">
 
           <!-- START PART-1-->
@@ -364,29 +373,9 @@
             </dt>
           </dl>
 
-          <% if @info_request.embargo %>
-          <p>Zahtjev je pod <strong>embargom</strong> - nece biti vidljiv</p>
-          N/A
-          <% end %>
-
-          <% if @info_request.prominence == 'hidden' %>
-          <p>Zahtjev je <strong>skriven</strong> - nece biti vidljiv  | <% @info_request.prominence %></p>
-          <% end %>
-
-          <% status = @info_request.calculate_status %>
-          <% if status == 'waiting_response_overdue' %>
-          <p>Status zahtjeva overdue: <% @info_request.calculate_status %></p>
-          <% elsif status == 'waiting_response_very_overdue' %>
-          <p>Status zahtjeva very overdue: <% @info_request.calculate_status %></p>
-          <% elsif status == 'waiting_response' %>
-          <p>Status zahtjeva: ceka odgovor</p>
-          <% elsif status == 'user_withdrawn' %>
-          <p>Status zahtjeva: user_withdrawn</p>
-          <% else %>
-          <p>Status zahtjeva: | <%= InfoRequest::State.short_description(@info_request.calculate_status) %> | <%= @info_request.display_status(cached_value_ok=true) %></p>
-          <% end %>
 
           <!-- START -->
+          <% if status == 'waiting_response_overdue' || status == 'waiting_response_very_overdue' || status == 'internal_review' %>
           <h2 class="contact-page__goal" id="zppi_5_20_1">
               <label class="houdini-label" for="goal1">
                   V. ZPPI §20.(1) - <strong>nisu odgovorili na zahtjev za pristup
@@ -418,10 +407,11 @@
                   </li>
               </ul>
           </div>
+          <% end %>
           <!-- END -->
 
-
           <!-- START -->
+          <% if status == 'hot_held' || status == 'rejected' || status == 'internal_review' %>
           <h2 class="contact-page__goal" id="zppi_5_21_123">
               <label class="houdini-label" for="goal2">
                   V. ZPPI §21.(1), (2) i (3) - <strong>nisu ustupili zahtjev za pristup
@@ -463,10 +453,11 @@
                   </li>
               </ul>
           </div>
+          <% end %>
           <!-- END -->
 
-
           <!-- START -->
+          <% if status == 'waiting_response_overdue' || status == 'waiting_response_very_overdue' || status == 'internal_review' %>
           <h2 class="contact-page__goal" id="zppi_5_24_2">
               <label class="houdini-label" for="goal3">
                   V. ZPPI §24.(2) - <strong>nisu odgovorili na zahtjev za dopunu
@@ -490,10 +481,11 @@
                   </li>
               </ul>
           </div>
+          <% end %>
           <!-- END -->
 
-
           <!-- START -->
+          <% if status == 'successful' || status == 'partially_successful' || status == 'rejected' || status == 'internal_review' %>
           <h2 class="contact-page__goal" id="zppi_5_17_2">
               <label class="houdini-label" for="goal4">
                   V. ZPPI §17.(2) - <strong>nisu dostavili informaciju na
@@ -519,6 +511,7 @@
                   </li>
               </ul>
           </div>
+          <% end %>
           <!-- END -->
           <!-- END PART-1 -->
 
@@ -533,6 +526,7 @@
               <!-- START CONTENT PART-2 -->
 
               <!-- START -->
+              <% if status == 'waiting_response_overdue' || status == 'waiting_response_very_overdue' || status == 'internal_review' %>
               <h2 class="contact-page__goal" id="zppi_5_29_2_i">
                   <label class="houdini-label" for="part_2_goal8">
                     V. ZPPI §29.(2) - <strong>nisu odgovorili na zahtjev za ponovnu
@@ -558,9 +552,11 @@
                       </li>
                   </ul>
               </div>
+              <% end %>
               <!-- END -->
 
               <!-- START -->
+              <% if status == 'successful' || status == 'partially_successful' || status == 'rejected' || status == 'internal_review' %>
               <h2 class="contact-page__goal" id="zppi_5_30_3">
                   <label class="houdini-label" for="part_2_goal9">
                       V. ZPPI §30.(3) - <strong>nisu obavijestili o nositelju prava
@@ -588,13 +584,14 @@
                       </li>
                   </ul>
               </div>
+              <% end %>
               <!-- END -->
 
               <!-- END CONTENT PART-2 -->
           <!-- END PART-2 -->
 
-
       </div>
+      <% end %>
 
   <!-- End of ADDITION FOI MOTION -->
 
