@@ -364,7 +364,7 @@
             </dt>
           </dl>
 
-          <% if info_request.embargo %>
+          <% if @info_request.embargo %>
           <p>Zahtjev je pod <strong>embargom</strong> - nece biti vidljiv</p>
           N/A
           <% end %>
@@ -383,7 +383,7 @@
           <% elsif status == 'user_withdrawn' %>
           <p>Status zahtjeva: user_withdrawn</p>
           <% else %>
-          <p>Status zahtjeva: |  | <%= info_request.display_status(cached_value_ok=true) %></p>
+          <p>Status zahtjeva: |  | <%= @info_request.display_status(cached_value_ok=true) %></p>
           <% end %>
 
           <!-- START -->
