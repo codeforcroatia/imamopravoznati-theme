@@ -369,6 +369,10 @@
           <p>Status zahtjeva overdue: <% @info_request.calculate_status %>
           <% elsif status == 'waiting_response_very_overdue' %>
           <p>Status zahtjeva very overdue: <% @info_request.calculate_status %>
+          <% elsif status == 'waiting_response' %>
+          <p>Status zahtjeva: ceka odgovor
+          <% elsif status == 'user_withdrawn' %>
+          <p>Status zahtjeva: user_withdrawn
           <% else %>
           <p>Status zahtjeva: <% @info_request.calculate_status %>
           <% end %>
