@@ -364,6 +364,15 @@
             </dt>
           </dl>
 
+          <% status = @info_request.calculate_status %>
+          <% if status == 'waiting_response_overdue' %>
+          <p>Status zahtjeva overdue: <% @info_request.calculate_status %>
+          <% elsif status == 'waiting_response_very_overdue' %>
+          <p>Status zahtjeva very overdue: <% @info_request.calculate_status %>
+          <% else %>
+          <p>Status zahtjeva: <% @info_request.calculate_status %>
+          <% end %>
+
           <!-- START -->
           <h2 class="contact-page__goal" id="zppi_5_20_1">
               <label class="houdini-label" for="goal1">
