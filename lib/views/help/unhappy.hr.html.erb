@@ -367,12 +367,13 @@
       <div class="contact-page">
 
           <!-- START PART-1-->
+          <% if status == 'waiting_response_overdue' || status == 'waiting_response_very_overdue' || status == 'internal_review' || status == 'hot_held' || status == 'rejected' || status == 'successful' || status == 'partially_successful' %>
           <dl>
             <dt id="significant">
               Predstavke za zahtjev za pristup informacijama <a href="#ppi">#</a>
             </dt>
           </dl>
-
+          <% end %>
 
           <!-- START -->
           <% if status == 'waiting_response_overdue' || status == 'waiting_response_very_overdue' || status == 'internal_review' %>
@@ -517,11 +518,13 @@
 
 
           <!-- START PART-2 -->
+          <% if status == 'waiting_response_overdue' || status == 'waiting_response_very_overdue' || status == 'internal_review' || status == 'successful' || status == 'partially_successful' || status == 'rejected' %>
           <dl>
             <dt id="reuse">
               Predstavke za zahtjev za ponovnu uporabu infromacija <a href="#reuse">#</a>
             </dt>
           </dl>
+          <% end %>
 
               <!-- START CONTENT PART-2 -->
 
