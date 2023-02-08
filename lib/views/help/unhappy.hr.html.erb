@@ -326,6 +326,11 @@
   <p>Status vašeg zahtjeva je "<%= InfoRequest::State.short_description(@info_request.calculate_status) %>." U ovom trenutku za takve zahtjeve nemamo predstavke.</p>
   <% elsif status == 'vexatious' || status == 'not_foi' %>
   <!-- Not offering FOI Motion to these requests -->
+  <% elsif @info_request.awaiting_description %>
+  <p>Vaš zahtjev <strong>čeka pregled i postavljanje statusa</strong>. Predlažemo
+    da posjetite stranicu zahtjeva i označite posljednje stanje te se nakon toga
+    vratite na ovu stranicu kako biste vidjeli sljedeće korake veznao uz slanje
+    predstavke.</p>
   <% else %>
 
   <!-- Start of ADDITION FOI MOTION -->
