@@ -370,7 +370,7 @@
           <% end %>
 
           <% if @info_request.prominence == 'hidden' %>
-          <p>Zahtjev je <strong>skriven</strong> - nece biti vidljiv  | <% @info_request.prominence(true) %></p>
+          <p>Zahtjev je <strong>skriven</strong> - nece biti vidljiv  | <% @info_request.prominence %></p>
           <% end %>
 
           <% status = @info_request.calculate_status %>
