@@ -327,10 +327,10 @@
   <% elsif status == 'vexatious' || status == 'not_foi' %>
   <!-- Not offering FOI Motion to these requests -->
   <% elsif @info_request.awaiting_description %>
-  <p>Vaš zahtjev <strong>čeka pregled i postavljanje statusa</strong>. Predlažemo
-    da posjetite stranicu zahtjeva i označite posljednje stanje te se nakon toga
-    vratite na ovu stranicu kako biste vidjeli sljedeće korake veznao uz slanje
-    predstavke.</p>
+  <p>Vaš zahtjev <strong>čeka pregled i postavljanje statusa</strong>.
+    Predlažemo da posjetite stranicu zahtjeva <%= request_link(@info_request) %>
+    i označite posljednje stanje te se nakon toga vratite na ovu stranicu kako
+    biste pregledali sljedeće korake vezane uz slanje predstavke.</p>
   <% else %>
 
   <!-- Start of ADDITION FOI MOTION -->
