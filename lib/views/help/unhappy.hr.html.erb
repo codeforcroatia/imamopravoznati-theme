@@ -370,7 +370,7 @@
           <% end %>
 
           <% if @info_request.prominence == 'hidden' %>
-          <p>Zahtjev je <strong>skriven</strong> - nece biti vidljiv | <% @info_request.prominence(true) %></p>
+          <p>Zahtjev je <strong>skriven</strong> - nece biti vidljiv</p>
           <% end %>
 
           <% status = @info_request.calculate_status %>
@@ -383,7 +383,7 @@
           <% elsif status == 'user_withdrawn' %>
           <p>Status zahtjeva: user_withdrawn</p>
           <% else %>
-          <p>Status zahtjeva: <% @info_request.calculate_status(true) %> | <%= InfoRequest::State.short_description(info_request.calculate_status) %> | <%= @info_request.display_status(cached_value_ok=true) %></p>
+          <p>Status zahtjeva: <% @info_request.calculate_status(true) %> | <%= InfoRequest::State.short_description(info_request.calculate_status) %> | <%= info_request.display_status(cached_value_ok=true) %></p>
           <% end %>
 
           <!-- START -->
