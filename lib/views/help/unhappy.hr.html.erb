@@ -383,7 +383,7 @@
           <% elsif status == 'user_withdrawn' %>
           <p>Status zahtjeva: user_withdrawn</p>
           <% else %>
-          <p>Status zahtjeva: <% @info_request.calculate_status(true) %> |  | <%= info_request.display_status(cached_value_ok=true) %></p>
+          <p>Status zahtjeva: <% @info_request.calculate_status(true) %> |  | </p>
           <% end %>
 
           <!-- START -->
