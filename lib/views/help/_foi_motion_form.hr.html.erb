@@ -1,5 +1,5 @@
-<%= form_for :contact,
-             :url => help_contact_path + '#' +  form_id,
+<%= form_for :foi_motion,
+             :url => help_foi_motion_path + '#' +  form_id,
              :html => {:class => 'contact-form'} do |f| %>
 
     <p class="contact-form__understand">
@@ -64,6 +64,7 @@
             <%= submit_tag "remove", :name => 'remove' %>
         </p>
     <% elsif !@info_request.nil? %>
+        <!-- Automatically removing footer info from the cookie :: doesn't work -->
         <p>
             <label class="form_label" for="contact_message">
               Posljednje pregledani zahtjev:
@@ -81,6 +82,7 @@
             <%= submit_tag "remove", :name => 'remove' %>
         </p>
     <% elsif !@info_request.nil? %>
+        <!-- Automatically removing footer info from the cookie :: doesn't work -->
         <p>
             <label class="form_label" for="contact_message">
               Posljednje pregledano tijelo javne vlasti:
