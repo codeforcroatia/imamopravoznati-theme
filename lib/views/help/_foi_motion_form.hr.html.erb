@@ -64,7 +64,8 @@
             <%= submit_tag "remove", :name => 'remove' %>
         </p>
     <% elsif !@info_request.nil? %>
-      <% @last_request.update(remove: true) %>
+      <!-- Automatically removing footer info from the cookie :: doesn't work -->
+      <% @last_request.update(:remove) %>
     <% end %>
     <% if !@last_body.nil? && @info_request.nil? %>
         <p>
@@ -75,7 +76,8 @@
             <%= submit_tag "remove", :name => 'remove' %>
         </p>
     <% elsif !@info_request.nil? %>
-      <% @last_body.update(remove: true) %>
+      <!-- Automatically removing footer info from the cookie :: doesn't work -->
+      <% @last_body.update(:remove) %>
     <% end %>
 
     <% if @recaptcha_required %>
