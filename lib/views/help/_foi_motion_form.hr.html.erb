@@ -55,7 +55,7 @@
         <%= f.text_field :comment %>
     </p>
 
-    <% if !@last_request.nil? %>
+    <% if !@last_request.nil? && @info_request.nil? %>
         <p>
             <label class="form_label" for="contact_message">
               Uključite link na zahtjev:
@@ -63,8 +63,10 @@
             <%=request_link(@last_request) %>
             <%= submit_tag "remove", :name => 'remove' %>
         </p>
+    <% elsif !@info_request.nil? %>
+      <% @last_request.update(removed: true) %>
     <% end %>
-    <% if !@last_body.nil? %>
+    <% if !@last_body.nil? && @info_request.nil? %>
         <p>
             <label class="form_label" for="contact_message">
               Uključite link na tijelo javne vlasti:
@@ -72,6 +74,8 @@
             <%=public_body_link(@last_body) %>
             <%= submit_tag "remove", :name => 'remove' %>
         </p>
+    <% elsif !@info_request.nil? %>
+      <% @last_body.update(removed: true) %>
     <% end %>
 
     <% if @recaptcha_required %>
