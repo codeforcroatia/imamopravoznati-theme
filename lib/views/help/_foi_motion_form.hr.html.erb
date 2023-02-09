@@ -64,8 +64,13 @@
             <%= submit_tag "remove", :name => 'remove' %>
         </p>
     <% elsif !@info_request.nil? %>
-      <!-- Automatically removing footer info from the cookie :: doesn't work -->
-      <% @last_request.update(:remove) %>
+        <p>
+            <label class="form_label" for="contact_message">
+              Posljednje pregledani zahtjev:
+            </label>
+            <%=request_link(@last_request) %>
+            <input type="hidden" name="remove" value="true">
+        </p>
     <% end %>
     <% if !@last_body.nil? && @info_request.nil? %>
         <p>
@@ -76,8 +81,13 @@
             <%= submit_tag "remove", :name => 'remove' %>
         </p>
     <% elsif !@info_request.nil? %>
-      <!-- Automatically removing footer info from the cookie :: doesn't work -->
-      <% @last_body.update(:remove) %>
+        <p>
+            <label class="form_label" for="contact_message">
+              Posljednje pregledano tijelo javne vlasti:
+            </label>
+            <%=public_body_link(@last_body) %>
+            <input type="hidden" name="remove" value="true">
+        </p>
     <% end %>
 
     <% if @recaptcha_required %>
