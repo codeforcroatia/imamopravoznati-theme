@@ -64,7 +64,7 @@
             <%= submit_tag "remove", :name => 'remove' %>
         </p>
     <% elsif !@info_request.nil? %>
-      <% @last_request.update(removed: true) %>
+      <% @last_request.update(remove: true) %>
     <% end %>
     <% if !@last_body.nil? && @info_request.nil? %>
         <p>
@@ -75,7 +75,7 @@
             <%= submit_tag "remove", :name => 'remove' %>
         </p>
     <% elsif !@info_request.nil? %>
-      <% @last_body.update(removed: true) %>
+      <% @last_body.update(remove: true) %>
     <% end %>
 
     <% if @recaptcha_required %>
