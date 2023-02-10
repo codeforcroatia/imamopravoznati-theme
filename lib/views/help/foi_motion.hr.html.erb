@@ -38,11 +38,13 @@
         mogao dostaviti obavijest o provedenom nadzoru tijela.</li>
     </ul>
 
-<p>Link:
-<%= link_to_unless_current "FOI Motion", help_foi_motion_path %>
-</p>
+<% unless is_foi_motion_page? %>
+  <p>Link:
+  <%= link_to_unless_current "FOI Motion", help_foi_motion_path %>
+  </p>
+<% end %>
 
-<% if @user %>
+<% if @user && is_contact_page? %>
 
 <div class="contact-page">
 
