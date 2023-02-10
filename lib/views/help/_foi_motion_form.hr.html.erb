@@ -28,7 +28,7 @@
 
     <p>
         <label class="form_label" for="contact_subject">
-          <% if !@info_request.nil? %>
+          <% if !@info_request.nil? && is_unhappy_page? %>
           Predmet:
           <% else %>
           Naziv tijela javne vlasti:

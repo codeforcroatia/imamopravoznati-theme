@@ -28,13 +28,13 @@
 
     <p>
         <label class="form_label" for="contact_subject">
-          <% if !@info_request.nil? %>
+          <% if !@info_request.nil? && is_unhappy_page? %>
           Predmet:
           <% else %>
           Naziv tijela javne vlasti:
           <% end %>
         </label>
-        <% if !@info_request.nil? %>
+        <% if !@info_request.nil? && is_unhappy_page? %>
         <%= f.text_field :subject,
                          :value => _("{{body_name}} - {{request_title}}",
                                :body_name => @info_request.public_body.name,
