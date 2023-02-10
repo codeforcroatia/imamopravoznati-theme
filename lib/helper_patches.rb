@@ -10,6 +10,12 @@ Rails.configuration.to_prepare do
     def is_contact_page?
       controller.controller_name == 'help' && controller.action_name == 'contact'
     end
+    def is_foi_motion_page?
+      controller.controller_name == 'help' && controller.action_name == 'foi_motion'
+    end
+    def is_unhappy_page?
+      controller.controller_name == 'help' && controller.action_name == 'unhappy'
+    end
   end
 
   InfoRequestHelper.class_eval do
