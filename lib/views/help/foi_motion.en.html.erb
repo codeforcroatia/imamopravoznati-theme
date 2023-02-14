@@ -1,0 +1,735 @@
+<% @title = "Prigovor na primjenu Zakona o pravu na pristup informacijama" %>
+
+<%= render :partial => 'sidebar' %>
+<div id="left_column_flip" class="left_column_flip"> Right of Access to Information Act / izvor prijevoda Europska komisija
+<h1>FOI Motion</h1>
+<p>Anyone can submit a motion to the work of public authorities related to the
+  application of the Right to Access to Information Act. These are cases
+  when the beneficiaries of the right of access to information and re-use of
+  information notice that a public authority is improperly applying or not applying
+  a provision(s) of the law. Once you have completed this form, we will
+  submit your application to the Information Commissioner, which may serve as
+  the basis for an inspection supervision.</p>
+<p>
+    Each <strong>motion should contain</strong>:
+</p>
+    <ul>
+      <li><strong>The name of the public authority</strong> that is the subject
+        of the motion. Be sure to include the name of the public authority in
+        order for the submission to be valid.</li>
+      <li><strong>Claims related to illegalities or irregularities</strong>
+        in the right to access information. The petitioner must state why they
+        are dissatisfied with the actions of public authorities regarding the
+        application of the Right to Access to Information Act. For ease of use,
+        we have filled in the content of the application automatically. You can
+        edit the text and write if you have something to add to your complaint.
+        If it is not automatically included below the form, you can provide a link
+        to your <%= site_name %> request or to the website of the public authority
+        to support your complaint.</li>
+    </ul>
+
+<p>
+    Your submission will <strong>include the following information</strong>:
+</p>
+    <ul>
+      <li><strong>Link to the last request or public authority</strong> you last
+        opened. Confirm that they are visible below the form.</li>
+      <li><strong>Link to your profile</strong> on <%= site_name %>.</li>
+      <li><strong>Your name and email address</strong> from your <%= site_name %>
+        user account so that the inspector of the Information Commissioner can
+        deliver you a notification about the performed supervision of the public
+        authority.</li>
+    </ul>
+
+<% if @user %>
+
+<div class="contact-page">
+
+    <!-- START PART-1-->
+    <dl>
+      <dt id="significant">
+        1) The most common motions for the right to access information <a href="#significant">#</a>
+      </dt>
+    </dl>
+
+    <!-- START -->
+    <h2 class="contact-page__goal" id="zppi_5_20_1">
+        <label class="houdini-label" for="goal1">
+            V. ZPPI §20.(1) - <strong>they have not responded to the request for access
+              to information</strong> within the prescribed period.
+        </label>
+    </h2>
+
+    <input class="houdini-input" type="radio" name="goals" id="goal1"
+        <% if params["contact"] && params[:current_form] == 'zppi_5_20_1' %>checked<% end %>>
+    <div class="houdini-target contact-page__options">
+        <ul>
+            <li>
+                <strong>Legal provision V. ZPPI §20.(1):</strong> Public authority
+                will decide on the request for access to information by at
+                the latest within 15 days from the date of submission of the formal request.
+                (<a href="<%= zppi_text_path %>">NN 25/13, 85/15 and 69/22</a>)<br>
+                <strong>V. ZPPI §22.(1) and (2):</strong> Deadlines for exercising the right to
+                access to information can be extended for 15 days, counting from
+                the day when the public authority should have decided on the request for access
+                information. (<a href="<%= zppi_text_path %>">NN 25/13, 85/15 and 69/22</a>)
+            </li>
+            <li>
+                Read more about it on the help pages: <a href="<%= help_requesting_path(:anchor =>
+                'quickly_response') %>">In what time frame will your request be resolved?</a>
+
+                <% if !@user %>
+                  </li><li><%= link_to _("Sign in or sign up"), signin_path(:r => request.fullpath) %>
+                    to send a motion.
+                <% end %>
+
+                <% if @user %>
+                  <%= foi_error_messages_for :contact %>
+                  <%= render :partial => "help/zppi_5_20_1",
+                             :locals => { :form_id => 'zppi_5_20_1' } %>
+                <% end %>
+            </li>
+        </ul>
+    </div>
+    <!-- END -->
+
+
+    <!-- START -->
+    <h2 class="contact-page__goal" id="zppi_5_21_123">
+        <label class="houdini-label" for="goal2">
+            V. ZPPI §21.(1), (2) and (3) - <strong>they did not forward the request
+            for access to information</strong> to another public authority.
+        </label>
+    </h2>
+
+    <input class="houdini-input" type="radio" name="goals" id="goal2"
+        <% if params["contact"] && params[:current_form] == 'zppi_5_21_123' %>checked<% end %>>
+    <div class="houdini-target contact-page__options">
+        <ul>
+            <li>
+                <strong>Legal provision V. ZPPI §21.(1):</strong> If the public
+                authority does not possess the information, but has knowledge of
+                the authority that possesses it, it is obliged, without delay,
+                and at the latest within eight days from of receiving the request,
+                forward the request to that authority, and inform the applicant
+                about it. (<a href="<%= zppi_text_path %>">NN 25/13, 85/15 and 69/22</a>)
+                <br>
+                <strong>(2):</strong> If the public authority receives request for
+                access to information from Article 15, paragraph 2, point 1 of this Law,
+                and is not its owner, must forward the request to the owner of the
+                information without delay, but no later than within eight days of
+                receiving the request, which will inform the applicant.
+                (<a href="<%= zppi_text_path %>">NN 25/13, 85/15 and 69/22</a>)
+                <br>
+                <strong>(3):</strong> If the public authority receives a request
+                for access to international information, he is obliged to transfer
+                the same to the owner of the information without delay, and no
+                later than within eight days of receiving the request, which he will
+                inform the applicant about.
+                (<a href="<%= zppi_text_path %>">NN 25/13, 85/15 and 69/22</a>)
+            </li>
+            <li>
+                Read more about transferring requests on the help pages:
+                <a href="<%= help_requesting_path(:anchor =>
+                'quickly_response') %>">In what time frame will your request be resolved?</a>
+
+                <% if !@user %>
+                  </li><li><%= link_to _("Sign in or sign up"), signin_path(:r => request.fullpath) %>
+                    to send a motion.
+                <% end %>
+
+                <% if @user %>
+                  <%= foi_error_messages_for :contact %>
+                  <%= render :partial => "help/zppi_5_21_123",
+                             :locals => { :form_id => 'zppi_5_21_123' } %>
+                <% end %>
+            </li>
+        </ul>
+    </div>
+    <!-- END -->
+
+
+    <!-- START -->
+    <h2 class="contact-page__goal" id="zppi_5_24_2">
+        <label class="houdini-label" for="goal3">
+            V. ZPPI §24.(2) - <strong>they did not respond to the request for
+              additional information</strong> within the prescribed period.
+        </label>
+    </h2>
+
+    <input class="houdini-input" type="radio" name="goals" id="goal3"
+        <% if params["contact"] && params[:current_form] == 'zppi_5_24_2' %>checked<% end %>>
+    <div class="houdini-target contact-page__options">
+        <ul>
+            <li>
+                <strong>Legal provision V. ZPPI §24.(2):</strong> The public
+                authority is obliged to decide on the request for addition or
+                correction of information within 15 days from the date of receipt
+                of the request. (<a href="<%= zppi_text_path %>">NN 25/13, 85/15 and 69/22</a>)
+
+                <% if !@user %>
+                  </li><li><%= link_to _("Sign in or sign up"), signin_path(:r => request.fullpath) %>
+                    to send a motion.
+                <% end %>
+
+                <% if @user %>
+                  <%= foi_error_messages_for :contact %>
+                  <%= render :partial => "help/zppi_5_24_2",
+                             :locals => { :form_id => 'zppi_5_24_2' } %>
+                <% end %>
+            </li>
+        </ul>
+    </div>
+    <!-- END -->
+
+
+    <!-- START -->
+    <h2 class="contact-page__goal" id="zppi_5_17_2">
+        <label class="houdini-label" for="goal4">
+            V. ZPPI §17.(2) - <strong>they did not provide the information in
+              the appropriate manner</strong> indicated in the request.
+        </label>
+    </h2>
+
+    <input class="houdini-input" type="radio" name="goals" id="goal4"
+        <% if params["contact"] && params[:current_form] == 'zppi_5_17_2' %>checked<% end %>>
+    <div class="houdini-target contact-page__options">
+        <ul>
+            <li>
+                <strong>Legal provision V. ZPPI §17.(2):</strong> In the request
+                for access to information, the user may indicate a suitable method
+                of obtaining information, and if he does not indicate, the information
+                will be delivered in the manner in which the request was submitted,
+                i.e. in the most economical way.
+                (<a href="<%= zppi_text_path %>">NN 25/13, 85/15 and 69/22</a>)
+
+                <% if !@user %>
+                  </li><li><%= link_to _("Sign in or sign up"), signin_path(:r => request.fullpath) %>
+                    to send a motion.
+                <% end %>
+
+                <% if @user %>
+                  <%= foi_error_messages_for :contact %>
+                  <%= render :partial => "help/zppi_5_17_2",
+                             :locals => { :form_id => 'zppi_5_17_2' } %>
+                <% end %>
+            </li>
+        </ul>
+    </div>
+    <!-- END -->
+    <!-- END PART-1 -->
+
+
+    <p>
+        <strong>Didn't find what you were looking for?</strong> Take a look at
+        the additional sections:
+    </p>
+
+
+
+    <!-- START PART-2 -->
+    <dl>
+      <dt id="reuse">
+        2) Motions for re-use of information <a href="#reuse">#</a>
+      </dt>
+    </dl>
+
+        <!-- START CONTENT PART-2 -->
+
+        <!-- START -->
+        <h2 class="contact-page__goal" id="zppi_3_10_1_13_i">
+            <label class="houdini-label" for="part_2_goal1">
+                III. ZPPI §10.(1)13) - <strong>they did not publish a notice on
+                  the method and conditions</strong> of exercising the right to
+                  access information and re-use information.
+            </label>
+        </h2>
+
+        <input class="houdini-input" type="radio" name="goals" id="part_2_goal1"
+            <% if params["contact"] && params[:current_form] == 'zppi_3_10_1_13_i' %>checked<% end %>>
+        <div class="houdini-target contact-page__options">
+            <ul>
+                <li>
+                    <strong>Legal provision III. ZPPI §10.(1):</strong> Public
+                    authorities are obliged to publish on their websites in an
+                    easily searchable manner and in a machine-readable form:
+                    <br>
+                    <strong>13)</strong> notice on the manner and conditions of
+                    exercising the right to access to information and re-use of
+                    information in a visible place, with contact details of the
+                    information officer, necessary forms or links to forms and the
+                    amount of the fee for access to information and re-use of information.
+                    (<a href="<%= zppi_text_path %>">NN 25/13, 85/15 and 69/22</a>)
+
+                    <% if !@user %>
+                      </li><li><%= link_to _("Sign in or sign up"), signin_path(:r => request.fullpath) %>
+                        to send a motion.
+                    <% end %>
+
+                    <% if @user %>
+                      <%= foi_error_messages_for :contact %>
+                      <%= render :partial => "help/zppi_3_10_1_13_i",
+                                 :locals => { :form_id => 'zppi_3_10_1_13_i' } %>
+                    <% end %>
+                </li>
+            </ul>
+        </div>
+        <!-- END -->
+
+        <!-- START -->
+        <h2 class="contact-page__goal" id="zppi_3_10_1_13_iv">
+            <label class="houdini-label" for="part_2_goal2">
+                III. ZPPI §10.(1)13) - <strong>they did not publish a notice on
+                  the amount of the fee</strong> for accessing information and
+                  re-using information.
+            </label>
+        </h2>
+
+        <input class="houdini-input" type="radio" name="goals" id="part_2_goal2"
+            <% if params["contact"] && params[:current_form] == 'zppi_3_10_1_13_iv' %>checked<% end %>>
+        <div class="houdini-target contact-page__options">
+            <ul>
+                <li>
+                    <strong>Legal provision III. ZPPI §10.(1):</strong> Public
+                    authorities are obliged to publish on their websites in an
+                    easily searchable manner and in a machine-readable form:
+                    <br>
+                    <strong>13)</strong> notice on the manner and conditions of
+                    exercising the right to access to information and re-use of
+                    information in a visible place, with contact details of the
+                    information officer, necessary forms or links to forms and the
+                    amount of the fee for access to information and re-use of
+                    information.
+                    (<a href="<%= zppi_text_path %>">NN 25/13, 85/15 and 69/22</a>)
+
+                    <% if !@user %>
+                      </li><li><%= link_to _("Sign in or sign up"), signin_path(:r => request.fullpath) %>
+                        to send a motion.
+                    <% end %>
+
+                    <% if @user %>
+                      <%= foi_error_messages_for :contact %>
+                      <%= render :partial => "help/zppi_3_10_1_13_iv",
+                                 :locals => { :form_id => 'zppi_3_10_1_13_iv' } %>
+                    <% end %>
+                </li>
+            </ul>
+        </div>
+        <!-- END -->
+
+        <!-- START -->
+        <h2 class="contact-page__goal" id="zppi_3_10_1_2">
+            <label class="houdini-label" for="part_2_goal3">
+                III. ZPPI §10.(1)2) - <strong>they did not publish general acts
+                  and decisions</strong> in an easily searchable way and in a
+                   machine-readable form.
+            </label>
+        </h2>
+
+        <input class="houdini-input" type="radio" name="goals" id="part_2_goal3"
+            <% if params["contact"] && params[:current_form] == 'zppi_3_10_1_2' %>checked<% end %>>
+        <div class="houdini-target contact-page__options">
+            <ul>
+                <li>
+                    <strong>Legal provision III. ZPPI §10.(1):</strong> Public
+                    authorities are obliged to publish on their websites in an
+                    easily searchable manner and in a machine-readable form:
+                    <br>
+                    <strong>2)</strong> general acts and decisions they make,
+                    which affects the interests of users, with the reasons for
+                    their adoption.
+                    (<a href="<%= zppi_text_path %>">NN 25/13, 85/15 and 69/22</a>)
+
+                    <% if !@user %>
+                      </li><li><%= link_to _("Sign in or sign up"), signin_path(:r => request.fullpath) %>
+                        to send a motion.
+                    <% end %>
+
+                    <% if @user %>
+                      <%= foi_error_messages_for :contact %>
+                      <%= render :partial => "help/zppi_3_10_1_2",
+                                 :locals => { :form_id => 'zppi_3_10_1_2' } %>
+                    <% end %>
+                </li>
+            </ul>
+        </div>
+        <!-- END -->
+
+        <!-- START -->
+        <h2 class="contact-page__goal" id="zppi_3_10_1_4">
+            <label class="houdini-label" for="part_2_goal4">
+              III. ZPPI §10.(1)4) - <strong>they have not published annual plans,
+                programs, strategies, instructions, work reports, financial reports
+                and other documents</strong> in an easily searchable and machine-readable
+                form.
+            </label>
+        </h2>
+
+        <input class="houdini-input" type="radio" name="goals" id="part_2_goal4"
+            <% if params["contact"] && params[:current_form] == 'zppi_3_10_1_4' %>checked<% end %>>
+        <div class="houdini-target contact-page__options">
+            <ul>
+                <li>
+                    <strong>Legal provision III. ZPPI §10.(1):</strong> Public
+                    authorities are obliged to publish:
+                    <br>
+                    <strong>4)</strong> annual plans, programs, strategies,
+                    instructions on their websites in an easily searchable manner
+                    and in a machine-readable form , work reports, financial
+                    reports and other relevant documents related to the field of
+                    work of public authorities.
+                    (<a href="<%= zppi_text_path %>">NN 25/13, 85/15 and 69/22</a>)
+
+                    <% if !@user %>
+                      </li><li><%= link_to _("Sign in or sign up"), signin_path(:r => request.fullpath) %>
+                        to send a motion.
+                    <% end %>
+
+                    <% if @user %>
+                      <%= foi_error_messages_for :contact %>
+                      <%= render :partial => "help/zppi_3_10_1_4",
+                                 :locals => { :form_id => 'zppi_3_10_1_4' } %>
+                    <% end %>
+                </li>
+            </ul>
+        </div>
+        <!-- END -->
+
+        <!-- START -->
+        <h2 class="contact-page__goal" id="zppi_3_10_1_5">
+            <label class="houdini-label" for="part_2_goal5">
+              III. ZPPI §10.(1)5) - <strong>they have not published registers and
+                databases</strong> in an easily searchable and machine-readable form.
+            </label>
+        </h2>
+
+        <input class="houdini-input" type="radio" name="goals" id="part_2_goal5"
+            <% if params["contact"] && params[:current_form] == 'zppi_3_10_1_5' %>checked<% end %>>
+        <div class="houdini-target contact-page__options">
+            <ul>
+                <li>
+                    <strong>Legal provision III. ZPPI §10.(1):</strong> Public
+                    authorities are obliged to publish:
+                    <br>
+                    <strong>5)</strong> registers and databases or information
+                    about registers on their websites in an easily searchable
+                    manner and in a machine-readable form and databases from
+                    their jurisdiction and the method of access and reuse.
+                    (<a href="<%= zppi_text_path %>">NN 25/13, 85/15 and 69/22</a>)
+
+                    <% if !@user %>
+                      </li><li><%= link_to _("Sign in or sign up"), signin_path(:r => request.fullpath) %>
+                        to send a motion.
+                    <% end %>
+
+                    <% if @user %>
+                      <%= foi_error_messages_for :contact %>
+                      <%= render :partial => "help/zppi_3_10_1_5",
+                                 :locals => { :form_id => 'zppi_3_10_1_5' } %>
+                    <% end %>
+                </li>
+            </ul>
+        </div>
+        <!-- END -->
+
+        <!-- START -->
+        <h2 class="contact-page__goal" id="zppi_3_10_1_8">
+            <label class="houdini-label" for="part_2_goal6">
+              III. ZPPI §10.(1)8) - <strong>they have not published information
+                about awarded grants, sponsorships, donations or other assistance</strong>
+                in an easily searchable and machine-readable form.
+            </label>
+        </h2>
+
+        <input class="houdini-input" type="radio" name="goals" id="part_2_goal6"
+            <% if params["contact"] && params[:current_form] == 'zppi_3_10_1_8' %>checked<% end %>>
+        <div class="houdini-target contact-page__options">
+            <ul>
+                <li>
+                    <strong>Legal provision III. ZPPI §10.(1):</strong> Public
+                    authorities are obliged to publish on their websites in an
+                    easily searchable manner and in a machine-readable form:
+                    <br>
+                    <strong>8)</strong> information about granted grants, sponsorships,
+                    donations or other assistance, including the list of beneficiaries
+                    and the amount awarded.
+                    (<a href="<%= zppi_text_path %>">NN 25/13, 85/15 and 69/22</a>)
+
+                    <% if !@user %>
+                      </li><li><%= link_to _("Sign in or sign up"), signin_path(:r => request.fullpath) %>
+                        to send a motion.
+                    <% end %>
+
+                    <% if @user %>
+                      <%= foi_error_messages_for :contact %>
+                      <%= render :partial => "help/zppi_3_10_1_8",
+                                 :locals => { :form_id => 'zppi_3_10_1_8' } %>
+                    <% end %>
+                </li>
+            </ul>
+        </div>
+        <!-- END -->
+
+        <!-- START -->
+        <h2 class="contact-page__goal" id="zppi_3_10_1_9">
+            <label class="houdini-label" for="part_2_goal7">
+              III. ZPPI §10.(1)9) - <strong>they did not publish information on
+                public procurement procedures, documentation required for bidding,
+                information on contract execution and other information</strong>
+                in an easily searchable and machine-readable form.
+            </label>
+        </h2>
+
+        <input class="houdini-input" type="radio" name="goals" id="part_2_goal7"
+            <% if params["contact"] && params[:current_form] == 'zppi_3_10_1_9' %>checked<% end %>>
+        <div class="houdini-target contact-page__options">
+            <ul>
+                <li>
+                    <strong>Legal provision III. ZPPI §10.(1):</strong> Public
+                    authorities are obliged to publish on their websites in an
+                    easily searchable manner and in a machine-readable form:
+                    <br>
+                    <strong>9)</strong> information on public procurement procedures,
+                    necessary documentation for bidding, information on contract
+                    execution and other information for which there is an obligation
+                    to publish in accordance with the law regulating public procurement.
+                    (<a href="<%= zppi_text_path %>">NN 25/13, 85/15 and 69/22</a>)
+
+                    <% if !@user %>
+                      </li><li><%= link_to _("Sign in or sign up"), signin_path(:r => request.fullpath) %>
+                        to send a motion.
+                    <% end %>
+
+                    <% if @user %>
+                      <%= foi_error_messages_for :contact %>
+                      <%= render :partial => "help/zppi_3_10_1_9",
+                                 :locals => { :form_id => 'zppi_3_10_1_9' } %>
+                    <% end %>
+                </li>
+            </ul>
+        </div>
+        <!-- END -->
+
+        <!-- START -->
+        <h2 class="contact-page__goal" id="zppi_5_29_2_i">
+            <label class="houdini-label" for="part_2_goal8">
+              V. ZPPI §29.(2) - <strong>they did not respond to the request for
+                reuse</strong> within the prescribed period.
+            </label>
+        </h2>
+
+        <input class="houdini-input" type="radio" name="goals" id="part_2_goal8"
+            <% if params["contact"] && params[:current_form] == 'zppi_5_29_2_i' %>checked<% end %>>
+        <div class="houdini-target contact-page__options">
+            <ul>
+                <li>
+                    <strong>Legal provision V. ZPPI §29.(2):</strong> The public
+                    authority will decide on the request for re-use of information
+                    by means of a decision within 15 days from the date of submission
+                    of the formal request. The decision must contain the type of
+                    permit that determines the conditions of use and the amount
+                    and method of calculating the costs.
+                    (<a href="<%= zppi_text_path %>">NN 25/13, 85/15 and 69/22</a>)
+
+                    <% if !@user %>
+                      </li><li><%= link_to _("Sign in or sign up"), signin_path(:r => request.fullpath) %>
+                        to send a motion.
+                    <% end %>
+
+                    <% if @user %>
+                      <%= foi_error_messages_for :contact %>
+                      <%= render :partial => "help/zppi_5_29_2_i",
+                                 :locals => { :form_id => 'zppi_5_29_2_i' } %>
+                    <% end %>
+                </li>
+            </ul>
+        </div>
+        <!-- END -->
+
+        <!-- START -->
+        <h2 class="contact-page__goal" id="zppi_5_30_3">
+            <label class="houdini-label" for="part_2_goal9">
+                V. ZPPI §30.(3) - <strong>they did not inform about the holder
+                  of the intellectual property right or license</strong> from
+                  whom the public authority received the relevant information.
+            </label>
+        </h2>
+
+        <input class="houdini-input" type="radio" name="goals" id="part_2_goal9"
+            <% if params["contact"] && params[:current_form] == 'zppi_5_30_3' %>checked<% end %>>
+        <div class="houdini-target contact-page__options">
+            <ul>
+                <li>
+                    <strong>Legal provision V. ZPPI §30.(3):</strong> If a public
+                    authority rejects a request for re-use due to the protection of
+                    intellectual property rights, it is obliged to inform the
+                    applicant about the holder of intellectual property rights,
+                    if known, or about to the license holder from whom the public
+                    authority received the relevant information.
+                    (<a href="<%= zppi_text_path %>">NN 25/13, 85/15 and 69/22</a>)
+
+                    <% if !@user %>
+                      </li><li><%= link_to _("Sign in or sign up"), signin_path(:r => request.fullpath) %>
+                        to send a motion.
+                    <% end %>
+
+                    <% if @user %>
+                      <%= foi_error_messages_for :contact %>
+                      <%= render :partial => "help/zppi_5_30_3",
+                                 :locals => { :form_id => 'zppi_5_30_3' } %>
+                    <% end %>
+                </li>
+            </ul>
+        </div>
+        <!-- END -->
+
+        <!-- START -->
+        <h2 class="contact-page__goal" id="zppi_5_31_6">
+            <label class="houdini-label" for="part_2_goal10">
+                V. ZPPI §31.(6) - <strong>they have not published licenses specifying
+                  the terms of reuse</strong> in accordance with standard open licenses.
+            </label>
+        </h2>
+
+        <input class="houdini-input" type="radio" name="goals" id="part_2_goal10"
+            <% if params["contact"] && params[:current_form] == 'zppi_5_31_6' %>checked<% end %>>
+        <div class="houdini-target contact-page__options">
+            <ul>
+                <li>
+                    <strong>Legal provision V. ZPPI §31.(6):</strong> The public
+                    authority is obliged to publish on its website the licenses
+                    that determine the conditions of re-use or links to such
+                    licenses, in accordance with standard open licenses.
+                    (<a href="<%= zppi_text_path %>">NN 25/13, 85/15 and 69/22</a>)
+
+                    <% if !@user %>
+                      </li><li><%= link_to _("Sign in or sign up"), signin_path(:r => request.fullpath) %>
+                        to send a motion.
+                    <% end %>
+
+                    <% if @user %>
+                      <%= foi_error_messages_for :contact %>
+                      <%= render :partial => "help/zppi_5_31_6",
+                                 :locals => { :form_id => 'zppi_5_31_6' } %>
+                    <% end %>
+                </li>
+            </ul>
+        </div>
+        <!-- END -->
+
+
+        <!-- END CONTENT PART-2 -->
+    <!-- END PART-2 -->
+
+
+
+    <!-- START PART-3 -->
+    <dl>
+      <dt id="extras">
+        3) Additional motions for the right to access information <a href="#extras">#</a>
+      </dt>
+    </dl>
+
+        <!-- START CONTENT PART-3 -->
+
+        <!-- START -->
+        <h2 class="contact-page__goal" id="zppi_6_34_2_3">
+            <label class="houdini-label" for="part_3_goal1">
+                VI. ZPPI §34.(2) i (3) - <strong>they did not enter the exclusive
+                  right to re-use in the publicly available record of all granted
+                  exclusive rights</strong> and the regular check by the Information
+                  Commissioner was not carried out.
+            </label>
+        </h2>
+
+        <input class="houdini-input" type="radio" name="goals" id="part_3_goal1"
+            <% if params["contact"] && params[:current_form] == 'zppi_6_34_2_3' %>checked<% end %>>
+        <div class="houdini-target contact-page__options">
+            <ul>
+                <li>
+                    <strong>Legal provision VI. ZPPI §34.(2):</strong> A public
+                    authority can grant the exclusive right to re-use information
+                    if it is absolutely necessary to provide a public service or
+                    other services in the public interest. The justification of
+                    the reasons for granting such an exclusive right is subject
+                    to regular verification by the Information Commissioner and is
+                    verified at least every three years, except when it concerns
+                    the digitization of information in the field of culture.
+                    <br>
+                    <strong>VI. ZPPI §34.(3):</strong> The Information Commissioner
+                    keeps publicly available records of all granted exclusive rights.
+                    Decisions or contracts granting the exclusive right to re-use
+                    information shall be submitted to the Commissioner within
+                    15 days from the date of adoption or conclusion of the
+                    contract.
+                    (<a href="<%= zppi_text_path %>">NN 25/13, 85/15 and 69/22</a>)
+
+                    <% if !@user %>
+                      </li><li><%= link_to _("Sign in or sign up"), signin_path(:r => request.fullpath) %>
+                        to send a motion.
+                    <% end %>
+
+                    <% if @user %>
+                      <%= foi_error_messages_for :contact %>
+                      <%= render :partial => "help/zppi_6_34_2_3",
+                                 :locals => { :form_id => 'zppi_6_34_2_3' } %>
+                    <% end %>
+                </li>
+            </ul>
+        </div>
+        <!-- END -->
+
+        <!-- START -->
+        <h2 class="contact-page__goal" id="zppi_3_10_1_13_ii">
+            <label class="houdini-label" for="part_3_goal2">
+                III. ZPPI §10.(1)13) - <strong>they did not publish the correct
+                  contact details</strong> of the information officer.
+            </label>
+        </h2>
+
+        <input class="houdini-input" type="radio" name="goals" id="part_3_goal2"
+            <% if params["contact"] && params[:current_form] == 'zppi_3_10_1_13_ii' %>checked<% end %>>
+        <div class="houdini-target contact-page__options">
+            <ul>
+                <li>
+                    <strong>Legal provision III. ZPPI §10.(1):</strong> Public
+                    authorities are obliged to publish on their websites in an
+                    easily searchable manner and in a machine-readable form:
+                    <br>
+                    <strong>13)</strong> notice on the manner and conditions of
+                    exercising the right to access to information and re-use of
+                    information in a visible place, with contact details of the
+                    information officer, necessary forms or links to forms and
+                    the amount of the fee for access to information and re-use
+                    of information.
+                    (<a href="<%= zppi_text_path %>">NN 25/13, 85/15 and 69/22</a>)
+
+                    <% if !@user %>
+                      </li><li><%= link_to _("Sign in or sign up"), signin_path(:r => request.fullpath) %>
+                        to send a motion.
+                    <% end %>
+
+                    <% if @user %>
+                      <%= foi_error_messages_for :contact %>
+                      <%= render :partial => "help/zppi_3_10_1_13_ii",
+                                 :locals => { :form_id => 'zppi_3_10_1_13_ii' } %>
+                    <% end %>
+                </li>
+            </ul>
+        </div>
+        <!-- END -->
+
+
+        <!-- END CONTENT PART-3 -->
+    <!-- END PART-3 -->
+
+</div>
+
+<% else %>
+<div class="learn-more-foi">
+  <%= link_to _("Sign in to work with motions"), signin_path(:r => request.fullpath), :class => "button-secondary"  %>
+</div>
+<% end %>
+
+
+</div>

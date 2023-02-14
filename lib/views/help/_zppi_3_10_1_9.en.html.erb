@@ -1,0 +1,125 @@
+<%= form_for :contact,
+             :url => help_contact_path + '#' +  form_id,
+             :html => {:class => 'contact-form'} do |f| %>
+
+    <p class="contact-form__understand">
+        <%= f.check_box :understand, :required => true %>
+        <label for="contact_understand" class="form_label">
+            I confirm that I am sending a legitimate objection to the work of
+            public authorities related to the application of the
+            Right to Access to Information Act.
+        </label>
+    </p>
+
+    <% if not @user %>
+        <p>
+            <label class="form_label" for="contact_name">Ime i prezime
+              podnositelja predstavke:</label>
+            <%= f.text_field :name, :size => 20, :required => true %>
+            (ili <%= link_to "sign in",
+                            signin_url(
+                              :r => request.fullpath + '#' + form_id) %>)
+        </p>
+
+        <p>
+            <label class="form_label" for="contact_email">Email:</label>
+            <%= f.text_field :email, :size => 20, :required => true %>
+        </p>
+    <% end %>
+
+    <p>
+        <label class="form_label" for="contact_subject">
+          <% if !@info_request.nil? && is_unhappy_page? %>
+          Predmet:
+          <% else %>
+          Naziv tijela javne vlasti:
+          <% end %>
+        </label>
+        <% if !@info_request.nil? && is_unhappy_page? %>
+        <%= f.text_field :subject,
+                         :value => _("{{body_name}} - {{request_title}}",
+                               :body_name => @info_request.public_body.name,
+                               :request_title => @info_request.title),
+                         :size => 50,
+                         :required => true,
+                         :class => "message-subject" %>
+        <% elsif !@last_request.nil? %>
+        <%= f.text_field :subject,
+                         value: @last_request.public_body.name,
+                         :size => 50,
+                         :required => true,
+                         :class => "message-subject" %>
+        <% elsif !@last_body.nil? %>
+        <%= f.text_field :subject,
+                         value: @last_body.name,
+                         :size => 50,
+                         :required => true,
+                         :class => "message-subject" %>
+        <% else %>
+        <%= f.text_field :subject,
+                         :placeholder => "Tijelo javne vlasti",
+                         :size => 50,
+                         :required => true,
+                         :class => "message-subject" %>
+        <% end %>
+    </p>
+
+    <p>
+        <label class="form_label" for="contact_message">
+            Razlog predstavke:
+        </label>
+        <%= f.text_area :message, value: raw("Poštovani,
+izjavljujem predstavku na rad tijela javne vlasti iz naslova.
+
+Tijelo javne vlasti nije na svojim internetskim stranicama objavilo na lako pretraživ način i u strojno čitljivom obliku informacije o postupcima javne nabave, dokumentaciju potrebnu za nadmetanje, informacije o izvršavanju ugovora i druge informacije za koje postoji obveza objavljivanja sukladno zakonu kojim se uređuje javna nabava čime je povrijedilo odredbe članka 10. stavka 1. točka 9. Zakona o pravu na pristup informacijama (Narodne novine, broj 25/13, 85/15 i 69/22). Predlažem Povjereniku za informiranje da u postupku po ovoj predstavci napravi inspekcijski nadzor tijela javne vlasti.
+
+Srdačan pozdrav"),
+                        :rows => 10,
+                        :cols => 60,
+                        :required => true %>
+    </p>
+
+    <p style="display:none;">
+        <%= f.label :comment, 'Do not fill in this field' %>
+        <%= f.text_field :comment %>
+    </p>
+
+    <% if !@last_request.nil? %>
+        <p>
+            <label class="form_label" for="contact_message">
+              Uključite link na zahtjev:
+            </label>
+            <%=request_link(@last_request) %>
+            <%= submit_tag "remove", :name => 'remove' %>
+        </p>
+    <% end %>
+    <% if !@last_body.nil? %>
+        <p>
+            <label class="form_label" for="contact_message">
+              Uključite link na tijelo javne vlasti:
+            </label>
+            <%=public_body_link(@last_body) %>
+            <%= submit_tag "remove", :name => 'remove' %>
+        </p>
+    <% end %>
+
+    <% if @recaptcha_required %>
+      <%= recaptcha_tags %><br />
+    <% end %>
+
+    <div class="form_button">
+        <script><!--
+            if (!!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/)) {
+                $('#contact_understand').removeAttr('required');
+                $('#contact_name').removeAttr('required');
+                $('#contact_email').removeAttr('required');
+                $('#contact_subject').removeAttr('required');
+                $('#contact_message').removeAttr('required');
+            }
+        //--></script>
+        <%= hidden_field_tag(:current_form, form_id) %>
+        <%= hidden_field_tag(:submitted_contact_form, 1) %>
+        <%= submit_tag "Send the motion", :data => { :disable_with => "Sending..." } %>
+    </div>
+
+<% end %>
