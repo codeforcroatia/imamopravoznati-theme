@@ -9,7 +9,8 @@
     :user_name => user_url(@logged_in_user)) :
   _("not logged in") %>
 <% else %>
-This is test {{request_email}}.
+<%= _('This is test {{request_email}}.',
+      :request_email => @info_request.incoming_email) %>
 <% end %>
 <% if @last_request %>
 <%= _('Last request viewed: {{request_url}}',
