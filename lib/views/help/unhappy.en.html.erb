@@ -1,175 +1,119 @@
-<% @title = "Unhappy about a Freedom of Information request?" %>
+<% @title = "Unsatisfied with an access to information request?" %>
 
-<div id="left_column" class="left_column">
-<div class="unhappy-info">
-  <% if !@info_request.nil? %>
-    <h1>
-      Unhappy about the response you got to your request &mdash;
-      <%= request_link(@info_request) %>?
-    </h1>
-  <% else %>
-    <h1>Unhappy about the response you got?</h1>
-  <% end %>
+<div id="left_column" class="left_column"> <div class="unhappy-info"> <% if !@info_request.nil? %> <h1> You are dissatisfied with the actions of the authorities in your case of the right to access to information &mdash; <%= request_link(@info_request) %>? </h1> <% else %> <h1>Are you dissatisfied with the actions of the authorities in your right to access to information case?</h1> <% end %>
 
-  <p>
-    If you <strong>didn’t get a reply within 15 calendar days</strong> you can:
-  </p>
+  <p> If <strong>you have not received an answer within 15 days</strong> you can: </p>
 
-  <ul>
-    <li>
-      Refer your request to the
-      <a href="#refer-to-ico">Information Commissioner</a>.
-    </li>
-  </ul>
+  <ul> <li> a) Send a <a href="#internal_review">response</a> to the public authority urging them to respond, and at the same time you can initiate proceedings with the Information Commissioner (see below point (b) or (c)). </li> <li> b) At the end of the 15-day period, if the body has not responded, you can send a <a href="#refer-to-pi">complaint</a> to the Information Commissioner. </li> <li> c) At any time you can send a <a href="#refer-to-pi-notice">petition</a> to the Information Commissioner. </li> </ul>
 
-  <p>
-    If you <strong>did not get all of the information</strong> that you
-    requested, or your request was <strong>refused without a reason</strong>
-    valid under the law you can:
-  </p>
+  <p> If <strong>you did not get all the information</strong> you were looking for you can: </p>
 
-  <ul>
-    <li>
-      Ask for an <a href="#internal_review">internal review</a> at the public
-      authority.
-    </li>
-    <li>
-      If that doesn't help, you can refer the request to the
-      <a href="#refer-to-ico">Information Commissioner</a>.
-    </li>
-    <li>
-      <a href="<%= select_authority_path %>">Make a new request</a> asking for
-      more specific information or to a more appropriate authority
-    </li>
-    <li>
-      or, <a href="#other_means">use other means</a> of asking your question
-    </li>
-  </ul>
+  <ul> <li> Send a <a href="#internal_review">response</a> to the public authority and ask for a supplement to the provided information. Then the body has a new deadline of 15 days to respond. </li> </ul>
+
+  <p> If your request is <strong>rejected without valid reason</strong> you can: </p>
+
+  <ul> <li> a) Within 15 days from the expiration of the response deadline, you can initiate a <a href="#refer-to-pi">complaint</a> procedure with the Information Commissioner. </li> <li> b) You can send a <a href="#refer-to-pi-notice">representation</a> to the Information Commissioner at any time, even outside the user's appeal deadline. </li> <li> c) <a href="<%= select_authority_path %>">Submit a new request</a> asking for specific information from that authority or select another public authority that is responsible for the information you are looking for. </li> <li> d) Or use <a href="#other_means">some other way</a> of searching for information. </li> </ul>
+
+  <p> For more information about deadlines, read <%= link_to help_requesting_path(anchor: 'quickly_response') to -%> in what time frame will your request be resolved? <% end %> </p>
+
 </div>
 
-<h2 id="internal_review">1. Asking for an internal review <a class="hover_a" href="#internal_review">#</a> </h2>
-<p>
-  <% if !@info_request.nil? %>
-    <% path = new_request_followup_url(request_id: @info_request.id) +
-              "?internal_review=1#followup" %>
+<h2 id="internal_review">Using public authorities <a class="hover_a" href="#internal_review">#</a> </h2> <p> <% if !@info_request.nil? %> <% path = new_request_followup_url(request_id: @info_request.id) + "?internal_review=1#followup" %>
 
-    Choose <%= link_to "request an internal review", path %> and then write a
-    message asking the authority to review your request.
+  Please send a reply with <%= link_to "request an express ticket", path %> and your request will be resolved as soon as possible. <% else %> Under the request on the page <%= site_name %>, find and select "request an urgent report". Then write a message asking for your request to be resolved as soon as possible. It would also be good to put a link to the request page so that the officer knows exactly which request it is. <% end %> </p> <p> Despite the sent urgent notice, when the body did not respond within the legal deadline, you can file a parallel complaint with the Information Commissioner, or send a petition because the body did not meet the response deadline. See below for details. </p>
+
+<a name="complaining"></a> <h2 id="refer-to-pi">Protection of the right to access information <a class="hover_a" href="#refer-to-pi">#</ a></h2> <p> The task of the Information Commissioner is to protect your right to access to information, monitor the implementation of the Law on the Right to Access to Information and publicly promote the right to access to information and re-use of information guaranteed by the Constitution of the Republic of Croatia. </p> <p> Although the Information Commissioner requests that you attach your request to the complaint, they will duly accept complaints received electronically where instead of an attachment a link to the request at <%= site_name %> is provided in order to have evidence of the entire correspondence history related to the request. If you still want to download the entire correspondence and files, use the download option from the "Actions" menu on the request page, which will initiate a download of the <code>.zip</code> file. </p> <p> <%= site_name %> currently does not have the option to send a complaint to the Information Commissioner. We advise you to leave a comment on your request to inform people about the progress of your case. At the same time, it will be of great help to you to have all the dates and the entire history of solving your case in one place. You can save the Information Commissioner's decision on one of the existing file sharing services such as Google Drive or One Drive, and you can share the link to the decision file via a comment on the request. </p> <p> Although the Information Commissioner is working hard to reduce the number of pending cases, in many cases it can take several months or even longer to resolve an appeal. </p> <p> If you come to the point where you need to start a second instance procedure with the Information Commissioner, accept the fact that you will not get the requested information quickly. If you are fighting for better access to information, then it is worth filing a complaint and waiting for the outcome of the second instance procedure, at the end of which you will still (sometimes and after a long time) get the requested information. You can also try to get information in other ways... </p>
+
+<h3 id="refer-to-pi-complaints">How can I protect my right if a public authority has refused or rejected my request? Can I complain to someone? <a class="hover_a" href="#refer-to-pi-complaints">#</a></h3> <p> Like any right, your right to access information is protected by due process. </p> <p> You can file an appeal with the Information Commissioner against the decision of the public authority that rejects or rejects the request for access to information. </p> <p> The deadline for submitting an appeal is <strong>15 days from the date of receipt of the decision</strong>. If the last day of the deadline falls on a Sunday or a non-working day, the next working day is counted as the last day of the deadline. </p> <p> If the body has informed you that the information has been made public, that you have already received the information, and 90 days have not passed since the previous request, that the Law on the Right to Access to Information does not apply to your submission, or that the considers to be a request, and you believe that in the cases mentioned this is not true, you can submit an <i>objection to the head of the public authority body</i>, which you will then have the right to appeal to the Information Commissioner. </p>
+
+<h3 id="refer-to-pi-silence">What if the public authority does not respond to my request? <a class="hover_a" href="#refer-to-pi-silence">#</a></h3> <p> You can submit a complaint to the Information Commissioner even when the public authority does not decide on your request <strong >within 15 days</strong>, or within a total of 30 days if it extended the deadline for decision. A situation in which a public authority has not reacted at all to your request or delays the procedure, is called <i>silence of the administration</i>. </p> <p> We recommend that you wait a day or two after the deadline before filing an appeal, due to the possibility that the authority will send you a decision or information by mail. </p> <p> In the event that the public authority has not issued a prescribed decision rejecting or rejecting your request, but has only informed you informally that it is denying you information for some reason, insist on making a decision. </p>
+
+<h3 id="refer-to-pi-forms">What should the complaint contain and how is it submitted? <a class="hover_a" href="#refer-to-pi-forms">#</a></h3> <p> The complaint should contain your information (name, surname and address, i.e. name of legal entity and registered office) and must be signed (in person, or by an authorized person, if it is a legal entity). If you submit it electronically and you do not have an electronic signature, you can scan the signed complaint and send it electronically. Your address or registered office of the legal entity is necessary so that the Commissioner can deliver his decision to you. </p> <p> In the appeal, you should state the decision you are disputing, the name of the public authority that made the decision, and the reasons for which you are dissatisfied with the decision. </p> <p> Although the Information Commissioner requests that you attach your request to the complaint, they will duly accept complaints received electronically where instead of an attachment a link to the request at <%= site_name %> is provided in order to have evidence of the entire correspondence history related to the request. If you still want to download the entire correspondence and files, use the download option from the "Actions" menu on the request page, which will initiate a download of the <code>.zip</code> file. </p> <p> Some bodies publish the form for filing a complaint on their websites, and you can always find it on <a href="https://www.pristupinfo.hr/" target="_blank">the Commissioner's official website for information</a>. </p> <p> As a rule, the complaint is submitted through the public authority to which you initially addressed the request for access to information. If you make a complaint directly to the Information Commissioner, please note that the complaint will first be returned to the public authority for consideration, thereby prolonging the process. </p> <p> We recommend that you request a confirmation of receipt of the appeal. </p>
+
+<h3 id="refer-to-pi-response">When can I expect the decision of the Information Commissioner? <a class="hover_a" href="#refer-to-pi-response">#</a></h3> <p> The Information Commissioner conducts the appeal procedure (second instance procedure) determining all the circumstances of the case, asking for clarifications and information from public authorities, and may request additional clarifications from you as a user. </p> <p> The basic deadline for resolving an appeal is 30 days. </p> <p> The deadlines are longer in two cases: if for the resolution it is necessary to examine or carry out a proportionality and public interest test, then the deadline is 60 days; if it is necessary to seek the opinion of the Office of the National Security Council and it is about classified information, the deadline for resolution is 90 days. </p> <p> The commissioner submits his decision through the public authority from which the information was requested. </p>
+
+<h3 id="refer-to-pi-decision">What kind of decision can I expect from the Information Commissioner? <a class="hover_a" href="#refer-to-pi-decision">#</a></h3> <p> The Information Commissioner may uphold your appeal, in whole or in part.</p> <p>If the Commissioner after the procedure that includes the inspection of the requested information, assesses that the appeal is founded, will order the public authority to provide you with access to the requested information, and will set an appropriate deadline for this. It can conclude that your appeal is founded in one part, while the public authority is right in the other part. In that case, they will confirm those parts of the decision of the public authority that are legal, while in the remaining part they will cancel it and order the authority to provide you with access to the information. The information commissioner can also order the authority to carry out the procedure again. </p> <p> The commissioner can also make a decision that your appeal is completely unfounded. In that case, the decision of the public authority will be confirmed by a decision. If you believe that the Commissioner is wrong, you still have the option of initiating an administrative dispute before the High Administrative Court, as well as in the case where the Commissioner only partially accepts your appeal. </p> <p> In the event of an appeal due to the administration's silence, the Information Commissioner protects your right to access information in such a way that he will ask the authority that did not act within the legal deadline to provide a statement on the reasons for not acting, and urge him to do so. If the authority still does not comply with the submitted request, the Information Commissioner will order the public authority to resolve your request in accordance with the provisions of the Law on the Right to Access to Information. </p> <p> In the event that the body has in the meantime provided the requested information, please inform the Information Commissioner about this so that the procedure can be completed (by e-mail, telephone or in writing). </p> <p> In the event that you did not file a complaint in a timely manner, the Commissioner for Information will reject the complaint by decision. </p>
+
+<h3 id="refer-to-pi-appeal">What can I do if I am dissatisfied with the Commissioner's decision or my appeal was not decided on time? <a class="hover_a" href="#refer-to-pi-appeal">#</a></h3> <p> Against the decision of the Commissioner for Information or in case of his silence, so if he does not decide on your appeal within the specified deadlines, you can initiate an administrative dispute before the High Administrative Court of the Republic of Croatia. Administrative and court fees are not paid for citizens' administrative disputes before the High Administrative Court. </p> <p> A public authority can also initiate an administrative dispute against the Commissioner's decision. The High Administrative Court must decide on the lawsuit within 90 days. </p>
+
+<h3 id="refer-to-pi-notice">Submission <a class="hover_a" href="#refer-to-pi-notice">#</a></h3> <p> You can contact the Commissioner also address a petition and thus warn that public authorities are not transparent to the extent or in the manner prescribed by the Law on the Right to Access to Information (for example, they do not publish on their websites the information prescribed by the Law, they often resolve requests outside the prescribed deadlines, they do not ensure the publicness of sessions formal working bodies or do not conduct consultations with the public). On the basis of the allegations in your petition, the Commissioner may conduct an inspection of the public authority, during which he will identify failures to fulfill obligations under the Act and order measures to correct them. </p>
+
+<% if @user %> <% if !@info_request.nil? %>
+
+  <h4 id="foi_motion">Submitting a petition <a class="hover_a" href="#foi_motion">#</a></h4>
+
+  <% status = @info_request.calculate_status %> <% if @info_request.prominence == 'hidden' %> <p>The request is <strong>hidden</strong>. We do not yet have the option of sending applications for this type of request.</p> <% elsif status == 'user_withdrawn' || status == 'gone_postal' || status == 'gone_postal' %> <p>The status of your request is "<%= InfoRequest::State.short_description(@info_request.calculate_status) %>." At this time we have no petitions for such requests.</p> <% elsif status == 'vexatious' || status == 'not_foi' %> <!-- Not offering FOI Motion to these requests --> <% elsif @info_request.awaiting_description %> <p>Your request is <strong>awaiting review and status setting</strong>. We suggest you visit the request page <%= request_link(@info_request) %> and check the last status and then return to this page to review the next steps related to submitting the petition.</p> <% else %>
+
+  <!-- Start of ADDITION FOI MOTION --> <p>Anyone can submit a petition to the work of public authorities related to the application of the Law on the Right to Access to Information. These are cases when you notice that a public authority is improperly applying or not applying a provision of the law at all. When you complete this form, we will submit your application to the Information Commissioner, which may serve as the basis for an inspection.</p> <p> Each <strong>application should include</strong>: </p> <ul> <li> <strong>Name of the public authority</strong> which is the subject of the petition. Be sure to state the name of the public authority in order for the submission to be valid.</li> <li><strong>Evidence of the allegations</strong> that are the subject of the petition. Evidence can be a link to a public request for access to information on the basis of which the inspector can act.</li> <li><strong>Statement of facts, violations of the right to access to information. The petitioner must state why he is dissatisfied with the actions of public authorities regarding the application of the Law on the Right to Access to Information.</li> </ul>
+
+  <p> We <strong>automatically add the following information</strong> to your submission: </p> <ul> <li><strong>Link to the last request or public authority</strong> that you last opened.</ li> <li><strong>Link to your profile</strong> at <%= site_name %>.</li> <li><strong>Your name and email address</strong> from your <%= site_name % > user account so that the inspector of the Information Commissioner can deliver you a notification about the performed supervision of the body.</li> </ul>
+
+  <p> For ease of use, we have filled in the content of the application automatically. You can edit the text and write if you have something to add to your complaint. </p>
+
+  <div class="contact-page">
+
+  <!-- START PART-1--> <% if status == 'waiting_response_overdue' || status == 'waiting_response_very_overdue' || status == 'internal_review' || status == 'hot_held' || status == 'rejected' || status == 'successful' || status == 'partially_successful' %> <dl> <dt id="significant"> Request for access to information <a href="#ppi">#</a> </dt> </dl> <% end %>
+
+  <!-- START --> <% if status == 'waiting_response_overdue' || status == 'waiting_response_very_overdue' || status == 'internal_review' %> <h2 class="contact-page__goal" id="zppi_5_20_1"> <label class="houdini-label" for="goal1"> V. ZPPI §20.(1) - <strong >did not respond to the request for access to information</strong> within the prescribed period. </label> </h2>
+
+  <input class="houdini-input" type="radio" name="goals" id="goal1" <% if params["contact"] && params[:current_form] == 'zppi_5_20_1' %>checked<% end %>> <div class="houdini-target contact-page__options"> <ul> <li> <strong>Legal provision V. ZPPI §20.(1):</strong> Based on the request for access to information, the public authority will decide no later than 15 days from the date of submission of the formal request. (<a href="<%= zppi_text_path %>">NN 25/13, 85/15 and 69/22</a>)<br> <strong>V. ZPPI §22.(1) and (2):</strong> Deadlines for exercising the right to access information can be extended by 15 days, counting from the day when the public authority should have decided on the request for access to information. (<a href="<%= zppi_text_path %>">NN 25/13, 85/15 and 69/22</a>) </li> <li> Read more about it on the help pages: <a href= "<%= help_requesting_path(:anchor => 'quickly_response') %>">How soon will your request be resolved?</a>
+
+  <%= foi_error_messages_for :contact %> <%= render :partial => "help/zppi_5_20_1", :locals => { :form_id => 'zppi_5_20_1' } %> </li> </ul> </div> < % end %> <!-- END -->
+
+  <!-- START --> <% if status == 'hot_held' || status == 'rejected' || status == 'internal_review' %> <h2 class="contact-page__goal" id="zppi_5_21_123"> <label class="houdini-label" for="goal2"> V. ZPPI §21.(1), (2 ) and (3) - <strong>did not submit the request for access to information</strong> to another public authority. </label> </h2>
+
+  <input class="houdini-input" type="radio" name="goals" id="goal2" <% if params["contact"] && params[:current_form] == 'zppi_5_21_123' %>checked<% end %>> <div class="houdini-target contact-page__options"> <ul> <li> <strong>Legal provision V. ZPPI §21.(1):</strong> If the public authority does not have the information, and has knowledge of the body that owns it, he is obliged, without delay, and no later than within eight days of receiving the request, to assign the request to that body, and he will inform the applicant about this. (<a href="<%= zppi_text_path %>">NN 25/13, 85/15 and 69/22</a>)<br> <strong>(2):</strong> If the public authority receives request for access to information from Article 15, paragraph 2, point 1 of this Law, and is not its owner, must assign the request to the owner of the information without delay, but no later than within eight days of receiving the request, which will inform the applicant. (<a href="<%= zppi_text_path %>">NN 25/13, 85/15 and 69/22</a>)<br> <strong>(3):</strong> If the public authority receives a request for access to international information, he is obliged to transfer the same to the owner of the information without delay, and no later than within eight days of receiving the request, which he will inform the applicant about. (<a href="<%= zppi_text_path %>">NN 25/13, 85/15 and 69/22</a>) </li> <li> Read more about assignment on the help pages: <a href= "<%= help_requesting_path(:anchor => 'quickly_response') %>">How soon will your request be resolved?</a>
+
+  <%= foi_error_messages_for :contact %> <%= render :partial => "help/zppi_5_21_123", :locals => { :form_id => 'zppi_5_21_123' } %> </li> </ul> </div> < % end %> <!-- END -->
+
+  <!-- START --> <% if status == 'waiting_response_overdue' || status == 'waiting_response_very_overdue' || status == 'internal_review' %> <h2 class="contact-page__goal" id="zppi_5_24_2"> <label class="houdini-label" for="goal3"> V. ZPPI §24.(2) - <strong >did not respond to the request for additional information</strong> within the prescribed period. </label> </h2>
+
+  <input class="houdini-input" type="radio" name="goals" id="goal3" <% if params["contact"] && params[:current_form] == 'zppi_5_24_2' %>checked<% end %>> <div class="houdini-target contact-page__options"> <ul> <li> <strong>Legal provision V. ZPPI §24.(2):</strong> The public authority is obliged to decide on the request for addition or correction of information within 15 days from the date of receipt of the request. (<a href="<%= zppi_text_path %>">NN 25/13, 85/15 and 69/22</a>)
+
+  <%= foi_error_messages_for :contact %> <%= render :partial => "help/zppi_5_24_2", :locals => { :form_id => 'zppi_5_24_2' } %> </li> </ul> </div> < % end %> <!-- END -->
+
+  <!-- START --> <% if status == 'successful' || status == 'partially_successful' || status == 'rejected' || status == 'internal_review' %> <h2 class="contact-page__goal" id="zppi_5_17_2"> <label class="houdini-label" for="goal4"> V. ZPPI §17.(2) - <strong >did not provide the information in an appropriate manner</strong> indicated in the request. </label> </h2>
+
+  <input class="houdini-input" type="radio" name="goals" id="goal4" <% if params["contact"] && params[:current_form] == 'zppi_5_17_2' %>checked<% end %>> <div class="houdini-target contact-page__options"> <ul> <li> <strong>Legal provision V. ZPPI §17.(2):</strong> In the request for access to information, the user can indicate a suitable the method of obtaining the information, and if not indicated, the information will be delivered in the manner in which the request was submitted, i.e. in the most economical manner. (<a href="<%= zppi_text_path %>">NN 25/13, 85/15 and 69/22</a>)
+
+  <%= foi_error_messages_for :contact %> <%= render :partial => "help/zppi_5_17_2", :locals => { :form_id => 'zppi_5_17_2' } %> </li> </ul> </div> < % end %> <!-- END --> <!-- END PART-1 -->
+
+  <!-- START PART-2 --> <% if status == 'waiting_response_overdue' || status == 'waiting_response_very_overdue' || status == 'internal_review' || status == 'successful' || status == 'partially_successful' || status == 'rejected' %> <dl> <dt id="reuse"> Applications for information reuse <a href="#reuse">#</a> </dt> </dl> <% end %>
+
+  <!-- START CONTENT PART-2 -->
+
+  <!-- START --> <% if status == 'waiting_response_overdue' || status == 'waiting_response_very_overdue' || status == 'internal_review' %> <h2 class="contact-page__goal" id="zppi_5_29_2_i"> <label class="houdini-label" for="part_2_goal8"> V. ZPPI §29.(2) - <strong >did not respond to the request for reuse</strong> within the prescribed period. </label> </h2>
+
+  <input class="houdini-input" type="radio" name="goals" id="part_2_goal8" <% if params["contact"] && params[:current_form] == 'zppi_5_29_2_i' %>checked<% end %>> <div class="houdini-target contact-page__options"> <ul> <li> <strong>Legal provision V. ZPPI §29.(2):</strong> The public authority will decide on the request for re- use of information by decision within 15 days from the date of submission of the formal request. The decision must contain the type of permit that determines the conditions of use and the amount and method of calculating the costs. (<a href="<%= zppi_text_path %>">NN 25/13, 85/15 and 69/22</a>)
+
+  <%= foi_error_messages_for :contact %> <%= render :partial => "help/zppi_5_29_2_i", :locals => { :form_id => 'zppi_5_29_2_i' } %> </li> </ul> </div> < % end %> <!-- END -->
+
+  <!-- START --> <% if status == 'successful' || status == 'partially_successful' || status == 'rejected' || status == 'internal_review' %> <h2 class="contact-page__goal" id="zppi_5_30_3"> <label class="houdini-label" for="part_2_goal9"> See ZPPI §30.(3) - <strong >did not inform about the holder of the intellectual property right or license</strong> from whom the public authority received the relevant information. </label> </h2>
+
+  <input class="houdini-input" type="radio" name="goals" id="part_2_goal9" <% if params["contact"] && params[:current_form] == 'zppi_5_30_3' %>checked<% end %>> <div class="houdini-target contact-page__options"> <ul> <li> <strong>Legal provision V. ZPPI §30.(3):</strong> If the public authority rejects the request for reuse due to the protection of intellectual property rights, the applicant must be informed about the holder of intellectual property rights, if known, or about the license holder from whom the public authority received the relevant information. (<a href="<%= zppi_text_path %>">NN 25/13, 85/15 and 69/22</a>)
+
+  <%= foi_error_messages_for :contact %> <%= render :partial => "help/zppi_5_30_3", :locals => { :form_id => 'zppi_5_30_3' } %> </li> </ul> </div> < % end %> <!-- END -->
+
+  <!-- END CONTENT PART-2 --> <!-- END PART-2 -->
+
+  </div> <% end %>
+
+  <!-- End of ADDITION FOI MOTION -->
+
+  <p> <strong>Didn't find what you were looking for?</strong> See <%= link_to _("extended list of petition forms"), help_foi_motion_path, :class => "link" %>. </p>
+
   <% else %>
-    At the bottom of the relevant request page on <%= site_name %> choose
-    "request an internal review". Then write a message asking for an internal
-    review of your request. You may want to include a link to the
-    request page, to make it clear which request you are talking about.
+
+  <div> <center> <%= link_to _("Apply to the Information Commissioner"), help_foi_motion_path, :class => "button" %> </center> </div>
+
   <% end %>
-</p>
-<p>
-  You don't need to ask for an internal review if the authority haven't responded
-  to your request at all by the deadline. You can go straight to the Information
-  Commissioner.
-</p>
-<p>
-  There's a good chance an internal review will prompt a change in the public
-  body's stance. <a href="https://research.mysociety.org/sites/foi/reviews/">
-  For requests made to central government, 22% of internal reviews resulted in
-  some change to the original decision and 9% were completely overturned</a>,
-  and for <a href="https://research.mysociety.org/html/local-gov-foi/l/3.3333.8-wl5.tfyxv.xoob1.bz1hy">
-  local government this figure is between 36-49%</a>.
-</p>
-<p>Internal reviews should be quick. If one takes longer than 20 working days
-  then the authority should write and let you know, and it should never take
-  longer than 40 working days (see this
-  <a href="https://ico.org.uk/for-organisations/guide-to-freedom-of-information/refusing-a-request/#20">good practice guide</a>).
-  You will then either get the information that
-  you originally requested, or you will be told that the review upholds the
-  original decision.
-</p>
 
-<a name="complaining"></a>
-<h2 id="refer-to-ico">2. Referring a request to the Information Commissioner <a class="hover_a" href="#refer-to-ico">#</a></h2>
-<p>
-  If you are still unhappy after the public authority has done their internal
-  review, then you can refer your request to the Information Commissioner, who
-  is empowered to uphold access to information laws. To make a referral,
-  start by reading <a href="https://ico.org.uk/make-a-complaint/official-information-concerns-report/">the
-  Information Commissioner's advice for those with concerns about accessing
-  information</a> which links to their form. If you requested information from a
-  Scottish authority, then it is
-  <a href="http://www.itspublicknowledge.info/YourRights/YourRights.asp">the
-  Scottish Information Commissioner</a> who you will need to contact.
-</p>
+<% elsif !@user %> <p><%= link_to _("Sign up to submit a petition"), signin_path(:r => request.fullpath), :class => "" %> via forms that we have prepared.</p> <% end %>
 
-<p>
-  While the Information Commissioner asks for their form to be completed and
-  evidence supporting a referral to be attached in practice we are aware they
-  routinely consider referrals made via a simple email setting out the issues,
-  containing a link to the request on <%= site_name %>.org to provide evidence of
-  the full history of the correspondence related to the request. If you do wish
-  to download copies of correspondence, and attachments, to send to the
-  Information Commissioner the <code>.zip</code> download feature, accessed via
-  "Actions" may assist.
-</p>
+<a name="complaining2"></a> <h2 id="refer-to-pi-reuse">Protection of the right to reuse information <a class="hover_a" href="#refer-to-pi-reuse "##</a></h2> <p> Reuse of information is the use of information of a public authority by natural or legal persons (citizens, associations, academic community, private sector) for commercial or non-commercial purposes that are different from the original purpose for which the information is collected within the framework of public work. </p>
 
-<p>
-  <%= site_name %> does not currently have any special facilities for handling a
-  referral to the Information Commissioner. We encourage users to leave
-  annotations on requests keeping people informed of progress.
-  <a href="https://icosearch.ico.org.uk/s/search.html?collection=ico-meta&profile=decisions&query">
-  Decisions by the Information Commissioner are published online</a> and you can
-  link to a decision via an annotation on the request.
-</p>
+<h3 id="refer-to-pi-reuse-appeal">Can I protect my right to reuse information? <a class="hover_a" href="#refer-to-pi-reuse-appeal">#</a></h3> <p> In the event that a public authority refuses or rejects your request to reuse information , you can file a complaint with the Information Commissioner. Also, if the public authority does not decide on your request, you can file an appeal due to the administration's silence. </p> <p> The rules that apply to the appeal procedure for the denial of the right to access to information are applied to the appeal procedure. An appeal against the Commissioner's decision is not allowed, but an administrative dispute can be initiated before the High Administrative Court of the Republic of Croatia. </p> <p> You can find forms for submitting a complaint related to the reuse of information on <a href="https://www.pristupinfo.hr/" target="_blank">the official website of the Information Commissioner</a> . </p>
 
-<p>
-  A warning. Although the Information Commissioner has worked hard to reduce
-  their backlog of casework, it can still take several months to get resolution
-  from them in many cases. One area where they have sped up things considerably
-  is that they are able to prompt non-responsive authorities to reply within a
-  few weeks of receiving a complaint.
-</p>
+<a name="complaining3"></a> <h2 id="refer-to-pi-zzo">Protection of access to information according to special regulations <a class="hover_a" href="#refer-to-pi-zzo "##</a></h2> <p> The Commissioner for Information, in addition to general competence, is also an appeal body in case of denial of information about the environment, in accordance with the Law on Environmental Protection (Official Gazette 80/13, 153/13, 78/15 , 12/18). Information about the environment is of exceptional public interest, directly related to the protection of human health, sustainable development and the quality of life of future generations. Therefore, the ability to access environmental information directly affects the public's right to participate in decision-making on certain activities related to environmental protection issues, which is a significant tool that gives citizens the right to be active participants in the creation of public policies related to environmental protection. </p> <p> The Commissioner is designated by the Law on Archival Materials and Archives (Official Gazette 61/18) as the competent authority in the matter of the availability of public archival materials. Namely, the Commissioner represents a second instance body in the process of approving access to material that is not publicly available in the sense of the aforementioned Act, therefore, against the decision of the state archive and the JLP(R)S archive, you can submit an appeal to the Commissioner within 15 days from the delivery of the decision. </p>
 
-<p>
-  If you are unhappy with the response from the Information Commissioner's
-  office you can ask them to reconsider it under their
-  <a href="https://ico.org.uk/concerns/complaints-and-compliments-about-us/complain-about-us/">
-  complaints process</a>.
-</p>
-
-<p>
-  If you reach the point of referring a case to the Information Commissioner,
-  you should accept that you won't get the information quickly by this means.
-  Maybe you want to help the fight to improve our Freedom of Information regime,
-  or maybe getting the information slowly is still worthwhile. You can also try
-  and get the information by other means…
-</p>
-
-<h2 id="other_means">3. Using other means to answer your question <a class="hover_a" href="#other_means">#</a> </h2>
-<p>You can try pursuing your problem or your research in other ways.
-</p>
-<ul>
-  <li>Make a <strong>new FOI request</strong> for summary information, or for
-    documentation relating indirectly to matters in your refused request.
-    <a href="<%= help_contact_path %>">Ask us for ideas</a> if you're stuck.</li>
-    <li>If any <strong>other public authorities</strong> or publicly owned companies are involved,
-    then make FOI requests to them.</li>
-    <li>Write to <strong>your MP</strong> or other politician using <a
-    href="http://www.writetothem.com">WriteToThem</a> and ask for their help
-    finding the answer. MPs can write directly to ministers or departments, and
-    can ask written questions in the House of Commons. Councillors in local authorities
-  can talk directly to council officers.</li>
-  <% if can_ask_the_eu?(@country_code) %>
-  <li>
-    Try <%= link_to 'asking for the information from the European Union',
-    'https://www.asktheeu.org' %>. Every one of the 500 million people
-    living in the European Union (both citizens and residents) has the
-    legally guaranteed right to ask for information from EU authorities.
-    <%= link_to 'AskTheEU.org', 'https://www.asktheeu.org' %> is a version of
-    this website for the European Union.
-  </li>
-  <% end %>
-  <li>Ask <strong>other researchers</strong> who are interested in a similar
-    issue to yours for ideas. You can sometimes find them by browsing this site;
-    contact any registered user from their page. There may be an Internet
-  forum or group that they hang out in. </li>
-  <li>You could form a small local campaign group and arrange a meeting
-  with staff from the authority.</li>
-</ul>
-</div>
+<h2 id="other_means">Use another way to search for information <a class="hover_a" href="#other_means">#</a> </h2> <p> You can try to solve the problem of accessing information or research on other ways. </p> <ul> <li> Submit a <strong>new request</strong> in which you request a list of documents or information that is directly or indirectly related to the material that the authority refused to give you. Or <a href="https://codeforcroatia.org/ipz-forum?utm_source=imamopravoznati&utm_medium=link" title="We have the right to know the community discourse" target="_blank">ask here</a> for ideas. </li> <li> If <strong>another body</strong> is connected, you can try to send them a request for access to information. </li> <li> Write to <strong>representatives</strong> in Parliament or other politicians and ask them for help in finding information. Members of Parliament can officially request information from public authorities, and the authorities cannot refuse them! Representatives in local assemblies and councils also have the power to obtain information through official channels from the local self-government in which they represent you, the citizens. </li> <% if can_ask_the_eu?(@country_code) %> <li> Try <%= link_to 'ask for information from the European Union', 'https://www.asktheeu.org' %>. Every citizen and resident of the European Union has a legally guaranteed right to request information from the EU authorities. <%= link_to 'AskTheEU.org', 'https://www.asktheeu.org' %> is a version of this page for requesting information from European Union institutions. </li> <% end %> <li> Ask <strong>other researchers</strong> who are interested in a similar topic to yours for help. Sometimes you can find them by browsing this page; contact any registered user from their profile page. There may be an online forum or group where you can find like-minded researchers. </li> <li> You can set up a small local campaign group and arrange a meeting with employees from public authorities. That way they will take you more seriously. </li> </ul> <p class="form_note"><strong>Source statement:</strong> This page is based on <a href="https://publikacije.imamopravoznati.org?utm_source=imamopravoznati&utm_medium =link" target="_blank"> Right to Information publications</a>, and parts of the original text are taken from <a href="https://web.archive.org/web/20210828110556/https://pristupinfo.hr/dokumenti-i-publikacije/prirucnici/" target="_blank"> Information Commissioner</a>. </p> </div>
