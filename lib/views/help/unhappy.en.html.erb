@@ -59,15 +59,15 @@
   </h2>
     <p>
       <% if !@info_request.nil? %>
-      <% path = new_request_followup_url(request_id: @info_request.id) + "?internal_review=1#followup" %>
-      Please send a reply with <%= link_to "request an express ticket", path %> and
-      your request will be resolved as soon as possible.
+        <% path = new_request_followup_url(request_id: @info_request.id) + "?internal_review=1#followup" %>
+        Please send a reply with <%= link_to "request an express ticket", path %> and
+        your request will be resolved as soon as possible.
       <% else %>
-      Under the request on
-      the page <%= site_name %>, find and select "request an urgent report".
-      Then write a message asking for your request to be resolved as soon as possible.
-      It would also be good to put a link to the request page so that the officer knows
-      exactly which request it is.
+        Under the request on
+        the page <%= site_name %>, find and select "request an urgent report".
+        Then write a message asking for your request to be resolved as soon as possible.
+        It would also be good to put a link to the request page so that the officer knows
+        exactly which request it is.
       <% end %>
     </p>
     <p>
@@ -349,209 +349,209 @@
 
       <!-- START PART-1-->
       <% if status == 'waiting_response_overdue' || status == 'waiting_response_very_overdue' || status == 'internal_review' || status == 'hot_held' || status == 'rejected' || status == 'successful' || status == 'partially_successful' %>
-      <dl>
-        <dt id="significant"> Request for access to information <a href="#ppi">#</a>
-        </dt>
-      </dl>
-    <% end %>
+        <dl>
+          <dt id="significant"> Request for access to information <a href="#ppi">#</a>
+          </dt>
+        </dl>
+      <% end %>
 
       <!-- START -->
       <% if status == 'waiting_response_overdue' || status == 'waiting_response_very_overdue' || status == 'internal_review' %>
-      <h2 class="contact-page__goal" id="zppi_5_20_1">
-        <label class="houdini-label" for="goal1"> V. ZPPI §20.(1) - <strong >did not
-          respond to the request for access to information</strong> within the prescribed
-          period.
-        </label>
-      </h2>
+        <h2 class="contact-page__goal" id="zppi_5_20_1">
+          <label class="houdini-label" for="goal1"> V. ZPPI §20.(1) - <strong >did not
+            respond to the request for access to information</strong> within the prescribed
+            period.
+          </label>
+        </h2>
 
-      <input class="houdini-input" type="radio" name="goals" id="goal1"
-      <% if params["contact"] && params[:current_form] == 'zppi_5_20_1' %>checked<% end %>>
-      <div class="houdini-target contact-page__options">
-        <ul>
-          <li> <strong>Legal provision V. ZPPI §20.(1):</strong> Based on the request
-            for access to information, the public authority will decide no later than
-            15 days from the date of submission of the formal request.
-            (<a href="<%= zppi_text_path %>">NN 25/13, 85/15 and 69/22</a>)<br>
-            <strong>V. ZPPI §22.(1) and (2):</strong> Deadlines for exercising the
-            right to access information can be extended by 15 days, counting from the
-            day when the public authority should have decided on the request for access
-            to information. (<a href="<%= zppi_text_path %>">NN 25/13, 85/15 and 69/22</a>)
-          </li>
-          <li> Read more about it on the help pages:
-            <a href= "<%= help_requesting_path(:anchor => 'quickly_response') %>">
-              How soon will your request be resolved?
-            </a>
+        <input class="houdini-input" type="radio" name="goals" id="goal1"
+        <% if params["contact"] && params[:current_form] == 'zppi_5_20_1' %>checked<% end %>>
+        <div class="houdini-target contact-page__options">
+          <ul>
+            <li> <strong>Legal provision V. ZPPI §20.(1):</strong> Based on the request
+              for access to information, the public authority will decide no later than
+              15 days from the date of submission of the formal request.
+              (<a href="<%= zppi_text_path %>">NN 25/13, 85/15 and 69/22</a>)<br>
+              <strong>V. ZPPI §22.(1) and (2):</strong> Deadlines for exercising the
+              right to access information can be extended by 15 days, counting from the
+              day when the public authority should have decided on the request for access
+              to information. (<a href="<%= zppi_text_path %>">NN 25/13, 85/15 and 69/22</a>)
+            </li>
+            <li> Read more about it on the help pages:
+              <a href= "<%= help_requesting_path(:anchor => 'quickly_response') %>">
+                How soon will your request be resolved?
+              </a>
 
-            <%= foi_error_messages_for :contact %>
-            <%= render :partial => "help/zppi_5_20_1", :locals => { :form_id => 'zppi_5_20_1' } %>
-          </li>
-        </ul>
-      </div>
-      < % end %>
+              <%= foi_error_messages_for :contact %>
+              <%= render :partial => "help/zppi_5_20_1", :locals => { :form_id => 'zppi_5_20_1' } %>
+            </li>
+          </ul>
+        </div>
+      <% end %>
       <!-- END -->
 
       <!-- START -->
       <% if status == 'hot_held' || status == 'rejected' || status == 'internal_review' %>
-      <h2 class="contact-page__goal" id="zppi_5_21_123">
-        <label class="houdini-label" for="goal2"> V. ZPPI §21.(1), (2 ) and (3) -
-          <strong>did not submit the request for access to information</strong> to
-          another public authority.
-        </label>
-      </h2>
+        <h2 class="contact-page__goal" id="zppi_5_21_123">
+          <label class="houdini-label" for="goal2"> V. ZPPI §21.(1), (2 ) and (3) -
+            <strong>did not submit the request for access to information</strong> to
+            another public authority.
+          </label>
+        </h2>
 
-      <input class="houdini-input" type="radio" name="goals" id="goal2"
-      <% if params["contact"] && params[:current_form] == 'zppi_5_21_123' %>checked<% end %>>
-      <div class="houdini-target contact-page__options">
-        <ul>
-          <li> <strong>Legal provision V. ZPPI §21.(1):</strong> If the public authority
-            does not have the information, and has knowledge of the body that owns it,
-            he is obliged, without delay, and no later than within eight days of receiving
-            the request, to assign the request to that body, and he will inform the
-            applicant about this.
-            (<a href="<%= zppi_text_path %>">NN 25/13, 85/15 and 69/22</a>)
-            <br>
-            <strong>(2):</strong> If the public authority receives request for access to
-            information from Article 15, paragraph 2, point 1 of this Law, and is not
-            its owner, must assign the request to the owner of the information without
-            delay, but no later than within eight days of receiving the request,
-            which will inform the applicant.
-            (<a href="<%= zppi_text_path %>">NN 25/13, 85/15 and 69/22</a>)
-            <br>
-            <strong>(3):</strong> If the public authority receives a request for access
-            to international information, he is obliged to transfer the same to the owner
-            of the information without delay, and no later than within eight days of
-            receiving the request, which he will inform the applicant about.
-            (<a href="<%= zppi_text_path %>">NN 25/13, 85/15 and 69/22</a>)
-          </li>
-          <li> Read more about assignment on the help pages:
-            <a href= "<%= help_requesting_path(:anchor => 'quickly_response') %>">
-              How soon will your request be resolved?
-            </a>
+        <input class="houdini-input" type="radio" name="goals" id="goal2"
+        <% if params["contact"] && params[:current_form] == 'zppi_5_21_123' %>checked<% end %>>
+        <div class="houdini-target contact-page__options">
+          <ul>
+            <li> <strong>Legal provision V. ZPPI §21.(1):</strong> If the public authority
+              does not have the information, and has knowledge of the body that owns it,
+              he is obliged, without delay, and no later than within eight days of receiving
+              the request, to assign the request to that body, and he will inform the
+              applicant about this.
+              (<a href="<%= zppi_text_path %>">NN 25/13, 85/15 and 69/22</a>)
+              <br>
+              <strong>(2):</strong> If the public authority receives request for access to
+              information from Article 15, paragraph 2, point 1 of this Law, and is not
+              its owner, must assign the request to the owner of the information without
+              delay, but no later than within eight days of receiving the request,
+              which will inform the applicant.
+              (<a href="<%= zppi_text_path %>">NN 25/13, 85/15 and 69/22</a>)
+              <br>
+              <strong>(3):</strong> If the public authority receives a request for access
+              to international information, he is obliged to transfer the same to the owner
+              of the information without delay, and no later than within eight days of
+              receiving the request, which he will inform the applicant about.
+              (<a href="<%= zppi_text_path %>">NN 25/13, 85/15 and 69/22</a>)
+            </li>
+            <li> Read more about assignment on the help pages:
+              <a href= "<%= help_requesting_path(:anchor => 'quickly_response') %>">
+                How soon will your request be resolved?
+              </a>
 
-            <%= foi_error_messages_for :contact %>
-            <%= render :partial => "help/zppi_5_21_123", :locals => { :form_id => 'zppi_5_21_123' } %>
-          </li>
-        </ul>
-      </div>
-    <% end %>
-    <!-- END -->
+              <%= foi_error_messages_for :contact %>
+              <%= render :partial => "help/zppi_5_21_123", :locals => { :form_id => 'zppi_5_21_123' } %>
+            </li>
+          </ul>
+        </div>
+      <% end %>
+      <!-- END -->
 
     <!-- START -->
     <% if status == 'waiting_response_overdue' || status == 'waiting_response_very_overdue' || status == 'internal_review' %>
-    <h2 class="contact-page__goal" id="zppi_5_24_2">
-      <label class="houdini-label" for="goal3"> V. ZPPI §24.(2) - <strong >did not
-        respond to the request for additional information</strong> within the
-        prescribed period. </label>
+      <h2 class="contact-page__goal" id="zppi_5_24_2">
+        <label class="houdini-label" for="goal3"> V. ZPPI §24.(2) - <strong >did not
+          respond to the request for additional information</strong> within the
+          prescribed period. </label>
       </h2>
 
-    <input class="houdini-input" type="radio" name="goals" id="goal3"
-    <% if params["contact"] && params[:current_form] == 'zppi_5_24_2' %>checked<% end %>>
-    <div class="houdini-target contact-page__options">
-      <ul>
-        <li> <strong>Legal provision V. ZPPI §24.(2):</strong> The public authority
-          is obliged to decide on the request for addition or correction of information
-          within 15 days from the date of receipt of the request.
-          (<a href="<%= zppi_text_path %>">NN 25/13, 85/15 and 69/22</a>)
+      <input class="houdini-input" type="radio" name="goals" id="goal3"
+      <% if params["contact"] && params[:current_form] == 'zppi_5_24_2' %>checked<% end %>>
+        <div class="houdini-target contact-page__options">
+          <ul>
+            <li> <strong>Legal provision V. ZPPI §24.(2):</strong> The public authority
+              is obliged to decide on the request for addition or correction of information
+              within 15 days from the date of receipt of the request.
+              (<a href="<%= zppi_text_path %>">NN 25/13, 85/15 and 69/22</a>)
 
-          <%= foi_error_messages_for :contact %>
-          <%= render :partial => "help/zppi_5_24_2", :locals => { :form_id => 'zppi_5_24_2' } %>
-        </li>
-      </ul>
-    </div>
+              <%= foi_error_messages_for :contact %>
+              <%= render :partial => "help/zppi_5_24_2", :locals => { :form_id => 'zppi_5_24_2' } %>
+            </li>
+          </ul>
+        </div>
     <% end %>
     <!-- END -->
 
     <!-- START -->
     <% if status == 'successful' || status == 'partially_successful' || status == 'rejected' || status == 'internal_review' %>
-    <h2 class="contact-page__goal" id="zppi_5_17_2">
-      <label class="houdini-label" for="goal4"> V. ZPPI §17.(2) - <strong >did not
-        provide the information in an appropriate manner</strong> indicated in the request.
-      </label>
-    </h2>
+      <h2 class="contact-page__goal" id="zppi_5_17_2">
+        <label class="houdini-label" for="goal4"> V. ZPPI §17.(2) - <strong >did not
+          provide the information in an appropriate manner</strong> indicated in the request.
+        </label>
+      </h2>
 
-    <input class="houdini-input" type="radio" name="goals" id="goal4"
-    <% if params["contact"] && params[:current_form] == 'zppi_5_17_2' %>checked<% end %>>
-    <div class="houdini-target contact-page__options">
-      <ul>
-        <li> <strong>Legal provision V. ZPPI §17.(2):</strong> In the request for
-          access to information, the user can indicate a suitable the method of
-          obtaining the information, and if not indicated, the information will be
-          delivered in the manner in which the request was submitted, i.e. in the
-          most economical manner.
-          (<a href="<%= zppi_text_path %>">NN 25/13, 85/15 and 69/22</a>)
+      <input class="houdini-input" type="radio" name="goals" id="goal4"
+      <% if params["contact"] && params[:current_form] == 'zppi_5_17_2' %>checked<% end %>>
+      <div class="houdini-target contact-page__options">
+        <ul>
+          <li> <strong>Legal provision V. ZPPI §17.(2):</strong> In the request for
+            access to information, the user can indicate a suitable the method of
+            obtaining the information, and if not indicated, the information will be
+            delivered in the manner in which the request was submitted, i.e. in the
+            most economical manner.
+            (<a href="<%= zppi_text_path %>">NN 25/13, 85/15 and 69/22</a>)
 
-          <%= foi_error_messages_for :contact %>
-          <%= render :partial => "help/zppi_5_17_2", :locals => { :form_id => 'zppi_5_17_2' } %>
-        </li>
-      </ul>
-    </div>
+            <%= foi_error_messages_for :contact %>
+            <%= render :partial => "help/zppi_5_17_2", :locals => { :form_id => 'zppi_5_17_2' } %>
+          </li>
+        </ul>
+      </div>
     <% end %>
     <!-- END -->
     <!-- END PART-1 -->
 
     <!-- START PART-2 -->
     <% if status == 'waiting_response_overdue' || status == 'waiting_response_very_overdue' || status == 'internal_review' || status == 'successful' || status == 'partially_successful' || status == 'rejected' %>
-    <dl>
-      <dt id="reuse"> Applications for information reuse <a href="#reuse">#</a>
-      </dt>
-    </dl>
+      <dl>
+        <dt id="reuse"> Applications for information reuse <a href="#reuse">#</a>
+        </dt>
+      </dl>
     <% end %>
 
     <!-- START CONTENT PART-2 -->
 
     <!-- START -->
     <% if status == 'waiting_response_overdue' || status == 'waiting_response_very_overdue' || status == 'internal_review' %>
-    <h2 class="contact-page__goal" id="zppi_5_29_2_i">
-      <label class="houdini-label" for="part_2_goal8"> V. ZPPI §29.(2) - <strong >did not
-        respond to the request for reuse</strong> within the prescribed period.
-      </label>
-    </h2>
+      <h2 class="contact-page__goal" id="zppi_5_29_2_i">
+        <label class="houdini-label" for="part_2_goal8"> V. ZPPI §29.(2) - <strong >did not
+          respond to the request for reuse</strong> within the prescribed period.
+        </label>
+      </h2>
 
-    <input class="houdini-input" type="radio" name="goals" id="part_2_goal8"
-    <% if params["contact"] && params[:current_form] == 'zppi_5_29_2_i' %>checked<% end %>>
-    <div class="houdini-target contact-page__options">
-      <ul>
-        <li> <strong>Legal provision V. ZPPI §29.(2):</strong> The public authority
-          will decide on the request for re- use of information by decision within
-          15 days from the date of submission of the formal request. The decision
-          must contain the type of permit that determines the conditions of use and
-          the amount and method of calculating the costs.
-          (<a href="<%= zppi_text_path %>">NN 25/13, 85/15 and 69/22</a>)
+      <input class="houdini-input" type="radio" name="goals" id="part_2_goal8"
+      <% if params["contact"] && params[:current_form] == 'zppi_5_29_2_i' %>checked<% end %>>
+      <div class="houdini-target contact-page__options">
+        <ul>
+          <li> <strong>Legal provision V. ZPPI §29.(2):</strong> The public authority
+            will decide on the request for re- use of information by decision within
+            15 days from the date of submission of the formal request. The decision
+            must contain the type of permit that determines the conditions of use and
+            the amount and method of calculating the costs.
+            (<a href="<%= zppi_text_path %>">NN 25/13, 85/15 and 69/22</a>)
 
-          <%= foi_error_messages_for :contact %>
-          <%= render :partial => "help/zppi_5_29_2_i", :locals => { :form_id => 'zppi_5_29_2_i' } %>
-        </li>
-      </ul>
-    </div>
+            <%= foi_error_messages_for :contact %>
+            <%= render :partial => "help/zppi_5_29_2_i", :locals => { :form_id => 'zppi_5_29_2_i' } %>
+          </li>
+        </ul>
+      </div>
     <% end %>
     <!-- END -->
 
     <!-- START -->
     <% if status == 'successful' || status == 'partially_successful' || status == 'rejected' || status == 'internal_review' %>
-    <h2 class="contact-page__goal" id="zppi_5_30_3">
-      <label class="houdini-label" for="part_2_goal9"> See ZPPI §30.(3) - <strong >did
-        not inform about the holder of the intellectual property right or
-        license</strong> from whom the public authority received the relevant
-        information.
-      </label>
-    </h2>
+      <h2 class="contact-page__goal" id="zppi_5_30_3">
+        <label class="houdini-label" for="part_2_goal9"> See ZPPI §30.(3) - <strong >did
+          not inform about the holder of the intellectual property right or
+          license</strong> from whom the public authority received the relevant
+          information.
+        </label>
+      </h2>
 
-    <input class="houdini-input" type="radio" name="goals" id="part_2_goal9"
-    <% if params["contact"] && params[:current_form] == 'zppi_5_30_3' %>checked<% end %>>
-    <div class="houdini-target contact-page__options">
-      <ul>
-        <li> <strong>Legal provision V. ZPPI §30.(3):</strong> If the public authority
-          rejects the request for reuse due to the protection of intellectual property
-          rights, the applicant must be informed about the holder of intellectual
-          property rights, if known, or about the license holder from whom the
-          public authority received the relevant information.
-          (<a href="<%= zppi_text_path %>">NN 25/13, 85/15 and 69/22</a>)
+      <input class="houdini-input" type="radio" name="goals" id="part_2_goal9"
+      <% if params["contact"] && params[:current_form] == 'zppi_5_30_3' %>checked<% end %>>
+      <div class="houdini-target contact-page__options">
+        <ul>
+          <li> <strong>Legal provision V. ZPPI §30.(3):</strong> If the public authority
+            rejects the request for reuse due to the protection of intellectual property
+            rights, the applicant must be informed about the holder of intellectual
+            property rights, if known, or about the license holder from whom the
+            public authority received the relevant information.
+            (<a href="<%= zppi_text_path %>">NN 25/13, 85/15 and 69/22</a>)
 
-          <%= foi_error_messages_for :contact %>
-          <%= render :partial => "help/zppi_5_30_3", :locals => { :form_id => 'zppi_5_30_3' } %>
-        </li>
-      </ul>
-    </div>
+            <%= foi_error_messages_for :contact %>
+            <%= render :partial => "help/zppi_5_30_3", :locals => { :form_id => 'zppi_5_30_3' } %>
+          </li>
+        </ul>
+      </div>
     <% end %>
     <!-- END -->
 
@@ -566,14 +566,14 @@
     <p> <strong>Didn't find what you were looking for?</strong> See <%= link_to _("extended list of petition forms"), help_foi_motion_path, :class => "link" %>.
     </p>
 
-    <% else %>
+  <% else %>
 
     <div>
       <center> <%= link_to _("Apply to the Information Commissioner"), help_foi_motion_path, :class => "button" %>
       </center>
     </div>
 
-    <% end %>
+  <% end %>
 
   <% elsif !@user %>
   <p><%= link_to _("Sign up to submit a petition"), signin_path(:r => request.fullpath), :class => "" %> via forms that we have prepared.
