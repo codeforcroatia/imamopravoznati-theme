@@ -85,6 +85,9 @@ Srdačan pozdrav,
                         :request_slug => @info_request.url_title,
                         :requester_name => @info_request.user.name,
                         :request_email => @info_request.incoming_email),
+                        :rows => 10,
+                        :cols => 60,
+                        :required => true %>
         <% else %>
         <%= f.text_area :message, value: raw("Poštovani,
 izjavljujem predstavku na rad tijela javne vlasti iz naslova.
