@@ -72,16 +72,19 @@
                         :value => _("Poštovani,
 izjavljujem predstavku na rad tijela javne vlasti {{body_name}}.
 
-Tijelo javne vlasti nije odlučilo o zahtjevu za dopunu odnosno ispravak informacija za zahtjev '{{request_title}}' u zakonski propisanom roku čime je povrijedilo odredbe članka 24. stavka 2. Zakona o pravu na pristup informacijama (Narodne novine, broj 25/13, 85/15 i 69/22). Kao dokaz dostavljam link zahtjeva: https://imamopravoznati.org/request/{{request_slug}}
+Tijelo javne vlasti nije odlučilo o zahtjevu za dopunu odnosno ispravak informacija za zahtjev '{{request_title}}' na email adresu zahtjeva '{{request_email}}' u zakonski propisanom roku čime je povrijedilo odredbe članka 24. stavka 2. Zakona o pravu na pristup informacijama (Narodne novine, broj 25/13, 85/15 i 69/22). Kao dokaz dostavljam link zahtjeva: https://imamopravoznati.org/request/{{request_slug}}
 
 Predlažem Povjereniku za informiranje da u postupku po ovoj predstavci napravi inspekcijski nadzor tijela javne vlasti.
+
+Tijelo javne vlasti treba odgovor na zahtjev dostaviti putem ImamoPravoZnati adrese {{request_email}}, nakon čega će odgovor biti javno vidljiv na ranije navedenom linku zahtjeva. Molim da sva komunikacija oko spornog zahtjeva bude putem navedene email adrese, a u vaš odgovor ne uključujete moju osobnu email adresu radi zaštite osobnih podataka.
 
 Srdačan pozdrav,
 {{requester_name}}",
                         :body_name => @info_request.public_body.name,
                         :request_title => @info_request.title,
                         :request_slug => @info_request.url_title,
-                        :requester_name => @info_request.user.name),
+                        :requester_name => @info_request.user.name,
+                        :request_email => @info_request.incoming_email),
                         :rows => 10,
                         :cols => 60,
                         :required => true %>
