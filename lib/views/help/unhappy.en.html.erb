@@ -18,7 +18,7 @@
           end of the 15-day period, if the body has not responded, you can send a
           <a href="#refer-to-pi">complaint</a> to the Information Commissioner.
       </li>
-      <li> c) At any time you can send a <a href="#refer-to-pi-notice">petition</a>
+      <li> c) At any time you can send a <a href="#refer-to-pi-notice">motion</a>
         to the Information Commissioner. </li> </ul>
 
     <p> If <strong>you did not get all the information</strong> you were
@@ -73,7 +73,7 @@
     <p>
       Despite the sent urgent notice, when the body did not respond within the
       legal deadline, you can file a parallel complaint with the Information
-      Commissioner, or send a petition because the body did not meet the response
+      Commissioner, or send a motion because the body did not meet the response
       deadline. See below for details.
     </p>
 
@@ -267,23 +267,23 @@
       lawsuit within 90 days.
     </p>
 
-  <h3 id="refer-to-pi-notice">Submission
+  <h3 id="refer-to-pi-notice">FOI motion
     <a class="hover_a" href="#refer-to-pi-notice">#</a>
   </h3>
-    <p> You can contact the Commissioner also address a petition and thus warn
+    <p>You can contact the Commissioner also address a motion and thus warn
       that public authorities are not transparent to the extent or in the manner
       prescribed by the Law on the Right to Access to Information (for example,
       they do not publish on their websites the information prescribed by the Law,
       they often resolve requests outside the prescribed deadlines, they do not
       ensure the publicness of sessions formal working bodies or do not conduct
       consultations with the public). On the basis of the allegations in your
-      petition, the Commissioner may conduct an inspection of the public authority,
+      motion, the Commissioner may conduct an inspection of the public authority,
       during which he will identify failures to fulfill obligations under the Act
       and order measures to correct them. </p>
 
   <% if @user %> <% if !@info_request.nil? %>
 
-    <h4 id="foi_motion">Submitting a petition <a class="hover_a" href="#foi_motion">#</a></h4>
+    <h4 id="foi_motion">Submitting a motion <a class="hover_a" href="#foi_motion">#</a></h4>
 
     <% status = @info_request.calculate_status %>
     <% if @info_request.prominence == 'hidden' %>
@@ -292,7 +292,7 @@
        </p>
     <% elsif status == 'user_withdrawn' || status == 'gone_postal' || status == 'gone_postal' %>
       <p>The status of your request is "<%= InfoRequest::State.short_description(@info_request.calculate_status) %>."
-        At this time we have no petitions for such requests.
+        At this time we have no motions for such requests.
       </p>
     <% elsif status == 'vexatious' || status == 'not_foi' %>
       <!-- Not offering FOI Motion to these requests -->
@@ -300,29 +300,29 @@
       <p>Your request is <strong>awaiting review and status setting</strong>.
         We suggest you visit the request page <%= request_link(@info_request) %>
         and check the last status and then return to this page to review the next steps
-        related to submitting the petition.</p>
+        related to submitting the motion.</p>
     <% else %>
       <!-- Start of ADDITION FOI MOTION -->
-      <p>Anyone can submit a petition to the work of public authorities related to
+      <p>Anyone can submit a motion to the work of public authorities related to
         the application of the Law on the Right to Access to Information. These are
         cases when you notice that a public authority is improperly applying or not
         applying a provision of the law at all. When you complete this form, we will
-        submit your application to the Information Commissioner, which may serve as
+        submit your FOI motion to the Information Commissioner, which may serve as
         the basis for an inspection.
       </p>
-      <p> Each <strong>application should include</strong>:
+      <p> Each <strong>motion should include</strong>:
       </p>
       <ul>
         <li> <strong>Name of the public authority</strong> which is the subject of the
-          petition. Be sure to state the name of the public authority in order
+          motion. Be sure to state the name of the public authority in order
           for the submission to be valid.
         </li>
         <li><strong>Evidence of the allegations</strong> that are the subject of the
-          petition. Evidence can be a link to a public request for access to information
+          motion. Evidence can be a link to a public request for access to information
           on the basis of which the inspector can act.
         </li>
         <li><strong>Statement of facts</strong>, violations of the right to access to information.
-          The petitioner must state why he is dissatisfied with the actions of public
+          The motioner must state why he is dissatisfied with the actions of public
           authorities regarding the application of the Law on the Right to Access to
           Information.
         </li>
@@ -564,7 +564,7 @@
     <!-- End of ADDITION FOI MOTION -->
 
     <p> <strong>Didn't find what you were looking for?</strong>
-      See <%= link_to _("extended list of petition forms"), help_foi_motion_path, :class => "link" %>.
+      See <%= link_to _("extended list of motion forms"), help_foi_motion_path, :class => "link" %>.
     </p>
 
   <% else %>
@@ -577,7 +577,7 @@
   <% end %>
 
   <% elsif !@user %>
-  <p><%= link_to _("Sign up to submit a petition"), signin_path(:r => request.fullpath), :class => "" %> via forms that we have prepared.
+  <p><%= link_to _("Sign up to submit a motion"), signin_path(:r => request.fullpath), :class => "" %> via forms that we have prepared.
   </p>
   <% end %>
 
