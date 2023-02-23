@@ -285,6 +285,10 @@
 
     <h4 id="foi_motion">Submitting a motion <a class="hover_a" href="#foi_motion">#</a></h4>
 
+    <% if @user.user_id === @info_request.user_id %>
+    <p> Same user </p>
+    <% end %>
+
     <% status = @info_request.calculate_status %>
     <% if @info_request.prominence == 'hidden' %>
       <p>The request is <strong>hidden</strong>. We do not yet have the option of
