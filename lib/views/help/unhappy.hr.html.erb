@@ -313,7 +313,7 @@
   mjere za njihovo ispravljanje.
 </p>
 
-<% if @user %>
+<% if @user.id === @info_request.user_id %>
   <% if !@info_request.nil? %>
 
   <h4 id="foi_motion">Podnošenje predstavke <a class="hover_a"
@@ -334,7 +334,7 @@
   <% else %>
 
   <!-- Start of ADDITION FOI MOTION -->
-  <p>Svatko može podnijeti predstavku na rad tijela javne vlasti vezano uz primjenu
+  <p>Sada možete podnijeti predstavku na rad tijela javne vlasti vezano uz primjenu
     Zakona o pravu na pristup informacijama. Radi se o slučajevima kada uočite da
     tijelo javne vlasti nepravilno primjenjuje ili uopće ne primjenjuje neku odredbu
     zakona. Kada ispunite ovaj obrazac, dostaviti ćemo vašu predstavku Povjereniku
@@ -368,7 +368,7 @@
       </ul>
 
   <p>
-    Za lakšu upotrebu, sadržaj predstavke smo automatski ispunili. Možete 
+    Za lakšu upotrebu, sadržaj predstavke smo automatski ispunili. Možete
     izmjeniti tekst i napisati ako imate nešto za dodati vašem prigovoru.
   </p>
 
