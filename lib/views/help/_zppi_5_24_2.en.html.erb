@@ -84,9 +84,9 @@ Srdačan pozdrav,
 
 ---------- Forwarded message ---------
 From: {{requester_name}} <{{request_email}}>
-Date: Thu, Feb 23, 2023 at 7:25 AM
+Date: {{request_sent_ts}}
 Subject: {{request_title}}
-To: {{body_name}
+To: {{body_name}}
 
 {{request_body}}",
                         :body_name => @info_request.public_body.name,
@@ -94,7 +94,8 @@ To: {{body_name}
                         :request_slug => @info_request.url_title,
                         :requester_name => @info_request.user.name,
                         :request_email => @info_request.incoming_email,
-                        :request_body => @info_request.outgoing_messages.first),
+                        :request_body => @info_request.outgoing_messages.first.body,
+                        :request_sent_ts => @info_request.outgoing_messages.first.last_sent_at),
                         :rows => 10,
                         :cols => 60,
                         :required => true %>
