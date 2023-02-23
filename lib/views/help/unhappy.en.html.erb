@@ -282,8 +282,8 @@
       and order measures to correct them. </p>
 
 <% if @user %>
-  <% if @user.id === @info_request.user_id %>
-    <% if !@info_request.nil? %>
+  <% if !@info_request.nil? %>
+    <% if @user.id === @info_request.user_id %>
 
         <%= render :partial => 'foi_motion' %>
 
