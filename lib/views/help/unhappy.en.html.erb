@@ -281,8 +281,8 @@
       during which he will identify failures to fulfill obligations under the Act
       and order measures to correct them. </p>
 
-  <% if @user.id === @info_request.user_id %> 
-    <% if !@info_request.nil? %>
+<% if @user.id === @info_request.user_id %>
+  <% if !@info_request.nil? %>
 
     <h4 id="foi_motion">Submitting a motion <a class="hover_a" href="#foi_motion">#</a></h4>
 
@@ -568,19 +568,27 @@
       See <%= link_to _("extended list of motion forms"), help_foi_motion_path, :class => "link" %>.
     </p>
 
-  <% else %>
+ <% else %>
 
     <div>
       <center> <%= link_to _("Send FOI motion to the Information Commissioner"), help_foi_motion_path, :class => "button" %>
       </center>
     </div>
 
-  <% end %>
+ <% end %>
 
-  <% elsif !@user %>
-  <p><%= link_to _("Sign up to submit a motion"), signin_path(:r => request.fullpath), :class => "" %> via forms that we have prepared.
-  </p>
-  <% end %>
+<% elsif @user %>
+
+   <div>
+     <center>
+     <%= link_to _("Send FOI motion to the Information Commissioner"), help_foi_motion_path, :class => "button"  %>
+     </center>
+   </div>
+
+<% elsif !@user %>
+<p><%= link_to _("Sign up to submit a motion"), signin_path(:r => request.fullpath), :class => "" %> via forms that we have prepared.
+</p>
+<% end %>
 
   <a name="complaining2"></a>
   <h2 id="refer-to-pi-reuse">Protection of the right to reuse information
