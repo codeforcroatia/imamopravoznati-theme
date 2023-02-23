@@ -76,15 +76,49 @@ Tijelo javne vlasti nije odlučilo o zahtjevu za dopunu odnosno ispravak informa
 
 Predlažem Povjereniku za informiranje da u postupku po ovoj predstavci napravi inspekcijski nadzor tijela javne vlasti.
 
-Tijelo javne vlasti treba odgovor na zahtjev dostaviti putem ImamoPravoZnati adrese {{request_email}}, nakon čega će odgovor biti javno vidljiv na ranije navedenom linku zahtjeva. Molim da sva komunikacija oko spornog zahtjeva bude putem navedene email adrese, a u vaš odgovor ne uključujete moju osobnu email adresu radi zaštite osobnih podataka.
+Tijelo javne vlasti treba odgovor na zahtjev dostaviti putem ImamoPravoZnati adrese, nakon čega će odgovor biti javno vidljiv na ranije navedenom linku zahtjeva. Molim da sva komunikacija oko spornog zahtjeva bude putem navedene email adrese, a u vaš odgovor koji će biti javno objavljen ne uključujete moju osobnu email adresu radi zaštite osobnih podataka.
 
 Srdačan pozdrav,
-{{requester_name}}",
+{{requester_name}}
+
+---------- Forwarded message ---------
+From: {{requester_name}} <{{request_email}}>
+Date: {{request_sent_ts}}
+Subject: {{request_title}}
+To: {{body_name}}
+
+{{request_body}}
+
+-------------------------------------------------------------------
+
+Molimo koristite ovu adresu e-pošte za sve odgovore na ovaj zahtjev:
+{{request_email}}
+
+Je li zahtjev poslan na pogrešnu adresu za pristup informacijama? Ako da, molimo kontaktirajte nas koristeći ovaj obrazac:
+https://imamopravoznati.org/change_request/new?body={{body_slug}}
+
+Ovaj zahtjev i svaki odgovor bit će objavljeni na internetu:
+https://imamopravoznati.org/request/{{request_slug}}
+
+Politika zaštite privatnosti i autorskih prava:
+https://imamopravoznati.org/help/officers
+
+Za detaljnije upute o sigurnom rukovanju podacima pročitajte najnovije savjete Povjerenika za informiranje:
+https://imamopravoznati.org/help/ico-guidance-for-authorities
+
+Molimo vas imajte na umu da će u nekim slučajevima objavljivanje zahtjeva i odgovora biti odgođeno.
+
+Ukoliko vam je, kao službeniku za pravo na pristup informacijama, ova usluga korisna, molimo vas da na stranici s podacima o pravu na pristup informacijama vaše organizacije postavite poveznicu do nas.
+
+-------------------------------------------------------------------",
                         :body_name => @info_request.public_body.name,
+                        :body_slug => @info_request.public_body.url_name,
                         :request_title => @info_request.title,
                         :request_slug => @info_request.url_title,
                         :requester_name => @info_request.user.name,
-                        :request_email => @info_request.incoming_email),
+                        :request_email => @info_request.incoming_email,
+                        :request_body => @info_request.outgoing_messages.first.body,
+                        :request_sent_ts => @info_request.outgoing_messages.first.last_sent_at),
                         :rows => 10,
                         :cols => 60,
                         :required => true %>
