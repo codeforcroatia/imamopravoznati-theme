@@ -313,323 +313,42 @@
   mjere za njihovo ispravljanje.
 </p>
 
-<% if @user.id === @info_request.user_id %>
+<% if @user %>
   <% if !@info_request.nil? %>
+    <% if @user.id === @info_request.user_id %>
 
-  <h4 id="foi_motion">Podnošenje predstavke <a class="hover_a"
-    href="#foi_motion">#</a></h4>
+        <%= render :partial => 'foi_motion' %>
 
-  <% status = @info_request.calculate_status %>
-  <% if @info_request.prominence == 'hidden' %>
-  <p>Zahtjev je <strong>skriven</strong>. Za takvu vrstu zahtjeva još nemamo mogućnost slanja predstavki.</p>
-  <% elsif status == 'user_withdrawn' || status == 'gone_postal' || status == 'gone_postal' %>
-  <p>Status vašeg zahtjeva je "<%= InfoRequest::State.short_description(@info_request.calculate_status) %>." U ovom trenutku za takve zahtjeve nemamo predstavke.</p>
-  <% elsif status == 'vexatious' || status == 'not_foi' %>
-  <!-- Not offering FOI Motion to these requests -->
-  <% elsif @info_request.awaiting_description %>
-  <p>Vaš zahtjev <strong>čeka pregled i postavljanje statusa</strong>.
-    Predlažemo da posjetite stranicu zahtjeva <%= request_link(@info_request) %>
-    i označite posljednje stanje te se nakon toga vratite na ovu stranicu kako
-    biste pregledali sljedeće korake vezane uz slanje predstavke.</p>
-  <% else %>
+        <p>
+            <strong>Niste pronašli što ste tražili?</strong> Pogledajte
+            <%= link_to _("prošireni popis obrazaca za predstavke"), help_foi_motion_path, :class => "link"  %>.
+        </p>
 
-  <!-- Start of ADDITION FOI MOTION -->
-  <p>Sada možete podnijeti predstavku na rad tijela javne vlasti vezano uz primjenu
-    Zakona o pravu na pristup informacijama. Radi se o slučajevima kada uočite da
-    tijelo javne vlasti nepravilno primjenjuje ili uopće ne primjenjuje neku odredbu
-    zakona. Kada ispunite ovaj obrazac, dostaviti ćemo vašu predstavku Povjereniku
-    za informiranje koja može poslužiti kao osnova za inspekcijski nadzor.</p>
-  <p>
-      Svaka <strong>predstavka treba sadržavati</strong>:
-  </p>
-      <ul>
-        <li><strong>Naziv tijela javne vlasti</strong> koje je predmet
-          predstavke. Obavezno navedite naziv tijela javne vlasti kako
-          bi podnesak bio valjan.</li>
-        <li><strong>Dokaze o navodima</strong> koji su predmet
-          predstavke. Dokaz može biti poveznica na javni zahtjev za pristup
-          informacijama na temelju kojeg inspektor može djelovati.</li>
-        <li><strong>Izjava o činjenicama</strong> povrede prava na pristup
-          informacijama. Podnositelj predstavke obavezno navodi zbog čega je
-          nezadovoljan postupcima tijela javne vlasti vezano uz
-          primjenu Zakona o pravu na pristup informacijama.</li>
-      </ul>
+    <% else %>
 
-  <p>
-      U vaš podnesak <strong>automatski dodajemo sljedeće informacije</strong>:
-  </p>
-      <ul>
-        <li><strong>Link na zadnji zahtjev ili tijelo javne vlasti</strong> koji
-          ste zadnje otvorili.</li>
-        <li><strong>Link na vaš profil</strong> na <%= site_name %>.</li>
-        <li><strong>Vaše ime i email adresu</strong> iz vašeg <%= site_name %>
-          korisničkog računa kako bi vam inspektor Povjerenika za informiranje
-          mogao dostaviti obavijest o provedenom nadzoru tijela.</li>
-      </ul>
+        <div>
+          <center>
+          <%= link_to _("Podnesite predstavku Povjereniku za informiranje"), help_foi_motion_path, :class => "button"  %>
+          </center>
+        </div>
 
-  <p>
-    Za lakšu upotrebu, sadržaj predstavke smo automatski ispunili. Možete
-    izmjeniti tekst i napisati ako imate nešto za dodati vašem prigovoru.
-  </p>
-
-      <div class="contact-page">
-
-          <!-- START PART-1-->
-          <% if status == 'waiting_response_overdue' || status == 'waiting_response_very_overdue' || status == 'internal_review' || status == 'hot_held' || status == 'rejected' || status == 'successful' || status == 'partially_successful' %>
-          <dl>
-            <dt id="significant">
-              Predstavke za zahtjev za pristup informacijama <a href="#ppi">#</a>
-            </dt>
-          </dl>
-          <% end %>
-
-          <!-- START -->
-          <% if status == 'waiting_response_overdue' || status == 'waiting_response_very_overdue' || status == 'internal_review' %>
-          <h2 class="contact-page__goal" id="zppi_5_20_1">
-              <label class="houdini-label" for="goal1">
-                  V. ZPPI §20.(1) - <strong>nisu odgovorili na zahtjev za pristup
-                  informacijama</strong> u propisanom roku.
-              </label>
-          </h2>
-
-          <input class="houdini-input" type="radio" name="goals" id="goal1"
-              <% if params["contact"] && params[:current_form] == 'zppi_5_20_1' %>checked<% end %>>
-          <div class="houdini-target contact-page__options">
-              <ul>
-                  <li>
-                      <strong>Zakonska odredba V. ZPPI §20.(1):</strong> Na temelju
-                      zahtjeva za pristup informaciji tijelo javne vlasti će odlučiti
-                      najkasnije u roku od 15 dana od dana podnošenja urednog zahtjeva.
-                      (<a href="<%= zppi_text_path %>">NN 25/13, 85/15 i 69/22</a>)<br>
-                      <strong>V. ZPPI §22.(1) i (2):</strong> Rokovi za ostvarivanje prava na
-                      pristup informaciji mogu se produžiti za 15 dana, računajući od
-                      dana kad je tijelo javne vlasti trebalo odlučiti o zahtjevu za pristup
-                      informaciji. (<a href="<%= zppi_text_path %>">NN 25/13, 85/15 i 69/22</a>)
-                  </li>
-                  <li>
-                      Više o tome pročitajte na stranicama pomoći: <a href="<%= help_requesting_path(:anchor =>
-                      'quickly_response') %>">U kojem roku će vaš zahtjev biti riješen?</a>
-
-                        <%= foi_error_messages_for :contact %>
-                        <%= render :partial => "help/zppi_5_20_1",
-                                   :locals => { :form_id => 'zppi_5_20_1' } %>
-                  </li>
-              </ul>
-          </div>
-          <% end %>
-          <!-- END -->
-
-          <!-- START -->
-          <% if status == 'hot_held' || status == 'rejected' || status == 'internal_review' %>
-          <h2 class="contact-page__goal" id="zppi_5_21_123">
-              <label class="houdini-label" for="goal2">
-                  V. ZPPI §21.(1), (2) i (3) - <strong>nisu ustupili zahtjev za pristup
-                  informacijama</strong> drugom tijelu javne vlasti.
-              </label>
-          </h2>
-
-          <input class="houdini-input" type="radio" name="goals" id="goal2"
-              <% if params["contact"] && params[:current_form] == 'zppi_5_21_123' %>checked<% end %>>
-          <div class="houdini-target contact-page__options">
-              <ul>
-                  <li>
-                      <strong>Zakonska odredba V. ZPPI §21.(1):</strong>
-                      Ako tijelo javne vlasti ne posjeduje informaciju, a ima saznanja
-                      o tijelu koje je posjeduje, dužno je, bez odgode, a najkasnije u roku
-                      od osam dana od zaprimanja zahtjeva, ustupiti zahtjev tome tijelu, a
-                      o čemu će obavijestiti podnositelja.
-                      (<a href="<%= zppi_text_path %>">NN 25/13, 85/15 i 69/22</a>)<br>
-                      <strong>(2):</strong>
-                      Ako tijelo javne vlasti zaprimi zahtjev za pristup informaciji
-                      iz članka 15. stavka 2. točke 1. ovog Zakona, a nije njezin vlasnik,
-                      dužno je bez odgode, a najkasnije u roku od osam dana od zaprimanja
-                      zahtjeva, ustupiti zahtjev vlasniku informacije, o čemu će obavijestiti
-                      podnositelja. (<a href="<%= zppi_text_path %>">NN 25/13, 85/15 i 69/22</a>)<br>
-                      <strong>(3):</strong>
-                      Ako tijelo javne vlasti zaprimi zahtjev za pristup međunarodnoj
-                      informaciji, dužno je bez odgode, a najkasnije u roku od osam dana od
-                      zaprimanja zahtjeva, ustupiti isti vlasniku informacije, o čemu će
-                      obavijestiti podnositelja.
-                      (<a href="<%= zppi_text_path %>">NN 25/13, 85/15 i 69/22</a>)
-                  </li>
-                  <li>
-                      Više o ustupanju pročitajte na stranicama pomoći: <a href="<%= help_requesting_path(:anchor =>
-                      'quickly_response') %>">U kojem roku će vaš zahtjev biti riješen?</a>
-
-                        <%= foi_error_messages_for :contact %>
-                        <%= render :partial => "help/zppi_5_21_123",
-                                   :locals => { :form_id => 'zppi_5_21_123' } %>
-                  </li>
-              </ul>
-          </div>
-          <% end %>
-          <!-- END -->
-
-          <!-- START -->
-          <% if status == 'waiting_response_overdue' || status == 'waiting_response_very_overdue' || status == 'internal_review' %>
-          <h2 class="contact-page__goal" id="zppi_5_24_2">
-              <label class="houdini-label" for="goal3">
-                  V. ZPPI §24.(2) - <strong>nisu odgovorili na zahtjev za dopunu
-                  informacija</strong> u propisanom roku.
-              </label>
-          </h2>
-
-          <input class="houdini-input" type="radio" name="goals" id="goal3"
-              <% if params["contact"] && params[:current_form] == 'zppi_5_24_2' %>checked<% end %>>
-          <div class="houdini-target contact-page__options">
-              <ul>
-                  <li>
-                      <strong>Zakonska odredba V. ZPPI §24.(2):</strong>
-                      Tijelo javne vlasti obvezno je odlučiti o zahtjevu za dopunu,
-                      odnosno ispravak informacije u roku od 15 dana od dana zaprimanja
-                      zahtjeva. (<a href="<%= zppi_text_path %>">NN 25/13, 85/15 i 69/22</a>)
-
-                        <%= foi_error_messages_for :contact %>
-                        <%= render :partial => "help/zppi_5_24_2",
-                                   :locals => { :form_id => 'zppi_5_24_2' } %>
-                  </li>
-              </ul>
-          </div>
-          <% end %>
-          <!-- END -->
-
-          <!-- START -->
-          <% if status == 'successful' || status == 'partially_successful' || status == 'rejected' || status == 'internal_review' %>
-          <h2 class="contact-page__goal" id="zppi_5_17_2">
-              <label class="houdini-label" for="goal4">
-                  V. ZPPI §17.(2) - <strong>nisu dostavili informaciju na
-                  prikladan način</strong> naznačen u zahtjevu.
-              </label>
-          </h2>
-
-          <input class="houdini-input" type="radio" name="goals" id="goal4"
-              <% if params["contact"] && params[:current_form] == 'zppi_5_17_2' %>checked<% end %>>
-          <div class="houdini-target contact-page__options">
-              <ul>
-                  <li>
-                      <strong>Zakonska odredba V. ZPPI §17.(2):</strong>
-                      Korisnik može u zahtjevu za pristup informaciji naznačiti prikladan
-                      način dobivanja informacije, a ako ne naznači, informacija će se
-                      dostaviti na način na koji je podnesen zahtjev, odnosno na
-                      najekonomičniji način.
-                      (<a href="<%= zppi_text_path %>">NN 25/13, 85/15 i 69/22</a>)
-
-                        <%= foi_error_messages_for :contact %>
-                        <%= render :partial => "help/zppi_5_17_2",
-                                   :locals => { :form_id => 'zppi_5_17_2' } %>
-                  </li>
-              </ul>
-          </div>
-          <% end %>
-          <!-- END -->
-          <!-- END PART-1 -->
-
-
-          <!-- START PART-2 -->
-          <% if status == 'waiting_response_overdue' || status == 'waiting_response_very_overdue' || status == 'internal_review' || status == 'successful' || status == 'partially_successful' || status == 'rejected' %>
-          <dl>
-            <dt id="reuse">
-              Predstavke za zahtjev za ponovnu uporabu infromacija <a href="#reuse">#</a>
-            </dt>
-          </dl>
-          <% end %>
-
-              <!-- START CONTENT PART-2 -->
-
-              <!-- START -->
-              <% if status == 'waiting_response_overdue' || status == 'waiting_response_very_overdue' || status == 'internal_review' %>
-              <h2 class="contact-page__goal" id="zppi_5_29_2_i">
-                  <label class="houdini-label" for="part_2_goal8">
-                    V. ZPPI §29.(2) - <strong>nisu odgovorili na zahtjev za ponovnu
-                    uporabu</strong> u propisanom roku.
-                  </label>
-              </h2>
-
-              <input class="houdini-input" type="radio" name="goals" id="part_2_goal8"
-                  <% if params["contact"] && params[:current_form] == 'zppi_5_29_2_i' %>checked<% end %>>
-              <div class="houdini-target contact-page__options">
-                  <ul>
-                      <li>
-                          <strong>Zakonska odredba V. ZPPI §29.(2):</strong> Tijelo javne
-                          vlasti odlučit će o zahtjevu za ponovnu uporabu informacija
-                          rješenjem u roku od 15 dana od dana podnošenja urednog zahtjeva.
-                          Rješenje obvezno sadrži vrstu dozvole kojom se utvrđuju uvjeti
-                          uporabe te visinu i način izračuna troškova.
-                          (<a href="<%= zppi_text_path %>">NN 25/13, 85/15 i 69/22</a>)
-
-                            <%= foi_error_messages_for :contact %>
-                            <%= render :partial => "help/zppi_5_29_2_i",
-                                       :locals => { :form_id => 'zppi_5_29_2_i' } %>
-                      </li>
-                  </ul>
-              </div>
-              <% end %>
-              <!-- END -->
-
-              <!-- START -->
-              <% if status == 'successful' || status == 'partially_successful' || status == 'rejected' || status == 'internal_review' %>
-              <h2 class="contact-page__goal" id="zppi_5_30_3">
-                  <label class="houdini-label" for="part_2_goal9">
-                      V. ZPPI §30.(3) - <strong>nisu obavijestili o nositelju prava
-                      intelektualnog vlasništva odnosno licencije</strong> od kojeg je
-                      tijelo javne vlasti dobilo odnosnu informaciju.
-                  </label>
-              </h2>
-
-              <input class="houdini-input" type="radio" name="goals" id="part_2_goal9"
-                  <% if params["contact"] && params[:current_form] == 'zppi_5_30_3' %>checked<% end %>>
-              <div class="houdini-target contact-page__options">
-                  <ul>
-                      <li>
-                          <strong>Zakonska odredba V. ZPPI §30.(3):</strong> Ako tijelo
-                          javne vlasti odbije zahtjev za ponovnu uporabu zbog zaštite
-                          prava intelektualnog vlasništva, dužno je obavijestiti
-                          podnositelja o nositelju prava intelektualnog vlasništva,
-                          ako je poznat, odnosno o nositelju licencije od kojeg je
-                          tijelo javne vlasti dobilo odnosnu informaciju.
-                          (<a href="<%= zppi_text_path %>">NN 25/13, 85/15 i 69/22</a>)
-
-                            <%= foi_error_messages_for :contact %>
-                            <%= render :partial => "help/zppi_5_30_3",
-                                       :locals => { :form_id => 'zppi_5_30_3' } %>
-                      </li>
-                  </ul>
-              </div>
-              <% end %>
-              <!-- END -->
-
-              <!-- END CONTENT PART-2 -->
-          <!-- END PART-2 -->
-
-      </div>
-  <% end %>
-
-  <!-- End of ADDITION FOI MOTION -->
-
-  <p>
-      <strong>Niste pronašli što ste tražili?</strong> Pogledajte <%= link_to _("prošireni popis obrazaca za predstavke"), help_foi_motion_path, :class => "link"  %>.
-  </p>
+    <% end %>
 
   <% else %>
 
-  <div>
-    <center>
-    <%= link_to _("Podnesite predstavku Povjereniku za informiranje"), help_foi_motion_path, :class => "button"  %>
-    </center>
-  </div>
+    <div>
+      <center>
+      <%= link_to _("Podnesite predstavku Povjereniku za informiranje"), help_foi_motion_path, :class => "button"  %>
+      </center>
+    </div>
 
   <% end %>
 
-<% elsif @user %>
+<% else %>
 
-  <div>
-    <center>
-    <%= link_to _("Podnesite predstavku Povjereniku za informiranje"), help_foi_motion_path, :class => "button"  %>
-    </center>
-  </div>
+    <p><%= link_to _("Prijavite se za slanje predstavke"), signin_path(:r => request.fullpath), :class => "" %>
+      putem obrazaca koje smo pripremili.</p>
 
-<% elsif !@user %>
-<p><%= link_to _("Prijavite se za slanje predstavke"), signin_path(:r => request.fullpath), :class => "" %> putem obrazaca koje smo pripremili.</p>
 <% end %>
 
 <a name="complaining2"></a>
