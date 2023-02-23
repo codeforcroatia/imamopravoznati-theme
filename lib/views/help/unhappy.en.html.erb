@@ -282,20 +282,30 @@
       and order measures to correct them. </p>
 
 <% if @user %>
+  <% if @user.id === @info_request.user_id %>
+    <% if !@info_request.nil? %>
 
-  <%= render :partial => 'foi_motion' %>
+        <%= render :partial => 'foi_motion' %>
 
-   <div>
-     <center>
-     <%= link_to _("Send FOI motion to the Information Commissioner"), help_foi_motion_path, :class => "button"  %>
-     </center>
-   </div>
+        <p><strong>Didn't find what you were looking for?</strong>
+          See <%= link_to _("extended list of motion forms"), help_foi_motion_path, :class => "link" %>.
+        </p>
+
+    <% else %>
+
+        <div>
+          <center> <%= link_to _("Send FOI motion to the Information Commissioner"), help_foi_motion_path, :class => "button" %>
+          </center>
+        </div>
+
+    <% end %>
+  <% end %>
 
 <% else %>
 
     <p><%= link_to _("Sign up to submit a motion"), signin_path(:r => request.fullpath), :class => "" %> via forms that we have prepared.
     </p>
-    
+
 <% end %>
 
   <a name="complaining2"></a>
