@@ -356,39 +356,37 @@
       <% end %>
 
       <!-- START -->
-      <% if @info_request.is_owning_user?(@info_request.user) %>
-        <% if status == 'waiting_response_overdue' || status == 'waiting_response_very_overdue' || status == 'internal_review' %>
-          <h2 class="contact-page__goal" id="zppi_5_20_1">
-            <label class="houdini-label" for="goal1"> V. ZPPI §20.(1) - <strong >did not
-              respond to the request for access to information</strong> within the prescribed
-              period.
-            </label>
-          </h2>
+      <% if status == 'waiting_response_overdue' || status == 'waiting_response_very_overdue' || status == 'internal_review' %>
+        <h2 class="contact-page__goal" id="zppi_5_20_1">
+          <label class="houdini-label" for="goal1"> V. ZPPI §20.(1) - <strong >did not
+            respond to the request for access to information</strong> within the prescribed
+            period.
+          </label>
+        </h2>
 
-          <input class="houdini-input" type="radio" name="goals" id="goal1"
-          <% if params["contact"] && params[:current_form] == 'zppi_5_20_1' %>checked<% end %>>
-          <div class="houdini-target contact-page__options">
-            <ul>
-              <li> <strong>Legal provision V. ZPPI §20.(1):</strong> Based on the request
-                for access to information, the public authority will decide no later than
-                15 days from the date of submission of the formal request.
-                (<a href="<%= zppi_text_path %>">NN 25/13, 85/15 and 69/22</a>)<br>
-                <strong>V. ZPPI §22.(1) and (2):</strong> Deadlines for exercising the
-                right to access information can be extended by 15 days, counting from the
-                day when the public authority should have decided on the request for access
-                to information. (<a href="<%= zppi_text_path %>">NN 25/13, 85/15 and 69/22</a>)
-              </li>
-              <li> Read more about it on the help pages:
-                <a href= "<%= help_requesting_path(:anchor => 'quickly_response') %>">
-                  How soon will your request be resolved?
-                </a>
+        <input class="houdini-input" type="radio" name="goals" id="goal1"
+        <% if params["contact"] && params[:current_form] == 'zppi_5_20_1' %>checked<% end %>>
+        <div class="houdini-target contact-page__options">
+          <ul>
+            <li> <strong>Legal provision V. ZPPI §20.(1):</strong> Based on the request
+              for access to information, the public authority will decide no later than
+              15 days from the date of submission of the formal request.
+              (<a href="<%= zppi_text_path %>">NN 25/13, 85/15 and 69/22</a>)<br>
+              <strong>V. ZPPI §22.(1) and (2):</strong> Deadlines for exercising the
+              right to access information can be extended by 15 days, counting from the
+              day when the public authority should have decided on the request for access
+              to information. (<a href="<%= zppi_text_path %>">NN 25/13, 85/15 and 69/22</a>)
+            </li>
+            <li> Read more about it on the help pages:
+              <a href= "<%= help_requesting_path(:anchor => 'quickly_response') %>">
+                How soon will your request be resolved?
+              </a>
 
-                <%= foi_error_messages_for :contact %>
-                <%= render :partial => "help/zppi_5_20_1", :locals => { :form_id => 'zppi_5_20_1' } %>
-              </li>
-            </ul>
-          </div>
-        <% end %>
+              <%= foi_error_messages_for :contact %>
+              <%= render :partial => "help/zppi_5_20_1", :locals => { :form_id => 'zppi_5_20_1' } %>
+            </li>
+          </ul>
+        </div>
       <% end %>
       <!-- END -->
 
