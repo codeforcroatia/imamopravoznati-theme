@@ -299,6 +299,14 @@
         </div>
 
     <% end %>
+    
+  <% else %>
+
+    <div>
+      <center> <%= link_to _("Send FOI motion to the Information Commissioner"), help_foi_motion_path, :class => "button" %>
+      </center>
+    </div>
+
   <% end %>
 
 <% else %>
