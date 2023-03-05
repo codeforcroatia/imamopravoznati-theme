@@ -179,10 +179,6 @@ Rails.configuration.to_prepare do
     prepend DisableWithProtection
   end
 
-    InfoRequest::TitleValidation.module_eval do
-      def generic_foi_title?
-        title =~ /(PPI|ZPPI|pravo na pristup informacijama|pristup informacijama|pristup informaciji|ponovna uporaba|ponovnu uporabu)/i
-      end
   ActiveStorage::Blob.class_eval do
     def delete
       service.delete(key)
