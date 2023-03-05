@@ -2,8 +2,8 @@
 
 <%= _('They have not replied to your {{law_used_short}} request {{title}} ' \
       'promptly, as normally required by law',
-      :law_used_short => @info_request.law_used_human(:short).html_safe,
-      :title => @info_request.title.html_safe) %><% if @info_request.public_body.is_school? %> <%=_('during term time')%> <% end %>.
+      law_used_short: @info_request.legislation.to_s.html_safe,
+      title: @info_request.title.html_safe) %><% if @info_request.public_body.is_school? %> <%=_('during term time')%> <% end %>.
 
 <%= _('Click on the link below to send a message to {{public_body}} ' \
       'reminding them to reply to your request. You can also refer your ' \
@@ -13,14 +13,6 @@
 
 <%= @url %>
 
-Koji su sljedeći koraci?
-
-POŽURIVANJE SLANJEM PREDSTAVKE
-Savjetujemo vam da izjavite predstavku inspektoru jer nisu odgovorili na zahtjev za pristup informacijama u propisanom roku čime ćete požuriti tijelo javne vlasti da odgovore čim prije. To možete učiniti putem linka:
-https://imamopravoznati.org/profile/sign_in?r=%2fhelp%2funhappy%2f<%= @info_request.url_title.html_safe %>%23foi_motion
-
-ŽALBA POVJERENIKU ZA INFORMIRANJE
-Alternativno, možete se žaliti Povjereniku za informiranje jer nisu odgovorili na zahtjev za pristup informacijama u propisanom roku. Detalje možete saznati putem linka:
-https://imamopravoznati.org/profile/sign_in?r=%2fhelp%2funhappy%2f<%= @info_request.url_title.html_safe %>%23refer-to-pi
 
 -- <%= _('the {{site_name}} team', :site_name => site_name.html_safe) %>
+

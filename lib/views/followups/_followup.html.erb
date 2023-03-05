@@ -46,14 +46,12 @@
     </p>
   <% else %>
     <% if @internal_review %>
-    <p>
-      <%= _('If you are dissatisfied by the response you got from the ' \
-            'public authority, you have the right to complain ' \
-            '(<a href="{{url}}">details</a>).',
-            url: help_unhappy_path(
-                   anchor: 'internal_review',
-                   url_title: @info_request.url_title)) %>
-    </p>
+      <p>
+        <%= _('If you are dissatisfied by the response you got from the ' \
+              'public authority, you have the right to complain ' \
+              '(<a href="{{url}}">details</a>).',
+              url: "https://www.whatdotheyknow.com/help/unhappy#refer-to-ico".html_safe) %>
+      </p>
     <% end %>
 
     <p>
@@ -113,6 +111,12 @@
                        help_requesting_path(anchor: 'quickly_response') %>).
         <% end %>
       </p>
+    <% end %>
+
+    <% if feature_enabled?(:refusal_snippets, current_user) %>
+      <% if @info_request.reason_to_be_unhappy? %>
+        <%= render partial: 'snippets' %>
+      <% end %>
     <% end %>
 
     <% form_url =

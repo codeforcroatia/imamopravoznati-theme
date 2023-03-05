@@ -1,4 +1,4 @@
-<%- popular_bodies = PublicBody.popular_bodies(@locale).first(10) %>
+<%- popular_bodies = PublicBody.popular_bodies(@locale) %>
 <% if popular_bodies.size > 0 %>
   <div id="examples_0" class="examples_0 bodies-list">
     <h3><%= _("Who can I request information from?") %></h3>
@@ -26,16 +26,16 @@
     </p>
 
     <div class="asktheeu-promo asktheeu-promo--homepage">
-      <h4 class="asktheeu-promo__header">Tražite EU tijelo javne vlasti?</h4>
-      <p>Možete zatražiti <em>dokumente</em> direktno od EU institucija putem
-        <a href="https://asktheeu.org/?utm_source=imamopravoznati&utm_medium=banner&utm_content=homepage&utm_campaign=alaveteli-experiments-54" target="_blank">
+      <h4 class="asktheeu-promo__header">Looking for an EU Authority?</h4>
+      <p>You can request <em>documents</em> directly from EU Institutions at our sister site
+        <a href="http://asktheeu.org/?utm_source=whatdotheyknow&utm_medium=banner&utm_content=homepage&utm_campaign=alaveteli-experiments-54">
           AskTheEU.org
         </a>.
-        <a href="https://www.asktheeu.org/en/help/requesting/?utm_source=imamopravoznati&utm_medium=banner&utm_content=homepage&utm_campaign=alaveteli-experiments-54" target="_blank">
-          Saznajte više
+        <a href="http://www.asktheeu.org/en/help/requesting/?utm_source=whatdotheyknow&utm_medium=banner&utm_content=homepage&utm_campaign=alaveteli-experiments-54">
+          Find out more
         </a>.
       </p>
-      <a href="https://asktheeu.org/?utm_source=imamopravoznati&utm_medium=banner&utm_content=homepage&utm_campaign=alaveteli-experiments-54" target="_blank" class="asktheeu-promo__image">
+      <a href="http://asktheeu.org/?utm_source=whatdotheyknow&utm_medium=banner&utm_content=homepage&utm_campaign=alaveteli-experiments-54" class="asktheeu-promo__image">
         <img src="<%= image_path('ask-the-eu-logo.png') %>" alt="AskTheEU.org" />
       </a>
     </div>

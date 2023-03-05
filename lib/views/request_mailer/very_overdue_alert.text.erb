@@ -2,8 +2,8 @@
 
 <%= _('They have not replied to your {{law_used_short}} request {{title}}, ' \
       'as normally required by law',
-      :law_used_short => @info_request.law_used_human(:short).html_safe,
-      :title => @info_request.title.html_safe)%><% if @info_request.public_body.is_school? %> <%= _('even during holidays')%><% end %>.
+      law_used_short: @info_request.legislation.to_s.html_safe,
+      title: @info_request.title.html_safe) %><% if @info_request.public_body.is_school? %> <%= _('even during holidays') %><% end %>.
 
 <%= _('Click on the link below to send a message to {{public_body_name}} ' \
       'asking them to confirm that they have received your request and ' \
@@ -12,9 +12,5 @@
       :public_body_name => @info_request.public_body.name.html_safe) %>
 
 <%= @url %>
-
-Za više informacija o postupku slanja predstavke Povjereniku za informiranje jer nisu odgovorili na zahtjev za pristup informacijama u propisanom roku pogledajte sljedeću poveznicu:
-
-https://imamopravoznati.org/profile/sign_in?r=%2fhelp%2funhappy%2f<%= @info_request.url_title.html_safe %>%23refer-to-pi-notice
 
 -- <%= _('the {{site_name}} team', :site_name => site_name.html_safe) %>

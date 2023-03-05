@@ -507,7 +507,7 @@ a.link_button_green_large {
   }
 }
 
-#notice, #request_header_text {
+#notice {
   background-color: $color_white;
   border-color: $notice-border;
 }
@@ -1454,6 +1454,14 @@ dd {
 
   label {
     margin-bottom: 0.3em;
+
+    input[type="radio"], input[type="checkbox"] {
+      margin: 0 3px 0 -20px
+    }
+
+    &.form_inline {
+      padding-left: 20px;
+    }
   }
 
   input[type="text"],
@@ -1491,6 +1499,18 @@ dd {
   }
 }
 
+.changes {
+  background-color: darken($body-bg, 2%);
+  border-radius: 2px;
+  border: 1px solid darken($body-bg, 12%);
+  font-size: smaller;
+  margin-top: 2em;
+  padding: 0.1em 1.5em;
+
+  h2 {
+    font-size: 1.65em;
+  }
+}
 
 
 /* Display of sidebars */
@@ -1898,3 +1918,11 @@ $color_asktheeu_dark_green: #C4DDB9;
    padding-bottom: 1.5em;
    border-bottom: 1px solid $color_light_grey;
  }
+
+ .no-js {
+  .wizard-title,
+  .wizard-teaser {
+    display: none;
+    visibility: hidden;
+  }
+}

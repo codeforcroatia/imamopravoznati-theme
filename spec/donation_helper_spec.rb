@@ -1,8 +1,6 @@
-# If defined, ALAVETELI_TEST_THEME will be loaded in config/initializers/theme_loader
-ALAVETELI_TEST_THEME = 'whatdotheyknow-theme'
-require 'spec_helper'
+require_relative 'spec_helper'
 
-describe DonationHelper, type: :helper do
+RSpec.describe DonationHelper, type: :helper do
   include DonationHelper
 
   describe '#show_donation_button?' do

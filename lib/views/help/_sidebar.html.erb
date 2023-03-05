@@ -15,6 +15,9 @@
         <%= link_to_unless_current "FOI officers", help_officers_path %>
       </li>
       <li>
+      <%= link_to_unless_current "ICO officers", help_ico_officers_path %>
+      </li>
+      <li>
         <%= link_to_unless_current "Credits", help_credits_path %>
       </li>
       <li>
@@ -45,13 +48,16 @@
       <li>
         <%= link_to_unless_current "Beginner’s Guide", help_beginners_path %>
       </li>
+      <li>
+        <%= link_to_unless_current "Glossary", help_glossary_path %>
+      </li>
       <% if feature_enabled?(:alaveteli_pro) %>
         <li><%= link_to_unless_current "Pro", help_pro_path %></li>
       <% end %>
     </ul>
     <% unless is_contact_page? %>
     <h2 id="contact">Contact us</h2>
-    <p>If your question isn't answered here, or you just wanted to let us know
+    <p>If your question isn’t answered here, or you just wanted to let us know
       something about the site, <a href="<%= help_contact_path %>">contact&nbsp;us</a>.
     </p>
     <% end %>

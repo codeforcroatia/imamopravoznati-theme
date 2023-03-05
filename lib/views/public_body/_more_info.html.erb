@@ -17,30 +17,20 @@
     <% if tag_value.match(/^SC/) %>
       <%= link_to _('Charity registration'),
                     "https://www.oscr.org.uk/about-charities/search-the-register/charity-details?number=#{ tag_value }" %><br>
+    <% elsif tag_value.match(/^NIC/) %>
+      <%= link_to _('Charity registration'),
+                    "https://www.charitycommissionni.org.uk/charity-search/?regId=#{ tag_value.gsub(/^NIC/, '') }" %><br>
     <% else %>
       <%= link_to _('Charity registration'),
-                    "http://beta.charitycommission.gov.uk/charity-details/?regid=#{ tag_value }&subid=0" %><br>
+                    "https://register-of-charities.charitycommission.gov.uk/charity-search/-/results/page/1/delta/20/keywords/#{ tag_value }" %><br>
     <% end %>
-  <% end %>
-<% end %>
-
-<!-- MozaikVeza.hr tag is mozaikveza:slug-url -->
-<% if public_body.has_tag?('mozaikveza') %>
-  <% public_body.get_tag_values('mozaikveza').each do |tag_value| %>
-  <!-- tag_value is "slug-url" -->
-  <%= link_to _('Pogledaj na MozaikVeza.hr'),
-                "https://www.mozaikveza.hr/entity/#{ tag_value }",
-                :onclick => track_analytics_event(
-                  AnalyticsEvent::Category::OUTBOUND,
-                  AnalyticsEvent::Action::MOZAIK_VEZA_EXIT,
-                  :label => 'Authority sidebar') %><br>
   <% end %>
 <% end %>
 
 <% if public_body.has_tag?('ch') %>
   <% public_body.get_tag_values('ch').each do |tag_value| %>
       <%= link_to _('Company registration'),
-                    "https://beta.companieshouse.gov.uk/company/#{ tag_value }" %><br>
+                    "https://find-and-update.company-information.service.gov.uk/company/#{ tag_value }" %><br>
   <% end %>
 <% end %>
 
@@ -58,6 +48,13 @@
   <% end %>
 <% end %>
 
+<% if public_body.has_tag?('ofs') %>
+  <% public_body.get_tag_values('ofs').each do |tag_value| %>
+      <%= link_to _('Provider register'),
+                    "https://www.officeforstudents.org.uk/advice-and-guidance/the-register/the-ofs-register/#/provider/#{ tag_value }" %><br>
+  <% end %>
+<% end %>
+
 <% if public_body.has_tag?('matuid') %>
   <% public_body.get_tag_values('matuid').each do |tag_value| %>
       <%= link_to _('Establishment group information'),
@@ -72,19 +69,32 @@
   <% end %>
 <% end %>
 
+<% if public_body.has_tag?('lei') %>
+  <% public_body.get_tag_values('lei').each do |tag_value| %>
+      <%= link_to _('Legal Entity Identifier'),
+                    "http://openleis.com/legal_entities/#{ tag_value }" %><br>
+  <% end %>
+<% end %>
+
+<% if public_body.has_tag?('wikidata') %>
+  <% public_body.get_tag_values('wikidata').each do |tag_value| %>
+      <%= link_to _('Wikidata page'),
+                    "https://www.wikidata.org/wiki/#{ tag_value }" %><br>
+  <% end %>
+<% end %>
+
+<% if public_body.has_tag?('mapit') %>
+  <% public_body.get_tag_values('mapit').each do |tag_value| %>
+    <%= link_to _('Area covered'), "https://mapit.mysociety.org/area/#{tag_value}.html" %>
+
+    <small>
+      [<%= link_to _('others in this area'), list_public_bodies_by_tag_path("mapit:#{tag_value}") %>]
+    </small>
+
+    <br>
+  <% end %>
+<% end %>
+
 <%= link_to _('View FOI email address'), view_public_body_email_path(public_body.url_name) %><br>
 
 <%= link_to _("Ask us to update FOI email"), new_change_request_body_path(:body => public_body.url_name) %><br>
-
-<!-- VAT number tag is oib:xxxxxxxxxxx -->
-<% if public_body.has_tag?('oib') %>
-  <% public_body.get_tag_values('oib').each do |tag_value| %>
-  <!-- tag_value is "xxxxxxxxxxx" -->
-  <%= link_to _('Find contact details at FOI Authorities Registry'),
-                "https://tjv.pristupinfo.hr/?search=#{ tag_value }",
-                :onclick => track_analytics_event(
-                  AnalyticsEvent::Category::OUTBOUND,
-                  AnalyticsEvent::Action::TJV_PI_EXIT,
-                  :label => 'Authority sidebar') %><br>
-  <% end %>
-<% end %>

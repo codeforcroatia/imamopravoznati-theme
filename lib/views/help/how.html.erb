@@ -1,17 +1,42 @@
 <% @title = "How we run WhatDoTheyKnow" %>
 <%= render :partial => 'sidebar' %>
 <div id="left_column_flip" class="left_column_flip">
-  <h1><%= @title %></h1>
+  <h1 id="title">
+    <%= @title %>
+    <a href="#title">#</a>
+  </h1>
   <p>
-    WhatDoTheyKnow is administered by a small group of dedicated
+    WhatDoTheyKnow is administered by a small team of mySociety staff and dedicated
     <a href="<%= help_credits_path(:anchor => 'volunteers') %>">volunteers</a>
     who have extensive knowledge and experience of Freedom of Information, and
     who support it. Decisions about the administration of the site are taken by
-    these volunteers, with support from mySociety’s Chief Executive and
+    this administration team, with support from mySociety’s Chief Executive and
     <a href="<%= help_about_path(:anchor => 'who') %>">Trustees</a>.
   </p>
-  <h2>
+    <h2 id="we_dont_check_the_information">
+    We don't check the information on the site
+    <a href="#we_dont_check_the_information">#</a>
+  </h2>
+  <p>
+   Freedom of information law gives people the right to access recorded information that is held by public bodies even where the information is incorrect.
+    We do not check the information provided by public authorities, or that contained within messages from requesters or annotations posted by users of the site.
+   There may be gaps and errors in the information published on the site. Some of the information may be out of date now, even if it was correct when it was first created.
+  </p>
+   <h2 id="information_may_be_out_of_date">
+    Information you find on the site may be out of date
+    <a href="#information_may_be_out_of_date">#</a>
+  </h2>
+  <p>
+    Some public bodies will release information that is many years out of date on the site.
+    This can happen if the requester asks for information relating to events that happened a number of years ago.
+    This can also happen if a document has not been updated for some time, and the requester asks for the latest version.
+   This means that some of the information that is published on the site will already be out of date on the day it is published.
+   We never remove material from the site just because it is old or because a newer version of the material exists.
+    This is because we are trying to create a permanent archive.
+  </p>
+  <h2 id="reactive_moderation">
     Reactive moderation principle
+    <a href="#reactive_moderation">#</a>
   </h2>
   <p>
     It would be impossible for the WhatDoTheyKnow volunteer team to moderate all
@@ -32,8 +57,9 @@
     taking a view on if it is accurate or not, we don’t have the resources to
     investigate that.
   </p>
-  <h2>
+  <h2 id="what_happens">
     What happens once a request is reported for attention?
+    <a href="#what_happens">#</a>
   </h2>
   <p>
     Users report material on WhatDoTheyKnow for a wide range of different
@@ -41,24 +67,36 @@
   </p>
   <ul>
     <li>
-      Personal information which has been released by accident
+      <a href="#accidentally_released" title="Go to help section - Accidentally
+        released personal information">Personal information which has been
+        released by accident</a>
     </li>
     <li>
-      Potentially libellous or defamatory material published on the site
+      <a href="#potentially_libellous" title="Go to help section - Potentially
+        defamatory or libellous material">Potentially libellous or defamatory
+        material published on the site</a>
     </li>
     <li>
-      Copyright material
+      <a href="#copyright" title="Go to help section - Copyright">Copyright
+        material</a>
     </li>
     <li>
-      Vexatious requests
+      <a href="#compassionate_grounds" title="Go to help section -
+      Compassionate Grounds">Compassionate grounds</a>
     </li>
     <li>
-      Invalid requests, that is, requests that are not Freedom of Information
-      requests
+      <a href="#vexatious_requests" title="Go to help section - How do we deal
+        with vexatious requests?">Vexatious requests</a>
+    </li>
+    <li>
+      <a href="#invalid_requests" title="Go to help section - How do we deal
+        with requests that are not valid? ">Invalid requests, that is, requests
+        that are not Freedom of Information requests</a>
     </li>
   </ul>
-  <h3>
+  <h3 id="policy">
     Policy as a guide, not a rigid set of rules
+    <a href="#policy">#</a>
   </h3>
   <p>
     Our policies have developed from the consideration and discussion of cases
@@ -67,7 +105,7 @@
   <p>
     These policies are not set in stone. New and unforeseen circumstances occur
     frequently, and while our body of policy and practice helps guide decisions,
-    any WDTK volunteer or mySociety staff member/trustee involved is free to
+    any WhatDoTheyKnow volunteer or mySociety staff member/trustee involved is free to
     suggest that the right thing to do in a specific case is to make an
     exception and/or establish a new policy.
   </p>
@@ -77,9 +115,9 @@
     the team of other volunteers and specific mySociety staff. Discussion among
     this group then leads to an agreed course of action.
   </p>
-  <p>
-  <h3>
+  <h3 id="information_removal">
     Removal of information
+    <a href="#information_removal">#</a>
   </h3>
   <p>
     <strong>Our default is to keep unproblematic information online.</strong>
@@ -114,12 +152,12 @@
     If agreement cannot be reached for any reason, then mySociety’s Chief
     Executive will be the final arbiter.
   </p>
-    <strong>
-      Accidentally released personal information
-    </strong>
-  </p>
+  <h4 id="accidentally_released">
+    Accidentally released personal information
+    <a href="#accidentally_released">#</a>
+  </h4>
   <p>
-    Sometimes public bodies mistakenly release personal information, in breach
+    Sometimes public authorities mistakenly release personal information, in breach
     of the Data Protection Act. Once the admin team has received a
     notification/complaint about an accidental data release, they follow this
     procedure:
@@ -150,15 +188,21 @@
   </p>
   <p>
     The ICO requests that serious breaches of data protection are reported to
-    them; their guidance on what constitutes serious is at: <a
-    href="https://ico.org.uk/for-organisations/guide-to-data-protection/guide-to-the-general-data-protection-regulation-gdpr/personal-data-breaches/" target="_blank">
-    https://ico.org.uk/for-organisations/guide-to-data-protection/guide-to-the-general-data-protection-regulation-gdpr/personal-data-breaches/</a>.
+    them; their guidance on what constitutes serious is <a
+    href="https://ico.org.uk/for-organisations/guide-to-data-protection/guide-to-the-general-data-protection-regulation-gdpr/personal-data-breaches/"
+    title="View guidance on Personal data breaches on the ICO website"
+    alt="View guidance on Personal data breaches on the ICO website"
+    >outlined on their website</a>.
   </p>
   <p>
-    <strong>
-      Potentially defamatory or libellous material
-    </strong>
+    If you become aware of a potential data breach, please
+    <%= link_to 'get in touch', help_contact_path %> with us so that we can
+    review it and take any appropriate action.
   </p>
+  <h4 id="potentially_libellous">
+    Potentially defamatory or libellous material
+    <a href="#potentially_libellous">#</a>
+  </h4>
   <p>
     Unfortunately, some people use WhatDoTheyKnow to post potentially
     defamatory/libellous material. We take action, upon being informed, to
@@ -173,7 +217,7 @@
   <ul>
     <li>
       Potentially defamatory requests which address the performance and
-      behaviour of public bodies.
+      behaviour of public authorities.
     </li>
     <li>
       Requests for complaints and performance information about regulated
@@ -187,11 +231,10 @@
     the wider group, including mySociety’s CEO and Trustees</a>.
   </p>
 
-  <p>
-    <strong>
-      Requests to remove commercial information
-    </strong>
-  </p>
+  <h4 id="commercial_information">
+    Requests to remove commercial information
+    <a href="#commercial_information">#</a>
+  </h4>
   <p>
     Takedown requests on matters such as commercial sensitivity and confidential
     information such as contracts are infrequent but important. We deal with
@@ -202,11 +245,10 @@
     The law prohibiting a breach of confidence is our prime concern in such
     cases.
   </p>
-  <p>
-    <strong>
-      Copyright
-    </strong>
-  </p>
+  <h4 id="copyright">
+    Copyright
+    <a href="#copyright">#</a>
+  </h4>
   <p>
     It is legitimate to request copyrighted material under Freedom of
     Information law.
@@ -224,14 +266,28 @@
   <p>
     In those cases we bear in mind that our Freedom of Information law is
     “applicant blind”, so anyone in the world can request the same document and
-    get a copy of it. We also want to save taxpayers’ money by preventing
+    get a copy of it. We also want to save public money by preventing
     duplicate requests.
   </p>
+  <h4 id="compassionate_grounds">
+  Removal of information on compassionate grounds
+  <a href="#compassionate_grounds">#</a>
+  </h4>
   <p>
-    <strong>
-      How do we deal with vexatious requests?
-    </strong>
+    On rare occasions, in exceptional circumstances, an editorial decision may be
+    taken to remove requests, and/or responses, on compassionate grounds. Such
+    cases are treated sensitively on a case-by case basis.
   </p>
+  <p>
+    Where requests relate to deceased individuals we have a presumption towards
+    removing material on compassionate grounds where the request is by a
+    family member or friend who may not have considered the consequences of
+    using our service.
+  </p>
+  <h4 id="vexatious_requests">
+    How do we deal with vexatious requests?
+    <a href="#vexatious">#</a>
+  </h4>
   <p>
     We remove vexatious requests from our site when they are drawn to our
     attention.
@@ -240,15 +296,14 @@
     In determining if a request is vexatious (has no serious purpose, or is
     intended to be disruptive to the work of a public body), we make an
     independent judgement taking into account
-    <a href="https://ico.org.uk/media/for-organisations/documents/1198/dealing-with-vexatious-requests.pdf" target="_blank">
+    <a href="https://ico.org.uk/media/for-organisations/documents/1198/dealing-with-vexatious-requests.pdf">
     the ICO’s guidance on vexatious requests</a> and don’t always follow the
     position of the public body.
   </p>
-  <p>
-    <strong>
-      How do we deal with requests that are not valid?
-    </strong>
-  </p>
+  <h4 id="invalid_requests">
+    How do we deal with requests that are not valid?
+    <a href="#invalid_requests">#</a>
+  </h4>
   <p>
     When we are made aware of it, we remove any correspondence from our site
     which is not a request for  information that anyone could expect a
@@ -261,15 +316,14 @@
   </p>
   <p>
     We point users making requests for their own personal information to
-    <a href="https://ico.org.uk/for-the-public/personal-information/" target="_blank">guidance
+    <a href="https://ico.org.uk/for-the-public/personal-information/">guidance
     on making Subject Access requests under the Data Protection Act</a> and
-    try to help others find more appropriate means of contacting public bodies.
+    try to help others find more appropriate means of contacting public authorities.
   </p>
-  <p>
-    <strong>
-      Why do we remove email addresses and mobile phone numbers from responses?
-    </strong>
-  </p>
+  <h4 id="email_addresses">
+    Why do we remove email addresses and mobile phone numbers from responses?
+    <a href="#email_addresses">#</a>
+  </h4>
   <p>
     To guard all parties against spam, and to encourage keeping all
     correspondence on WhatDoTheyKnow, we automatically remove most email
@@ -278,22 +332,22 @@
     certain PDFs.
   </p>
   <p>
-    Because our service automatically redacts email addresses and mobile phone
-    numbers from responses, it isn’t well suited to making requests for contact
-    email contacts — but if you need to know an address that we’ve removed,
-    please  <a href="<%=  help_contact_path %>">get in touch</a> with us.
+    If you need to know an address that we've removed, please
+    <a href="<%=  help_contact_path %>">get in touch</a> with us. It's worth
+    noting though, that as our team is small, we've not got the capacity to
+    deal with a large number of these requests, so our service isn't well
+    suited to being used to gather email addresses.
     Occasionally, an email address forms an important part of a response and if
     we’re asked to reveal it we may post it in an annotation.
   </p>
-  <p>
-    <strong>
-      How do we deal with requests that are not sent successfully?
-    </strong>
-  </p>
+  <h4 id="send_errors">
+    How do we deal with requests that are not sent successfully?
+    <a href="#send_errors">#</a>
+  </h4>
   <ul>
     <li>
       The admin team act to re-send requests/messages when we spot failed
-      delivery within a reasonable period of a user submitting the
+      delivery within a reasonable period of a user submitting the request.
     </li>
     <li>
       A public body or the requestor may ask us to resend a specific message and
@@ -307,49 +361,86 @@
       response.
     </li>
   </ul>
+  <h4 id="backpaging">
+    Backpaging
+    <a href="#backpaging">#</a>
+  </h4>
   <p>
-    <h2>
-      Membership of the admin team
-    </h2>
+    Administrators can "backpage" a request thread, this means the page is
+    accessible to those who have the direct link to it, but it is not included
+    in lists of requests or search results on the site. This is similar to
+    YouTube's "unlisted" or GoogleDoc's "anyone with the link" accessibility
+    settings.
   </p>
   <p>
-    The majority of WhatDoTheyKnow’s admin team are volunteers, who are active
-    users of the site.
+    When a request on WhatDoTheyKnow is "backpaged" meta-tags are added to the
+    header of the request page, and linked attachments, to ask external search
+    engines not to index the material. This feature is rarely used, but can
+    help us continue to publish material we might otherwise remove.
   </p>
   <p>
-    Volunteers are supervised and mentored by their peer volunteers, and by
-    mySociety staff on the management and FOI team. As mySociety is a
-    distributed organisation, this happens via the monthly WhatDoTheyKnow
-    volunteer catchup calls, and by email or individual calls as required.
-    Volunteers’ activity running the site, or on email lists, are visible to
-    other members of the volunteer team, as well as mySociety staff, and anyone
-    can speak up with suggestions for doing things differently.
+    Backpaging reduces the impact of our publication, it can, for example, be
+    used to make it more likely that our interests in processing and publishing
+    material outweigh any negative impacts on those whose personal information
+    is involved.
+  </p>
+  <h2 id="admin_team">
+    Membership of the admin team
+    <a href="#admin_team">#</a>
+  </h2>
+  <p>
+    WhatDoTheyKnow is a project of mySociety run by a small team of staff
+    and dedicated volunteers.
+  </p>
+  <p>
+    Volunteers are supervised and mentored by the other members of the
+    admin team. As mySociety is a distributed organisation, we keep in touch
+    by email or individual calls as required. Volunteers’ activity running the
+    site, or on email lists, is visible to other members of the admin team, as
+    well as other mySociety staff, and anyone can speak up with suggestions for
+    doing things differently.
+  </p>
+  <p>
+    We also have regular online team meetings that all volunteers are invited
+    to join, although attendance at these is optional.
   </p>
   <p>
     When a new volunteer starts, they are asked to agree to the terms of a
-    volunteer agreement, and the WhatDoTheyKnow password and data retention
-    policies. Depending on the nature of their volunteering, they may have an
-    introductory call or meeting with a current volunteer or with a member of
-    mySociety staff.
+    volunteer agreement.  This includes mySociety’s
+    <a href="https://www.mysociety.org/code-of-conduct/"
+    title="Link to the mySociety Code of Conduct (opens in a new window)"
+    target="_blank">Code of Conduct</a>, password policy, data retention policy
+    and personal data policy.
   </p>
   <p>
-    Volunteers who will actively administer the site will be asked to join a
-    call in which a current volunteer demonstrates the use of the WhatDoTheyKnow
-    admin interface. If everyone concerned is comfortable, they may then be
-    given access to the administration interface.
+    Depending on the nature of their volunteering, they may have an
+    introductory call with a current member of the WhatDoTheyKnow admin team,
+    generally with one existing volunteer and one member of staff.
   </p>
-  <h2>
-      User accounts
+  <p>
+    Volunteers who will actively administer the site are asked to join a
+    training call in which a member of the admin team will demonstrate the use
+    of the WhatDoTheyKnow admin interface. If everyone concerned is
+    comfortable, they may then be given access to the administration interface.
+  </p>
+  <p>
+    Joining the admin team is not the only way to help run the site. Read more
+    on how to
+    <a href="https://www.whatdotheyknow.com/help/volunteers"
+    title="Find out more about volunteering at WhatDoTheyKnow">get involved</a>
+  </p>
+  <h2 id="user_accounts">
+    User accounts
+    <a href="#user_accounts">#</a>
   </h2>
   <p>
-    If you sign up for an account on WhatDotheyKnow, a profile listing any
+    If you sign up for an account on WhatDoTheyKnow, a profile listing any
     requests and annotations you have made will be publicly accessible.
   </p>
-  <p>
-    <strong>
-      Requests to remove or anonymise an account
-    </strong>
-  </p>
+  <h3 id="anonymise_account">
+    Requests to remove or anonymise an account
+    <a href="#anonymise_account">#</a>
+  </h3>
   <p>
     We think that well-written requests for information on important subjects
     form a positive element of anyone’s “online footprint”. We hope our users’
@@ -361,7 +452,7 @@
     removed”, and make an attempt to remove a user’s name where it appears in
     the plain text of the correspondence. When we take such action we suspend
     the account in question and prevent any further use of it as we don’t want
-    people interacting with public bodies via our site under the name “name
+    people interacting with public authorities via our site under the name “name
     removed”.  Users whose accounts have been anonymised in this way are free to
     sign up again with a new account for any future use of our site.
   </p>
@@ -372,15 +463,14 @@
   <p>
     We do not remove substantive FOI requests and responses other than in
     exceptional circumstances, such as where we’re required to do so by law. We,
-    like public bodies publishing disclosure logs, don’t consider anonymised
+    like public authorities publishing disclosure logs, don’t consider anonymised
     requests and responses to be users’ personal information which they have a
     right to have removed from our service on request.
   </p>
-  <p>
-    <strong>
-      Banning users
-    </strong>
-  </p>
+  <h3 id="banning_users">
+    Banning users
+    <a href="#banning_users">#</a>
+  </h3>
   <p>
     We ban users for persistent misuse of our service (e.g. going against our
     <a
@@ -394,4 +484,6 @@
     misuse. After an account has been banned, the WhatDoTheyKnow volunteer team
     write to the user to explain the reasons that led to this decision.
   </p>
+
+  <%= render partial: 'history' %>
 </div>

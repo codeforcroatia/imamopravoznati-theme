@@ -1,12 +1,7 @@
-# -*- encoding : utf-8 -*-
+require_relative '../spec_helper'
+require 'integration/alaveteli_dsl'
 
-# If defined, ALAVETELI_TEST_THEME will be loaded in
-# config/initializers/theme_loader
-ALAVETELI_TEST_THEME = 'whatdotheyknow-theme'
-require File.expand_path(File.join(File.dirname(__FILE__),'..','..','..','..','..','spec','spec_helper'))
-require File.expand_path(File.join(File.dirname(__FILE__),'..','..','..','..','..','spec','integration','alaveteli_dsl'))
-
-describe 'creating a request with spam terms' do
+RSpec.describe 'creating a request with spam terms' do
   let(:user) { FactoryBot.create(:user) }
   let(:public_body) { FactoryBot.create(:public_body, name: 'example') }
   let(:user_session) { login(user) }

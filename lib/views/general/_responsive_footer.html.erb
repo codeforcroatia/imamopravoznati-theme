@@ -4,29 +4,30 @@
         <div class="col-sm-5">
             <h2 class="mysoc-footer__site-name"><%= site_name %></h2>
             <div class="mysoc-footer__site-description">
-                <p>Ovo je internetska stranica gdje bilo tko može podnijeti zahtjev za pristup javnim dokumentima. ImamoPravoZnati ujedno objavljuje i arhivira zahtjeve i odgovore kreirajući ogromnu arhivu znanja.</p>
-                <p><%= link_to 'Održavaju volonteri', help_credits_path(:anchor => 'helpus') %> a pokreće <%= link_to 'Alaveteli',  help_alaveteli_path %>.</p>
-                <p>Uz podršku <%= link_to 'Code for Croatia', "https://codeforcroatia.org/?utm_source=imamopravoznati&utm_medium=link" %> i <%= link_to 'Gonga', "https://www.gong.hr/?utm_source=imamopravoznati&utm_medium=link" %>.</p>
+                <p>A site to help anyone submit a Freedom of Information request. WhatDoTheyKnow also publishes and archives requests and responses, building a massive archive of information.</p>
+                <p>Established in 2008. <%= link_to 'Run by Volunteers', help_credits_path(anchor: 'volunteers') %> and powered by <%= link_to 'Alaveteli',  help_alaveteli_path %>.</p>
+                <p>Dedicated to <%= link_to 'Chris Lightfoot', "http://mk.ucant.org/archives/000129.html" %>.</p>
             </div>
         </div>
 
         <div class="col-sm-4">
             <nav class="mysoc-footer__links">
                 <ul>
-                    <li role="presentation"><%= link_to 'Podnesite zahtjev', select_authority_path %></li>
-                    <li role="presentation"><%= link_to 'Pretražite zahtjeve', request_list_successful_path %></li>
-                    <li role="presentation"><%= link_to 'Tijela javne vlasti', list_public_bodies_default_path %></li>
-                    <li role="presentation"><%= link_to 'Jeste li novinar_ka?', account_request_index_path %></li>
+                    <li role="presentation"><%= link_to 'Make a request', select_authority_path %></li>
+                    <li role="presentation"><%= link_to 'Browse requests', request_list_successful_path %></li>
+                    <li role="presentation"><%= link_to 'View authorities', list_public_bodies_default_path %></li>
+                    <li role="presentation"><%= link_to 'Journalist?', account_request_index_path %></li>
                 </ul>
                 <ul>
-                    <li role="presentation"><%= link_to 'Pomoć', help_path %></li>
-                    <li role="presentation"><%= link_to 'Kontaktirajte nas', help_contact_path %></li>
-                    <li role="presentation"><%= link_to 'Postanite naš volonter', help_volunteers_path %></li>
-                    <li role="presentation"><%= link_to 'Privatnost i kolačići', help_privacy_path %></li>
-                    <li role="presentation"><%= link_to 'API za programere', help_api_path %></li>
+                    <li role="presentation"><%= link_to 'Help', help_path %></li>
+                    <li role="presentation"><%= link_to 'Contact us', help_contact_path %></li>
+                    <li role="presentation"><%= link_to 'Become a volunteer', help_volunteers_path %></li>
+                    <li role="presentation"><%= link_to 'House rules', help_house_rules_path %></li>
+                    <li role="presentation"><%= link_to 'Privacy and cookies', help_privacy_path %></li>
+                    <li role="presentation"><%= link_to 'API', help_api_path %></li>
                     <% if feature_enabled?(:pro_pricing) %>
                       <li>
-                        <%= link_to 'Pro uvjeti korištenja', pro_page_path(:id => 'legal') %>
+                        <%= link_to 'Pro Terms', pro_page_path(:id => 'legal') %>
                       </li>
                     <% end %>
                 </ul>
@@ -35,8 +36,8 @@
 
         <div class="col-sm-3">
             <div class="mysoc-footer__donate">
-                <p>Vaše donacije pomažu da ovaj portal i projekti sličnim ovome budu mogući</p>
-                <a href="<%= donation_url :utm_content => 'footer donate now', :utm_campaign => 'mysoc_footer' %>" class="mysoc-footer__donate__button">Podržite donacijom</a>
+                <p>Your donations keep this site and others like it running</p>
+                <a href="<%= donation_url :utm_content => 'footer donate now', :utm_campaign => 'mysoc_footer' %>" class="mysoc-footer__donate__button">Donate now</a>
             </div>
         </div>
     </div>
@@ -45,8 +46,8 @@
         <div class="col-sm-5">
             <div class="mysoc-footer__orgs">
                 <p class="mysoc-footer__org">
-                    S ljubavlju
-                    <a href="https://codeforcroatia.org?utm_source=imamopravoznati&amp;utm_content=footer+logo&amp;utm_medium=link&amp;utm_campaign=cfc_footer" target="_blank" class="mysoc-footer__org__logo mysoc-footer__org__logo--mysociety">Code for Croatia</a>
+                    Built by
+                    <a href="https://mysociety.org?utm_source=whatdotheyknow.com&amp;utm_content=footer+logo&amp;utm_medium=link&amp;utm_campaign=mysoc_footer" class="mysoc-footer__org__logo mysoc-footer__org__logo--mysociety">mySociety</a>
                 </p>
             </div>
         </div>
@@ -54,24 +55,26 @@
         <div class="col-sm-4">
             <div class="mysoc-footer__legal">
                 <p>
-                    <a href="https://codeforcroatia.org?utm_source=imamopravoznati&amp;utm_content=footer+full+legal+details&amp;utm_medium=link&amp;utm_campaign=cfc_footer" target="_blank">Code for Croatia</a>
-                    je nacionalna mreža koja udružuje građane, dizajnere,
-                    developere i mlade poduzetnike da grade stvari koje
-                    doprinose poboljšavanju javnih platformi za građane.
+                    <a href="https://www.mysociety.org?utm_source=whatdotheyknow.com&amp;utm_content=footer+full+legal+details&amp;utm_medium=link&amp;utm_campaign=mysoc_footer">mySociety</a>
+                    is a registered charity in England and Wales (1076346)
+                    and a limited company (03277032). We provide commercial
+                    services through our wholly owned subsidiary
+                    <a href="https://www.societyworks.org?utm_source=whatdotheyknow.com&amp;utm_content=footer+full+legal+details&amp;utm_medium=link&amp;utm_campaign=mysoc_footer">SocietyWorks Ltd</a>
+                    (05798215).
                 </p>
             </div>
         </div>
 
         <div class="col-sm-3">
             <ul class="mysoc-footer__badges">
-                <li role="presentation"><a href="https://github.com/codeforcroatia/imamopravoznati-theme" target="_blank" class="mysoc-footer__badge mysoc-footer__badge--github">Github</a></li>
+                <li role="presentation"><a href="https://github.com/mysociety/whatdotheyknow-theme" class="mysoc-footer__badge mysoc-footer__badge--github">Github</a></li>
               <% unless AlaveteliConfiguration::twitter_username.blank? %>
                 <li role="presentation">
-                  <a href="https://twitter.com/<%= AlaveteliConfiguration::twitter_username %>" target="_blank" class="mysoc-footer__badge mysoc-footer__badge--twitter" onclick="<%= track_analytics_event(AnalyticsEvent::Category::OUTBOUND, AnalyticsEvent::Action::TWITTER_EXIT, :label => 'Footer link')%>">@<%= AlaveteliConfiguration::twitter_username %></a>
+                  <a href="https://twitter.com/<%= AlaveteliConfiguration::twitter_username %>" class="mysoc-footer__badge mysoc-footer__badge--twitter" onclick="<%= track_analytics_event(AnalyticsEvent::Category::OUTBOUND, AnalyticsEvent::Action::TWITTER_EXIT, :label => 'Footer link')%>">@<%= AlaveteliConfiguration::twitter_username %></a>
                 </li>
               <% end %>
               <% unless AlaveteliConfiguration::facebook_username.blank? %>
-                <li role="presentation"><a href="https://facebook.com/programirajzahrvatsku" target="_blank" class="mysoc-footer__badge mysoc-footer__badge--facebook" onclick="<%= track_analytics_event(AnalyticsEvent::Category::OUTBOUND, AnalyticsEvent::Action::FACEBOOK_EXIT, :label => 'Footer link')%>">Facebook</a></li>
+                <li role="presentation"><a href="https://facebook.com/whatdotheyknowcom" class="mysoc-footer__badge mysoc-footer__badge--facebook" onclick="<%= track_analytics_event(AnalyticsEvent::Category::OUTBOUND, AnalyticsEvent::Action::FACEBOOK_EXIT, :label => 'Footer link')%>">Facebook</a></li>
               <% end %>
             </ul>
         </div>

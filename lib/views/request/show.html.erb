@@ -30,7 +30,7 @@
                      in_pro_area: @in_pro_area,
                      track_thing: @track_thing,
                      show_profile_photo: @show_profile_photo,
-                     show_action_menu: !@render_to_file,
+                     show_action_menu: @show_action_menu,
                      new_responses_count: @new_responses_count,
                      is_owning_user: @is_owning_user,
                      render_to_file: @render_to_file,
@@ -40,6 +40,8 @@
                      old_unclassified: @old_unclassified } %>
 
 <div id="left_column" class="left_column">
+  <%= render_notes(@info_request.all_notes) %>
+
   <% @info_request.info_request_events.each do |info_request_event| %>
     <% if info_request_event.visible %>
       <%= render partial: 'request/correspondence',
@@ -62,7 +64,7 @@
           <%= render partial: 'alaveteli_pro/info_requests/after_actions',
                      locals: { info_request: @info_request,
                                last_response: @last_response } %>
-        <% else %>
+        <% elsif @show_action_menu %>
           <%= render partial: 'request/after_actions',
                      locals: { info_request: @info_request,
                                track_thing: @track_thing,
@@ -86,7 +88,7 @@
     <div class="donate-cta">
       <h2 class="donate-cta__header"><%= _('We work to defend the right to FOI for everyone') %></h2>
       <p class="donate-cta__para"><%= _('Help us protect your right to hold public authorities to account. Donate and support our work.') %></p>
-      <% utm_params_donate = { utm_source: 'imamopravoznati',
+      <% utm_params_donate = { utm_source: 'whatdotheyknow.com',
                                utm_medium: 'link',
                                utm_content: 'experiment_no_0',
                                utm_campaign: 'foi_request_page' } %>

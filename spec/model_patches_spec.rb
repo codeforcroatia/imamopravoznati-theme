@@ -1,180 +1,6 @@
-# If defined, ALAVETELI_TEST_THEME will be loaded in config/initializers/theme_loader
-ALAVETELI_TEST_THEME = 'whatdotheyknow-theme'
-require File.expand_path(File.join(File.dirname(__FILE__),'..','..','..','..','spec','spec_helper'))
+require_relative 'spec_helper'
 
-describe UserInfoRequestSentAlert, "when patched by the whatdotheyknow-theme" do
-
-  it 'should allow an alert type of "survey_1"' do
-    info_request_sent_alert = UserInfoRequestSentAlert.new(:alert_type => 'survey_1')
-    expect(info_request_sent_alert).to be_valid
-  end
-
-end
-
-describe User, 'when patched by whatdotheyknow-theme' do
-
-  describe '#can_send_survey?' do
-    let(:user) { FactoryBot.create(:user) }
-    subject { user.can_send_survey? }
-
-    before do
-      allow(AlaveteliConfiguration).
-        to receive(:send_survey_mails).and_return(true)
-    end
-
-    context 'a survey has not been sent to an active user' do
-
-      before do
-        allow(user).to receive(:survey).
-          and_return(double('survey', :already_done? => false))
-      end
-
-      it { is_expected.to eq(true) }
-
-    end
-
-    context 'a survey has already been sent' do
-
-      before do
-        allow(user).to receive(:survey).
-          and_return(double('survey', :already_done? => true))
-      end
-
-      it { is_expected.to eq(false) }
-
-    end
-
-    context 'the user is not active' do
-
-      before do
-        allow(user).to receive(:active?).and_return(false)
-      end
-
-      it { is_expected.to eq(false) }
-
-    end
-
-  end
-
-end
-
-describe RequestMailer, 'when patched by whatdotheyknow-theme' do
-
-  context 'when SEND_SURVEY_MAILS is set' do
-
-    before do
-      allow(AlaveteliConfiguration).to receive(:send_survey_mails).and_return(true)
-      InfoRequest.destroy_all
-      ActionMailer::Base.deliveries = []
-    end
-
-    def get_surveyable_request(user=nil)
-      info_request = if user
-        FactoryBot.create(:info_request, :user => user)
-      else
-        FactoryBot.create(:info_request)
-      end
-      info_request.created_at = Time.now - (2.weeks + 1.hour)
-      info_request.save!
-      info_request
-    end
-
-    it 'sends survey alerts' do
-        expect(RequestMailer).to receive(:alert_survey)
-        RequestMailer.alert_new_response_reminders
-    end
-
-    context 'when there is a requester who has not been sent a survey alert' do
-
-      it 'sends a survey alert' do
-        allow_any_instance_of(User).to receive(:survey).
-          and_return(double('survey', :already_done? => false))
-        get_surveyable_request
-        RequestMailer.alert_new_response_reminders
-        expect(ActionMailer::Base.deliveries.size).to eq(1)
-      end
-
-      it 'records the sending of the alert' do
-        allow_any_instance_of(User).to receive(:survey).
-          and_return(double('survey', :already_done? => false))
-        info_request = get_surveyable_request
-        RequestMailer.alert_new_response_reminders
-        expect(info_request.user.user_info_request_sent_alerts.size).
-          to eq(1)
-      end
-
-    end
-
-    context 'when there is a requester who has been sent a survey alert' do
-
-      it 'does not send a survey alert' do
-        allow_any_instance_of(User).to receive(:survey).
-          and_return(double('survey', :already_done? => false))
-        info_request = get_surveyable_request
-        info_request.user.user_info_request_sent_alerts.
-          create(:alert_type => 'survey_1',
-                  :info_request_id => info_request.id)
-        RequestMailer.alert_new_response_reminders
-        expect(ActionMailer::Base.deliveries.size).to eq(0)
-      end
-
-    end
-
-    context 'when there is a requester who has previously filled in the survey' do
-
-      it 'does not send a survey alert' do
-        allow_any_instance_of(User).to receive(:survey).
-          and_return(double('survey', :already_done? => true))
-        get_surveyable_request
-        RequestMailer.alert_new_response_reminders
-        expect(ActionMailer::Base.deliveries.size).to eq(0)
-      end
-    end
-
-    context 'when a user has made multiple qualifying requests' do
-
-      it 'does not send multiple alerts' do
-        allow_any_instance_of(User).to receive(:survey).
-          and_return(double('survey', :already_done? => false))
-        request = get_surveyable_request
-        get_surveyable_request(request.user)
-        RequestMailer.alert_new_response_reminders
-        expect(ActionMailer::Base.deliveries.size).to eq(1)
-      end
-    end
-
-    context 'when a user is inactive' do
-
-      it 'does not send a survey alert' do
-        allow_any_instance_of(User).to receive(:survey).
-          and_return(double('survey', :already_done? => false))
-        allow_any_instance_of(User).to receive(:active?).
-          and_return(false)
-        get_surveyable_request
-        RequestMailer.alert_new_response_reminders
-        expect(ActionMailer::Base.deliveries.size).to eq(0)
-      end
-
-    end
-
-  end
-
-  context 'when SEND_SURVEY_MAILS is not set' do
-
-    before do
-      allow(AlaveteliConfiguration).to receive(:send_survey_mails).and_return(false)
-    end
-
-    it 'does not send survey alerts ' do
-      expect(RequestMailer).not_to receive(:alert_survey)
-      RequestMailer.alert_new_response_reminders
-    end
-
-  end
-
-end
-
-describe InfoRequest, "when creating an email subject for a request" do
+RSpec.describe InfoRequest, "when creating an email subject for a request" do
 
   it 'should create a standard request subject' do
     info_request = FactoryBot.build(:info_request)
@@ -189,18 +15,9 @@ describe InfoRequest, "when creating an email subject for a request" do
       to eq("Freedom of Information request GQ - #{info_request.title}")
   end
 
-  it 'should be able to create an email subject request for a batch request template without
-      a public body' do
-    info_request = FactoryBot.build(:info_request)
-    info_request.public_body = nil
-    info_request.is_batch_request_template = true
-    expect(info_request.email_subject_request).
-      to eq("Freedom of Information request - #{info_request.title}")
-  end
-
 end
 
-describe InfoRequest do
+RSpec.describe InfoRequest do
 
   describe '#late_calculator' do
     subject { InfoRequest.new(:public_body => FactoryBot.build(:public_body)) }
@@ -224,7 +41,7 @@ describe InfoRequest do
 
 end
 
-describe InfoRequest, "when calculating the status for a school" do
+RSpec.describe InfoRequest, "when calculating the status for a school" do
 
   before do
     @ir = info_requests(:naughty_chicken_request)
@@ -276,7 +93,7 @@ describe InfoRequest, "when calculating the status for a school" do
 
 end
 
-describe PublicBody do
+RSpec.describe PublicBody do
 
   describe '.extract_domain_from_email' do
 
@@ -317,4 +134,17 @@ describe PublicBody do
 
   end
 
+end
+
+RSpec.describe User::EmailAlerts do
+  describe '#disable' do
+    context 'with the internal admin user' do
+      let(:user) { double(name: 'Admin', url_name: 'internal_admin_user') }
+
+      it 'prevents alerts being disabled' do
+        expect { described_class.new(user).disable }.
+          to raise_error('Email alerts should not be disabled for Admin!')
+      end
+    end
+  end
 end

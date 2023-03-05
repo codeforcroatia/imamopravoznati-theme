@@ -26,12 +26,12 @@
             <li>
                 If you need to discuss personal matters with a
                 UK government department, you should
-                <a href="https://www.gov.hr/" target="_blank">find them on GOV.HR</a>.
+                <a href="https://www.gov.uk/">find them on GOV.UK</a>.
             </li>
             <li>
                 If you’re having trouble getting the service you require
                 from a government body then your MP’s office can often
-                help. You can <a href="https://www.writetothem.com/" target="_blank">write
+                help. You can <a href="https://www.writetothem.com/">write
                 to your MP on WriteToThem.com</a>.
             </li>
         </ul>
@@ -54,13 +54,13 @@
             </li>
             <li>
                 If you need to discuss personal matters with a
-                UK council, you should <a href="https://www.gov.hr/" target="_blank">find
-                them on GOV.HR</a>.
+                UK council, you should <a href="https://www.gov.uk/">find
+                them on GOV.UK</a>.
             </li>
             <li>
                 If you want to write to your MP, local councillor, or
                 other representative, you can
-                <a href="https://www.writetothem.com/" target="_blank">write to your MP
+                <a href="https://www.writetothem.com/">write to your MP
                 on WriteToThem.com</a>.
             </li>
         </ul>
@@ -68,18 +68,33 @@
 
 
     <h2 class="contact-page__goal" id="writing-help">
-        <label class="houdini-label" for="goal4">
+        <label class="houdini-label" for="goal3">
             I need <strong>help writing a freedom of information request</strong>.
         </label>
     </h2>
 
-    <input class="houdini-input" type="radio" name="goals" id="goal4"
+    <input class="houdini-input" type="radio" name="goals" id="goal3"
         <% if params["contact"] && params[:current_form] == 'writing-help' %>checked<% end %>>
     <div class="houdini-target contact-page__options">
+        <h3>If you need help writing a request, we've got you covered.</h3>
         <ul>
             <li>
-                Directly contact the volunteers who run WhatDoTheyKnow:
-
+                Our <%= link_to 'help pages', help_requesting_path %> have
+                guidance on how to make requests, including some top tips on
+                how you can get the best response.
+            </li>
+            <li>
+                You can also find inspiration for your request on
+                <%= link_to _("our blog"), blog_path %>.
+            </li>
+            <li>
+                If you still need help, you can contact the team that
+                run WhatDoTheyKnow.
+                <br>
+                It'd be helpful if you could let us know what information you
+                are looking for, and which body you think might hold it.
+            </li>
+            <li style="list-style-type:none;">
                 <%= foi_error_messages_for :contact %>
 
                 <%= render :partial => "help/contact_form",
@@ -89,15 +104,44 @@
     </div>
 
 
+    <h2 class="contact-page__goal" id="wdtk-volunteer">
+        <label class="houdini-label" for="goal4">
+            I’d like to get involved and become a <strong>volunteer</strong>
+        </label>
+    </h2>
+
+    <input class="houdini-input" type="radio" name="goals" id="goal4"
+        <% if params["contact"] && params[:current_form] == 'wdtk-volunteer' %>checked<% end %>>
+    <div class="houdini-target contact-page__options">
+        <ul>
+            <li>
+                Please use this form if you are interested in volunteering for
+                WhatDoTheyKnow
+            </li>
+            <li>
+                If you would like more information on what volunteering
+                involves, see
+                <%= link_to _("our get involved page"), help_volunteers_path %>.
+            </li>
+            <li style="list-style-type:none;">
+                <%= foi_error_messages_for :contact %>
+
+                <%= render :partial => "help/contact_volunteer_form",
+                           :locals => { :form_id => 'wdtk-volunteer' } %>
+            </li>
+        </ul>
+    </div>
+
+
     <h2 class="contact-page__goal" id="wdtk">
-        <label class="houdini-label" for="goal3">
+        <label class="houdini-label" for="goal5">
             I have another issue, or feedback relating to the
             WhatDoTheyKnow.com website, that I want to raise with the
             <strong>team that runs WhatDoTheyKnow</strong>.
         </label>
     </h2>
 
-    <input class="houdini-input" type="radio" name="goals" id="goal3"
+    <input class="houdini-input" type="radio" name="goals" id="goal5"
         <% if params["contact"] && params[:current_form] == 'wdtk' %>checked<% end %>>
     <div class="houdini-target contact-page__options">
         <ul>
@@ -107,14 +151,10 @@
                 issues and questions you might have.
             </li>
             <li>
-                <% if @user && @user.is_pro? %>
-                    If your issue isn’t covered by our help pages, you can
-                    directly contact the team who run WhatDoTheyKnow Pro:
-                <% else %>
-                    If your issue isn’t covered by our help pages, you can
-                    directly contact the volunteers who run WhatDoTheyKnow:
-                <% end %>
-
+                If your issue isn’t covered by our help pages, you can
+                directly contact the team that run WhatDoTheyKnow:
+            </li>
+            <li style="list-style-type:none;">
                 <%= foi_error_messages_for :contact %>
 
                 <%= render :partial => "help/contact_form",

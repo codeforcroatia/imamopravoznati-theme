@@ -1,0 +1,37 @@
+foi:
+  actions:
+  - id: internal_review
+    title: <%= _('Request an internal review') %>
+    header: <%= _('You may have grounds for an internal review') %>
+    button: <%= _('Help me send an internal review') %>
+    target: { internal: 'internal_review' }
+
+  - id: clarification
+    title: <%= _('Reply for more clarification') %>
+    header: <%= _('You should reply to the authority for clarification') %>
+    button: <%= _('Help me send a reply') %>
+    target: { internal: 'followup' }
+
+  - id: refer_to_commissioner
+    title: <%= _('Refer your request to the Information Commissioner') %>
+    target: { external: '/help/unhappy#refer-to-ico' }
+
+  - id: new_request
+    title: <%= _('Make a new request') %>
+    header: <%= _('Perhaps you could make a new request') %>
+    button: <%= _('Help me make a new request') %>
+    target: { internal: 'new_request' }
+
+  - id: use_other_means
+    title: <%= _('Use other means') %>
+    header: <%= _('Using other means to answer your question') %>
+    body:
+      plain: <%= _('You can try pursuing your problem or your research in other ways.') %>
+    target: { external: '/help/unhappy#other_means' }
+
+  - id: generic
+    title: <%= _('Send a followup') %>
+    body:
+      plain: >
+        <%= _("There's always the option of sending a followup.") %>
+    target: { internal: 'followup' }

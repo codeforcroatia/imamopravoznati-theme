@@ -1,3 +1,4 @@
+# Please arrange overridden classes alphabetically.
 Rails.configuration.to_prepare do
   UserController.class_eval do
     require 'survey'
@@ -32,6 +33,7 @@ Rails.configuration.to_prepare do
   end
 
   HelpController.class_eval do
+    prepend VolunteerContactForm::ControllerMethods
 
     before_action :set_recaptcha_required, :only => [:contact, :foi_motion, :unhappy]
 
@@ -58,8 +60,16 @@ Rails.configuration.to_prepare do
     def volunteers; end
     def beginners; end
 #    def foi_motion; end
+    def ico_officers; end
+    def glossary; end
 
     private
+
+    def set_history
+      @history ||= HelpPageHistory.new(
+        lookup_context.find_template("#{controller_path}/#{action_name}")
+      )
+    end
 
     def set_recaptcha_required
       @recaptcha_required =
@@ -70,9 +80,7 @@ Rails.configuration.to_prepare do
     def request_from_foreign_country?
       country_from_ip != AlaveteliConfiguration.iso_country_code
     end
-
   end
-
 
   RequestController.class_eval do
     before_action :check_spam_terms, only: [:new]
@@ -125,4 +133,17 @@ Rails.configuration.to_prepare do
     end
   end
 
+  Users::MessagesController.class_eval do
+    private
+
+    def set_recaptcha_required
+      @recaptcha_required =
+        AlaveteliConfiguration.user_contact_form_recaptcha &&
+        request_from_foreign_country?
+    end
+
+    def request_from_foreign_country?
+      country_from_ip != AlaveteliConfiguration.iso_country_code
+    end
+  end
 end
