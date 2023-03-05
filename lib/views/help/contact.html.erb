@@ -68,33 +68,18 @@
 
 
     <h2 class="contact-page__goal" id="writing-help">
-        <label class="houdini-label" for="goal3">
+        <label class="houdini-label" for="goal4">
             I need <strong>help writing a freedom of information request</strong>.
         </label>
     </h2>
 
-    <input class="houdini-input" type="radio" name="goals" id="goal3"
+    <input class="houdini-input" type="radio" name="goals" id="goal4"
         <% if params["contact"] && params[:current_form] == 'writing-help' %>checked<% end %>>
     <div class="houdini-target contact-page__options">
-        <h3>If you need help writing a request, we've got you covered.</h3>
         <ul>
             <li>
-                Our <%= link_to 'help pages', help_requesting_path %> have
-                guidance on how to make requests, including some top tips on
-                how you can get the best response.
-            </li>
-            <li>
-                You can also find inspiration for your request on
-                <%= link_to _("our blog"), blog_path %>.
-            </li>
-            <li>
-                If you still need help, you can contact the team that
-                run WhatDoTheyKnow.
-                <br>
-                It'd be helpful if you could let us know what information you
-                are looking for, and which body you think might hold it.
-            </li>
-            <li style="list-style-type:none;">
+                Directly contact the team that run WhatDoTheyKnow:
+
                 <%= foi_error_messages_for :contact %>
 
                 <%= render :partial => "help/contact_form",
@@ -104,14 +89,14 @@
     </div>
 
 
-    <h2 class="contact-page__goal" id="wdtk-volunteer">
-        <label class="houdini-label" for="goal4">
+    <h2 class="contact-page__goal" id="wdtk">
+        <label class="houdini-label" for="goal3">
             I’d like to get involved and become a <strong>volunteer</strong>
         </label>
     </h2>
 
-    <input class="houdini-input" type="radio" name="goals" id="goal4"
-        <% if params["contact"] && params[:current_form] == 'wdtk-volunteer' %>checked<% end %>>
+    <input class="houdini-input" type="radio" name="goals" id="goal3"
+        <% if params["contact"] && params[:current_form] == 'wdtk' %>checked<% end %>>
     <div class="houdini-target contact-page__options">
         <ul>
             <li>
@@ -123,25 +108,25 @@
                 involves, see
                 <%= link_to _("our get involved page"), help_volunteers_path %>.
             </li>
-            <li style="list-style-type:none;">
+            <li>
                 <%= foi_error_messages_for :contact %>
 
                 <%= render :partial => "help/contact_volunteer_form",
-                           :locals => { :form_id => 'wdtk-volunteer' } %>
+                           :locals => { :form_id => 'wdtk_volunteer' } %>
             </li>
         </ul>
     </div>
 
 
     <h2 class="contact-page__goal" id="wdtk">
-        <label class="houdini-label" for="goal5">
+        <label class="houdini-label" for="goal3">
             I have another issue, or feedback relating to the
             WhatDoTheyKnow.com website, that I want to raise with the
             <strong>team that runs WhatDoTheyKnow</strong>.
         </label>
     </h2>
 
-    <input class="houdini-input" type="radio" name="goals" id="goal5"
+    <input class="houdini-input" type="radio" name="goals" id="goal3"
         <% if params["contact"] && params[:current_form] == 'wdtk' %>checked<% end %>>
     <div class="houdini-target contact-page__options">
         <ul>
@@ -151,10 +136,14 @@
                 issues and questions you might have.
             </li>
             <li>
-                If your issue isn’t covered by our help pages, you can
-                directly contact the team that run WhatDoTheyKnow:
-            </li>
-            <li style="list-style-type:none;">
+                <% if @user && @user.is_pro? %>
+                    If your issue isn’t covered by our help pages, you can
+                    directly contact the team who run WhatDoTheyKnow Pro:
+                <% else %>
+                    If your issue isn’t covered by our help pages, you can
+                    directly contact the team that run WhatDoTheyKnow:
+                <% end %>
+
                 <%= foi_error_messages_for :contact %>
 
                 <%= render :partial => "help/contact_form",

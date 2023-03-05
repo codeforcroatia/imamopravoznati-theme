@@ -7,18 +7,6 @@
 #
 # Please arrange overridden classes alphabetically.
 Rails.configuration.to_prepare do
-  SPAM_TERMS_CONFIG = Rails.root + 'config/spam_terms.txt'
-
-  if File.exist?(SPAM_TERMS_CONFIG)
-    custom_terms =
-      File.read(SPAM_TERMS_CONFIG).
-        split("\n").
-        reject { |line| line.starts_with?('#') || line.empty? }
-
-    AlaveteliSpamTermChecker.default_spam_terms =
-      AlaveteliSpamTermChecker::DEFAULT_SPAM_TERMS + custom_terms
-  end
-
   ContactValidator.class_eval do
     attr_accessor :understand
 
@@ -98,18 +86,6 @@ Rails.configuration.to_prepare do
     end
   end
 
-  RawEmail.class_eval do
-    alias original_data data
-
-    def data
-      original_data.sub(/
-        ^(Date: [^\n]+\n)
-        \s+(To: [^\n]+\n)
-        \s+(From: [^\n]+)
-      /x, '\1\2\3')
-    end
-  end
-
   ReplyToAddressValidator.invalid_reply_addresses = %w(
     FOIResponses@homeoffice.gsi.gov.uk
     FOIResponses@homeoffice.gov.uk
@@ -147,23 +123,7 @@ Rails.configuration.to_prepare do
     foi@dudley.gov.uk
     no-reply@sharepointonline.com
     dvla.donotreply@dvla.gov.uk
-    noreply@my.tewkesbury.gov.uk
-    donotreply.foi@publicagroup.uk
-    do_not_reply@icasework.com
-    mailer@donotreply.icasework.com
-    website@digital.sthelens.gov.uk
-    noreply@m.onetrust.com
-    no-reply@notify.microsoft.com
-    MPSdataoffice-IRU-DONOTREPLY@met.police.uk
   )
-
-  User.class_eval do
-    private
-
-    def exceeded_user_message_limit?
-      !Time.zone.now.between?(Time.zone.parse('9am'), Time.zone.parse('5pm'))
-    end
-  end
 
   User::EmailAlerts.instance_eval do
     module DisableWithProtection
