@@ -1,0 +1,11 @@
+<% if status == 'transferred' %>
+  <%= _("{{public_body_url}} has replied saying <strong>they have " \
+        "transferred your request to another public body</strong>.",
+        :public_body_url => public_body_link(@info_request.public_body)) %>
+<% elsif status == 'referred' %>
+  <%= _("{{public_body_url}} has replied saying <strong>you have " \
+        "to contact another public body</strong>.",
+        :public_body_url => public_body_link(@info_request.public_body)) %>
+<% else %>
+  <% raise "unknown status " + status %>
+<% end %>

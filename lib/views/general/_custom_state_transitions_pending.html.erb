@@ -1,0 +1,6 @@
+<% id_suffix ||= '' %>
+
+<div>
+  <%= classification_radio_button 'transferred', id_suffix: id_suffix %>
+  <%= classification_label('transferred', _('Authority has <strong>transferred your request</strong> to another public body.'), id_suffix: id_suffix) %>
+</div>
