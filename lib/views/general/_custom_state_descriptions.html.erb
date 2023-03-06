@@ -3,8 +3,8 @@
         "transferred your request to another public body</strong>.",
         :public_body_url => public_body_link(@info_request.public_body)) %>
 <% elsif status == 'referred' %>
-  <%= _("{{public_body_url}} has replied saying <strong>you have " \
-        "to contact another public body</strong>.",
+  <%= _("a user has referred to the <strong>Information " \
+        "Commissioner for appeal process</strong>.",
         :public_body_url => public_body_link(@info_request.public_body)) %>
 <% else %>
   <% raise "unknown status " + status %>
