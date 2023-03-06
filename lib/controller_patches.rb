@@ -61,7 +61,6 @@ Rails.configuration.to_prepare do
     def beginners; end
 #    def foi_motion; end
     def ico_officers; end
-    def glossary; end
 
     private
 
