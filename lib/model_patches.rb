@@ -40,6 +40,13 @@ Rails.configuration.to_prepare do
     UserInfoRequestSentAlert._validate_callbacks.first.filter.options[:in] << 'survey_1'
 
     InfoRequest.class_eval do
+        def self.theme_short_description(state)
+          {
+            'referred' => _('Referred'),
+            'transferred' => _('Transferred')
+          }[state]
+        end
+
         def email_subject_request(opts = {})
             html = opts.fetch(:html, true)
             subject_title = html ? self.title : self.title.html_safe
