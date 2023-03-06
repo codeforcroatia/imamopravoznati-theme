@@ -11,15 +11,16 @@ Rails.application.routes.draw do
 
   # Add a route for the survey
   scope '/profile/survey' do
-    root :to => 'user#survey', :as => :survey
-    get '/reset' => 'user#survey_reset', :as => :survey_reset
+    root :to => 'user#survey', as: :survey
+    get '/reset' => 'user#survey_reset', as: :survey_reset
   end
 
   get "/help/ico-guidance-for-authorities" => redirect("https://publikacije.imamopravoznati.org"),
-  :as => :ico_guidance
+      as: :ico_guidance
 
   get "/help/zppi" => redirect("https://codeforcroatia.org/zppi"),
-  :as => :zppi_text
+      as: :zppi_text
+
   get '/help/principles' => 'help#principles',
       as: :help_principles
 
@@ -41,7 +42,7 @@ Rails.application.routes.draw do
   get '/help/ico_officers' => 'help#ico_officers',
       as: :help_ico_officers
 
-  get '/help/foi_motion'  => 'help#foi_motion',
+  get '/help/foi_motion' => 'help#foi_motion',
     :via => 'get',
     :as => 'help_foi_motion'
   get '/help/glossary' => 'help#glossary',
