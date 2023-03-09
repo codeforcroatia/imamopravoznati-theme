@@ -747,7 +747,7 @@ msgid "Želite li koristiti ovakvu internetsku stranicu u drugoj zemlji?"
 msgstr "Želite li koristiti ovakvu internetsku stranicu u drugoj zemlji?"
 
 msgid "Resent request to {{public_body_link}}"
-msgstr "Ponovno poslan zahtjev za {{public_body_link}}"
+msgstr "<strong>Ponovno poslan zahtjev</strong> za {{public_body_link}}"
 
 msgid "Resent a follow up to {{public_body_link}}"
-msgstr "Ponovno poslan odgovor za {{public_body_link}}"
+msgstr "<strong>Ponovno poslan odgovor</strong> za {{public_body_link}}"
