@@ -7,15 +7,16 @@
 
     <div class="correspondence__header <% if delivery_status %>correspondence__header--with-delivery-status<% end %>">
       <span class="correspondence__header__author js-collapsable-trigger">
-        <%= _('Sent') %>
         <% if outgoing_message.message_type == 'initial_request' %>
-          <%= _('request') %>
+          <%= _('Resent request to {{public_body_link}}',
+                public_body_link: (public_body_link(@info_request.public_body))) %>
         <% elsif outgoing_message.message_type == 'followup' %>
-          <%= _('a follow up') %>
+          <%= _('Resent a follow up to {{public_body_link}}',
+                public_body_link: (public_body_link(@info_request.public_body))) %>
         <% else %>
           <% raise "unknown message_type" %>
         <% end %>
-        <%= _('to') %> <%= public_body_link(@info_request.public_body) %> <%= _('again') %><% if not info_request_event.same_email_as_previous_send? %><%= _(', using a new contact address') %><% end %>
+        <% if not info_request_event.same_email_as_previous_send? %><%= _(', using a new contact address') %><% end %>
       </span>
 
       <%= link_to outgoing_message_path(outgoing_message), :class => 'correspondence__header__date' do %>

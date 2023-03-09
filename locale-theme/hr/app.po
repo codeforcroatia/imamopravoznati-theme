@@ -2,11 +2,11 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Melisa <melisa@gong.hr>, 2021
 # Miroslav Schlossberg, 2021
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
@@ -745,3 +745,9 @@ msgstr ""
 
 msgid "Želite li koristiti ovakvu internetsku stranicu u drugoj zemlji?"
 msgstr "Želite li koristiti ovakvu internetsku stranicu u drugoj zemlji?"
+
+msgid "Resent request to {{public_body_link}}"
+msgstr "Ponovno poslan zahtjev za {{public_body_link}}"
+
+msgid "Resent a follow up to {{public_body_link}}"
+msgstr "Ponovno poslan odgovor za {{public_body_link}}"
