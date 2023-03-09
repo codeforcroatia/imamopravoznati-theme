@@ -1,0 +1,50 @@
+<div class="outgoing correspondence box" id="outgoing-<%=outgoing_message.id.to_s%>">
+  <%- if cannot?(:read, outgoing_message) %>
+    <%= render :partial => 'request/hidden_correspondence', :locals => { :message => outgoing_message } %>
+  <%- else %>
+    <%= render :partial => 'request/restricted_correspondence', :locals => {:message => outgoing_message } %>
+    <% delivery_status = outgoing_message.delivery_status %>
+
+    <div class="correspondence__header <% if delivery_status %>correspondence__header--with-delivery-status<% end %>">
+      <span class="correspondence__header__author js-collapsable-trigger">
+        <%= @info_request.user_name %>
+      </span>
+
+      <%= link_to outgoing_message_path(outgoing_message), :class => 'correspondence__header__date' do %>
+          <%= simple_date(info_request_event.created_at) %>
+      <% end %>
+      <% if delivery_status %>
+        <div class="correspondence__header__delivery-status">
+          <%= link_to outgoing_message_delivery_status_path(outgoing_message), :class => "toggle-delivery-log toggle-delivery-log--#{outgoing_message.delivery_status.simple} js-toggle-delivery-log", :'data-delivery-status' => outgoing_message.delivery_status.simple do -%>
+            <%= outgoing_message.delivery_status.simple.to_s.humanize -%>
+          <% end -%>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="js-delivery-log-ajax-error" hidden aria-hidden="true" style="display: none; visibility: hidden;">
+      <p><%= _('We couldn’t load the mail server logs for this message.') %></p>
+      <p><%= link_to _('Try opening the logs in a new window.'), outgoing_message_delivery_status_path(outgoing_message), :target => '_blank' %></p>
+    </div>
+
+    <%= render :partial => 'request/bubble', :locals => { :body => outgoing_message.get_body_for_html_display(), :attachments => nil }  %>
+
+    <p class="event_actions">
+      <% if outgoing_message.status == 'ready' && !@info_request.is_external? %>
+        <%= _('<strong>Warning:</strong> This message has <strong>not yet ' \
+                 'been sent</strong> for an unknown reason.') %>
+      <% end %>
+  <%- end %>
+
+  <p class="event_plain">
+    Sent
+    <% if outgoing_message.message_type == 'initial_request' %>
+      request
+    <% elsif outgoing_message.message_type == 'followup' %>
+      a follow up
+    <% else %>
+      <% raise "unknown message_type" %>
+    <% end %>
+    to <%= public_body_link(@info_request.public_body) %> again<% if not info_request_event.same_email_as_previous_send? %>, using a new contact address<% end %>.
+  </p>
+</div>
