@@ -1,10 +1,11 @@
 <% if status == 'transferred' %>
   <%= _("{{public_body_url}} has replied saying <strong>they have " \
-        "transferred your request to another public body</strong>.",
+        "transferred the request</strong> to another public body.",
         :public_body_url => public_body_link(@info_request.public_body)) %>
 <% elsif status == 'referred' %>
-  <%= _("a user has referred to the <strong>Information " \
-        "Commissioner for appeal process</strong>.",
+  <%= _("{{user}} has referred to the Information " \
+        "Commissioner for <strong>appeal process</strong>.",
+        :user => request_user_link(info_request, _('An anonymous user')),
         :public_body_url => public_body_link(@info_request.public_body)) %>
 <% elsif status == 'payment_requested' %>
   <%= _("{{public_body_url}} has requested to <strong>pay material " \
