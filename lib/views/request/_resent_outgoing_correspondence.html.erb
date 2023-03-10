@@ -9,15 +9,15 @@
       <span class="correspondence__header__author js-collapsable-trigger">
         <% if outgoing_message.message_type == 'initial_request' %>
           <%= _('Resent request from {{request_sent_date}} to {{public_body_link}}',
-                request_sent_date: (simple_date(info_request_event.created_at)),
+                request_sent_date: (simple_date(outgoing_message.created_at)),
                 public_body_link: (public_body_link(@info_request.public_body))) %>
         <% elsif outgoing_message.message_type == 'followup' %>
           <%= _('Resent a follow up from {{request_sent_date}} to {{public_body_link}}',
-                request_sent_date: (simple_date(info_request_event.created_at)),
+                request_sent_date: (simple_date(outgoing_message.created_at)),
                 public_body_link: (public_body_link(@info_request.public_body))) %>
         <% else %>
         <%= _('Resent {{unknown_message_type}} from {{request_sent_date}} to {{public_body_link}}',
-              request_sent_date: (simple_date(info_request_event.created_at)),
+              request_sent_date: (simple_date(outgoing_message.created_at)),
               public_body_link: (public_body_link(@info_request.public_body)),
               unknown_message_type: (raise "unknown message_type")) %>
         <% end %>
