@@ -12,9 +12,9 @@
         "expenses</strong> incurred by the provision of information.",
         :public_body_url => public_body_link(@info_request.public_body)) %>
 <% elsif status == 'deadline_extended' %>
-  <%= _("{{public_body_name}} has asked for an extension of the deadline for " \
-        "this request. They should respond promptly and no later than " \
-        "{{response_date}}.",
+  <%= _("{{public_body_name}} has asked for <strong>an extension of the " \
+        "deadline</strong> for this request. They should respond promptly and " \
+        "no later than {{response_date}}.",
         :public_body_name => @info_request.public_body.name,
         :response_date => simple_date(@info_request.date_response_required_by)) %>
 <% else %>
