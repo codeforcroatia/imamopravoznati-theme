@@ -14,9 +14,11 @@
           <%= _('Resent a follow up to {{public_body_link}}',
                 public_body_link: (public_body_link(@info_request.public_body))) %>
         <% else %>
-          <% raise "unknown message_type" %>
+        <%= _('Resent {{unknown_message_type}} to {{public_body_link}}',
+              public_body_link: (public_body_link(@info_request.public_body)),
+              unknown_message_type: (raise "unknown message_type")) %>
         <% end %>
-        <% if not info_request_event.same_email_as_previous_send? %><%= _(', using a new contact address') %><% end %>
+        <% if not info_request_event.same_email_as_previous_send? %><%= _('using a new contact address') %><% end %>
       </span>
 
       <%= link_to outgoing_message_path(outgoing_message), :class => 'correspondence__header__date' do %>
