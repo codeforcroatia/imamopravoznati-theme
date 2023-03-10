@@ -5,7 +5,7 @@
 <% elsif status == 'referred' %>
   <%= _("{{user}} has referred to the Information " \
         "Commissioner for <strong>appeal process</strong>.",
-        :user => request_user_link(info_request, _('An anonymous user')),
+        :user => request_user_link(@info_request, _('An anonymous user')),
         :public_body_url => public_body_link(@info_request.public_body)) %>
 <% elsif status == 'payment_requested' %>
   <%= _("{{public_body_url}} has requested to <strong>pay material " \
