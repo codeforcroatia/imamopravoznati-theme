@@ -6,6 +6,10 @@
   <%= _("a user has referred to the <strong>Information " \
         "Commissioner for appeal process</strong>.",
         :public_body_url => public_body_link(@info_request.public_body)) %>
+<% elsif status == 'payment_requested' %>
+  <%= _("{{public_body_url}} has requested to <strong>pay material " \
+        "expenses</strong> incurred by the provision of information.",
+        :public_body_url => public_body_link(@info_request.public_body)) %>
 <% elsif status == 'deadline_extended' %>
   <%= _("{{public_body_name}} has asked for an extension of the deadline for " \
         "this request. They should respond promptly and no later than " \

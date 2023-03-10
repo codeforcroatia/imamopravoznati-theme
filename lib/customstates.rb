@@ -33,6 +33,8 @@ module InfoRequestCustomStates
         _("Referred.")
       elsif status == 'transferred'
         _("Transferred.")
+      elsif status == 'payment_requested'
+        _("Payment requested.")
       elsif status == 'deadline_extended'
         _("Deadline extended.")
       else
@@ -43,6 +45,7 @@ module InfoRequestCustomStates
     def theme_extra_states
       return ['referred',
           'transferred',
+          'payment_requested',
           'deadline_extended']
     end
   end
@@ -58,6 +61,9 @@ module RequestControllerCustomStates
       redirect_to unhappy_url(info_request)
     elsif info_request.calculate_status == 'transferred'
       flash[:notice] = _("Authority has transferred your request to a different public body.")
+      redirect_to request_url(info_request)
+    elsif info_request.calculate_status == 'payment_requested'
+      flash[:notice] = _("Authority has requested you to pay material expenses incurred by the provision of information.")
       redirect_to request_url(info_request)
     elsif info_request.calculate_status == 'deadline_extended'
       flash[:notice] = _("<p>Hopefully your wait isn't too long.</p> <p>By law, you should get a response promptly, and normally before the end of <strong>

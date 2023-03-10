@@ -44,6 +44,7 @@ Rails.configuration.to_prepare do
           {
             'referred' => _('Referred'),
             'transferred' => _('Transferred'),
+            'payment_requested' => _('Payment requested'),
             'deadline_extended' => _('Deadline extended')
           }[state]
         end
