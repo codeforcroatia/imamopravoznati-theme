@@ -753,4 +753,4 @@ msgid "Resent a follow up to {{public_body_link}}"
 msgstr "<strong>Ponovno poslan odgovor</strong> za {{public_body_link}}"
 
 msgid "using a new contact address"
-msgstr "na novu adresu elektroničke pošte"
+msgstr "na drugu adresu elektroničke pošte"
