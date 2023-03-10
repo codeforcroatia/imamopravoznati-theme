@@ -8,13 +8,16 @@
     <div class="correspondence__header <% if delivery_status %>correspondence__header--with-delivery-status<% end %>">
       <span class="correspondence__header__author js-collapsable-trigger">
         <% if outgoing_message.message_type == 'initial_request' %>
-          <%= _('Resent request to {{public_body_link}}',
+          <%= _('Resent request from {{request_sent_date}} to {{public_body_link}}',
+                request_sent_date: (simple_date(info_request_event.created_at)),
                 public_body_link: (public_body_link(@info_request.public_body))) %>
         <% elsif outgoing_message.message_type == 'followup' %>
-          <%= _('Resent a follow up to {{public_body_link}}',
+          <%= _('Resent a follow up from {{request_sent_date}} to {{public_body_link}}',
+                request_sent_date: (simple_date(info_request_event.created_at)),
                 public_body_link: (public_body_link(@info_request.public_body))) %>
         <% else %>
-        <%= _('Resent {{unknown_message_type}} to {{public_body_link}}',
+        <%= _('Resent {{unknown_message_type}} from {{request_sent_date}} to {{public_body_link}}',
+              request_sent_date: (simple_date(info_request_event.created_at)),
               public_body_link: (public_body_link(@info_request.public_body)),
               unknown_message_type: (raise "unknown message_type")) %>
         <% end %>
