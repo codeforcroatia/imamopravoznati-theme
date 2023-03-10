@@ -3,5 +3,9 @@
 <div>
   <%= classification_radio_button 'transferred', id_suffix: id_suffix %>
   <%= classification_label('transferred', _('Authority has <strong>transferred your request</strong> to another public body.'), id_suffix: id_suffix) %>
+</div>
+
+<div>
+  <%= classification_radio_button 'deadline_extended', id_suffix: id_suffix %>
   <%= classification_label('deadline_extended', _('Authority has <strong>extended the deadline</strong> for your request.'), id_suffix: id_suffix) %>
 </div>
