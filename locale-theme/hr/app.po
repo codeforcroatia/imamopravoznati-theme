@@ -747,13 +747,13 @@ msgid "Želite li koristiti ovakvu internetsku stranicu u drugoj zemlji?"
 msgstr "Želite li koristiti ovakvu internetsku stranicu u drugoj zemlji?"
 
 msgid "Resent request from {{request_sent_date}} to {{public_body_link}}"
-msgstr "<strong>Ponovno poslan zahtjev</strong> od {{request_sent_date}} za {{public_body_link}}"
+msgstr "Zahtjev od {{request_sent_date}} <strong>ponovno poslan</strong> za {{public_body_link}}"
 
 msgid "Resent a follow up from {{request_sent_date}} to {{public_body_link}}"
-msgstr "<strong>Ponovno poslan odgovor</strong> od {{request_sent_date}} za {{public_body_link}}"
+msgstr "Odgovor od {{request_sent_date}} <strong>ponovno poslan</strong> za {{public_body_link}}"
 
 msgid "Resent {{unknown_message_type}} from {{request_sent_date}} to {{public_body_link}}"
-msgstr "<strong>Ponovno poslana poruka</strong> od {{request_sent_date}} za {{public_body_link}}"
+msgstr "Poruka od {{request_sent_date}} <strong>ponovno poslana</strong> za {{public_body_link}}"
 
 msgid "using a new contact address"
 msgstr "na drugu adresu elektroničke pošte"
