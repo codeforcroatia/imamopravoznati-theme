@@ -72,7 +72,7 @@ Rails.configuration.to_prepare do
 
         def reply_very_late_after_days
             if has_extended_deadline?
-                AlaveteliConfiguration::reply_late_after_days + extension_days
+                AlaveteliConfiguration::reply_very_late_after_days + extension_days
             else
                 AlaveteliConfiguration::reply_very_late_after_days
             end
