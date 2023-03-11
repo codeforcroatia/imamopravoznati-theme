@@ -88,7 +88,7 @@ Rails.configuration.to_prepare do
             Holiday.due_date_from(date_initial_request_last_sent_at,
                                   reply_very_late_after_days,
                                   AlaveteliConfiguration::working_or_calendar_days)
-        end        
+        end
 
         def email_subject_request(opts = {})
             html = opts.fetch(:html, true)
@@ -125,9 +125,7 @@ Rails.configuration.to_prepare do
 
         def is_transferred?
           transferred = false
-          # A follow up is a clarification only if it's the first
-          # follow up when the request is in a state of
-          # waiting for clarification
+          # A response is a transferred on user classify
           previous_events(:reverse => true).each do |event|
             if event.described_state == 'transferred'
               transferred = true
