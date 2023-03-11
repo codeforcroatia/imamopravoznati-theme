@@ -78,17 +78,17 @@ Rails.configuration.to_prepare do
             end
         end
 
-        # def date_response_required_by
-        #     Holiday.due_date_from(date_initial_request_last_sent_at,
-        #                           reply_late_after_days,
-        #                           AlaveteliConfiguration::working_or_calendar_days)
-        # end
-        #
-        # def date_very_overdue_after
-        #     Holiday.due_date_from(date_initial_request_last_sent_at,
-        #                           reply_very_late_after_days,
-        #                           AlaveteliConfiguration::working_or_calendar_days)
-        # end
+        def date_response_required_by
+            Holiday.due_date_from(date_initial_request_last_sent_at,
+                                  reply_late_after_days,
+                                  AlaveteliConfiguration::working_or_calendar_days)
+        end
+
+        def date_very_overdue_after
+            Holiday.due_date_from(date_initial_request_last_sent_at,
+                                  reply_very_late_after_days,
+                                  AlaveteliConfiguration::working_or_calendar_days)
+        end
 
         def email_subject_request(opts = {})
             html = opts.fetch(:html, true)
