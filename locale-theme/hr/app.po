@@ -783,7 +783,7 @@ msgid "I have <strong>started appeal to Information Commissioner</strong> to res
 msgstr "Pokrenuo sam <strong>žalidbeni postupak Povjereniku za informiranje</strong> da riješi ovaj zahtjev"
 
 msgid "{{public_body_url}} has replied saying <strong>they have transferred the request</strong> to another public body. Receiving authority should respond promptly and no later than {{response_date}}."
-msgstr "{{public_body_url}} je <strong>ustupio zahtjev</strong> drugom tijelu javne vlasti. Naslovljeno tijelo koje je zaprimilo dopis treba odgovoriti najkasnije do {{response_date}}."
+msgstr "{{public_body_url}} je <strong>ustupio zahtjev</strong> drugom tijelu javne vlasti. Naslovljeno tijelo koje je zaprimilo dopis treba odgovoriti najkasnije do {{response_date}}"
 
 msgid "{{user}} has referred to the Information Commissioner for <strong>appeal process</strong>."
 msgstr "{{user}} je uputio predmet Povjereniku za informiranje na <strong>drugostupanjski postupak</strong>."
@@ -792,4 +792,4 @@ msgid "{{public_body_url}} has requested to <strong>pay material expenses</stron
 msgstr "{{public_body_url}} je zatražilo <strong>plaćanje stvarnih materijalnih troškova</strong> nastalih pružanjem informacija."
 
 msgid "{{public_body_name}} has asked for <strong>an extension of the deadline</strong> for this request. They should respond promptly and no later than {{response_date}}."
-msgstr "{{public_body_name}} je <strong>produžilo rok za odgovor</strong> za ovaj zahtjev. Uz produženje, trebali bi odgovoriti najkasnije do {{response_date}}."
+msgstr "{{public_body_name}} je <strong>produžilo rok za odgovor</strong> za ovaj zahtjev. Uz produženje, trebali bi odgovoriti najkasnije do {{response_date}}"
