@@ -134,6 +134,23 @@ Rails.configuration.to_prepare do
           end
           transferred && event_type == 'response'
         end
+
+        def is_transferred?
+          transferred = false
+          # A response is a transferred only if it's the first
+          # response when the request is in a state of transferred
+          previous_events(:reverse => true).each do |event|
+            if event.described_state == 'transferred'
+              transferred = true
+              break
+            end
+            if event.event_type == 'response'
+              break
+            end
+          end
+          transferred && event_type == 'response'
+        end
+
     end
 
     PublicBody.class_eval do
