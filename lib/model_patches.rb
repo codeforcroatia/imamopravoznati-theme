@@ -115,6 +115,32 @@ Rails.configuration.to_prepare do
         end
     end
 
+    # Patch InfoRequestEvent
+    InfoRequestEvent.instance_eval do
+
+        # Transferrred request to another authority resets due date
+        def resets_due_dates?
+           is_request_sending? || is_clarification? || is_transferred?
+        end
+
+        def is_transferred?
+          waiting_clarification = false
+          # A follow up is a clarification only if it's the first
+          # follow up when the request is in a state of
+          # waiting for clarification
+          previous_events(:reverse => true).each do |event|
+            if event.described_state == 'transferred'
+              transferred = true
+              break
+            end
+            if event.event_type == 'response'
+              break
+            end
+          end
+          transferred && event_type == 'response'
+        end
+    end
+
     PublicBody.class_eval do
       # Return the domain part of an email address, canonicalised and with common
       # extra UK Government server name parts removed.
