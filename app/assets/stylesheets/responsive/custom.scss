@@ -884,6 +884,7 @@ input#reedit_button {
 .request-status-message--transferred,
 .request-status-message--payment_requested,
 .request-status-message--deadline_extended,
+.request-status-message--correction_asked,
 .request-status-message--waiting_classification {
   background-color: mix(#fff, $status-pending, 70%);
 }
