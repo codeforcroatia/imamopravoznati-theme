@@ -57,16 +57,16 @@ module RequestControllerCustomStates
     # called after the core describe_state code.  It should
     # end by raising an error if the status is unknown
     if info_request.calculate_status == 'referred'
-      flash[:notice] = _("Authority has closed your request and referred you to a different public body.")
+      flash[:notice] = _("Thank you for letting us know! Hopefully your appeal process with Information Commissioner will be finished soon and positive to your satisfaction.")
       redirect_to unhappy_url(info_request)
     elsif info_request.calculate_status == 'transferred'
-      flash[:notice] = _("Authority has transferred your request to a different public body.")
+      flash[:notice] = _("Original authority that received your request has transferred your request to a different public body. By law, new receiving authority should respond 15 days after they received your request.")
       redirect_to request_url(info_request)
     elsif info_request.calculate_status == 'payment_requested'
       flash[:notice] = _("Authority has requested you to pay material expenses incurred by the provision of information.")
       redirect_to request_url(info_request)
     elsif info_request.calculate_status == 'deadline_extended'
-      flash[:notice] = _("Hopefully your wait isn't too long. By law, you should get a response promptly, and normally in 30 days after they initially received your request.")
+      flash[:notice] = _("Hopefully your wait isn't too long. By law, you should get a response 30 days after they initially received your request.")
       redirect_to request_url(info_request)
     else
       raise "unknown calculate_status " + info_request.calculate_status

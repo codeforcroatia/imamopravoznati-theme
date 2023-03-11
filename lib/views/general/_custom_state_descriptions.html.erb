@@ -1,7 +1,7 @@
 <% if status == 'transferred' %>
   <%= _("{{public_body_url}} has replied saying <strong>they have " \
         "transferred the request</strong> to another public body. " \
-        "They should respond promptly and no later than {{response_date}}.",
+        "Receiving authority should respond promptly and no later than {{response_date}}.",
         :public_body_url => public_body_link(@info_request.public_body),
         :response_date => simple_date(@info_request.date_response_required_by)) %>
 <% elsif status == 'referred' %>
