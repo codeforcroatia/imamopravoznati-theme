@@ -1,12 +1,4 @@
 Rails.configuration.to_prepare do
-
-  ClassificationsController.class_eval do
-    # Redirect user on select Correction Requested to the new outgoing message
-    if @info_request.calculate_status == 'correction_asked'
-      redirect_to respond_to_last_url(@info_request)
-    end
-  end
-
   UserController.class_eval do
     require 'survey'
 

@@ -37,8 +37,6 @@ module InfoRequestCustomStates
         _("Payment requested.")
       elsif status == 'deadline_extended'
         _("Deadline extended.")
-      elsif status == 'correction_asked'
-        _("Asked for correction.")
       else
         raise _("unknown status ") + status
       end
@@ -48,7 +46,6 @@ module InfoRequestCustomStates
       return ['referred',
           'transferred',
           'payment_requested',
-          'correction_asked',
           'deadline_extended']
     end
   end
@@ -70,9 +67,6 @@ module RequestControllerCustomStates
       redirect_to request_url(info_request)
     elsif info_request.calculate_status == 'deadline_extended'
       flash[:notice] = _("Hopefully your wait isn't too long. By law, you should get a response 30 days after they initially received your request.")
-      redirect_to request_url(info_request)
-    elsif info_request.calculate_status == 'correction_asked'
-      flash[:notice] = _("Hopefully your wait isn't too long. By law, you should get a response 15 days after they received your request for correction.")
       redirect_to request_url(info_request)
     else
       raise "unknown calculate_status " + info_request.calculate_status

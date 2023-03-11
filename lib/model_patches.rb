@@ -44,7 +44,6 @@ Rails.configuration.to_prepare do
           {
             'referred' => _('Referred'),
             'transferred' => _('Transferred'),
-            'correction_asked' => _('Asked for correction'),
             'payment_requested' => _('Payment requested'),
             'deadline_extended' => _('Deadline extended')
           }[state]
@@ -56,12 +55,7 @@ Rails.configuration.to_prepare do
         end
 
         def waiting_response?
-            described_state == "waiting_response" ||
-              described_state == "deadline_extended" ||
-              described_state == "payment_requested" ||
-              described_state == "transferred" ||
-              described_state == "referred" ||
-              described_state == "correction_asked"
+            described_state == "waiting_response" || described_state == "deadline_extended" || described_state == "payment_requested" || described_state == "transferred" || described_state == "referred"
         end
 
         def has_extended_deadline?
@@ -124,12 +118,11 @@ Rails.configuration.to_prepare do
     # Patch InfoRequestEvent
     InfoRequestEvent.class_eval do
 
-        # Action events that reset due date
+        # Transferrred request to another authority resets due date
         def resets_due_dates?
-           is_request_sending? || is_clarification? || is_transferred? || is_correction_asked?
+           is_request_sending? || is_clarification? || is_transferred?
         end
 
-        # Transferrred request to another authority resets due date
         def is_transferred?
           transferred = false
           # A response is a transferred only if it's the first
@@ -144,23 +137,6 @@ Rails.configuration.to_prepare do
             end
           end
           transferred && event_type == 'response'
-        end
-
-        # User asked for a correction resets due date
-        def is_correction_asked?
-          correction_asked = false
-          # A response is a correction_asked only if it's the first
-          # response when the request is in a state of correction_asked
-          previous_events(:reverse => true).each do |event|
-            if event.described_state == 'transferred'
-              correction_asked = true
-              break
-            end
-            if event.event_type == 'response'
-              break
-            end
-          end
-          correction_asked && event_type == 'response'
         end
 
     end
