@@ -116,7 +116,7 @@ Rails.configuration.to_prepare do
     end
 
     # Patch InfoRequestEvent
-    InfoRequestEvent.instance_eval do
+    InfoRequestEvent.class_eval do
 
         # Transferrred request to another authority resets due date
         def resets_due_dates?
