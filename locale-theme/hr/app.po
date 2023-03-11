@@ -792,4 +792,4 @@ msgid "{{public_body_url}} has requested to <strong>pay material expenses</stron
 msgstr "{{public_body_url}} je zatražilo <strong>plaćanje stvarnih materijalnih troškova</strong> nastalih pružanjem informacija."
 
 msgid "{{public_body_name}} has asked for <strong>an extension of the deadline</strong> for this request. They should respond promptly and no later than {{response_date}}."
-msgstr "{{public_body_name}} je <strong>produžilo rok za odgovor</strong> za ovaj zahtjev. Uz produženje, trebali bi odgovoriti najkasnije do {{response_date}}"
+msgstr "{{public_body_url}} je <strong>produžilo rok za odgovor</strong> za ovaj zahtjev. Uz produženje, trebali bi odgovoriti najkasnije do {{response_date}}"
