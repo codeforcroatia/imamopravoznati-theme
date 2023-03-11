@@ -55,7 +55,7 @@ Rails.configuration.to_prepare do
         end
 
         def waiting_response?
-            described_state == "waiting_response" || described_state == "deadline_extended"
+            described_state == "waiting_response" || described_state == "deadline_extended" || described_state == "payment_requested" || described_state == "transferred" || described_state == "referred"
         end
 
         def has_extended_deadline?
