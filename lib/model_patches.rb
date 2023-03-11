@@ -123,17 +123,17 @@ Rails.configuration.to_prepare do
            is_request_sending? || is_clarification? || is_transferred?
         end
 
-        def is_transferred?
-          transferred = false
-          # A response is a transferred candidate only if it's the response
-          previous_events(:reverse => true).each do |event|
-            if event.event_type == 'response' && event.described_state == 'transferred'
-              transferred = true
-              break
-            end
-          end
-          transferred && event_type == 'response'
-        end
+        # def is_transferred?
+        #   transferred = false
+        #   # A response is a transferred candidate only if it's the response
+        #   previous_events(:reverse => true).each do |event|
+        #     if event.event_type == 'response' && event.described_state == 'transferred'
+        #       transferred = true
+        #       break
+        #     end
+        #   end
+        #   transferred && event_type == 'response'
+        # end
 
         def is_transferred?
           transferred = false
