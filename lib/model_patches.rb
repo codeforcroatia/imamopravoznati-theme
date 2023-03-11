@@ -125,13 +125,10 @@ Rails.configuration.to_prepare do
 
         def is_transferred?
           transferred = false
-          # A response is a transferred on user classify
+          # A response is a transferred candidate only if it's the response
           previous_events(:reverse => true).each do |event|
-            if event.described_state == 'transferred'
+            if event.event_type == 'response' && event.described_state == 'transferred'
               transferred = true
-              break
-            end
-            if event.event_type == 'response'
               break
             end
           end
