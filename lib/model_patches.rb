@@ -88,7 +88,7 @@ Rails.configuration.to_prepare do
             Holiday.due_date_from(date_initial_request_last_sent_at,
                                   reply_very_late_after_days,
                                   AlaveteliConfiguration::working_or_calendar_days)
-        end        
+        end
 
         def email_subject_request(opts = {})
             html = opts.fetch(:html, true)
@@ -121,6 +121,18 @@ Rails.configuration.to_prepare do
         # Transferrred request to another authority resets due date
         def resets_due_dates?
            is_request_sending? || is_clarification? || is_transferred?
+        end
+
+        def is_transferred?
+          transferred = false
+          # A response is a transferred candidate only if it's the response
+          previous_events(:reverse => true).each do |event|
+            if event.event_type == 'response' && event.described_state == 'transferred'
+              transferred = true
+              break
+            end
+          end
+          transferred && event_type == 'response'
         end
 
         def is_transferred?
