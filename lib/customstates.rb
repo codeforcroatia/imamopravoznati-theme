@@ -66,9 +66,7 @@ module RequestControllerCustomStates
       flash[:notice] = _("Authority has requested you to pay material expenses incurred by the provision of information.")
       redirect_to request_url(info_request)
     elsif info_request.calculate_status == 'deadline_extended'
-      flash[:notice] = _("Hopefully your wait isn't too long. By law, you should get a response promptly, and normally before the end of <strong>
-      {{date_response_required_by}}</strong>.",
-        :date_response_required_by => simple_date(info_request.date_response_required_by))
+      flash[:notice] = _("Hopefully your wait isn't too long. By law, you should get a response promptly, and normally in 30 days after they initially received your request.")
       redirect_to request_url(info_request)
     else
       raise "unknown calculate_status " + info_request.calculate_status
