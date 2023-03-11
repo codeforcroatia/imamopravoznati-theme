@@ -23,6 +23,13 @@
         :public_body_name => @info_request.public_body.name,
         :public_body_url => public_body_link(@info_request.public_body),
         :response_date => simple_date(@info_request.date_response_required_by)) %>
+<% elsif status == 'correction_asked' %>
+  <%= _("{{user}} has asked {{public_body_url}} to <strong>correct their response</strong>. " \
+        "They should respond promptly and no later than {{response_date}}.",
+        :user => request_user_link(@info_request, _('An anonymous user')),
+        :public_body_name => @info_request.public_body.name,
+        :public_body_url => public_body_link(@info_request.public_body),
+        :response_date => simple_date(@info_request.date_response_required_by)) %>
 <% else %>
   <% raise "unknown status " + status %>
 <% end %>
