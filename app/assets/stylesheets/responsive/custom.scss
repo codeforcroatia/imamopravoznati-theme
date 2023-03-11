@@ -812,6 +812,7 @@ input#reedit_button {
 
 /* Status lines and icons */
 
+.icon_correction_asked,
 .icon_deadline_extended,
 .icon_waiting_response,
 .icon_waiting_clarification {
@@ -848,6 +849,7 @@ input#reedit_button {
 .icon_transferred,
 .icon_payment_requested,
 .icon_deadline_extended,
+.icon_correction_asked,
 .icon_user_withdrawn {
   color: $status-pending;
 }
