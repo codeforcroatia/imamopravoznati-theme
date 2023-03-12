@@ -1,4 +1,18 @@
 Rails.configuration.to_prepare do
+
+  ClassificationsController.class_eval do
+    # Adding a controller patch for correction asked
+    # Based on: https://github.com/mysociety/alaveteli/blob/hotfix/0.39.1.5/app/controllers/classifications_controller.rb#L81
+    def create
+      # existing code goes here
+
+      case calculated_status
+      when 'correction_asked'
+        redirect_to respond_to_last_url(@info_request)
+      end
+    end
+  end
+
   UserController.class_eval do
     require 'survey'
 
