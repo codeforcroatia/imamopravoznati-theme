@@ -133,6 +133,9 @@
       <% if @internal_review %>
         <%= hidden_field_tag 'outgoing_message[what_doing]',
                              'internal_review' %>
+      <% elsif @new_information %>
+        <%= hidden_field_tag 'outgoing_message[what_doing]',
+                             'normal_sort' %>
       <% else %>
         <h3><%= _('What are you doing?') %></h3>
 
