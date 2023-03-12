@@ -1,0 +1,21 @@
+<% id_suffix ||= '' %>
+
+<div>
+  <%= classification_radio_button 'correction_asked', id_suffix: id_suffix %>
+  <%= classification_label('correction_asked', _('I want to ask for <strong>correction</strong> to the response received'), id_suffix: id_suffix) %>
+</div>
+
+<div>
+  <%= classification_radio_button 'transferred', id_suffix: id_suffix %>
+  <%= classification_label('transferred', _('Authority has <strong>transferred your request</strong> to another public body'), id_suffix: id_suffix) %>
+</div>
+
+<div>
+  <%= classification_radio_button 'deadline_extended', id_suffix: id_suffix %>
+  <%= classification_label('deadline_extended', _('Authority has <strong>extended the deadline</strong> for your request'), id_suffix: id_suffix) %>
+</div>
+
+<div>
+  <%= classification_radio_button 'payment_requested', id_suffix: id_suffix %>
+  <%= classification_label('payment_requested', _('Authority has requested you to <strong>pay material expenses</strong> incurred by the provision of information'), id_suffix: id_suffix) %>
+</div>

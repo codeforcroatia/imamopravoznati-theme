@@ -757,3 +757,78 @@ msgstr "Poruka od {{request_sent_date}} <strong>ponovno poslana</strong> za {{pu
 
 msgid "using a new contact address"
 msgstr "na drugu adresu elektroničke pošte"
+
+msgid "Referred"
+msgstr "Drugostupanjski postupak"
+
+msgid "Transferred"
+msgstr "Ustupljeno"
+
+msgid "Payment requested"
+msgstr "Zatražena naplata"
+
+msgid "Deadline extended"
+msgstr "Produženje roka"
+
+msgid "Referred."
+msgstr "Drugostupanjski postupak."
+
+msgid "Transferred."
+msgstr "Ustupljeno."
+
+msgid "Payment requested."
+msgstr "Zatražena naplata."
+
+msgid "Deadline extended."
+msgstr "Produženje roka."
+
+msgid "Thank you for letting us know! Hopefully your appeal process with Information Commissioner will be finished soon and positive to your satisfaction."
+msgstr "Hvala vam što ste nas obavijestili! Nadamo se da će vaš žalbeni postupak kod Povjerenika za informiranje biti uskoro završen i pozitivan na vaše zadovoljstvo."
+
+msgid "Original authority that received your request has transferred your request to a different public body. By law, new receiving authority should respond 15 days after they received your request."
+msgstr "Izvorno tijelo koje je zaprimilo vaš zahtjev nema traženu informaciju ali ima saznanja da drugo tijelo ima informaciju te su ustupili zahtjev drugom tijelu javne vlasti. Prema zakonu, novo tijelo koje prima zahtjev mora odgovoriti 15 dana nakon što zaprimi ustupljeni zahtjev."
+
+msgid "Authority has requested you to pay material expenses incurred by the provision of information."
+msgstr "Tijelo javne vlasti je od vas zatražilo plaćanje stvarnih materijalnih troškova nastalih pružanjem informacija."
+
+msgid "Hopefully your wait isn't too long. By law, you should get a response 30 days after they initially received your request."
+msgstr "Nadamo se da nećete predugo čekati. Prema zakonu, trebali biste dobiti odgovor 30 dana nakon što su prvobitno zaprimili vaš zahtjev."
+
+msgid "Authority has <strong>transferred your request</strong> to another public body"
+msgstr "Obavijestili su da je <strong>zahtjev ustupljen</strong> drugom tijelu javne vlasti"
+
+msgid "Authority has <strong>extended the deadline</strong> for your request"
+msgstr "Obavijestili su da <strong>produžuju rok</strong> za odgovor"
+
+msgid "Authority has requested you to <strong>pay material expenses</strong> incurred by the provision of information"
+msgstr "Zatražili su <strong>plaćanje stvarnih materijalnih troškova</strong> nastalih pružanjem informacija"
+
+msgid "I have <strong>started appeal to Information Commissioner</strong> to resolve this request"
+msgstr "Pokrenuo sam <strong>žalidbeni postupak Povjereniku za informiranje</strong> da riješi ovaj zahtjev"
+
+msgid "{{public_body_url}} has replied saying <strong>they have transferred the request</strong> to another public body. Receiving authority should respond promptly and no later than {{response_date}}."
+msgstr "{{public_body_url}} je <strong>ustupio zahtjev</strong> drugom tijelu javne vlasti. Naslovljeno tijelo koje je zaprimilo dopis treba odgovoriti najkasnije do {{response_date}}"
+
+msgid "{{user}} has referred to the Information Commissioner for <strong>appeal process</strong>."
+msgstr "{{user}} je uputio predmet Povjereniku za informiranje na <strong>drugostupanjski postupak</strong>."
+
+msgid "{{public_body_url}} has requested to <strong>pay material expenses</strong> incurred by the provision of information."
+msgstr "{{public_body_url}} je zatražilo <strong>plaćanje stvarnih materijalnih troškova</strong> nastalih pružanjem informacija."
+
+msgid "{{public_body_url}} has asked for <strong>an extension of the deadline</strong> for this request. They should respond promptly and no later than {{response_date}}."
+msgstr "{{public_body_url}} je <strong>produžilo rok za odgovor</strong> za ovaj zahtjev. Uz produženje, trebali bi odgovoriti najkasnije do {{response_date}}"
+----
+msgid "Asked for correction"
+msgstr "Zatražena dopuna i ispravak"
+
+msgid "Asked for correction."
+msgstr "Zatražena dopuna i ispravak informacije."
+
+msgid "I want to ask for <strong>correction</strong> to the response received"
+msgstr "Želim zatražiti da <strong>dopune i isprave</strong> informaciju koju su dostavili"
+
+msgid "Hopefully your wait isn't too long. By law, you should get a response 15 days after they received your request for correction."
+msgstr "Nadamo se da nećete predugo čekati ispravak i dopunu informacije koju su ranije dostavili. Prema zakonu, trebali biste dobiti odgovor 15 dana nakon što su primili vaš zahtjev za ispravak."
+
+msgid "{{user}} has asked {{public_body_url}} to <strong>correct their response</strong>. They should respond promptly and no later than {{response_date}}."
+msgstr "{{user}} je zatražio od {{public_body_url}} da <strong>ispravi svoj odgovor</strong>. Trebali bi odgovoriti najkasnije do {{response_date}}."

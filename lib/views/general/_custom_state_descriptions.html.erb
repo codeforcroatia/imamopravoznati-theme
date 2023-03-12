@@ -1,0 +1,35 @@
+<% if status == 'transferred' %>
+  <%= _("{{public_body_url}} has replied saying <strong>they have " \
+        "transferred the request</strong> to another public body. " \
+        "Receiving authority should respond promptly and no later than {{response_date}}.",
+        :public_body_url => public_body_link(@info_request.public_body),
+        :public_body_name => @info_request.public_body.name,
+        :response_date => simple_date(@info_request.date_response_required_by)) %>
+<% elsif status == 'referred' %>
+  <%= _("{{user}} has referred to the Information " \
+        "Commissioner for <strong>appeal process</strong>.",
+        :user => request_user_link(@info_request, _('An anonymous user')),
+        :public_body_name => @info_request.public_body.name,
+        :public_body_url => public_body_link(@info_request.public_body)) %>
+<% elsif status == 'payment_requested' %>
+  <%= _("{{public_body_url}} has requested to <strong>pay material " \
+        "expenses</strong> incurred by the provision of information.",
+        :public_body_name => @info_request.public_body.name,
+        :public_body_url => public_body_link(@info_request.public_body)) %>
+<% elsif status == 'deadline_extended' %>
+  <%= _("{{public_body_url}} has asked for <strong>an extension of the " \
+        "deadline</strong> for this request. They should respond promptly and " \
+        "no later than {{response_date}}.",
+        :public_body_name => @info_request.public_body.name,
+        :public_body_url => public_body_link(@info_request.public_body),
+        :response_date => simple_date(@info_request.date_response_required_by)) %>
+<% elsif status == 'correction_asked' %>
+  <%= _("{{user}} has asked {{public_body_url}} to <strong>correct their response</strong>. " \
+        "They should respond promptly and no later than {{response_date}}.",
+        :user => request_user_link(@info_request, _('An anonymous user')),
+        :public_body_name => @info_request.public_body.name,
+        :public_body_url => public_body_link(@info_request.public_body),
+        :response_date => simple_date(@info_request.date_response_required_by)) %>
+<% else %>
+  <% raise "unknown status " + status %>
+<% end %>

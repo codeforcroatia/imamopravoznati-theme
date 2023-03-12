@@ -133,6 +133,10 @@
       <% if @internal_review %>
         <%= hidden_field_tag 'outgoing_message[what_doing]',
                              'internal_review' %>
+      <% elsif !@internal_review && !incoming_message.nil? %>
+        <!-- IPZ Custom states - we removed "what doing" from followup flow -->
+        <%= hidden_field_tag 'outgoing_message[what_doing]',
+                             'normal_sort' %>
       <% else %>
         <h3><%= _('What are you doing?') %></h3>
 

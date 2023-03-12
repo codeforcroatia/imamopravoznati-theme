@@ -812,6 +812,32 @@ input#reedit_button {
 
 /* Status lines and icons */
 
+.icon_correction_asked,
+.icon_deadline_extended,
+.icon_waiting_response,
+.icon_waiting_clarification {
+  @include status-icon();
+  background-position: -286px 0;
+}
+
+.icon_payment_requested,
+.icon_internal_review {
+  @include status-icon();
+  background-position: -220px 0;
+}
+
+.icon_referred,
+.icon_user_withdrawn {
+  @include status-icon();
+  background-position: -308px 0;
+}
+
+.icon_transferred,
+.icon_error_message {
+  @include status-icon();
+  background-position: -44px 0;
+}
+
 .icon_waiting_classification,
 .icon_waiting_response,
 .icon_waiting_clarification,
@@ -820,6 +846,10 @@ input#reedit_button {
 .icon_gone_postal,
 .icon_error_message,
 .icon_internal_review,
+.icon_transferred,
+.icon_payment_requested,
+.icon_deadline_extended,
+.icon_correction_asked,
 .icon_user_withdrawn {
   color: $status-pending;
 }
@@ -828,6 +858,7 @@ input#reedit_button {
 .icon_not_held,
 .icon_waiting_response_very_overdue,
 .icon_failed,
+.icon_referred,
 .icon_rejected {
   color: $status-failure;
 }
@@ -841,6 +872,32 @@ input#reedit_button {
   color: #333;
   border-radius: 3px
 }
+
+.request-status-message--waiting_response,
+.request-status-message--waiting_clarification,
+.request-status-message--requires_admin,
+.request-status-message--waiting_response_overdue,
+.request-status-message--gone_postal,
+.request-status-message--error_message,
+.request-status-message--internal_review,
+.request-status-message--user_withdrawn,
+.request-status-message--transferred,
+.request-status-message--payment_requested,
+.request-status-message--deadline_extended,
+.request-status-message--correction_asked,
+.request-status-message--waiting_classification {
+  background-color: mix(#fff, $status-pending, 70%);
+}
+
+.request-status-message--not_held,
+.request-status-message--attention_requested,
+.request-status-message--waiting_response_very_overdue,
+.request-status-message--failed,
+.request-status-message--referred,
+.request-status-message--rejected {
+  background-color: mix(#fff, $status-failure, 70%);
+}
+
 
 /* Attachments*/
 .attachments {
