@@ -56,6 +56,8 @@ Rails.configuration.to_prepare do
           }
       end
 
+      @@custom_states_loaded = true
+
       case calculated_status
       when 'waiting_response', 'waiting_response_overdue', 'not_held',
         'successful', 'internal_review', 'error_message', 'requires_admin'
