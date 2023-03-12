@@ -3,7 +3,7 @@ Rails.configuration.to_prepare do
   ClassificationsController.class_eval do
     # Patching classification controller
     def create
-      # existing code from the ClassigivationController
+      # existing code from the ClassificationsController
       set_last_request(@info_request)
 
       if params[:last_info_request_event_id].to_i != @info_request.
