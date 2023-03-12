@@ -133,7 +133,7 @@
       <% if @internal_review %>
         <%= hidden_field_tag 'outgoing_message[what_doing]',
                              'internal_review' %>
-      <% elsif @new_information %>
+      <% elsif !@internal_review %>
         <%= hidden_field_tag 'outgoing_message[what_doing]',
                              'normal_sort' %>
       <% else %>
