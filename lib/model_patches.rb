@@ -42,11 +42,11 @@ Rails.configuration.to_prepare do
     InfoRequest.class_eval do
         def self.theme_short_description(state)
           {
-            'referred' => _('Referred'),
-            'transferred' => _('Transferred'),
             'correction_asked' => _('Asked for correction'),
+            'deadline_extended' => _('Deadline extended'),
             'payment_requested' => _('Payment requested'),
-            'deadline_extended' => _('Deadline extended')
+            'referred' => _('Referred'),
+            'transferred' => _('Transferred')
           }[state]
         end
 
@@ -58,9 +58,7 @@ Rails.configuration.to_prepare do
         def waiting_response?
             described_state == "waiting_response" ||
               described_state == "deadline_extended" ||
-              described_state == "payment_requested" ||
               described_state == "transferred" ||
-              described_state == "referred" ||
               described_state == "correction_asked"
         end
 
@@ -210,7 +208,7 @@ Rails.configuration.to_prepare do
             @info_request = info_request
             mail(:to => user.name_and_email,
                  :from => contact_from_name_and_email,
-                 :subject => "Can you help us improve WhatDoTheyKnow?")
+                 :subject => "Can you help us improve ImamoPravoZnati?")
         end
 
         module ClassMethods
@@ -290,9 +288,9 @@ Rails.configuration.to_prepare do
 
       validates_acceptance_of :understand,
                               :message => N_("Please confirm that you " \
-                                             "understand that WhatDoTheyKnow " \
+                                             "understand that ImamoPravoZnati " \
                                              "is not run by the government, " \
-                                             "and the WhatDoTheyKnow " \
+                                             "and the ImamoPravoZnati " \
                                              "volunteers cannot help you " \
                                              "with personal matters relating " \
                                              "to government services.")
