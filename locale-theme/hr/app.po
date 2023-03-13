@@ -832,3 +832,11 @@ msgstr "Nadamo se da nećete predugo čekati ispravak i dopunu informacije koju 
 
 msgid "{{user}} has asked {{public_body_url}} to <strong>correct their response</strong>. They should respond promptly and no later than {{response_date}}."
 msgstr "{{user}} je zatražio od {{public_body_url}} da <strong>ispravi svoj odgovor</strong>. Trebali bi odgovoriti najkasnije do {{response_date}}."
+
+# Overrides Core translations (temporary for 0.39.0.0) - START
+msgid "You can <strong>complain</strong> by"
+msgstr "Možete ih <strong>požuriti</strong> tako da"
+
+msgid "requesting an internal review"
+msgstr "pošaljete požurnicu"
+# Overrides Core translations (temporary for 0.39.0.0) - END
