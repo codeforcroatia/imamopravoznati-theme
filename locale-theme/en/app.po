@@ -1,2 +1,14 @@
 msgid "simple_date_format"
 msgstr "%e %B %Y"
+
+#. Overrides Core translations (permanent for ImamoPravoZnati)
+msgid "Awaiting internal review."
+msgstr "Awaiting response to the rush note."
+
+#. Overrides Core translations (permanent for ImamoPravoZnati)
+msgid "Awaiting internal review"
+msgstr "Awaiting response to the rush note"
+
+#. Overrides Core translations (permanent for ImamoPravoZnati)
+msgid "I'm waiting for an <strong>internal review</strong> response"
+msgstr "I'm waiting for an <strong>rush note</strong> response"

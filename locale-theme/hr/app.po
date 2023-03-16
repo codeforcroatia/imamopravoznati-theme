@@ -848,3 +848,27 @@ msgstr "Po zakonu, {{public_body_link}} je <strong>trebao odgovoriti</strong>"
 #. Overrides Core translations (temporary for 0.39.0.0, until 0.43.0.0)
 msgid "by"
 msgstr "do"
+
+#. Overrides Core translations (temporary for 0.39.0.0, until 0.43.0.0)
+msgid "Has this request been referenced in a news article or academic paper?"
+msgstr "Je li ovaj zahtjev spomenut u novinskom članku ili akademskom radu?"
+
+#. Overrides Core translations (temporary for 0.39.0.0, until 0.43.0.0)
+msgid "Has this request been referenced in a news article or academic paper? Let us know:"
+msgstr "Je li ovaj zahtjev spomenut u novinskom članku ili akademskom radu? Javite nam:"
+
+#. Overrides Core translations (temporary for 0.39.0.0, until 0.43.0.0)
+msgid "Currently <strong>waiting for a response</strong> from {{public_body_link}}, they should respond promptly and"
+msgstr "Trenutno <strong>čeka odgovor</strong> {{public_body_link}}, trebaju odgovoriti"
+
+#. Overrides Core translations (temporary for 0.39.0.0, until 0.43.0.0)
+msgid "no later than"
+msgstr "do"
+
+#. Overrides Core translations (temporary for 0.39.0.0, until 0.43.0.0)
+msgid "I'm waiting for an <strong>internal review</strong> response"
+msgstr "Čekam odgovor na <strong>požurnicu</strong>"
+
+#. Overrides Core translations (temporary for 0.39.0.0, until 0.43.0.0)
+msgid "I'm still <strong>waiting</strong> for my information <small>(maybe you got an acknowledgement)</small>"
+msgstr "Još uvijek <strong>čekam</strong> dostavu informacija <small>(možda su potvrdili primitak)</small>"
