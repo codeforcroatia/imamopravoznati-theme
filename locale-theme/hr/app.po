@@ -801,7 +801,7 @@ msgid "Authority has <strong>extended the deadline</strong> for your request"
 msgstr "Obavijestili su da <strong>produžuju rok</strong> za odgovor"
 
 msgid "Authority has requested you to <strong>pay material expenses</strong> incurred by the provision of information"
-msgstr "Zatražili su <strong>plaćanje stvarnih materijalnih troškova</strong> nastalih pružanjem informacija"
+msgstr "Zatražili su <strong>plaćanje stvarnih materijalnih troškova</strong> <small>nastalih pružanjem informacija</small>"
 
 msgid "I have <strong>started appeal to Information Commissioner</strong> to resolve this request"
 msgstr "Pokrenuo sam <strong>žalidbeni postupak Povjereniku za informiranje</strong> da riješi ovaj zahtjev"
