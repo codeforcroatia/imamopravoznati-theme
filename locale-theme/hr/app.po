@@ -817,7 +817,7 @@ msgstr "{{public_body_url}} je zatražilo <strong>plaćanje stvarnih materijalni
 
 msgid "{{public_body_url}} has asked for <strong>an extension of the deadline</strong> for this request. They should respond promptly and no later than {{response_date}}."
 msgstr "{{public_body_url}} je <strong>produžilo rok za odgovor</strong> za ovaj zahtjev. Uz produženje, trebali bi odgovoriti najkasnije do {{response_date}}"
-----
+
 msgid "Asked for correction"
 msgstr "Zatražena dopuna i ispravak"
 
@@ -833,16 +833,18 @@ msgstr "Nadamo se da nećete predugo čekati ispravak i dopunu informacije koju 
 msgid "{{user}} has asked {{public_body_url}} to <strong>correct their response</strong>. They should respond promptly and no later than {{response_date}}."
 msgstr "{{user}} je zatražio od {{public_body_url}} da <strong>ispravi svoj odgovor</strong>. Trebali bi odgovoriti najkasnije do {{response_date}}."
 
-# Overrides Core translations (temporary for 0.39.0.0) - START
+#. Overrides Core translations (temporary for 0.39.0.0)
 msgid "You can <strong>complain</strong> by"
 msgstr "Možete ih <strong>požuriti</strong> tako da"
 
+#. Overrides Core translations (temporary for 0.39.0.0)
 msgid "requesting an internal review"
 msgstr "pošaljete požurnicu"
 
+#. Overrides Core translations (temporary for 0.39.0.0)
 msgid "By law, {{public_body_link}} should normally have responded <strong>promptly</strong> and"
 msgstr "Po zakonu, {{public_body_link}} je <strong>trebao odgovoriti</strong>"
 
+#. Overrides Core translations (temporary for 0.39.0.0)
 msgid "by"
 msgstr "do"
-# Overrides Core translations (temporary for 0.39.0.0) - END
