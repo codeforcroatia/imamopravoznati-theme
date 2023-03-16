@@ -28,3 +28,11 @@ msgstr "Send follow ups (or request rush note)."
 #. Overrides Core translations (permanent for ImamoPravoZnati)
 msgid "requesting an internal review"
 msgstr "requesting an rush note"
+
+#. Overrides Core translations (permanent for ImamoPravoZnati)
+msgid "I am writing to request an internal review of {{public_body_name}}'s handling of my FOI request '{{info_request_title}}'."
+msgstr "I am writing to request an rush note of {{public_body_name}}'s handling of my FOI request '{{info_request_title}}'."
+
+#. Overrides Core translations (permanent for ImamoPravoZnati)
+msgid "Click on the link below to send a message to {{public_body_name}} telling them to reply to your request. You might like to ask for an internal review, asking them to find out why response to the request has been so slow."
+msgstr "Click on the link below to send a message to {{public_body_name}} telling them to reply to your request. You might like to ask for an rush note, asking them to find out why response to the request has been so slow."
