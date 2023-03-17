@@ -845,7 +845,6 @@ input#reedit_button {
 .icon_waiting_response_overdue,
 .icon_gone_postal,
 .icon_error_message,
-.icon_internal_review,
 .icon_transferred,
 .icon_payment_requested,
 .icon_deadline_extended,
@@ -857,6 +856,7 @@ input#reedit_button {
 .icon_attention_requested,
 .icon_not_held,
 .icon_waiting_response_very_overdue,
+.icon_internal_review,
 .icon_failed,
 .icon_referred,
 .icon_rejected {
@@ -879,7 +879,6 @@ input#reedit_button {
 .request-status-message--waiting_response_overdue,
 .request-status-message--gone_postal,
 .request-status-message--error_message,
-.request-status-message--internal_review,
 .request-status-message--user_withdrawn,
 .request-status-message--transferred,
 .request-status-message--payment_requested,
@@ -892,6 +891,7 @@ input#reedit_button {
 .request-status-message--not_held,
 .request-status-message--attention_requested,
 .request-status-message--waiting_response_very_overdue,
+.request-status-message--internal_review,
 .request-status-message--failed,
 .request-status-message--referred,
 .request-status-message--rejected {
