@@ -820,8 +820,17 @@ input#reedit_button {
   background-position: -286px 0;
 }
 
-.icon_payment_requested,
+.icon_waiting_response_overdue {
+  @include status-icon();
+  background-position: -22px 0;
+}
+
 .icon_internal_review {
+  @include status-icon();
+  background-position: -198px 0;
+}
+
+.icon_payment_requested {
   @include status-icon();
   background-position: -220px 0;
 }
