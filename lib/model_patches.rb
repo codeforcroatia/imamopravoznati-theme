@@ -59,6 +59,7 @@ Rails.configuration.to_prepare do
             described_state == "waiting_response" ||
               described_state == "deadline_extended" ||
               described_state == "transferred" ||
+              described_state == "internal_review" ||
               described_state == "correction_asked"
         end
 
