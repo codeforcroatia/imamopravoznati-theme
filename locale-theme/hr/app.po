@@ -804,7 +804,7 @@ msgid "Authority has requested you to <strong>pay material expenses</strong> inc
 msgstr "Zatražili su <strong>plaćanje stvarnih materijalnih troškova</strong> <small>nastalih pružanjem informacija</small>"
 
 msgid "I have <strong>started appeal to Information Commissioner</strong> to resolve this request"
-msgstr "Pokrenuo sam <strong>žalidbeni postupak Povjereniku za informiranje</strong> da riješi ovaj zahtjev"
+msgstr "Pokrenut je <strong>žalidbeni postupak kod Povjerenika za informiranje</strong> <small>da riješi ovaj zahtjev</small>"
 
 msgid "{{public_body_url}} has replied saying <strong>they have transferred the request</strong> to another public body. Receiving authority should respond promptly and no later than {{response_date}}."
 msgstr "{{public_body_url}} je <strong>ustupio zahtjev</strong> drugom tijelu javne vlasti. Naslovljeno tijelo koje je zaprimilo dopis treba odgovoriti najkasnije do {{response_date}}"
