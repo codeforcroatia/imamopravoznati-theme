@@ -1,10 +1,10 @@
 /* Front page stats */
 
-$color_deep_orange: #DC560A;
-$color_orange: #FF7A00;
+$color_deep_orange: $color_mid_grey;
+$color_orange: $color_yellow;
 
 .homepage-stats {
-    background-color: #552EBA;
+    background-color: $color_blue;
     color: #fff;
 
     padding: 38px 0.9375rem 60px;
