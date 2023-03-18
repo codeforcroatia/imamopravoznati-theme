@@ -1,0 +1,78 @@
+<div class="homepage-stats">
+  <div class="row firstline clearfix">
+
+        <div class="stats__intro">
+          <h2><%= _("Browse requests") %> </h2>
+          <div class="description">
+            ყველა მოქალაქეს აქვს უფლება გამოითხოვოს ინფორმაცია, რომელსაც საჯარო დაწესებულებები ფლობენ. კანონი მათ ავალდებულებთ, რომ საჯარო ინფორმაცია გასცენ დაუყონებლივ ან არა უგვიანეს 10 დღისა.
+          </div>
+        </div>
+
+        <div class="stats__browse">
+
+            <%= link_to list_public_bodies_default_path, class: "building" do %>
+              <span class="count"><%= number_with_delimiter(@number_of_authorities) %></span>
+              <span class="title"><%= _("public bodies") %></span>
+            <% end %>
+            <%= link_to request_list_all_path, class: "envelope" do %>
+              <span class="count"><%= number_with_delimiter(@number_of_requests) %></span>
+              <span class="title"><%= _("info requests") %></span>
+              <% end %>
+
+        </div>
+
+  </div>
+
+  <div class="row tops clearfix">
+
+    <% if @top_bodies %>
+      <div class="list">
+        <h3><%= _("Top authorities") %></h3>
+
+        <% @top_bodies.each do |body| %>
+          <%= link_to public_body_path(body) do %>
+              <div class="circle">
+                <span class="numb"><%= body.info_requests_count %></span>
+                <span class="subtit"><%= _("requests") %></span>
+              </div>
+              <div class="title"><%= body.name %></div>
+          <% end %>
+        <% end %>
+
+      </div>
+    <% end %>
+
+    <% if @top_users %>
+      <div class="list">
+        <h3><%= _("Top users") %></h3>
+
+        <% @top_users.each do |user| %>
+          <%= link_to user_path(user) do %>
+            <div class="circle">
+              <span class="numb"><%= user.info_requests_count %></span>
+              <span class="subtit"><%= _("users") %></span>
+            </div>
+            <div class="title"><%= user.name %></div>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+    <% if @top_requests %>
+      <div class="list">
+        <h3><%= _("Top requests") %></h3>
+
+        <% @top_requests.each do |request| %>
+          <%= link_to request_path(request) do %>
+            <div class="circle">
+              <span class="numb"><%= request.track_things.count %></span>
+              <span class="subtit"><%= _("followers") %></span>
+            </div>
+            <div class="title"><%= request.title %></div>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+
+  </div>
+
+</div>

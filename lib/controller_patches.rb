@@ -205,4 +205,34 @@ Rails.configuration.to_prepare do
     end
   end
 
+  class GeneralController < ApplicationController
+    def frontpage
+  		medium_cache
+  		@locale = AlaveteliLocalization.locale
+  		successful_query = InfoRequestEvent.make_query_from_params( :latest_status => ['successful'] )
+  		@request_events, @request_events_all_successful = InfoRequest.recent_requests
+  		@track_thing = TrackThing.create_track_for_search_query(successful_query)
+  		@number_of_requests = InfoRequest.is_searchable.count
+  		@number_of_authorities = PublicBody.visible.count
+  		@feed_autodetect = [ { :url => do_track_url(@track_thing, 'feed'),
+  							   :title => _('Successful requests'),
+  							   :has_json => true } ]
+  		@top_users = User.all.order("info_requests_count DESC").limit(3)
+  		@top_bodies = PublicBody.all.order("info_requests_count DESC").limit(3)
+  		@top_requests = InfoRequest.is_public.joins(:track_things).group(:id).order('COUNT(track_things.id) DESC').limit(3)
+
+    end
+  end
+  # Example adding an instance variable to the frontpage controller
+  # GeneralController.class_eval do
+  #   def mycontroller
+  #     @say_something = "Greetings friend"
+  #   end
+  # end
+  # Example adding a new action to an existing controller
+  # HelpController.class_eval do
+  #   def help_out
+  #   end
+  # end
+
 end
