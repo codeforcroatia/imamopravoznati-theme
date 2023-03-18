@@ -6,10 +6,11 @@
   request_link = false unless defined?(request_link)
 %>
 
-<% category_name = PublicBodyCategory.get.by_tag[params[:tag]] %>
-<% if ( category_name && category_name != 'defunct' && public_body.not_requestable_reason != 'defunct' ) || !(category_name) %>
 <div class="body_listing">
   <div class="head body-listing__header">
+    <% if public_body.not_requestable_reason == 'defunct' %>
+      <%= _('Defunct.')%>
+    <% end %>
     <%= link_to highlight_words(public_body.name, @highlight_words), public_body_path(public_body) %>
   </div>
   <div class="desc body-listing__description">
@@ -25,8 +26,6 @@
       <% if public_body.special_not_requestable_reason? %>
         <% if public_body.not_requestable_reason == 'not_apply' %>
           <%= _('FOI law does not apply to this authority.')%>
-        <% elsif public_body.not_requestable_reason == 'defunct' %>
-          <%= _('Defunct.')%>
         <% end %>
       <% end %>
     <% end %>
@@ -44,4 +43,3 @@
     </div>
   <% end %>
 </div>
-<% end %>
