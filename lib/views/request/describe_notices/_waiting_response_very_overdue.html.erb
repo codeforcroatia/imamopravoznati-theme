@@ -11,6 +11,6 @@
   za pristup informacijama u propisanom roku otvorite sljedeću poveznicu:
 
   <center>
-  <%= link_to _("Pošaljite predstavku Povjereniku za informiranje"), help_foi_motion_path(:anchor => 'significanti'), :class => "button"  %>
+  <%= link_to _("Pošaljite predstavku Povjereniku za informiranje"), help_unhappy_path(@info_request.url_title, :anchor => 'refer-to-pi-notice'), :class => "button"  %>
   </center>
 </p>
