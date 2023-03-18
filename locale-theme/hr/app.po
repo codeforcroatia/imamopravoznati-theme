@@ -880,3 +880,7 @@ msgstr "Još uvijek <strong>čekam</strong> dostavu informacija <small>(možda s
 #. Overrides Core translations (temporary for 0.39.0.0, until 0.43.0.0)
 msgid "Actions"
 msgstr "Izbornk"
+
+#. Overrides Core translations (temporary for 0.39.0.0, until 0.43.0.0)
+msgid "Defunct."
+msgstr "Ukinuto."
