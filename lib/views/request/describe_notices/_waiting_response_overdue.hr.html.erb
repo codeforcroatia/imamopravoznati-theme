@@ -19,11 +19,11 @@
   <% end %>
 </p>
 <p>
-  Alternativno, možete se žaliti Povjereniku za informiranje jer nisu
+  Alternativno, možete podnijeti predstavku Povjereniku za informiranje jer nisu
   odgovorili na zahtjev za pristup informacijama u propisanom roku. Detalje
   možete saznati putem linka:
 
   <center>
-  <%= link_to _("Pogledajte kako podnijeti žalbu"), help_unhappy_path(:anchor => 'refer-to-pi'), :class => "button"  %>
+  <%= link_to _("Pogledajte kako podnijeti predstavku"), help_unhappy_path(@info_request.url_title, :anchor => 'refer-to-pi-notice'), :class => "button"  %>
   </center>
 </p>
