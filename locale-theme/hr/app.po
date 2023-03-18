@@ -873,5 +873,10 @@ msgstr "do"
 msgid "I'm waiting for an <strong>internal review</strong> response"
 msgstr "Čekam odgovor na <strong>požurnicu</strong>"
 
+#. Overrides Core translations (temporary for 0.39.0.0, until 0.43.0.0)
 msgid "I'm still <strong>waiting</strong> for my information <small>(maybe you got an acknowledgement)</small>"
 msgstr "Još uvijek <strong>čekam</strong> dostavu informacija <small>(možda su potvrdili primitak)</small>"
+
+#. Overrides Core translations (temporary for 0.39.0.0, until 0.43.0.0)
+msgid "Actions"
+msgstr "Izbornk"
