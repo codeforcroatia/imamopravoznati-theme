@@ -888,3 +888,7 @@ msgstr "Ukinuto."
 #. Overrides Core translations (temporary for 0.39.0.0, until 0.43.0.0)
 msgid "This authority no longer exists, so you cannot make a request to it."
 msgstr "Ovo tijelo javne vlasti više ne postoji. Zato nije moguće podnijeti novi zahtjev, ali možete pretraživati zahtjeve ranije poslane ovom tijelu."
+
+#. Overrides Core translations (temporary for 0.39.0.0, until 0.43.0.0)
+msgid "and"
+msgstr "i"
