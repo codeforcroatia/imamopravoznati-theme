@@ -1,8 +1,5 @@
 /* Front page stats */
 
-$color_deep_orange: $color_mid_grey;
-$color_orange: $color_yellow;
-
 .homepage-stats {
     background-color: $color_blue;
     color: #fff;
@@ -74,7 +71,7 @@ $color_orange: $color_yellow;
                 }
 
                 &:hover {
-                    background-color: $color_deep_orange;
+                    background-color: $color_mid_grey;
                 }
             }
         }
@@ -111,11 +108,11 @@ $color_orange: $color_yellow;
 
                 &:hover {
                     .circle {
-                        background-color: $color_orange;
-                        box-shadow: 0px 0px 0 0.5px $color_orange;
+                        background-color: $color_yellow;
+                        box-shadow: 0px 0px 0 0.5px $color_yellow;
                     }
                     .title {
-                        color: $color_orange;
+                        color: $color_yellow;
                     }
                 }
 
