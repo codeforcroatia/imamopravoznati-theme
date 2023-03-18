@@ -25,21 +25,6 @@
 
   <div class="row tops clearfix">
 
-    <div class="list">
-      <h3><%= _("Top authorities") %></h3>
-
-      <% @top_bodies.each do |body| %>
-        <%= link_to public_body_path(body) do %>
-            <div class="circle">
-              <span class="numb"><%= body.info_requests_count %></span>
-              <span class="subtit"><%= _("requests") %></span>
-            </div>
-            <div class="title"><%= body.name %></div>
-        <% end %>
-      <% end %>
-
-    </div>
-
     <% if @top_bodies %>
       <div class="list">
         <h3><%= _("Top authorities") %></h3>
