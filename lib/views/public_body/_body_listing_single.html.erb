@@ -6,7 +6,6 @@
   request_link = false unless defined?(request_link)
 %>
 
-<% if list_public_bodies_path(:tag) != 'defunct' && public_body.not_requestable_reason != 'defunct' %>
 <div class="body_listing">
   <div class="head body-listing__header">
     <%= link_to highlight_words(public_body.name, @highlight_words), public_body_path(public_body) %>
@@ -43,4 +42,3 @@
     </div>
   <% end %>
 </div>
-<% end %>
