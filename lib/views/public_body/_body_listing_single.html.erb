@@ -6,7 +6,8 @@
   request_link = false unless defined?(request_link)
 %>
 
-<% if @tag != 'defunct' && public_body.not_requestable_reason != 'defunct' %>
+<% category_name = PublicBodyCategory.get.by_tag[params[:tag]] %>
+<% if ( category_name && category_name != 'defunct' && public_body.not_requestable_reason != 'defunct' ) || !(category_name) %>
 <div class="body_listing">
   <div class="head body-listing__header">
     <%= link_to highlight_words(public_body.name, @highlight_words), public_body_path(public_body) %>
