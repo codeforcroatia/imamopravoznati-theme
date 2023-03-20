@@ -1,0 +1,11 @@
+<% unless AlaveteliConfiguration::ga_code.empty?  %>
+  <!-- Google tag (gtag.js) - Google Analytics GA 4-->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=<%= AlaveteliConfiguration::ga_code %>"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', '<%= AlaveteliConfiguration::ga_code %>', { 'anonymize_ip': true });
+  </script>
+<% end %>
