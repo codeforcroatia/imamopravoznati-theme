@@ -895,3 +895,9 @@ msgstr "Ovo tijelo javne vlasti više ne postoji. Zato nije moguće podnijeti no
 #. Overrides Core translations (temporary for 0.39.0.0, until 0.43.0.0)
 msgid "and"
 msgstr "i"
+
+msgid "Get help making a request"
+msgstr "Pročitajte pomoć pri podnošenju zahtjeva"
+
+msgid "see our beginner’s guide"
+msgstr "pogledajte naš vodič za pristup informacijama"
