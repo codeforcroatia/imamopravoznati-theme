@@ -1964,3 +1964,23 @@ $color_asktheeu_dark_green: #C4DDB9;
    padding-bottom: 1.5em;
    border-bottom: 1px solid $color_light_grey;
  }
+
+ /*
+  * Layout for pages in making a new request - customizations
+  * Overriding from core:
+  * https://github.com/mysociety/alaveteli/blob/hotfix/0.39.1.5/app/assets/stylesheets/responsive/_new_request_layout.scss#L4
+  */
+
+ /* /select_authority page */
+ #authority_selection {
+   max-width: 58em;
+
+   #query {
+     width: 70%;
+     width: calc(100% - 8em); // leave space for floated #submit button
+   }
+
+   input[type="submit"] {
+     float: right;
+   }
+ }
