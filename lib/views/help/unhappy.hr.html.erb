@@ -4,6 +4,10 @@
 <div class="unhappy-info">
   <% if !@info_request.nil? %>
 
+  <% if @info_request.embargo && @user %>
+  <p>EMBARGOED</p>
+  <% end %>
+
     <% if @info_request.embargo && @user %>
         <% if @user.id === @info_request.user_id %>
         <!-- Show to Pro user for their embargoed request -->
