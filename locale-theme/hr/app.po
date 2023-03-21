@@ -885,6 +885,7 @@ msgstr "Izbornk"
 msgid "Defunct."
 msgstr "Ukinuto."
 
+#. Overrides Core translations (temporary for 0.39.0.0, until 0.43.0.0+)
 msgid "Defunct:"
 msgstr "Ukinuto:"
 
