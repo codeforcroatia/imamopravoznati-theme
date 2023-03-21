@@ -6,14 +6,17 @@
 
     <% if @info_request.embargo && @user %>
         <% if @user.id === @info_request.user_id %>
-        <!-- Show to Pro user for their embargoed request -->
+            <!-- Show to Pro user for their embargoed request -->
             <h1>
               Nezadovoljni ste postupcima tijela u vašem predmetu prava na pristup
                 informacijama &mdash;
               <%= request_link(@info_request) %>?
             </h1>
         <% else %>
-        <!-- Reject to show embargoed request to non-Pro user -->
+            <!-- Reject to show embargoed request to non-Pro user -->
+            <div id="error">
+              Nismo pronašli vezani zahtjev.
+            </div>
             <h1>
               Nezadovoljni ste postupcima tijela u vašem predmetu prava na pristup
               informacijama?
@@ -21,6 +24,11 @@
         <% end %>
     <% elsif @info_request.embargo %>
         <!-- Reject to show embargoed request to non-Pro user -->
+        <div id="error">
+          Nismo pronašli vezani zahtjev. Ako ste Pro korisnik,
+          <%= link_to _("prijavite se"), signin_path(:r => request.fullpath), :class => "" %>,
+          zatim ponovno učitajte poveznicu.
+        </div>
         <h1>
           Nezadovoljni ste postupcima tijela u vašem predmetu prava na pristup
           informacijama?
