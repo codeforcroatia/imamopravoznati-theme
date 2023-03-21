@@ -117,6 +117,8 @@ Ukoliko vam je, kao službeniku za pravo na pristup informacijama, ova usluga ko
                         :request_title => @info_request.title,
                         :request_slug => @info_request.url_title,
                         :requester_name => @info_request.user.name,
+                        :outgoing_message_delivery => @info_request.outgoing_messages.first.delivery_status,
+                        :outgoing_message_id => @info_request.outgoing_messages.first.id,
                         :request_email => @info_request.incoming_email,
                         :request_body => @info_request.outgoing_messages.first.body,
                         :request_sent_ts => @info_request.outgoing_messages.first.last_sent_at),

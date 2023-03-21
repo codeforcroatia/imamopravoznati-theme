@@ -73,6 +73,7 @@
 izjavljujem predstavku na rad tijela javne vlasti {{body_name}}.
 
 Tijelo javne vlasti nije odgovorilo na zahtjev za ponovnu uporabu informacija '{{request_title}}' u propisanom roku do {{request_due_date}} čime je povrijedilo odredbe članka 29. stavka 2. Zakona o pravu na pristup informacijama (Narodne novine, broj 25/13, 85/15 i 69/22). Kao dokaz dostavljam link zahtjeva: https://imamopravoznati.org/request/{{request_slug}}
+Status isporuke odlazne email poruke je '{{outgoing_message_delivery}}' a detalji su dostupni na linku: https://imamopravoznati.org/outgoing_messages/{{outgoing_message_id}}/delivery_status
 
 Predlažem Povjereniku za informiranje da u postupku po ovoj predstavci napravi inspekcijski nadzor tijela javne vlasti.
 
@@ -118,6 +119,8 @@ Ukoliko vam je, kao službeniku za pravo na pristup informacijama, ova usluga ko
                         :request_slug => @info_request.url_title,
                         :requester_name => @info_request.user.name,
                         :request_email => @info_request.incoming_email,
+                        :outgoing_message_delivery => @info_request.outgoing_messages.first.delivery_status,
+                        :outgoing_message_id => @info_request.outgoing_messages.first.id,
                         :request_body => @info_request.outgoing_messages.first.body,
                         :request_sent_ts => @info_request.outgoing_messages.first.last_sent_at,
                         :request_due_date => @info_request.date_response_required_by,
