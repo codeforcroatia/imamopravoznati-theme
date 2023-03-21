@@ -85,7 +85,7 @@ Srdačan pozdrav,
 From: {{requester_name}} <{{request_email}}>
 Date: {{request_sent_ts}}
 Subject: {{request_title}}
-To: {{body_name}}
+To: {{body_name}} <{{body_email}}>
 
 {{request_body}}
 
@@ -113,6 +113,7 @@ Ukoliko vam je, kao službeniku za pravo na pristup informacijama, ova usluga ko
 -------------------------------------------------------------------",
                         :body_name => @info_request.public_body.name,
                         :body_slug => @info_request.public_body.url_name,
+                        :body_email => @info_request.public_body.request_email.html_safe,
                         :request_title => @info_request.title,
                         :request_slug => @info_request.url_title,
                         :requester_name => @info_request.user.name,
