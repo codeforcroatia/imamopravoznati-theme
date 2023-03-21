@@ -1,6 +1,7 @@
 <% @title = "Unsatisfied with an access to information request?" %>
 <p>
-  <% @info_request.public_body.request_email.html_safe %>
+  Email: <% @info_request.public_body.request_email.html_safe %><br>
+  Body: <% @info_request.public_body.name %>
 </p>
 
 <div id="left_column" class="left_column">
