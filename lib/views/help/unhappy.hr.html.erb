@@ -4,18 +4,20 @@
 <div class="unhappy-info">
   <% if !@info_request.nil? %>
 
-    <% if @info_request.embargo && @user.id === @info_request.user_id %>
-    <!-- Show to Pro user for their embargoed request -->
-        <h1>
-          Nezadovoljni ste postupcima tijela u vašem predmetu prava na pristup
-            informacijama &mdash;
-          <%= request_link(@info_request) %>?
-        </h1>
-    <% elsif @info_request.embargo %>
-    <!-- Show to non-Pro user for embargoed request -->
-        <% raise_error ActiveRecord::RecordNotFound %>
-        <h1>Nezadovoljni ste postupcima tijela u vašem predmetu prava na pristup
-          informacijama?</h1>
+    <% if @info_request.embargo && @user %>
+        <% if @user.id === @info_request.user_id %>
+        <!-- Show to Pro user for their embargoed request -->
+            <h1>
+              Nezadovoljni ste postupcima tijela u vašem predmetu prava na pristup
+                informacijama &mdash;
+              <%= request_link(@info_request) %>?
+            </h1>
+        <% else %>
+        <!-- Reject to show embargoed request to non-Pro user -->
+            <% raise_error ActiveRecord::RecordNotFound %>
+            <h1>Nezadovoljni ste postupcima tijela u vašem predmetu prava na pristup
+              informacijama?</h1>
+        <% end %>
     <% else %>
         <h1>
           Nezadovoljni ste postupcima tijela u vašem predmetu prava na pristup
