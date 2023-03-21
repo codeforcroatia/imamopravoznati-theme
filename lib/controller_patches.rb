@@ -118,6 +118,8 @@ Rails.configuration.to_prepare do
     def unhappy
       @country_code = AlaveteliConfiguration.iso_country_code
       @info_request = nil
+      # Patch to revert change done in 
+      # https://github.com/mysociety/alaveteli/commit/8da0a574cdd0ee170bf6301b524659d669176d93
       if params[:url_title]
         @info_request = InfoRequest.find_by_url_title!(params[:url_title])
       end
