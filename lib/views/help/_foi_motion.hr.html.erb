@@ -55,6 +55,15 @@
   izmjeniti tekst i napisati ako imate nešto za dodati vašem prigovoru.
 </p>
 
+<% if @info_request.embargo %>
+<p>
+  Vaš zahtjev je pod <strong>embargom</strong> te nije dostupan Povjereniku za
+  informiranje putem internetske poveznice. Uzmite u obzir da objavite zahtjev
+  kako bi Povjerenik za informiranje imao uvid u potpuno korespodenciju za ovaj
+  predmet.
+</p>
+<% end %>
+
     <div class="contact-page">
 
         <!-- START PART-1-->
