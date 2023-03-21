@@ -115,6 +115,18 @@ Rails.configuration.to_prepare do
 
     before_action :set_recaptcha_required, :only => [:contact, :foi_motion, :unhappy]
 
+    def unhappy
+      @country_code = AlaveteliConfiguration.iso_country_code
+      @info_request = nil
+      if params[:url_title]
+        @info_request = InfoRequest
+          #.not_embargoed
+            .find_by_url_title!(params[:url_title])
+      end
+
+      @refusal_advice = RefusalAdvice.default(@info_request)
+    end
+
     def foi_motion
       # if they clicked remove for link to request/body, remove it
       if params[:remove]
