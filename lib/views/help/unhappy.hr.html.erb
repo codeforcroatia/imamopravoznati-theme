@@ -18,7 +18,7 @@
             </h1>
         <% else %>
         <!-- Reject to show embargoed request to non-Pro user -->
-            <% raise_error ActiveRecord::RecordNotFound %>
+            <% raise ActiveRecord::RecordNotFound.new('Record not found') %>
             <h1>Nezadovoljni ste postupcima tijela u vašem predmetu prava na pristup
               informacijama?</h1>
         <% end %>
