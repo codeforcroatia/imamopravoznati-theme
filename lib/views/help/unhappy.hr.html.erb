@@ -4,10 +4,6 @@
 <div class="unhappy-info">
   <% if !@info_request.nil? %>
 
-  <% if @info_request.embargo %>
-  <p>EMBARGOED</p>
-  <% end %>
-
     <% if @info_request.embargo && @user %>
         <% if @user.id === @info_request.user_id %>
         <!-- Show to Pro user for their embargoed request -->
@@ -18,9 +14,17 @@
             </h1>
         <% else %>
         <!-- Reject to show embargoed request to non-Pro user -->
-            <h1>Nezadovoljni ste postupcima tijela u vašem predmetu prava na pristup
-              informacijama?</h1>
+            <h1>
+              Nezadovoljni ste postupcima tijela u vašem predmetu prava na pristup
+              informacijama?
+            </h1>
         <% end %>
+    <% elsif @info_request.embargo %>
+        <!-- Reject to show embargoed request to non-Pro user -->
+        <h1>
+          Nezadovoljni ste postupcima tijela u vašem predmetu prava na pristup
+          informacijama?
+        </h1>
     <% else %>
         <h1>
           Nezadovoljni ste postupcima tijela u vašem predmetu prava na pristup
@@ -31,8 +35,10 @@
 
   <% else %>
   <!-- Show for non-request unhappy page -->
-    <h1>Nezadovoljni ste postupcima tijela u vašem predmetu prava na pristup
-      informacijama?</h1>
+    <h1>
+      Nezadovoljni ste postupcima tijela u vašem predmetu prava na pristup
+      informacijama?
+    </h1>
   <% end %>
 
   <p>
