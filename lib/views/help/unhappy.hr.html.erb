@@ -3,7 +3,7 @@
 <div id="left_column" class="left_column">
 <div class="unhappy-info">
   <% if !@info_request.nil? %>
-    <% if info_request.embargo %>
+    <% if @info_request.embargo %>
           <p>Is embargoed</p>
     <% end %>
     <h1>
