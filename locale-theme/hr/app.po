@@ -940,6 +940,14 @@ msgid "Awaiting response."
 msgstr "Čeka odgovor"
 
 #. Overrides Core translations (temporary for 0.39.0.0, until 0.43.0.0)
+msgid "Information not held."
+msgstr "Ne posjeduju informacije"
+
+#. Overrides Core translations (temporary for 0.39.0.0, until 0.43.0.0)
+msgid "Refused."
+msgstr "Odbačeno / odbijeno"
+
+#. Overrides Core translations (temporary for 0.39.0.0, until 0.43.0.0)
 msgid "Response to this request is <strong>long overdue</strong>."
 msgstr "Odgovor na ovaj zahtjev <strong>jako kasni</strong>."
 
