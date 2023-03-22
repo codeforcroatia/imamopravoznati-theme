@@ -806,8 +806,8 @@ msgstr "Zatražili su <strong>plaćanje stvarnih materijalnih troškova</strong>
 msgid "I have <strong>started appeal to Information Commissioner</strong> to resolve this request"
 msgstr "Pokrenut je <strong>žalidbeni postupak kod Povjerenika za informiranje</strong> <small>da riješi ovaj zahtjev</small>"
 
-msgid "{{public_body_url}} has replied saying <strong>they have transferred the request</strong> to another public body. Receiving authority should respond promptly and no later than {{response_date}}."
-msgstr "{{public_body_url}} je <strong>ustupio zahtjev</strong> drugom tijelu javne vlasti. Naslovljeno tijelo koje je zaprimilo dopis treba odgovoriti najkasnije do {{response_date}}"
+msgid "{{public_body_url}} has replied saying <strong>they have transferred the request</strong> to another public body. Receiving authority should respond promptly and no later than <strong>{{response_date}}</strong>."
+msgstr "{{public_body_url}} je <strong>ustupio zahtjev</strong> drugom tijelu javne vlasti. Naslovljeno tijelo koje je zaprimilo dopis treba odgovoriti najkasnije do <strong>{{response_date}}</strong>"
 
 msgid "{{user}} has referred to the Information Commissioner for <strong>appeal process</strong>."
 msgstr "{{user}} je uputio predmet Povjereniku za informiranje na <strong>drugostupanjski postupak</strong>."
@@ -815,8 +815,8 @@ msgstr "{{user}} je uputio predmet Povjereniku za informiranje na <strong>drugos
 msgid "{{public_body_url}} has requested to <strong>pay material expenses</strong> incurred by the provision of information."
 msgstr "{{public_body_url}} je zatražilo <strong>plaćanje stvarnih materijalnih troškova</strong> nastalih pružanjem informacija."
 
-msgid "{{public_body_url}} has asked for <strong>an extension of the deadline</strong> for this request. They should respond promptly and no later than {{response_date}}."
-msgstr "{{public_body_url}} je <strong>produžilo rok za odgovor</strong> za ovaj zahtjev. Uz produženje, trebali bi odgovoriti najkasnije do {{response_date}}"
+msgid "{{public_body_url}} has asked for <strong>an extension of the deadline</strong> for this request. They should respond promptly and no later than <strong>{{response_date}}</strong>."
+msgstr "{{public_body_url}} je <strong>produžilo rok za odgovor</strong> za ovaj zahtjev. Uz produženje, trebali bi odgovoriti najkasnije do <strong>{{response_date}}</strong>"
 
 msgid "Asked for correction"
 msgstr "Zatražena dopuna i ispravak"
@@ -830,8 +830,8 @@ msgstr "Želim zatražiti da <strong>dopune i isprave</strong> informaciju koju 
 msgid "Hopefully your wait isn't too long. By law, you should get a response 15 days after they received your request for correction."
 msgstr "Nadamo se da nećete predugo čekati ispravak i dopunu informacije koju su ranije dostavili. Prema zakonu, trebali biste dobiti odgovor 15 dana nakon što su primili vaš zahtjev za ispravak."
 
-msgid "{{user}} has asked {{public_body_url}} to <strong>correct their response</strong>. They should respond promptly and no later than {{response_date}}."
-msgstr "{{user}} je zatražio od {{public_body_url}} da <strong>ispravi svoj odgovor</strong>. Trebali bi odgovoriti najkasnije do {{response_date}}."
+msgid "{{user}} has asked {{public_body_url}} to <strong>correct their response</strong>. They should respond promptly and no later than <strong>{{response_date}}</strong>."
+msgstr "{{user}} je zatražio od {{public_body_url}} da <strong>ispravi svoj odgovor</strong>. Trebali bi odgovoriti najkasnije do <strong>{{response_date}}</strong>"
 
 #. Overrides Core translations (temporary for 0.39.0.0, until 0.43.0.0)
 msgid "You can <strong>complain</strong> by"
@@ -902,3 +902,35 @@ msgstr "Pročitajte pomoć pri podnošenju zahtjeva"
 
 msgid "see our beginner’s guide"
 msgstr "pogledajte naš vodič za pristup informacijama"
+
+#. Overrides Core translations (temporary for 0.39.0.0, until 0.43.0.0)
+msgid "Awaiting internal review."
+msgstr "Čeka odgovor na požurnicu"
+
+#. Overrides Core translations (temporary for 0.39.0.0, until 0.43.0.0)
+msgid "Waiting clarification."
+msgstr "Čeka objašnjenje"
+
+#. Overrides Core translations (temporary for 0.39.0.0, until 0.43.0.0)
+msgid "Handled by postal mail."
+msgstr "Obrađuje se poštanskim putem"
+
+#. Overrides Core translations (temporary for 0.39.0.0, until 0.43.0.0)
+msgid "Withdrawn by the requester."
+msgstr "Povučeno od strane podnositelja zahtjeva"
+
+#. Overrides Core translations (temporary for 0.39.0.0, until 0.43.0.0)
+msgid "Long overdue."
+msgstr "Jako kasni"
+
+#. Overrides Core translations (temporary for 0.39.0.0, until 0.43.0.0)
+msgid "Long overdue"
+msgstr "Jako kasni"
+
+#. Overrides Core translations (temporary for 0.39.0.0, until 0.43.0.0)
+msgid "Awaiting classification."
+msgstr "Čeka klasifikaciju"
+
+#. Overrides Core translations (temporary for 0.39.0.0, until 0.43.0.0)
+msgid "Awaiting classification."
+msgstr "Čeka klasifikaciju"
