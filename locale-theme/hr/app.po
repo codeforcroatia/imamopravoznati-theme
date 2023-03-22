@@ -771,16 +771,16 @@ msgid "Deadline extended"
 msgstr "Produženje roka"
 
 msgid "Referred."
-msgstr "Drugostupanjski postupak."
+msgstr "Drugostupanjski postupak"
 
 msgid "Transferred."
-msgstr "Ustupljeno."
+msgstr "Ustupljeno"
 
 msgid "Payment requested."
-msgstr "Zatražena naplata."
+msgstr "Zatražena naplata"
 
 msgid "Deadline extended."
-msgstr "Produženje roka."
+msgstr "Rok za odgovor je produžen"
 
 msgid "Thank you for letting us know! Hopefully your appeal process with Information Commissioner will be finished soon and positive to your satisfaction."
 msgstr "Hvala vam što ste nas obavijestili! Nadamo se da će vaš žalbeni postupak kod Povjerenika za informiranje biti uskoro završen i pozitivan na vaše zadovoljstvo."
@@ -822,7 +822,7 @@ msgid "Asked for correction"
 msgstr "Zatražena dopuna i ispravak"
 
 msgid "Asked for correction."
-msgstr "Zatražena dopuna i ispravak informacije."
+msgstr "Zatražena dopuna i ispravak dostavljene informacije"
 
 msgid "I want to ask for <strong>correction</strong> to the response received"
 msgstr "Želim zatražiti da <strong>dopune i isprave</strong> informaciju koju su dostavili"
@@ -934,3 +934,23 @@ msgstr "Čeka klasifikaciju"
 #. Overrides Core translations (temporary for 0.39.0.0, until 0.43.0.0)
 msgid "Awaiting classification."
 msgstr "Čeka klasifikaciju"
+
+#. Overrides Core translations (temporary for 0.39.0.0, until 0.43.0.0)
+msgid "Awaiting response."
+msgstr "Čeka odgovor"
+
+#. Overrides Core translations (temporary for 0.39.0.0, until 0.43.0.0)
+msgid "Response to this request is <strong>long overdue</strong>."
+msgstr "Odgovor na ovaj zahtjev <strong>jako kasni</strong>."
+
+#. Overrides Core translations (temporary for 0.39.0.0, until 0.43.0.0)
+msgid "By law, under all circumstances, {{public_body_link}} should have responded by now"
+msgstr "Po zakonu, pod svim uvjetima, {{public_body_link}} je trebao odgovoriti do sada"
+
+#. Overrides Core translations (temporary for 0.39.0.0, until 0.43.0.0)
+msgid "Response to this request is <strong>long overdue</strong>."
+msgstr "Odgovor na ovaj zahtjev <strong>jako kasni</strong>."
+
+#. Overrides Core translations (temporary for 0.39.0.0, until 0.43.0.0)
+msgid "Waiting for an <strong>internal review</strong> by {{public_body_link}} of their handling of this request."
+msgstr "Čeka se da {{public_body_link}} odgovori na <strong>požurnicu</strong> za rješavanje ovog zahtjeva."
