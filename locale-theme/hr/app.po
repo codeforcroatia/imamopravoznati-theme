@@ -982,3 +982,11 @@ msgstr "Zahtjev za pristup informacijama od {{user}} za {{public_body_link}} kao
 #. Overrides Core translations (temporary for 0.39.0.0, until 0.43.0.0)
 msgid "to send a follow up message."
 msgstr "kako biste poslati dodatnu poruku kojom dopunjavate vaš zahtjev."
+
+#. Overrides Core translations (temporary for 0.39.0.0, until 0.43.0.0)
+msgid "Don't want to address your message to {{person_or_body}}?  You can also write to:"
+msgstr "Ako vaš odgovor nije za \"{{person_or_body}}\" izaberite niže drugog primatelja vašeg odgovora:"
+
+#. Overrides Core translations (temporary for 0.39.0.0, until 0.43.0.0)
+msgid "The response to your request has been <strong>delayed</strong>. You can say that, by law, the authority should normally have responded <strong>promptly</strong> and by <strong>{{date}}</strong>"
+msgstr "Odgovor na vaš zahtjev <strong>kasni</strong>. Po zakonu, tijelo javne vlasti trebalo je <strong>odgovoriti</strong> do <strong>{{date}}</strong>"
