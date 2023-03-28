@@ -965,7 +965,7 @@ msgstr "Čeka se da {{public_body_link}} odgovori na <strong>požurnicu</strong>
 
 #. Overrides Core translations (temporary for 0.39.0.0, until 0.43.0.0)
 msgid "{{user}} ({{user_admin_link}}) made this {{law_used_full}} request (<a href=\"{{request_admin_url}}\">admin</a>) to {{public_body_link}} (<a href=\"{{public_body_admin_url}}\">admin</a>)"
-msgstr "Zahtjev za pristup informacijama od {{user}} za {{public_body_link}}<br>Administracija: <a href=\"{{request_admin_url}}\">admin zahtjeva</a> | {{user_admin_link}} korisnika | <a href=\"{{public_body_admin_url}}\">admin tijela javne vlasti</a>"
+msgstr "Zahtjev za pristup informacijama od {{user}} za {{public_body_link}}</p><p class=\"request-header__subtitle\" style=\"background-color:rgba(255, 99, 71, 0.5);\">Administracija: <a href=\"{{request_admin_url}}\">admin zahtjeva</a> | {{user_admin_link}} korisnika | <a href=\"{{public_body_admin_url}}\">admin tijela javne vlasti</a>"
 
 #. Overrides Core translations (temporary for 0.39.0.0, until 0.43.0.0)
 msgid "{{user}} made this {{law_used_full}} request to {{public_body}}"
@@ -977,7 +977,7 @@ msgstr "Zahtjev za pristup informacijama od {{user}} za {{public_body}} kao dio 
 
 #. Overrides Core translations (temporary for 0.39.0.0, until 0.43.0.0)
 msgid "{{user}} ({{user_admin_link}}) made this {{law_used_full}} request (<a href=\"{{request_admin_url}}\">admin</a>) to {{public_body_link}} (<a href=\"{{public_body_admin_url}}\">admin</a>) as part of <a href=\"{{url}}\">a batch sent to {{count}} authorities</a>"
-msgstr "Zahtjev za pristup informacijama od {{user}} za {{public_body_link}} kao dio <a href=\"{{url}}\">skupine poslane na {{count}} tijela javne vlasti</a><br>Administracija: <a href=\"{{request_admin_url}}\">admin zahtjeva</a> | {{user_admin_link}} korisnika | <a href=\"{{public_body_admin_url}}\">admin tijela javne vlasti</a>"
+msgstr "Zahtjev za pristup informacijama od {{user}} za {{public_body_link}} kao dio <a href=\"{{url}}\">skupine poslane na {{count}} tijela javne vlasti</a></p><p class=\"request-header__subtitle\" style=\"background-color:rgba(255, 99, 71, 0.5);\">Administracija: <a href=\"{{request_admin_url}}\">admin zahtjeva</a> | {{user_admin_link}} korisnika | <a href=\"{{public_body_admin_url}}\">admin tijela javne vlasti</a>"
 
 #. Overrides Core translations (temporary for 0.39.0.0, until 0.43.0.0)
 msgid "to send a follow up message."
