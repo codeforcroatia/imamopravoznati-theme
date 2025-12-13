@@ -37,7 +37,7 @@ Rails.configuration.to_prepare do
     #
     #    validates_inclusion_of :alert_type, :in => alert_types
     #
-    UserInfoRequestSentAlert._validate_callbacks.first.filter.options[:in] << 'survey_1'
+    #UserInfoRequestSentAlert._validate_callbacks.first.filter.options[:in] << 'survey_1'
 
     InfoRequest.class_eval do
         def self.theme_short_description(state)
