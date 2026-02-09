@@ -71,7 +71,7 @@ Rails.configuration.to_prepare do
       str += _('You can <strong>complain</strong> by')
       str += ' '
       str += link_to _('requesting an internal review'),
-                    new_request_followup_path(request_id: info_request.id) +
+                    new_request_followup_path(request_id: info_request.id, request_url_title: info_request.url_title) +
                     '?internal_review=1'
       str += '.'
     end
