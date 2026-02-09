@@ -15,15 +15,30 @@ module InfoRequestCustomStates
   #   waiting_response_overdue
   #   waiting_response_very_overdue
   def theme_calculate_status
-    return 'waiting_classification' if self.awaiting_description
-    waiting_response = self.described_state == "waiting_response" || self.described_state == "deadline_extended"
-    return self.described_state unless waiting_response
-    return 'waiting_response_very_overdue' if
-      Time.zone.now.strftime("%Y-%m-%d") > self.date_very_overdue_after.strftime("%Y-%m-%d")
-    return 'waiting_response_overdue' if
-      Time.zone.now.strftime("%Y-%m-%d") > self.date_response_required_by.strftime("%Y-%m-%d")
-    return 'deadline_extended' if has_extended_deadline?
-    return 'waiting_response'
+    return "waiting_classification" if awaiting_description
+
+    waiting_response =
+      described_state == "waiting_response" ||
+      described_state == "deadline_extended"
+
+    return described_state unless waiting_response
+
+    very_overdue_after = date_very_overdue_after
+    response_required_by = date_response_required_by
+
+    if very_overdue_after &&
+      Time.zone.now.to_date > very_overdue_after.to_date
+      return "waiting_response_very_overdue"
+    end
+
+    if response_required_by &&
+      Time.zone.now.to_date > response_required_by.to_date
+      return "waiting_response_overdue"
+    end
+
+    return "deadline_extended" if has_extended_deadline?
+
+    "waiting_response"
   end
 
   # Mixin methods for InfoRequest
