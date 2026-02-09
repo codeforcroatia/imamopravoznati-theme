@@ -90,10 +90,12 @@ Rails.configuration.to_prepare do
         end
 
         def date_very_overdue_after
-            Holiday.due_date_from(date_initial_request_last_sent_at,
-                                  reply_very_late_after_days,
-                                  AlaveteliConfiguration::working_or_calendar_days)
+          initial_date = date_initial_request_last_sent_at
+          return nil unless initial_date
+
+          initial_date + VERY_OVERDUE_AFTER_DAYS.days
         end
+
 
         def email_subject_request(opts = {})
           # preview faza – InfoRequest još ne postoji
