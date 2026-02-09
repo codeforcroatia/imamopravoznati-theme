@@ -117,8 +117,11 @@
   class="hover_a" href="#internal_review">#</a> </h2>
 <p>
   <% if !@info_request.nil? %>
-    <% path = new_request_followup_url(request_id: @info_request.id) +
-              "?internal_review=1#followup" %>
+    <% path = new_request_followup_url(
+      request_id: @info_request.id,
+      request_url_title: @info_request.url_title
+    ) + "?internal_review=1#followup" %>
+
 
     Pošaljite odgovor kojim <%= link_to "tražite požurnicu", path %> i rješavanje
     vašeg zahtjeva čim je prije moguće.

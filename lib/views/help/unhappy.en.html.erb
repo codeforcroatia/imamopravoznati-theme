@@ -58,8 +58,11 @@
     <a class="hover_a" href="#internal_review">#</a>
   </h2>
     <p>
-      <% if !@info_request.nil? %>
-        <% path = new_request_followup_url(request_id: @info_request.id) + "?internal_review=1#followup" %>
+      <% if !@info_request.nil? %><% path = new_request_followup_url(
+        request_id: @info_request.id,
+        request_url_title: @info_request.url_title
+      ) + "?internal_review=1#followup" %>
+
         Please send a reply with <%= link_to "request an express ticket", path %> and
         your request will be resolved as soon as possible.
       <% else %>

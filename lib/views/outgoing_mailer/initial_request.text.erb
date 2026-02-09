@@ -9,7 +9,11 @@
       email_address: @info_request.public_body.request_email.html_safe,
       law_used_full: @info_request.legislation.to_s(:full).html_safe,
       public_body_name: @info_request.public_body.name.html_safe) %>
-<%= new_change_request_url(:body => @info_request.public_body.url_name) %>
+<%= new_change_request_url(
+  request_id: @info_request.id,
+  request_url_title: @info_request.url_title,
+  body: @info_request.public_body.url_name
+) %>
 odnosno prvenstveno obavijestite Povjerenika za informiranje o promjeni email
 adrese službenika za informiranje sukladno uputama:
 https://pristupinfo.hr/vazno-uputa-za-provedbu-cl-13-zppi/

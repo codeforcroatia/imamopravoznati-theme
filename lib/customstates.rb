@@ -72,27 +72,54 @@ end
 module RequestControllerCustomStates
 
   def theme_describe_state(info_request)
-    # called after the core describe_state code.  It should
-    # end by raising an error if the status is unknown
-    if info_request.calculate_status == 'referred'
-      flash[:notice] = _("Thank you for letting us know! Hopefully your appeal process with Information Commissioner will be finished soon and positive to your satisfaction.")
+    case info_request.calculate_status
+    when 'referred'
+      flash[:notice] = _(
+        "Thank you for letting us know! Hopefully your appeal process with Information Commissioner will be finished soon and positive to your satisfaction."
+      )
       redirect_to unhappy_url(info_request)
-    elsif info_request.calculate_status == 'transferred'
-      flash[:notice] = _("Original authority that received your request has transferred your request to a different public body. By law, new receiving authority should respond 15 days after they received your request.")
-      redirect_to request_url(info_request)
-    elsif info_request.calculate_status == 'payment_requested'
-      flash[:notice] = _("Authority has requested you to pay material expenses incurred by the provision of information.")
-      redirect_to request_url(info_request)
-    elsif info_request.calculate_status == 'deadline_extended'
-      flash[:notice] = _("Hopefully your wait isn't too long. By law, you should get a response 30 days after they initially received your request.")
-      redirect_to request_url(info_request)
-    elsif info_request.calculate_status == 'correction_asked'
-      flash[:notice] = _("Hopefully your wait isn't too long. By law, you should get a response 15 days after they received your request for correction.")
-      redirect_to request_url(info_request)
+
+    when 'transferred'
+      flash[:notice] = _(
+        "Original authority that received your request has transferred your request to a different public body. By law, new receiving authority should respond."
+      )
+      redirect_to request_url(
+        request_id: info_request.id,
+        request_url_title: info_request.url_title
+      )
+
+    when 'payment_requested'
+      flash[:notice] = _(
+        "Authority has requested you to pay material expenses incurred by the provision of information."
+      )
+      redirect_to request_url(
+        request_id: info_request.id,
+        request_url_title: info_request.url_title
+      )
+
+    when 'deadline_extended'
+      flash[:notice] = _(
+        "Hopefully your wait isn't too long. By law, you should get a response 30 days after they initially received your request."
+      )
+      redirect_to request_url(
+        request_id: info_request.id,
+        request_url_title: info_request.url_title
+      )
+
+    when 'correction_asked'
+      flash[:notice] = _(
+        "Hopefully your wait isn't too long. By law, you should get a response 15 days after they received your request for correction."
+      )
+      redirect_to request_url(
+        request_id: info_request.id,
+        request_url_title: info_request.url_title
+      )
+
     else
-      raise "unknown calculate_status " + info_request.calculate_status
+      raise "unknown calculate_status #{info_request.calculate_status}"
     end
   end
+
 
 end
 

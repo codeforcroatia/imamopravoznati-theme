@@ -32,7 +32,7 @@ Rails.configuration.to_prepare do
           flash[:notice] = { partial: 'request_game/thank_you.html.erb',
                              locals: {
                                info_request_title: @info_request.title,
-                               url: request_path(@info_request)
+                               url:request_path(request_id: @info_request.id,request_url_title: @info_request.url_title)
                              } }
           redirect_to categorise_play_url
         else

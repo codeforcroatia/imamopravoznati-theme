@@ -50,8 +50,11 @@
 <h2 id="internal_review">1. Asking for an internal review <a class="hover_a" href="#internal_review">#</a> </h2>
 <p>
   <% if !@info_request.nil? %>
-    <% path = new_request_followup_url(request_id: @info_request.id) +
-              "?internal_review=1#followup" %>
+    <% path = new_request_followup_url(
+      request_id: @info_request.id,
+      request_url_title: @info_request.url_title
+    ) + "?internal_review=1#followup" %>
+
 
     Choose <%= link_to "request an internal review", path %> and then write a
     message asking the authority to review your request.
