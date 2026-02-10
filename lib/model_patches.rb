@@ -22,6 +22,17 @@ Rails.configuration.to_prepare do
         end
     end
 
+    OutgoingMessage.class_eval do
+      def smtp_message_ids
+        info_request_events.
+          order(:created_at).
+          map { |event| event.params && event.params[:smtp_message_id] }.
+          compact.
+          map do |smtp_id|
+            smtp_id.match(/<(.*)>/) { |m| m.captures.first } || smtp_id
+          end
+      end
+    end
     # HACK: Now patch the validator for UserInfoRequestSentAlert.alert_type
     # to permit 'survey_1' as a new alert type. This uses unstable internal
     # methods.
@@ -39,17 +50,7 @@ Rails.configuration.to_prepare do
     #
     #UserInfoRequestSentAlert._validate_callbacks.first.filter.options[:in] << 'survey_1'
 
-    InfoRequest.class_eval do      
-        def smtp_message_ids
-          info_request_events.
-            order(:created_at).
-            map { |event| event.params && event.params[:smtp_message_id] }.
-            compact.
-            map do |smtp_id|
-              smtp_id.match(/<(.*)>/) { |m| m.captures.first } || smtp_id
-            end
-        end
-        
+    InfoRequest.class_eval do
         def calculate_date_initial_request_last_sent_at
           event = last_event_forming_initial_request
           return nil if event.nil?
