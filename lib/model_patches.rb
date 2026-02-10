@@ -84,9 +84,13 @@ Rails.configuration.to_prepare do
         end
 
         def date_response_required_by
-            Holiday.due_date_from(date_initial_request_last_sent_at,
-                                  reply_late_after_days,
-                                  AlaveteliConfiguration::working_or_calendar_days)
+          return nil if date_initial_request_last_sent_at.nil?
+
+          Holiday.due_date_from(
+            date_initial_request_last_sent_at,
+            reply_late_after_days,
+            AlaveteliConfiguration::working_or_calendar_days
+          )
         end
 
         def date_very_overdue_after
