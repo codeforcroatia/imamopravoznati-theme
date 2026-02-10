@@ -40,12 +40,14 @@ Rails.configuration.to_prepare do
     #UserInfoRequestSentAlert._validate_callbacks.first.filter.options[:in] << 'survey_1'
 
     InfoRequest.class_eval do      
-        def smtp_message_ids
-          logs = mail_server_logs
+        alias_method :_orig_mail_server_logs, :mail_server_logs
+
+        def mail_server_logs
+          logs = _orig_mail_server_logs
           return [] if logs.nil?
-          logs.map { |l| l['message-id'] }.compact
+          logs
         end
-        
+
         def calculate_date_initial_request_last_sent_at
           event = last_event_forming_initial_request
           return nil if event.nil?
