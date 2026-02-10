@@ -72,9 +72,9 @@
   <% end %>
 <% end %>
 
-<%= link_to _('View FOI email address'), public_body_email_path(public_body) %><br>
 
-<!--<%= link_to _("Ask us to update FOI email"), new_change_request_body_path(:body => public_body.url_name) %><br>-->
+<!--<%= link_to _('View FOI email address'), public_body_email_path(public_body) %><br>-->
+<%= link_to _("Ask us to update FOI email"), new_change_request_body_path(:body => public_body.url_name) %><br>
 
 <!-- VAT number tag is oib:xxxxxxxxxxx -->
 <% if public_body.has_tag?('oib') %>
