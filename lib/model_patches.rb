@@ -40,15 +40,12 @@ Rails.configuration.to_prepare do
     #UserInfoRequestSentAlert._validate_callbacks.first.filter.options[:in] << 'survey_1'
 
     InfoRequest.class_eval do
-        alias_method :_orig_date_initial_request_last_sent_at,
-               :date_initial_request_last_sent_at
-
-        def date_initial_request_last_sent_at
-          date = _orig_date_initial_request_last_sent_at
-          return nil if date.nil?
-          date
+        def calculate_date_initial_request_last_sent_at
+          event = last_event_forming_initial_request
+          return nil if event.nil?
+          event.created_at.to_date
         end
-
+      
         def self.theme_short_description(state)
           {
             'correction_asked' => _('Asked for correction'),
