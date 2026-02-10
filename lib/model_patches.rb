@@ -90,10 +90,7 @@ Rails.configuration.to_prepare do
         end
 
         def date_very_overdue_after
-          initial_date = date_initial_request_last_sent_at
-          return nil unless initial_date
-
-          initial_date + VERY_OVERDUE_AFTER_DAYS.days
+          read_attribute(:date_very_overdue_after)
         end
 
 
